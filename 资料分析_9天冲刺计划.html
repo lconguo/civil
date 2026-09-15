@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-page-node-id="brzu5vRYpVJPy0LuhOLeEk">
+<head data-page-node-id="SsTQYTAkIfFtgOOpnEvEx3">
+<meta charset="UTF-8" data-page-node-id="my0PUG6n5aQPk34iyDoLaB">
+<meta name="viewport" content="width=device-width, initial-scale=1.0" data-page-node-id="DeE4q8BNG1loXDN8YaETdB">
+<title>资料分析 · 冲刺计划（主攻 9 天 + 长期保温）</title>
+<style>
+:root{
+  --bg:#f5f7fb;--panel:#fff;--ink:#1c2434;--ink-2:#4a5568;--ink-3:#7b8798;
+  --line:#e3e8f0;--line-2:#eef2f8;--brand:#1e8449;--brand2:#27ae60;--brand-soft:#eaf7ef;
+  --warn:#e8a33d;--red:#c0392b;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:"PingFang SC","Microsoft YaHei","Hiragino Sans GB",-apple-system,"Segoe UI",sans-serif;
+  background:var(--bg);color:var(--ink);font-size:15px;line-height:1.75;-webkit-font-smoothing:antialiased}
+.wrap{display:flex;max-width:1400px;margin:0 auto;gap:26px;padding:0 24px 80px}
+aside{width:238px;flex:0 0 238px;position:sticky;top:0;align-self:flex-start;height:100vh;overflow-y:auto;padding:26px 0 40px}
+aside::-webkit-scrollbar{width:6px}aside::-webkit-scrollbar-thumb{background:#d3dbe8;border-radius:3px}
+.logo{font-size:15px;font-weight:700}.logo span{color:var(--brand)}
+.logo-sub{font-size:12px;color:var(--ink-3);margin:4px 0 18px}
+.nav-group{font-size:11px;font-weight:700;color:var(--ink-3);letter-spacing:1.5px;margin:18px 0 8px 12px}
+.nav a{display:flex;align-items:center;gap:9px;padding:8px 12px;border-radius:9px;font-size:13.5px;color:var(--ink-2);transition:.15s;margin-bottom:2px}
+.nav a:hover{background:#fff;color:var(--ink)}
+.nav a.on{background:var(--brand);color:#fff;font-weight:600;box-shadow:0 4px 12px rgba(30,132,73,.3)}
+.dot{width:8px;height:8px;border-radius:50%;flex:0 0 8px;background:var(--brand2)}
+.nav-badge{margin-left:auto;font-size:10.5px;color:var(--ink-3);font-weight:600}
+.nav a.on .nav-badge{color:rgba(255,255,255,.85)}
+.tp-card{background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px;margin:22px 0 6px}
+.tp-card h5{font-size:12.5px;font-weight:600;color:var(--ink-2);margin-bottom:9px;display:flex;justify-content:space-between}
+.tp-bar{height:7px;background:#eef2f8;border-radius:5px;overflow:hidden}
+.tp-fill{height:100%;width:0;background:linear-gradient(90deg,#27ae60,#1e8449);border-radius:5px;transition:width .35s}
+.tp-num{font-size:11.5px;color:var(--ink-3);margin-top:7px;text-align:right}
+main{flex:1;min-width:0;padding-top:26px}
+.hero{background:linear-gradient(135deg,#14532d 0%,#1e8449 55%,#27ae60 100%);color:#fff;border-radius:20px;padding:36px 40px;margin-bottom:26px;position:relative;overflow:hidden}
+.hero::after{content:"";position:absolute;right:-70px;top:-70px;width:270px;height:270px;border-radius:50%;background:rgba(255,255,255,.08)}
+.hero h1{font-size:27px;font-weight:800;letter-spacing:.5px;margin-bottom:9px;position:relative}
+.hero p{font-size:14px;opacity:.93;position:relative;max-width:780px}
+.hero-meta{display:flex;gap:9px;flex-wrap:wrap;margin-top:18px;position:relative}
+.hero-chip{background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.25);padding:6px 14px;border-radius:20px;font-size:12.5px}
+section{scroll-margin-top:20px;margin-bottom:42px}
+.sec-head{display:flex;align-items:center;gap:12px;margin-bottom:16px}
+.sec-head h2{font-size:20px;font-weight:800}
+.sec-head .idx{font-size:12px;font-weight:700;color:#fff;background:var(--brand);padding:3px 10px;border-radius:7px}
+.sec-desc{font-size:13.5px;color:var(--ink-3);margin:-6px 0 16px;line-height:1.7}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:22px 24px;margin-bottom:16px}
+.card h3{font-size:16px;font-weight:700;margin-bottom:12px;display:flex;align-items:center;gap:8px}
+.card h3::before{content:"";width:4px;height:16px;background:var(--brand2);border-radius:2px}
+table{width:100%;border-collapse:collapse;font-size:13.5px;margin:6px 0 4px}
+th,td{padding:10px 12px;text-align:left;border-bottom:1px solid var(--line-2);vertical-align:top}
+th{background:#f8fafd;font-weight:600;color:var(--ink-2);font-size:12.5px;white-space:nowrap}
+tbody tr:hover{background:#fafcff}
+tr.mine{background:var(--brand-soft)!important;font-weight:600}
+tr.mine td{border-bottom-color:#c8e8d5}
+.num{font-variant-numeric:tabular-nums;font-weight:600}
+.goal{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px;margin:4px 0}
+.goal div{background:#fff;border:1px solid var(--line);border-radius:12px;padding:15px 18px}
+.goal b{display:block;font-size:24px;font-weight:800;color:var(--brand);font-variant-numeric:tabular-nums}
+.goal span{font-size:12.5px;color:var(--ink-3)}
+.steps4{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin-top:6px}
+.step{background:#f8fbf9;border:1px solid #dcefe4;border-radius:12px;padding:14px 16px}
+.step i{font-style:normal;font-size:11px;font-weight:700;color:#fff;background:var(--brand2);padding:2px 8px;border-radius:6px}
+.step h4{font-size:14px;font-weight:700;margin:9px 0 4px}
+.step p{font-size:12.5px;color:var(--ink-2);line-height:1.65}
+.day{display:flex;gap:14px;background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px 16px;margin-bottom:10px;transition:.15s}
+.day:hover{box-shadow:0 3px 14px rgba(28,36,52,.06)}
+.day.done{opacity:.6;background:#fbfefc;border-color:#bfe6cd}
+.day-no{flex:0 0 56px;text-align:center}
+.day-no b{display:block;font-size:19px;font-weight:800;color:var(--brand);line-height:1.2;font-variant-numeric:tabular-nums}
+.day-no span{font-size:10.5px;color:var(--ink-3)}
+.day-main{flex:1;min-width:0}
+.day-main h4{font-size:14.5px;font-weight:700;margin-bottom:5px;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.day-main ul{margin:0 0 0 17px;font-size:13.2px;color:var(--ink-2)}
+.day-main li{margin-bottom:2px}
+.tag{font-size:10.5px;font-weight:700;padding:2px 8px;border-radius:20px}
+.t-base{background:#eaf1ff;color:#2f6feb}
+.t-skill{background:#fef5e7;color:#a06a12}
+.t-speed{background:#fdecea;color:#b03a2e}
+.t-test{background:#eaf7ef;color:#1e8449}
+.day-out{flex:0 0 156px;font-size:12px;color:var(--ink-3);border-left:1px dashed var(--line);padding-left:12px}
+.day-out b{color:var(--brand);display:block;font-size:12px;margin-bottom:3px}
+.dchk{flex:0 0 auto;display:flex;align-items:center}
+.dchk input{accent-color:#27ae60;cursor:pointer;width:15px;height:15px}
+.fgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:12px;margin-top:6px}
+.fcard{background:#fff;border:1px solid var(--line);border-left:4px solid var(--brand2);border-radius:11px;padding:14px 16px}
+.fcard h4{font-size:14px;font-weight:700;margin-bottom:9px;display:flex;align-items:center;gap:7px}
+.fcard h4 em{font-style:normal;font-size:10.5px;font-weight:700;background:var(--brand-soft);color:#1e7a45;padding:2px 7px;border-radius:5px}
+.fcard .f{font-family:"JetBrains Mono","Consolas",monospace;font-size:12.8px;color:#22406e;background:#f4f7fc;border:1px solid #e1e9f5;border-radius:6px;padding:6px 9px;margin-bottom:5px;line-height:1.75}
+.fcard .n{font-size:12.2px;color:var(--ink-3);line-height:1.6}
+.ftab{display:grid;grid-template-columns:repeat(auto-fit,minmax(96px,1fr));gap:7px;margin-top:6px}
+.ftab div{background:#f8fbf9;border:1px solid #dcefe4;border-radius:8px;padding:8px;text-align:center;font-size:12.5px}
+.ftab b{color:#1e7a45;font-family:"JetBrains Mono",monospace;display:block}
+.tip{background:#fff8ec;border:1px solid #f5e0b8;border-left:4px solid var(--warn);border-radius:10px;padding:13px 16px;font-size:13.3px;color:#7a5a1e;margin:14px 0}
+.tip b{color:#a06a12}
+.danger{background:#fdf3f2;border:1px solid #f5d9d5;border-left:4px solid var(--red);border-radius:10px;padding:13px 16px;font-size:13.3px;color:#8a4a44;margin:14px 0}
+.danger b{color:var(--red)}
+.ok{background:var(--brand-soft);border:1px solid #c8e8d5;border-left:4px solid var(--brand2);border-radius:10px;padding:13px 16px;font-size:13.3px;color:#1e5f38;margin:14px 0}
+.ok b{color:#1e7a45}
+.chk{list-style:none;margin:0}
+.chk li{font-size:13.4px;color:var(--ink-2);padding:6px 0 6px 26px;position:relative;border-bottom:1px dashed var(--line-2)}
+.chk li::before{content:"✓";position:absolute;left:6px;color:var(--brand2);font-weight:800}
+.chk li:last-child{border-bottom:none}
+@media print{aside{display:none}.wrap{display:block;padding:0}.hero{-webkit-print-color-adjust:exact;print-color-adjust:exact}}
+@media(max-width:900px){aside{display:none}.wrap{padding:0 16px 60px}.hero{padding:26px 22px}.hero h1{font-size:21px}.day{flex-wrap:wrap}.day-out{flex:1 1 100%;border-left:none;border-top:1px dashed var(--line);padding:8px 0 0}}
+</style>
+</head>
+<body data-page-node-id="GC9m6Q76cpnQMOt3VGKz8f">
+<style id="resnav-style">
+.resnav{position:fixed;top:0;left:0;right:0;z-index:99999;display:flex;align-items:center;gap:4px;
+  height:44px;padding:0 12px;background:#1f2937;color:#e5e7eb;font-size:13px;line-height:1;
+  font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;overflow-x:auto;
+  box-shadow:0 1px 0 rgba(255,255,255,.06),0 2px 10px rgba(0,0,0,.18);-webkit-overflow-scrolling:touch}
+body::before{content:"";display:block;height:44px}
+.resnav::-webkit-scrollbar{height:0}
+.resnav .rn-brand{flex:0 0 auto;font-weight:700;color:#7ee0c0;margin-right:6px;letter-spacing:.5px}
+.resnav a{flex:0 0 auto;color:#d1d5db;text-decoration:none;padding:6px 10px;border-radius:8px;
+  white-space:nowrap;transition:.15s}
+.resnav a:hover{background:#374151;color:#fff}
+.resnav a.on{background:#22c39a;color:#06251c;font-weight:700}
+.resnav .rn-sep{flex:0 0 auto;width:1px;height:18px;background:#4b5563;margin:0 5px}
+.resnav .rn-end{margin-left:auto}
+@media (max-width:640px){.resnav{font-size:12px;height:40px}body::before{height:40px}}
+</style>
+<nav class="resnav" id="resnav"><span class="rn-brand">行测 2027</span>
+<a href="国考笔试总排期表.html">总排期表</a>
+<a href="2027国考行测学习计划.html">行测总纲</a>
+<span class="rn-sep"></span>
+<a href="资料分析_9天冲刺计划.html" class="on">资料分析</a>
+<a href="判断推理_13天冲刺计划.html">判断推理</a>
+<a href="言语理解_9天冲刺计划.html">言语理解</a>
+<a href="国考笔试总排期表.html#math">数量关系</a>
+<a href="国考笔试总排期表.html#roll">常识政治</a>
+<a href="申论_学习计划.html">申论</a>
+<span class="rn-sep rn-end"></span>
+<a href="题库总览.html">题库总览</a>
+</nav>
+
+<div class="wrap" data-page-node-id="O8pLGA18NisK7YLFqnEa1K">
+
+<aside data-page-node-id="I2JW1fKMg8GvsvWEVuhK8a">
+  <div class="logo" data-page-node-id="gUNrhfuZQdQI33CxyLZWsf">资料分析 <span data-page-node-id="6MsPQqHqDM1NEi84uhfjfm">主攻 9 天</span></div>
+  <div class="logo-sub" data-page-node-id="44NElVjyCWi3qVQfClltB8">0 基础 → 90% 正确率</div>
+  <div class="nav-group" data-page-node-id="YyJM1vne29GES2QnkqXIDi">计划</div>
+  <nav class="nav" data-page-node-id="W4DtAaAaXQuQCCRJ7zFP7H">
+    <a href="#goal" data-page-node-id="uu6LZL8zElQ6Yj2yLhx5Ew"><span class="dot" data-page-node-id="Yvh08udXaUrQFvSnmHFhX0"></span>目标拆解</a>
+    <a href="#dual" data-page-node-id="EAde68L0pArhJPVhHXEdCd"><span class="dot" data-page-node-id="Vl2ATSBrjYme7lKqTz4K3H"></span>主攻 + 保温</a>
+    <a href="#position" data-page-node-id="rIu51GFsIEGjVcUxynqaSn"><span class="dot" data-page-node-id="AXLMrvZhKEzPKmEtz9QM1z"></span>全科定位</a>
+    <a href="#start" data-page-node-id="4ZHCG9fm9H6Ia7ETqDlK8F"><span class="dot" data-page-node-id="W1ZYRQnz6K93AVsqt9XZzq"></span>0基础必懂4件事</a>
+    <a href="#method" data-page-node-id="JTecmX6OK2fKHHF32A0psL"><span class="dot" data-page-node-id="yEXcZQGDXBQtyHRYAOxXur"></span>四步解题法</a>
+    <a href="#plan" data-page-node-id="DEM5iMBKzHLchmrpKmVJEm"><span class="dot" data-page-node-id="iq0BS2RGBxNxo2aWeQHNtt"></span>9天日程表</a>
+  </nav>
+  <div class="nav-group" data-page-node-id="ZSyaNESxbcZG4bjB4sTJ29">实操</div>
+  <nav class="nav" data-page-node-id="BtuSccvdAjzwqasvGKQMH9">
+    <a href="#howto" data-page-node-id="hw1a2b3c4d5e6f7g8h9i0j"><span class="dot" data-page-node-id="hw1a2b3c4d5e6f7g8h9i0k"></span>每天具体怎么做</a>
+  </nav>
+
+  <div class="nav-group" data-page-node-id="ZSyaNESxbcZG4bjB4sTJ30">题本 · 题库</div>
+  <nav class="nav" data-page-node-id="BtuSccvdAjzwqasvGKQMH4">
+    <a href="资料分析_题本与母题解析.html" style="background:#eef4ff;color:#2f6feb;font-weight:600" data-page-node-id="hw1a2b3c4d5e6f7g8h9i0l"><span class="dot" style="background:#2f6feb" data-page-node-id="hw1a2b3c4d5e6f7g8h9i0m"></span>题本（粉笔 12 分类）→</a>
+    <a href="资料分析_真题题库.html" style="background:#e6f4f0;color:#0f6b55;font-weight:600"><span class="dot" style="background:#158a6e"></span>真题题库（18 篇 / 90 题）→</a>
+  </nav>
+
+  <div class="nav-group" data-page-node-id="ZSyaNESxbcZG4bjB4sTJ29">工具卡</div>
+  <nav class="nav" data-page-node-id="BtuSccvdAjzwqasvGKQMHX">
+    <a href="#formula" data-page-node-id="sTqKvpDGyvfXvMivWfvTzS"><span class="dot" data-page-node-id="IJVEZAROtsrkF9Tn7MhC2r"></span>核心公式速查</a>
+    <a href="#speed" data-page-node-id="pKedWsX1VPTzAq8Xzpad2t"><span class="dot" data-page-node-id="4tCWH6RyFnPBePmeGsIvzc"></span>速算技巧</a>
+    <a href="#trap" data-page-node-id="0qrp7CaSEGZB4kqY8g6vSN"><span class="dot" data-page-node-id="3XV1Be202aARfSUravlt1F"></span>高频坑点清单</a>
+    <a href="#check" data-page-node-id="6HweCStGJvlfaC1qHLAihT"><span class="dot" data-page-node-id="ha7NnsuaF88yfW7U1PCzAy"></span>90%达标自检</a>
+  </nav>
+  <div class="tp-card" data-page-node-id="nAzABTKROzbU2VA1GRRW1M">
+    <h5 data-page-node-id="QZ0dSQEbSLmOWAxm0HHxOW"><span data-page-node-id="LDp8BHjGhMrPMPT7aklcnW">主攻期打卡</span><span id="tp-pct" data-page-node-id="y4ncRCFOWgX3W9WHl5iTlJ">0%</span></h5>
+    <div class="tp-bar" data-page-node-id="cZlhn9ECFkVi7E5ZHzpIFb"><div class="tp-fill" id="tp-fill" data-page-node-id="MYRZNtvClTLCaDgw6wsBe8"></div></div>
+    <div class="tp-num" id="tp-num" data-page-node-id="MPJevK8PWEG082XdZ5YTDQ">0 / 9 天已完成</div>
+  </div>
+</aside>
+
+<main data-page-node-id="DUCZggpcETCajvPp3LkPaT">
+<div class="hero" data-page-node-id="QzhuMC6qr4Dnu3Ta2hMyQU">
+  <h1 data-page-node-id="B1RxgKEsUAcJ8vIvOlFBer">资料分析 · 冲刺计划</h1>
+  <p data-page-node-id="uO3ciWQMcXYlyWdxGL4s8w">从零基础到 90% 正确率。<b data-page-node-id="AZzGF3ltiF6qXjROGkEITx">主攻 9 天集中攻下方法与速度，之后每天 15 分钟保温到考前</b>。资料分析内容量最小（4 类公式 + 1 个速度技能），是行测里最"用功就有回报"的模块。</p>
+  <div class="hero-meta" data-page-node-id="6p6E95Zl7THAqxrh6qm6Rv">
+    <span class="hero-chip" data-page-node-id="4cfbulIrWQn6zOthuMp0cX">🔥 主攻期 · 9 天（不绑定日历，从开始那天数起）</span>
+    <span class="hero-chip" data-page-node-id="0WDy3KQVgcik0pxHU5dboB">♻️ 保温期：主攻期结束后每日 1 组</span>
+    <span class="hero-chip" data-page-node-id="1CkQHeOcT20RSCJug338SC">🎯 20 题错 ≤ 2 题</span>
+    <span class="hero-chip" data-page-node-id="33TbDKCyxUMCSr7MwPJQa5">⏱ 25–28 分钟 / 20 题</span>
+    <span class="hero-chip" data-page-node-id="33TbDKCyxUMCSr7MwPJQa6">📘 配套：题本（粉笔 12 分类）</span>
+  </div>
+</div>
+
+<!-- 1 目标 -->
+<section id="goal" data-page-node-id="ZpFv2YKEETUVL5VlODbuEv">
+  <div class="sec-head" data-page-node-id="Er5OiDK6sLEBKjhGTP6CrP"><span class="idx" data-page-node-id="tG0Q7keg2ntSIuyBoz7J4k">01</span><h2 data-page-node-id="q6zyjx4RD2EG30c1CVBH5U">目标拆解：90% 到底意味着什么</h2></div>
+  <p class="sec-desc" data-page-node-id="mQQ2m6u82H0Buf7JUdDIs8">把"90%"翻译成可执行、可检验的动作指标。</p>
+  <div class="goal" data-page-node-id="VMyL1ldyy7Phte1R0sUBj7">
+    <div data-page-node-id="lINSj0G4y70EoC5JqY4o5j"><b data-page-node-id="cEIlCKCOlRG7cm9AqcRo2q">≤ 2 题</b><span data-page-node-id="qkJHCvOQv5roy0Ai9IlkDG">20 题里最多错 2 题</span></div>
+    <div data-page-node-id="OFALxQTrUFnG75eKnrS6DT"><b data-page-node-id="0dvmS4dAKyPdYo7I3cZUiz">25–28 分钟</b><span data-page-node-id="4nXTqeMHM3dWIKJCxsd6Xq">20 题总用时上限</span></div>
+    <div data-page-node-id="h39HMvHbDyBLEXcn3ZfsKV"><b data-page-node-id="SLEZEwa63iez9ECThyenGj">≤ 7 分钟</b><span data-page-node-id="wNQJ75o5LnYqhyBOtHFp7U">每篇材料（5题）用时</span></div>
+    <div data-page-node-id="Xksf7O8nr1AO4yd92yIIaq"><b data-page-node-id="i9WkE5FLEyaNCY99fQsXgB">≤ 20 秒</b><span data-page-node-id="wkbE71HWTBmWqymtEediQl">每题定位数据的时间</span></div>
+    <div data-page-node-id="jxWNS25pmqQvEJ7EUvedXK"><b data-page-node-id="weQKMGYbGkxqIGg9wIWKFH">0 失误</b><span data-page-node-id="FW42aeQ0RVVAmy22ZIvkAa">公式与坑点的"非受迫性失分"</span></div>
+  </div>
+  <div class="tip" data-page-node-id="tW3ZUb6kOTGlC0cmTjYD07"><b data-page-node-id="j02PQrUhnCFApirGWReFgr">关键认知：</b>资料分析丢分通常只有两个原因——<b data-page-node-id="l2A69FWl7aLyZAtH3Yj80P">算错/超时</b>和<b data-page-node-id="Rz4CaKa6RAzWkES0cSWGKd">踩坑</b>，几乎从不"因为题太难"。所以 90% 的本质不是"会做难题"，而是<b data-page-node-id="KS44NwF5yPV3zpiNJSbe3l">把会做的题全做对、且足够快</b>。</div>
+</section>
+
+<!-- 2 双轨 -->
+<section id="dual" data-page-node-id="XoIwQ8H8bDAS5NlPhCNpQ9">
+  <div class="sec-head" data-page-node-id="4hFftfp85YXL4j0gtZDvCq"><span class="idx" data-page-node-id="J7OGPjBILebs7EKmFSFECv">02</span><h2 data-page-node-id="lYr7xZVZUlKpv4o54dXX3o">双轨结构：主攻期 + 保温期</h2></div>
+  <p class="sec-desc" data-page-node-id="cwT5SeU7MqoTRDqdQEi2Ba">本模块不再是"学完就走"，而是"集中攻 9 天，然后一直保温到考前"。</p>
+  <div class="fgrid" data-page-node-id="m7SdASaCRa222cDu0vf9Il">
+    <div class="fcard" data-page-node-id="RJJ36Zs3hFGOgEkHzCx8ws">
+      <h4 data-page-node-id="dZp5kfjiAaQ1emjeMl3vPy">🔥 主攻期 <em data-page-node-id="sFyMAr38wJ3sGJEnQ5ozsH">第 1 – 9 天</em></h4>
+      <div class="n" data-page-node-id="OP1DNKD4yyxmsuzraeMqXJ">每天 2.5–3 小时<b data-page-node-id="gwQDl5VmR4J1Ll6uP8QWby">全部投入资料分析</b>，按下方 9 天日程执行。目标是把四类公式和速算技巧练成条件反射。</div>
+    </div>
+    <div class="fcard" data-page-node-id="tEQ4POcbf7BojxAxXmKCBO">
+      <h4 data-page-node-id="fRO5MFWhjcYBcg9yxjFPHV">♻️ 保温期 <em data-page-node-id="Fg1A8aduLlnTK9pu6oCgDJ">第 10 天起 – 考前</em></h4>
+      <div class="n" data-page-node-id="OIspDclLF2C04XYafowaL1">每天 <b data-page-node-id="1qooPshxnCQBGywogpufJs">1 组题（约 15 分钟，必须限时）</b>；每周再留 1 次完整 20 题限时组。目的只有一个：<b data-page-node-id="StAdSlShXnBPmawEDNHzf0">别手生</b>。</div>
+    </div>
+  </div>
+  <div class="danger" data-page-node-id="AGU9ffULAmMxfJJ4k6x5WF"><b data-page-node-id="pdvCCHnUEdTMaweFQv8FK0">为什么必须保温：</b>资料分析是"熟练度型"模块——它不难，但手一冷，找数慢、算得慌、正确率立刻掉。停练 1 周，手感基本回到解放前。<b data-page-node-id="YJdAluoDkuHaw2jJKUdFCd">保温的 15 分钟，是全科投入产出比最高的一笔。</b></div>
+  <div class="ok" data-page-node-id="aTtKfJMKq4iuI19KHImNET"><b data-page-node-id="7JlN2oCGdcwVJhAa9YQytI">保温期的具体动作（主攻期结束后每天）：</b>① 1 组题（4 篇材料 / 20 题）限时 28 分钟；② 只对答案、标错因，不深挖；③ 每周一次完整复盘，把重复错的题挑出来。</div>
+</section>
+
+<!-- 3 全科定位 -->
+<section id="position" data-page-node-id="vI0UgjeNr2yjKkIhzlFhQJ">
+  <div class="sec-head" data-page-node-id="O130pkXprMTmJbKJgCKWtE"><span class="idx" data-page-node-id="B68w10RAgxJ1WdcOV3ThPY">03</span><h2 data-page-node-id="nwl5iHiV90yZ03r53s6Sx0">全科定位：本模块在 11 周里的位置</h2></div>
+  <p class="sec-desc" data-page-node-id="Rry4Yv9gQElwxdGlJscihA">四个"主攻型"模块按内容量分配天数，政治理论与常识全程滚动，最后留足强化与模考。</p>
+  <div class="card" data-page-node-id="EIAaKhMPP60CB5FI8vHCIU">
+    <table data-page-node-id="B6XtDN7j2BwXFb09KePnY2">
+      <thead data-page-node-id="XXAH15lTL28eJcHm0Lys8k"><tr data-page-node-id="GCtEYwMqOUJGHuR0kBmJhd"><th data-page-node-id="kY4IPl9A037j4fh5eKCK9A">阶段</th><th data-page-node-id="u5912dDDt1pPeem2pRDxhW">顺序（第 N 天）</th><th data-page-node-id="DzLdb3N9SAbbrD4O1yHk2V">内容</th><th data-page-node-id="LiiEx4iZf1Ltb2EWEOGdWa">天数</th></tr></thead>
+      <tbody data-page-node-id="fwfQlWQq6aDdM1CsNaX39j">
+        <tr class="mine" data-page-node-id="iExBBHniFMVCEiAaIsNMUC"><td data-page-node-id="SvKYwdaWErWziXPEqOGz4a">基础攻坚</td><td data-page-node-id="xMSmms98DPQWGMGqvVuKHc">第 1 – 9 天</td><td data-page-node-id="Cylznx20jD2ihIcIWbjhHD"><b data-page-node-id="LEEFvNfVCQRj4xKFNOKGKj">资料分析（本模块）</b></td><td class="num" data-page-node-id="5zKUGwipN94RTT6RyBDSEl">9</td></tr>
+        <tr data-page-node-id="oCAT7x4rgGjohzfzMBDbno"><td data-page-node-id="TpwDp8eLBZaNTFlYpAjNS0">基础攻坚</td><td data-page-node-id="KEr8DuGWSpdtalWST98bBD">第 10 – 22 天</td><td data-page-node-id="whuIivsUVwbieDSGxGU8xu">判断推理</td><td class="num" data-page-node-id="Bcb0uHiFIZvyyQCktz26Df">13</td></tr>
+        <tr data-page-node-id="4kFCODlenH1fcRnYfqZBFy"><td data-page-node-id="MUAxNSeaTWEDB5PRV4eoiz">基础攻坚</td><td data-page-node-id="VOJlD99NOkpC3pnu2KtjSY">第 23 – 31 天</td><td data-page-node-id="lAUMv8MGpBLA4PQPMjZen6">言语理解</td><td class="num" data-page-node-id="NsgNWLgXFgjwfWGbzqQPjg">9</td></tr>
+        <tr data-page-node-id="pXhVnitEX0RdHwPLSVbBZh"><td data-page-node-id="Z7EmAduexLCIf5rfRC3GCB">基础攻坚</td><td data-page-node-id="FJCkiuPkGA7DOkCAtpmt7s">第 32 – 38 天</td><td data-page-node-id="QeTwG0EVeY4WTGNOT7E7Bm">数量关系（只攻高频母题）</td><td class="num" data-page-node-id="0rBAPnm8yAvZGGGRUL8K7F">7</td></tr>
+        <tr data-page-node-id="52KHcRPb6GNtVEsv5GxdX4"><td data-page-node-id="VNRPseXkeiXJVTFnBMmsow">全程滚动</td><td data-page-node-id="6j8dK6fwNYrfqVcmSvNryG">第 1 天起（全程）</td><td data-page-node-id="7AshT8UGDDrnocw1oYL156">政治理论 + 常识判断（每日 30 分钟）</td><td class="num" data-page-node-id="06OaehpfbvGi35v6QgrdBA">—</td></tr>
+        <tr data-page-node-id="gTJB5DX3qTg4VW3lMs57Li"><td data-page-node-id="2IufNcQsMfp0puffZmWjUo">专项强化</td><td data-page-node-id="8eu1uBICLbL8B83MEfikus">第 39 – 58 天</td><td data-page-node-id="FInaOAH5BMvuy3tW96xkeM">六模块混合限时训练</td><td class="num" data-page-node-id="u0MurSlo58kqLv7ogPHajB">20</td></tr>
+        <tr data-page-node-id="ExR3dh6HWCoCrrl6dJFkbi"><td data-page-node-id="by3EDJGWz7EGCa0ksbK8qc">冲刺模考</td><td data-page-node-id="A5nWYT4UtTEfPYEqj6n41X">第 59 – 79 天</td><td data-page-node-id="SbkMb0TCk1b58jKeKxdED2">全科套题 + 错题复盘</td><td class="num" data-page-node-id="SuswpiWV7IyIVBY8WuHusE">21</td></tr>
+      </tbody>
+    </table>
+    <div class="tip" data-page-node-id="tywKWiQBy1Ql77s4Z3lFTv"><b data-page-node-id="zjszeJ7huE2FjfXfaaVOLy">本模块完成后的动作：</b>主攻期结束后进入判断推理主攻，同时资料分析转入每日保温——<b data-page-node-id="10wbB5zkyfegk6hyYaQ7OC">每天 15 分钟，一天都不断</b>。</div>
+  </div>
+</section>
+
+<!-- 4 0基础 -->
+<section id="start" data-page-node-id="YnCPFBcT8iMi9gqzdwddvY">
+  <div class="sec-head" data-page-node-id="E7Vj5K9yAGrnyPBTwonMdh"><span class="idx" data-page-node-id="V2s69iNJqT6XB6vHwe6L0f">04</span><h2 data-page-node-id="GtvAE1RcYCCM5jkI6Ljmp6">0 基础起步：先搞懂这 4 件事</h2></div>
+  <div class="card" data-page-node-id="un3qK5g4uYSmG6eyx05yIw">
+    <h3 data-page-node-id="jXSzzqa4pgyJQDsl5ArBmH">① 资料分析是什么</h3>
+    <p style="font-size:13.6px;color:var(--ink-2)" data-page-node-id="aWwe20D7fDCtvFtGiVsV9k">给你一段材料（文字 / 表格 / 图形），下面配 5 道题，问某个数据的增长率、比重、平均数、倍数。它<b data-page-node-id="4aP9AQ0gF3Vml6KY0fUf7e">不考数学思维，只考"读得快、找得准、算得巧"</b>。所有题目本质都在问这四类问题之一。</p>
+  </div>
+  <div class="card" data-page-node-id="5mZI4F5Uhmc8ByuVtKETGh">
+    <h3 data-page-node-id="8rNCHlGDfTvkJZIjsAJJJH">② 三种材料结构</h3>
+    <table data-page-node-id="NQT9LYoNXZoBjeJ99rNxgZ">
+      <thead data-page-node-id="cUV4xLoo8CfoIk9wXzmYr5"><tr data-page-node-id="GhNBpJclHu5RB8meKGIkaO"><th data-page-node-id="bIKpzoG9z4ZPczH8JQjL1X">类型</th><th data-page-node-id="tOF0H20zcMGAwbc4rT2urr">特点</th><th data-page-node-id="DXzQmEklCtqyoCe4uPiyh0">读法</th></tr></thead>
+      <tbody data-page-node-id="Cl8j8CEKlxUviCIhqvd72D">
+        <tr data-page-node-id="uiGQmmJjhlXnpyoB2Umq0j"><td data-page-node-id="sKziYhCSqtnE9iTnACxeeE"><b data-page-node-id="s6UHxM6wCTwY2w3sMqodp8">文字型</b></td><td data-page-node-id="o21Rj7B84a3R3ChODaefCF">大段文字，数据藏在句子里</td><td data-page-node-id="MCv43VnPP1zInnlY9RmcuK">先看首句定主题，用"时间 + 主体"标记段落结构</td></tr>
+        <tr data-page-node-id="Dy9W1cofLiiFLBrYd2b8bG"><td data-page-node-id="ftLIHY9oQV4fytrArfiXg9"><b data-page-node-id="eDJAD31k9WavGXAsJRH81I">表格型</b></td><td data-page-node-id="WKnQ8GSDVONzgbdtkQzBXR">行列交叉定位，信息最密集</td><td data-page-node-id="q5UXZKhDj0xtvHxzPgGLXU">先读行标题（主体）和列标题（指标），注意"单位"行</td></tr>
+        <tr data-page-node-id="JGssjGJQqpPVq6aRo6wSOM"><td data-page-node-id="QdsVJf9OQ6usK7OfwYj1t1"><b data-page-node-id="Zy01MQRqSBkEcxqvnL6iik">图形型</b></td><td data-page-node-id="yfnG1htnGC0zljXHrU7IiI">柱状图 / 折线图 / 饼图</td><td data-page-node-id="dl7PbTOWqWKarA7BqwZmaI">先看图例和纵轴单位，柱状看高低、折线看趋势、饼图看占比</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="card" data-page-node-id="bfk5FtwUU0VPwEWtoG0DuN">
+    <h3 data-page-node-id="lgx00mRgaB7nVllPUgWJQC">③ 时间概念（最容易混）</h3>
+    <table data-page-node-id="xOnFFJGPpSHuPUxeYktDpD">
+      <thead data-page-node-id="AB6C35FDRnUA747HFEsZxa"><tr data-page-node-id="YvjsJy4TePT9G9S0P8DHht"><th data-page-node-id="npmPj1HKTWSXZGvQd6YDOK">概念</th><th data-page-node-id="McEJjKi21yvTZHrgoebINS">含义</th><th data-page-node-id="hThK0OagnHExoVx37eQTxQ">用法</th></tr></thead>
+      <tbody data-page-node-id="TE48qbtG9p8Y1GW95LM17m">
+        <tr data-page-node-id="3dHxRzsikEc90dCE2P9fND"><td data-page-node-id="hw5lu8TW6bUz21a1qFbBfL">同比</td><td data-page-node-id="R86B3XfvOeuBoPgICLydWD">与<b data-page-node-id="a1iMveCt9PU0vDoov3EFw1">去年同期</b>比</td><td data-page-node-id="ZlU5EHmDskRRptF8Co1LQV">2025年6月 vs 2024年6月</td></tr>
+        <tr data-page-node-id="lOQeSZBaRByHI5XCj585DK"><td data-page-node-id="Ci67PDipNrTtkG7FGCuWBE">环比</td><td data-page-node-id="VMfmZiFix8vBWhoiml6uVA">与<b data-page-node-id="CJGsvaQN0FRkmfKHAQ1sxb">上一个统计周期</b>比</td><td data-page-node-id="669m9iA8ZxQImzX1OSYy19">2025年6月 vs 2025年5月</td></tr>
+        <tr data-page-node-id="Du30jGkHXYaztWRz1lB4ZN"><td data-page-node-id="CTzQZvs1eBk9NBPxI3GSLs">基期 / 现期</td><td data-page-node-id="8HP4gqCtcJDH5020G5XbYC">作为对比基准的时期 / 当前时期</td><td data-page-node-id="R0FWAOZFJ093ocl5DjWjvb">基期一般是"去年"，现期是"今年"</td></tr>
+      </tbody>
+    </table>
+    <div class="danger" data-page-node-id="5EauUTdnJsZq1FvhCEl7a2"><b data-page-node-id="UIhgQRVutRHAejRfv4TXP5">高频坑：</b>题目问的是"2024 年"，而材料给的是 2025 年 → 你要算的是<b data-page-node-id="ESzaAtuXAChbLvic7GueDA">基期量</b>，不是现期。看错时间等于白算。</div>
+  </div>
+  <div class="card" data-page-node-id="dnMYNtVbFHEVIaYLClqhgE">
+    <h3 data-page-node-id="85h0zZqXDvshdgvFoNhy1H">④ 单位陷阱</h3>
+    <p style="font-size:13.6px;color:var(--ink-2)" data-page-node-id="jF9DAZHpEvPD8SGbhDl9WD">材料里数据单位可能是"万元 / 亿元 / 万人 / %/‰"，而题目问的可能是另一种。做题第一时间<b data-page-node-id="kGKSNMIfkdGWZnts3afPfp">圈出单位</b>。特别注意：<span class="num" data-page-node-id="C6EID1M9MemEtOvwLtIkcK">1 亿 = 10000 万</span>，<span class="num" data-page-node-id="aGAQ1AypZDQpI6d90kk0yy">1% = 10‰</span>。</p>
+  </div>
+</section>
+
+<!-- 5 四步法 -->
+<section id="method" data-page-node-id="krYRH6FpNPkyXbokhHV5Vc">
+  <div class="sec-head" data-page-node-id="qIttpcTmI0QCB82bRY3Kzm"><span class="idx" data-page-node-id="g31lQjitNkvxznV56YYcx6">05</span><h2 data-page-node-id="YHTVtqWS4EUTB7gXp3UQG6">四步解题法（每道题都套这个流程）</h2></div>
+  <p class="sec-desc" data-page-node-id="5aZ6hlG5Orz0RSfQkvTzvg">把它变成肌肉记忆，是从 0 基础到 90% 的底层方法。主攻期每做一题都默念这四步。</p>
+  <div class="steps4" data-page-node-id="xKvtUnUoPWqieO2pxGbNkd">
+    <div class="step" data-page-node-id="5yGFzsRX1NuYF5t8DB8FMU"><i data-page-node-id="pqyxLg9yOSBahgcztH2Jda">STEP 1</i><h4 data-page-node-id="yI1upn2veIDtUMivGBWmr4">读题</h4><p data-page-node-id="Ad37Gh6ot17EFEMfDC1ubj">只看问题，圈出三个关键词：<b data-page-node-id="urdAmeBNd6ftGELEe3ysFF">时间、主体、考点词</b>。先别碰材料。</p></div>
+    <div class="step" data-page-node-id="EoBb1WfRDf5iM8nic2diVi"><i data-page-node-id="YQaYMMGGK3KI2yGAGm02v7">STEP 2</i><h4 data-page-node-id="YzZy8Ix1S7wCpMW4hWlj3q">定位</h4><p data-page-node-id="wEemV9KqRJ6xDgILVOpDlA">带着关键词回材料找数。文字型扫段落找主体，表格型先看行列标题。注意单位和时间。</p></div>
+    <div class="step" data-page-node-id="2goNT49PGbztTgt8PFOqNh"><i data-page-node-id="6a1oykZJn8Ac7IeMZl6d3J">STEP 3</i><h4 data-page-node-id="HB5412C625Eiwd9upe3Pc9">列式</h4><p data-page-node-id="MOvszxEQbrXxrNeipO2Xhd">判断考点 → 直接写公式 → 代入数据。这一步<b data-page-node-id="s3iXjWAoEyeKK3ZKkC3tGY">不计算</b>，只把式子列对。</p></div>
+    <div class="step" data-page-node-id="x30ciUPJTTygqpMzqKsnrc"><i data-page-node-id="aNKxNGUJd0ChoW7kjqrrdg">STEP 4</i><h4 data-page-node-id="AKzNLNr3sr0NDS8dOv7je5">速算</h4><p data-page-node-id="0C3ElQlriPyEac9S2BOyCM">用截位直除等技巧算出结果，<b data-page-node-id="835QfX23zHBIXsE23rwU7O">结合选项</b>判断够不够用，绝不追求精确值。</p></div>
+  </div>
+  <div class="ok" data-page-node-id="JIZSt6MRvcGO5co19Zj6KJ"><b data-page-node-id="PjCmfO92dK3w1GPi0tx9Tx">练法的关键：</b>D1–D4 把 STEP 1–3 练到"零错误"（列式全对），D5 起才开始猛练 STEP 4（速度）。<b data-page-node-id="FCBNJX6H5EAJO9WPjfcAV5">顺序不能反</b>——先快后准＝假快。</div>
+  <div class="tip" data-page-node-id="gmTtShGu4GHcb2U8NOjfnd"><b data-page-node-id="2iUGZIZZBeSlBhztIYKEQw">选择题解法总则（全模块通用）：</b>行测都是单选题，解析不走"一步步精算"。固定三步——<b data-page-node-id="BTJhcfRyzxD8gswxVZHofe">①先排除</b>明显错误项 → <b data-page-node-id="1R9cMYPCG76ejaDdFBm9He">②再缩小</b>到 1–2 项 → <b data-page-node-id="lEUa7jlOedmHjJdBYmC1tG">③后择优</b>（仅在无法区分时才精确比对）。<b data-page-node-id="grWTiMKvHB3qyBF5wXQtfL">能排除的绝不硬算。</b></div>
+</section>
+
+<!-- 6 日程 -->
+<section id="plan" data-page-node-id="lXzD2P2d41zqGCUhFFxK3s">
+  <div class="sec-head" data-page-node-id="qBtgSOM78z2AFCcHWutUuo"><span class="idx" data-page-node-id="kbfR14a1rWnnLkcx5Vkx8N">06</span><h2 data-page-node-id="aOKM3gqGQqMULAhtiEYFCY">主攻期 9 天日程表（每天打卡）</h2></div>
+  <p class="sec-desc" data-page-node-id="ZzDQ1ouzrnTpCEUMKFWYLP">每日约 3 小时：学习 60–75 分钟 + 刷题 60–75 分钟 + 复盘 30 分钟。时间紧可压缩题量，但<b data-page-node-id="uK4FTDMY4iXUgc9HpGIrTf">复盘与限时不能省</b>。</p>
+
+  <div class="day" data-day="1" data-page-node-id="hxr4fmna8jIIDUZr24s1nY"><div class="dchk" data-page-node-id="Gna4AtautDqQzF3zVtvmKz"><input type="checkbox" data-id="d1" data-page-node-id="wrNdMAJQoRCr5BO2Z2F2qW"></div>
+    <div class="day-no" data-page-node-id="iIu0Y2iEzjIFbcwLeh9ocd"><b data-page-node-id="cgM2RFDx6uATzNxozYMaUf">D1</b></div>
+    <div class="day-main" data-page-node-id="yPcGFqkPtrSSZZeHKzeCmm"><h4 data-page-node-id="9J8NUy4dbAIvTVzq2JWM3i">建框架 + 增长类公式 <span class="tag t-base" data-page-node-id="MWJZ6BehoOvuThOezB4w00">打基础</span></h4>
+      <ul data-page-node-id="LLXG4J5HSQqB5Wa5rixPmr"><li data-page-node-id="Qc2WBzjH1kU1M9NKOqeeK5">读"0基础必懂4件事"，用真题材料认三种结构</li><li data-page-node-id="Fo5Pd73tJLBH6fiKm9KhdE">学增长类四公式：增长率、增长量、基期、现期</li><li data-page-node-id="lmIweJsNC5Zgs94FxSvN2V">练 25 题增长类，只求列式正确，不限时</li></ul></div>
+    <div class="day-out" data-page-node-id="snqwrZ5r4DQxlBM2C9X5Ay"><b data-page-node-id="wdWRVsou5fZomlpeuixGHv">产出</b>默写增长类 4 公式正确率 100%</div></div>
+
+  <div class="day" data-day="2" data-page-node-id="pICcsMu2ELH1x0nM8PUEOQ"><div class="dchk" data-page-node-id="wY16RTYumuM4a9PFOghlhB"><input type="checkbox" data-id="d2" data-page-node-id="doY4blo3hdqKB8ZoJpElzS"></div>
+    <div class="day-no" data-page-node-id="zTWCj2Kw0fmoioue2Hfp0B"><b data-page-node-id="XbjCRBmanOXEHXweCtySyb">D2</b></div>
+    <div class="day-main" data-page-node-id="1ZqO1nUtmLzruItTXWvvZZ"><h4 data-page-node-id="2ZA0ytbT0nIiFzXB8UOHFG">增长类强化 <span class="tag t-base" data-page-node-id="4nZtdU24a4MdBeIoU6yQDZ">打基础</span></h4>
+      <ul data-page-node-id="JTKClUFJGNtXNsaxfRSuoJ"><li data-page-node-id="Bi9I10OgjStCvQhKCeXabE">重点攻克：基期量、增长量、隔年增长率</li><li data-page-node-id="tDdgDAsIArMwpdhiO5Hlhp">练 35 题增长类，开始计时（单题 ≤ 60 秒）</li><li data-page-node-id="w2ArvtGOb3TiA5j9jmlz7N">错题分类：公式错 / 找数错 / 算错</li></ul></div>
+    <div class="day-out" data-page-node-id="vKFxgIfmx9q4NtbrlVslV2"><b data-page-node-id="V0mitMuhQJi3Ygm6APDYwv">产出</b>增长类正确率 ≥ 85%</div></div>
+
+  <div class="day" data-day="3" data-page-node-id="efOcHixgrSPukJIx8GLqwK"><div class="dchk" data-page-node-id="KnHYCnDAEvib5ShL71iFD2"><input type="checkbox" data-id="d3" data-page-node-id="xO74ZM7glBIE2MqcOGQWgV"></div>
+    <div class="day-no" data-page-node-id="n9vLrmWHYnAfo0mpKkoPYD"><b data-page-node-id="uCgaTDOB7Yba9FOv51Julw">D3</b></div>
+    <div class="day-main" data-page-node-id="EH7AbrBeODGgx5adjPZMCN"><h4 data-page-node-id="E9qHEPkdfVkDbOEHzqhPfF">比重类公式 <span class="tag t-base" data-page-node-id="KTP51gsU67tp3YyupXyo2N">打基础</span></h4>
+      <ul data-page-node-id="Kc00HJ3EcUL3anXlzNndGn"><li data-page-node-id="plrvb1nmHOBiZf8xToAzXo">现期比重、基期比重、比重变化（升降判断）</li><li data-page-node-id="ZYubQF1IjRBOiotBAT7QwS">记住秒杀点：<b data-page-node-id="wGEkJBSDXD69EJKCXyIPaI">部分增速 &gt; 整体增速 → 比重上升</b></li><li data-page-node-id="qqGxUJApo0ETrQXL6X3yGT">练 35 题比重类</li></ul></div>
+    <div class="day-out" data-page-node-id="IvCOonStyjGKdZvMqgeY4U"><b data-page-node-id="0ljKy0LQZ5k23ypd9AwXZQ">产出</b>比重类正确率 ≥ 85%</div></div>
+
+  <div class="day" data-day="4" data-page-node-id="q43WDl2bx8XAUFTToZRqau"><div class="dchk" data-page-node-id="RBMN5JpPIGzKRQCItlyoUc"><input type="checkbox" data-id="d4" data-page-node-id="OF92mhw1xyDPJ7NJvGwREY"></div>
+    <div class="day-no" data-page-node-id="CQRSe1h75GVM3zNLTwH4PJ"><b data-page-node-id="YAhHsRn66S3EdezUTuhFkC">D4</b></div>
+    <div class="day-main" data-page-node-id="mGOxufugEErTjzm3zcHtH7"><h4 data-page-node-id="5ukZr2HJz5Wgb7usR7G2pF">平均数 + 倍数 <span class="tag t-base" data-page-node-id="pKTOf9VzngBHSfngLHcE4q">打基础</span></h4>
+      <ul data-page-node-id="o9eE6JHTqvLcbragCRJol3"><li data-page-node-id="KIIJAoK4FLidUiHQaEYYWG">平均数、平均数增长率；是几倍 / 多几倍</li><li data-page-node-id="6QAOHDDiwZN6V7w92FhYj0">死磕这个坑：<b data-page-node-id="6juxDTlyhr8Kb3rHGjDnI9">"多几倍" = "是几倍" − 1</b></li><li data-page-node-id="iaApQDNvyHp5Ozbvazp5CG">练 35 题，并完整回顾四类公式</li></ul></div>
+    <div class="day-out" data-page-node-id="pRUFsnWYGJjWalkV0m0yFI"><b data-page-node-id="eQqqVYW5NoO41WDAenMxQg">产出</b>四类公式全部过关</div></div>
+
+  <div class="day" data-day="5" data-page-node-id="j6k9SttmRglwpidb98aZNa"><div class="dchk" data-page-node-id="gjDiHKM0ld5mIdIu1J4QQW"><input type="checkbox" data-id="d5" data-page-node-id="0z2IrW0gwwZdeVzOzQZoAg"></div>
+    <div class="day-no" data-page-node-id="ypUyOVUBJ3K77p5CtYlZ2f"><b data-page-node-id="V6w823xzpvIso2r6fT084B">D5</b></div>
+    <div class="day-main" data-page-node-id="FHZu1AZEiCAUsxm9WFzA1b"><h4 data-page-node-id="a5UOsPMNjLxvQuD3crRH5f">四类混合 + 速算（上）<span class="tag t-test" data-page-node-id="yPS0y05OyxLK8qh8pXA6Ur">第1次小测</span></h4>
+      <ul data-page-node-id="7aNvpsI1dhgF3T4R2EESnp"><li data-page-node-id="5KkCGzgCvOAbgONrsnpLYF">学截位直除、首数法，强制用速算不精算</li><li data-page-node-id="Da2uPLG0j2gJ773TomujGF">混合刷 40 题，刻意练"考点识别"</li><li data-page-node-id="ghNIoyqEBGnOJh5nTJiLJD">限时一组 20 题，记录用时</li></ul></div>
+    <div class="day-out" data-page-node-id="NV2AGUPjkEoOFImHV7lbcz"><b data-page-node-id="lHD2YAToiZrmgwXYt5NujJ">目标</b>综合 ≥ 80%，单题 ≤ 55 秒</div></div>
+
+  <div class="day" data-day="6" data-page-node-id="9QsOKzVsqfYzCEKDGa1uBb"><div class="dchk" data-page-node-id="sKU7ctvEiEiRv3ANUzSQ4u"><input type="checkbox" data-id="d6" data-page-node-id="rVUCGNZQEyfm3wkt4XubY7"></div>
+    <div class="day-no" data-page-node-id="HoDBnRaQqK0PCTpIj5Wuw5"><b data-page-node-id="h88d6d2QhnAQJzCkOH02Jd">D6</b></div>
+    <div class="day-main" data-page-node-id="Qrc3nWQgE5SKw8RyFhGW7g"><h4 data-page-node-id="Q2d0OoGLu0Z9X4CuODsnO3">速算（下）+ 综合分析题 <span class="tag t-skill" data-page-node-id="AuTekaYCJgPUrSpXKynXj8">提速</span></h4>
+      <ul data-page-node-id="XPqeqTwphlrEqj1zyaUSHC"><li data-page-node-id="GsLSXODKtQIcClW8BoLA3m">特征数字法（背分数↔百分数表）、放缩法、化除为乘</li><li data-page-node-id="Bu9P8velTd06rGbWRajvXt">综合分析题：先简后繁，能排除就先排除</li><li data-page-node-id="lxh0gIUIl72A0PYYDICLur">练 8 篇材料的综合题（约 30 题）+ 速算 20 题</li></ul></div>
+    <div class="day-out" data-page-node-id="XWaOCOM8otCEXmVXHuoBtt"><b data-page-node-id="kiyg0lrnu9th2HCIUyBDDc">产出</b>单题 ≤ 45 秒，综合题 ≥ 75%</div></div>
+
+  <div class="day" data-day="7" data-page-node-id="OFkjzTquhoicl95bvH0dLr"><div class="dchk" data-page-node-id="Ystz38ZlaYv5lhbzPmEGwS"><input type="checkbox" data-id="d7" data-page-node-id="4bnkARUS2I6M9Em0AQgel0"></div>
+    <div class="day-no" data-page-node-id="qbbOrHx4PHflRHBA66uxAa"><b data-page-node-id="LvgPTEBKzC8lo7BR54BoCd">D7</b></div>
+    <div class="day-main" data-page-node-id="0b8kFIdIf5gGuB1oKzhAeJ"><h4 data-page-node-id="EiKXDiyGbcHTjYmIFuELvn">分材料类型突破 + 第2次小测 <span class="tag t-skill" data-page-node-id="fQMlG2U2sbcKGRqGRlTc9B">提速</span></h4>
+      <ul data-page-node-id="tiYDYSC9lsIGNX5GyO31Hg"><li data-page-node-id="w9Z97jjCESurKjFJuPeaRA">文字型材料 15 题（练快速分层、跳跃找数）</li><li data-page-node-id="H1IdjrvbgOmTFHKSLe6JXW">表格型材料 15 题（练行列快速定位）</li><li data-page-node-id="tNh9rjdogU5DvNlFRzFXKe">限时一组 20 题（目标 28 分钟内）</li></ul></div>
+    <div class="day-out" data-page-node-id="doJLvcyEUMBcp82Pr2f8XU"><b data-page-node-id="vYDW5HHyFcADlXVpmhxT5Q">目标</b>综合 ≥ 85%，找数 ≤ 20 秒</div></div>
+
+  <div class="day" data-day="8" data-page-node-id="jphTSYJlHFbGf8GWlJQb3O"><div class="dchk" data-page-node-id="xq5MTDWN6a6YgWsDSVu1VN"><input type="checkbox" data-id="d8" data-page-node-id="TCm6IrmdOMJj7HEWDH60yp"></div>
+    <div class="day-no" data-page-node-id="CzShAG0zp4SAeQPSbTm4OH"><b data-page-node-id="kKYUOwWWasHWQH6FosyS8d">D8</b></div>
+    <div class="day-main" data-page-node-id="r2UkyxCWwnEtBnVChSVOek"><h4 data-page-node-id="DkiAObnBi4BDPplGSBV1LO">限时套题 + 错题重做 <span class="tag t-speed" data-page-node-id="DIUuWbfF3hIWxdo2I5lM9o">冲刺</span></h4>
+      <ul data-page-node-id="Q5HjrQqwmMOG2gpFAXlfis"><li data-page-node-id="ZktvVW04iN4yIsMQBi3k4u">2 组完整套题（每组 20 题 / 限时 25 分钟）</li><li data-page-node-id="3pRIm53TMLmM8kHhQTg0kH">重做前 7 天错题，挑出"重复错"的题</li><li data-page-node-id="dSNduccoxViY0xFnzY3w5p">复盘：超时题是"不会"还是"没舍得跳"</li></ul></div>
+    <div class="day-out" data-page-node-id="1Afg3F3C4k5UkN3A2fKRcn"><b data-page-node-id="LnVBklBwmQxV2XJLRIAS4C">目标</b>正确率 ≥ 88%</div></div>
+
+  <div class="day" data-day="9" data-page-node-id="BvGWjwaqxHYBnIiGgPwjFM"><div class="dchk" data-page-node-id="HBWJR9FLgeaaO9G7UsTtxF"><input type="checkbox" data-id="d9" data-page-node-id="jA1LncEuVb704q6XU8xg7i"></div>
+    <div class="day-no" data-page-node-id="nas5D90HAn6unZeoJHQXix"><b data-page-node-id="4ewkCbPlpsIYz8ueh1uCiE">D9</b></div>
+    <div class="day-main" data-page-node-id="mb6eG1TBDwaO5KwgdMCpA3"><h4 data-page-node-id="qSmTs6pK18JvLiM4ra1ln6">真题全真模拟 + 收官 <span class="tag t-test" data-page-node-id="oAEBkYaueNjf3FzwI3h0EK">终测</span></h4>
+      <ul data-page-node-id="zFt8wgWSerFBeXgzegO8kj"><li data-page-node-id="12KuRA0Q2LsBFKy7NVLB5i">近 3 年国考真题的资料分析部分，严格 25 分钟</li><li data-page-node-id="fb2w6iBoacGK9h3qCy3zI5">默写公式速查卡 + 特征数字表</li><li data-page-node-id="wRkfgUWrrxBUk857vMnBMb">过一遍高频坑点清单，制定保温期安排</li></ul></div>
+    <div class="day-out" data-page-node-id="bO640RM6Xx1AgMkSY2Fqjs"><b data-page-node-id="hsrSzbjQxArGzlF39VZB3B">目标</b>稳定 90%，节奏成型</div></div>
+
+  <div class="tip" data-page-node-id="qjn5QOiGKgZTDvlDAvDwXj"><b data-page-node-id="q77RnluzqecKgNtcqmKDGN">题量参考：</b>主攻期 9 天累计约 <b data-page-node-id="Q3FqRHuTwmaw3agNnlp1Vy">300 题</b>（日均 33 题）。主攻期结束后转入保温期：<b data-page-node-id="KQrVVMetuE7zCKXSLAfOLY">每天 1 组 20 题限时</b>，一直持续到考前。</div>
+</section>
+
+<!-- 6.5 每天具体怎么做 -->
+<section id="howto" data-page-node-id="howto0000000001">
+  <div class="sec-head" data-page-node-id="howto0000000002"><span class="idx" data-page-node-id="howto0000000003">07</span><h2 data-page-node-id="howto0000000004">每天具体怎么做（操作手册）</h2></div>
+  <p class="sec-desc" data-page-node-id="howto0000000005">上半部分说了"练多少题"，这里说<b>具体怎么练</b>——每天按固定 4 段走，并配套《<a href="资料分析_题本与母题解析.html" style="color:var(--brand);font-weight:600">题本与母题解析</a>》做题。</p>
+
+  <div class="card" data-page-node-id="howto0000000006">
+    <h3 data-page-node-id="howto0000000007">每天固定 4 段（约 3 小时）</h3>
+    <div class="steps4" data-page-node-id="howto0000000008">
+      <div class="step" data-page-node-id="howto0000000009"><i data-page-node-id="howto0000000010">第 1 段 · 45min</i><h4 data-page-node-id="howto0000000011">学</h4><p data-page-node-id="howto0000000012">读本计划对应章节 + 题本对应<b>粉笔分类</b>的「识别特征」「核心钥匙」「选项怎么用」。只读，不做题。</p></div>
+      <div class="step" data-page-node-id="howto0000000013"><i data-page-node-id="howto0000000014">第 2 段 · 15min</i><h4 data-page-node-id="howto0000000015">默写</h4><p data-page-node-id="howto0000000016">合上资料，默写当天公式 / 特征数字表，再对照订正。<b>默写不出=没学会</b>，回炉。</p></div>
+      <div class="step" data-page-node-id="howto0000000017"><i data-page-node-id="howto0000000018">第 3 段 · 75min</i><h4 data-page-node-id="howto0000000019">做</h4><p data-page-node-id="howto0000000020">先精读题本的<b>典型题解析</b>（学"怎么排除"），再<b>盖住答案限时做训练题组</b>。</p></div>
+      <div class="step" data-page-node-id="howto0000000021"><i data-page-node-id="howto0000000022">第 4 段 · 30min</i><h4 data-page-node-id="howto0000000023">复盘</h4><p data-page-node-id="howto0000000024">每道错题归到四类错因（找数 / 列式 / 算错 / 看题），写一句话错因。不写错因＝白做。</p></div>
+    </div>
+    <div class="danger" data-page-node-id="howto0000000025"><b data-page-node-id="howto0000000026">两条红线：</b>①<b>限时</b>——第 3 段的训练题组必须计时，不限时的正确率没有意义；②<b>复盘</b>——第 4 段不能省，宁可少做 10 题，也要把错因写清楚。</div>
+  </div>
+
+  <div class="card" data-page-node-id="howto0000000027">
+    <h3 data-page-node-id="howto0000000028">D1–D9 逐日操作明细</h3>
+    <table data-page-node-id="howto0000000029">
+      <thead data-page-node-id="howto0000000030"><tr data-page-node-id="howto0000000031"><th data-page-node-id="howto0000000032">日</th><th data-page-node-id="howto0000000033">学什么（本计划）</th><th data-page-node-id="howto0000000034">默写什么</th><th data-page-node-id="howto0000000035">做题本哪里</th><th data-page-node-id="howto0000000036">当天产出</th></tr></thead>
+      <tbody data-page-node-id="howto0000000037">
+        <tr data-page-node-id="howto0000000038"><td data-page-node-id="howto0000000039"><b data-page-node-id="howto0000000040">D1</b></td><td data-page-node-id="howto0000000041">§04「0基础必懂4件事」+ §08 基期现期 / 增长率 / 增长量 公式</td><td data-page-node-id="howto0000000042">现期、基期、增长率、增长量 共 6 个公式</td><td data-page-node-id="howto0000000043">题本<b>材料 1 文字资料 + 材料 2 统计表</b>（只练读法）；<b>考点 5 简单计算</b>典型题 + <b>考点 6 基期与现期</b>典型题 1、2</td><td data-page-node-id="howto0000000044">公式默写 100%，简单计算不错</td></tr>
+        <tr data-page-node-id="howto0000000045"><td data-page-node-id="howto0000000046"><b data-page-node-id="howto0000000047">D2</b></td><td data-page-node-id="howto0000000048">§08 增长率 / 增长量 公式 + §09 截位直除</td><td data-page-node-id="howto0000000049">间隔增长率、增长量、年均增长率</td><td data-page-node-id="howto0000000050">题本<b>材料 3 统计图</b>（练读图）；<b>考点 7 增长率</b>全部 + <b>考点 8 增长量</b>全部，另补 30 题</td><td data-page-node-id="howto0000000051">增长率 + 增长量 ≥ 88%</td></tr>
+        <tr data-page-node-id="howto0000000052"><td data-page-node-id="howto0000000053"><b data-page-node-id="howto0000000054">D3</b></td><td data-page-node-id="howto0000000055">§08 比重类公式</td><td data-page-node-id="howto0000000056">基期比重公式 + 比重升降秒杀口诀</td><td data-page-node-id="howto0000000057">题本<b>考点 9 比重问题</b>典型题 1–4 + 训练题组</td><td data-page-node-id="howto0000000058">比重问题 ≥ 90%</td></tr>
+        <tr data-page-node-id="howto0000000059"><td data-page-node-id="howto0000000060"><b data-page-node-id="howto0000000061">D4</b></td><td data-page-node-id="howto0000000062">§08 平均数、倍数与比值 公式</td><td data-page-node-id="howto0000000063">平均数增长率 + "多几倍 = 是几倍 − 1"</td><td data-page-node-id="howto0000000064">题本<b>考点 10 平均数问题 + 考点 11 倍数与比值</b> 全部</td><td data-page-node-id="howto0000000065">全部考点公式过关</td></tr>
+        <tr data-page-node-id="howto0000000066"><td data-page-node-id="howto0000000067"><b data-page-node-id="howto0000000068">D5</b></td><td data-page-node-id="howto0000000069">§09 速算技巧全表（截位直除/首数法）</td><td data-page-node-id="howto0000000070">特征数字表（1/7–1/16）</td><td data-page-node-id="howto0000000071">题本<b>「13 · 2026 真题精练」</b>5 题限时 7 分钟（第 1 次）+ <b>考点 12 综合分析</b>典型题 + 综合限时套题（第 1 次）</td><td data-page-node-id="howto0000000072">真题 5 题 ≥ 3 对，综合 ≥ 80%，单题 ≤ 55 秒</td></tr>
+        <tr data-page-node-id="howto0000000073"><td data-page-node-id="howto0000000074"><b data-page-node-id="howto0000000075">D6</b></td><td data-page-node-id="howto0000000076">§09 特征数字法 / 放缩法 / 化除为乘</td><td data-page-node-id="howto0000000077">特征数字对照表</td><td data-page-node-id="howto0000000078">题本<b>真题精练 5 题第 2 遍（盖住解析）</b> + 综合套题重做 + <b>8 篇综合题</b>（每篇限 90 秒做完最后 1 题）</td><td data-page-node-id="howto0000000079">真题 5 题 ≥ 4 对，单题 ≤ 45 秒，综合 ≥ 75%</td></tr>
+        <tr data-page-node-id="howto0000000080"><td data-page-node-id="howto0000000081"><b data-page-node-id="howto0000000082">D7</b></td><td data-page-node-id="howto0000000083">§04 材料类型（文字 / 表 / 图 / 综合 复读）</td><td data-page-node-id="howto0000000084">——</td><td data-page-node-id="howto0000000085">题本<b>材料 4 综合资料</b>；文字型 15 题 + 表格型 15 题（练定位）</td><td data-page-node-id="howto0000000086">综合 ≥ 85%，找数 ≤ 20 秒</td></tr>
+        <tr data-page-node-id="howto0000000087"><td data-page-node-id="howto0000000088"><b data-page-node-id="howto0000000089">D8</b></td><td data-page-node-id="howto0000000090">§10 高频坑点清单</td><td data-page-node-id="howto0000000091">——</td><td data-page-node-id="howto0000000092">2 组完整套题（各 20 题 / 限时 25 分钟）+ 重做前 7 天错题</td><td data-page-node-id="howto0000000093">正确率 ≥ 88%</td></tr>
+        <tr data-page-node-id="howto0000000094"><td data-page-node-id="howto0000000095"><b data-page-node-id="howto0000000096">D9</b></td><td data-page-node-id="howto0000000097">§04–§10 全览</td><td data-page-node-id="howto0000000098">公式速查卡 + 特征数字表（全默）</td><td data-page-node-id="howto0000000099">近 3 年国考真题资料分析，严格 25 分钟</td><td data-page-node-id="howto0000000100">稳定 90%，节奏成型</td></tr>
+      </tbody>
+    </table>
+    <div class="ok" data-page-node-id="howto0000000101"><b data-page-node-id="howto0000000102">题本怎么配合：</b>题本按<b>粉笔 12 分类</b>组织（材料类型 4 类 + 考点 8 类）。D1–D4 靠<b>材料 1–3 + 考点 5–11</b> 建立公式与定位反射；D7 补<b>材料 4 综合资料</b>；D5–D9 靠<b>考点 12 综合分析 + 综合限时套题</b>练速度与综合分析，其中 <b>D5–D6 各安排一遍「2026 真题精练」</b>（第 1 遍看解析学排除，第 2 遍盖住解析限时做）；真题暴露的<b>混合增长率</b>缺口回考点 7 补。做题本时永远记住——<b>先看解析怎么排除，再自己动手</b>。</div>
+  </div>
+
+  <div class="card" data-page-node-id="howto0000000103">
+    <h3 data-page-node-id="howto0000000104">不会做的题怎么办（三档处理）</h3>
+    <div class="steps4" data-page-node-id="howto0000000105">
+      <div class="step" data-page-node-id="howto0000000106"><i data-page-node-id="howto0000000107">30 秒内</i><h4 data-page-node-id="howto0000000108">还在找数</h4><p data-page-node-id="howto0000000109">说明定位慢 → 标记，先跳，做完回头。这属于"找数"问题，不是"不会"。</p></div>
+      <div class="step" data-page-node-id="howto0000000110"><i data-page-node-id="howto0000000111">列不出式</i><h4 data-page-node-id="howto0000000112">考点没认准</h4><p data-page-node-id="howto0000000113">回题本对应「考点」的<b>识别特征</b>，把题干关键词和粉笔分类对上号再重做。</p></div>
+      <div class="step" data-page-node-id="howto0000000114"><i data-page-node-id="howto0000000115">式子对了</i><h4 data-page-node-id="howto0000000116">算不动</h4><p data-page-node-id="howto0000000117">回到题本看解析<b>是用哪种速算/排除</b>做的，把那个技巧抄进错题本。</p></div>
+    </div>
+    <div class="tip" data-page-node-id="howto0000000118"><b data-page-node-id="howto0000000119">最重要的一条心法：</b>资料分析题<b>永远先看选项</b>。选项量级差得远就直接估，别把每道题都当成"必须精确算出唯一值"。<b>能排除的绝不硬算</b>——这也是题本里每道解析的第一动作。</div>
+  </div>
+</section>
+
+<!-- 7 公式 -->
+<section id="formula" data-page-node-id="NSmeRnyEQfxi5LrSvPTNuG">
+  <div class="sec-head" data-page-node-id="PpsR79GbfXt9rq4ETqBL7I"><span class="idx" data-page-node-id="W0U7qUVrKwdrN2wpKH4zeH">08</span><h2 data-page-node-id="akz4vYEPe2HAa2wDZRLnAn">核心公式速查卡</h2></div>
+  <p class="sec-desc" data-page-node-id="5RmjMYCZA7fAM5EPdxkqnu">资料分析所有题目只考这四类。建议打印出来贴在桌前，D1–D5 每天默写一遍。</p>
+  <div class="fgrid" data-page-node-id="6gkourH4FmaZ9e4d36Wzrq">
+    <div class="fcard" data-page-node-id="AYgzYfOAu7WjFvTzepj6UH">
+      <h4 data-page-node-id="5EgXthhOTwmTc7QAYkCp3I">增长类 <em data-page-node-id="OpkSbWXZ1vV7Bctyp7vZnT">最高频</em></h4>
+      <div class="f" data-page-node-id="Q2lm8eaIH9z6nnfMhEmgSo">现期 = 基期 ×（1 + 增长率）</div>
+      <div class="f" data-page-node-id="r7FOHFDsk4pyjShVgLHGv3">基期 = 现期 ÷（1 + 增长率）</div>
+      <div class="f" data-page-node-id="CNYKWn5jYQyAfBEhQdpwpQ">增长率 = 增长量 ÷ 基期 = (现期 − 基期) ÷ 基期</div>
+      <div class="f" data-page-node-id="jdZCl4zaR4oBOXQWUbBPIm">增长量 = 现期 − 基期 = 现期 × r ÷（1 + r）</div>
+      <div class="f" data-page-node-id="5W74Kfcm2BzEI1xXhDrG34">隔年增长率 = r₁ + r₂ + r₁ × r₂</div>
+      <div class="n" data-page-node-id="YeZmQZjDso7PsGCbHNhkFX">记住：问"增长最快"看<b data-page-node-id="RUprdHrPtNeFk8rCszKq6Z">增长率</b>，问"增长最多"看<b data-page-node-id="Mxk8dZEhZXVGw89vyfcOk7">增长量</b>。</div>
+    </div>
+    <div class="fcard" data-page-node-id="oi2pjJs9JGttgiJ8d4xsMu">
+      <h4 data-page-node-id="tNWHPNrydWn7IKCxtgh1pI">比重类 <em data-page-node-id="sAUOjCD5AMULBARUkg8EdO">必考</em></h4>
+      <div class="f" data-page-node-id="F9sTD68JND0NhBE9JtQVe9">现期比重 = 部分 ÷ 整体</div>
+      <div class="f" data-page-node-id="mTrjjsY8acFBLbq2r3VelR">基期比重 =（部分÷整体）×（1+整体r）÷（1+部分r）</div>
+      <div class="f" data-page-node-id="FxCsAotdJja9sPW3zdeokF">比重变化值 = 现期比重 − 基期比重</div>
+      <div class="n" data-page-node-id="dpZkphH61y5DGGmUvwHyka">秒杀：<b data-page-node-id="G23bvGqCctCa8jOebMtLvO">部分增速 &gt; 整体增速 → 比重上升</b>；反之下降。判断升降不必算。</div>
+    </div>
+    <div class="fcard" data-page-node-id="hnDuoWS3lWMT99E2wlCIkQ">
+      <h4 data-page-node-id="L0hUeiJVc063SMry9GjJXT">平均数 <em data-page-node-id="Yq873jysYl65yFsvR5ytYb">高频</em></h4>
+      <div class="f" data-page-node-id="yNbdkGtnsoSsfCcXJ4g4jX">平均数 = 总量 ÷ 份数</div>
+      <div class="f" data-page-node-id="SH97dA3xalJFwkVI6jjSQ5">平均数增长率 =（1+总量r）÷（1+份数r）− 1</div>
+      <div class="n" data-page-node-id="rA5uCT1OVoU4Ui1GCEWYzP">先分清"总量"和"份数"是谁（如"人均收入"= 总收入÷人数），再套公式。</div>
+    </div>
+    <div class="fcard" data-page-node-id="BRUQJaFAgYDEIGEzT7wRG4">
+      <h4 data-page-node-id="b8cQUC1aznigRQAFitf2E6">倍数 / 比值 <em data-page-node-id="44j2KW8yYCMu5JGRX7eSaV">送分点</em></h4>
+      <div class="f" data-page-node-id="gDXA53I2vTAFNv7QvwKGUk">A 是 B 的几倍 = A ÷ B</div>
+      <div class="f" data-page-node-id="1KtfYg04ITKVfULdA1Coat">A 比 B 多几倍 = A ÷ B − 1</div>
+      <div class="n" data-page-node-id="BpJRsFcHl0MQ63NvZOtaFF"><b data-page-node-id="aNnSGfKQYoz43kudBIzCcP">最易失分：</b>"是几倍"与"多几倍"只差 1，务必看清题干用词。</div>
+    </div>
+  </div>
+  <div class="card" data-page-node-id="CHPodgqAlBSnBMJ3KxOR8r">
+    <h3 data-page-node-id="w9WcHzPvZW0ucM5fFMYqJH">特征数字速记表（速算核心武器）</h3>
+    <div class="ftab" data-page-node-id="OSaFk81ClCAFziO89TTEdj">
+      <div data-page-node-id="cC0lj8RXWIV8FgqrB9Grbi"><b data-page-node-id="7uRrKS2t2ltwLig0pbk63E">1/7≈14.3%</b>常用</div><div data-page-node-id="bjtZQLjb0TLIcgfTx7LXma"><b data-page-node-id="sH4iNJjBTGj6qNJU9xp7YV">1/8=12.5%</b>常用</div><div data-page-node-id="Wvkgc909nE9oVwpCDniNod"><b data-page-node-id="3h0bF19LyVc3tZfvZuF4NH">1/9≈11.1%</b></div>
+      <div data-page-node-id="jZZRAR82i6j1y5jYZLR4GH"><b data-page-node-id="ugOjMViWIGxfWmKDP5aoad">1/11≈9.1%</b></div><div data-page-node-id="Tao3jbvcLCkZIgptrGXjiF"><b data-page-node-id="AEj0YHEbAQX2EGGj60wsns">1/12≈8.3%</b></div><div data-page-node-id="LjIoeDDzHvOXehdTXb442o"><b data-page-node-id="BFHROQoyK4bxxydl0b3UGh">1/13≈7.7%</b></div>
+      <div data-page-node-id="dovicddkR3QbdRB7LHzF4T"><b data-page-node-id="6uhYtgDObPnqPHjCI6Nk1m">1/14≈7.1%</b></div><div data-page-node-id="TARgsd9OpggH2ZYjBveTZB"><b data-page-node-id="grjjknFrMeVEgnyyKXyuRd">1/15≈6.7%</b></div><div data-page-node-id="SfAlE5TABNkBJGL5ZMF69T"><b data-page-node-id="REi4PJxSP8o4GAvoMeHuP6">1/16=6.25%</b></div>
+      <div data-page-node-id="ns61DdjE7bb1thUbbX05Qa"><b data-page-node-id="YoWlc0TdzxU9AxH9TxcW16">1/6≈16.7%</b></div><div data-page-node-id="MuYJ4AKZfvGcHMCdGLZshy"><b data-page-node-id="wDAZlikxQl8ajpm0h7n1ql">1/4=25%</b></div><div data-page-node-id="ZAYC4I5zM7zkg2J0Xtp9Qw"><b data-page-node-id="q8ShpGPoGnzDwOxkA6WGSx">1/5=20%</b></div>
+    </div>
+    <p style="font-size:12.8px;color:var(--ink-3);margin-top:10px" data-page-node-id="Lqk57nCp7LDKukAJBCTYUv">用法示例：求 <span class="num" data-page-node-id="3WPBuu2Qfdnxjk2HkdAdRp">某数 ÷ 1.125</span> → 相当于 <span class="num" data-page-node-id="eMf9osujtVawuDoSomr4JZ">× 8/9</span>；<span class="num" data-page-node-id="rWdWEskPtF71EWq2qZqtDA">÷ 1.143</span> → 约 <span class="num" data-page-node-id="iTQb8yoBaOvCFs18h1WOEY">× 7/8</span>。把除法变成乘法，速度翻倍。</p>
+  </div>
+</section>
+
+<!-- 8 速算 -->
+<section id="speed" data-page-node-id="sKBItZTGQf11urAXZk5ubL">
+  <div class="sec-head" data-page-node-id="zDuiR8Z6b8zA96OWnfoNlS"><span class="idx" data-page-node-id="VVqucWAP11pTriYABK8xe6">09</span><h2 data-page-node-id="2SYoXaILbAGz4Tbm7Tz2bM">速算技巧（D5–D6 主攻）</h2></div>
+  <div class="card" data-page-node-id="oBJaKRvSCcP9ogMus8gIiq">
+    <table data-page-node-id="QBFxU3swEpTdcDG4rvewaD">
+      <thead data-page-node-id="6QdDQPmYPGHODz44bGDWGF"><tr data-page-node-id="dDZrwNISlx3875tAZ8buL5"><th data-page-node-id="T5PyIEBwcqINDayoal27fs">技巧</th><th data-page-node-id="uDw9UwCdg7NFlLEqQNsPX8">怎么做</th><th data-page-node-id="8M9FSDQLY5KB9HQFDVnnQ2">适用场景</th></tr></thead>
+      <tbody data-page-node-id="giJ30P8UpPpAHqTL6Rmmlj">
+        <tr data-page-node-id="xxUfO8tlPKwuewWm0RVxgD"><td data-page-node-id="Y58ytwyhoeDEEvmGg69SLc"><b data-page-node-id="Kit7EGN6a33qBIYRxK3uHf">截位直除</b></td><td data-page-node-id="AUB5RGUyGscoTi81zYmg5L">分母保留 3 位有效数字（选项差距大留 2 位），分子同步截位</td><td data-page-node-id="dQtbeYbkryUdKLBWw51r7U">几乎所有除法，最常用</td></tr>
+        <tr data-page-node-id="fY5haVZL6YpMfyKBEDWkh1"><td data-page-node-id="RIospndxn7xwHJoa3YDG9B"><b data-page-node-id="3rvFdYQYLf2AqubSlE0Ejs">首数法</b></td><td data-page-node-id="JnmLBwNArWNGHph7fELGgC">只看结果的第一位数字，与选项首位比对</td><td data-page-node-id="3AA9Oz47M09C3qrzEBmlS2">选项首位都不同时</td></tr>
+        <tr data-page-node-id="HSFPitTgXpMbk9x6erbI5y"><td data-page-node-id="wLTWVWSePKCzA9kDlPrkY0"><b data-page-node-id="uLH9Jkm8UBIZN4I6zFW8Ee">特征数字法</b></td><td data-page-node-id="J2t93BDSKxC5GxSMFRPaYP">把百分数换成相近分数（12.5%→1/8）</td><td data-page-node-id="nrNbAciuJR2csE0AjsmF12">增长率为常见分数时</td></tr>
+        <tr data-page-node-id="Ypz0HcCgNJmHtDelN73jxd"><td data-page-node-id="AqCEnRLaVdRakrpO86pnBV"><b data-page-node-id="hR4Eeo30j9xyBnt8b1dVM0">放缩法</b></td><td data-page-node-id="NKpYdyZzN66o2PsuffG7Qf">比较两个式子大小时，放大或缩小某一项判断方向</td><td data-page-node-id="i6hIPX3XJ11zyCF462oTK9">比较大小类题目</td></tr>
+        <tr data-page-node-id="rnpGMyUwakb2qHz0BRXPC5"><td data-page-node-id="ki8CzkiiiUPi7hPOKx9x6t"><b data-page-node-id="UHBf48y34vqsHfFnBJJFsm">化除为乘</b></td><td data-page-node-id="D8PJ779PGApImASWC2KWy8">r 较小时，1÷(1+r) ≈ 1 − r</td><td data-page-node-id="bhKPBnQ3UkVY4BIve8HZgX">基期量速算</td></tr>
+        <tr data-page-node-id="Hdl2XCuVGZioL7On63HmdV"><td data-page-node-id="dy04tttvUXKoYNVcFxrlrb"><b data-page-node-id="EyXSsTaAlFWoa0mTuQMOAV">尾数法</b></td><td data-page-node-id="me240MovivY83x3zk8FuJZ">只算末位数字</td><td data-page-node-id="YnV2TD8ouYQkot3WilVl7I">加减运算</td></tr>
+      </tbody>
+    </table>
+    <div class="ok" data-page-node-id="Z9erNA3tIFvlaWaA8SLiXf"><b data-page-node-id="3CpRHEXknzyTYMgFMnflZ7">速算的唯一心法：</b>先看选项，<b data-page-node-id="HMoJdwCi1eCfZPDWJdsmwn">选项差距决定精度</b>。选项相差很大 → 大胆估；选项挨得很近 → 才需要精确计算。绝大多数题的精度要求都比你想的低。</div>
+  </div>
+</section>
+
+<!-- 9 坑点 -->
+<section id="trap" data-page-node-id="SC0EjKlPS9EyXNXf4YMLdy">
+  <div class="sec-head" data-page-node-id="MUcLDRy2FvLqRoPYIiPf8T"><span class="idx" data-page-node-id="nPKy6vnG2uiI96kHJEOSc4">10</span><h2 data-page-node-id="dGqIxzub7GXD7E6nH9lrII">高频坑点清单（背下来）</h2></div>
+  <div class="card" data-page-node-id="IHMCpXrHdDsqAhgTzvn8py">
+    <ul class="chk" data-page-node-id="KUH2NN2AX7nBvGRnk3lHYc">
+      <li data-page-node-id="pDGLwfNyPqAJhCOhQITpYe"><b data-page-node-id="m0iouVPtJ8TJOSBmK3SWhd">时间坑：</b>问的是"去年"，材料给的是"今年" → 算基期，别用现期。</li>
+      <li data-page-node-id="gZN3WBCFWQT4w1Kpg8Y1Hk"><b data-page-node-id="PbyxC0IrKwxm7laNu5zQBd">同比/环比坑：</b>同比对去年同期，环比对上一周期，别混。</li>
+      <li data-page-node-id="r5oQzhvUWv3gEKf68h4LLf"><b data-page-node-id="ZiAtjdpT34aoySlAvfCHwl">单位坑：</b>亿元 vs 万元（差 10000 倍）、% vs ‰（差 10 倍）。</li>
+      <li data-page-node-id="4LTWWrJs2CcdwXFgP1xXSf"><b data-page-node-id="2cE1TY4d8EwnOjEfVmEVnh">"是几倍" vs "多几倍"：</b>后者要减 1。</li>
+      <li data-page-node-id="3khifnyJkDHDCAf8Bclwd8"><b data-page-node-id="G3qyztwsEdPdEgHMSWoAM9">"增长最快" vs "增长最多"：</b>前者看增长率，后者看增长量。</li>
+      <li data-page-node-id="Retobw0DmjPH6ivKxOt6VW"><b data-page-node-id="CxjNIAmDg1450ZtZyktoM8">部分/整体搞反：</b>比重题必须先确认谁是"部分"。</li>
+      <li data-page-node-id="DWMX98cWCcI1GpPd23a3V0"><b data-page-node-id="itNT6uBY8uKYbTSCpBqGah">比重升降：</b>只比较部分与整体的增长率，不必精算。</li>
+      <li data-page-node-id="rDSaddmAp8KAT4Hpz4x7pg"><b data-page-node-id="3ckFWr9kP5SK0oOeygUZZV">百分点 vs 百分比：</b>"提高了 5 个百分点"是直接相减，不要说成"提高 5%"。</li>
+      <li data-page-node-id="2e0BrOIdQjux1NDC1a10d2"><b data-page-node-id="ZnXX5pRxxZ0e2bIeJe8DLS">合计项重复计算：</b>表格里的"合计/总计"行不是可用的分项数据。</li>
+      <li data-page-node-id="jXbIo6E7q900JGW0ctSQZL"><b data-page-node-id="XkHnx3FN4cgZptejzbfIF9">综合分析题顺序：</b>别从 A 项死磕到尾，先挑好算的。</li>
+    </ul>
+  </div>
+</section>
+
+<!-- 10 自检 -->
+<section id="check" data-page-node-id="n7lCvCZmnXGq0peLyEaAjm">
+  <div class="sec-head" data-page-node-id="ya3RFx3QIiKWqte8es7IY4"><span class="idx" data-page-node-id="UqBri1Du9EkBuduCvumUyF">11</span><h2 data-page-node-id="AkWoddJA1a3FKZtNkTvRhJ">90% 达标自检清单</h2></div>
+  <div class="card" data-page-node-id="RkirLEi6JtHHa5XzF3YhzD">
+    <p style="font-size:13.5px;color:var(--ink-2);margin-bottom:10px" data-page-node-id="IBOFyQS8G3BtAzsHUIUOzp">全部打勾才算真正达标：</p>
+    <ul class="chk" data-page-node-id="iskC3KnKCv3s2dTyphBltV">
+      <li data-page-node-id="fbkron9CY7fwarzoAAonOg">四类公式能<b data-page-node-id="TRAzuVaMdl6yoIkXOXWegy">不假思索默写</b>，且知道每个符号的含义</li>
+      <li data-page-node-id="ajeCXh2BUusbMstHlVwEpi">看到题目能在 <b data-page-node-id="Z1HaKK4lNMbqADlDSZHsCb">5 秒内判断考点</b>（增长/比重/平均/倍数）</li>
+      <li data-page-node-id="qkd064l2oxqZzJ4zGGBCrd">能从材料 <b data-page-node-id="iaJ7hq0uoc3KQfYb9OHfCA">20 秒内定位</b>到所需数据</li>
+      <li data-page-node-id="QomNmewCHpaQdIzYccFpDd">单题平均用时 <b data-page-node-id="CO04as7VoW700AvBhzu8Ev">≤ 50 秒</b></li>
+      <li data-page-node-id="0ciMNw8dX7IEpYPwI8PNId">每篇材料（5 题）用时 <b data-page-node-id="kOBON9l93AqUyWyJjU0YPx">≤ 7 分钟</b></li>
+      <li data-page-node-id="7lrT80pCrBVnpu5QJa9wPY">20 题套卷能在 <b data-page-node-id="OIVqGTQaTCHJd0OrGEPGVu">28 分钟内</b>完成并留出检查时间</li>
+      <li data-page-node-id="OG8alpcAP69LJnNDAin6vs">"时间 / 单位 / 是几倍 / 同比环比"四大坑点<b data-page-node-id="g7ZmKqsnw8RT1i9AhH8RpV">零失误</b></li>
+      <li data-page-node-id="SXOiAHAOT3BUvEksKt9YBk">综合分析题有<b data-page-node-id="1iDRNP5hDmRXh7pZkMpo0m">固定策略</b>，不慌不乱</li>
+      <li data-page-node-id="Km93bwAuijeyOT9gctMZNK">错题本能说出每道错题的<b data-page-node-id="Oit42D14nIFvdhLwInU3Ak">根本错因</b></li>
+      <li data-page-node-id="hl5AqfG9GVMITXsOsf8Nux">连续 3 组套题正确率稳定在 <b data-page-node-id="zmCxa61aBX2SFYCpE5IPYZ">90% 左右</b></li>
+    </ul>
+    <div class="tip" data-page-node-id="PLwknuaHQpU8j51sOZe1nw"><b data-page-node-id="EWOEf5FLFWZvbFg2zexA1M">最后的提醒：</b>资料分析提分的关键不在"做多少题"，而在<b data-page-node-id="AXV3nOnnDSwBSC9PfRnjZB">"限时"和"复盘"有没有做到位</b>。宁可每天 20 题但每道都限时、都复盘，也不要一天刷 100 题却不看错题。</div>
+  </div>
+</section>
+
+<div style="text-align:center;font-size:12px;color:var(--ink-3);padding:20px 0 0" data-page-node-id="K1g7Jcmc6c9VgoCkyCfeFq">
+  配合《国考笔试总排期表》与《资料分析 题本与母题解析》使用 · 主攻 9 天后转入每日保温，直到考前
+</div>
+
+</main>
+</div>
+
+<script>
+(function(){
+  var KEY='zlfx9_progress';
+  var state={};
+  try{ state=JSON.parse(localStorage.getItem(KEY)||'{}'); }catch(e){ state={}; }
+  var boxes=document.querySelectorAll('.dchk input');
+  var total=boxes.length;
+  function update(){
+    var done=0;
+    boxes.forEach(function(cb){
+      var card=cb.closest('.day');
+      if(state[cb.dataset.id]){ done++; card.classList.add('done'); }
+      else card.classList.remove('done');
+    });
+    var pct= total? Math.round(done/total*100):0;
+    document.getElementById('tp-fill').style.width=pct+'%';
+    document.getElementById('tp-pct').textContent=pct+'%';
+    document.getElementById('tp-num').textContent=done+' / '+total+' 天已完成';
+  }
+  boxes.forEach(function(cb){
+    if(state[cb.dataset.id]) cb.checked=true;
+    cb.addEventListener('change',function(){
+      state[cb.dataset.id]=cb.checked;
+      try{ localStorage.setItem(KEY,JSON.stringify(state)); }catch(e){}
+      update();
+    });
+  });
+  update();
+  var links=document.querySelectorAll('.nav a[href^="#"]');
+  var sections=[];
+  links.forEach(function(a){var t=document.querySelector(a.getAttribute('href'));if(t)sections.push({el:t,a:a});});
+  function onScroll(){
+    var y=window.scrollY+120,cur=null;
+    sections.forEach(function(s){ if(s.el.offsetTop<=y) cur=s; });
+    links.forEach(function(a){ a.classList.remove('on'); });
+    if(cur) cur.a.classList.add('on');
+  }
+  window.addEventListener('scroll',onScroll,{passive:true});
+  onScroll();
+})();
+</script>
+</body>
+</html>

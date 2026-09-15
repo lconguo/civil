@@ -1,0 +1,1527 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>常识判断 · 真题题库 · 2027 国考</title>
+<style>
+:root{--pri:#1d4ed8;--pri-d:#1e3a8a;--pri-l:#3b82f6;--ink:#111827;--ink2:#374151;--ink3:#6b7280;
+  --line:#e5e7eb;--bg:#f5f7fa;--card:#fff;--ok:#158a6e;--warn:#b45309}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif;font-size:15px;line-height:1.75}
+.wrap,.wrap2{display:flex;min-height:100vh}
+aside#side{width:262px;flex:0 0 262px;background:#0f1e33;color:#dbe4f0;padding:20px 16px;
+  position:sticky;top:0;height:100vh;overflow-y:auto}
+aside#side .brand h1{margin:0;font-size:19px;color:#fff;letter-spacing:.5px}
+aside#side .brand p{margin:8px 0 16px;font-size:12px;color:#93a4bd;line-height:1.7}
+.prog-wrap{background:#16273f;border-radius:11px;padding:12px 13px;margin-bottom:14px}
+.prog-top{display:flex;justify-content:space-between;font-size:12px;color:#9fb2cc;margin-bottom:7px}
+.prog-top b{color:#7eb0ff}
+.bar{height:7px;border-radius:99px;background:#0b1727;overflow:hidden}
+.bar i{display:block;height:100%;width:0;background:linear-gradient(90deg,#3b82f6,#60a5fa);transition:.3s}
+.search-wrap{margin-bottom:14px}
+#nav-search{width:100%;padding:8px 11px;border-radius:9px;border:1px solid #2b405e;background:#16273f;
+  color:#e5edf9;font-size:13px;outline:none}
+#nav-search::placeholder{color:#6d8099}
+.nav a{display:flex;align-items:center;gap:8px;padding:8px 10px;border-radius:9px;color:#c8d5e8;
+  text-decoration:none;font-size:13px;margin-bottom:2px}
+.nav a:hover{background:#1b2f4d;color:#fff}
+.nav a.on{background:#1d4ed8;color:#fff;font-weight:600}
+.nav a.done{opacity:.72}
+.nav .nv-num{flex:0 0 auto;font-size:11px;color:#7eb0ff;background:#16273f;border-radius:5px;padding:2px 5px}
+.nav a.on .nv-num{background:#3b82f6;color:#fff}
+.nav .nv-txt{flex:1 1 auto;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.nav .nv-badge{flex:0 0 auto;font-size:11px;color:#9fb2cc;background:#0b1727;border-radius:99px;padding:2px 7px}
+.navgrp{margin-bottom:14px}
+.navgrp-t{font-size:11.5px;color:#7d90ab;letter-spacing:1px;margin:0 0 5px 6px;font-weight:700}
+.side-foot{margin-top:18px;font-size:11px;color:#5f7288;line-height:1.7;border-top:1px solid #1c2f49;padding-top:12px}
+main{flex:1 1 auto;min-width:0;padding:22px 26px 80px;max-width:1020px;margin:0 auto}
+.jsstat{margin:0 0 14px;padding:9px 14px;border-radius:10px;font-size:13px;font-weight:600;line-height:1.6}
+.jsstat.wait{background:#eef2ff;color:#3730a3;border:1px solid #dbe1ff}
+.jsstat.ok{background:#e8f6ee;color:#1a7f45;border:1px solid #b6e3c8}
+.jsstat.bad{background:#fdeceb;color:#b3261e;border:1px solid #f5c2c0}
+.hero{background:linear-gradient(120deg,#1d4ed8,#4338ca);color:#fff;border-radius:16px;padding:24px 26px;
+  box-shadow:0 10px 30px rgba(29,78,216,.22)}
+.hero h2{margin:0 0 8px;font-size:24px}
+.verchip{display:inline-block;margin-left:10px;padding:2px 9px;border-radius:99px;font-size:12px;
+  font-weight:700;background:rgba(255,255,255,.22);color:#fff;vertical-align:middle}
+.hero>p{margin:0;font-size:13.5px;opacity:.93}
+.hstats{display:flex;gap:24px;margin-top:14px;flex-wrap:wrap}
+.hstat b{display:block;font-size:21px;line-height:1.2}
+.hstat span{font-size:11.5px;opacity:.85}
+.howto{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:10px;margin-top:16px}
+.how{background:rgba(255,255,255,.12);border-radius:11px;padding:10px 12px}
+.how b{display:block;font-size:13px;margin-bottom:3px}
+.how span{font-size:11.5px;opacity:.9;line-height:1.6}
+.chips{display:flex;flex-wrap:wrap;gap:7px;margin:16px 0 0}
+.dchip{font-size:12.5px;padding:4px 10px;border-radius:99px;background:#fff;border:1px solid var(--line);
+  color:var(--ink2);cursor:pointer}
+.dchip b{color:var(--pri)}
+.dchip:hover{border-color:var(--pri);color:var(--pri)}
+.dchip.on{background:var(--pri);border-color:var(--pri);color:#fff}
+.dchip.on b{color:#fff}
+.toolbar{display:flex;align-items:center;gap:9px;margin:16px 0 4px;flex-wrap:wrap}
+.tbtn{padding:7px 13px;border-radius:9px;border:1px solid var(--line);background:#fff;color:var(--ink2);
+  font-size:13px;cursor:pointer;transition:.15s}
+.tbtn:hover{border-color:var(--pri);color:var(--pri)}
+.tbtn.on{background:var(--pri);color:#fff;border-color:var(--pri)}
+.tbtn.ghost{background:transparent}
+.tbtn.on,#btn-unmastered.on,.tbtn.ghost.on{background:var(--pri);color:#fff;border-color:var(--pri)}
+.tgl-xall::after{content:'展开全部解析'}
+.tgl-hans::after{content:'隐藏答案'}
+.spacer{flex:1 1 auto}
+.hint{font-size:12px;color:var(--ink3)}
+.xctl,.soltoggle{position:absolute;opacity:0;width:0;height:0;pointer-events:none}
+.nohit{display:none;margin:16px 0;padding:14px;border-radius:11px;background:#fff;border:1px dashed var(--line);
+  color:var(--ink3);font-size:13.5px}
+section.sec{margin-top:26px}
+.sec-head{display:flex;align-items:center;gap:12px}
+.sec-no{flex:0 0 auto;width:42px;height:42px;border-radius:12px;background:var(--pri);color:#fff;
+  display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;white-space:nowrap}
+.sec-meta h3{margin:0;font-size:17px}
+.stags{display:flex;gap:6px;margin-top:3px;flex-wrap:wrap}
+.ptag{font-size:11.5px;padding:2px 8px;border-radius:99px;background:#eef2ff;color:#3730a3;border:1px solid #dbe1ff}
+.pt-n{background:#f0fdf7;color:#0f6b55;border-color:#bbf0dd}
+.mat-note{font-size:12px;color:var(--ink3);margin:8px 0 12px;padding-left:54px}
+article.q{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 18px;
+  margin:0 0 13px;box-shadow:0 1px 3px rgba(16,24,40,.04)}
+article.q.hide{display:none}
+section.sec.hide{display:none}
+article.q.mastered{border-color:#bbf0dd;background:#fbfffd}
+.q-head{display:flex;gap:11px}
+.qno{flex:0 0 auto;width:26px;height:26px;border-radius:8px;background:var(--pri);color:#fff;font-size:13px;
+  font-weight:700;display:flex;align-items:center;justify-content:center}
+.stem{flex:1 1 auto;font-size:14.5px;white-space:pre-wrap}
+.opts{margin:11px 0 0 37px;display:grid;gap:6px}
+.opt{display:flex;gap:9px;font-size:14px;padding:6px 10px;border-radius:9px;background:#fafbfc;border:1px solid #f0f2f5}
+.opt i{flex:0 0 auto;font-style:normal;font-weight:700;color:var(--pri)}
+.qbar{display:flex;align-items:center;gap:12px;margin:12px 0 0 37px;flex-wrap:wrap}
+.btn-reveal{cursor:pointer;font-size:12.5px;font-weight:600;padding:5px 12px;border-radius:8px;
+  background:#eef2ff;color:var(--pri-d);border:1px solid #dbe1ff}
+.btn-reveal:hover{background:var(--pri);color:#fff}
+.meta{font-size:12px;color:var(--ink3)}
+.mini-check{margin-left:auto;font-size:12.5px;color:var(--ink3);cursor:pointer;display:flex;gap:5px;align-items:center}
+.mini-check input{accent-color:var(--ok)}
+.sol{display:none;margin:12px 0 0 37px;border-top:1px dashed var(--line);padding-top:12px}
+.sol.open{display:block}
+.sol-ans{display:inline-flex;align-items:center;gap:8px;font-size:13px;color:var(--ok);font-weight:700;
+  background:#e8f6ee;padding:5px 12px;border-radius:9px;margin-bottom:10px}
+.sol-ans span{font-size:16px;color:#0f6b55}
+.sol-tag{font-size:11.5px;color:var(--ink3);margin-bottom:8px}
+.sol-lead{margin:0 0 10px;font-size:14px}
+.elim{display:grid;gap:6px;margin:0 0 10px}
+.erow{display:flex;gap:9px;align-items:flex-start;font-size:13.5px;padding:7px 10px;border-radius:9px;
+  background:#fafbfc;border:1px solid #f0f2f5}
+.elet{flex:0 0 auto;font-size:11.5px;font-weight:700;padding:2px 8px;border-radius:99px;background:#fdeceb;
+  color:#b3261e;white-space:nowrap}
+.elet-A{background:#fdeceb;color:#b3261e}
+.elet-B{background:#fff4e5;color:#b45309}
+.elet-C{background:#f3f0ff;color:#5b21b6}
+.elet-D{background:#ecfdf5;color:#0f6b55}
+.etxt{flex:1 1 auto}
+.sol-tail{margin:0;font-size:13.5px;color:var(--pri-d);font-weight:600}
+.sol-note{margin:10px 0 0;font-size:11.5px;color:#9ca3af}
+html.xall-on .sol,html.js.xall-on .sol{display:block}
+html.hans-on .sol-ans,html.js.hans-on .sol-ans{display:none}
+html.hans-on .qbar .meta,html.js.hans-on .qbar .meta{display:none}
+html:not(.js) .sol{display:none}
+html:not(.js) .soltoggle:checked ~ .sol{display:block}
+html:not(.js) #xall:checked ~ .sec .sol{display:block}
+html:not(.js) #hans:checked ~ .sec .sol-ans{display:none}
+html:not(.js) #hans:checked ~ .sec .qbar .meta{display:none}
+html:has(#xall:checked) .sol{display:block}
+html:has(#hans:checked) .sol-ans{display:none}
+html:has(#hans:checked) .qbar .meta{display:none}
+article.q:has(.soltoggle:checked) .sol{display:block}
+.lr-close{display:none}
+.qopen .lr-open,html.xall-on .lr-open{display:none}
+.qopen .lr-close,html.xall-on .lr-close{display:inline}
+html.xall-on .btn-reveal{background:#eef2ff;color:var(--pri-d)}
+footer{margin-top:34px;padding-top:16px;border-top:1px solid var(--line);font-size:12.5px;color:var(--ink3);line-height:1.9}
+.ment{display:none}
+@media (max-width:900px){
+  .wrap2,main{display:block}
+  aside#side{position:fixed;left:0;top:44px;bottom:0;z-index:900;transform:translateX(-102%);transition:.25s;width:250px}
+  aside#side.show{transform:none;box-shadow:0 0 40px rgba(0,0,0,.4)}
+  .ment{display:block;position:fixed;right:14px;bottom:14px;z-index:899;border:none;border-radius:99px;
+    background:var(--pri);color:#fff;font-size:13px;padding:11px 15px;box-shadow:0 6px 18px rgba(29,78,216,.4);cursor:pointer}
+  .mat-note{padding-left:0}
+  .qbar,.opts,.sol{margin-left:0}
+}
+
+</style>
+</head>
+<body>
+<style id="resnav-style">
+.resnav{position:fixed;top:0;left:0;right:0;z-index:99999;display:flex;align-items:center;gap:4px;
+  height:44px;padding:0 12px;background:#1f2937;color:#e5e7eb;font-size:13px;line-height:1;
+  font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;overflow-x:auto;
+  box-shadow:0 1px 0 rgba(255,255,255,.06),0 2px 10px rgba(0,0,0,.18);-webkit-overflow-scrolling:touch}
+body::before{content:"";display:block;height:44px}
+.resnav::-webkit-scrollbar{height:0}
+.resnav .rn-brand{flex:0 0 auto;font-weight:700;color:#7ee0c0;margin-right:6px;letter-spacing:.5px}
+.resnav a{flex:0 0 auto;color:#d1d5db;text-decoration:none;padding:6px 10px;border-radius:8px;
+  white-space:nowrap;transition:.15s}
+.resnav a:hover{background:#374151;color:#fff}
+.resnav a.on{background:#22c39a;color:#06251c;font-weight:700}
+.resnav .rn-sep{flex:0 0 auto;width:1px;height:18px;background:#4b5563;margin:0 5px}
+.resnav .rn-end{margin-left:auto}
+@media (max-width:640px){.resnav{font-size:12px;height:40px}body::before{height:40px}}
+</style>
+<nav class="resnav" id="resnav"><span class="rn-brand">行测 2027</span>
+<a href="国考笔试总排期表.html">总排期表</a>
+<a href="2027国考行测学习计划.html">行测总纲</a>
+<span class="rn-sep"></span>
+<a href="资料分析_9天冲刺计划.html">资料分析</a>
+<a href="判断推理_13天冲刺计划.html">判断推理</a>
+<a href="言语理解_9天冲刺计划.html">言语理解</a>
+<a href="国考笔试总排期表.html#math">数量关系</a>
+<a href="国考笔试总排期表.html#roll" class="on">常识政治</a>
+<a href="国考笔试总排期表.html#roll">政治理论</a>
+<a href="申论_学习计划.html">申论</a>
+<span class="rn-sep rn-end"></span>
+<a href="题库总览.html">题库总览</a>
+</nav>
+
+<div class="wrap">
+<aside id="side">
+  <div class="brand"><h1>常识判断 · 真题题库</h1>
+    <p>2026 行测 5000 题·新增题<br>5 类 17 节 / 55 题 · 粉笔全本 · 全程滚动每日 30 分钟</p></div>
+  <div class="prog-wrap"><div class="prog-top"><span>练习进度</span><span><b id="pg-txt">0</b> / 55 题</span></div>
+    <div class="bar"><i id="pg-bar"></i></div></div>
+  <div class="search-wrap"><input id="nav-search" placeholder="搜索题干 / 考点 / 来源"></div>
+  <nav class="nav"><div class="navgrp"><div class="navgrp-t">人文常识</div><a class="navlink" href="#s-1" data-target="s-1"><span class="nv-num">节一</span><span class="nv-txt">文化常识</span><span class="nv-badge" data-badge="s-1">0/6</span></a><a class="navlink" href="#s-2" data-target="s-2"><span class="nv-num">节二</span><span class="nv-txt">文学常识</span><span class="nv-badge" data-badge="s-2">0/2</span></a><a class="navlink" href="#s-3" data-target="s-3"><span class="nv-num">节三</span><span class="nv-txt">历史常识</span><span class="nv-badge" data-badge="s-3">0/3</span></a></div><div class="navgrp"><div class="navgrp-t">科技常识</div><a class="navlink" href="#s-4" data-target="s-4"><span class="nv-num">节四</span><span class="nv-txt">物理常识</span><span class="nv-badge" data-badge="s-4">0/5</span></a><a class="navlink" href="#s-5" data-target="s-5"><span class="nv-num">节五</span><span class="nv-txt">化学常识</span><span class="nv-badge" data-badge="s-5">0/3</span></a><a class="navlink" href="#s-6" data-target="s-6"><span class="nv-num">节六</span><span class="nv-txt">生物常识</span><span class="nv-badge" data-badge="s-6">0/6</span></a><a class="navlink" href="#s-7" data-target="s-7"><span class="nv-num">节七</span><span class="nv-txt">科技理论与成就</span><span class="nv-badge" data-badge="s-7">0/1</span></a><a class="navlink" href="#s-8" data-target="s-8"><span class="nv-num">节八</span><span class="nv-txt">生活常识</span><span class="nv-badge" data-badge="s-8">0/6</span></a></div><div class="navgrp"><div class="navgrp-t">法律常识</div><a class="navlink" href="#s-9" data-target="s-9"><span class="nv-num">节九</span><span class="nv-txt">宪法</span><span class="nv-badge" data-badge="s-9">0/2</span></a><a class="navlink" href="#s-10" data-target="s-10"><span class="nv-num">节十</span><span class="nv-txt">行政法</span><span class="nv-badge" data-badge="s-10">0/2</span></a><a class="navlink" href="#s-11" data-target="s-11"><span class="nv-num">节11</span><span class="nv-txt">民法与民事诉讼法</span><span class="nv-badge" data-badge="s-11">0/1</span></a><a class="navlink" href="#s-12" data-target="s-12"><span class="nv-num">节12</span><span class="nv-txt">刑法与刑事诉讼法</span><span class="nv-badge" data-badge="s-12">0/1</span></a><a class="navlink" href="#s-13" data-target="s-13"><span class="nv-num">节13</span><span class="nv-txt">商法与经济法</span><span class="nv-badge" data-badge="s-13">0/1</span></a><a class="navlink" href="#s-14" data-target="s-14"><span class="nv-num">节14</span><span class="nv-txt">其他法律法规</span><span class="nv-badge" data-badge="s-14">0/5</span></a></div><div class="navgrp"><div class="navgrp-t">地理常识</div><a class="navlink" href="#s-15" data-target="s-15"><span class="nv-num">节15</span><span class="nv-txt">自然环境</span><span class="nv-badge" data-badge="s-15">0/4</span></a><a class="navlink" href="#s-16" data-target="s-16"><span class="nv-num">节16</span><span class="nv-txt">国情社情</span><span class="nv-badge" data-badge="s-16">0/3</span></a></div><div class="navgrp"><div class="navgrp-t">经济常识</div><a class="navlink" href="#s-17" data-target="s-17"><span class="nv-num">节17</span><span class="nv-txt">综合训练</span><span class="nv-badge" data-badge="s-17">0/4</span></a></div>
+    <div class="navgrp"><div class="navgrp-t">配套</div>
+      <a class="navlink" href="常识判断_题本与母题解析.html"><span class="nv-num">题本</span><span class="nv-txt">母题解析页</span></a>
+      <a class="navlink" href="国考笔试总排期表.html#roll"><span class="nv-num">计划</span><span class="nv-txt">常识全程滚动</span></a>
+      <a class="navlink" href="题库总览.html"><span class="nv-num">总览</span><span class="nv-txt">全部模块题库</span></a>
+    </div></nav>
+  <div class="side-foot">解析为粉笔原书内容重排 · 仅供个人备考</div>
+</aside>
+
+<main id="top">
+  <div class="jsstat wait" id="jsstat">正在检查脚本…（若一直不变＝预览禁用了脚本，请点右上角「在浏览器打开」，展开/收起/隐藏答案仍可用）</div>
+  <div class="hero">
+    <h2>2026 行测 · 常识判断 真题题库<span class="verchip">v2</span></h2>
+    <p>粉笔《决战行测5000题 · 常识判断（新增题）》—— 5 大类 / 55 题（政治常识 24 题已按考试模块口径拆分至《政治理论_真题题库》），配下册答案、正确率与易错项。常识不靠突击靠滚动：每天 30 分钟，按大类轮换刷，错题记条目。</p>
+    <div class="hstats">
+      <div class="hstat"><b>5</b><span>大类</span></div>
+      <div class="hstat"><b>17</b><span>节</span></div>
+      <div class="hstat"><b>55</b><span>题</span></div>
+      <div class="hstat"><b>40″</b><span>每题限时</span></div>
+    </div>
+    <div class="howto">
+      <div class="how"><b>① 先做不解析</b><span>常识每题 ≤ 40 秒，会就会、不会就凭排除蒙一个，不死磕</span></div>
+      <div class="how"><b>② 对答案记条目</b><span>点「查看解析」：重点看 X 项错误的判定依据，把知识点记成一句话条目</span></div>
+      <div class="how"><b>③ 勾已掌握</b><span>做对的勾上，用「只看未掌握」二刷，进度自动保存在本机</span></div>
+    </div>
+  </div>
+  <div class="chips"><span class="dchip" data-dian="文化常识">文化常识 <b>6</b></span><span class="dchip" data-dian="生物常识">生物常识 <b>6</b></span><span class="dchip" data-dian="生活常识">生活常识 <b>6</b></span><span class="dchip" data-dian="物理常识">物理常识 <b>5</b></span><span class="dchip" data-dian="其他法律法规">其他法律法规 <b>5</b></span><span class="dchip" data-dian="自然环境">自然环境 <b>4</b></span><span class="dchip" data-dian="经济常识">经济常识 <b>4</b></span><span class="dchip" data-dian="历史常识">历史常识 <b>3</b></span><span class="dchip" data-dian="化学常识">化学常识 <b>3</b></span><span class="dchip" data-dian="国情社情">国情社情 <b>3</b></span><span class="dchip" data-dian="文学常识">文学常识 <b>2</b></span><span class="dchip" data-dian="宪法">宪法 <b>2</b></span><span class="dchip" data-dian="行政法">行政法 <b>2</b></span><span class="dchip" data-dian="科技理论与成就">科技理论与成就 <b>1</b></span><span class="dchip" data-dian="民法与民事诉讼法">民法与民事诉讼法 <b>1</b></span><span class="dchip" data-dian="刑法与刑事诉讼法">刑法与刑事诉讼法 <b>1</b></span><span class="dchip" data-dian="商法与经济法">商法与经济法 <b>1</b></span></div>
+  <div class="toolbar">
+    <label class="tbtn tgl tgl-xall" for="xall" data-act="xall"></label>
+    <button class="tbtn ghost" id="btn-unmastered" type="button">只看未掌握</button>
+    <label class="tbtn tgl tgl-hans" for="hans" data-act="hans"></label>
+    <span class="spacer"></span><span class="hint">单选 · 排除明显不合理项再蒙</span>
+  </div>
+  <input type="checkbox" id="xall" class="xctl">
+  <input type="checkbox" id="hans" class="xctl">
+  <div class="nohit" id="nohit">没有符合条件的题目</div>
+  
+<section class="sec" id="s-1" data-idx="1" data-chap="人文常识">
+  <div class="sec-head"><span class="sec-no">第一节</span>
+    <div class="sec-meta"><h3>文化常识</h3>
+      <div class="stags"><span class="ptag pt-chap">人文常识</span><span class="ptag pt-n">6 题</span></div>
+    </div></div>
+  <div class="mat-note">题目来源：粉笔《决战行测5000题 · 常识判断（新增题）》上册 · 人文常识 / 文化常识（考生回忆版）</div>
+  
+<article class="q" id="q-1-1" data-no="q-1-1" data-ans="D" data-kd="文化常识" data-rate="61.78" data-wrong="C">
+  <div class="q-head"><span class="qno">1</span><div class="stem">下列诗句与“千门开锁万灯明，正月中旬动帝京”涉及的传统节日相同的是：</div></div>
+  <div class="opts"><div class="opt"><i>A</i><span>插萸登鹫岭，把菊坐蜂台</span></div><div class="opt"><i>B</i><span>一轮秋影转金波，飞镜又重磨</span></div><div class="opt"><i>C</i><span>鼓声三下红旗开，两龙跃出浮水来</span></div><div class="opt"><i>D</i><span>灯火钱塘三五夜，明月如霜，照见人如画</span></div></div>
+  <input type="checkbox" id="ck-q-1-1" class="soltoggle">
+  <div class="qbar">
+    <label class="btn-reveal" for="ck-q-1-1" data-act="reveal" data-sol="q-1-1"><span class="lr-open">查看解析</span><span class="lr-close">收起解析</span></label>
+    <span class="meta">正确率 <b>61.78%</b> · 易错项 <b>C</b> · （2025 浙江A 19）</span>
+    <label class="mini-check"><input type="checkbox" data-master="q-1-1">已掌握</label>
+  </div>
+  <div class="sol" data-sol="q-1-1">
+    <div class="sol-ans">正确答案<span>D</span></div>
+    <div class="sol-body">
+      <div class="sol-tag">人文常识 · 文化常识 · 上册 P7</div>
+      <p class="sol-lead">题干中“千门开锁万灯明，正月中旬动帝京”出自唐代张祜的《正月十五夜灯》，意思是元宵佳节，千家万户走出家门，街上亮起无数花灯，好像整个京都都震动了。从“正月中旬”可看出诗句描写的是唐代元宵节的盛况。浮图应制》，意思是在重阳节佩戴茱萸，登上鹫岭，手捧菊花坐在蜂台上，享受着独处的乐趣。插茱萸等是重阳节的习俗。秋夜为吕叔潜赋》，意思是一轮秋月洒下万里金波，就像刚磨亮的铜镜飞上了夜空。此句描写的是中秋节的情景。意思是鼓声响起后红旗展开，参赛的两艘龙舟像跃出水面的巨龙，在水中翻腾。赛龙舟是端午节的文化习俗之一，此句描写的是端午节。花· 密州上元》，意思是元宵节的夜晚，钱塘（今杭州）城中灯火辉煌，月色明亮如霜，月光下人群熙熙攘攘，像一幅美丽的画卷。此句描写的是元宵节。春节申遗成功北京时间2024 年12 月4 日晚，我国申报的“春节——中国人庆祝传统新年的社会实践”在巴拉圭亚松森举行的联合国教科文组织保护非物质文化遗产政府间委员会第19 届常会上通过评审，列入联合国教科文组织《人类非物质文化遗产代表作名录》。春节是迄今为止流传历史最久、流传地域最广、过节人数最多的中国节日，是名副其实的中华民族第一大节。每逢春节，家家户户都会贴春联、吃饺子、发压岁钱、拜年，围绕辞旧迎新、祈福纳祥、团圆和谐的主题欢庆这一佳节。截至2024 年，我国共有44 个项目列入联合国教科文组织非物质文化遗产名录、名册，总数居世界第一。</p><div class="elim"><div class="erow"><span class="elet elet-A">A 项 · 排除</span><span class="etxt">“插萸登鹫岭，把菊坐蜂台”出自唐代樊忱的《奉和九月九日登慈恩寺</span></div><div class="erow"><span class="elet elet-B">B 项 · 排除</span><span class="etxt">“一轮秋影转金波，飞镜又重磨”出自南宋辛弃疾的《太常引· 建康中</span></div><div class="erow"><span class="elet elet-C">C 项 · 排除</span><span class="etxt">“鼓声三下红旗开，两龙跃出浮水来”出自唐代张建封的《竞渡歌》，</span></div><div class="erow"><span class="elet elet-D">D 项 · 保留</span><span class="etxt">“灯火钱塘三五夜，明月如霜，照见人如画”出自北宋苏轼的《蝶恋</span></div></div><p class="sol-tail">故正确答案为D。</p>
+      <p class="sol-note">解析为粉笔原书内容，按「选项排除式」重排：X 项错误＝先排除，X 项正确＝后择优。常识靠积累，错题记条目比刷题更重要。</p>
+    </div>
+  </div>
+</article>
+<article class="q" id="q-1-2" data-no="q-1-2" data-ans="A" data-kd="文化常识" data-rate="44.6" data-wrong="C">
+  <div class="q-head"><span class="qno">2</span><div class="stem">2024 年10 月10 日，故宫博物院成立99 周年。下列与故宫有关的说法，不正确的是：</div></div>
+  <div class="opts"><div class="opt"><i>A</i><span>故宫的前身是明清皇宫紫禁城，由明太祖朱元璋决定开建</span></div><div class="opt"><i>B</i><span>2024 年，北京中轴线被列入《世界遗产名录》，故宫就位于该中轴线上</span></div><div class="opt"><i>C</i><span>故宫博物院馆藏文物丰富，是中华文明源远流长的见证，其中有《清明上河图》《平复帖》等</span></div><div class="opt"><i>D</i><span>近年来，故宫博物院用文创“唤醒”文物，研发万余种文创产品，如雍正御批折扇、《千里江山图》装饰面、《五牛图》铜牛等</span></div></div>
+  <input type="checkbox" id="ck-q-1-2" class="soltoggle">
+  <div class="qbar">
+    <label class="btn-reveal" for="ck-q-1-2" data-act="reveal" data-sol="q-1-2"><span class="lr-open">查看解析</span><span class="lr-close">收起解析</span></label>
+    <span class="meta">正确率 <b>44.6%</b> · 易错项 <b>C</b> · （2025 浙江A 13）</span>
+    <label class="mini-check"><input type="checkbox" data-master="q-1-2">已掌握</label>
+  </div>
+  <div class="sol" data-sol="q-1-2">
+    <div class="sol-ans">正确答案<span>A</span></div>
+    <div class="sol-body">
+      <div class="sol-tag">人文常识 · 文化常识 · 上册 P7</div>
+      <p class="sol-lead">宫紫禁城，由明成祖朱棣决定开建并建成。永乐四年（1406 年），朱棣为了巩固北部边疆，决定营建北京宫殿，第二年即派员筹办物料。永乐十五年（1417 年）开始大规模兴建，永乐十八年（1420 年）建成。次年正式把京师从南京迁到北京。界遗产大会通过决议，将“北京中轴线——中国理想都城秩序的杰作”列入《世界遗产名录》。北京中轴线纵贯北京老城南北，始建于 13 世纪，形成于 16 世纪，此后经不断演进发展，形成今天全长7.8 千米、世界上最长的城市轴线，沿线15 个遗产构成要素为：钟鼓楼、万宁桥、景山、故宫、太庙、社稷坛、端门、天安门、外金水桥、天安门广场及建筑群、正阳门、南段道路遗存、天坛、先农坛、永定门。所以，故宫就位于该中轴线上。证。现有藏品总量已达 180 余万件（套），以明清宫廷文物类藏品、古建类藏品、图书类藏品为主。北宋张择端的《清明上河图》和晋代陆机的《平复帖》均为故宫博物院馆藏文物。《清明上河图》描绘的是清明时节北宋都城汴京（今河南开封）东角子门内外和汴河两岸的繁华热闹景象；《平复帖》是作者用秃笔写于麻纸之上的作品，笔意婉转，风格平淡质朴，其字体为草隶书。折扇、《千里江山图》装饰画、《五牛图》铜牛等。《千里江山图》是北宋王希孟创作粉笔拓展的绢本设色画，《五牛图》是唐朝韩滉创作的黄麻纸本设色画。二者均藏于北京故宫博物院。</p><div class="elim"><div class="erow"><span class="elet elet-A">A 项 · 排除</span><span class="etxt">1925 年10 月10 日，故宫博物院成立，其前身是明清两朝皇</span></div><div class="erow"><span class="elet elet-B">B 项 · 保留</span><span class="etxt">2024 年7 月27 日，在印度新德里召开的联合国教科文组织第46 届世</span></div><div class="erow"><span class="elet elet-C">C 项 · 保留</span><span class="etxt">故宫博物院馆藏文物涵盖古今、体系完备，是中华文明源远流长的见</span></div><div class="erow"><span class="elet elet-D">D 项 · 保留</span><span class="etxt">故宫博物院用文创“唤醒”文物，研发万余种文创产品，如雍正御批</span></div></div><p class="sol-tail">本题为选非题，故正确答案为 A。</p>
+      <p class="sol-note">解析为粉笔原书内容，按「选项排除式」重排：X 项错误＝先排除，X 项正确＝后择优。常识靠积累，错题记条目比刷题更重要。</p>
+    </div>
+  </div>
+</article>
+<article class="q" id="q-1-3" data-no="q-1-3" data-ans="B" data-kd="文化常识" data-rate="32.88" data-wrong="A">
+  <div class="q-head"><span class="qno">3</span><div class="stem">良渚遗址、河姆渡遗址都是浙江境内重要的新石器时代文化遗址。下列与它们有关的表述，不正确的是：</div></div>
+  <div class="opts"><div class="opt"><i>A</i><span>良渚遗址的发现时间早于河姆渡遗址</span></div><div class="opt"><i>B</i><span>杭州第19 届亚运会火种在河姆渡遗址公园采集</span></div><div class="opt"><i>C</i><span>良渚文化的发现，打破了华夏文明的黄河起源一元论</span></div><div class="opt"><i>D</i><span>河姆渡文化的社会经济以稻作农业为主，兼营畜牧、采集和渔猎</span></div></div>
+  <input type="checkbox" id="ck-q-1-3" class="soltoggle">
+  <div class="qbar">
+    <label class="btn-reveal" for="ck-q-1-3" data-act="reveal" data-sol="q-1-3"><span class="lr-open">查看解析</span><span class="lr-close">收起解析</span></label>
+    <span class="meta">正确率 <b>32.88%</b> · 易错项 <b>A</b> · （2025 浙江A 18）</span>
+    <label class="mini-check"><input type="checkbox" data-master="q-1-3">已掌握</label>
+  </div>
+  <div class="sol" data-sol="q-1-3">
+    <div class="sol-ans">正确答案<span>B</span></div>
+    <div class="sol-body">
+      <div class="sol-tag">人文常识 · 文化常识 · 上册 P7</div>
+      <p class="sol-lead">墓地、祭坛等各种遗存，出土物中以大量精美的玉礼器最具特色。河姆渡遗址发现于1973 年夏，同年，浙江省文管会、浙江省博物馆对河姆渡遗址进行了首次大规模发掘。良渚遗址的发现时间早于河姆渡遗址。公园大莫角山被成功采集。器时代晚期的考古学文化。良渚文化的发现，打破了华夏文明的黄河起源一元论，成为中华5000 余年文明史的有力实证。游就有稻作农业。 河姆渡先民以稻作农业为主，兼营渔猎、采集、家畜饲养的经济特点，有效地保障了人们的食物来源。</p><div class="elim"><div class="erow"><span class="elet elet-A">A 项 · 保留</span><span class="etxt">良渚遗址发现于1936 年，遗址群中发现有分布密集的村落、</span></div><div class="erow"><span class="elet elet-B">B 项 · 排除</span><span class="etxt">2023 年6 月15 日上午，杭州第19 届亚运会火种在杭州良渚古城遗址</span></div><div class="erow"><span class="elet elet-C">C 项 · 保留</span><span class="etxt">良渚文化的年代距今5300—4300 年，持续发展约1000 年，属于新石</span></div><div class="erow"><span class="elet elet-D">D 项 · 保留</span><span class="etxt">河姆渡遗址发现的人工栽培稻谷，证明早在7000 年前中国长江中下</span></div></div><p class="sol-tail">本题为选非题，故正确答案为B。</p>
+      <p class="sol-note">解析为粉笔原书内容，按「选项排除式」重排：X 项错误＝先排除，X 项正确＝后择优。常识靠积累，错题记条目比刷题更重要。</p>
+    </div>
+  </div>
+</article>
+<article class="q" id="q-1-4" data-no="q-1-4" data-ans="D" data-kd="文化常识" data-rate="42.24" data-wrong="C">
+  <div class="q-head"><span class="qno">4</span><div class="stem">下列名胜古迹与楹联对应正确的是：</div></div>
+  <div class="opts"><div class="opt"><i>A</i><span>四川成都杜甫草堂——两表酬三顾，一对足千秋</span></div><div class="opt"><i>B</i><span>浙江杭州岳飞墓——四面荷花三面柳，一城山色半城湖</span></div><div class="opt"><i>C</i><span>山东济南大明湖——湖光潋滟疑花雨，山籁空灵度梵音</span></div><div class="opt"><i>D</i><span>安徽合肥包公祠——理冤狱关节不通自是阎罗气象，赈灾黎慈悲无量依然菩萨心肠</span></div></div>
+  <input type="checkbox" id="ck-q-1-4" class="soltoggle">
+  <div class="qbar">
+    <label class="btn-reveal" for="ck-q-1-4" data-act="reveal" data-sol="q-1-4"><span class="lr-open">查看解析</span><span class="lr-close">收起解析</span></label>
+    <span class="meta">正确率 <b>42.24%</b> · 易错项 <b>C</b> · （2025 四川 14）</span>
+    <label class="mini-check"><input type="checkbox" data-master="q-1-4">已掌握</label>
+  </div>
+  <div class="sol" data-sol="q-1-4">
+    <div class="sol-ans">正确答案<span>D</span></div>
+    <div class="sol-body">
+      <div class="sol-tag">人文常识 · 文化常识 · 上册 P8</div>
+      <p class="sol-lead">顾堂正门的楹联，而不是四川成都杜甫草堂。上联的意思是诸葛亮的前、后两个《出师表》酬答了刘备三顾茅庐的情谊；下联的意思是诸葛亮的《隆中对》足以流传千秋，万世而不朽。湖沧浪亭的楹联，而不是浙江杭州岳飞墓。上联的意思是大明湖四面是荷花三面是柳树，红荷绿柳相互映衬，分外美丽；下联的意思是济南满城都映着千佛山的山色，大明湖占了城的一半。楹联，而不是山东济南大明湖。上联的意思是在阳光的照耀下，湖水波光粼粼像花雨一般；下联的意思是念经诵佛的声音在空灵的山间回荡。徽合肥包公祠正殿门两侧的楹联。上联描绘了包拯在处理冤假错案时的严格和公正，如同阎罗王那样不留情面，不让任何不公正的事情发生；下联表达了包拯对待百姓极为仁慈，面对灾难他慷慨解囊，如同菩萨一般，心中充满了对人民的慈悲和爱心。</p><div class="elim"><div class="erow"><span class="elet elet-A">A 项 · 排除</span><span class="etxt">“两表酬三顾，一对足千秋”是明代文人游俊题在湖北襄阳三</span></div><div class="erow"><span class="elet elet-B">B 项 · 排除</span><span class="etxt">“四面荷花三面柳，一城山色半城湖”是清代刘凤诰题在山东济南大明</span></div><div class="erow"><span class="elet elet-C">C 项 · 排除</span><span class="etxt">“湖光潋滟疑花雨，山籁空灵度梵音”是杨翰西题在江苏无锡广福寺的</span></div><div class="erow"><span class="elet elet-D">D 项 · 保留</span><span class="etxt">“理冤狱关节不通自是阎罗气象，赈灾黎慈悲无量依然菩萨心肠”是安</span></div></div><p class="sol-tail">故正确答案为D。</p>
+      <p class="sol-note">解析为粉笔原书内容，按「选项排除式」重排：X 项错误＝先排除，X 项正确＝后择优。常识靠积累，错题记条目比刷题更重要。</p>
+    </div>
+  </div>
+</article>
+<article class="q" id="q-1-5" data-no="q-1-5" data-ans="C" data-kd="文化常识" data-rate="45.8" data-wrong="A">
+  <div class="q-head"><span class="qno">5</span><div class="stem">下列古诗句中出现的时辰与现代24 小时制对应的时间错误的是：</div></div>
+  <div class="opts"><div class="opt"><i>A</i><span>三条九陌丽城隈，万户千门平旦开——3 时到5 时</span></div><div class="opt"><i>B</i><span>山高树多日出迟，食时雾露且雰霏——7 时到9 时</span></div><div class="opt"><i>C</i><span>人定犹行背街鼓，月高还去打僧房——17 时到19 时</span></div><div class="opt"><i>D</i><span>姑苏城外寒山寺，夜半钟声到客船——23 时到1 时</span></div></div>
+  <input type="checkbox" id="ck-q-1-5" class="soltoggle">
+  <div class="qbar">
+    <label class="btn-reveal" for="ck-q-1-5" data-act="reveal" data-sol="q-1-5"><span class="lr-open">查看解析</span><span class="lr-close">收起解析</span></label>
+    <span class="meta">正确率 <b>45.8%</b> · 易错项 <b>A</b> · （2025 四川 17）</span>
+    <label class="mini-check"><input type="checkbox" data-master="q-1-5">已掌握</label>
+  </div>
+  <div class="sol" data-sol="q-1-5">
+    <div class="sol-ans">正确答案<span>C</span></div>
+    <div class="sol-body">
+      <div class="sol-tag">人文常识 · 文化常识 · 上册 P8</div>
+      <p class="sol-lead">京篇》。这句诗描绘了长安城清晨的繁华景象。太阳露出地平线之前，天刚蒙蒙亮的一段时间称“平旦”，对应十二时辰的寅时，即每天的3 时至5 时。这句诗的意思是山高树密，因此太阳升起得很晚，吃早餐的时候，四周弥漫着浓密的雾气和细雨。古人吃早饭的时间即食时，对应十二时辰的辰时，即每天的7 时至9 时。秘书》。这句诗的意思是即使在夜深人静之时，仍旧沿着背街行走，月亮高挂时还去古寺与僧侣交流。人定，又名定昏，此时夜色已深，人们已停止活动，安歇睡眠了，对应十二时辰中的亥时，即每天的21 时至23 时。 选项中，17 时至19 时对应日入，即酉时。泊》。这句诗的意思是在姑苏城外的寒山寺，半夜时分响起的钟声传到了停泊在江边的客船上。夜半指前一日夜里零时前后，对应十二时辰中的子时，即23 时至1 时。十二时辰子丑寅卯辰巳代表时间子时，夜半（23—1 时）丑时，鸡鸣（1—3 时）寅时，平旦（3—5 时）卯时，日出（5—7 时）辰时，食时（7—9 时）巳时，隅中（9—11 时）午未申酉戌亥代表时间午时，日中（11—13 时）未时，日昳（13—15 时）申时，哺时（15—17 时）酉时，日入（17—19 时）戌时，黄昏（19—21 时）亥时，人定（21—23 时）</p><div class="elim"><div class="erow"><span class="elet elet-A">A 项 · 保留</span><span class="etxt">“三条九陌丽城隈，万户千门平旦开”出自唐代骆宾王的《帝</span></div><div class="erow"><span class="elet elet-B">B 项 · 保留</span><span class="etxt">“山高树多日出迟，食时雾露且雰霏”出自宋代王质的《东流道中》。</span></div><div class="erow"><span class="elet elet-C">C 项 · 排除</span><span class="etxt">“人定犹行背街鼓，月高还去打僧房”出自唐代诗人王建的《寄杨十二</span></div><div class="erow"><span class="elet elet-D">D 项 · 保留</span><span class="etxt">“姑苏城外寒山寺，夜半钟声到客船”出自唐代诗人张继的《枫桥夜</span></div></div><p class="sol-tail">本题为选非题，故正确答案为C。</p>
+      <p class="sol-note">解析为粉笔原书内容，按「选项排除式」重排：X 项错误＝先排除，X 项正确＝后择优。常识靠积累，错题记条目比刷题更重要。</p>
+    </div>
+  </div>
+</article>
+<article class="q" id="q-1-6" data-no="q-1-6" data-ans="C" data-kd="文化常识" data-rate="49.89" data-wrong="A">
+  <div class="q-head"><span class="qno">6</span><div class="stem">国家主席习近平在二〇二四年新年贺词中指出：“良渚、二里头的文明曙光，殷墟甲骨的文字传承，三星堆的文化瑰宝，国家版本馆的文脉赓续……泱泱中华，历史何其悠久，文明何其博大，这是我们的自信之基、力量之源。”下列与之相关的说法不准确的是：</div></div>
+  <div class="opts"><div class="opt"><i>A</i><span>“良渚”遗址中出土了大量的玉器</span></div><div class="opt"><i>B</i><span>“殷墟甲骨”中包含了大量的卜辞</span></div><div class="opt"><i>C</i><span>“蚕丛及鱼凫”与二里头遗址有关</span></div><div class="opt"><i>D</i><span>青铜神树是“三星堆的文化瑰宝”之一</span></div></div>
+  <input type="checkbox" id="ck-q-1-6" class="soltoggle">
+  <div class="qbar">
+    <label class="btn-reveal" for="ck-q-1-6" data-act="reveal" data-sol="q-1-6"><span class="lr-open">查看解析</span><span class="lr-close">收起解析</span></label>
+    <span class="meta">正确率 <b>49.89%</b> · 易错项 <b>A</b> · （2025 国考副省 25）</span>
+    <label class="mini-check"><input type="checkbox" data-master="q-1-6">已掌握</label>
+  </div>
+  <div class="sol" data-sol="q-1-6">
+    <div class="sol-ans">正确答案<span>C</span></div>
+    <div class="sol-body">
+      <div class="sol-tag">人文常识 · 文化常识 · 上册 P8</div>
+      <p class="sol-lead">粉笔拓展1986 年，考古学者在浙江余杭反山遗址发掘了良渚文化大墓11 座，出土了1200 多件玉器，包括完整的玉琮、玉璧等。大多数材料是卜辞，即占卜记录，占卜的范围很广，包含鬼神、祭祀、战争、农业、田猎、天象、疾病、历法等丰富内容，涉及当时社会的王室、贵族、平民和奴隶等各个阶层。国王的名字。 三星堆遗址出土的纵目面具被认为是蚕丛的象征，三星堆遗址出土了大量的鸟头勺柄，鸟头形象颇似鱼凫（鱼鹰），被认为可能与古蜀传说中以鱼凫为族名、族徽的鱼凫王朝有关。二里头遗址，位于洛阳盆地东部的偃师区境内，是迄今为止可确认的中国最早的王国都城遗址。掘出的青铜神树，是“三星堆的文化瑰宝”之一。其中最完整的是一号大型铜神树，由底座、树和龙三部分组成，采用分段铸造法铸造，使用了套铸、铆铸、嵌铸等工艺，通高3.96 米，是中国现存形体最大的单件青铜文物。</p><div class="elim"><div class="erow"><span class="elet elet-A">A 项 · 保留</span><span class="etxt">良渚古城遗址，位于浙江省杭州市余杭区瓶窑镇、良渚镇，</span></div><div class="erow"><span class="elet elet-B">B 项 · 保留</span><span class="etxt">殷墟位于河南省安阳市，是商代后期的都城遗址。 殷墟甲骨文中的绝</span></div><div class="erow"><span class="elet elet-C">C 项 · 排除</span><span class="etxt">“蚕丛及鱼凫”与三星堆遗址有关。蚕丛和鱼凫是传说中古蜀国两位</span></div><div class="erow"><span class="elet elet-D">D 项 · 保留</span><span class="etxt">三星堆遗址位于四川省广汉市三星堆镇鸭子河南岸。在三星堆遗址发</span></div></div><p class="sol-tail">本题为选非题，故正确答案为C。</p>
+      <p class="sol-note">解析为粉笔原书内容，按「选项排除式」重排：X 项错误＝先排除，X 项正确＝后择优。常识靠积累，错题记条目比刷题更重要。</p>
+    </div>
+  </div>
+</article>
+</section>
+<section class="sec" id="s-2" data-idx="2" data-chap="人文常识">
+  <div class="sec-head"><span class="sec-no">第二节</span>
+    <div class="sec-meta"><h3>文学常识</h3>
+      <div class="stags"><span class="ptag pt-chap">人文常识</span><span class="ptag pt-n">2 题</span></div>
+    </div></div>
+  <div class="mat-note">题目来源：粉笔《决战行测5000题 · 常识判断（新增题）》上册 · 人文常识 / 文学常识（考生回忆版）</div>
+  
+<article class="q" id="q-2-1" data-no="q-2-1" data-ans="D" data-kd="文学常识" data-rate="44.42" data-wrong="C">
+  <div class="q-head"><span class="qno">1</span><div class="stem">下列《三国演义》中的回目，按照先后顺序排列正确的是：①宴长江曹操赋诗，锁战船北军用武②战官渡本初败绩，劫乌巢孟德烧粮③刘先主遗诏托孤儿，诸葛亮安居平五路④王司徒巧使连环计，董太师大闹凤仪亭</div></div>
+  <div class="opts"><div class="opt"><i>A</i><span>①③④②</span></div><div class="opt"><i>B</i><span>③②④①</span></div><div class="opt"><i>C</i><span>②①④③</span></div><div class="opt"><i>D</i><span>④②①③</span></div></div>
+  <input type="checkbox" id="ck-q-2-1" class="soltoggle">
+  <div class="qbar">
+    <label class="btn-reveal" for="ck-q-2-1" data-act="reveal" data-sol="q-2-1"><span class="lr-open">查看解析</span><span class="lr-close">收起解析</span></label>
+    <span class="meta">正确率 <b>44.42%</b> · 易错项 <b>C</b> · （2025 国考地市 34）</span>
+    <label class="mini-check"><input type="checkbox" data-master="q-2-1">已掌握</label>
+  </div>
+  <div class="sol" data-sol="q-2-1">
+    <div class="sol-ans">正确答案<span>D</span></div>
+    <div class="sol-body">
+      <div class="sol-tag">人文常识 · 文学常识 · 上册 P9</div>
+      <p class="sol-lead">①“宴长江曹操赋诗，锁战船北军用武”出自《三国演义》第四十八回，主要内容是曹操在长江宴请自己手下时作了一首《短歌行》，赤壁之战中面对北方军队不擅长水战的情况，曹操在庞统的建议下，用铁锁连接战船，准备开战。②“战官渡本初败绩，劫乌巢孟德烧粮”出自《三国演义》第三十回，主要内容是在曹操与袁绍的官渡之战中，袁绍大败，曹操在劫了乌巢后将其烧毁，断了袁绍的粮草。③“刘先主遗诏托孤儿，诸葛亮安居平五路”出自《三国演义》第八十五回，主要内容是刘备在白帝城永安宫病重，召诸葛亮等人托付后事。刘备病逝，诸葛亮立年幼的刘禅为帝，曹丕趁机派五路大军伐蜀，诸葛亮运筹帷幄智平五路。④“王司徒巧使连环计，董太师大闹凤仪亭”出自《三国演义》第八回，主要内容是司徒王允使用连环计，先将貂蝉许配给吕布，后又将她献给董卓，董卓听闻吕布约会貂蝉后，大闹凤仪亭。综上，按照先后顺序排列应为④②①③。</p><p class="sol-tail">故正确答案为D。</p>
+      <p class="sol-note">解析为粉笔原书内容，按「选项排除式」重排：X 项错误＝先排除，X 项正确＝后择优。常识靠积累，错题记条目比刷题更重要。</p>
+    </div>
+  </div>
+</article>
+<article class="q" id="q-2-2" data-no="q-2-2" data-ans="A" data-kd="文学常识" data-rate="10.29" data-wrong="C">
+  <div class="q-head"><span class="qno">2</span><div class="stem">关于名句中的文史知识，下列说法正确的是：</div></div>
+  <div class="opts"><div class="opt"><i>A</i><span>“苍山负雪，明烛天南”中的“苍山”指的是泰山</span></div><div class="opt"><i>B</i><span>“图穷事自至，豪主正怔营”中的“豪主”指的是荆轲</span></div><div class="opt"><i>C</i><span>“疏影横斜水清浅，暗香浮动月黄昏”中的“暗香”指的是桂花香气</span></div><div class="opt"><i>D</i><span>“一年好景君须记，最是橙黄橘绿时”中的“好景”指的是夏季景色</span></div></div>
+  <input type="checkbox" id="ck-q-2-2" class="soltoggle">
+  <div class="qbar">
+    <label class="btn-reveal" for="ck-q-2-2" data-act="reveal" data-sol="q-2-2"><span class="lr-open">查看解析</span><span class="lr-close">收起解析</span></label>
+    <span class="meta">正确率 <b>10.29%</b> · 易错项 <b>C</b> · （2025 天津 60）</span>
+    <label class="mini-check"><input type="checkbox" data-master="q-2-2">已掌握</label>
+  </div>
+  <div class="sol" data-sol="q-2-2">
+    <div class="sol-ans">正确答案<span>A</span></div>
+    <div class="sol-body">
+      <div class="sol-tag">人文常识 · 文学常识 · 上册 P9</div>
+      <p class="sol-lead">只见青山上覆盖着白雪，雪光照亮了南面的天空。此处的“苍山”指的是泰山。完地图忽地现出匕首，秦王一见不由胆颤心惊。此处的“豪主”指的是秦王。（其一），意思是在清浅的水中可以看见横斜的稀疏的影子，清幽的芬芳在昏黄的月光之下浮动。此处的“暗香”指的是梅花香气。意思是你一定要记住一年中最好的景致，就是秋末冬初橙黄橘绿的时候。此处的“好景”指的是秋末冬初的景色。</p><div class="elim"><div class="erow"><span class="elet elet-A">A 项 · 保留</span><span class="etxt">“苍山负雪，明烛天南”出自清代姚鼐的《登泰山记》，意思是</span></div><div class="erow"><span class="elet elet-B">B 项 · 排除</span><span class="etxt">“图穷事自至，豪主正怔营”出自东晋陶渊明的《咏荆轲》，意思是翻</span></div><div class="erow"><span class="elet elet-C">C 项 · 排除</span><span class="etxt">“疏影横斜水清浅，暗香浮动月黄昏”出自宋代林逋的《山园小梅》</span></div><div class="erow"><span class="elet elet-D">D 项 · 排除</span><span class="etxt">“一年好景君须记，最是橙黄橘绿时”出自宋代苏轼的《赠刘景文》，</span></div></div><p class="sol-tail">故正确答案为A。</p>
+      <p class="sol-note">解析为粉笔原书内容，按「选项排除式」重排：X 项错误＝先排除，X 项正确＝后择优。常识靠积累，错题记条目比刷题更重要。</p>
+    </div>
+  </div>
+</article>
+</section>
+<section class="sec" id="s-3" data-idx="3" data-chap="人文常识">
+  <div class="sec-head"><span class="sec-no">第三节</span>
+    <div class="sec-meta"><h3>历史常识</h3>
+      <div class="stags"><span class="ptag pt-chap">人文常识</span><span class="ptag pt-n">3 题</span></div>
+    </div></div>
+  <div class="mat-note">题目来源：粉笔《决战行测5000题 · 常识判断（新增题）》上册 · 人文常识 / 历史常识（考生回忆版）</div>
+  
+<article class="q" id="q-3-1" data-no="q-3-1" data-ans="B" data-kd="历史常识" data-rate="38.93" data-wrong="C">
+  <div class="q-head"><span class="qno">1</span><div class="stem">纪录片《何以中国》讲述了多元一体中华民族的形成和中华文明创生的故事。下列哪句解说词不可能出现在《秦汉》一集中？</div></div>
+  <div class="opts"><div class="opt"><i>A</i><span>他登峄山，攀泰山，上琅琊，经之罘，过东观，临碣石，至会稽，巡行之处皆刊石勒铭</span></div><div class="opt"><i>B</i><span>武丁左手扶住卜骨，右手持炭棒，灼烧着钻槽，通红的棒头神秘地闪烁，不久后，裂缝在钻槽边绽开，发出脆响</span></div><div class="opt"><i>C</i><span>从长安出发时，车马辚辚百余人，回程路上，只有两人，一十三年间，有利益相诱，有武力相胁，温柔乡、囹圄境，却从未丢失身为汉使的旌节，从未磨灭此行的初心</span></div><div class="opt"><i>D</i><span>龙首原上，长乐、未央两宫东西并峙，于高处制掣全城。桂宫、北宫、明光宫横列两宫之北</span></div></div>
+  <input type="checkbox" id="ck-q-3-1" class="soltoggle">
+  <div class="qbar">
+    <label class="btn-reveal" for="ck-q-3-1" data-act="reveal" data-sol="q-3-1"><span class="lr-open">查看解析</span><span class="lr-close">收起解析</span></label>
+    <span class="meta">正确率 <b>38.93%</b> · 易错项 <b>C</b> · （2025 国考副省 28）</span>
+    <label class="mini-check"><input type="checkbox" data-master="q-3-1">已掌握</label>
+  </div>
+  <div class="sol" data-sol="q-3-1">
+    <div class="sol-ans">正确答案<span>B</span></div>
+    <div class="sol-body">
+      <div class="sol-tag">人文常识 · 历史常识 · 上册 P9</div>
+      <p class="sol-lead">话描述的是秦始皇巡游的路线和所到之处刻石勒铭的情况，可能出现在《秦汉》一集中。可能出现在《秦汉》一集中。要历史事件，可能出现在《秦汉》一集中。要建筑和文化象征。长乐宫是在秦朝离宫兴乐宫的基础上改建而成的西汉第一座正规宫殿，位于西汉长安城内东南隅，始建于汉高祖五年（公元前202 年）。未央宫是西汉王朝的大朝正宫、汉朝的政治中心和国家象征，建于汉高祖七年（公元前200 年）。长乐宫、未央宫和建章宫并称“汉代三宫”，故这段话可能出现在《秦汉》一集中。</p><div class="elim"><div class="erow"><span class="elet elet-A">A 项 · 保留</span><span class="etxt">秦始皇在统一六国后，为了巩固统治，多次进行巡游。这段</span></div><div class="erow"><span class="elet elet-B">B 项 · 排除</span><span class="etxt">这段话描述的是武丁进行占卜的情景，武丁是商朝中后期的君主，不</span></div><div class="erow"><span class="elet elet-C">C 项 · 保留</span><span class="etxt">这段话描述的是汉代使臣张骞出使西域的艰辛历程，是秦汉时期的重</span></div><div class="erow"><span class="elet elet-D">D 项 · 保留</span><span class="etxt">这段话描述的是汉代长安城中宫殿的布局，这些宫殿是秦汉时期的重</span></div></div><p class="sol-tail">本题为选非题，故正确答案为B。</p>
+      <p class="sol-note">解析为粉笔原书内容，按「选项排除式」重排：X 项错误＝先排除，X 项正确＝后择优。常识靠积累，错题记条目比刷题更重要。</p>
+    </div>
+  </div>
+</article>
+<article class="q" id="q-3-2" data-no="q-3-2" data-ans="A" data-kd="历史常识" data-rate="20.21" data-wrong="C">
+  <div class="q-head"><span class="qno">2</span><div class="stem">下列情形在历史中最可能发生的是：</div></div>
+  <div class="opts"><div class="opt"><i>A</i><span>明朝末期一个商贾邀请了昆曲班子献唱贺寿</span></div><div class="opt"><i>B</i><span>名将白起曾参考淝水之战的战术来指挥军队</span></div><div class="opt"><i>C</i><span>瓷商借助唐朝通商政策将粉彩瓷器销往海外</span></div><div class="opt"><i>D</i><span>王阳明和黄宗羲曾通过书信以探讨学术问题</span></div></div>
+  <input type="checkbox" id="ck-q-3-2" class="soltoggle">
+  <div class="qbar">
+    <label class="btn-reveal" for="ck-q-3-2" data-act="reveal" data-sol="q-3-2"><span class="lr-open">查看解析</span><span class="lr-close">收起解析</span></label>
+    <span class="meta">正确率 <b>20.21%</b> · 易错项 <b>C</b> · （2025 天津 61）</span>
+    <label class="mini-check"><input type="checkbox" data-master="q-3-2">已掌握</label>
+  </div>
+  <div class="sol" data-sol="q-3-2">
+    <div class="sol-ans">正确答案<span>A</span></div>
+    <div class="sol-body">
+      <div class="sol-tag">人文常识 · 历史常识 · 上册 P10</div>
+      <p class="sol-lead">坛的中心地位，成为此后两百多年间重要的戏剧形式。 因此，明朝末期一个商贾邀请了昆曲班子献唱贺寿有可能发生。前秦之间发生在淝水（今安徽寿县）的一场战争。因此，白起参考淝水之战的战术来指挥军队不可能发生。趋成熟，并形成粉彩装饰的独特风格；乾隆时期粉彩瓷器已非常兴盛。唐朝还没有出现粉彩瓷器，因此，瓷商借助唐朝通商政策将粉彩瓷器销往海外不可能发生。集大成者。黄宗羲（1610—1695 年），明末清初著名思想家。二者生活在不同时期。因此，王阳明和黄宗羲通过书信探讨学术问题不可能发生。</p><div class="elim"><div class="erow"><span class="elet elet-A">A 项 · 保留</span><span class="etxt">昆曲起源于元末明初江苏昆山地区，从明代中叶开始占据剧</span></div><div class="erow"><span class="elet elet-B">B 项 · 排除</span><span class="etxt">白起是战国时期名将，“兵家”代表人物。淝水之战是383 年东晋和</span></div><div class="erow"><span class="elet elet-C">C 项 · 排除</span><span class="etxt">粉彩瓷器是清朝康熙年间出现的一种瓷器；到雍正时期，粉彩瓷器已</span></div><div class="erow"><span class="elet elet-D">D 项 · 排除</span><span class="etxt">王阳明（1472—1529 年），名守仁，字伯安，明代中期思想家、心学</span></div></div><p class="sol-tail">故正确答案为A。</p>
+      <p class="sol-note">解析为粉笔原书内容，按「选项排除式」重排：X 项错误＝先排除，X 项正确＝后择优。常识靠积累，错题记条目比刷题更重要。</p>
+    </div>
+  </div>
+</article>
+<article class="q" id="q-3-3" data-no="q-3-3" data-ans="B" data-kd="历史常识" data-rate="27.32" data-wrong="C">
+  <div class="q-head"><span class="qno">3</span><div class="stem">下列场景中，与其他三项不可能发生在同一年的是：</div></div>
+  <div class="opts"><div class="opt"><i>A</i><span>杭州市民通过电视转播台观看洛杉矶奥运会中国女排夺冠比赛</span></div><div class="opt"><i>B</i><span>北京市民在报纸上看到神舟一号发射成功的新闻</span></div><div class="opt"><i>C</i><span>香港居民看到《中英联合声明》草签的号外</span></div><div class="opt"><i>D</i><span>上海市民购买飞乐音响公司的股票</span></div></div>
+  <input type="checkbox" id="ck-q-3-3" class="soltoggle">
+  <div class="qbar">
+    <label class="btn-reveal" for="ck-q-3-3" data-act="reveal" data-sol="q-3-3"><span class="lr-open">查看解析</span><span class="lr-close">收起解析</span></label>
+    <span class="meta">正确率 <b>27.32%</b> · 易错项 <b>C</b> · （2025 四川 13）</span>
+    <label class="mini-check"><input type="checkbox" data-master="q-3-3">已掌握</label>
+  </div>
+  <div class="sol" data-sol="q-3-3">
+    <div class="sol-ans">正确答案<span>B</span></div>
+    <div class="sol-body">
+      <div class="sol-tag">人文常识 · 历史常识 · 上册 P10</div>
+      <p class="sol-lead">排在此届奥运会上夺得了中国三大球的第一个奥运会金牌，实现了三连冠。一号”在酒泉卫星发射中心成功发射升空。这是中国载人航天工程的首次飞行，标志着我国在载人航天飞行技术上有了重大突破。明和三个附件。声明宣布，中国政府决定，1997 年7 月1 日对香港恢复行使主权，英国将在同时将香港交还给中国。总厂、飞乐电声总厂三分厂、上海电子元件工业公司、工商银行上海市分行信托公司静安分部发起设立上海飞乐音响股份有限公司，向社会公众及职工发行股票。1984 年中国其他大事５月４日，中共中央、国务院批转《沿海部分城市座谈会纪要》，决定进一步开放大连等14 个沿海港口城市。7 月28 日—8 月12 日，中国体育代表团在美国洛杉矶举行的第23 届夏季奥运会上获得15 枚金牌，实现了中国在奥运会金牌榜上零的突破。粉笔拓展</p><div class="elim"><div class="erow"><span class="elet elet-A">A 项 · 保留</span><span class="etxt">1984 年，第23 届夏季奥林匹克运动会于洛杉矶举行，中国女</span></div><div class="erow"><span class="elet elet-B">B 项 · 排除</span><span class="etxt">1999 年11 月20 日，我国自行研制的第一艘载人航天试验飞船“神舟</span></div><div class="erow"><span class="elet elet-C">C 项 · 保留</span><span class="etxt">1984 年9 月26 日，中英两国政府在北京草签关于香港问题的联合声</span></div><div class="erow"><span class="elet elet-D">D 项 · 保留</span><span class="etxt">1984 年11 月14 日，经中国人民银行上海分行批准，由上海飞乐电声</span></div></div><p class="sol-tail">本题为选非题，故正确答案为B。</p>
+      <p class="sol-note">解析为粉笔原书内容，按「选项排除式」重排：X 项错误＝先排除，X 项正确＝后择优。常识靠积累，错题记条目比刷题更重要。</p>
+    </div>
+  </div>
+</article>
+</section>
+<section class="sec" id="s-4" data-idx="4" data-chap="科技常识">
+  <div class="sec-head"><span class="sec-no">第四节</span>
+    <div class="sec-meta"><h3>物理常识</h3>
+      <div class="stags"><span class="ptag pt-chap">科技常识</span><span class="ptag pt-n">5 题</span></div>
+    </div></div>
+  <div class="mat-note">题目来源：粉笔《决战行测5000题 · 常识判断（新增题）》上册 · 科技常识 / 物理常识（考生回忆版）</div>
+  
+<article class="q" id="q-4-1" data-no="q-4-1" data-ans="A" data-kd="物理常识" data-rate="34.85" data-wrong="D">
+  <div class="q-head"><span class="qno">1</span><div class="stem">下列物理学家与其提出的著名观点对应错误的是：</div></div>
+  <div class="opts"><div class="opt"><i>A</i><span>麦克斯韦：能量的交换不是连续的，而是以最小的不可分割的单元进行，这些单元被称为“量子”</span></div><div class="opt"><i>B</i><span>安培：在原子、分子等物质微粒的内部，存在着一种环形电流——分子电流，使每个微粒成为微小的磁体</span></div><div class="opt"><i>C</i><span>牛顿：任何两个物体之间都存在引力，这种力的大小与它们质量的乘积成正比，与它们之间的距离的平方成反比</span></div><div class="opt"><i>D</i><span>伽利略：物体的运动并不需要力来维持，运动的物体之所以会停下来，是因为受到了阻力</span></div></div>
+  <input type="checkbox" id="ck-q-4-1" class="soltoggle">
+  <div class="qbar">
+    <label class="btn-reveal" for="ck-q-4-1" data-act="reveal" data-sol="q-4-1"><span class="lr-open">查看解析</span><span class="lr-close">收起解析</span></label>
+    <span class="meta">正确率 <b>34.85%</b> · 易错项 <b>D</b> · （2025 国考副省 27）</span>
+    <label class="mini-check"><input type="checkbox" data-master="q-4-1">已掌握</label>
+  </div>
+  <div class="sol" data-sol="q-4-1">
+    <div class="sol-ans">正确答案<span>A</span></div>
+    <div class="sol-body">
+      <div class="sol-tag">科技常识 · 物理常识 · 上册 P11</div>
+      <p class="sol-lead">最小的不可分割的基本单位，则这个物理量是量子化的，这个最小单位称为量子。该概念最早是由德国物理学家马克斯· 普朗克在1900 年提出的。他假设黑体辐射中的辐射能量是不连续的，只能取能量基本单位的整数倍，从而很好地解释了黑体辐射的实验现象。麦克斯韦的主要贡献包括预言了电磁波的存在，建立了麦克斯韦方程组等。质微粒的内部，存在着一种环形电流——分子电流，使每个微粒成为微小的磁体，分子的两侧相当于两个磁极。通常情况下磁体分子的分子电流取向是杂乱无章的，它们产生的磁场互相抵消，对外不显磁性。当有外界磁场作用时，分子电流的取向大致相同，分子间相邻的电流作用抵消，而表面部分未抵消，它们的效果显示出宏观磁性。体都相互吸引，引力的方向在它们的连线上。该引力大小与它们质量的乘积成正比，与它们之间的距离的平方成反比，与两物体的化学组成和其间介质种类无关。受到了阻力。这一观点首先由伽利略通过实验分析得出。伽利略通过斜面实验结合推理，证明了力不是维持物体运动的原因，而是改变物体运动状态的原因。</p><div class="elim"><div class="erow"><span class="elet elet-A">A 项 · 排除</span><span class="etxt">量子是现代物理学中的一个重要概念。一个物理量如果存在</span></div><div class="erow"><span class="elet elet-B">B 项 · 保留</span><span class="etxt">分子电流假说是安培提出的电磁学理论。 他认为，在原子、分子等物</span></div><div class="erow"><span class="elet elet-C">C 项 · 保留</span><span class="etxt">万有引力定律是由牛顿提出的。 其具体内容是：自然界中任何两个物</span></div><div class="erow"><span class="elet elet-D">D 项 · 保留</span><span class="etxt">物体的运动并不需要力来维持，运动的物体之所以会停下来，是因为</span></div></div><p class="sol-tail">本题为选非题，故正确答案为A。</p>
+      <p class="sol-note">解析为粉笔原书内容，按「选项排除式」重排：X 项错误＝先排除，X 项正确＝后择优。常识靠积累，错题记条目比刷题更重要。</p>
+    </div>
+  </div>
+</article>
+<article class="q" id="q-4-2" data-no="q-4-2" data-ans="B" data-kd="物理常识" data-rate="32.53" data-wrong="D">
+  <div class="q-head"><span class="qno">2</span><div class="stem">关于生活中的物理现象，下列说法正确的是：</div></div>
+  <div class="opts"><div class="opt"><i>A</i><span>桥梁桥拱的形状经极致优化可显著增加桥梁对桥墩的拉力</span></div><div class="opt"><i>B</i><span>白炽灯中的钨丝在长期使用过程中会逐渐变细，电阻变大</span></div><div class="opt"><i>C</i><span>风筝在飞上天空的过程中，动能转化为势能，机械能不变</span></div><div class="opt"><i>D</i><span>修建高塔时，塔基底座的面积越大，塔对地面的压力越小</span></div></div>
+  <input type="checkbox" id="ck-q-4-2" class="soltoggle">
+  <div class="qbar">
+    <label class="btn-reveal" for="ck-q-4-2" data-act="reveal" data-sol="q-4-2"><span class="lr-open">查看解析</span><span class="lr-close">收起解析</span></label>
+    <span class="meta">正确率 <b>32.53%</b> · 易错项 <b>D</b> · （2025 天津 58）</span>
+    <label class="mini-check"><input type="checkbox" data-master="q-4-2">已掌握</label>
+  </div>
+  <div class="sol" data-sol="q-4-2">
+    <div class="sol-ans">正确答案<span>B</span></div>
+    <div class="sol-body">
+      <div class="sol-tag">科技常识 · 物理常识 · 上册 P11</div>
+      <p class="sol-lead">性和减少材料的使用。 一个经优化过的桥拱形状通常会减小桥梁对桥墩的压力，而不是增加桥梁对桥墩的拉力。长期使用后，钨丝会因为升华而逐渐变细。根据电阻的公式R = ρSL（其中ρ 是电阻率，L 是长度，S 是横截面积），当钨丝变细时，其横截面积S 减小，而长度L 和电阻率ρ 基本不变，因此电阻R 会增大。变风筝的飞行高度和速度。在此过程中，风筝的动能（与速度有关）和势能（与高度有关）都会发生变化。一般来说，风筝上升时，动能会转化为势能，但机械能（动能和势能之和）可能会因为空气阻力和高度等因素而变化。体和液体表面的垂直作用力，或者是液体对于固体表面的垂直作用力。修建高塔时，塔对地面的压力来源于其重力，与作用面积无关。与作用面积有关的是压强，当压力一定时，受力面积越大，压强越小。</p><div class="elim"><div class="erow"><span class="elet elet-A">A 项 · 排除</span><span class="etxt">桥梁桥拱的形状设计主要是为了分散压力、增强结构的稳定</span></div><div class="erow"><span class="elet elet-B">B 项 · 保留</span><span class="etxt">白炽灯中的钨丝在发光时会因为高温而升华，即直接从固态变为气态。</span></div><div class="erow"><span class="elet elet-C">C 项 · 排除</span><span class="etxt">风筝在飞上天空的过程中，通常会通过调整风筝线的角度和长度来改</span></div><div class="erow"><span class="elet elet-D">D 项 · 排除</span><span class="etxt">压力，是指发生在两个物体的接触表面的作用力，或者是气体对于固</span></div></div><p class="sol-tail">故正确答案为B。</p>
+      <p class="sol-note">解析为粉笔原书内容，按「选项排除式」重排：X 项错误＝先排除，X 项正确＝后择优。常识靠积累，错题记条目比刷题更重要。</p>
+    </div>
+  </div>
+</article>
+<article class="q" id="q-4-3" data-no="q-4-3" data-ans="D" data-kd="物理常识" data-rate="46.94" data-wrong="C">
+  <div class="q-head"><span class="qno">3</span><div class="stem">关于农业生产中的科学知识，下列说法错误的是：</div></div>
+  <div class="opts"><div class="opt"><i>A</i><span>化肥在水中溶解后可形成作物能够吸收的离子形态</span></div><div class="opt"><i>B</i><span>作物茎内导管可利用毛细现象将土壤中的水分吸上来</span></div><div class="opt"><i>C</i><span>土壤中加入石灰可中和土壤的酸性以提高土壤pH</span></div><div class="opt"><i>D</i><span>水通过喷灌系统的喷嘴时速度会突然减小，压力增大</span></div></div>
+  <input type="checkbox" id="ck-q-4-3" class="soltoggle">
+  <div class="qbar">
+    <label class="btn-reveal" for="ck-q-4-3" data-act="reveal" data-sol="q-4-3"><span class="lr-open">查看解析</span><span class="lr-close">收起解析</span></label>
+    <span class="meta">正确率 <b>46.94%</b> · 易错项 <b>C</b> · （2025 天津 56）</span>
+    <label class="mini-check"><input type="checkbox" data-master="q-4-3">已掌握</label>
+  </div>
+  <div class="sol" data-sol="q-4-3">
+    <div class="sol-ans">正确答案<span>D</span></div>
+    <div class="sol-body">
+      <div class="sol-tag">科技常识 · 物理常识 · 上册 P11</div>
+      <p class="sol-lead">硝酸根离子、磷酸根离子、钾离子等作物可以吸收的离子形态。着管内壁自动上升，水呈现凹面，并且高出容器的液面，这种能使水在毛细管中自动上升的力称为毛细作用力。在自然界和日常生活中有许多毛细现象的例子，植物茎内的导管就是植物体内极细的毛细管，它能把土壤里的水分吸上来。石灰性材料由于富含钙离子和镁离子，可以中和土壤中的酸，提高pH，现已成为使用最为广泛的酸性土壤改良剂。（这里的压力指单位面积上的压力，也就是普通物理学里的压强）减小。当水流经喷嘴时，由于喷嘴的截面积减小，水流的速度会增加，而压力会降低。这种速度的增加使得水能够以更大的速度喷出。因此，在喷嘴的出口处，流体的速度将达到最大，压力将达到最低。</p><div class="elim"><div class="erow"><span class="elet elet-A">A 项 · 保留</span><span class="etxt">当化肥施入土壤之后，化肥会在土壤的水分中溶解，形成如</span></div><div class="erow"><span class="elet elet-B">B 项 · 保留</span><span class="etxt">如果把直径很细的玻璃管（称毛细管）插入盛有水的容器中，水会沿</span></div><div class="erow"><span class="elet elet-C">C 项 · 保留</span><span class="etxt">为了中和土壤酸性，提高其肥力，最常见的方法是添加石灰或熟石灰。</span></div><div class="erow"><span class="elet elet-D">D 项 · 排除</span><span class="etxt">根据伯努利原理，当流体在喷嘴内部加速流动时，其速度增加，压力</span></div></div><p class="sol-tail">本题为选非题，故正确答案为D。</p>
+      <p class="sol-note">解析为粉笔原书内容，按「选项排除式」重排：X 项错误＝先排除，X 项正确＝后择优。常识靠积累，错题记条目比刷题更重要。</p>
+    </div>
+  </div>
+</article>
+<article class="q" id="q-4-4" data-no="q-4-4" data-ans="A" data-kd="物理常识" data-rate="50.15" data-wrong="B">
+  <div class="q-head"><span class="qno">4</span><div class="stem">下列与船只行驶有关的说法错误的是：</div></div>
+  <div class="opts"><div class="opt"><i>A</i><span>皮筏在顺流而下的过程中动能转化为重力势能</span></div><div class="opt"><i>B</i><span>船舵利用杠杆原理改变行船的方向</span></div><div class="opt"><i>C</i><span>使用船桨划船前进时利用了力的相互作用</span></div><div class="opt"><i>D</i><span>帆船实现逆风行驶是利用了伯努利原理</span></div></div>
+  <input type="checkbox" id="ck-q-4-4" class="soltoggle">
+  <div class="qbar">
+    <label class="btn-reveal" for="ck-q-4-4" data-act="reveal" data-sol="q-4-4"><span class="lr-open">查看解析</span><span class="lr-close">收起解析</span></label>
+    <span class="meta">正确率 <b>50.15%</b> · 易错项 <b>B</b> · （2025 国考地市 35）</span>
+    <label class="mini-check"><input type="checkbox" data-master="q-4-4">已掌握</label>
+  </div>
+  <div class="sol" data-sol="q-4-4">
+    <div class="sol-ans">正确答案<span>A</span></div>
+    <div class="sol-body">
+      <div class="sol-tag">科技常识 · 物理常识 · 上册 P12</div>
+      <p class="sol-lead">速度越大，它的动能越大；运动速度相同的物体，质量越大，它的动能越大。重力势能是指物体由于受到重力并处在一定高度时所具有的能。 物体质量越大，位置越高，它具有的重力势能就越大。皮筏顺流而下的过程中，重力势能随着高度不断减小而减小，动能随着运动速度不断增大而增大，重力势能转化为动能。船舵通常由舵叶和舵杆组成，利用杠杆原理以及作用力与反作用力原理，通过改变流经船体的流体的方向来控制船的行驶方向。鳍而发明。船桨的工作原理主要是利用牛顿第三定律，通过水的反作用力使船前进。向后划船桨时，人通过船桨给了水一个向后的作用力，与此同时，水也给了船桨一个向前的作用力，由此使船向前移动。因此，使用船桨划船前进时利用了力的相互作用。度大，压强就小。 帆船在航行过程中遇到逆风情况时，可以通过调整船帆，使得两侧的空气流速不同，从而产生压力差，使得帆船逆风行驶。</p><div class="elim"><div class="erow"><span class="elet elet-A">A 项 · 排除</span><span class="etxt">动能是指物体因运动而具有的能。 质量相同的物体，运动的</span></div><div class="erow"><span class="elet elet-B">B 项 · 保留</span><span class="etxt">船舵是用来操纵和控制船舶航向的装置，一般位于船尾，又称船尾舵。</span></div><div class="erow"><span class="elet elet-C">C 项 · 保留</span><span class="etxt">船桨是一种上端为圆杆，下端为板状的划水工具，根据鱼的胸鳍和腹</span></div><div class="erow"><span class="elet elet-D">D 项 · 保留</span><span class="etxt">伯努利原理是指在流体中，如果流体速度小，压强就大；如果流体速</span></div></div><p class="sol-tail">本题为选非题，故正确答案为A。</p>
+      <p class="sol-note">解析为粉笔原书内容，按「选项排除式」重排：X 项错误＝先排除，X 项正确＝后择优。常识靠积累，错题记条目比刷题更重要。</p>
+    </div>
+  </div>
+</article>
+<article class="q" id="q-4-5" data-no="q-4-5" data-ans="D" data-kd="物理常识" data-rate="31.75" data-wrong="C">
+  <div class="q-head"><span class="qno">5</span><div class="stem">下列情境中的两个物理量成正比的是：①通过某一电阻器的电流与其两端的电压②物体所受浮力与其体积③弹性限度内弹簧的伸长量与其所受拉力④汽车行驶时的加速度与速度</div></div>
+  <div class="opts"><div class="opt"><i>A</i><span>①②</span></div><div class="opt"><i>B</i><span>②④</span></div><div class="opt"><i>C</i><span>③④</span></div><div class="opt"><i>D</i><span>①③</span></div></div>
+  <input type="checkbox" id="ck-q-4-5" class="soltoggle">
+  <div class="qbar">
+    <label class="btn-reveal" for="ck-q-4-5" data-act="reveal" data-sol="q-4-5"><span class="lr-open">查看解析</span><span class="lr-close">收起解析</span></label>
+    <span class="meta">正确率 <b>31.75%</b> · 易错项 <b>C</b> · （2025 国考行政执法 30）</span>
+    <label class="mini-check"><input type="checkbox" data-master="q-4-5">已掌握</label>
+  </div>
+  <div class="sol" data-sol="q-4-5">
+    <div class="sol-ans">正确答案<span>D</span></div>
+    <div class="sol-body">
+      <div class="sol-tag">科技常识 · 物理常识 · 上册 P12</div>
+      <p class="sol-lead">①正确：根据欧姆定律，电阻器中的电流I 与其两端的电压U 之间的关系是I= UR，其中R 是电阻器的阻值，是一个常数。因此，当电压U 增加时，电流I也会增加，且增加的比例是固定的（即R1 ）。所以，通过某一电阻器的电流与其两端的电压成正比例。②错误：物体所受浮力F 浮与其体积V 之间的关系并不总是成正比例的。根据阿基米德原理，浮力F 浮等于物体排开的液体所受的重力，即FgV浮液= ρ排，其中ρ 液是液体的密度，g 是重力加速度，V 排是物体排开的液体的体积。如果物体完全浸入液体中，那么V 排等于物体的体积V，此时浮力与物体的体积成正比。但是，如果物体只是部分浸入液体中，那么V 排就小于物体的体积V，此时浮力与物体的体积就不成正比。因此，不能简单地说物体所受浮力与其体积成正比例。③正确：在弹性限度内，弹簧的伸长量x 与其所受拉力F 之间的关系符合胡克定律，即F=kx，其中k 是弹簧的劲度系数，是一个常数。因此，当拉力F 增加时，弹簧的伸长量x 也会增加，且增加的比例是固定的（即1k ）。所以，弹性限度内弹簧的伸长量与其所受拉力成正比例。④错误：汽车行驶时的加速度a 与速度v 之间并没有固定的比例关系。加速度是速度变化量与时间的比值，即a = ∆∆vt 。加速度的大小取决于速度的变化率，而不是速度本身。因此，汽车行驶时的加速度与速度不成正比例。综上，①③符合题意。</p><p class="sol-tail">故正确答案为D。</p>
+      <p class="sol-note">解析为粉笔原书内容，按「选项排除式」重排：X 项错误＝先排除，X 项正确＝后择优。常识靠积累，错题记条目比刷题更重要。</p>
+    </div>
+  </div>
+</article>
+</section>
+<section class="sec" id="s-5" data-idx="5" data-chap="科技常识">
+  <div class="sec-head"><span class="sec-no">第五节</span>
+    <div class="sec-meta"><h3>化学常识</h3>
+      <div class="stags"><span class="ptag pt-chap">科技常识</span><span class="ptag pt-n">3 题</span></div>
+    </div></div>
+  <div class="mat-note">题目来源：粉笔《决战行测5000题 · 常识判断（新增题）》上册 · 科技常识 / 化学常识（考生回忆版）</div>
+  
+<article class="q" id="q-5-1" data-no="q-5-1" data-ans="B" data-kd="化学常识" data-rate="72.86" data-wrong="C">
+  <div class="q-head"><span class="qno">1</span><div class="stem">关于石油加工，下列说法错误的是：</div></div>
+  <div class="opts"><div class="opt"><i>A</i><span>润滑剂、沥青、石蜡均可以通过石油加工获得</span></div><div class="opt"><i>B</i><span>汽油是通过催化裂化从原油中获得，不涉及物理变化</span></div><div class="opt"><i>C</i><span>加工时使用氢气可以去除石油中的杂质，提高产品质量</span></div><div class="opt"><i>D</i><span>刚开采出来的石油一般都含水，加工时要进行脱水处理</span></div></div>
+  <input type="checkbox" id="ck-q-5-1" class="soltoggle">
+  <div class="qbar">
+    <label class="btn-reveal" for="ck-q-5-1" data-act="reveal" data-sol="q-5-1"><span class="lr-open">查看解析</span><span class="lr-close">收起解析</span></label>
+    <span class="meta">正确率 <b>72.86%</b> · 易错项 <b>C</b> · （2025 天津 55）</span>
+    <label class="mini-check"><input type="checkbox" data-master="q-5-1">已掌握</label>
+  </div>
+  <div class="sol" data-sol="q-5-1">
+    <div class="sol-ans">正确答案<span>B</span></div>
+    <div class="sol-body">
+      <div class="sol-tag">科技常识 · 化学常识 · 上册 P12</div>
+      <p class="sol-lead">成的混合物，具有天然的产状。石油通过提炼和加工，可以得到燃料油、润滑剂、溶剂油、石蜡、沥青等产品。化、吸收和解吸、汽油精制、汽油调和等。催化裂化是在高温、高压和催化剂的作用下使重质油发生裂化反应，转变为裂化气、汽油和柴油等的过程，这属于化学变化。原油蒸馏是把原油加热切割成不同沸点范围的馏分油，这属于物理变化。因此，汽油的生产过程涉及了物理变化和化学变化。合物，以及微量的金属，它们大多是有害的物质。石油加工时使用氢气可以使氢气和石油产品中的硫、氮、氧等杂质发生反应，生成气态的硫化氢、氨和水等物质，从而去除杂质，提高产品质量。可以分离出油水混合液中的污水及杂质，以获得合格的商品原油。常见的原油脱水的方法主要有沉降脱水、热化学沉降脱水、电化学联合脱水等。汽油生产的主要步骤1. 原油开采‌：首先从地下开采出原油，即石油。‌2. 原油预处理‌：将原油进行初步的处理，如脱水、脱盐、脱气等，以去除杂质和水分‌。常见的原油脱水的方法主要有：沉降脱水、热化学沉降脱水、电化学联合脱水等。3. 原油蒸馏‌：将原油加热至高温（约400 ～500℃），使其蒸发。然后通过冷却器使蒸发的气体冷却并凝结成液体，形成不同馏分的油和气体的混合物。‌4. 催化裂化‌：在高温高压下，通过催化剂的作用，使原油中的大分子断裂成较小的分子，从而得到汽油、柴油等轻质燃料。‌5. 将催化裂化产生的气体混合物通过吸收剂（如胺、酸等），将其中的有害物质（如硫化物、氮氧化物等）去除。然后将吸收后的气体混合物通过热空气或蒸汽进行解吸，使汽油重新回到气相。6. 汽油精制‌：对得到的汽油进行进一步的提纯，去除其中的杂质和有害物质，提高其质量。‌7. 汽油调和‌：将不同品种、不同辛烷值的汽油按照一定比例混合，以达到所需的性能指标和质量标准。‌</p><div class="elim"><div class="erow"><span class="elet elet-A">A 项 · 保留</span><span class="etxt">石油被称为“工业的血液”，是由气态、液态和固态的烃类组</span></div><div class="erow"><span class="elet elet-B">B 项 · 排除</span><span class="etxt">汽油生产的主要步骤包括原油开采、原油预处理、原油蒸馏、催化裂</span></div><div class="erow"><span class="elet elet-C">C 项 · 保留</span><span class="etxt">石油的成分主要是碳氢化合物，但同时还有不少含有硫、氮和氧的化</span></div><div class="erow"><span class="elet elet-D">D 项 · 保留</span><span class="etxt">通常从地下采出的原油都含有水。加工时需对石油进行脱水处理，这</span></div></div><p class="sol-tail">本题为选非题，故正确答案为B。</p>
+      <p class="sol-note">解析为粉笔原书内容，按「选项排除式」重排：X 项错误＝先排除，X 项正确＝后择优。常识靠积累，错题记条目比刷题更重要。</p>
+    </div>
+  </div>
+</article>
+<article class="q" id="q-5-2" data-no="q-5-2" data-ans="D" data-kd="化学常识" data-rate="55.8" data-wrong="C">
+  <div class="q-head"><span class="qno">2</span><div class="stem">关于矿物及其制品，下列说法错误的是：</div></div>
+  <div class="opts"><div class="opt"><i>A</i><span>稀土并不是一种元素，而是一组金属元素的集合</span></div><div class="opt"><i>B</i><span>矿石中可以提取颜料，孔雀石即可提取绿色颜料</span></div><div class="opt"><i>C</i><span>石棉具有较高的燃点和耐热性，可用来隔热保温</span></div><div class="opt"><i>D</i><span>花岗岩是一种变质岩，硬度低，常用于地面装饰</span></div></div>
+  <input type="checkbox" id="ck-q-5-2" class="soltoggle">
+  <div class="qbar">
+    <label class="btn-reveal" for="ck-q-5-2" data-act="reveal" data-sol="q-5-2"><span class="lr-open">查看解析</span><span class="lr-close">收起解析</span></label>
+    <span class="meta">正确率 <b>55.8%</b> · 易错项 <b>C</b> · （2025 天津 57）</span>
+    <label class="mini-check"><input type="checkbox" data-master="q-5-2">已掌握</label>
+  </div>
+  <div class="sol" data-sol="q-5-2">
+    <div class="sol-ans">正确答案<span>D</span></div>
+    <div class="sol-body">
+      <div class="sol-tag">科技常识 · 化学常识 · 上册 P12</div>
+      <p class="sol-lead">包含镧、铈、镨、钕、钷、钐、铕、钆、铽、镝、钬、铒、铥、镱、镥、钪、钇。 因为18 世纪发现的稀土矿物较少，当时只能用化学法制得少量不溶于水的氧化物，历史上习惯把这种氧化物称为“土”，因而得名“稀土”。粉笔拓展取出来作为颜料使用。孔雀石的主要成分为碱式碳酸铜，它是中国古代重要的绿色颜料。中国古代称孔雀石为绿青、石绿或青琅玕。能够在高温环境下保持其物理性质和化学性质的稳定，这使得它成为隔热和保温的理想材料。桥梁建设、工业以及环保与景观等多个领域都具有重要的应用价值。岩石分类1. 岩浆岩（火成岩）：由岩浆冷却后凝固而成的岩石，如玄武岩、花岗岩。2. 沉积岩：经沉积和成岩作用形成的层状岩石，如页岩、石灰岩。化石主要在此层。3. 变质岩：经变质作用而形成的岩石，如大理岩、石英岩。</p><div class="elim"><div class="erow"><span class="elet elet-A">A 项 · 保留</span><span class="etxt">稀土不是一种元素，而是元素周期表中17 种金属元素的合称，</span></div><div class="erow"><span class="elet elet-B">B 项 · 保留</span><span class="etxt">矿石中的某些矿物具有天然的着色效果，可以通过一定的技术手段提</span></div><div class="erow"><span class="elet elet-C">C 项 · 保留</span><span class="etxt">石棉是天然纤维状的硅质矿物的泛称，具有高度的耐火性、耐热性，</span></div><div class="erow"><span class="elet elet-D">D 项 · 排除</span><span class="etxt">花岗岩属于岩浆岩，而不是变质岩。花岗岩硬度高，在建筑、道路与</span></div></div><p class="sol-tail">本题为选非题，故正确答案为D。</p>
+      <p class="sol-note">解析为粉笔原书内容，按「选项排除式」重排：X 项错误＝先排除，X 项正确＝后择优。常识靠积累，错题记条目比刷题更重要。</p>
+    </div>
+  </div>
+</article>
+<article class="q" id="q-5-3" data-no="q-5-3" data-ans="C" data-kd="化学常识" data-rate="41.08" data-wrong="B">
+  <div class="q-head"><span class="qno">3</span><div class="stem">化学与生产、生活紧密相关。下列相关说法错误的是：</div></div>
+  <div class="opts"><div class="opt"><i>A</i><span>石墨烯是生产新能源电池的重要材料</span></div><div class="opt"><i>B</i><span>氢氧化镁具有碱性，可作为胃酸中和剂</span></div><div class="opt"><i>C</i><span>医用口罩和防护服的主要原材料是氯乙烯</span></div><div class="opt"><i>D</i><span>丁达尔效应是区分胶体与溶液的常用方法</span></div></div>
+  <input type="checkbox" id="ck-q-5-3" class="soltoggle">
+  <div class="qbar">
+    <label class="btn-reveal" for="ck-q-5-3" data-act="reveal" data-sol="q-5-3"><span class="lr-open">查看解析</span><span class="lr-close">收起解析</span></label>
+    <span class="meta">正确率 <b>41.08%</b> · 易错项 <b>B</b> · （2025 四川 19）</span>
+    <label class="mini-check"><input type="checkbox" data-master="q-5-3">已掌握</label>
+  </div>
+  <div class="sol" data-sol="q-5-3">
+    <div class="sol-ans">正确答案<span>C</span></div>
+    <div class="sol-body">
+      <div class="sol-tag">科技常识 · 化学常识 · 上册 P13</div>
+      <p class="sol-lead">界上电阻最小的材料。 它可用于制造轻便、耐用、适用于高容量储能的电池，并能大大缩短充电时间，是理想的电池材料。酸）发生反应，从而达到中和胃酸的目的。本原料，但它也是一种非常具有危险性的有毒的化学物质，已被列入世界卫生组织国际癌症机构一类致癌物。医用口罩的主要材料是熔喷无纺布，熔喷无纺布的主要材质是五大通用合成树脂之一的聚丙烯。医用防护服目前有以下几种材料：聚丙烯纺粘布、聚酯纤维与木浆复合的水刺布、聚丙烯纺粘—熔喷—纺粘复合非织造布（SMS或SMMS）、高聚物涂层织物、聚乙烯透气膜/ 非织造布复合布。粉笔拓展到胶体里出现一条光亮“通路”的现象。 光线通过胶体时会产生丁达尔效应，而通过溶液时则没有这种现象，所以在化学中通常用丁达尔效应来区分溶液和胶体。</p><div class="elim"><div class="erow"><span class="elet elet-A">A 项 · 保留</span><span class="etxt">石墨烯不仅是世界上最坚硬、导热系数最高的材料，也是世</span></div><div class="erow"><span class="elet elet-B">B 项 · 保留</span><span class="etxt">氢氧化镁是一种碱性物质，服用后可以与胃内的胃酸（主要成分为盐</span></div><div class="erow"><span class="elet elet-C">C 项 · 排除</span><span class="etxt">氯乙烯是一种无色易液化的气体，是制备聚氯乙烯塑料（PVC）的基</span></div><div class="erow"><span class="elet elet-D">D 项 · 保留</span><span class="etxt">丁达尔效应是指当一束光线透过胶体，从入射光的垂直方向可以观察</span></div></div><p class="sol-tail">本题为选非题，故正确答案为C。</p>
+      <p class="sol-note">解析为粉笔原书内容，按「选项排除式」重排：X 项错误＝先排除，X 项正确＝后择优。常识靠积累，错题记条目比刷题更重要。</p>
+    </div>
+  </div>
+</article>
+</section>
+<section class="sec" id="s-6" data-idx="6" data-chap="科技常识">
+  <div class="sec-head"><span class="sec-no">第六节</span>
+    <div class="sec-meta"><h3>生物常识</h3>
+      <div class="stags"><span class="ptag pt-chap">科技常识</span><span class="ptag pt-n">6 题</span></div>
+    </div></div>
+  <div class="mat-note">题目来源：粉笔《决战行测5000题 · 常识判断（新增题）》上册 · 科技常识 / 生物常识（考生回忆版）</div>
+  
+<article class="q" id="q-6-1" data-no="q-6-1" data-ans="B" data-kd="生物常识" data-rate="43.08" data-wrong="C">
+  <div class="q-head"><span class="qno">1</span><div class="stem">下列与植物有关的说法正确的是：</div></div>
+  <div class="opts"><div class="opt"><i>A</i><span>中成药中的黄连、金银花都是植物的花</span></div><div class="opt"><i>B</i><span>板栗、红松子、南瓜子都是植物的种子</span></div><div class="opt"><i>C</i><span>土豆片、萝卜干、红薯粉都是用植物的根加工的</span></div><div class="opt"><i>D</i><span>龙井、碧螺春是根据不同加工方法制作的茶叶品种</span></div></div>
+  <input type="checkbox" id="ck-q-6-1" class="soltoggle">
+  <div class="qbar">
+    <label class="btn-reveal" for="ck-q-6-1" data-act="reveal" data-sol="q-6-1"><span class="lr-open">查看解析</span><span class="lr-close">收起解析</span></label>
+    <span class="meta">正确率 <b>43.08%</b> · 易错项 <b>C</b> · （2025 四川 20）</span>
+    <label class="mini-check"><input type="checkbox" data-master="q-6-1">已掌握</label>
+  </div>
+  <div class="sol" data-sol="q-6-1">
+    <div class="sol-ans">正确答案<span>B</span></div>
+    <div class="sol-body">
+      <div class="sol-tag">科技常识 · 生物常识 · 上册 P13</div>
+      <p class="sol-lead">是清热燥湿、泻火解毒，入药的部位是根茎。金银花性寒，是一种常见的中药，其药用部位主要为干燥的花蕾或初开的花。成，其中供食用的板栗就是种子。红松子也被称为海松子，是松科植物红松的种子，红松主要分布于我国东北长白山区和小兴安岭林区。南瓜子是南瓜的种子，含有丰富的脂肪、蛋白质、维生素B1、维生素B2 等多种营养物质。规则的块状茎就是土豆的可食用部分。萝卜和红薯的食用部分都是根。采取茶树的新叶或芽，经杀青、揉捻、干燥等工艺制作而成。龙井和碧螺春都是绿茶，虽然它们在制作中的具体工艺或步骤有所不同，外形、茶汤等方面也有区别，但它们的加工方法相同，都是未经发酵、采用烘干或炒干的方式而获得的炒青绿茶。</p><div class="elim"><div class="erow"><span class="elet elet-A">A 项 · 排除</span><span class="etxt">黄连味苦、性寒，是一种药用价值很高的中草药，主要功效</span></div><div class="erow"><span class="elet elet-B">B 项 · 保留</span><span class="etxt">板栗是板栗树的种子。板栗树的果实由带尖刺的壳斗、果皮和种子组</span></div><div class="erow"><span class="elet elet-C">C 项 · 排除</span><span class="etxt">土豆植株的茎分地上茎和地下茎两部分。地下茎末端形成的膨大而不</span></div><div class="erow"><span class="elet elet-D">D 项 · 排除</span><span class="etxt">绿茶因其干茶呈绿色、冲泡后的茶汤呈碧绿、茶叶底呈翠绿色而得名，</span></div></div><p class="sol-tail">故正确答案为B。</p>
+      <p class="sol-note">解析为粉笔原书内容，按「选项排除式」重排：X 项错误＝先排除，X 项正确＝后择优。常识靠积累，错题记条目比刷题更重要。</p>
+    </div>
+  </div>
+</article>
+<article class="q" id="q-6-2" data-no="q-6-2" data-ans="D" data-kd="生物常识" data-rate="28.35" data-wrong="C">
+  <div class="q-head"><span class="qno">2</span><div class="stem">关于常见药物，下列说法错误的是：</div></div>
+  <div class="opts"><div class="opt"><i>A</i><span>双黄连适用于风热感冒引起的发热、咳嗽</span></div><div class="opt"><i>B</i><span>维生素E 过量使用会导致食欲不振、视力模糊等症状</span></div><div class="opt"><i>C</i><span>医用碘伏常见浓度是1%，可直接涂擦除眼睛外的皮肤表面</span></div><div class="opt"><i>D</i><span>降胆固醇的他汀类药物一般清晨服用，因为胆固醇主要在日间合成</span></div></div>
+  <input type="checkbox" id="ck-q-6-2" class="soltoggle">
+  <div class="qbar">
+    <label class="btn-reveal" for="ck-q-6-2" data-act="reveal" data-sol="q-6-2"><span class="lr-open">查看解析</span><span class="lr-close">收起解析</span></label>
+    <span class="meta">正确率 <b>28.35%</b> · 易错项 <b>C</b> · （2025 天津 64）</span>
+    <label class="mini-check"><input type="checkbox" data-master="q-6-2">已掌握</label>
+  </div>
+  <div class="sol" data-sol="q-6-2">
+    <div class="sol-ans">正确答案<span>D</span></div>
+    <div class="sol-body">
+      <div class="sol-tag">科技常识 · 生物常识 · 上册 P13</div>
+      <p class="sol-lead">有疏风解表、清热解毒等作用，可以用于治疗外感风热引起的发热、咳嗽、咽痛等症状。响正常的视网膜功能，患者可能会出现视力下降、视野缺损等现象。同时，过量摄入维生素E 可能会引起胃肠道不适，导致恶心、呕吐。患者还会出现食欲不振、消化不良等症状。是1% 浓度的碘伏。1% 浓度的碘伏可以直接用于除眼睛之外的任何皮肤表面，以达到局部消毒的效果。固醇主要在夜间合成，而他汀类药物正是通过抑制胆固醇合成过程中的关键酶——HMG–CoA 还原酶，来降低胆固醇水平。因此，晚上服用他汀类药物可以更有效地发挥药物的降脂作用。</p><div class="elim"><div class="erow"><span class="elet elet-A">A 项 · 保留</span><span class="etxt">双黄连是一种中成药，主要成分有金银花、黄芩、连翘，具</span></div><div class="erow"><span class="elet elet-B">B 项 · 保留</span><span class="etxt">维生素E 具有抗氧化作用，过量摄入会导致体内自由基清除过多，影</span></div><div class="erow"><span class="elet elet-C">C 项 · 保留</span><span class="etxt">医用碘伏的浓度有0.1%、0.5%、1%、2% 四种，一般医学上常用的</span></div><div class="erow"><span class="elet elet-D">D 项 · 排除</span><span class="etxt">一般来说，他汀类药物在晚上服用效果更佳。这是因为人体内的胆</span></div></div><p class="sol-tail">本题为选非题，故正确答案为D。</p>
+      <p class="sol-note">解析为粉笔原书内容，按「选项排除式」重排：X 项错误＝先排除，X 项正确＝后择优。常识靠积累，错题记条目比刷题更重要。</p>
+    </div>
+  </div>
+</article>
+<article class="q" id="q-6-3" data-no="q-6-3" data-ans="D" data-kd="生物常识" data-rate="44.1" data-wrong="B">
+  <div class="q-head"><span class="qno">3</span><div class="stem">下列与人体有关的说法错误的是：</div></div>
+  <div class="opts"><div class="opt"><i>A</i><span>人眼角膜是透明结构，没有血管</span></div><div class="opt"><i>B</i><span>人体皮肤可通过角质层进行呼吸</span></div><div class="opt"><i>C</i><span>在医学上，人的第三磨牙又称为智齿</span></div><div class="opt"><i>D</i><span>有的人乳糖不耐受，其实是对牛奶过敏</span></div></div>
+  <input type="checkbox" id="ck-q-6-3" class="soltoggle">
+  <div class="qbar">
+    <label class="btn-reveal" for="ck-q-6-3" data-act="reveal" data-sol="q-6-3"><span class="lr-open">查看解析</span><span class="lr-close">收起解析</span></label>
+    <span class="meta">正确率 <b>44.1%</b> · 易错项 <b>B</b> · （2025 四川 18）</span>
+    <label class="mini-check"><input type="checkbox" data-master="q-6-3">已掌握</label>
+  </div>
+  <div class="sol" data-sol="q-6-3">
+    <div class="sol-ans">正确答案<span>D</span></div>
+    <div class="sol-body">
+      <div class="sol-tag">科技常识 · 生物常识 · 上册 P13</div>
+      <p class="sol-lead">周围的血管提供氧气和营养。其主要功能是聚焦光线进入眼球，使图像能够清晰地落在视网膜上。织构成，被覆在人身体表面。皮肤主要通过三个途径吸收外界物质，即角质层、毛囊皮脂腺及汗管口，其中角质层是皮肤吸收气体的最重要的途径。角质层在皮肤表面形成一层半透膜，在一定条件下，气体可以通过与水分子结合的方式经细胞膜进入细胞内。的两侧，上下各一颗。智齿一般在人16 ～25 岁萌出，此时人的生理、心理发育都接近成熟，有“智慧到来”的象征，因此被俗称为“智齿”。糖所引起的非感染性腹泻，又称乳糖酶缺乏症；对牛奶过敏大多指人们对牛奶中的蛋白质过敏。乳糖不耐受和对牛奶过敏的表现有类似之处，即都可能出现腹痛、腹泻、腹胀等肠道症状，但二者实际上并不相同。</p><div class="elim"><div class="erow"><span class="elet elet-A">A 项 · 保留</span><span class="etxt">人眼角膜由透明的结缔组织构成，没有血管，主要依赖眼球</span></div><div class="erow"><span class="elet elet-B">B 项 · 保留</span><span class="etxt">皮肤是人体最大的器官，由上皮组织、结缔组织、神经组织和肌肉组</span></div><div class="erow"><span class="elet elet-C">C 项 · 保留</span><span class="etxt">智齿，又称第三磨牙，是人类口腔中最后长出的牙齿，通常位于口腔</span></div><div class="erow"><span class="elet elet-D">D 项 · 排除</span><span class="etxt">乳糖不耐受是乳糖酶先天缺乏，不能完全消化分解母乳或牛乳中的乳</span></div></div><p class="sol-tail">本题为选非题，故正确答案为D。</p>
+      <p class="sol-note">解析为粉笔原书内容，按「选项排除式」重排：X 项错误＝先排除，X 项正确＝后择优。常识靠积累，错题记条目比刷题更重要。</p>
+    </div>
+  </div>
+</article>
+<article class="q" id="q-6-4" data-no="q-6-4" data-ans="C" data-kd="生物常识" data-rate="44.91" data-wrong="B">
+  <div class="q-head"><span class="qno">4</span><div class="stem">关于温室栽培，下列说法错误的是：</div></div>
+  <div class="opts"><div class="opt"><i>A</i><span>夜间降低温室内的温度，可以减少农作物营养物质的消耗</span></div><div class="opt"><i>B</i><span>相比普通塑料温室大棚，玻璃温室可以让阳光更容易进入</span></div><div class="opt"><i>C</i><span>紫外线灯是一种大棚中经常使用且效果较好的植物补光灯</span></div><div class="opt"><i>D</i><span>在作物栽培过程中通入适量的二氧化碳可以提高作物产量</span></div></div>
+  <input type="checkbox" id="ck-q-6-4" class="soltoggle">
+  <div class="qbar">
+    <label class="btn-reveal" for="ck-q-6-4" data-act="reveal" data-sol="q-6-4"><span class="lr-open">查看解析</span><span class="lr-close">收起解析</span></label>
+    <span class="meta">正确率 <b>44.91%</b> · 易错项 <b>B</b> · （2025 国考行政执法 35）</span>
+    <label class="mini-check"><input type="checkbox" data-master="q-6-4">已掌握</label>
+  </div>
+  <div class="sol" data-sol="q-6-4">
+    <div class="sol-ans">正确答案<span>C</span></div>
+    <div class="sol-body">
+      <div class="sol-tag">科技常识 · 生物常识 · 上册 P14</div>
+      <p class="sol-lead">越低，农作物的呼吸作用越弱，有机物的消耗也就越少，因此可以提高农作物的产量。透光率是指透进温室内的光照量与室外光照量的百分比。一般来说，连栋塑料温室的透光率通常为50% ～60%，玻璃温室的透光率可达到80% 以上。光或者完全代替太阳光。目前主流的植物补光灯包括LED 灯和高压钠灯。在温室大棚种植中对植物进行补光时，这两种灯都有较为广泛的应用。紫外线灯具有较好的杀菌作用，主要用于杀菌消毒，并不经常在大棚中使用。通过叶绿体，利用光能，将二氧化碳和水转化成有机物质并释放出氧气。因此，增加温室中二氧化碳的浓度可以促进作物光合作用的进行，提高光合作用的效率，从而加快作物的生长速度，提高作物产量。</p><div class="elim"><div class="erow"><span class="elet elet-A">A 项 · 保留</span><span class="etxt">夜间降低温室内的温度，可以减弱农作物的呼吸作用。温度</span></div><div class="erow"><span class="elet elet-B">B 项 · 保留</span><span class="etxt">温室是采光建筑，因而透光率是评价温室透光性能的一项最基本指标。</span></div><div class="erow"><span class="elet elet-C">C 项 · 排除</span><span class="etxt">植物补光灯模拟植物需要太阳光进行光合作用的原理，对植物进行补</span></div><div class="erow"><span class="elet elet-D">D 项 · 保留</span><span class="etxt">二氧化碳是植物进行光合作用的主要原料之一。在光照条件下，植物</span></div></div><p class="sol-tail">本题为选非题，故正确答案为C。</p>
+      <p class="sol-note">解析为粉笔原书内容，按「选项排除式」重排：X 项错误＝先排除，X 项正确＝后择优。常识靠积累，错题记条目比刷题更重要。</p>
+    </div>
+  </div>
+</article>
+<article class="q" id="q-6-5" data-no="q-6-5" data-ans="A" data-kd="生物常识" data-rate="29.38" data-wrong="C">
+  <div class="q-head"><span class="qno">5</span><div class="stem">在关于真菌的科普文章中，下列表述存在错误的是：</div></div>
+  <div class="opts"><div class="opt"><i>A</i><span>古人很早就利用真菌发酵食物，比如利用乳酸菌酿造果酒</span></div><div class="opt"><i>B</i><span>人类历史上发现的第一种抗生素来自微型真菌</span></div><div class="opt"><i>C</i><span>羊肚菌、松茸等食用真菌味道鲜美，含有丰富的优质蛋白质</span></div><div class="opt"><i>D</i><span>植物的根能和真菌形成共生关系，菌丝吸收水分、无机盐等供给植物</span></div></div>
+  <input type="checkbox" id="ck-q-6-5" class="soltoggle">
+  <div class="qbar">
+    <label class="btn-reveal" for="ck-q-6-5" data-act="reveal" data-sol="q-6-5"><span class="lr-open">查看解析</span><span class="lr-close">收起解析</span></label>
+    <span class="meta">正确率 <b>29.38%</b> · 易错项 <b>C</b> · （2025 国考副省 32）</span>
+    <label class="mini-check"><input type="checkbox" data-master="q-6-5">已掌握</label>
+  </div>
+  <div class="sol" data-sol="q-6-5">
+    <div class="sol-ans">正确答案<span>A</span></div>
+    <div class="sol-body">
+      <div class="sol-tag">科技常识 · 生物常识 · 上册 P14</div>
+      <p class="sol-lead">酒精的饮料。1857 年，法国微生物学家巴斯德通过实验证明，酒精发酵是由活的酵母菌引起的，从而将酵母菌与发酵联系起来。乳酸菌是一类能利用可发酵碳水化合物产生大量乳酸的细菌的统称。 故古人利用“乳酸菌”酿造果酒说法错误。国人弗莱明发现，被污染的金黄色葡萄球菌培养基上生长出一种带有毒素的微型真菌——青霉菌，从青霉菌中分离出来的青霉素成为人类历史上发现的第一种抗生素。是一种珍贵的真菌，具有很高的药用食疗作用。两者都是可食用真菌类食材，都含有十分丰富的蛋白质、氨基酸、维生素和矿物质等。关系被称为菌根共生。 菌根真菌通过产生大量菌丝来吸收土壤中的水分、无机盐供植物利用。同时，真菌从植物中获取所需的糖类物质。</p><div class="elim"><div class="erow"><span class="elet elet-A">A 项 · 排除</span><span class="etxt">约9000 年前，古人就会利用微生物将谷物、水果等发酵为含</span></div><div class="erow"><span class="elet elet-B">B 项 · 保留</span><span class="etxt">抗生素一般指能抑制细菌生长或杀死细菌的一类药物。1928 年，英</span></div><div class="erow"><span class="elet elet-C">C 项 · 保留</span><span class="etxt">羊肚菌是食药兼用菌，其香味独特，营养丰富。松茸菌又名松口蘑，</span></div><div class="erow"><span class="elet elet-D">D 项 · 保留</span><span class="etxt">植物的根与真菌之间的共生关系是一种非常重要的生物学现象，这种</span></div></div><p class="sol-tail">本题为选非题，故正确答案为A。</p>
+      <p class="sol-note">解析为粉笔原书内容，按「选项排除式」重排：X 项错误＝先排除，X 项正确＝后择优。常识靠积累，错题记条目比刷题更重要。</p>
+    </div>
+  </div>
+</article>
+<article class="q" id="q-6-6" data-no="q-6-6" data-ans="A" data-kd="生物常识" data-rate="23.85" data-wrong="D">
+  <div class="q-head"><span class="qno">6</span><div class="stem">关于诗句中蕴含的生物学知识，下列说法错误的是：</div></div>
+  <div class="opts"><div class="opt"><i>A</i><span>“穿花蛱蝶深深见”——生物的拟态伪装形式</span></div><div class="opt"><i>B</i><span>“几处早莺争暖树”——鸟类在繁殖中的占区行为</span></div><div class="opt"><i>C</i><span>“忽然蜕作多花蝶”——完全变态发育昆虫的发育过程</span></div><div class="opt"><i>D</i><span>“棠梨叶落胭脂色”——叶绿素产生速度落后于分解速度</span></div></div>
+  <input type="checkbox" id="ck-q-6-6" class="soltoggle">
+  <div class="qbar">
+    <label class="btn-reveal" for="ck-q-6-6" data-act="reveal" data-sol="q-6-6"><span class="lr-open">查看解析</span><span class="lr-close">收起解析</span></label>
+    <span class="meta">正确率 <b>23.85%</b> · 易错项 <b>D</b> · （2025 天津 63）</span>
+    <label class="mini-check"><input type="checkbox" data-master="q-6-6">已掌握</label>
+  </div>
+  <div class="sol" data-sol="q-6-6">
+    <div class="sol-ans">正确答案<span>A</span></div>
+    <div class="sol-body">
+      <div class="sol-tag">科技常识 · 生物常识 · 上册 P14</div>
+      <p class="sol-lead">蝴蝶在花丛深处穿梭往来，时隐时现。繁茂的花丛为蝴蝶提供了充足的活动空间和食物来源。此诗句体现了蝴蝶的觅食行为。拟态是一种生物模拟另一种生物或模拟环境中的其他物体从而获得好处的现象。据一定区域的行为。 “几处早莺争暖树”出自唐代诗人白居易的《钱塘湖春行》，意思是几只早出的黄莺争着飞向向阳的树木，体现了鸟类在繁殖期争夺有利的栖息场所，属于占区行为。仿佛忽然间蜕变成色彩斑斓的蝴蝶。完全变态发育是昆虫发育的一种基本类型，指昆虫在个体发育过程中，经过卵、幼虫、蛹和成虫四个完全不同的发育阶段。 蝴蝶的发育过程属于完全变态发育。叶飘落，颜色红如胭脂。这是由于秋天来临，气温下降，光照时间缩短，棠梨树叶中的叶绿素分解加快，同时叶绿素的合成速度减慢，即叶绿素的产生速度落后于分解速度，使得叶片中的花青素等其他色素的颜色显现出来，从而使树叶呈现出胭脂色。生物行为的分类1. 按照获得途径，可分为以下两种。（1）先天性行为：如蜜蜂采蜜、蚂蚁建巢、蜘蛛织网、鸟类迁徙等。（2）学习行为：如飞鸽传书、狗钻火圈、鹦鹉学舌、小鼠走迷宫等。2. 按照不同表现，可分为以下五种。（1）觅食行为：如鹬蚌相争；螳螂捕蝉，黄雀在后；不见兔子不撒鹰等。（2）竞争行为：如鸠占鹊巢、一山不容二虎、几处早莺争暖树等。（3）防御行为：如初级防御有穴居、隐蔽、警戒色、拟态；次级防御有回缩、逃遁、威吓、假死、转移捕食者攻击的部位、反击等。（4）繁殖行为：如蜻蜓点水、夏日蝉鸣、孔雀开屏等。（5）节律行为：如夜行性、昼行性、鱼类洄游、鸟类迁徙等。粉笔拓展</p><div class="elim"><div class="erow"><span class="elet elet-A">A 项 · 排除</span><span class="etxt">“穿花蛱蝶深深见”出自唐代诗人杜甫的《曲江二首》，意思是</span></div><div class="erow"><span class="elet elet-B">B 项 · 保留</span><span class="etxt">占区行为是指动物在繁殖季节为了繁殖和保障自身和后代的生存而占</span></div><div class="erow"><span class="elet elet-C">C 项 · 保留</span><span class="etxt">“忽然蜕作多花蝶”出自宋代诗人范成大的《秋日田园杂兴》，意思是</span></div><div class="erow"><span class="elet elet-D">D 项 · 保留</span><span class="etxt">“棠梨叶落胭脂色”出自宋代诗人王禹偁的《村行》，意思是棠梨的树</span></div></div><p class="sol-tail">本题为选非题，故正确答案为A。</p>
+      <p class="sol-note">解析为粉笔原书内容，按「选项排除式」重排：X 项错误＝先排除，X 项正确＝后择优。常识靠积累，错题记条目比刷题更重要。</p>
+    </div>
+  </div>
+</article>
+</section>
+<section class="sec" id="s-7" data-idx="7" data-chap="科技常识">
+  <div class="sec-head"><span class="sec-no">第七节</span>
+    <div class="sec-meta"><h3>科技理论与成就</h3>
+      <div class="stags"><span class="ptag pt-chap">科技常识</span><span class="ptag pt-n">1 题</span></div>
+    </div></div>
+  <div class="mat-note">题目来源：粉笔《决战行测5000题 · 常识判断（新增题）》上册 · 科技常识 / 科技理论与成就（考生回忆版）</div>
+  
+<article class="q" id="q-7-1" data-no="q-7-1" data-ans="C" data-kd="科技理论与成就" data-rate="43.12" data-wrong="A">
+  <div class="q-head"><span class="qno">1</span><div class="stem">2024 年10 月30 日，神舟十九号载人飞船发射任务取得圆满成功，3 名航天员顺利进驻中国空间站，与神舟十八号3 名航天员会师。下列有关表述，不正确的是：</div></div>
+  <div class="opts"><div class="opt"><i>A</i><span>“神十九”飞行任务是中国空间站应用与发展阶段第4 次载人飞行任务，飞船装载体积较“神十八”提升了20%</span></div><div class="opt"><i>B</i><span>“神十九”飞行乘组中有两位“90 后”航天员，至此，“70 后”“80 后”“90后”齐聚“天宫”，载人航天精神薪火相传</span></div><div class="opt"><i>C</i><span>自“神十八”起，飞船的主电源储能电池由锂离子电池更改为镉镍电池，其能量密度更高、稳定性更强，自身质量也更小</span></div><div class="opt"><i>D</i><span>神舟载人飞船是我国自行研制的用于天地往返运输人员和物资的载人航天器，达到或优于国际第三代载人飞船技术，具有完全自主知识产权及鲜明的中国特色</span></div></div>
+  <input type="checkbox" id="ck-q-7-1" class="soltoggle">
+  <div class="qbar">
+    <label class="btn-reveal" for="ck-q-7-1" data-act="reveal" data-sol="q-7-1"><span class="lr-open">查看解析</span><span class="lr-close">收起解析</span></label>
+    <span class="meta">正确率 <b>43.12%</b> · 易错项 <b>A</b> · （2025 浙江A 17）</span>
+    <label class="mini-check"><input type="checkbox" data-master="q-7-1">已掌握</label>
+  </div>
+  <div class="sol" data-sol="q-7-1">
+    <div class="sol-ans">正确答案<span>C</span></div>
+    <div class="sol-body">
+      <div class="sol-tag">科技常识 · 科技理论与成就 · 上册 P14</div>
+      <p class="sol-lead">用与发展阶段的第4 次载人飞行任务，是工程立项实施以来的第33 次发射任务，也是长征系列运载火箭的第543 次飞行。神舟飞船研制团队通过轨道舱产品和布局优化，进一步提升了神舟十九号载人飞船上行载荷运输能力，使得装载空间较神舟十八号载人飞船提升了20%。后”宋令东、王浩泽组成。执行神舟十八号载人飞行任务的航天员乘组由同为“80后”的叶光富、李聪、李广苏组成。至此，“70 后”“80 后”“90 后”航天员齐聚“天宫”，完成中国航天史上第5 次“太空会师”。子电池。该产品已成功用于空间站、货运飞船等航天器，安全性及可靠性得到了广泛验证，其能量密度更高、循环寿命更长、稳定性更强，自身质量也更小。航天器，达到或优于国际第三代载人飞船技术，具有完全自主知识产权及鲜明的中国特色。飞船可一船多用，既可留轨观测，又可作为交会对接飞行器，满足天地往返的需求。</p><div class="elim"><div class="erow"><span class="elet elet-A">A 项 · 保留</span><span class="etxt">神舟十九号载人飞行任务是我国载人航天工程进入空间站应</span></div><div class="erow"><span class="elet elet-B">B 项 · 保留</span><span class="etxt">执行神舟十九号载人飞行任务的航天员乘组由“70 后”蔡旭哲、“90</span></div><div class="erow"><span class="elet elet-C">C 项 · 排除</span><span class="etxt">自神舟十八号飞船起，飞船的主电源储能电池由镉镍电池更改为锂离</span></div><div class="erow"><span class="elet elet-D">D 项 · 保留</span><span class="etxt">神舟载人飞船是我国自行研制的用于天地往返运输人员和物资的载人</span></div></div><p class="sol-tail">本题为选非题，故正确答案为C。</p>
+      <p class="sol-note">解析为粉笔原书内容，按「选项排除式」重排：X 项错误＝先排除，X 项正确＝后择优。常识靠积累，错题记条目比刷题更重要。</p>
+    </div>
+  </div>
+</article>
+</section>
+<section class="sec" id="s-8" data-idx="8" data-chap="科技常识">
+  <div class="sec-head"><span class="sec-no">第八节</span>
+    <div class="sec-meta"><h3>生活常识</h3>
+      <div class="stags"><span class="ptag pt-chap">科技常识</span><span class="ptag pt-n">6 题</span></div>
+    </div></div>
+  <div class="mat-note">题目来源：粉笔《决战行测5000题 · 常识判断（新增题）》上册 · 科技常识 / 生活常识（考生回忆版）</div>
+  
+<article class="q" id="q-8-1" data-no="q-8-1" data-ans="B" data-kd="生活常识" data-rate="75.75" data-wrong="D">
+  <div class="q-head"><span class="qno">1</span><div class="stem">下列与体育运动有关的说法正确的是：</div></div>
+  <div class="opts"><div class="opt"><i>A</i><span>持续5 分钟尚有余力的运动称为无氧运动</span></div><div class="opt"><i>B</i><span>坐姿半转身、手臂拉伸能改善柔韧性与身体形态</span></div><div class="opt"><i>C</i><span>耐力是指人体短时间有节奏进行肌肉活动的能力</span></div><div class="opt"><i>D</i><span>做俯卧撑和举哑铃均属于克服外部阻力的训练方法</span></div></div>
+  <input type="checkbox" id="ck-q-8-1" class="soltoggle">
+  <div class="qbar">
+    <label class="btn-reveal" for="ck-q-8-1" data-act="reveal" data-sol="q-8-1"><span class="lr-open">查看解析</span><span class="lr-close">收起解析</span></label>
+    <span class="meta">正确率 <b>75.75%</b> · 易错项 <b>D</b> · （2025 四川 16）</span>
+    <label class="mini-check"><input type="checkbox" data-master="q-8-1">已掌握</label>
+  </div>
+  <div class="sol" data-sol="q-8-1">
+    <div class="sol-ans">正确答案<span>B</span></div>
+    <div class="sol-body">
+      <div class="sol-tag">科技常识 · 生活常识 · 上册 P15</div>
+      <p class="sol-lead">动。无氧运动是指肌肉在“缺氧”的状态下高速剧烈的运动。 无氧运动大部分是负荷强度高、瞬间性强的运动。相比之下，有氧运动是指人体在氧气充分供应的情况下进行的体育锻炼，如慢跑、游泳等。两侧的肌肉和韧带，增加脊柱的灵活性，进而改善整个身体的柔韧性。定期进行坐姿半转身练习可以帮助调整脊柱的自然曲线，减少因久坐或不良姿势导致的驼背等问题，从而改善整体的身体形态。手臂拉伸可以有效地拉伸手臂肌肉，这种拉伸有助于增加肌肉的弹性，减少肌肉紧张和疲劳感，从而提高手臂肌肉的力量和柔韧性，有助于纠正圆肩、驼背等不良姿态，从而改善整体的身体形态。量人体在长时间运动或活动中保持一定运动强度的能力指标。耐力运动过程中人体通常是以有氧代谢为主，如长距离的游泳、骑自行车、越野滑雪等，运动时间较长，一般持续数分钟到数小时不等。心位置会随着身体的起伏而改变。整个过程中，阻力主要来源于自身的体重，而不是外部施加的阻力。举哑铃则是克服外部阻力的训练方法，通过更换不同质量的哑铃来调整训练时所需要克服的外部阻力大小，以达到不同的训练强度和目的。</p><div class="elim"><div class="erow"><span class="elet elet-A">A 项 · 排除</span><span class="etxt">持续5 分钟尚有余力的运动一般是有氧运动，而不是无氧运</span></div><div class="erow"><span class="elet elet-B">B 项 · 保留</span><span class="etxt">坐姿半转身是一种有效的柔韧性练习。通过转身动作，可以拉伸脊柱</span></div><div class="erow"><span class="elet elet-C">C 项 · 排除</span><span class="etxt">耐力是指人体长时间进行肌肉活动的能力和对抗疲劳的能力。它是衡</span></div><div class="erow"><span class="elet elet-D">D 项 · 排除</span><span class="etxt">做俯卧撑主要是克服自身重力的训练方法。 当做俯卧撑时，人体的重</span></div></div><p class="sol-tail">故正确答案为B。</p>
+      <p class="sol-note">解析为粉笔原书内容，按「选项排除式」重排：X 项错误＝先排除，X 项正确＝后择优。常识靠积累，错题记条目比刷题更重要。</p>
+    </div>
+  </div>
+</article>
+<article class="q" id="q-8-2" data-no="q-8-2" data-ans="B" data-kd="生活常识" data-rate="39.47" data-wrong="D">
+  <div class="q-head"><span class="qno">2</span><div class="stem">下列与纤维材料有关的说法错误的是：</div></div>
+  <div class="opts"><div class="opt"><i>A</i><span>玻璃纤维性脆，耐磨性较差</span></div><div class="opt"><i>B</i><span>碳纤维抗张强度好且没有导电性</span></div><div class="opt"><i>C</i><span>竹炭纤维能吸湿和清除异味</span></div><div class="opt"><i>D</i><span>大豆蛋白纤维细腻，适用于内衣制造</span></div></div>
+  <input type="checkbox" id="ck-q-8-2" class="soltoggle">
+  <div class="qbar">
+    <label class="btn-reveal" for="ck-q-8-2" data-act="reveal" data-sol="q-8-2"><span class="lr-open">查看解析</span><span class="lr-close">收起解析</span></label>
+    <span class="meta">正确率 <b>39.47%</b> · 易错项 <b>D</b> · （2025 国考行政执法 31）</span>
+    <label class="mini-check"><input type="checkbox" data-master="q-8-2">已掌握</label>
+  </div>
+  <div class="sol" data-sol="q-8-2">
+    <div class="sol-ans">正确答案<span>B</span></div>
+    <div class="sol-body">
+      <div class="sol-tag">科技常识 · 生活常识 · 上册 P15</div>
+      <p class="sol-lead">到摩擦等外力作用时，其耐磨性表现相对较差，比较容易出现磨损等情况。大的拉力等外力作用。同时，碳纤维具有导电性，可以作为一种功能性材料应用在一些需要导电特性的领域，如电子领域。使得它具备比较强的吸湿能力，能够吸收环境中的水分；微孔还可以吸附异味分子，从而起到清除异味的效果。舒适性高，同时具有良好的吸湿性、透气性和亲肤性，非常适合用于制造内衣等贴身衣物。</p><div class="elim"><div class="erow"><span class="elet elet-A">A 项 · 保留</span><span class="etxt">玻璃纤维的特点是拉伸强度高，但质地较脆，易折断。在受</span></div><div class="erow"><span class="elet elet-B">B 项 · 排除</span><span class="etxt">碳纤维具有诸多优良性能，比如，它的抗张强度非常好，能够承受较</span></div><div class="erow"><span class="elet elet-C">C 项 · 保留</span><span class="etxt">竹炭纤维是一种新型环保纤维，纤维内部有很多微孔结构，这种结构</span></div><div class="erow"><span class="elet elet-D">D 项 · 保留</span><span class="etxt">大豆蛋白纤维是一种再生植物蛋白纤维，它的手感细腻、柔软，穿着</span></div></div><p class="sol-tail">本题为选非题，故正确答案为B。</p>
+      <p class="sol-note">解析为粉笔原书内容，按「选项排除式」重排：X 项错误＝先排除，X 项正确＝后择优。常识靠积累，错题记条目比刷题更重要。</p>
+    </div>
+  </div>
+</article>
+<article class="q" id="q-8-3" data-no="q-8-3" data-ans="D" data-kd="生活常识" data-rate="31.03" data-wrong="B">
+  <div class="q-head"><span class="qno">3</span><div class="stem">下列与体育比赛有关的说法错误的是：</div></div>
+  <div class="opts"><div class="opt"><i>A</i><span>跳水运动的难度系数涉及动作姿势和翻腾转体周数等方面</span></div><div class="opt"><i>B</i><span>篮球比赛中罚球时允许球员双脚离地</span></div><div class="opt"><i>C</i><span>足球比赛的常规时间长度为90 分钟</span></div><div class="opt"><i>D</i><span>举重运动中判定试举成功需要三名裁判均亮白灯</span></div></div>
+  <input type="checkbox" id="ck-q-8-3" class="soltoggle">
+  <div class="qbar">
+    <label class="btn-reveal" for="ck-q-8-3" data-act="reveal" data-sol="q-8-3"><span class="lr-open">查看解析</span><span class="lr-close">收起解析</span></label>
+    <span class="meta">正确率 <b>31.03%</b> · 易错项 <b>B</b> · （2025 国考行政执法 33）</span>
+    <label class="mini-check"><input type="checkbox" data-master="q-8-3">已掌握</label>
+  </div>
+  <div class="sol" data-sol="q-8-3">
+    <div class="sol-ans">正确答案<span>D</span></div>
+    <div class="sol-body">
+      <div class="sol-tag">科技常识 · 生活常识 · 上册 P15</div>
+      <p class="sol-lead">程度、执行难度以及创新性等因素综合评定得出的一个数值，具体因素包括动作的转体次数、翻腾次数和姿势难度等。但球必须由篮筐上方投入或触及篮筐。当裁判员将球置于罚球员可处理时，罚球员应在5 秒钟内将球投出。在球触及篮筐之前，罚球员不得触及罚球线或进入限制区域（罚球半圆以外的区域）。罚球时不可以做假动作。由此可知，罚球时并未规定球员双脚是否可以离地，故离地和不离地都可以。场的时间为45 分钟。如果在90 分钟内比赛双方打成平局，且需要决出胜负，则会进行30 分钟的加时赛。场裁判员有3 名，裁判员手里各控制1 个白灯和1 个红灯。裁决时，3 个白灯为成功；3 个红灯为失败。如2 白1 红或2 红1 白，那就要少数服从多数，前者为成功，后者为失败。</p><div class="elim"><div class="erow"><span class="elet elet-A">A 项 · 保留</span><span class="etxt">跳水运动的难度系数是由国际泳联（FINA）根据动作的复杂</span></div><div class="erow"><span class="elet elet-B">B 项 · 保留</span><span class="etxt">根据篮球规则，罚球需在罚球线后方的半圆内完成，不限制投篮方式，</span></div><div class="erow"><span class="elet elet-C">C 项 · 保留</span><span class="etxt">足球比赛的常规时间长度为90 分钟 ，分为上、下两个半场，每个半</span></div><div class="erow"><span class="elet elet-D">D 项 · 排除</span><span class="etxt">举重比赛的裁判系统包括3 个白灯、3 个红灯和1 个蜂鸣器。比赛临</span></div></div><p class="sol-tail">本题为选非题，故正确答案为D。</p>
+      <p class="sol-note">解析为粉笔原书内容，按「选项排除式」重排：X 项错误＝先排除，X 项正确＝后择优。常识靠积累，错题记条目比刷题更重要。</p>
+    </div>
+  </div>
+</article>
+<article class="q" id="q-8-4" data-no="q-8-4" data-ans="B" data-kd="生活常识" data-rate="32.53" data-wrong="C">
+  <div class="q-head"><span class="qno">4</span><div class="stem">下列与日常生活有关的说法，正确的是：</div></div>
+  <div class="opts"><div class="opt"><i>A</i><span>被蚊虫叮咬后，热敷肿胀部位有利于快速消肿止痒</span></div><div class="opt"><i>B</i><span>酒精能溶解辣椒素，切菜“辣”到手时，可以用酒精擦拭来解“辣”</span></div><div class="opt"><i>C</i><span>煤气泄漏时，应切断所有电器开关，如果房间里开着灯，应第一时间关掉</span></div><div class="opt"><i>D</i><span>运动会加速血液循环，血管收缩扩张的幅度加大，血管壁压力增大，因此高血压的人应该少运动</span></div></div>
+  <input type="checkbox" id="ck-q-8-4" class="soltoggle">
+  <div class="qbar">
+    <label class="btn-reveal" for="ck-q-8-4" data-act="reveal" data-sol="q-8-4"><span class="lr-open">查看解析</span><span class="lr-close">收起解析</span></label>
+    <span class="meta">正确率 <b>32.53%</b> · 易错项 <b>C</b> · （2025 浙江A 20）</span>
+    <label class="mini-check"><input type="checkbox" data-master="q-8-4">已掌握</label>
+  </div>
+  <div class="sol" data-sol="q-8-4">
+    <div class="sol-ans">正确答案<span>B</span></div>
+    <div class="sol-body">
+      <div class="sol-tag">科技常识 · 生活常识 · 上册 P15</div>
+      <p class="sol-lead">局部红肿是由蚊虫叮咬皮肤后释放的唾液所造成的变态反应。蚊虫叮咬后红肿、疼痛时应进行冷敷，这样有助于减轻肿胀、缓解疼痛，同时收缩毛细血管，减少局部充血。如果用热敷，不但不能缓解症状，还会引起更严重的反应。乙酸乙酯、甲醇、乙醇等。因此，酒精可以有效地溶解辣椒素，从而缓解手部因辣椒引起的灼痛感 。排风扇等任何电器，因为这些动作都有可能产生静电或者火花，燃气一旦接触到火花就可能出现爆炸。所以“应第一时间关掉”的表述错误。的幅度，增加血管壁弹性，从而达到降低血压的目的。 因此，适量运动可以降低高血压患者的血压，而非“少运动”。冷敷和热敷：热敷和冷敷都是物理疗法。血遇热而活，遇寒则凝，所以在受伤早期宜冷敷，以减少局部血肿；在出血停止以后热敷，可加速消散伤处周围的淤血。一般而言，受伤 24 ～ 48 小时后开始热敷。</p><div class="elim"><div class="erow"><span class="elet elet-A">A 项 · 排除</span><span class="etxt">被蚊虫叮咬后红肿、疼痛不可以用热敷，被蚊虫叮咬后出现</span></div><div class="erow"><span class="elet elet-B">B 项 · 保留</span><span class="etxt">辣椒的主要成分是辣椒素，这是一种脂溶性物质，不溶于水，易溶于</span></div><div class="erow"><span class="elet elet-C">C 项 · 排除</span><span class="etxt">煤气泄漏后应维持室内所有电器开关的现状，禁止开关灯、油烟机、</span></div><div class="erow"><span class="elet elet-D">D 项 · 排除</span><span class="etxt">适量运动有助于扩张毛细血管，加速血液循环，加大血管收缩、扩张</span></div></div><p class="sol-tail">故正确答案为B。</p>
+      <p class="sol-note">解析为粉笔原书内容，按「选项排除式」重排：X 项错误＝先排除，X 项正确＝后择优。常识靠积累，错题记条目比刷题更重要。</p>
+    </div>
+  </div>
+</article>
+<article class="q" id="q-8-5" data-no="q-8-5" data-ans="C" data-kd="生活常识" data-rate="35.02" data-wrong="A">
+  <div class="q-head"><span class="qno">5</span><div class="stem">关于2024 年奥运会中国夺金项目，下列说法正确的是：</div></div>
+  <div class="opts"><div class="opt"><i>A</i><span>10 米气步枪个人赛中每发最高10 环</span></div><div class="opt"><i>B</i><span>吊环不同结构组的动作必须在充分的摆动中完成</span></div><div class="opt"><i>C</i><span>跳水动作代码“307B”中的“B”表示屈体的动作姿态</span></div><div class="opt"><i>D</i><span>花样游泳集体项目决赛中以自由自选的比赛成绩确定名次</span></div></div>
+  <input type="checkbox" id="ck-q-8-5" class="soltoggle">
+  <div class="qbar">
+    <label class="btn-reveal" for="ck-q-8-5" data-act="reveal" data-sol="q-8-5"><span class="lr-open">查看解析</span><span class="lr-close">收起解析</span></label>
+    <span class="meta">正确率 <b>35.02%</b> · 易错项 <b>A</b> · （2025 天津 62）</span>
+    <label class="mini-check"><input type="checkbox" data-master="q-8-5">已掌握</label>
+  </div>
+  <div class="sol" data-sol="q-8-5">
+    <div class="sol-ans">正确答案<span>C</span></div>
+    <div class="sol-body">
+      <div class="sol-tag">科技常识 · 生活常识 · 上册 P16</div>
+      <p class="sol-lead">需在1 小时15 分钟内完成60 发，得分含小数，每发最高10.9 分（环），满分654 分。按总分高低排名，资格赛前八的选手进入决赛，资格赛得分不带入决赛。决赛最多完成24 发，得分含小数，每发最高10.9 分（环），满分261.6 分。有力量动作或静止动作，而不是吊环。吊环应由比例大致相等的摆动和力量静止动作组成，而非单纯依靠摆动动作。有6 个数字编码，“3”代表反身跳（面对水面后空翻）。第二位数字表示是否飞身，“0”表示没有飞身，“1”表示有飞身。第三位数字代表旋转的周数，其中数字除以2即为旋转的总周数，“7”表示翻腾3 周半。最后一个字母指动作姿势类型，“B”表示屈体（腿绷直，头贴紧膝盖）姿势。别是集体技术自选、集体自由自选及新加入的集体技巧。团体项目决赛名次是通过这三个项目的得分总和来确定的。粉笔拓展跳水动作组别：第1 组——面对池向前跳水；第2 组——面对板向后跳水；第3 组——面对池反身跳水；第4 组——面对板向内跳水；第5 组——转体跳水；第6 组——臂立跳水（仅在跳台跳水中采用）。跳水空中动作姿势：直体（A）、屈体（B）、抱膝（C）、翻腾兼转体的任意姿势（D）。</p><div class="elim"><div class="erow"><span class="elet elet-A">A 项 · 排除</span><span class="etxt">10 米气步枪个人赛分为资格赛和决赛两部分，其中，资格赛</span></div><div class="erow"><span class="elet elet-B">B 项 · 排除</span><span class="etxt">鞍马不同结构组的动作必须在充分的摆动中完成，不能停顿，不允许</span></div><div class="erow"><span class="elet elet-C">C 项 · 保留</span><span class="etxt">跳水的动作代码由数字和字母组成。第一位数字代表不同的动作，共</span></div><div class="erow"><span class="elet elet-D">D 项 · 排除</span><span class="etxt">在2024 年巴黎奥运会上，花样游泳团体项目由三部分组成，它们分</span></div></div><p class="sol-tail">故正确答案为C。</p>
+      <p class="sol-note">解析为粉笔原书内容，按「选项排除式」重排：X 项错误＝先排除，X 项正确＝后择优。常识靠积累，错题记条目比刷题更重要。</p>
+    </div>
+  </div>
+</article>
+<article class="q" id="q-8-6" data-no="q-8-6" data-ans="D" data-kd="生活常识" data-rate="27.89" data-wrong="C">
+  <div class="q-head"><span class="qno">6</span><div class="stem">关于医学检查方法，下列说法错误的是：</div></div>
+  <div class="opts"><div class="opt"><i>A</i><span>做心脏超声检查，无需患者做憋尿、空腹等特殊准备</span></div><div class="opt"><i>B</i><span>造影利用了造影剂与人体组织密度的区别</span></div><div class="opt"><i>C</i><span>磁共振检查没有放射性，适用于孕妇、婴幼儿等人群</span></div><div class="opt"><i>D</i><span>血清检查是判断幽门螺旋杆菌感染的最佳方法</span></div></div>
+  <input type="checkbox" id="ck-q-8-6" class="soltoggle">
+  <div class="qbar">
+    <label class="btn-reveal" for="ck-q-8-6" data-act="reveal" data-sol="q-8-6"><span class="lr-open">查看解析</span><span class="lr-close">收起解析</span></label>
+    <span class="meta">正确率 <b>27.89%</b> · 易错项 <b>C</b> · （2025 国考副省 29）</span>
+    <label class="mini-check"><input type="checkbox" data-master="q-8-6">已掌握</label>
+  </div>
+  <div class="sol" data-sol="q-8-6">
+    <div class="sol-ans">正确答案<span>D</span></div>
+    <div class="sol-body">
+      <div class="sol-tag">科技常识 · 生活常识 · 上册 P16</div>
+      <p class="sol-lead">超声波来观察心脏的结构和功能。 这种检查不需要患者做特殊的准备，如憋尿或空腹等。度差异在X 射线下形成对比，从而更清晰地显示病变部位。用磁场和无线电波进行成像的检查方法，因此没有放射性。这种检查方法成为孕妇、婴幼儿等对辐射敏感人群的理想选择。杆菌感染的最佳方法。实际上，呼气试验（如C-13 或C-14 尿素呼气试验）被认为是更为准确、便捷且无创的检测方法。呼气试验可以通过检测患者呼出的气体中是否含有幽门螺旋杆菌产生的特定标记物来判断感染情况。粉笔拓展</p><div class="elim"><div class="erow"><span class="elet elet-A">A 项 · 保留</span><span class="etxt">心脏超声检查是一种无创、无辐射的检查方法，主要通过</span></div><div class="erow"><span class="elet elet-B">B 项 · 保留</span><span class="etxt">造影检查是一种常用的医学检查方法，它利用造影剂与人体组织的密</span></div><div class="erow"><span class="elet elet-C">C 项 · 保留</span><span class="etxt">人们日常生活中常说的磁共振，是指磁共振成像（MRI），是一种利</span></div><div class="erow"><span class="elet elet-D">D 项 · 排除</span><span class="etxt">虽然血清检查可以检测幽门螺旋杆菌抗体，但它并不是判断幽门螺旋</span></div></div><p class="sol-tail">本题为选非题，故正确答案为D。</p>
+      <p class="sol-note">解析为粉笔原书内容，按「选项排除式」重排：X 项错误＝先排除，X 项正确＝后择优。常识靠积累，错题记条目比刷题更重要。</p>
+    </div>
+  </div>
+</article>
+</section>
+<section class="sec" id="s-9" data-idx="9" data-chap="法律常识">
+  <div class="sec-head"><span class="sec-no">第九节</span>
+    <div class="sec-meta"><h3>宪法</h3>
+      <div class="stags"><span class="ptag pt-chap">法律常识</span><span class="ptag pt-n">2 题</span></div>
+    </div></div>
+  <div class="mat-note">题目来源：粉笔《决战行测5000题 · 常识判断（新增题）》上册 · 法律常识 / 宪法（考生回忆版）</div>
+  
+<article class="q" id="q-9-1" data-no="q-9-1" data-ans="C" data-kd="宪法" data-rate="65.14" data-wrong="B">
+  <div class="q-head"><span class="qno">1</span><div class="stem">中华人民共和国是全国各族人民共同缔造的统一的多民族国家。下列有关表述不正确的是：</div></div>
+  <div class="opts"><div class="opt"><i>A</i><span>“多元一体”是中华民族的显著特征</span></div><div class="opt"><i>B</i><span>民族自治地方的自治机关是自治区、自治州、自治县的人民代表大会和人民政府</span></div><div class="opt"><i>C</i><span>民族自治地方的少数民族干部具有优先任用权，自治区主席、自治州州长、自治县县长除外</span></div><div class="opt"><i>D</i><span>加强对青少年的历史文化教育，全面推广普及国家通用语言文字，全面推行使用国家统编教材，把中华民族共同体意识从小就植入孩子们的心灵</span></div></div>
+  <input type="checkbox" id="ck-q-9-1" class="soltoggle">
+  <div class="qbar">
+    <label class="btn-reveal" for="ck-q-9-1" data-act="reveal" data-sol="q-9-1"><span class="lr-open">查看解析</span><span class="lr-close">收起解析</span></label>
+    <span class="meta">正确率 <b>65.14%</b> · 易错项 <b>B</b> · （2025 浙江A 15）</span>
+    <label class="mini-check"><input type="checkbox" data-master="q-9-1">已掌握</label>
+  </div>
+  <div class="sol" data-sol="q-9-1">
+    <div class="sol-ans">正确答案<span>C</span></div>
+    <div class="sol-body">
+      <div class="sol-tag">法律常识 · 宪法 · 上册 P17</div>
+      <p class="sol-lead">是统一的多民族国家，中华民族多元一体是我国的一个显著特征。”因此，“多元一体”是中华民族的显著特征。机关是自治区、自治州、自治县的人民代表大会和人民政府。”州长、自治县县长由实行区域自治的民族的公民担任。”因此，民族自治地方的自治区主席、自治州州长、自治县县长的职位，少数民族干部具有优先任用权。“加强对青少年的历史文化教育，全面推广普及国家通用语言文字，全面推行使用国家统编教材，把中华民族共同体意识从小就植入孩子们的心灵。”</p><div class="elim"><div class="erow"><span class="elet elet-A">A 项 · 保留</span><span class="etxt">2022 年7 月，习近平总书记前往新疆考察调研时指出：“我国</span></div><div class="erow"><span class="elet elet-B">B 项 · 保留</span><span class="etxt">《中华人民共和国宪法》第一百一十二条规定：“民族自治地方的自治</span></div><div class="erow"><span class="elet elet-C">C 项 · 排除</span><span class="etxt">《中华人民共和国宪法》第一百一十四条规定：“自治区主席、自治州</span></div><div class="erow"><span class="elet elet-D">D 项 · 保留</span><span class="etxt">2024 年9 月，习近平总书记在全国民族团结进步表彰大会上指出：</span></div></div><p class="sol-tail">本题为选非题，故正确答案为C。</p>
+      <p class="sol-note">解析为粉笔原书内容，按「选项排除式」重排：X 项错误＝先排除，X 项正确＝后择优。常识靠积累，错题记条目比刷题更重要。</p>
+    </div>
+  </div>
+</article>
+<article class="q" id="q-9-2" data-no="q-9-2" data-ans="A" data-kd="宪法" data-rate="21.34" data-wrong="C">
+  <div class="q-head"><span class="qno">2</span><div class="stem">下列与我国的立法权相关的说法正确的是：</div></div>
+  <div class="opts"><div class="opt"><i>A</i><span>强制隔离戒毒、冻结存款的行政强制措施只能由法律予以设定</span></div><div class="opt"><i>B</i><span>全国人民代表大会可授权国务院根据实际需要制定法律</span></div><div class="opt"><i>C</i><span>法律解释权属于全国人大常委会、最高人民法院及最高人民检察院</span></div><div class="opt"><i>D</i><span>行政法规由国务院及其组成部门、直属机构、办事机构予以制定发布</span></div></div>
+  <input type="checkbox" id="ck-q-9-2" class="soltoggle">
+  <div class="qbar">
+    <label class="btn-reveal" for="ck-q-9-2" data-act="reveal" data-sol="q-9-2"><span class="lr-open">查看解析</span><span class="lr-close">收起解析</span></label>
+    <span class="meta">正确率 <b>21.34%</b> · 易错项 <b>C</b> · （2025 国考行政执法 21）</span>
+    <label class="mini-check"><input type="checkbox" data-master="q-9-2">已掌握</label>
+  </div>
+  <div class="sol" data-sol="q-9-2">
+    <div class="sol-ans">正确答案<span>A</span></div>
+    <div class="sol-body">
+      <div class="sol-tag">法律常识 · 宪法 · 上册 P17</div>
+      <p class="sol-lead">的种类：（一）限制公民人身自由；（二）查封场所、设施或者财物；（三）扣押财物；（四）冻结存款、汇款；（五）其他行政强制措施。”第十条规定：“行政强制措施由法律设定。尚未制定法律，且属于国务院行政管理职权事项的，行政法规可以设定除本法第九条第一项、第四项和应当由法律规定的行政强制措施以外的其他行政强制措施。尚未制定法律、行政法规，且属于地方性事务的，地方性法规可以设定本法第九条第二项、第三项的行政强制措施。法律、法规以外的其他规范性文件不得设定行政强制措施。”因此，限制公民人身自由（强制隔离戒毒）与冻结存款、汇款的行政强制措施只能由法律予以设定。以授权全国人民代表大会常务委员会制定相关法律。”第十二条规定：“本法第十一条规定的事项尚未制定法律的，全国人民代表大会及其常务委员会有权作出决定，授权国务院可以根据实际需要，对其中的部分事项先制定行政法规，但是有关犯罪和刑罚、对公民政治权利的剥夺和限制人身自由的强制措施和处罚、司法制度等事项除外。”因此，全国人民代表大会可授权全国人民代表大会常务委员会制定相关法律，可授权国务院根据实际需要先制定行政法规，而非法律。全国人民代表大会常务委员会。”第一百一十九条第一款规定：“最高人民法院、最高人民检察院作出的属于审判、检察工作中具体应用法律的解释，应当主要针对具体的法律条文，并符合立法的目的、原则和原意。遇有本法第四十八条第二款规定情况的，应当向全国人民代表大会常务委员会提出法律解释的要求或者提出制定、修改有关法律的议案。”因此，法律解释权属于全国人民代表大会常务委员会，最高人民法院、最高人民检察院只可以作出属于审判、检察工作中具体应用法律的解释。和法律，制定行政法规。”第九十一条第一款规定：“国务院各部、委员会、中国人民银行、审计署和具有行政管理职能的直属机构以及法律规定的机构，可以根据法律和国务院的行政法规、决定、命令，在本部门的权限范围内，制定规章。”因此，国务院制定的是行政法规，国务院组成部门、直属机构制定的是规章。</p><div class="elim"><div class="erow"><span class="elet elet-A">A 项 · 保留</span><span class="etxt">《中华人民共和国行政强制法》第九条规定：“行政强制措施</span></div><div class="erow"><span class="elet elet-B">B 项 · 排除</span><span class="etxt">《中华人民共和国立法法》第十条第四款规定：“全国人民代表大会可</span></div><div class="erow"><span class="elet elet-C">C 项 · 排除</span><span class="etxt">《中华人民共和国立法法》第四十八条第一款规定：“法律解释权属于</span></div><div class="erow"><span class="elet elet-D">D 项 · 排除</span><span class="etxt">《中华人民共和国立法法》第七十二条第一款规定：“国务院根据宪法</span></div></div><p class="sol-tail">故正确答案为A。</p>
+      <p class="sol-note">解析为粉笔原书内容，按「选项排除式」重排：X 项错误＝先排除，X 项正确＝后择优。常识靠积累，错题记条目比刷题更重要。</p>
+    </div>
+  </div>
+</article>
+</section>
+<section class="sec" id="s-10" data-idx="10" data-chap="法律常识">
+  <div class="sec-head"><span class="sec-no">第十节</span>
+    <div class="sec-meta"><h3>行政法</h3>
+      <div class="stags"><span class="ptag pt-chap">法律常识</span><span class="ptag pt-n">2 题</span></div>
+    </div></div>
+  <div class="mat-note">题目来源：粉笔《决战行测5000题 · 常识判断（新增题）》上册 · 法律常识 / 行政法（考生回忆版）</div>
+  
+<article class="q" id="q-10-1" data-no="q-10-1" data-ans="C" data-kd="行政法" data-rate="61.4" data-wrong="B">
+  <div class="q-head"><span class="qno">1</span><div class="stem">下列情形不在申请行政复议范围之内的是：</div></div>
+  <div class="opts"><div class="opt"><i>A</i><span>餐馆甲因食品卫生不达标，被吊销餐饮服务许可证，甲不服</span></div><div class="opt"><i>B</i><span>建设单位乙在申请建筑工程施工许可证时，因申请材料不全被拒绝，乙不服</span></div><div class="opt"><i>C</i><span>公务员丙不能胜任工作，其所属行政机关作出降职处理决定，丙不服</span></div><div class="opt"><i>D</i><span>工人丁提出工伤认定申请，当地人力资源和社会保障局作出不予受理决定，丁不服</span></div></div>
+  <input type="checkbox" id="ck-q-10-1" class="soltoggle">
+  <div class="qbar">
+    <label class="btn-reveal" for="ck-q-10-1" data-act="reveal" data-sol="q-10-1"><span class="lr-open">查看解析</span><span class="lr-close">收起解析</span></label>
+    <span class="meta">正确率 <b>61.4%</b> · 易错项 <b>B</b> · （2025 国考副省 23）</span>
+    <label class="mini-check"><input type="checkbox" data-master="q-10-1">已掌握</label>
+  </div>
+  <div class="sol" data-sol="q-10-1">
+    <div class="sol-ans">正确答案<span>C</span></div>
+    <div class="sol-body">
+      <div class="sol-tag">法律常识 · 行政法 · 上册 P18</div>
+      <p class="sol-lead">一的，公民、法人或者其他组织可以依照本法申请行政复议：（一）对行政机关作出的行政处罚决定不服；……”《中华人民共和国行政处罚法》第九条规定：“行政处罚的种类：（一）警告、通报批评；（二）罚款、没收违法所得、没收非法财物；（三）暂扣许可证件、降低资质等级、吊销许可证件；（四）限制开展生产经营活动、责令停产停业、责令关闭、限制从业；（五）行政拘留；（六）法律、行政法规规定的其他行政处罚。”吊销餐饮服务许可证属于行政处罚，因此，餐馆甲有权申请行政复议。公民、法人或者其他组织可以依照本法申请行政复议：……（三）申请行政许可，行政机关拒绝或者在法定期限内不予答复，或者对行政机关作出的有关行政许可的其他决定不服；……”建设单位乙在申请建筑工程施工许可证时，因申请材料不全被拒绝，属于对行政机关作出的有关行政许可的决定不服，建设单位乙有权申请行政复议。复议范围：……（三）行政机关对行政机关工作人员的奖惩、任免等决定；……”针对公务员丙作出的降职处理决定，属于对行政机关工作人员的奖惩、任免等决定，不在行政复议范围之内。公民、法人或者其他组织可以依照本法申请行政复议：……（七）对行政机关作出的不予受理工伤认定申请的决定或者工伤认定结论不服；……”工人丁提出工伤认定申请，当地人力资源和社会保障局作出不予受理决定，属于对行政机关作出的不予受理工伤认定申请的决定不服，工人丁有权申请行政复议。</p><div class="elim"><div class="erow"><span class="elet elet-A">A 项 · 保留</span><span class="etxt">《中华人民共和国行政复议法》第十一条规定：“有下列情形之</span></div><div class="erow"><span class="elet elet-B">B 项 · 保留</span><span class="etxt">《中华人民共和国行政复议法》第十一条规定：“有下列情形之一的，</span></div><div class="erow"><span class="elet elet-C">C 项 · 排除</span><span class="etxt">《中华人民共和国行政复议法》第十二条规定：“下列事项不属于行政</span></div><div class="erow"><span class="elet elet-D">D 项 · 保留</span><span class="etxt">《中华人民共和国行政复议法》第十一条规定：“有下列情形之一的，</span></div></div><p class="sol-tail">本题为选非题，故正确答案为C。</p>
+      <p class="sol-note">解析为粉笔原书内容，按「选项排除式」重排：X 项错误＝先排除，X 项正确＝后择优。常识靠积累，错题记条目比刷题更重要。</p>
+    </div>
+  </div>
+</article>
+<article class="q" id="q-10-2" data-no="q-10-2" data-ans="D" data-kd="行政法" data-rate="22.47" data-wrong="B">
+  <div class="q-head"><span class="qno">2</span><div class="stem">2024 年5 月，甲驾驶重型半挂车行驶至某县辖区内被交警临检。该县公安局交警大队认定甲存在驾驶故意污损机动车号牌的机动车在道路行驶的行为，遂当场作出罚款200 元、记9 分的处罚决定。甲认为其不存在故意污损号牌的行为，对处罚决定不服。下列说法正确的是：</div></div>
+  <div class="opts"><div class="opt"><i>A</i><span>甲可以不经行政复议，直接向人民法院提起行政诉讼</span></div><div class="opt"><i>B</i><span>甲若申请行政复议，复议机关为该县公安局</span></div><div class="opt"><i>C</i><span>甲若申请行政复议，不适用简易程序审理</span></div><div class="opt"><i>D</i><span>甲若申请行政复议，该案可适用调解</span></div></div>
+  <input type="checkbox" id="ck-q-10-2" class="soltoggle">
+  <div class="qbar">
+    <label class="btn-reveal" for="ck-q-10-2" data-act="reveal" data-sol="q-10-2"><span class="lr-open">查看解析</span><span class="lr-close">收起解析</span></label>
+    <span class="meta">正确率 <b>22.47%</b> · 易错项 <b>B</b> · （2025 国考行政执法 23）</span>
+    <label class="mini-check"><input type="checkbox" data-master="q-10-2">已掌握</label>
+  </div>
+  <div class="sol" data-sol="q-10-2">
+    <div class="sol-ans">正确答案<span>D</span></div>
+    <div class="sol-body">
+      <div class="sol-tag">法律常识 · 行政法 · 上册 P18</div>
+      <p class="sol-lead">列情形之一的，申请人应当先向行政复议机关申请行政复议，对行政复议决定不服的，可以再依法向人民法院提起行政诉讼：（一）对当场作出的行政处罚决定不服；……”题中，县公安局交警大队是当场对甲作出罚款200 元、记9 分的处罚决定，甲对此不服应当先向行政复议机关申请行政复议，对行政复议决定不服的，可以再依法向人民法院提起行政诉讼，不得直接向人民法院提起行政诉讼。方各级人民政府管辖下列行政复议案件：（一）对本级人民政府工作部门作出的行政行为不服的；……”题中，甲对县公安局交警大队作出的行政处罚决定不服，则复议机关为县政府，而不是县公安局。关审理下列行政复议案件，认为事实清楚、权利义务关系明确、争议不大的，可以适用简易程序：（一）被申请行政复议的行政行为是当场作出；……”题中，县公安局交警大队是当场对甲作出罚款200 元、记9 分的处罚决定，依法可以适用简易程序审理。理行政复议案件，可以进行调解。”因此，甲若申请行政复议，该案可适用调解。</p><div class="elim"><div class="erow"><span class="elet elet-A">A 项 · 排除</span><span class="etxt">《中华人民共和国行政复议法》第二十三条第一款规定：“有下</span></div><div class="erow"><span class="elet elet-B">B 项 · 排除</span><span class="etxt">《中华人民共和国行政复议法》第二十四条第一款规定：“县级以上地</span></div><div class="erow"><span class="elet elet-C">C 项 · 排除</span><span class="etxt">《中华人民共和国行政复议法》第五十三条第一项规定：“行政复议机</span></div><div class="erow"><span class="elet elet-D">D 项 · 保留</span><span class="etxt">《中华人民共和国行政复议法》第五条第一款规定：“行政复议机关办</span></div></div><p class="sol-tail">故正确答案为D。</p>
+      <p class="sol-note">解析为粉笔原书内容，按「选项排除式」重排：X 项错误＝先排除，X 项正确＝后择优。常识靠积累，错题记条目比刷题更重要。</p>
+    </div>
+  </div>
+</article>
+</section>
+<section class="sec" id="s-11" data-idx="11" data-chap="法律常识">
+  <div class="sec-head"><span class="sec-no">第11节</span>
+    <div class="sec-meta"><h3>民法与民事诉讼法</h3>
+      <div class="stags"><span class="ptag pt-chap">法律常识</span><span class="ptag pt-n">1 题</span></div>
+    </div></div>
+  <div class="mat-note">题目来源：粉笔《决战行测5000题 · 常识判断（新增题）》上册 · 法律常识 / 民法与民事诉讼法（考生回忆版）</div>
+  
+<article class="q" id="q-11-1" data-no="q-11-1" data-ans="C" data-kd="民法与民事诉讼法" data-rate="54.63" data-wrong="D">
+  <div class="q-head"><span class="qno">1</span><div class="stem">下列符合《中华人民共和国民法典》的是：</div></div>
+  <div class="opts"><div class="opt"><i>A</i><span>甲向乙借款十万元，并约定该借款合同不受诉讼时效限制</span></div><div class="opt"><i>B</i><span>甲与三个儿子口头协商一致，约定甲丧失民事行为能力时，由其二儿子履行监护职责</span></div><div class="opt"><i>C</i><span>甲和怀孕的妻子乙在游玩途中发生交通事故，甲不幸离世，乙腹中的胎儿可以继承甲的遗产</span></div><div class="opt"><i>D</i><span>甲租赁乙的房屋进行经营，租赁期限届满，甲与乙的远房亲戚丙均想租赁该房屋，甲有优先承租该房屋的权利</span></div></div>
+  <input type="checkbox" id="ck-q-11-1" class="soltoggle">
+  <div class="qbar">
+    <label class="btn-reveal" for="ck-q-11-1" data-act="reveal" data-sol="q-11-1"><span class="lr-open">查看解析</span><span class="lr-close">收起解析</span></label>
+    <span class="meta">正确率 <b>54.63%</b> · 易错项 <b>D</b> · （2025 浙江A 14）</span>
+    <label class="mini-check"><input type="checkbox" data-master="q-11-1">已掌握</label>
+  </div>
+  <div class="sol" data-sol="q-11-1">
+    <div class="sol-ans">正确答案<span>C</span></div>
+    <div class="sol-body">
+      <div class="sol-tag">法律常识 · 民法与民事诉讼法 · 上册 P18</div>
+      <p class="sol-lead">不适用诉讼时效的规定：（一）请求停止侵害、排除妨碍、消除危险；（二）不动产物权和登记的动产物权的权利人请求返还财产；（三）请求支付抚养费、赡养费或者扶养费；（四）依法不适用诉讼时效的其他请求权。”由此可知，甲、乙之间的借款合同并不属于法定的不适用诉讼时效的情形，且当事人不可以约定诉讼时效。的成年人，可以与其近亲属、其他愿意担任监护人的个人或者组织事先协商，以书面形式确定自己的监护人，在自己丧失或者部分丧失民事行为能力时，由该监护人履行监护职责。”因此，甲可以与儿子协商确定自己的监护人，但是应当采用书面形式。照下列顺序继承：（一）第一顺序：配偶、子女、父母；（二）第二顺序：兄弟姐妹、祖父母、外祖父母。”第一千一百五十五条规定：“遗产分割时，应当保留胎儿的继承份额。胎儿娩出时是死体的，保留的份额按照法定继承办理。”因此，甲离世后，应当为乙腹中的胎儿保留相应的继承份额。满，房屋承租人享有以同等条件优先承租的权利。”本案中，甲作为承租人必须在同等条件下，才享有优先承租该房屋的权利。</p><div class="elim"><div class="erow"><span class="elet elet-A">A 项 · 排除</span><span class="etxt">《中华人民共和国民法典》第一百九十六条规定：“下列请求权</span></div><div class="erow"><span class="elet elet-B">B 项 · 排除</span><span class="etxt">《中华人民共和国民法典》第三十三条规定：“具有完全民事行为能力</span></div><div class="erow"><span class="elet elet-C">C 项 · 保留</span><span class="etxt">《中华人民共和国民法典》第一千一百二十七条第一款规定：“遗产按</span></div><div class="erow"><span class="elet elet-D">D 项 · 排除</span><span class="etxt">《中华人民共和国民法典》第七百三十四条第二款规定：“租赁期限届</span></div></div><p class="sol-tail">故正确答案为C。</p>
+      <p class="sol-note">解析为粉笔原书内容，按「选项排除式」重排：X 项错误＝先排除，X 项正确＝后择优。常识靠积累，错题记条目比刷题更重要。</p>
+    </div>
+  </div>
+</article>
+</section>
+<section class="sec" id="s-12" data-idx="12" data-chap="法律常识">
+  <div class="sec-head"><span class="sec-no">第12节</span>
+    <div class="sec-meta"><h3>刑法与刑事诉讼法</h3>
+      <div class="stags"><span class="ptag pt-chap">法律常识</span><span class="ptag pt-n">1 题</span></div>
+    </div></div>
+  <div class="mat-note">题目来源：粉笔《决战行测5000题 · 常识判断（新增题）》上册 · 法律常识 / 刑法与刑事诉讼法（考生回忆版）</div>
+  
+<article class="q" id="q-12-1" data-no="q-12-1" data-ans="C" data-kd="刑法与刑事诉讼法" data-rate="48.58" data-wrong="B">
+  <div class="q-head"><span class="qno">1</span><div class="stem">虚假诉讼、作伪证是我国重点打击的破坏司法秩序的行为。下列说法错误的是：</div></div>
+  <div class="opts"><div class="opt"><i>A</i><span>甲伪造合同向法院起诉，意图获得非法利益，甲可能被罚款、拘留或被追究刑事责任</span></div><div class="opt"><i>B</i><span>甲指使乙在一民事案件中作伪证，甲的行为构成妨害作证罪</span></div><div class="opt"><i>C</i><span>甲欠乙2 万元，因欠条遗失，乙补写欠条并模仿甲的签名后向法院起诉，乙的行为构成虚假诉讼罪</span></div><div class="opt"><i>D</i><span>甲为鉴定人，在某刑事案件中故意作虚假鉴定，意图陷害他人，甲的行为构成伪证罪</span></div></div>
+  <input type="checkbox" id="ck-q-12-1" class="soltoggle">
+  <div class="qbar">
+    <label class="btn-reveal" for="ck-q-12-1" data-act="reveal" data-sol="q-12-1"><span class="lr-open">查看解析</span><span class="lr-close">收起解析</span></label>
+    <span class="meta">正确率 <b>48.58%</b> · 易错项 <b>B</b> · （2025 国考行政执法 24）</span>
+    <label class="mini-check"><input type="checkbox" data-master="q-12-1">已掌握</label>
+  </div>
+  <div class="sol" data-sol="q-12-1">
+    <div class="sol-ans">正确答案<span>C</span></div>
+    <div class="sol-body">
+      <div class="sol-tag">法律常识 · 刑法与刑事诉讼法 · 上册 P19</div>
+      <p class="sol-lead">“诉讼参与人或者其他人有下列行为之一的，人民法院可以根据情节轻重予以罚款、拘留；构成犯罪的，依法追究刑事责任：（一）伪造、毁灭重要证据，妨碍人民法院审理案件的；……”选项中，甲伪造合同向法院起诉，属于伪造、毁灭重要证据，妨碍人民法院审理案件的行为，甲可能被罚款、拘留或被追究刑事责任。规定，以暴力、威胁、贿买等方法阻止证人作证或者指使他人作伪证的，处三年以下有期徒刑或者拘役；情节严重的，处三年以上七年以下有期徒刑。选项中，甲指使乙在案件中作伪证，属于妨害作证的情形。因此，甲的行为构成妨害作证罪。罪的规定，以捏造的事实提起民事诉讼，妨害司法秩序或者严重侵害他人合法权益的，处三年以下有期徒刑、拘役或者管制，并处或者单处罚金；情节严重的，处三年以上七年以下有期徒刑，并处罚金。选项中，甲确实欠乙2 万元，虽然后期乙补写欠条并模仿甲的签名，但是乙并不存在捏造事实的情形。因此，乙的行为并不构成虚假诉讼罪。事诉讼中，证人、鉴定人、记录人、翻译人对与案件有重要关系的情节，故意作虚假证明、鉴定、记录、翻译，意图陷害他人或者隐匿罪证的，处三年以下有期徒刑或者拘役；情节严重的，处三年以上七年以下有期徒刑。选项中，甲为鉴定人，在刑事案件中故意作虚假鉴定，属于作伪证的情形。因此，甲的行为构成伪证罪。</p><div class="elim"><div class="erow"><span class="elet elet-A">A 项 · 保留</span><span class="etxt">《中华人民共和国民事诉讼法》第一百一十四条第一款规定：</span></div><div class="erow"><span class="elet elet-B">B 项 · 保留</span><span class="etxt">根据《中华人民共和国刑法》第三百零七条第一款关于妨害作证罪的</span></div><div class="erow"><span class="elet elet-C">C 项 · 排除</span><span class="etxt">根据《中华人民共和国刑法》第三百零七条之一第一款关于虚假诉讼</span></div><div class="erow"><span class="elet elet-D">D 项 · 保留</span><span class="etxt">根据《中华人民共和国刑法》第三百零五条关于伪证罪的规定，在刑</span></div></div><p class="sol-tail">本题为选非题，故正确答案为C。</p>
+      <p class="sol-note">解析为粉笔原书内容，按「选项排除式」重排：X 项错误＝先排除，X 项正确＝后择优。常识靠积累，错题记条目比刷题更重要。</p>
+    </div>
+  </div>
+</article>
+</section>
+<section class="sec" id="s-13" data-idx="13" data-chap="法律常识">
+  <div class="sec-head"><span class="sec-no">第13节</span>
+    <div class="sec-meta"><h3>商法与经济法</h3>
+      <div class="stags"><span class="ptag pt-chap">法律常识</span><span class="ptag pt-n">1 题</span></div>
+    </div></div>
+  <div class="mat-note">题目来源：粉笔《决战行测5000题 · 常识判断（新增题）》上册 · 法律常识 / 商法与经济法（考生回忆版）</div>
+  
+<article class="q" id="q-13-1" data-no="q-13-1" data-ans="B" data-kd="商法与经济法" data-rate="25.91" data-wrong="D">
+  <div class="q-head"><span class="qno">1</span><div class="stem">根据《中华人民共和国公司法》的规定，下列事项必须通过国家企业信用信息公示系统公示的是：</div></div>
+  <div class="opts"><div class="opt"><i>A</i><span>某公司与其他公司的合并决议</span></div><div class="opt"><i>B</i><span>其公司股东实缴出资额和出资方式</span></div><div class="opt"><i>C</i><span>某公司股东会作出的减少注册资本的决议</span></div><div class="opt"><i>D</i><span>某公司的破产清算公告</span></div></div>
+  <input type="checkbox" id="ck-q-13-1" class="soltoggle">
+  <div class="qbar">
+    <label class="btn-reveal" for="ck-q-13-1" data-act="reveal" data-sol="q-13-1"><span class="lr-open">查看解析</span><span class="lr-close">收起解析</span></label>
+    <span class="meta">正确率 <b>25.91%</b> · 易错项 <b>D</b> · （2025 国考地市 24）</span>
+    <label class="mini-check"><input type="checkbox" data-master="q-13-1">已掌握</label>
+  </div>
+  <div class="sol" data-sol="q-13-1">
+    <div class="sol-ans">正确答案<span>B</span></div>
+    <div class="sol-body">
+      <div class="sol-tag">法律常识 · 商法与经济法 · 上册 P20</div>
+      <p class="sol-lead">当由合并各方签订合并协议，并编制资产负债表及财产清单。公司应当自作出合并决议之日起十日内通知债权人，并于三十日内在报纸上或者国家企业信用信息公示系统公告。债权人自接到通知之日起三十日内，未接到通知的自公告之日起四十五日内，可以要求公司清偿债务或者提供相应的担保。”因此，公司合并决议也可以在报纸上公告。通过国家企业信用信息公示系统公示下列事项：（一）有限责任公司股东认缴和实缴的出资额、出资方式和出资日期，股份有限公司发起人认购的股份数；（二）有限责任公司股东、股份有限公司发起人的股权、股份变更信息；（三）行政许可取得、变更、注销等信息；（四）法律、行政法规规定的其他信息。”股东会作出减少注册资本决议之日起十日内通知债权人，并于三十日内在报纸上或者国家企业信用信息公示系统公告。债权人自接到通知之日起三十日内，未接到通知的自公告之日起四十五日内，有权要求公司清偿债务或者提供相应的担保。”因此，公司减少注册资本的决议也可以在报纸上公告。自成立之日起十日内通知债权人，并于六十日内在报纸上或者国家企业信用信息公示系统公告。债权人应当自接到通知之日起三十日内，未接到通知的自公告之日起四十五日内，向清算组申报其债权。”因此，公司清算也可以在报纸上公告。</p><div class="elim"><div class="erow"><span class="elet elet-A">A 项 · 排除</span><span class="etxt">《中华人民共和国公司法》第二百二十条规定：“公司合并，应</span></div><div class="erow"><span class="elet elet-B">B 项 · 保留</span><span class="etxt">《中华人民共和国公司法》第四十条第一款规定：“公司应当按照规定</span></div><div class="erow"><span class="elet elet-C">C 项 · 排除</span><span class="etxt">《中华人民共和国公司法》第二百二十四条第二款规定：“公司应当自</span></div><div class="erow"><span class="elet elet-D">D 项 · 排除</span><span class="etxt">《中华人民共和国公司法》第二百三十五条第一款规定：“清算组应当</span></div></div><p class="sol-tail">故正确答案为B。</p>
+      <p class="sol-note">解析为粉笔原书内容，按「选项排除式」重排：X 项错误＝先排除，X 项正确＝后择优。常识靠积累，错题记条目比刷题更重要。</p>
+    </div>
+  </div>
+</article>
+</section>
+<section class="sec" id="s-14" data-idx="14" data-chap="法律常识">
+  <div class="sec-head"><span class="sec-no">第14节</span>
+    <div class="sec-meta"><h3>其他法律法规</h3>
+      <div class="stags"><span class="ptag pt-chap">法律常识</span><span class="ptag pt-n">5 题</span></div>
+    </div></div>
+  <div class="mat-note">题目来源：粉笔《决战行测5000题 · 常识判断（新增题）》上册 · 法律常识 / 其他法律法规（考生回忆版）</div>
+  
+<article class="q" id="q-14-1" data-no="q-14-1" data-ans="B" data-kd="其他法律法规" data-rate="52.37" data-wrong="C">
+  <div class="q-head"><span class="qno">1</span><div class="stem">关于商标权，下列说法正确的是：</div></div>
+  <div class="opts"><div class="opt"><i>A</i><span>商标注册之后即使不在实际中使用，也不会被撤销</span></div><div class="opt"><i>B</i><span>商标权保护的标志包括声音、字母甚至颜色组合等</span></div><div class="opt"><i>C</i><span>商标权可以变更注册人、许可他人使用，但不能转让</span></div><div class="opt"><i>D</i><span>过了商标权的保护期限，商标就可以被公开随意取用</span></div></div>
+  <input type="checkbox" id="ck-q-14-1" class="soltoggle">
+  <div class="qbar">
+    <label class="btn-reveal" for="ck-q-14-1" data-act="reveal" data-sol="q-14-1"><span class="lr-open">查看解析</span><span class="lr-close">收起解析</span></label>
+    <span class="meta">正确率 <b>52.37%</b> · 易错项 <b>C</b> · （2025 天津 54）</span>
+    <label class="mini-check"><input type="checkbox" data-master="q-14-1">已掌握</label>
+  </div>
+  <div class="sol" data-sol="q-14-1">
+    <div class="sol-ans">正确答案<span>B</span></div>
+    <div class="sol-body">
+      <div class="sol-tag">法律常识 · 其他法律法规 · 上册 P20</div>
+      <p class="sol-lead">成为其核定使用的商品的通用名称或者没有正当理由连续三年不使用的，任何单位或者个人可以向商标局申请撤销该注册商标。商标局应当自收到申请之日起九个月内做出决定。有特殊情况需要延长的，经国务院工商行政管理部门批准，可以延长三个月。”因此，商标注册之后不在实际中使用，有可能会被撤销。者其他组织的商品与他人的商品区别开的标志，包括文字、图形、字母、数字、三维标志、颜色组合和声音等，以及上述要素的组合，均可以作为商标申请注册。”因此，商标权保护的标志包括声音、字母甚至颜色组合等。转让人和受让人应当签订转让协议，并共同向商标局提出申请。受让人应当保证使用该注册商标的商品质量。”因此，商标权可以转让。需要继续使用的，商标注册人应当在期满前十二个月内按照规定办理续展手续；在此期间未能办理的，可以给予六个月的宽展期。每次续展注册的有效期为十年，自该商标上一届有效期满次日起计算。期满未办理续展手续的，注销其注册商标。”第五十条规定：“注册商标被撤销、被宣告无效或者期满不再续展的，自撤销、宣告无效或者注销之日起一年内，商标局对与该商标相同或者近似的商标注册申请，不予核准。”因此，即使过了商标权的保护期限不再续展的，该商标在一定期限内并不可以被公开随意取用。</p><div class="elim"><div class="erow"><span class="elet elet-A">A 项 · 排除</span><span class="etxt">《中华人民共和国商标法》第四十九条第二款规定：“注册商标</span></div><div class="erow"><span class="elet elet-B">B 项 · 保留</span><span class="etxt">《中华人民共和国商标法》第八条规定：“任何能够将自然人、法人或</span></div><div class="erow"><span class="elet elet-C">C 项 · 排除</span><span class="etxt">《中华人民共和国商标法》第四十二条第一款规定：“转让注册商标的，</span></div><div class="erow"><span class="elet elet-D">D 项 · 排除</span><span class="etxt">《中华人民共和国商标法》第四十条第一款规定：“注册商标有效期满，</span></div></div><p class="sol-tail">故正确答案为B。</p>
+      <p class="sol-note">解析为粉笔原书内容，按「选项排除式」重排：X 项错误＝先排除，X 项正确＝后择优。常识靠积累，错题记条目比刷题更重要。</p>
+    </div>
+  </div>
+</article>
+<article class="q" id="q-14-2" data-no="q-14-2" data-ans="B" data-kd="其他法律法规" data-rate="45.8" data-wrong="C">
+  <div class="q-head"><span class="qno">2</span><div class="stem">关于食品安全，下列说法正确的是：</div></div>
+  <div class="opts"><div class="opt"><i>A</i><span>保健食品的说明书不得涉及疾病治疗功能，但可涉及疾病预防功能</span></div><div class="opt"><i>B</i><span>县级以上人民政府应当将食品安全工作经费列入本级政府财政预算</span></div><div class="opt"><i>C</i><span>食品安全风险评估时采集的样品不需要向生产经营者支付费用</span></div><div class="opt"><i>D</i><span>屠宰畜、禽的检验规程由国务院农业行政部门进行制定</span></div></div>
+  <input type="checkbox" id="ck-q-14-2" class="soltoggle">
+  <div class="qbar">
+    <label class="btn-reveal" for="ck-q-14-2" data-act="reveal" data-sol="q-14-2"><span class="lr-open">查看解析</span><span class="lr-close">收起解析</span></label>
+    <span class="meta">正确率 <b>45.8%</b> · 易错项 <b>C</b> · （2025 四川 12）</span>
+    <label class="mini-check"><input type="checkbox" data-master="q-14-2">已掌握</label>
+  </div>
+  <div class="sol" data-sol="q-14-2">
+    <div class="sol-ans">正确答案<span>B</span></div>
+    <div class="sol-body">
+      <div class="sol-tag">法律常识 · 其他法律法规 · 上册 P20</div>
+      <p class="sol-lead">标签、说明书不得涉及疾病预防、治疗功能，内容应当真实，与注册或者备案的内容相一致，载明适宜人群、不适宜人群、功效成分或者标志性成分及其含量等，并声明‘本品不能代替药物’。保健食品的功能和成分应当与标签、说明书相一致。”因此，保健食品的说明书也不得涉及疾病预防功能。府应当将食品安全工作纳入本级国民经济和社会发展规划，将食品安全工作经费列入本级政府财政预算，加强食品安全监督管理能力建设，为食品安全工作提供保障。”该项表述与题干内容符合。监测工作人员有权进入相关食用农产品种植养殖、食品生产经营场所采集样品、收集相关数据。采集样品应当按照市场价格支付费用。”因此，食品安全风险评估时，采集的样品需要向生产经营者支付费用。的检验规程由国务院农业行政部门会同国务院卫生行政部门制定。”因此，屠宰畜、禽的检验规程不是由国务院农业行政部门单独制定的。</p><div class="elim"><div class="erow"><span class="elet elet-A">A 项 · 排除</span><span class="etxt">《中华人民共和国食品安全法》第七十八条规定：“保健食品的</span></div><div class="erow"><span class="elet elet-B">B 项 · 保留</span><span class="etxt">《中华人民共和国食品安全法》第八条第一款规定：“县级以上人民政</span></div><div class="erow"><span class="elet elet-C">C 项 · 排除</span><span class="etxt">《中华人民共和国食品安全法》第十五条第二款规定：“食品安全风险</span></div><div class="erow"><span class="elet elet-D">D 项 · 排除</span><span class="etxt">《中华人民共和国食品安全法》第二十七条第三款规定：“屠宰畜、禽</span></div></div><p class="sol-tail">故正确答案为B。</p>
+      <p class="sol-note">解析为粉笔原书内容，按「选项排除式」重排：X 项错误＝先排除，X 项正确＝后择优。常识靠积累，错题记条目比刷题更重要。</p>
+    </div>
+  </div>
+</article>
+<article class="q" id="q-14-3" data-no="q-14-3" data-ans="D" data-kd="其他法律法规" data-rate="67.69" data-wrong="B">
+  <div class="q-head"><span class="qno">3</span><div class="stem">根据《中华人民共和国文物保护法》，下列说法错误的是：</div></div>
+  <div class="opts"><div class="opt"><i>A</i><span>南海海域内发现的沉船及其中文物属于国家所有</span></div><div class="opt"><i>B</i><span>国有文物收藏单位不得将馆藏文物赠与其他单位</span></div><div class="opt"><i>C</i><span>文物工作的方针是“保护为主、抢救第一、合理利用、加强管理”</span></div><div class="opt"><i>D</i><span>经营文物拍卖的拍卖企业能够同时从事文物的购销经营活动</span></div></div>
+  <input type="checkbox" id="ck-q-14-3" class="soltoggle">
+  <div class="qbar">
+    <label class="btn-reveal" for="ck-q-14-3" data-act="reveal" data-sol="q-14-3"><span class="lr-open">查看解析</span><span class="lr-close">收起解析</span></label>
+    <span class="meta">正确率 <b>67.69%</b> · 易错项 <b>B</b> · （2025 天津 53）</span>
+    <label class="mini-check"><input type="checkbox" data-master="q-14-3">已掌握</label>
+  </div>
+  <div class="sol" data-sol="q-14-3">
+    <div class="sol-ans">正确答案<span>D</span></div>
+    <div class="sol-body">
+      <div class="sol-tag">法律常识 · 其他法律法规 · 上册 P21</div>
+      <p class="sol-lead">共和国境内地下、内水和领海中遗存的一切文物，以及中国管辖的其他海域内遗存的起源于中国的和起源国不明的文物，属于国家所有。”南海海域属于我国领海，所以在该海域内发现的沉船及其中的文物均应属于国家所有。位将馆藏文物赠与、出租、出售或者抵押、质押给其他单位、个人。”因此，国有文物收藏单位不得将馆藏文物赠与其他单位。党的领导，坚持以社会主义核心价值观为引领，贯彻保护为主、抢救第一、合理利用、加强管理的方针。”因此，文物工作的方针是“保护为主、抢救第一、合理利用、加强管理”。业不得从事文物销售经营活动，不得设立文物销售单位。”因此，经营文物拍卖的拍卖企业不能同时从事文物的购销经营活动。</p><div class="elim"><div class="erow"><span class="elet elet-A">A 项 · 保留</span><span class="etxt">《中华人民共和国文物保护法》第五条第一款规定：“中华人民</span></div><div class="erow"><span class="elet elet-B">B 项 · 保留</span><span class="etxt">《中华人民共和国文物保护法》第六十条规定：“禁止国有文物收藏单</span></div><div class="erow"><span class="elet elet-C">C 项 · 保留</span><span class="etxt">《中华人民共和国文物保护法》第四条规定：“文物工作坚持中国共产</span></div><div class="erow"><span class="elet elet-D">D 项 · 排除</span><span class="etxt">《中华人民共和国文物保护法》第七十一条第二款规定：“文物拍卖企</span></div></div><p class="sol-tail">本题为选非题，故正确答案为D。</p>
+      <p class="sol-note">解析为粉笔原书内容，按「选项排除式」重排：X 项错误＝先排除，X 项正确＝后择优。常识靠积累，错题记条目比刷题更重要。</p>
+    </div>
+  </div>
+</article>
+<article class="q" id="q-14-4" data-no="q-14-4" data-ans="D" data-kd="其他法律法规" data-rate="21.03" data-wrong="A">
+  <div class="q-head"><span class="qno">4</span><div class="stem">《中华人民共和国消费者权益保护法实施条例》自2024 年7 月1 日起施行。下列说法或做法符合相关法律法规的是：</div></div>
+  <div class="opts"><div class="opt"><i>A</i><span>甲公司在消费者订购云服务前将自动续费条款放置于显著位置，消费者同意订购并勾选自动续费，甲公司可在该服务到期时自动扣费</span></div><div class="opt"><i>B</i><span>乙加油站为消费者提供免费洗车服务时造成车身划痕，该加油站无需承担赔偿责任</span></div><div class="opt"><i>C</i><span>丙在某直播平台上直播卖服装，称自己的服装为尾货和瑕疵品，要求大家谨慎购买，该商品不适用七天无理由退货</span></div><div class="opt"><i>D</i><span>丁健身馆与消费者签订书面合同，约定提供为期半年的健身私教课程服务并收取3000 元预付款</span></div></div>
+  <input type="checkbox" id="ck-q-14-4" class="soltoggle">
+  <div class="qbar">
+    <label class="btn-reveal" for="ck-q-14-4" data-act="reveal" data-sol="q-14-4"><span class="lr-open">查看解析</span><span class="lr-close">收起解析</span></label>
+    <span class="meta">正确率 <b>21.03%</b> · 易错项 <b>A</b> · （2025 国考行政执法 26）</span>
+    <label class="mini-check"><input type="checkbox" data-master="q-14-4">已掌握</label>
+  </div>
+  <div class="sol" data-sol="q-14-4">
+    <div class="sol-ans">正确答案<span>D</span></div>
+    <div class="sol-body">
+      <div class="sol-tag">法律常识 · 其他法律法规 · 上册 P21</div>
+      <p class="sol-lead">规定：“经营者采取自动展期、自动续费等方式提供服务的，应当在消费者接受服务前和自动展期、自动续费等日期前，以显著方式提请消费者注意。”因此，甲公司的自动扣费业务，不仅应当在消费者接受服务前以显著方式提请消费者注意，还应当在自动续费日期前，以显著方式提请消费者注意。《中华人民共和国消费者权益保护法实施条例》第七条第二款规定：“经营者向消费者提供商品或者服务（包括以奖励、赠送、试用等形式向消费者免费提供商品或者服务），应当保证商品或者服务符合保障人身、财产安全的要求……”因此，乙加油站虽然为消费者提供的是免费洗车服务，但仍应当保证商品或者服务符合保障人身、财产安全的要求。定：“经营者通过网络、电视、电话、邮购等方式销售商品的，应当遵守消费者权益保护法第二十五条规定，不得擅自扩大不适用无理由退货的商品范围。经营者应当以显著方式对不适用无理由退货的商品进行标注，提示消费者在购买时进行确认，不得将不适用无理由退货作为消费者默认同意的选项。未经消费者确认，经营者不得拒绝无理由退货。”《中华人民共和国消费者权益保护法》第二十五条第一、二款规定：“经营者采用网络、电视、电话、邮购等方式销售商品，消费者有权自收到商品之日起七日内退货，且无需说明理由，但下列商品除外：（一）消费者定作的；（二）鲜活易腐的；（三）在线下载或者消费者拆封的音像制品、计算机软件等数字化商品；（四）交付的报纸、期刊。除前款所列商品外，其他根据商品性质并经消费者在购买时确认不宜退货的商品，不适用无理由退货。”因此，在《中华人民共和国消费者权益保护法》第二十五条明确规定不适用无理由退货的商品范围以外的商品，未经消费者确认，经营者不得拒绝无理由退货。定：“经营者以收取预付款方式提供商品或者服务的，应当与消费者订立书面合同，约定商品或者服务的具体内容、价款或者费用、预付款退还方式、违约责任等事项。”因此，丁健身馆与消费者约定提供为期半年的健身私教课程服务并收取3000 元预付款，可以通过订立书面合同的方式约定。</p><div class="elim"><div class="erow"><span class="elet elet-A">A 项 · 排除</span><span class="etxt">《中华人民共和国消费者权益保护法实施条例》第十条第二款</span></div><div class="erow"><span class="elet elet-B">B 项 · 排除</span><span class="etxt"></span></div><div class="erow"><span class="elet elet-C">C 项 · 排除</span><span class="etxt">《中华人民共和国消费者权益保护法实施条例》第十九条第一、二款规</span></div><div class="erow"><span class="elet elet-D">D 项 · 保留</span><span class="etxt">《中华人民共和国消费者权益保护法实施条例》第二十二条第一款规</span></div></div><p class="sol-tail">故正确答案为D。</p>
+      <p class="sol-note">解析为粉笔原书内容，按「选项排除式」重排：X 项错误＝先排除，X 项正确＝后择优。常识靠积累，错题记条目比刷题更重要。</p>
+    </div>
+  </div>
+</article>
+<article class="q" id="q-14-5" data-no="q-14-5" data-ans="A" data-kd="其他法律法规" data-rate="7.78" data-wrong="B">
+  <div class="q-head"><span class="qno">5</span><div class="stem">根据《中华人民共和国食品安全法》，下列情形符合法律规定的是：</div></div>
+  <div class="opts"><div class="opt"><i>A</i><span>某食品生产企业自行检验产品后，不再委托专业机构进行检验</span></div><div class="opt"><i>B</i><span>某乳制品生产企业以分装方式生产婴幼儿配方乳粉</span></div><div class="opt"><i>C</i><span>某食品安全监督管理部门向食品生产经营者收取检验费</span></div><div class="opt"><i>D</i><span>某个体工商户仅销售预包装食品，未报食品安全监督管理部门备案</span></div></div>
+  <input type="checkbox" id="ck-q-14-5" class="soltoggle">
+  <div class="qbar">
+    <label class="btn-reveal" for="ck-q-14-5" data-act="reveal" data-sol="q-14-5"><span class="lr-open">查看解析</span><span class="lr-close">收起解析</span></label>
+    <span class="meta">正确率 <b>7.78%</b> · 易错项 <b>B</b> · （2025 国考行政执法 22）</span>
+    <label class="mini-check"><input type="checkbox" data-master="q-14-5">已掌握</label>
+  </div>
+  <div class="sol" data-sol="q-14-5">
+    <div class="sol-ans">正确答案<span>A</span></div>
+    <div class="sol-body">
+      <div class="sol-tag">法律常识 · 其他法律法规 · 上册 P21</div>
+      <p class="sol-lead">生产企业可以自行对所生产的食品进行检验，也可以委托符合本法规定的食品检验机构进行检验。”因此，食品生产企业自行检验产品后，可以不再委托专业机构进行检验。方式生产婴幼儿配方乳粉，同一企业不得用同一配方生产不同品牌的婴幼儿配方乳粉。”因此，乳制品生产企业不得以分装方式生产婴幼儿配方乳粉。食品安全监督管理部门应当对食品进行定期或者不定期的抽样检验，并依据有关规定公布检验结果，不得免检。进行抽样检验，应当购买抽取的样品，委托符合本法规定的食品检验机构进行检验，并支付相关费用；不得向食品生产经营者收取检验费和其他费用。”因此，食品安全监督管理部门不得向食品生产经营者收取检验费。生产经营实行许可制度。从事食品生产、食品销售、餐饮服务，应当依法取得许可。但是，销售食用农产品和仅销售预包装食品的，不需要取得许可。仅销售预包装食品的，应当报所在地县级以上地方人民政府食品安全监督管理部门备案。”因此，个体工商户仅销售预包装食品，应报所在地县级以上地方人民政府食品安全监督管理部门备案。</p><div class="elim"><div class="erow"><span class="elet elet-A">A 项 · 保留</span><span class="etxt">《中华人民共和国食品安全法》第八十九条第一款规定：“食品</span></div><div class="erow"><span class="elet elet-B">B 项 · 排除</span><span class="etxt">《中华人民共和国食品安全法》第八十一条第五款规定：“不得以分装</span></div><div class="erow"><span class="elet elet-C">C 项 · 排除</span><span class="etxt">《中华人民共和国食品安全法》第八十七条规定：“县级以上人民政府</span></div><div class="erow"><span class="elet elet-D">D 项 · 排除</span><span class="etxt">《中华人民共和国食品安全法》第三十五条第一款规定：“国家对食品</span></div></div><p class="sol-tail">故正确答案为A。</p>
+      <p class="sol-note">解析为粉笔原书内容，按「选项排除式」重排：X 项错误＝先排除，X 项正确＝后择优。常识靠积累，错题记条目比刷题更重要。</p>
+    </div>
+  </div>
+</article>
+</section>
+<section class="sec" id="s-15" data-idx="15" data-chap="地理常识">
+  <div class="sec-head"><span class="sec-no">第15节</span>
+    <div class="sec-meta"><h3>自然环境</h3>
+      <div class="stags"><span class="ptag pt-chap">地理常识</span><span class="ptag pt-n">4 题</span></div>
+    </div></div>
+  <div class="mat-note">题目来源：粉笔《决战行测5000题 · 常识判断（新增题）》上册 · 地理常识 / 自然环境（考生回忆版）</div>
+  
+<article class="q" id="q-15-1" data-no="q-15-1" data-ans="C" data-kd="自然环境" data-rate="33.69" data-wrong="B">
+  <div class="q-head"><span class="qno">1</span><div class="stem">下列诗句都涉及天体，其中说法错误的是：</div></div>
+  <div class="opts"><div class="opt"><i>A</i><span>“卧看牵牛织女星”所涉及的天体不属于太阳系</span></div><div class="opt"><i>B</i><span>“每依北斗望京华”中的天体不包括北极星</span></div><div class="opt"><i>C</i><span>“启明星在树梢头”中的行星公转轨道半径较地球更大</span></div><div class="opt"><i>D</i><span>“岁星渐高辰星光”中的“岁星”属于气态巨行星</span></div></div>
+  <input type="checkbox" id="ck-q-15-1" class="soltoggle">
+  <div class="qbar">
+    <label class="btn-reveal" for="ck-q-15-1" data-act="reveal" data-sol="q-15-1"><span class="lr-open">查看解析</span><span class="lr-close">收起解析</span></label>
+    <span class="meta">正确率 <b>33.69%</b> · 易错项 <b>B</b> · （2025 国考行政执法 34）</span>
+    <label class="mini-check"><input type="checkbox" data-master="q-15-1">已掌握</label>
+  </div>
+  <div class="sol" data-sol="q-15-1">
+    <div class="sol-ans">正确答案<span>C</span></div>
+    <div class="sol-body">
+      <div class="sol-tag">地理常识 · 自然环境 · 上册 P22</div>
+      <p class="sol-lead">流星等。 牛郎星，又名河鼓二、天鹰座α，是恒星光谱A 型中的主序星，不属于太阳系。织女星，又称织女一或天琴座α，是天琴座中最明亮的恒星，也不属于太阳系。故命名为北斗七星。北斗七星从斗身最前端开始，到斗柄的末尾，按顺序依次命名为大熊座α、大熊座β、大熊座γ、大熊座δ、大熊座ε、大熊座ζ、大熊座η。北极星现在一般指勾陈一（小熊座α）。北斗七星不包括北极星。星”，晚间在西方天空出现则被称为“长庚星”或“昏星”。金星是太阳系的八大行星之一，是从太阳向外的第二颗行星，公转轨道半径比地球小。是太阳系中体积最大的行星。 木星是一颗气态巨行星，质量是太阳的千分之一，但却是太阳系中其他七大行星质量总和的约2.5 倍。太阳系八大行星（按离太阳从近到远的顺序）1. 水星：最小的行星，古代称为“辰星”。2. 金星：全天中除太阳、月球外最亮的星，自转方向为自东向西，古代称为太白或太白金星、启明、长庚。3. 地球：月球是其唯一的天然卫星。4. 火星：中国古代称为“荧惑星”，这是由于火星呈红色，荧光像火。外表呈橘红色是因为其地表被赤铁矿（氧化铁）覆盖。5. 木星：为太阳系行星中质量最大的一颗，被称为“行星之王”。6. 土星：古代称为“镇星”，体积仅次于木星；有一个显著的行星环（可以通过望远镜直接观测），其主要成分是冰的微粒和较少数的岩石残骸以及尘土。7. 天王星：其光环是继土星的光环被发现后第一个被发现的。8. 海王星：外观为蓝色是其大气中的甲烷吸收日光中的红光造成的。</p><div class="elim"><div class="erow"><span class="elet elet-A">A 项 · 保留</span><span class="etxt">太阳系包括太阳、八大行星及其卫星和无数的小行星、彗星、</span></div><div class="erow"><span class="elet elet-B">B 项 · 保留</span><span class="etxt">北斗七星，是夜空中的七颗亮星，它们组成的图形像是古代舀酒的斗，</span></div><div class="erow"><span class="elet elet-C">C 项 · 排除</span><span class="etxt">金星在中国古代被称为太白金星，清晨在东方天空出现被称为“启明</span></div><div class="erow"><span class="elet elet-D">D 项 · 保留</span><span class="etxt">中国古代称木星为岁星。木星是太阳系中距离太阳第五近的行星，也</span></div></div><p class="sol-tail">本题为选非题，故正确答案为C。</p>
+      <p class="sol-note">解析为粉笔原书内容，按「选项排除式」重排：X 项错误＝先排除，X 项正确＝后择优。常识靠积累，错题记条目比刷题更重要。</p>
+    </div>
+  </div>
+</article>
+<article class="q" id="q-15-2" data-no="q-15-2" data-ans="D" data-kd="自然环境" data-rate="32.99" data-wrong="B">
+  <div class="q-head"><span class="qno">2</span><div class="stem">关于盆地地形，下列说法错误的是：</div></div>
+  <div class="opts"><div class="opt"><i>A</i><span>相比平原，盆地更容易富集油气资源</span></div><div class="opt"><i>B</i><span>塔里木盆地是大型封闭性山间盆地</span></div><div class="opt"><i>C</i><span>盆地地形在山地、高原、海洋里都有分布</span></div><div class="opt"><i>D</i><span>华北渤海湾多分布着岩溶盆地</span></div></div>
+  <input type="checkbox" id="ck-q-15-2" class="soltoggle">
+  <div class="qbar">
+    <label class="btn-reveal" for="ck-q-15-2" data-act="reveal" data-sol="q-15-2"><span class="lr-open">查看解析</span><span class="lr-close">收起解析</span></label>
+    <span class="meta">正确率 <b>32.99%</b> · 易错项 <b>B</b> · （2025 国考地市 30）</span>
+    <label class="mini-check"><input type="checkbox" data-master="q-15-2">已掌握</label>
+  </div>
+  <div class="sol" data-sol="q-15-2">
+    <div class="sol-ans">正确答案<span>D</span></div>
+    <div class="sol-body">
+      <div class="sol-tag">地理常识 · 自然环境 · 上册 P22</div>
+      <p class="sol-lead">的地形特点使得盆地内部容易形成封闭的构造环境，相比平原，更有利于油气资源的聚集。此外，盆地内部的沉积物在地质演化过程中逐渐被深埋地下，在高温高压条件下也会转化为油气资源。底上有约千米厚的富含古生代化石的沉积覆盖层，上有较薄的中生代和新生代沉积层。塔里木盆地是我国陆地上最大的含油气盆地，也是全球唯一以超深层资源为主的含油气盆地。似而得名，是基底表面相对于海平面长期洼陷或坳陷并接受沉积物沉积充填的地区。陆上的盆地多分布在多山的地表上，在丘陵、山地、高原等都有相应的不同构造的盆地。海洋中也有盆地地形，位于大洋中脊与大陆边缘之间，如渤海湾盆地等。代表岩溶发育的后期阶段，且常在热带、亚热带气候条件下形成。岩溶盆地一般面积较大，长达数十至百余千米，底部平坦，有地表河流通过，堆积有冲积、坡积及溶蚀残余的各类沉积物。华北渤海湾的盆地属于断陷盆地。断陷盆地指断块构造中的沉降地块，又称地堑盆地，它的外形受断层线控制，多呈狭长条状。粉笔拓展</p><div class="elim"><div class="erow"><span class="elet elet-A">A 项 · 保留</span><span class="etxt">盆地通常是由地壳运动形成的低洼地带，其四周高、中央低</span></div><div class="erow"><span class="elet elet-B">B 项 · 保留</span><span class="etxt">塔里木盆地是大型封闭性山间盆地，该处地块基底为古老结晶岩，基</span></div><div class="erow"><span class="elet elet-C">C 项 · 保留</span><span class="etxt">盆地是指地球表面相对长时期沉降的区域，因整个地形外观与盆子相</span></div><div class="erow"><span class="elet elet-D">D 项 · 排除</span><span class="etxt">岩溶盆地是大型溶蚀洼地，多分布在地壳运动长期相对稳定的地区，</span></div></div><p class="sol-tail">本题为选非题，故正确答案为D。</p>
+      <p class="sol-note">解析为粉笔原书内容，按「选项排除式」重排：X 项错误＝先排除，X 项正确＝后择优。常识靠积累，错题记条目比刷题更重要。</p>
+    </div>
+  </div>
+</article>
+<article class="q" id="q-15-3" data-no="q-15-3" data-ans="A" data-kd="自然环境" data-rate="24.46" data-wrong="C">
+  <div class="q-head"><span class="qno">3</span><div class="stem">下图为夏季某天我国两个城市的日月升落时间示意图，下列与之相关的说法正确的是：日出06：31月出02：40日落21：56月落17：16残月残月日落19：02月落14：26日出04：55月出00：44</div></div>
+  <div class="opts"><div class="opt"><i>A</i><span>左图城市比右图城市纬度高</span></div><div class="opt"><i>B</i><span>这一天是农历的二十左右</span></div><div class="opt"><i>C</i><span>左图城市比右图城市位置更靠东</span></div><div class="opt"><i>D</i><span>两地的人所看到的月相是不同的</span></div></div>
+  <input type="checkbox" id="ck-q-15-3" class="soltoggle">
+  <div class="qbar">
+    <label class="btn-reveal" for="ck-q-15-3" data-act="reveal" data-sol="q-15-3"><span class="lr-open">查看解析</span><span class="lr-close">收起解析</span></label>
+    <span class="meta">正确率 <b>24.46%</b> · 易错项 <b>C</b> · （2025 国考行政执法 29）</span>
+    <label class="mini-check"><input type="checkbox" data-master="q-15-3">已掌握</label>
+  </div>
+  <div class="sol" data-sol="q-15-3">
+    <div class="sol-ans">正确答案<span>A</span></div>
+    <div class="sol-body">
+      <div class="sol-tag">地理常识 · 自然环境 · 上册 P22</div>
+      <p class="sol-lead">被太阳照射的时间长，黑夜时间短，所以夏季北半球昼长夜短，而且纬度越高，昼越长，夜越短。左图城市的昼长为15 小时25 分钟，右图城市的昼长为14 小时7 分钟，因此，左图城市比右图城市纬度高。阳光照亮的部分，形成周期性圆缺（盈亏）的各种形状，称为月相。月相变化可粗略概括为：新月（朔月）—上娥眉月—上弦月—满月（望月）—下弦月—下娥眉月（残月）—新月（朔月），如此往复循环。图中的月相为残月（下娥眉月），这一天是农历的二十七左右。间为6：31，右图城市的日出时间为4：55，右图城市更早看到日出。因此，右图城市比左图城市位置更靠东。不同，但这是两地经度不同导致的时间差异引起的，而不是月相本身不同。</p><div class="elim"><div class="erow"><span class="elet elet-A">A 项 · 保留</span><span class="etxt">夏季，太阳直射点在北回归线和赤道之间移动，北半球每天</span></div><div class="erow"><span class="elet elet-B">B 项 · 排除</span><span class="etxt">月球在公转过程中和太阳、地球三者的相对位置不断发生变化，被太</span></div><div class="erow"><span class="elet elet-C">C 项 · 排除</span><span class="etxt">地球自西向东自转，所以越靠东，越早看到日出。左图城市的日出时</span></div><div class="erow"><span class="elet elet-D">D 项 · 排除</span><span class="etxt">两个城市的月相都是残月（下娥眉月）。虽然两地月出和月落的时间</span></div></div><p class="sol-tail">故正确答案为A。</p>
+      <p class="sol-note">解析为粉笔原书内容，按「选项排除式」重排：X 项错误＝先排除，X 项正确＝后择优。常识靠积累，错题记条目比刷题更重要。</p>
+    </div>
+  </div>
+</article>
+<article class="q" id="q-15-4" data-no="q-15-4" data-ans="B" data-kd="自然环境" data-rate="45.76" data-wrong="C">
+  <div class="q-head"><span class="qno">4</span><div class="stem">如果要写一部《地球史诗》，下列描述与地质年代对应不当的是：</div></div>
+  <div class="opts"><div class="opt"><i>A</i><span>虽然这时的大陆荒凉一片，但大海的子民空前繁盛，藻类欣欣向荣，三叶虫风头最劲，生命是这个时代永恒的主题——寒武纪</span></div><div class="opt"><i>B</i><span>新生的纪元始于大灭绝之后，哺乳动物继恐龙成为新主，被子植物极度繁盛，裸子植物只有松柏长青——志留纪</span></div><div class="opt"><i>C</i><span>鱼类是这个时代的代言人，裸蕨在大地上站稳了脚跟，成片的森林改写了历史，登陆的两栖类颠覆了乾坤——泥盆纪</span></div><div class="opt"><i>D</i><span>森林以裸子植物为名养育了恐龙，鸟类首次翱翔于天空，恐龙最终征服了世界——侏罗纪</span></div></div>
+  <input type="checkbox" id="ck-q-15-4" class="soltoggle">
+  <div class="qbar">
+    <label class="btn-reveal" for="ck-q-15-4" data-act="reveal" data-sol="q-15-4"><span class="lr-open">查看解析</span><span class="lr-close">收起解析</span></label>
+    <span class="meta">正确率 <b>45.76%</b> · 易错项 <b>C</b> · （2025 国考行政执法 32）</span>
+    <label class="mini-check"><input type="checkbox" data-master="q-15-4">已掌握</label>
+  </div>
+  <div class="sol" data-sol="q-15-4">
+    <div class="sol-ans">正确答案<span>B</span></div>
+    <div class="sol-body">
+      <div class="sol-tag">地理常识 · 自然环境 · 上册 P23</div>
+      <p class="sol-lead">4.85 亿年前。在这个时期里，陆地下沉，北半球大部分被海水淹没。 寒武纪常被称为“三叶虫的时代”，这是因为寒武纪岩石中保存着比其他类群丰富的矿化的三叶虫硬壳。此时期植物中红藻、绿藻等开始繁盛。年前。在这个时期里，地壳相对稳定，但末期有强烈的造山运动。 生物群中腕足类和珊瑚繁荣，三叶虫和笔石仍繁盛，无颌类发育，到晚期出现原始鱼类，末期出现原始陆生植物裸蕨。新生代是显生宙的第三个代，分为古近纪、新近纪和第四纪。在这个时期地壳有强烈的造山运动，中生代的爬行动物绝迹，哺乳动物繁盛，生物达到高度发展阶段，和现代接近，后期有人类出现。该项描述的是新生代，而不是志留纪。年前。这个时期的初期各处海水退去，积聚厚层沉积物。后期海水又淹没陆地并形成含大量有机物质的沉积物。 在泥盆纪里蕨类植物繁盛，昆虫和两栖类兴起。脊椎动物进入飞跃发展时期，鱼形动物数量和种类增多，现代鱼类——硬骨鱼开始发展。泥盆纪常被称为“鱼类时代”。年前。在这个时期里，有造山运动和剧烈的火山活动。 这一时期恐龙成为陆地的统治者，爬行动物非常发达，翼龙类和鸟类出现，哺乳动物开始发展。植物中苏铁、银杏最为繁盛。显生宙显生宙，指“看得见生物的年代”，是开始出现大量较高等动物以来的阶段，包括古生代、中生代和新生代，从距今大约5.41 亿年前延续至今。古生代包括寒武纪、奥陶纪、志留纪、泥盆纪、石炭纪和二叠纪，并可以分为早古生代及晚古生代两部分，各包括三个纪。中生代分为三叠纪、侏罗纪、白垩纪。新生代包括第三纪和第四纪，通常把第三纪分为古近纪（老第三纪）和新近纪（新第三纪）。每个纪下可分为若干世，一般分为早、中、晚三个世或早、晚两个世。世下再分为期。纪和世、期的划分以地壳变动和生物群的面貌为标志，并参以同位素年龄。</p><div class="elim"><div class="erow"><span class="elet elet-A">A 项 · 保留</span><span class="etxt">寒武纪是古生代的第一个纪，约开始于5.41 亿年前，结束于</span></div><div class="erow"><span class="elet elet-B">B 项 · 排除</span><span class="etxt">志留纪是古生代的第三个纪，约开始于4.43 亿年前，结束于4.19 亿</span></div><div class="erow"><span class="elet elet-C">C 项 · 保留</span><span class="etxt">泥盆纪是古生代的第四个纪，约开始于4.19 亿年前，结束于3.59 亿</span></div><div class="erow"><span class="elet elet-D">D 项 · 保留</span><span class="etxt">侏罗纪是中生代的第二个纪，约开始于2.01 亿年前，结束于1.45 亿</span></div></div><p class="sol-tail">本题为选非题，故正确答案为B。</p>
+      <p class="sol-note">解析为粉笔原书内容，按「选项排除式」重排：X 项错误＝先排除，X 项正确＝后择优。常识靠积累，错题记条目比刷题更重要。</p>
+    </div>
+  </div>
+</article>
+</section>
+<section class="sec" id="s-16" data-idx="16" data-chap="地理常识">
+  <div class="sec-head"><span class="sec-no">第16节</span>
+    <div class="sec-meta"><h3>国情社情</h3>
+      <div class="stags"><span class="ptag pt-chap">地理常识</span><span class="ptag pt-n">3 题</span></div>
+    </div></div>
+  <div class="mat-note">题目来源：粉笔《决战行测5000题 · 常识判断（新增题）》上册 · 地理常识 / 国情社情（考生回忆版）</div>
+  
+<article class="q" id="q-16-1" data-no="q-16-1" data-ans="B" data-kd="国情社情" data-rate="42.16" data-wrong="D">
+  <div class="q-head"><span class="qno">1</span><div class="stem">一直以来，长江中下游洪涝灾害严重，给当地人民生产生活带来了很多不利影响。下列关于导致长江流域洪涝灾害原因的分析错误的是：</div></div>
+  <div class="opts"><div class="opt"><i>A</i><span>中游湖泊面积缩小，分洪蓄洪能力减弱</span></div><div class="opt"><i>B</i><span>长江流域内多为温带季风气候，降水充沛集中</span></div><div class="opt"><i>C</i><span>中下游段河道弯曲，水流缓慢，泥沙沉积抬高河床</span></div><div class="opt"><i>D</i><span>上游植被遭到破坏，水土流失严重，河流含沙量增大</span></div></div>
+  <input type="checkbox" id="ck-q-16-1" class="soltoggle">
+  <div class="qbar">
+    <label class="btn-reveal" for="ck-q-16-1" data-act="reveal" data-sol="q-16-1"><span class="lr-open">查看解析</span><span class="lr-close">收起解析</span></label>
+    <span class="meta">正确率 <b>42.16%</b> · 易错项 <b>D</b> · （2025 四川 15）</span>
+    <label class="mini-check"><input type="checkbox" data-master="q-16-1">已掌握</label>
+  </div>
+  <div class="sol" data-sol="q-16-1">
+    <div class="sol-ans">正确答案<span>B</span></div>
+    <div class="sol-body">
+      <div class="sol-tag">地理常识 · 国情社情 · 上册 P23</div>
+      <p class="sol-lead">长江全长约6300 千米，干流宜昌以上为上游，宜昌至湖口为中游，湖口以下为下游。小。湖泊面积缩小，调蓄能力变弱，分洪蓄洪能力也随之降低。粉笔拓展流域降水量年内分配很不均匀，降水集中在夏季。沉积严重，容易抬高河床，易引发洪涝灾害。含沙量增加，水流密度增大，对堤坝的冲击力加大。长江长江，发源于青藏高原上的唐古拉山脉主峰各拉丹冬雪山，曲折东流，干流先后流经青海、四川、西藏、云南、重庆、湖北、湖南、江西、安徽、江苏、上海共11 个省级行政区，最后注入东海。它是中国、亚洲第一大河，也是全球第三长河流。长江形成于侏罗纪燕山运动时期，唐古拉山脉在长江上游崛起，青藏高原逐渐隆起，塑造出众多深邃的山谷、低洼地带以及裂谷。流域内地貌多样，高差极大。大部分区域为亚热带季风气候，温暖湿润，降雨量充沛。耕地资源丰富，木材蓄积量占全国的1/4 左右。野生动物种类众多，包括大熊猫、金丝猴、扬子鳄等珍稀特有物种。此外，还蕴藏着丰富的天然气、盐矿资源，也是水生野生动物的宝贵栖息地，孕育了400 多种鱼类，占据中国淡水鱼种类的三分之一。</p><div class="elim"><div class="erow"><span class="elet elet-A">A 项 · 保留</span><span class="etxt">长江流域中游湖泊有鄱阳湖、洞庭湖等，因自然和人为原因面积在缩</span></div><div class="erow"><span class="elet elet-B">B 项 · 排除</span><span class="etxt">长江流域大部分地处亚热带季风区，气候温暖湿润，四季分明。 长江</span></div><div class="erow"><span class="elet elet-C">C 项 · 保留</span><span class="etxt">长江中下游为地势低平的平原地区，河流流速缓慢，河道弯曲，泥沙</span></div><div class="erow"><span class="elet elet-D">D 项 · 保留</span><span class="etxt">长江上游各支流区域内森林植被遭到破坏，水土流失严重，致使长江</span></div></div><p class="sol-tail">本题为选非题，故正确答案为B。</p>
+      <p class="sol-note">解析为粉笔原书内容，按「选项排除式」重排：X 项错误＝先排除，X 项正确＝后择优。常识靠积累，错题记条目比刷题更重要。</p>
+    </div>
+  </div>
+</article>
+<article class="q" id="q-16-2" data-no="q-16-2" data-ans="B" data-kd="国情社情" data-rate="30.17" data-wrong="C">
+  <div class="q-head"><span class="qno">2</span><div class="stem">下列论文选题与其考察地点对应正确的是：</div></div>
+  <div class="opts"><div class="opt"><i>A</i><span>《卢舍那大佛造像艺术研究》——山西大同</span></div><div class="opt"><i>B</i><span>《丹霞地貌景观特征及发育演化研究》——贵州赤水</span></div><div class="opt"><i>C</i><span>《三江并流区地表覆盖类型变化成因探析》——四川宜宾</span></div><div class="opt"><i>D</i><span>《乡村振兴背景下河姆渡遗址的保护与开发》——浙江湖州</span></div></div>
+  <input type="checkbox" id="ck-q-16-2" class="soltoggle">
+  <div class="qbar">
+    <label class="btn-reveal" for="ck-q-16-2" data-act="reveal" data-sol="q-16-2"><span class="lr-open">查看解析</span><span class="lr-close">收起解析</span></label>
+    <span class="meta">正确率 <b>30.17%</b> · 易错项 <b>C</b> · （2025 天津 59）</span>
+    <label class="mini-check"><input type="checkbox" data-master="q-16-2">已掌握</label>
+  </div>
+  <div class="sol" data-sol="q-16-2">
+    <div class="sol-ans">正确答案<span>B</span></div>
+    <div class="sol-body">
+      <div class="sol-tag">地理常识 · 国情社情 · 上册 P24</div>
+      <p class="sol-lead">照武则天的形象塑造的，建造于唐高宗咸亨四年（673 年）。卢舍那大佛是龙门石窟中艺术水平最高、整体设计最严密、规模最大的一座造像，以神秘微笑著称，被国外游客誉为“东方蒙娜丽莎”“世界最美雕像”。 因此考察地点应是河南洛阳。中国广泛分布，其中四川的蜀南竹海和七洞沟属于幼年期丹霞，贵州赤水丹霞属于青年期丹霞，广东丹霞山属于壮年期丹霞，江西龙虎山则属于老年期丹霞。因此考察地点可以是贵州赤水。云南省境内自北向南并行奔流170 多千米的区域，位于中国云南省。 因此考察地点应粉笔拓展是云南。波市区约20 千米，是中国南方早期新石器时代遗址。因此考察地点应是浙江宁波。</p><div class="elim"><div class="erow"><span class="elet elet-A">A 项 · 排除</span><span class="etxt">卢舍那大佛位于河南省洛阳龙门西山南部山腰奉先寺，是按</span></div><div class="erow"><span class="elet elet-B">B 项 · 保留</span><span class="etxt">丹霞地貌指以陆相为主的红层发育的具有陡崖坡的地貌。丹霞地貌在</span></div><div class="erow"><span class="elet elet-C">C 项 · 排除</span><span class="etxt">三江并流是指金沙江、澜沧江和怒江这三条发源于青藏高原的大江在</span></div><div class="erow"><span class="elet elet-D">D 项 · 排除</span><span class="etxt">河姆渡遗址位于浙江省宁波市余姚市河姆渡镇河姆渡村的东北，距宁</span></div></div><p class="sol-tail">故正确答案为B。</p>
+      <p class="sol-note">解析为粉笔原书内容，按「选项排除式」重排：X 项错误＝先排除，X 项正确＝后择优。常识靠积累，错题记条目比刷题更重要。</p>
+    </div>
+  </div>
+</article>
+<article class="q" id="q-16-3" data-no="q-16-3" data-ans="B" data-kd="国情社情" data-rate="21.28" data-wrong="C">
+  <div class="q-head"><span class="qno">3</span><div class="stem">某博物馆想办一期关于中国自然与人文的地理展览，开设以下几个专题，哪个专题所拟名称不恰当？</div></div>
+  <div class="opts"><div class="opt"><i>A</i><span>长江：稻作文明与鱼米之乡</span></div><div class="opt"><i>B</i><span>都江堰：千年水道神韵再现</span></div><div class="opt"><i>C</i><span>胡焕庸线：中国的“东与西”</span></div><div class="opt"><i>D</i><span>五岳：高山神圣性的代表</span></div></div>
+  <input type="checkbox" id="ck-q-16-3" class="soltoggle">
+  <div class="qbar">
+    <label class="btn-reveal" for="ck-q-16-3" data-act="reveal" data-sol="q-16-3"><span class="lr-open">查看解析</span><span class="lr-close">收起解析</span></label>
+    <span class="meta">正确率 <b>21.28%</b> · 易错项 <b>C</b> · （2025 国考副省 30）</span>
+    <label class="mini-check"><input type="checkbox" data-master="q-16-3">已掌握</label>
+  </div>
+  <div class="sol" data-sol="q-16-3">
+    <div class="sol-ans">正确答案<span>B</span></div>
+    <div class="sol-body">
+      <div class="sol-tag">地理常识 · 国情社情 · 上册 P24</div>
+      <p class="sol-lead">地区 。 长江流域依靠其优越的自然条件，孕育了东亚稻作文明，为中华民族的繁衍提供了稳定的物质条件。长江流域的河姆渡遗址、城头山遗址等考古发现表明，早在7000 年前，这里就已经开始了水稻的种植，是世界稻作文明的发源地之一 。百年的京杭运河已连续三年全线水流贯通，再现了壮美运河千年神韵。都江堰是当今世界年代久远、唯一留存、以无坝引水为特征的宏大水利工程，建堰两千多年来经久不衰，而且发挥着愈来愈大的效益。条人口地理分界线，即今天的“黑河—腾冲线”。 中国人口分布以“胡焕庸线（黑河—腾冲线）”为界，呈现出极不均衡的特征，东南多、西北少。 同时，“胡焕庸线（黑河—腾冲线）”也是中国东西分界线。南岳衡山、北岳恒山、中岳嵩山。 五岳是具有方位代表性的神圣高山，它们是文明核心地域范围的象征，是华夏文明地理构建中极具特色的成果。</p><div class="elim"><div class="erow"><span class="elet elet-A">A 项 · 保留</span><span class="etxt">稻作文明与鱼米之乡形容的是长江流域，尤其是长江中下游</span></div><div class="erow"><span class="elet elet-B">B 项 · 排除</span><span class="etxt">继2022 年经补水实现百年来首次全线水流贯通后，截至2024 年断流</span></div><div class="erow"><span class="elet elet-C">C 项 · 保留</span><span class="etxt">“胡焕庸线”是1935 年胡焕庸在《中国人口之分布》一文中提出的一</span></div><div class="erow"><span class="elet elet-D">D 项 · 保留</span><span class="etxt">五岳是中华传统文化中五大名山的总称，包括东岳泰山、西岳华山、</span></div></div><p class="sol-tail">本题为选非题，故正确答案为B。</p>
+      <p class="sol-note">解析为粉笔原书内容，按「选项排除式」重排：X 项错误＝先排除，X 项正确＝后择优。常识靠积累，错题记条目比刷题更重要。</p>
+    </div>
+  </div>
+</article>
+</section>
+<section class="sec" id="s-17" data-idx="17" data-chap="经济常识">
+  <div class="sec-head"><span class="sec-no">第17节</span>
+    <div class="sec-meta"><h3>综合训练</h3>
+      <div class="stags"><span class="ptag pt-chap">经济常识</span><span class="ptag pt-n">4 题</span></div>
+    </div></div>
+  <div class="mat-note">题目来源：粉笔《决战行测5000题 · 常识判断（新增题）》上册 · 经济常识 / 综合训练（考生回忆版）</div>
+  
+<article class="q" id="q-17-1" data-no="q-17-1" data-ans="D" data-kd="经济常识" data-rate="58.19" data-wrong="C">
+  <div class="q-head"><span class="qno">1</span><div class="stem">2024 年政府工作报告提出，着力扩大国内需求，推动经济实现良性循环。下列措施有利于扩大内需的是：①完善粮食生产收储加工体系②加大出口信贷和出口信保支持③合理扩大地方政府专项债券投向领域④实施数字消费、绿色消费、健康消费促进政策</div></div>
+  <div class="opts"><div class="opt"><i>A</i><span>①②</span></div><div class="opt"><i>B</i><span>②③</span></div><div class="opt"><i>C</i><span>①④</span></div><div class="opt"><i>D</i><span>③④</span></div></div>
+  <input type="checkbox" id="ck-q-17-1" class="soltoggle">
+  <div class="qbar">
+    <label class="btn-reveal" for="ck-q-17-1" data-act="reveal" data-sol="q-17-1"><span class="lr-open">查看解析</span><span class="lr-close">收起解析</span></label>
+    <span class="meta">正确率 <b>58.19%</b> · 易错项 <b>C</b> · （2025 国考副省 21）</span>
+    <label class="mini-check"><input type="checkbox" data-master="q-17-1">已掌握</label>
+  </div>
+  <div class="sol" data-sol="q-17-1">
+    <div class="sol-ans">正确答案<span>D</span></div>
+    <div class="sol-body">
+      <div class="sol-tag">经济常识 ·  · 上册 P34</div>
+      <p class="sol-lead">①错误：2024 年政府工作报告在“三、2024 年政府工作任务”部分“（六）更好统筹发展和安全，有效防范化解重点领域风险”中指出：“加强重点领域安全能力建设。完善粮食生产收储加工体系，全方位夯实粮食安全根基。”完善粮食生产收储加工体系有利于保障粮食安全，提高粮食供给，并不能扩大内需。②错误：2024 年政府工作报告在“三、2024 年政府工作任务”部分“（五）扩大高水平对外开放，促进互利共赢”中指出：“推动外贸质升量稳。加强进出口信贷和出口信保支持，优化跨境结算、汇率风险管理等服务，支持企业开拓多元化市场。”加强进出口信贷和出口信保支持并不能扩大内需。③正确：2024 年政府工作报告在“三、2024 年政府工作任务”部分“（三）着力扩大国内需求，推动经济实现良性循环”中指出：“积极扩大有效投资……合理扩大地方政府专项债券投向领域和用作资本金范围，额度分配向项目准备充分、投资效率较高的地区倾斜。”④正确：2024 年政府工作报告在“三、2024 年政府工作任务”部分“（三）着力扩大国内需求，推动经济实现良性循环”中指出：“培育壮大新型消费，实施数字消费、绿色消费、健康消费促进政策，积极培育智能家居、文娱旅游、体育赛事、国货‘潮品’等新的消费增长点。”综上，③④符合题意。</p><p class="sol-tail">故正确答案为D。</p>
+      <p class="sol-note">解析为粉笔原书内容，按「选项排除式」重排：X 项错误＝先排除，X 项正确＝后择优。常识靠积累，错题记条目比刷题更重要。</p>
+    </div>
+  </div>
+</article>
+<article class="q" id="q-17-2" data-no="q-17-2" data-ans="A" data-kd="经济常识" data-rate="68.24" data-wrong="C">
+  <div class="q-head"><span class="qno">2</span><div class="stem">2024 年10 月21 日，中国人民银行授权全国银行间同业拆借中心公布，1 年期贷款市场报价利率（LPR）为3.10%，5 年期以上LPR 为3.60%，二者均比上月下调25 个基点。下列有关说法不正确的是：</div></div>
+  <div class="opts"><div class="opt"><i>A</i><span>LPR 下调有助于增加居民的储蓄收益，提高居民收入水平</span></div><div class="opt"><i>B</i><span>LPR 下调有助于减轻居民的房贷压力，增强居民购房意愿</span></div><div class="opt"><i>C</i><span>LPR 下调有助于降低企业的融资成本，鼓励创新创业活动</span></div><div class="opt"><i>D</i><span>LPR 下调有助于扩大企业的投资规模，创造更多就业机会</span></div></div>
+  <input type="checkbox" id="ck-q-17-2" class="soltoggle">
+  <div class="qbar">
+    <label class="btn-reveal" for="ck-q-17-2" data-act="reveal" data-sol="q-17-2"><span class="lr-open">查看解析</span><span class="lr-close">收起解析</span></label>
+    <span class="meta">正确率 <b>68.24%</b> · 易错项 <b>C</b> · （2025 浙江 16）</span>
+    <label class="mini-check"><input type="checkbox" data-master="q-17-2">已掌握</label>
+  </div>
+  <div class="sol" data-sol="q-17-2">
+    <div class="sol-ans">正确答案<span>A</span></div>
+    <div class="sol-body">
+      <div class="sol-tag">经济常识 ·  · 上册 P34</div>
+      <p class="sol-lead">贷款市场报价利率（Loan Prime Rate，简称LPR）是由具有代表性的报价行，根据本行对最优质客户的贷款利率，以公开市场操作利率（主要指中期借贷便利利率）加点形成的方式报价，由中国人民银行授权全国银行间同业拆借中心计算并公布的基础性的贷款参考利率，各金融机构应主要参考LPR 进行贷款定价。现行的LPR 包括1 年期和5 年期以上两个品种。一定的影响。随着贷款利率下降，银行为了维持盈利能力，很可能会相应降低存款利率。因此，对于居民来说，这意味着储蓄所能获得的收益可能会减少，而非增加。支出，贷款成本降低，因此可以减轻居民的房贷压力，增强居民的购房意愿。是对资金需求量大的企业来说，可以节省一笔可观的资金，有助于增加企业的利润空间，提升企业的盈利能力和竞争力。较低的LPR 使得企业融资成本降低，投资项目的预期收益相对提高。这会刺激企业更愿意进行新的项目投资，鼓励企业的创新创业活动。的投资规模，进而实现规模的扩张。企业规模扩大会使岗位需求增加，进而创造更多的就业机会。这种扩张有助于企业整合资源、提高生产效率、降低单位成本，从而在市场竞争中占据更有利的地位，实现规模经济效应。</p><div class="elim"><div class="erow"><span class="elet elet-A">A 项 · 排除</span><span class="etxt">LPR 下调，银行面临着较低的放贷成本，这将对银行的存款利率产生</span></div><div class="erow"><span class="elet elet-B">B 项 · 保留</span><span class="etxt">LPR 下调，房贷利率降低，意味着居民在购房时能够节省更多的利息</span></div><div class="erow"><span class="elet elet-C">C 项 · 保留</span><span class="etxt">LPR 下调，意味着企业贷款的基准利率降低，这对于企业来说，特别</span></div><div class="erow"><span class="elet elet-D">D 项 · 保留</span><span class="etxt">LPR 下调，贷款利率下降，企业成本降低，有利于刺激企业扩大自身</span></div></div><p class="sol-tail">本题为选非题，故正确答案为A。</p>
+      <p class="sol-note">解析为粉笔原书内容，按「选项排除式」重排：X 项错误＝先排除，X 项正确＝后择优。常识靠积累，错题记条目比刷题更重要。</p>
+    </div>
+  </div>
+</article>
+<article class="q" id="q-17-3" data-no="q-17-3" data-ans="B" data-kd="经济常识" data-rate="71.03" data-wrong="A">
+  <div class="q-head"><span class="qno">3</span><div class="stem">2024 年9 月26 日，中共中央政治局召开会议，分析研究当前经济形势，部署下一步经济工作。下列有关表述不正确的是：</div></div>
+  <div class="opts"><div class="opt"><i>A</i><span>要降低存款准备金率，实施有力度的降息</span></div><div class="opt"><i>B</i><span>要降低财政货币政策逆周期调节力度，减少财政支出</span></div><div class="opt"><i>C</i><span>要把促消费和惠民生结合起来，促进中低收入群体增收，提升消费结构</span></div><div class="opt"><i>D</i><span>我国经济的基本面及市场广阔、经济韧性强、潜力大等有利条件并未改变</span></div></div>
+  <input type="checkbox" id="ck-q-17-3" class="soltoggle">
+  <div class="qbar">
+    <label class="btn-reveal" for="ck-q-17-3" data-act="reveal" data-sol="q-17-3"><span class="lr-open">查看解析</span><span class="lr-close">收起解析</span></label>
+    <span class="meta">正确率 <b>71.03%</b> · 易错项 <b>A</b> · （2025 浙江 11）</span>
+    <label class="mini-check"><input type="checkbox" data-master="q-17-3">已掌握</label>
+  </div>
+  <div class="sol" data-sol="q-17-3">
+    <div class="sol-ans">正确答案<span>B</span></div>
+    <div class="sol-body">
+      <div class="sol-tag">经济常识 ·  · 上册 P34</div>
+      <p class="sol-lead">2024 年9 月26 日，中共中央政治局召开会议，分析研究当前经济形势，部署下一步经济工作。中共中央总书记习近平主持会议。A 项正确、B 项错误：会议强调，要加大财政货币政策逆周期调节力度，保证必要的财政支出，切实做好基层“三保”工作。要发行使用好超长期特别国债和地方政府专项债，更好发挥政府投资带动作用。 要降低存款准备金率，实施有力度的降息。要促进房地产市场止跌回稳，对商品房建设要严控增量、优化存量、提高质量，加大“白名单”项目贷款投放力度，支持盘活存量闲置土地。要出台民营经济促进法，为非公有制经济发展营造良好环境。要把促消费和惠民生结合起来，促进中低收入群体增收，提升消费结构。利条件并未改变。同时，当前经济运行出现一些新的情况和问题。要全面客观冷静看待当前经济形势，正视困难、坚定信心，切实增强做好经济工作的责任感和紧迫感。</p><div class="elim"><div class="erow"><span class="elet elet-C">C 项 · 保留</span><span class="etxt">会议指出，要帮助企业渡过难关，进一步规范涉企执法、监管行为。</span></div><div class="erow"><span class="elet elet-D">D 项 · 保留</span><span class="etxt">会议指出，我国经济的基本面及市场广阔、经济韧性强、潜力大等有</span></div></div><p class="sol-tail">本题为选非题，故正确答案为B。</p>
+      <p class="sol-note">解析为粉笔原书内容，按「选项排除式」重排：X 项错误＝先排除，X 项正确＝后择优。常识靠积累，错题记条目比刷题更重要。</p>
+    </div>
+  </div>
+</article>
+<article class="q" id="q-17-4" data-no="q-17-4" data-ans="B" data-kd="经济常识" data-rate="34.69" data-wrong="D">
+  <div class="q-head"><span class="qno">4</span><div class="stem">下列人物所说的话与经济有关，其中说法正确的是：</div></div>
+  <div class="opts"><div class="opt"><i>A</i><span>社区居民：我的定期储蓄存款被统计在货币供应量M 1 中</span></div><div class="opt"><i>B</i><span>外资企业CEO：我公司的产值持续增长，为中国GDP 提升做出了贡献</span></div><div class="opt"><i>C</i><span>留美学生：人民币汇率降低，我的学费也降低了</span></div><div class="opt"><i>D</i><span>纳税商户：相比于增值税，营业税的好处是避免重复征税</span></div></div>
+  <input type="checkbox" id="ck-q-17-4" class="soltoggle">
+  <div class="qbar">
+    <label class="btn-reveal" for="ck-q-17-4" data-act="reveal" data-sol="q-17-4"><span class="lr-open">查看解析</span><span class="lr-close">收起解析</span></label>
+    <span class="meta">正确率 <b>34.69%</b> · 易错项 <b>D</b> · （2025 国考行政执法 28）</span>
+    <label class="mini-check"><input type="checkbox" data-master="q-17-4">已掌握</label>
+  </div>
+  <div class="sol" data-sol="q-17-4">
+    <div class="sol-ans">正确答案<span>B</span></div>
+    <div class="sol-body">
+      <div class="sol-tag">经济常识 ·  · 上册 P35</div>
+      <p class="sol-lead">单位活期存款；M2=M1+ 单位定期存款+ 个人存款+ 其他存款。 社区居民的定期储蓄存款属于个人存款，通常被计入M2 中。全部最终成果。 外资企业在中国的生产活动产生的价值会计入中国的GDP。学的学生来说，这通常会导致他们需要支付更多的人民币来兑换美元以支付学费，而不是降低。（如销售额、营业额等）征收的税款。 而增值税是对商品和服务在流转过程中产生的增值额进行征税。增值税的一个重要特点就是可以避免重复征税，因为它只对每个环节的增值部分征税。</p><div class="elim"><div class="erow"><span class="elet elet-A">A 项 · 排除</span><span class="etxt">中国货币供应量的层次划分为：M0= 流通中的现金；M1=M0+</span></div><div class="erow"><span class="elet elet-B">B 项 · 保留</span><span class="etxt">GDP（国内生产总值）是指一个国家或地区在一定时期内生产活动的</span></div><div class="erow"><span class="elet elet-C">C 项 · 排除</span><span class="etxt">人民币汇率降低，意味着人民币贬值，美元相对升值。对于在美国留</span></div><div class="erow"><span class="elet elet-D">D 项 · 排除</span><span class="etxt">营业税是一种流转税，是在商品销售或劳务提供过程中，针对流转额</span></div></div><p class="sol-tail">故正确答案为B。</p>
+      <p class="sol-note">解析为粉笔原书内容，按「选项排除式」重排：X 项错误＝先排除，X 项正确＝后择优。常识靠积累，错题记条目比刷题更重要。</p>
+    </div>
+  </div>
+</article>
+</section>
+  <footer>题目整理自粉笔《决战行测 5000 题 · 常识判断（新增题）》上册（2026 版）；政治常识部分已拆分至《政治理论_真题题库》。真题来源为各机构考生回忆版，表述以本页所引为准。<br>解析为粉笔原书内容按「选项排除式」重排，仅供个人备考使用。进度保存在本机浏览器（localStorage）。</footer>
+</main>
+</div>
+<button class="ment" id="ment" type="button">☰ 目录</button>
+<script>
+(function(){
+  var root=document.documentElement;
+  root.classList.add('js');
+  var badge=document.getElementById('jsstat');
+  var V='v1';
+  var errs=[];
+  function ok(m){ if(badge){badge.textContent='\u2713 交互正常 '+V+(m?(' \u00b7 '+m):'');badge.className='jsstat ok';} }
+  function fail(m){ errs.push(m); if(badge){badge.textContent='\u2717 脚本异常\uff1a'+m;badge.className='jsstat bad';} }
+  window.addEventListener('error',function(e){ fail((e&&e.message)||'\u672a\u77e5\u9519\u8bef'); });
+  function step(n,f){ try{ f(); }catch(e){ fail(n+'\uff1a'+((e&&e.message)||e)); } }
+
+  var LSKEY='cs_true_bank_progress';
+  var state={mastered:{}};
+  step('读取进度',function(){
+    try{ var o=JSON.parse(localStorage.getItem(LSKEY)||'{}')||{}; state.mastered=o.mastered||{}; }catch(e){}
+  });
+  function save(){ try{ localStorage.setItem(LSKEY,JSON.stringify(state)); }catch(e){} }
+
+  function $(s){return document.querySelector(s);}
+  function $$(s){return [].slice.call(document.querySelectorAll(s));}
+  var qs=$$('.q');
+  var qById={}; qs.forEach(function(a){ qById[a.id]=a; });
+
+  function syncOne(a,on){
+    if(!a) return;
+    a.classList.toggle('qopen',on);
+    var s=a.querySelector('.sol'); if(s) s.classList.toggle('open',on);
+  }
+  function setXall(on){
+    root.classList.toggle('xall-on',on);
+    qs.forEach(function(a){ syncOne(a,on); });
+  }
+  function toggleOne(id){ var a=qById[id]; if(a) syncOne(a,!a.classList.contains('qopen')); }
+
+  function onAct(ev){
+    var t=ev.target;
+    if(!t||t.nodeType!==1||!t.closest) return;
+    var hit=t.closest('[data-act]');
+    if(!hit) return;
+    var act=hit.getAttribute('data-act');
+    if(act==='xall'){ setXall(!root.classList.contains('xall-on')); }
+    else if(act==='hans'){ root.classList.toggle('hans-on'); }
+    else if(act==='reveal'){ toggleOne(hit.getAttribute('data-sol')); }
+    else return;
+    ev.preventDefault();
+    if(ev.stopImmediatePropagation) ev.stopImmediatePropagation();
+  }
+  window.addEventListener('click',onAct,true);
+  document.addEventListener('click',onAct,true);
+
+  var onlyUn=false, kw='';
+  function applyFilter(){
+    var hit=0;
+    $$('.sec').forEach(function(sec){
+      var secHit=false;
+      [].slice.call(sec.querySelectorAll('.q')).forEach(function(q){
+        var keep=true;
+        if(onlyUn&&state.mastered[q.id]) keep=false;
+        if(keep&&kw){
+          var kd=q.getAttribute('data-kd')||'';
+          var st=q.querySelector('.stem'); var stem=st?st.textContent:'';
+          if(kd.indexOf(kw)<0&&stem.indexOf(kw)<0) keep=false;
+        }
+        q.classList.toggle('hide',!keep);
+        if(keep) secHit=true;
+      });
+      var h3=sec.querySelector('.sec-meta h3');
+      var srcHit=!!h3&&h3.textContent.indexOf(kw)>=0;
+      var show=kw?(secHit||srcHit):secHit;
+      if(show) hit+=sec.querySelectorAll('.q:not(.hide)').length;
+      sec.classList.toggle('hide',!show);
+    });
+    var nh=$('#nohit'); if(nh) nh.style.display=hit?'none':'block';
+  }
+  function updateProgress(){
+    var done=Object.keys(state.mastered).filter(function(k){return state.mastered[k];}).length;
+    var t=$('#pg-txt'), b=$('#pg-bar');
+    if(t) t.textContent=done;
+    if(b) b.style.width=(done/(qs.length||1)*100)+'%';
+    $$('.sec').forEach(function(sec){
+      var idx=sec.dataset.idx;
+      var list=[].slice.call(sec.querySelectorAll('.q'));
+      var d=list.filter(function(q){return state.mastered[q.id];}).length;
+      var bd=document.querySelector('[data-badge="s-'+idx+'"]');
+      if(bd){ bd.textContent=d+'/'+list.length;
+        var nv=bd.closest('.navlink'); if(nv) nv.classList.toggle('done',d===list.length); }
+    });
+  }
+
+  step('绑定交互',function(){
+    document.addEventListener('click',function(ev){
+      var t=ev.target;
+      if(!t||t.nodeType!==1||!t.closest) return;
+      if(t.closest('#btn-unmastered')){
+        onlyUn=!onlyUn; var b=$('#btn-unmastered'); if(b) b.classList.toggle('on',onlyUn);
+        applyFilter(); return;
+      }
+      if(t.closest('#ment')){ var sd=$('#side'); if(sd) sd.classList.toggle('show'); return; }
+      var ch=t.closest('.dchip');
+      if(ch){
+        var isOn=ch.classList.contains('on');
+        $$('.dchip').forEach(function(c){c.classList.remove('on');});
+        var inp=$('#nav-search');
+        if(isOn){ kw=''; if(inp) inp.value=''; }
+        else{ ch.classList.add('on'); kw=ch.getAttribute('data-dian')||''; if(inp) inp.value=kw; }
+        applyFilter(); return;
+      }
+    });
+    document.addEventListener('change',function(ev){
+      var cb=ev.target;
+      if(!cb||cb.nodeType!==1) return;
+      if(cb.hasAttribute('data-master')){
+        state.mastered[cb.getAttribute('data-master')]=cb.checked;
+        var q=cb.closest('.q'); if(q) q.classList.toggle('mastered',cb.checked);
+        save(); updateProgress(); if(onlyUn) applyFilter();
+      }
+    });
+    document.addEventListener('input',function(ev){
+      if(ev.target&&ev.target.id==='nav-search'){
+        kw=(ev.target.value||'').trim();
+        $$('.dchip').forEach(function(c){c.classList.remove('on');});
+        applyFilter();
+      }
+    });
+  });
+
+  step('回填状态',function(){
+    $$('[data-master]').forEach(function(cb){
+      if(state.mastered[cb.getAttribute('data-master')]){
+        cb.checked=true; var q=cb.closest('.q'); if(q) q.classList.add('mastered');
+      }
+    });
+  });
+
+  step('导航',function(){
+    var links=$$('.navlink');
+    window.addEventListener('scroll',function(){
+      var y=window.scrollY+120,cur=null;
+      links.forEach(function(a){
+        var s3=document.getElementById(a.getAttribute('data-target'));
+        if(s3&&s3.offsetTop<=y) cur=s3;
+      });
+      links.forEach(function(a){ a.classList.toggle('on',!!cur&&a.getAttribute('data-target')===cur.id); });
+    },{passive:true});
+    links.forEach(function(a){
+      a.addEventListener('click',function(){
+        var sd=$('#side'); if(sd&&window.innerWidth<=900) sd.classList.remove('show');
+      });
+    });
+  });
+
+  step('进度',updateProgress);
+  step('自检',function(){
+    var n=qs.length;
+    setXall(true);
+    var o=$$('.sol.open').length;
+    setXall(false);
+    var c=$$('.sol.open').length;
+    if(o>=n&&c===0) ok(n+' 题已绑定'); else fail('自检未通过 '+o+'/'+c);
+  });
+  if(errs.length===0){ if(badge&&badge.className.indexOf('ok')<0) ok(qs.length+' 题已绑定'); }
+})();
+
+</script>
+</body>
+</html>

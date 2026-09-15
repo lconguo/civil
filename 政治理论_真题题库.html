@@ -1,0 +1,865 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>政治理论 · 真题题库 · 2027 国考</title>
+<style>
+:root{--pri:#1d4ed8;--pri-d:#1e3a8a;--pri-l:#3b82f6;--ink:#111827;--ink2:#374151;--ink3:#6b7280;
+  --line:#e5e7eb;--bg:#f5f7fa;--card:#fff;--ok:#158a6e;--warn:#b45309}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif;font-size:15px;line-height:1.75}
+.wrap,.wrap2{display:flex;min-height:100vh}
+aside#side{width:262px;flex:0 0 262px;background:#0f1e33;color:#dbe4f0;padding:20px 16px;
+  position:sticky;top:0;height:100vh;overflow-y:auto}
+aside#side .brand h1{margin:0;font-size:19px;color:#fff;letter-spacing:.5px}
+aside#side .brand p{margin:8px 0 16px;font-size:12px;color:#93a4bd;line-height:1.7}
+.prog-wrap{background:#16273f;border-radius:11px;padding:12px 13px;margin-bottom:14px}
+.prog-top{display:flex;justify-content:space-between;font-size:12px;color:#9fb2cc;margin-bottom:7px}
+.prog-top b{color:#7eb0ff}
+.bar{height:7px;border-radius:99px;background:#0b1727;overflow:hidden}
+.bar i{display:block;height:100%;width:0;background:linear-gradient(90deg,#3b82f6,#60a5fa);transition:.3s}
+.search-wrap{margin-bottom:14px}
+#nav-search{width:100%;padding:8px 11px;border-radius:9px;border:1px solid #2b405e;background:#16273f;
+  color:#e5edf9;font-size:13px;outline:none}
+#nav-search::placeholder{color:#6d8099}
+.nav a{display:flex;align-items:center;gap:8px;padding:8px 10px;border-radius:9px;color:#c8d5e8;
+  text-decoration:none;font-size:13px;margin-bottom:2px}
+.nav a:hover{background:#1b2f4d;color:#fff}
+.nav a.on{background:#1d4ed8;color:#fff;font-weight:600}
+.nav a.done{opacity:.72}
+.nav .nv-num{flex:0 0 auto;font-size:11px;color:#7eb0ff;background:#16273f;border-radius:5px;padding:2px 5px}
+.nav a.on .nv-num{background:#3b82f6;color:#fff}
+.nav .nv-txt{flex:1 1 auto;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.nav .nv-badge{flex:0 0 auto;font-size:11px;color:#9fb2cc;background:#0b1727;border-radius:99px;padding:2px 7px}
+.navgrp{margin-bottom:14px}
+.navgrp-t{font-size:11.5px;color:#7d90ab;letter-spacing:1px;margin:0 0 5px 6px;font-weight:700}
+.side-foot{margin-top:18px;font-size:11px;color:#5f7288;line-height:1.7;border-top:1px solid #1c2f49;padding-top:12px}
+main{flex:1 1 auto;min-width:0;padding:22px 26px 80px;max-width:1020px;margin:0 auto}
+.jsstat{margin:0 0 14px;padding:9px 14px;border-radius:10px;font-size:13px;font-weight:600;line-height:1.6}
+.jsstat.wait{background:#eef2ff;color:#3730a3;border:1px solid #dbe1ff}
+.jsstat.ok{background:#e8f6ee;color:#1a7f45;border:1px solid #b6e3c8}
+.jsstat.bad{background:#fdeceb;color:#b3261e;border:1px solid #f5c2c0}
+.hero{background:linear-gradient(120deg,#1d4ed8,#4338ca);color:#fff;border-radius:16px;padding:24px 26px;
+  box-shadow:0 10px 30px rgba(29,78,216,.22)}
+.hero h2{margin:0 0 8px;font-size:24px}
+.verchip{display:inline-block;margin-left:10px;padding:2px 9px;border-radius:99px;font-size:12px;
+  font-weight:700;background:rgba(255,255,255,.22);color:#fff;vertical-align:middle}
+.hero>p{margin:0;font-size:13.5px;opacity:.93}
+.hstats{display:flex;gap:24px;margin-top:14px;flex-wrap:wrap}
+.hstat b{display:block;font-size:21px;line-height:1.2}
+.hstat span{font-size:11.5px;opacity:.85}
+.howto{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:10px;margin-top:16px}
+.how{background:rgba(255,255,255,.12);border-radius:11px;padding:10px 12px}
+.how b{display:block;font-size:13px;margin-bottom:3px}
+.how span{font-size:11.5px;opacity:.9;line-height:1.6}
+.chips{display:flex;flex-wrap:wrap;gap:7px;margin:16px 0 0}
+.dchip{font-size:12.5px;padding:4px 10px;border-radius:99px;background:#fff;border:1px solid var(--line);
+  color:var(--ink2);cursor:pointer}
+.dchip b{color:var(--pri)}
+.dchip:hover{border-color:var(--pri);color:var(--pri)}
+.dchip.on{background:var(--pri);border-color:var(--pri);color:#fff}
+.dchip.on b{color:#fff}
+.toolbar{display:flex;align-items:center;gap:9px;margin:16px 0 4px;flex-wrap:wrap}
+.tbtn{padding:7px 13px;border-radius:9px;border:1px solid var(--line);background:#fff;color:var(--ink2);
+  font-size:13px;cursor:pointer;transition:.15s}
+.tbtn:hover{border-color:var(--pri);color:var(--pri)}
+.tbtn.on{background:var(--pri);color:#fff;border-color:var(--pri)}
+.tbtn.ghost{background:transparent}
+.tbtn.on,#btn-unmastered.on,.tbtn.ghost.on{background:var(--pri);color:#fff;border-color:var(--pri)}
+.tgl-xall::after{content:'展开全部解析'}
+.tgl-hans::after{content:'隐藏答案'}
+.spacer{flex:1 1 auto}
+.hint{font-size:12px;color:var(--ink3)}
+.xctl,.soltoggle{position:absolute;opacity:0;width:0;height:0;pointer-events:none}
+.nohit{display:none;margin:16px 0;padding:14px;border-radius:11px;background:#fff;border:1px dashed var(--line);
+  color:var(--ink3);font-size:13.5px}
+section.sec{margin-top:26px}
+.sec-head{display:flex;align-items:center;gap:12px}
+.sec-no{flex:0 0 auto;width:42px;height:42px;border-radius:12px;background:var(--pri);color:#fff;
+  display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;white-space:nowrap}
+.sec-meta h3{margin:0;font-size:17px}
+.stags{display:flex;gap:6px;margin-top:3px;flex-wrap:wrap}
+.ptag{font-size:11.5px;padding:2px 8px;border-radius:99px;background:#eef2ff;color:#3730a3;border:1px solid #dbe1ff}
+.pt-n{background:#f0fdf7;color:#0f6b55;border-color:#bbf0dd}
+.mat-note{font-size:12px;color:var(--ink3);margin:8px 0 12px;padding-left:54px}
+article.q{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 18px;
+  margin:0 0 13px;box-shadow:0 1px 3px rgba(16,24,40,.04)}
+article.q.hide{display:none}
+section.sec.hide{display:none}
+article.q.mastered{border-color:#bbf0dd;background:#fbfffd}
+.q-head{display:flex;gap:11px}
+.qno{flex:0 0 auto;width:26px;height:26px;border-radius:8px;background:var(--pri);color:#fff;font-size:13px;
+  font-weight:700;display:flex;align-items:center;justify-content:center}
+.stem{flex:1 1 auto;font-size:14.5px;white-space:pre-wrap}
+.opts{margin:11px 0 0 37px;display:grid;gap:6px}
+.opt{display:flex;gap:9px;font-size:14px;padding:6px 10px;border-radius:9px;background:#fafbfc;border:1px solid #f0f2f5}
+.opt i{flex:0 0 auto;font-style:normal;font-weight:700;color:var(--pri)}
+.qbar{display:flex;align-items:center;gap:12px;margin:12px 0 0 37px;flex-wrap:wrap}
+.btn-reveal{cursor:pointer;font-size:12.5px;font-weight:600;padding:5px 12px;border-radius:8px;
+  background:#eef2ff;color:var(--pri-d);border:1px solid #dbe1ff}
+.btn-reveal:hover{background:var(--pri);color:#fff}
+.meta{font-size:12px;color:var(--ink3)}
+.mini-check{margin-left:auto;font-size:12.5px;color:var(--ink3);cursor:pointer;display:flex;gap:5px;align-items:center}
+.mini-check input{accent-color:var(--ok)}
+.sol{display:none;margin:12px 0 0 37px;border-top:1px dashed var(--line);padding-top:12px}
+.sol.open{display:block}
+.sol-ans{display:inline-flex;align-items:center;gap:8px;font-size:13px;color:var(--ok);font-weight:700;
+  background:#e8f6ee;padding:5px 12px;border-radius:9px;margin-bottom:10px}
+.sol-ans span{font-size:16px;color:#0f6b55}
+.sol-tag{font-size:11.5px;color:var(--ink3);margin-bottom:8px}
+.sol-lead{margin:0 0 10px;font-size:14px}
+.elim{display:grid;gap:6px;margin:0 0 10px}
+.erow{display:flex;gap:9px;align-items:flex-start;font-size:13.5px;padding:7px 10px;border-radius:9px;
+  background:#fafbfc;border:1px solid #f0f2f5}
+.elet{flex:0 0 auto;font-size:11.5px;font-weight:700;padding:2px 8px;border-radius:99px;background:#fdeceb;
+  color:#b3261e;white-space:nowrap}
+.elet-A{background:#fdeceb;color:#b3261e}
+.elet-B{background:#fff4e5;color:#b45309}
+.elet-C{background:#f3f0ff;color:#5b21b6}
+.elet-D{background:#ecfdf5;color:#0f6b55}
+.etxt{flex:1 1 auto}
+.sol-tail{margin:0;font-size:13.5px;color:var(--pri-d);font-weight:600}
+.sol-note{margin:10px 0 0;font-size:11.5px;color:#9ca3af}
+html.xall-on .sol,html.js.xall-on .sol{display:block}
+html.hans-on .sol-ans,html.js.hans-on .sol-ans{display:none}
+html.hans-on .qbar .meta,html.js.hans-on .qbar .meta{display:none}
+html:not(.js) .sol{display:none}
+html:not(.js) .soltoggle:checked ~ .sol{display:block}
+html:not(.js) #xall:checked ~ .sec .sol{display:block}
+html:not(.js) #hans:checked ~ .sec .sol-ans{display:none}
+html:not(.js) #hans:checked ~ .sec .qbar .meta{display:none}
+html:has(#xall:checked) .sol{display:block}
+html:has(#hans:checked) .sol-ans{display:none}
+html:has(#hans:checked) .qbar .meta{display:none}
+article.q:has(.soltoggle:checked) .sol{display:block}
+.lr-close{display:none}
+.qopen .lr-open,html.xall-on .lr-open{display:none}
+.qopen .lr-close,html.xall-on .lr-close{display:inline}
+html.xall-on .btn-reveal{background:#eef2ff;color:var(--pri-d)}
+footer{margin-top:34px;padding-top:16px;border-top:1px solid var(--line);font-size:12.5px;color:var(--ink3);line-height:1.9}
+.ment{display:none}
+@media (max-width:900px){
+  .wrap2,main{display:block}
+  aside#side{position:fixed;left:0;top:44px;bottom:0;z-index:900;transform:translateX(-102%);transition:.25s;width:250px}
+  aside#side.show{transform:none;box-shadow:0 0 40px rgba(0,0,0,.4)}
+  .ment{display:block;position:fixed;right:14px;bottom:14px;z-index:899;border:none;border-radius:99px;
+    background:var(--pri);color:#fff;font-size:13px;padding:11px 15px;box-shadow:0 6px 18px rgba(29,78,216,.4);cursor:pointer}
+  .mat-note{padding-left:0}
+  .qbar,.opts,.sol{margin-left:0}
+}
+
+</style>
+</head>
+<body>
+<style id="resnav-style">
+.resnav{position:fixed;top:0;left:0;right:0;z-index:99999;display:flex;align-items:center;gap:4px;
+  height:44px;padding:0 12px;background:#1f2937;color:#e5e7eb;font-size:13px;line-height:1;
+  font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;overflow-x:auto;
+  box-shadow:0 1px 0 rgba(255,255,255,.06),0 2px 10px rgba(0,0,0,.18);-webkit-overflow-scrolling:touch}
+body::before{content:"";display:block;height:44px}
+.resnav::-webkit-scrollbar{height:0}
+.resnav .rn-brand{flex:0 0 auto;font-weight:700;color:#7ee0c0;margin-right:6px;letter-spacing:.5px}
+.resnav a{flex:0 0 auto;color:#d1d5db;text-decoration:none;padding:6px 10px;border-radius:8px;
+  white-space:nowrap;transition:.15s}
+.resnav a:hover{background:#374151;color:#fff}
+.resnav a.on{background:#22c39a;color:#06251c;font-weight:700}
+.resnav .rn-sep{flex:0 0 auto;width:1px;height:18px;background:#4b5563;margin:0 5px}
+.resnav .rn-end{margin-left:auto}
+@media (max-width:640px){.resnav{font-size:12px;height:40px}body::before{height:40px}}
+</style>
+<nav class="resnav" id="resnav"><span class="rn-brand">行测 2027</span>
+<a href="国考笔试总排期表.html">总排期表</a>
+<a href="2027国考行测学习计划.html">行测总纲</a>
+<span class="rn-sep"></span>
+<a href="资料分析_9天冲刺计划.html">资料分析</a>
+<a href="判断推理_13天冲刺计划.html">判断推理</a>
+<a href="言语理解_9天冲刺计划.html">言语理解</a>
+<a href="国考笔试总排期表.html#math">数量关系</a>
+<a href="国考笔试总排期表.html#roll">常识政治</a>
+<a href="国考笔试总排期表.html#roll" class="on">政治理论</a>
+<a href="申论_学习计划.html">申论</a>
+<span class="rn-sep rn-end"></span>
+<a href="题库总览.html">题库总览</a>
+</nav>
+
+<div class="wrap">
+<aside id="side">
+  <div class="brand"><h1>政治理论 · 真题题库</h1>
+    <p>2026 行测 5000 题·新增题（常识·政治常识章）<br>1 类 4 节 / 24 题 · 粉笔全本 · 全程滚动每日 30 分钟</p></div>
+  <div class="prog-wrap"><div class="prog-top"><span>练习进度</span><span><b id="pg-txt">0</b> / 24 题</span></div>
+    <div class="bar"><i id="pg-bar"></i></div></div>
+  <div class="search-wrap"><input id="nav-search" placeholder="搜索题干 / 考点 / 来源"></div>
+  <nav class="nav"><div class="navgrp"><div class="navgrp-t">政治理论</div><a class="navlink" href="#s-1" data-target="s-1"><span class="nv-num">节一</span><span class="nv-txt">马克思主义哲学</span><span class="nv-badge" data-badge="s-1">0/6</span></a><a class="navlink" href="#s-2" data-target="s-2"><span class="nv-num">节二</span><span class="nv-txt">中国特色社会主义</span><span class="nv-badge" data-badge="s-2">0/3</span></a><a class="navlink" href="#s-3" data-target="s-3"><span class="nv-num">节三</span><span class="nv-txt">新时代中国特色社会主义</span><span class="nv-badge" data-badge="s-3">0/4</span></a><a class="navlink" href="#s-4" data-target="s-4"><span class="nv-num">节四</span><span class="nv-txt">二十届三中全会与《决定》</span><span class="nv-badge" data-badge="s-4">0/11</span></a></div>
+    <div class="navgrp"><div class="navgrp-t">配套</div>
+      <a class="navlink" href="政治理论_题本与母题解析.html"><span class="nv-num">题本</span><span class="nv-txt">母题解析页</span></a>
+      <a class="navlink" href="国考笔试总排期表.html#roll"><span class="nv-num">计划</span><span class="nv-txt">政治+常识滚动方案</span></a>
+      <a class="navlink" href="题库总览.html"><span class="nv-num">总览</span><span class="nv-txt">全部模块题库</span></a>
+    </div></nav>
+  <div class="side-foot">解析为粉笔原书内容重排 · 仅供个人备考</div>
+</aside>
+
+<main id="top">
+  <div class="jsstat wait" id="jsstat">正在检查脚本…（若一直不变＝预览禁用了脚本，请点右上角「在浏览器打开」，展开/收起/隐藏答案仍可用）</div>
+  <div class="hero">
+    <h2>2026 行测 · 政治理论 真题题库<span class="verchip">v2</span></h2>
+    <p>政治理论自 2025 年起为独立模块（20 题）。题源为粉笔《决战行测5000题 · 常识判断（新增题）》上册第五章「政治常识」全本 24 题（考生回忆版）；粉笔原书按 马哲 / 党的基本知识（无新增）/ 中国特色社会主义 / 二十大报告节 / 模块练习 分节，本页按实际考点重组为 4 节，便于专项滚动。提法必须背准：总体战、双碳 2030/2060、最大政治优势＝坚持党的全面领导。</p>
+    <div class="hstats">
+      <div class="hstat"><b>1</b><span>大类</span></div>
+      <div class="hstat"><b>4</b><span>节</span></div>
+      <div class="hstat"><b>24</b><span>题</span></div>
+      <div class="hstat"><b>40″</b><span>每题限时</span></div>
+    </div>
+    <div class="howto">
+      <div class="how"><b>① 先做不解析</b><span>政治理论每题 ≤ 50 秒，选非题先圈「不恰当 / 不属于」，明显与导向相悖的先划</span></div>
+      <div class="how"><b>② 对答案记条目</b><span>点「查看解析」：重点看 X 项错误的判定依据，把知识点记成一句话条目</span></div>
+      <div class="how"><b>③ 勾已掌握</b><span>做对的勾上，用「只看未掌握」二刷，进度自动保存在本机</span></div>
+    </div>
+  </div>
+  <div class="chips"><span class="dchip" data-dian="二十届三中全会与《决定》">二十届三中全会与《决定》 <b>11</b></span><span class="dchip" data-dian="马克思主义哲学">马克思主义哲学 <b>6</b></span><span class="dchip" data-dian="新时代中国特色社会主义">新时代中国特色社会主义 <b>4</b></span><span class="dchip" data-dian="中国特色社会主义">中国特色社会主义 <b>3</b></span></div>
+  <div class="toolbar">
+    <label class="tbtn tgl tgl-xall" for="xall" data-act="xall"></label>
+    <button class="tbtn ghost" id="btn-unmastered" type="button">只看未掌握</button>
+    <label class="tbtn tgl tgl-hans" for="hans" data-act="hans"></label>
+    <span class="spacer"></span><span class="hint">单选 · 排除明显不合理项再蒙</span>
+  </div>
+  <input type="checkbox" id="xall" class="xctl">
+  <input type="checkbox" id="hans" class="xctl">
+  <div class="nohit" id="nohit">没有符合条件的题目</div>
+  
+<section class="sec" id="s-1" data-idx="1" data-chap="政治理论">
+  <div class="sec-head"><span class="sec-no">第一节</span>
+    <div class="sec-meta"><h3>马克思主义哲学</h3>
+      <div class="stags"><span class="ptag pt-chap">政治理论</span><span class="ptag pt-n">6 题</span></div>
+    </div></div>
+  <div class="mat-note">题目来源：粉笔《决战行测5000题 · 常识判断（新增题）》上册 · 政治理论 / 马克思主义哲学（考生回忆版）</div>
+  
+<article class="q" id="q-1-1" data-no="q-1-1" data-ans="C" data-kd="马克思主义哲学" data-rate="76.65" data-wrong="B">
+  <div class="q-head"><span class="qno">1</span><div class="stem">人类只有一个地球，人类也只有一个共同的未来。无论是应对眼下的危机，还是共创美好的未来，人类都需要同舟共济、团结合作。实践一再证明，任何以邻为壑的做法，任何单打独斗的思路，任何孤芳自赏的傲慢，最终都必然归于失败！让我们携起手来，让多边主义火炬照亮人类前行之路，向着构建人类命运共同体不断迈进！这段文字所蕴含的哲理是：</div></div>
+  <div class="opts"><div class="opt"><i>A</i><span>量变达到一定程度必然引起质变</span></div><div class="opt"><i>B</i><span>事物的发展是前进性与曲折性的统一</span></div><div class="opt"><i>C</i><span>联系是普遍的，任何事物都处在普遍联系之中</span></div><div class="opt"><i>D</i><span>矛盾的普遍性和特殊性在一定条件下可以相互转化</span></div></div>
+  <input type="checkbox" id="ck-q-1-1" class="soltoggle">
+  <div class="qbar">
+    <label class="btn-reveal" for="ck-q-1-1" data-act="reveal" data-sol="q-1-1"><span class="lr-open">查看解析</span><span class="lr-close">收起解析</span></label>
+    <span class="meta">正确率 <b>76.65%</b> · 易错项 <b>B</b> · （2025 四川 8）</span>
+    <label class="mini-check"><input type="checkbox" data-master="q-1-1">已掌握</label>
+  </div>
+  <div class="sol" data-sol="q-1-1">
+    <div class="sol-ans">正确答案<span>C</span></div>
+    <div class="sol-body">
+      <div class="sol-tag">政治理论 · 马克思主义哲学 · 上册 P25</div>
+      <p class="sol-lead">必要准备，量变达到一定程度必然引起质变，质变是量变的必然结果；量变和质变是相互渗透的，在质变过程中有旧质在量上的收缩和新质在量上的扩张，在总的量变过程中包含着阶段性和局部性的部分质变。题干未体现这一哲学原理。事物发展的总方向、总趋势是前进的、上升的，事物发展的具体道路又是曲折的、迂回的，即事物的发展过程是前进性和曲折性的统一。题干未体现这一哲学原理。相互制约和相互作用。 联系具有普遍性，世界上的一切事物都处于普遍联系之中，任何事物都不能孤立地存在，都同其他事物处于一定的联系之中，整个世界是普遍联系的统一整体。题干中“人类也只有一个共同的未来”“人类都需要同舟共济、团结合作”“任何单打独斗的思路，任何孤芳自赏的傲慢，最终都必然归于失败”“构建人类命运共同体”都体现了联系是普遍的，任何事物都处在普遍联系之中。的始终，即矛盾无处不在、无时不有。 矛盾的特殊性是指各个具体事物的矛盾、每一个矛盾的各个方面在发展的不同阶段上各有其特点。矛盾的普遍性和特殊性是辩证统一的，两者是共性与个性、一般与个别的关系。普遍性寓于特殊性之中，并通过特殊性表现出来，两者在一定条件下可以相互转化。题干未体现这一哲学原理。</p><div class="elim"><div class="erow"><span class="elet elet-A">A 项 · 排除</span><span class="etxt">质量互变规律揭示了事物发展的形式和状态。量变是质变的</span></div><div class="erow"><span class="elet elet-B">B 项 · 排除</span><span class="etxt">否定之否定规律揭示了事物发展的方向和道路。 否定之否定规律表明</span></div><div class="erow"><span class="elet elet-C">C 项 · 保留</span><span class="etxt">联系是指事物之间以及事物内部诸要素之间的相互依赖、相互影响、</span></div><div class="erow"><span class="elet elet-D">D 项 · 排除</span><span class="etxt">矛盾的普遍性是指矛盾存在于一切事物中，存在于一切事物发展过程</span></div></div><p class="sol-tail">故正确答案为C。</p>
+      <p class="sol-note">解析为粉笔原书内容，按「选项排除式」重排：X 项错误＝先排除，X 项正确＝后择优。时政提法背到「名词级别」，错题把正确表述抄成条目。</p>
+    </div>
+  </div>
+</article>
+<article class="q" id="q-1-2" data-no="q-1-2" data-ans="D" data-kd="马克思主义哲学" data-rate="39.34" data-wrong="B">
+  <div class="q-head"><span class="qno">2</span><div class="stem">关于马克思主义政治经济学，下列说法正确的是：</div></div>
+  <div class="opts"><div class="opt"><i>A</i><span>商品的价值量是由生产该商品所需的个别劳动时间决定的</span></div><div class="opt"><i>B</i><span>货币的价值尺度职能是通过实际的物质交换来实现的</span></div><div class="opt"><i>C</i><span>具体劳动和抽象劳动是不同商品生产过程中的不同劳动</span></div><div class="opt"><i>D</i><span>具体劳动创造商品的使用价值，抽象劳动形成商品的价值</span></div></div>
+  <input type="checkbox" id="ck-q-1-2" class="soltoggle">
+  <div class="qbar">
+    <label class="btn-reveal" for="ck-q-1-2" data-act="reveal" data-sol="q-1-2"><span class="lr-open">查看解析</span><span class="lr-close">收起解析</span></label>
+    <span class="meta">正确率 <b>39.34%</b> · 易错项 <b>B</b> · （2025 国考行政执法 3）</span>
+    <label class="mini-check"><input type="checkbox" data-master="q-1-2">已掌握</label>
+  </div>
+  <div class="sol" data-sol="q-1-2">
+    <div class="sol-ans">正确答案<span>D</span></div>
+    <div class="sol-body">
+      <div class="sol-tag">政治理论 · 马克思主义哲学 · 上册 P25</div>
+      <p class="sol-lead">要劳动时间决定的。社会必要劳动时间指在现有的社会正常的生产条件下，在社会平均的劳动熟练程度和劳动强度下制造某种使用价值所需要的劳动时间。值。货币执行价值尺度职能，不需要现实的货币，只需要观念上的货币，不需要通过实际的物质交换来实现。是两种劳动或两次劳动。具体劳动说明的是劳动是什么样的，是怎样进行的；抽象劳动说明的是劳动的量的多少、劳动时间的长短。的关系。抽象劳动是指撇开一切具体形式的无差别的一般人类劳动，即人的体力和脑力的消耗。抽象劳动形成商品的价值。商品是劳动产品，生产商品的劳动具有二重性，即具体劳动和抽象劳动。具体劳动是指生产一定使用价值的具体形式的劳动。抽象劳动是指撇开一切具体形式的、无差别的一般人类劳动，即人的脑力和体力的耗费。生产商品的具体劳动创造商品的使用价值，抽象劳动形成商品的价值。</p><div class="elim"><div class="erow"><span class="elet elet-A">A 项 · 排除</span><span class="etxt">商品的价值量是指商品价值的大小，是由生产商品的社会必</span></div><div class="erow"><span class="elet elet-B">B 项 · 排除</span><span class="etxt">货币的价值尺度职能，是指以自身价值作为尺度来衡量其他商品的价</span></div><div class="erow"><span class="elet elet-C">C 项 · 排除</span><span class="etxt">具体劳动和抽象劳动，是生产商品的同一劳动过程的两个方面，而不</span></div><div class="erow"><span class="elet elet-D">D 项 · 保留</span><span class="etxt">具体劳动是指生产一定使用价值的具体形式的劳动，体现着人和自然</span></div></div><p class="sol-tail">故正确答案为D。</p>
+      <p class="sol-note">解析为粉笔原书内容，按「选项排除式」重排：X 项错误＝先排除，X 项正确＝后择优。时政提法背到「名词级别」，错题把正确表述抄成条目。</p>
+    </div>
+  </div>
+</article>
+<article class="q" id="q-1-3" data-no="q-1-3" data-ans="B" data-kd="马克思主义哲学" data-rate="27.76" data-wrong="A">
+  <div class="q-head"><span class="qno">3</span><div class="stem">习近平经济思想彰显了马克思主义哲学的坚定立场和科学方法，下列经济思想与其彰显的马克思主义哲学对应正确的是：①努力构建新发展格局——内因与外因关系②推动经济高质量发展——量变和质变关系③坚持以人民为中心的发展思想——人民历史主体地位④处理好政府和市场关系——主要矛盾和次要矛盾关系⑤坚持系统观念解决发展不平衡不充分问题——事物普遍联系</div></div>
+  <div class="opts"><div class="opt"><i>A</i><span>4 项</span></div><div class="opt"><i>B</i><span>5 项</span></div><div class="opt"><i>C</i><span>2 项</span></div><div class="opt"><i>D</i><span>3 项</span></div></div>
+  <input type="checkbox" id="ck-q-1-3" class="soltoggle">
+  <div class="qbar">
+    <label class="btn-reveal" for="ck-q-1-3" data-act="reveal" data-sol="q-1-3"><span class="lr-open">查看解析</span><span class="lr-close">收起解析</span></label>
+    <span class="meta">正确率 <b>27.76%</b> · 易错项 <b>A</b> · （2024 吉林 4）</span>
+    <label class="mini-check"><input type="checkbox" data-master="q-1-3">已掌握</label>
+  </div>
+  <div class="sol" data-sol="q-1-3">
+    <div class="sol-ans">正确答案<span>B</span></div>
+    <div class="sol-body">
+      <div class="sol-tag">政治理论 · 马克思主义哲学 · 上册 P25</div>
+      <p class="sol-lead">①正确：构建新发展格局指构建以国内大循环为主体、国内国际双循环相互促进的新发展格局。马克思主义哲学强调，事物的发展是内外因共同作用的结果。内因是事物发展变化的根据，是第一位的原因；外因是事物发展变化的条件，是第二位的原因；外因通过内因而起作用。构建新发展格局中，国内大循环为内因，国际循环为外因，“以国内大循环为主体、国内国际双循环相互促进”体现了内因和外因关系的原理。粉笔拓展②正确：经济高质量发展即经济发展，经济发展是指量的增长和质的提升，是量和质的有机统一。“质”通常是指经济发展的结构、效益，“量”通常是指经济发展的规模、速度。质的提升为量的增长提供持续动力，量的增长为质的提升提供重要基础，二者相辅相成。马克思主义哲学强调，量变是质变的必要准备，质变是量变的必然结果，量变达到一定程度必然引起质变。故推动经济高质量发展体现了质变和量变的关系。③正确：“以人民为中心”的发展思想是中国共产党总结几千年历史兴衰成败得出的重要结论，是对中国共产党“全心全意为人民服务”这一根本宗旨的坚持和深化，是党长期治国理政的伟大实践在理念上的凝练和升华。马克思主义哲学强调，人民群众是社会历史的主体，是历史的创造者。 在社会历史发展过程中，人民群众起着决定性的作用。人民群众是社会物质财富的创造者，是社会精神财富的创造者，是社会变革的决定力量。④正确：正确处理政府和市场的关系，就要充分发挥市场在资源配置中的决定性作用，更好发挥政府作用。马克思主义哲学强调，主要矛盾在事物发展过程中处于支配地位，次要矛盾在事物发展过程中处于从属地位，对事物发展不起决定作用。主要矛盾和次要矛盾是相互联系、相互依赖、相互影响的，并在一定条件下可以相互转化。这要求我们要坚持两点论和重点论相统一的方法。“正确处理政府和市场的关系”体现了主要矛盾和次要矛盾关系的原理。⑤正确：系统是由相互联系、相互作用的若干要素所组成的有机整体，系统的性质和功能不是各要素的简单相加，整体功能大于部分功能之和。坚持系统观念解决发展不平衡不充分问题是指既能解决发展面临的主要矛盾和矛盾的主要方面，又能兼顾发展的方方面面，统筹兼顾发展质量与发展效益、发展成本与发展收益分配，凝聚各级政府、各类企业、各种社会力量共同参与。马克思主义哲学强调，事物是普遍联系的，任何事物都不能孤立地存在，都同其他事物发生着联系。这要求我们用联系的观点看问题，要正确认识和处理整体和部分的辩证关系，掌握系统优化的方法。故“坚持系统观念解决发展不平衡不充分问题”体现了事物普遍联系的原理。综上，①②③④⑤表述正确，共5 项。</p><p class="sol-tail">故正确答案为B。</p>
+      <p class="sol-note">解析为粉笔原书内容，按「选项排除式」重排：X 项错误＝先排除，X 项正确＝后择优。时政提法背到「名词级别」，错题把正确表述抄成条目。</p>
+    </div>
+  </div>
+</article>
+<article class="q" id="q-1-4" data-no="q-1-4" data-ans="C" data-kd="马克思主义哲学" data-rate="68.22" data-wrong="D">
+  <div class="q-head"><span class="qno">4</span><div class="stem">谚语“蜻蜓低飞，天要下雨”，是人类通过观察动物的活动来预报天气所得到的经验总结。这一经验总结所体现的哲理是：</div></div>
+  <div class="opts"><div class="opt"><i>A</i><span>人类只有通过自己的实践活动才能把握信息</span></div><div class="opt"><i>B</i><span>人类的意识或思想活动是信息及其运动的中介</span></div><div class="opt"><i>C</i><span>人类通过意识活动把握客观事物运动变化的规律</span></div><div class="opt"><i>D</i><span>人类观察动物活动所获得的信息是一种自然信息</span></div></div>
+  <input type="checkbox" id="ck-q-1-4" class="soltoggle">
+  <div class="qbar">
+    <label class="btn-reveal" for="ck-q-1-4" data-act="reveal" data-sol="q-1-4"><span class="lr-open">查看解析</span><span class="lr-close">收起解析</span></label>
+    <span class="meta">正确率 <b>68.22%</b> · 易错项 <b>D</b> · （2024 江苏A 9）</span>
+    <label class="mini-check"><input type="checkbox" data-master="q-1-4">已掌握</label>
+  </div>
+  <div class="sol" data-sol="q-1-4">
+    <div class="sol-ans">正确答案<span>C</span></div>
+    <div class="sol-body">
+      <div class="sol-tag">政治理论 · 马克思主义哲学 · 上册 P26</div>
+      <p class="sol-lead">接经验两种，前者是指由亲身参加变革现实的实践所获得的知识，后者是指从别人或书本那里学习得来的知识。故该项本身说法错误。起正常的信息机制，在获得、储存和处理信息之间建立起完整的连接链条和意义秩序。题干未体现这一哲理。息，而是人类意识或思维活动在不同的事件之间建立了联系，使得一种事物或现象的出现，在某种程度上代表了另一种事物或现象的存在，究其本质，是人的意识活动把握了客观事物运动变化的相互联系及其规律的结果。信息，例如：我们观察到的宇宙间星球的运动变化；地球上的各种自然现象等。社会信息是指反映人类社会运动状态和方式的信息，其来源有两大方面。一是来源于人们对自然信息的观察研究；二是来源于人们构成社会时，社会系统联系沟通的需要，以及反映和交流人们的思想感情及意识形态的需要。人类观察动物活动所获得的信息来源于人们对自然信息的观察研究，属于社会信息。中国共产党的基本知识中国特色社会主义</p><div class="elim"><div class="erow"><span class="elet elet-A">A 项 · 排除</span><span class="etxt">实践是认识的唯一来源，但认识的途径却包括直接经验和间</span></div><div class="erow"><span class="elet elet-B">B 项 · 排除</span><span class="etxt">信息是意识活动借以展开的中介，人类的意识活动能够帮助我们建立</span></div><div class="erow"><span class="elet elet-C">C 项 · 保留</span><span class="etxt">所谓“蜻蜓低飞，天要下雨”，并不是蜻蜓向我们发出了某种特定信</span></div><div class="erow"><span class="elet elet-D">D 项 · 排除</span><span class="etxt">自然信息是指一切自然物发出的信息，它包括来自无机界和生物界的</span></div></div><p class="sol-tail">故正确答案为C。</p>
+      <p class="sol-note">解析为粉笔原书内容，按「选项排除式」重排：X 项错误＝先排除，X 项正确＝后择优。时政提法背到「名词级别」，错题把正确表述抄成条目。</p>
+    </div>
+  </div>
+</article>
+<article class="q" id="q-1-5" data-no="q-1-5" data-ans="A" data-kd="马克思主义哲学" data-rate="60.34" data-wrong="B">
+  <div class="q-head"><span class="qno">5</span><div class="stem">习近平总书记指出：“中国共产党人的理想信念，建立在马克思主义科学真理的基础之上，建立在马克思主义揭示的人类社会发展规律的基础之上，建立在为最广大人民谋利益的崇高价值的基础之上。我们坚定，是因为我们追求的是真理。我们坚定，是因为我们遵循的是规律。我们坚定，是因为我们代表的是最广大人民根本利益。”这一论述最直接体现了马克思主义的哪一基本观点？</div></div>
+  <div class="opts"><div class="opt"><i>A</i><span>真理尺度与价值尺度的辩证统一</span></div><div class="opt"><i>B</i><span>认识世界与改造世界的辩证统一</span></div><div class="opt"><i>C</i><span>量变与质变的辩证统一</span></div><div class="opt"><i>D</i><span>矛盾的特殊性与普遍性的辩证统一</span></div></div>
+  <input type="checkbox" id="ck-q-1-5" class="soltoggle">
+  <div class="qbar">
+    <label class="btn-reveal" for="ck-q-1-5" data-act="reveal" data-sol="q-1-5"><span class="lr-open">查看解析</span><span class="lr-close">收起解析</span></label>
+    <span class="meta">正确率 <b>60.34%</b> · 易错项 <b>B</b> · （2025 国考行政执法 4）</span>
+    <label class="mini-check"><input type="checkbox" data-master="q-1-5">已掌握</label>
+  </div>
+  <div class="sol" data-sol="q-1-5">
+    <div class="sol-ans">正确答案<span>A</span></div>
+    <div class="sol-body">
+      <div class="sol-tag">政治理论 · 马克思主义哲学 · 上册 P29</div>
+      <p class="sol-lead">其规律的正确反映。 “中国共产党人的理想信念，建立在马克思主义科学真理和人类社会发展规律的基础之上”即体现了真理原则。价值是指在实践基础上形成的主体和客体之间的意义关系，是客体对个人、群体乃至整个社会的生活和活动所具有的积极意义。“建立在为最广大人民谋利益的崇高价值的基础之上”和“代表的是最广大人民根本利益”即体现了价值原则。界。认识世界的任务不仅在于解释世界，更重要的在于为改造世界提供理论指导。认识世界和改造世界是相互依赖、相互制约、辩证统一的。认识世界是为了改造世界，正确地认识世界是有效地改造世界的必要前提。 题干并未体现认识世界与改造世界的辩证统一。质变是量变的必然结果，量变和质变相互渗透。题干并未体现量变与质变的辩证统一。系。矛盾的普遍性与特殊性是互相联系的。普遍性存在于特殊性之中，特殊性中包含着普遍性；普遍性与特殊性在一定条件下可以互相转化。 题干并未体现矛盾的特殊性与普遍性的辩证统一。真理是标志主观与客观相符合的哲学范畴，是对客观事物及其规律的正确反映。真理是一个过程。就真理的发展过程以及人们对它的认识和掌握程度来说，真理既具有绝对性，又具有相对性，这是真理问题上的辩证法。</p><div class="elim"><div class="erow"><span class="elet elet-A">A 项 · 保留</span><span class="etxt">真理是标志主观与客观相符合的哲学范畴，是对客观事物及</span></div><div class="erow"><span class="elet elet-B">B 项 · 排除</span><span class="etxt">从认识论的角度来看，人类的活动不外乎两种，即认识世界和改造世</span></div><div class="erow"><span class="elet elet-C">C 项 · 排除</span><span class="etxt">量变质变规律揭示了事物发展的形式和状态。量变是质变的必要准备，</span></div><div class="erow"><span class="elet elet-D">D 项 · 排除</span><span class="etxt">矛盾的普遍性和特殊性的关系，也就是共性与个性、一般与个别的关</span></div></div><p class="sol-tail">故正确答案为A。</p>
+      <p class="sol-note">解析为粉笔原书内容，按「选项排除式」重排：X 项错误＝先排除，X 项正确＝后择优。时政提法背到「名词级别」，错题把正确表述抄成条目。</p>
+    </div>
+  </div>
+</article>
+<article class="q" id="q-1-6" data-no="q-1-6" data-ans="C" data-kd="马克思主义哲学" data-rate="52.66" data-wrong="D">
+  <div class="q-head"><span class="qno">6</span><div class="stem">习近平总书记指出，问题是事物矛盾的表现形式，我们强调增强问题意识、坚持问题导向，就是承认矛盾的普遍性、客观性，就是要善于把认识和化解矛盾作为打开工作局面的突破口。关于矛盾的普遍性、客观性，下列说法正确的是：</div></div>
+  <div class="opts"><div class="opt"><i>A</i><span>矛盾的普遍性是有条件的，并根据条件的变化而变化</span></div><div class="opt"><i>B</i><span>矛盾的客观性从属于主观性，不能脱离人的认知、情感、意志而存在</span></div><div class="opt"><i>C</i><span>矛盾的普遍性是矛盾的共性，矛盾的特殊性是矛盾的个性</span></div><div class="opt"><i>D</i><span>矛盾的普遍性、客观性决定了事物的不同性质，是认清事物本质和发展规律的基础</span></div></div>
+  <input type="checkbox" id="ck-q-1-6" class="soltoggle">
+  <div class="qbar">
+    <label class="btn-reveal" for="ck-q-1-6" data-act="reveal" data-sol="q-1-6"><span class="lr-open">查看解析</span><span class="lr-close">收起解析</span></label>
+    <span class="meta">正确率 <b>52.66%</b> · 易错项 <b>D</b> · （2025 国考行政执法 2）</span>
+    <label class="mini-check"><input type="checkbox" data-master="q-1-6">已掌握</label>
+  </div>
+  <div class="sol" data-sol="q-1-6">
+    <div class="sol-ans">正确答案<span>C</span></div>
+    <div class="sol-body">
+      <div class="sol-tag">政治理论 · 马克思主义哲学 · 上册 P31</div>
+      <p class="sol-lead">发展过程的始终，旧的矛盾解决了，新的矛盾又产生，事物始终在矛盾中运动。矛盾的普遍性即矛盾的共性，矛盾的共性是无条件的、绝对的。故“矛盾的普遍性是有条件的”说法错误。性从属于主观性，不能脱离人的认知、情感、意志而存在”的观点认为主观决定客观，属于唯心主义的范畴。故该项说法错误。性，矛盾的特殊性是矛盾的个性。矛盾的共性是无条件的、绝对的，矛盾的个性是有条件的、相对的。过程和发展阶段、每一个矛盾的各个方面各有其特点。矛盾的特殊性决定了事物的不同性质，如实地分析矛盾的特殊性是认清事物本质和发展规律的基础。故该项说法错误。</p><div class="elim"><div class="erow"><span class="elet elet-A">A 项 · 排除</span><span class="etxt">矛盾的普遍性是指矛盾存在于一切事物中，存在于一切事物</span></div><div class="erow"><span class="elet elet-B">B 项 · 排除</span><span class="etxt">矛盾具有普遍性和客观性，是不以人的意志为转移的。“矛盾的客观</span></div><div class="erow"><span class="elet elet-C">C 项 · 保留</span><span class="etxt">矛盾的普遍性和特殊性是辩证统一的关系。矛盾的普遍性是矛盾的共</span></div><div class="erow"><span class="elet elet-D">D 项 · 排除</span><span class="etxt">矛盾的特殊性是指各个具体事物的矛盾、同一事物的矛盾在不同发展</span></div></div><p class="sol-tail">故正确答案为C。</p>
+      <p class="sol-note">解析为粉笔原书内容，按「选项排除式」重排：X 项错误＝先排除，X 项正确＝后择优。时政提法背到「名词级别」，错题把正确表述抄成条目。</p>
+    </div>
+  </div>
+</article>
+</section>
+<section class="sec" id="s-2" data-idx="2" data-chap="政治理论">
+  <div class="sec-head"><span class="sec-no">第二节</span>
+    <div class="sec-meta"><h3>中国特色社会主义</h3>
+      <div class="stags"><span class="ptag pt-chap">政治理论</span><span class="ptag pt-n">3 题</span></div>
+    </div></div>
+  <div class="mat-note">题目来源：粉笔《决战行测5000题 · 常识判断（新增题）》上册 · 政治理论 / 中国特色社会主义（考生回忆版）</div>
+  
+<article class="q" id="q-2-1" data-no="q-2-1" data-ans="A" data-kd="中国特色社会主义" data-rate="22.33" data-wrong="B">
+  <div class="q-head"><span class="qno">1</span><div class="stem">文化关乎国本、国运。在新的起点上继续推动文化繁荣、建设文化强国、建设中华民族现代文明，是我们在新时代新的文化使命。下列有关说法不正确的是：</div></div>
+  <div class="opts"><div class="opt"><i>A</i><span>中华文明是世界上绵延不断且以国家形态发展至今的四大文明之一</span></div><div class="opt"><i>B</i><span>中华民族具有百万年的人类史、一万年的文化史、五千多年的文明史</span></div><div class="opt"><i>C</i><span>弘扬以爱国主义为核心的民族精神和以改革创新为核心的时代精神</span></div><div class="opt"><i>D</i><span>党的十八大以来，以习近平同志为核心的党中央确立和坚持马克思主义在意识形态领域指导地位的根本制度</span></div></div>
+  <input type="checkbox" id="ck-q-2-1" class="soltoggle">
+  <div class="qbar">
+    <label class="btn-reveal" for="ck-q-2-1" data-act="reveal" data-sol="q-2-1"><span class="lr-open">查看解析</span><span class="lr-close">收起解析</span></label>
+    <span class="meta">正确率 <b>22.33%</b> · 易错项 <b>B</b> · （2025 浙江 7）</span>
+    <label class="mini-check"><input type="checkbox" data-master="q-2-1">已掌握</label>
+  </div>
+  <div class="sol" data-sol="q-2-1">
+    <div class="sol-ans">正确答案<span>A</span></div>
+    <div class="sol-body">
+      <div class="sol-tag">政治理论 · 中国特色社会主义 · 上册 P27</div>
+      <p class="sol-lead">出：“中华文明是世界上唯一绵延不断且以国家形态发展至今的伟大文明。 这充分证明了中华文明具有自我发展、回应挑战、开创新局的文化主体性与旺盛生命力。”故“四大文明之一”的表述有误。华民族具有百万年的人类史、一万年的文化史、五千多年的文明史。”次会议上指出：“实现中国梦必须弘扬中国精神。这就是以爱国主义为核心的民族精神，以改革创新为核心的时代精神。这种精神是凝心聚力的兴国之魂、强国之魂。爱国主义始终是把中华民族坚强团结在一起的精神力量，改革创新始终是鞭策我们在改革开放中与时俱进的精神力量。”作，确立和坚持马克思主义在意识形态领域指导地位的根本制度。党的十九届四中全会从新时代党和国家事业全局出发，把坚持马克思主义在意识形态领域指导地位作为一项根本制度明确提出和全面部署。2023 年6 月2 日，习近平总书记在文化传承发展座谈会上提出，要深刻把握中华文明的突出特性。（1）中华文明具有突出的连续性。中华文明是世界上唯一绵延不断且以国家形态发展至今的伟大文明。（2）中华文明具有突出的创新性。中华文明是革故鼎新、辉光日新的文明，静水深流与波澜壮阔交织。（3）中华文明具有突出的统一性。中华文明长期的大一统传统，形成了多元一体、团结集中的统一性。（4）中华文明具有突出的包容性。中华文明从来不用单一文化代替多元文化，而是由多元文化汇聚成共同文化，化解冲突，凝聚共识。（5）中华文明具有突出的和平性。和平、和睦、和谐是中华文明五千多年来一直传承的理念，主张以道德秩序构造一个群己合一的世界，在人己关系中以他人为重。粉笔拓展</p><div class="elim"><div class="erow"><span class="elet elet-A">A 项 · 排除</span><span class="etxt">2023 年6 月2 日，习近平总书记在文化传承发展座谈会上指</span></div><div class="erow"><span class="elet elet-B">B 项 · 保留</span><span class="etxt">2023 年6 月2 日，习近平总书记在文化传承发展座谈会上指出：“中</span></div><div class="erow"><span class="elet elet-C">C 项 · 保留</span><span class="etxt">2013 年3 月17 日，习近平总书记在第十二届全国人民代表大会第一</span></div><div class="erow"><span class="elet elet-D">D 项 · 保留</span><span class="etxt">党的十八大以来，以习近平同志为核心的党中央高度重视意识形态工</span></div></div><p class="sol-tail">本题为选非题，故正确答案为A。</p>
+      <p class="sol-note">解析为粉笔原书内容，按「选项排除式」重排：X 项错误＝先排除，X 项正确＝后择优。时政提法背到「名词级别」，错题把正确表述抄成条目。</p>
+    </div>
+  </div>
+</article>
+<article class="q" id="q-2-2" data-no="q-2-2" data-ans="B" data-kd="中国特色社会主义" data-rate="25.56" data-wrong="C">
+  <div class="q-head"><span class="qno">2</span><div class="stem">生态文明建设是关乎中华民族永续发展的根本大计，保护生态环境就是保护生产力，改善生态环境就是发展生产力。下列有关说法正确的有几项？①绿色发展是高质量发展的底色，新质生产力本身就是绿色生产力②中国二氧化碳排放力争于2035 年前达到峰值，努力争取2050 年前实现碳中和③富煤贫油少气是我国的国情，推进“双碳”工作必须立足这个实际，不能盲目追求“去煤化”④坚持山水林田湖草沙一体化保护和系统治理，以人工修复为主，自然恢复为辅，整体推进生态修复</div></div>
+  <div class="opts"><div class="opt"><i>A</i><span>1</span></div><div class="opt"><i>B</i><span>2</span></div><div class="opt"><i>C</i><span>3</span></div><div class="opt"><i>D</i><span>4</span></div></div>
+  <input type="checkbox" id="ck-q-2-2" class="soltoggle">
+  <div class="qbar">
+    <label class="btn-reveal" for="ck-q-2-2" data-act="reveal" data-sol="q-2-2"><span class="lr-open">查看解析</span><span class="lr-close">收起解析</span></label>
+    <span class="meta">正确率 <b>25.56%</b> · 易错项 <b>C</b> · （2025 浙江 10）</span>
+    <label class="mini-check"><input type="checkbox" data-master="q-2-2">已掌握</label>
+  </div>
+  <div class="sol" data-sol="q-2-2">
+    <div class="sol-ans">正确答案<span>B</span></div>
+    <div class="sol-body">
+      <div class="sol-tag">政治理论 · 中国特色社会主义 · 上册 P27</div>
+      <p class="sol-lead">①正确：2024 年2 月1 日，习近平总书记在主持中共中央政治局第十一次集体学习时指出：“绿色发展是高质量发展的底色，新质生产力本身就是绿色生产力。”②错误：2020 年9 月22 日，习近平主席在第七十五届联合国大会一般性辩论上宣布，中国二氧化碳排放力争于2030 年前达到峰值，努力争取2060 年前实现碳中和。③正确：2022 年3 月5 日，习近平总书记参加十三届全国人大五次会议内蒙古代表团审议时强调：“绿色转型是一个过程，不是一蹴而就的事情。要先立后破，而不能够未立先破。富煤贫油少气是我国的国情，以煤为主的能源结构短期内难以根本改变。实现‘双碳’目标，必须立足国情，坚持稳中求进、逐步实现，不能脱离实际、急于求成，搞运动式‘降碳’、踩‘急刹车’。不能把手里吃饭的家伙先扔了，结果新的吃饭家伙还没拿到手，这不行。既要有一个绿色清洁的环境，也要保证我们的生产生活正常进行。”④错误：2023 年11 月16 日出版的第22 期《求是》杂志发表了习近平总书记的重要文章《推进生态文明建设需要处理好几个重大关系》。文章在“三是自然恢复和人工修复的关系”部分指出：“要坚持山水林田湖草沙一体化保护和系统治理，构建从山顶到海洋的保护治理大格局，综合运用自然恢复和人工修复两种手段，持之以恒推进生态建设……对于水土流失、荒漠化、石漠化等生态退化突出问题，要坚持以自然恢复为主、辅以必要的人工修复，宜林则林、宜草则草、宜沙则沙、宜荒则荒。”故“以人工修复为主，自然恢复为辅”的说法错误。综上，①③说法正确，共2 项。</p><p class="sol-tail">故正确答案为B。</p>
+      <p class="sol-note">解析为粉笔原书内容，按「选项排除式」重排：X 项错误＝先排除，X 项正确＝后择优。时政提法背到「名词级别」，错题把正确表述抄成条目。</p>
+    </div>
+  </div>
+</article>
+<article class="q" id="q-2-3" data-no="q-2-3" data-ans="D" data-kd="中国特色社会主义" data-rate="32.95" data-wrong="C">
+  <div class="q-head"><span class="qno">3</span><div class="stem">习近平总书记强调：“我们不能等实现了现代化再来解决共同富裕问题，而是要始终把满足人民对美好生活的新期待作为发展的出发点和落脚点，在实现现代化过程中不断地、逐步地解决好这个问题。”这表明：</div></div>
+  <div class="opts"><div class="opt"><i>A</i><span>推进共同富裕必须坚持以人民为中心的发展思想，处理好效率和公平的关系</span></div><div class="opt"><i>B</i><span>共同富裕是全体人民共同富裕，是人民群众物质生活和精神生活都富裕，决不允许贫富差距越来越大</span></div><div class="opt"><i>C</i><span>实现共同富裕是一个长期的历史过程，不可能一蹴而就，必须保持历史耐心、进行不断努力</span></div><div class="opt"><i>D</i><span>谱写全面建设社会主义现代化国家新篇章，必须把扎实推动全体人民共同富裕摆在更加重要位置</span></div></div>
+  <input type="checkbox" id="ck-q-2-3" class="soltoggle">
+  <div class="qbar">
+    <label class="btn-reveal" for="ck-q-2-3" data-act="reveal" data-sol="q-2-3"><span class="lr-open">查看解析</span><span class="lr-close">收起解析</span></label>
+    <span class="meta">正确率 <b>32.95%</b> · 易错项 <b>C</b> · （2025 四川 5）</span>
+    <label class="mini-check"><input type="checkbox" data-master="q-2-3">已掌握</label>
+  </div>
+  <div class="sol" data-sol="q-2-3">
+    <div class="sol-ans">正确答案<span>D</span></div>
+    <div class="sol-body">
+      <div class="sol-tag">政治理论 · 中国特色社会主义 · 上册 P27</div>
+      <p class="sol-lead">题干中强调“要始终把满足人民对美好生活的新期待作为发展的出发点和落脚点”。的重要文章《扎实推动共同富裕》。文章指出：“坚持以人民为中心的发展思想，在高质量发展中促进共同富裕，正确处理效率和公平的关系。”该项说法正确，但与题意不符。的重要文章《扎实推动共同富裕》。文章指出：“我国必须坚决防止两极分化，促进共同富裕，实现社会和谐安定……共同富裕是社会主义的本质要求，是中国式现代化的重要特征。我们说的共同富裕是全体人民共同富裕，是人民群众物质生活和精神生活都富裕，不是少数人的富裕，也不是整齐划一的平均主义。”该项说法正确，但与题意不符。要文章《为实现党的二十大确定的目标任务而团结奋斗》。文章指出：“要深刻认识到，实现全体人民共同富裕是一个长期的历史过程，不可能一蹴而就，必须保持历史耐心、进行不懈努力。”该项说法正确，但与题意不符。写全面建设社会主义现代化国家新篇章，必须把扎实推动全体人民共同富裕摆在更加重要的位置。习近平强调：‘我们不能等实现了现代化再来解决共同富裕问题，而是要始终把满足人民对美好生活的新期待作为发展的出发点和落脚点，在实现现代化过程中不断地、逐步地解决好这个问题。’”党的二十大报告</p><div class="elim"><div class="erow"><span class="elet elet-A">A 项 · 排除</span><span class="etxt">2021 年10 月16 日出版的第20 期《求是》杂志发表了习近平总书记</span></div><div class="erow"><span class="elet elet-B">B 项 · 排除</span><span class="etxt">2021 年10 月16 日出版的第20 期《求是》杂志发表了习近平总书记</span></div><div class="erow"><span class="elet elet-C">C 项 · 排除</span><span class="etxt">2023 年1 月1 日出版的第1 期《求是》杂志发表了习近平总书记的重</span></div><div class="erow"><span class="elet elet-D">D 项 · 保留</span><span class="etxt">《习近平新时代中国特色社会主义思想概论》中指出：“新征程上，谱</span></div></div><p class="sol-tail">故正确答案为D。</p>
+      <p class="sol-note">解析为粉笔原书内容，按「选项排除式」重排：X 项错误＝先排除，X 项正确＝后择优。时政提法背到「名词级别」，错题把正确表述抄成条目。</p>
+    </div>
+  </div>
+</article>
+</section>
+<section class="sec" id="s-3" data-idx="3" data-chap="政治理论">
+  <div class="sec-head"><span class="sec-no">第三节</span>
+    <div class="sec-meta"><h3>新时代中国特色社会主义</h3>
+      <div class="stags"><span class="ptag pt-chap">政治理论</span><span class="ptag pt-n">4 题</span></div>
+    </div></div>
+  <div class="mat-note">题目来源：粉笔《决战行测5000题 · 常识判断（新增题）》上册 · 政治理论 / 新时代中国特色社会主义（考生回忆版）</div>
+  
+<article class="q" id="q-3-1" data-no="q-3-1" data-ans="C" data-kd="新时代中国特色社会主义" data-rate="55.09" data-wrong="D">
+  <div class="q-head"><span class="qno">1</span><div class="stem">新时代，我们党各项工作始终坚持以人民为中心，不断改善人民生活、增进人民福祉。从当前我国各项社会事业的发展情况来看，下列说法错误的是：</div></div>
+  <div class="opts"><div class="opt"><i>A</i><span>人才资源在全球范围内规模最宏大、门类最齐全</span></div><div class="opt"><i>B</i><span>织就世界上覆盖人口规模最大的社会保障安全网</span></div><div class="opt"><i>C</i><span>各级教育质量达到或超过中高收入国家平均水平</span></div><div class="opt"><i>D</i><span>居民健康水平总体上优于中高收入国家平均水平</span></div></div>
+  <input type="checkbox" id="ck-q-3-1" class="soltoggle">
+  <div class="qbar">
+    <label class="btn-reveal" for="ck-q-3-1" data-act="reveal" data-sol="q-3-1"><span class="lr-open">查看解析</span><span class="lr-close">收起解析</span></label>
+    <span class="meta">正确率 <b>55.09%</b> · 易错项 <b>D</b> · （2025 四川 9）</span>
+    <label class="mini-check"><input type="checkbox" data-master="q-3-1">已掌握</label>
+  </div>
+  <div class="sol" data-sol="q-3-1">
+    <div class="sol-ans">正确答案<span>C</span></div>
+    <div class="sol-body">
+      <div class="sol-tag">政治理论 · 新时代中国特色社会主义 · 上册 P30</div>
+      <p class="sol-lead">粉笔拓展展综述》指出，全国人才资源总量快速壮大。专业技术人才从2010 年的5550.4 万人增长到2019 年7839.8 万人，成为全球规模最宏大、门类最齐全的人才资源大国。覆盖全民、人人享有的目标，推动实施全民参保计划，推进城乡统筹，将更多群众纳入保障范围，不断增强社会保障公平性，织就世界上覆盖人口规模最大的社会保障安全网。国家统计局发布数据显示，截至2023 年底，全国基本养老保险参保人数10.7 亿人，基本医疗保险覆盖13.3 亿人，我国已建成世界上规模最大的社会保障体系。会，主题为从数据看党的十八大以来我国教育改革发展成效。新闻发布会指出，全国各级教育普及程度达到或超过中高收入国家平均水平，其中义务教育普及程度达到世界高收入国家平均水平，高等教育实现了从大众化到普及化的历史性跨越。成效有关情况。新闻发布会指出，截至2023 年，我国婴儿死亡率降至4.5‰，5 岁以下儿童死亡率降至6.2‰，孕产妇死亡率降至15.1/10 万，我国居民主要健康指标居于中高收入国家前列。</p><div class="elim"><div class="erow"><span class="elet elet-A">A 项 · 保留</span><span class="etxt">《聚天下英才而用之——党的十八大以来我国人才事业创新发</span></div><div class="erow"><span class="elet elet-B">B 项 · 保留</span><span class="etxt">社会保障关乎人民群众最关心最直接最现实的利益问题。我们党围绕</span></div><div class="erow"><span class="elet elet-C">C 项 · 排除</span><span class="etxt">2022 年9 月27 日，教育部举办“教育这十年”“1+1”系列新闻发布</span></div><div class="erow"><span class="elet elet-D">D 项 · 保留</span><span class="etxt">2024 年2 月28 日，国家卫健委召开新闻发布会，介绍卫生健康进展</span></div></div><p class="sol-tail">本题为选非题，故正确答案为C。</p>
+      <p class="sol-note">解析为粉笔原书内容，按「选项排除式」重排：X 项错误＝先排除，X 项正确＝后择优。时政提法背到「名词级别」，错题把正确表述抄成条目。</p>
+    </div>
+  </div>
+</article>
+<article class="q" id="q-3-2" data-no="q-3-2" data-ans="B" data-kd="新时代中国特色社会主义" data-rate="63.91" data-wrong="C">
+  <div class="q-head"><span class="qno">2</span><div class="stem">总体国家安全观是新时代国家安全工作的基本遵循。总体国家安全观的关键是“总体”，下列针对“总体”的理解错误的是：</div></div>
+  <div class="opts"><div class="opt"><i>A</i><span>强调“大安全”理念，涵盖政治、军事、国土、科技、资源等诸多领域</span></div><div class="opt"><i>B</i><span>强调打持久战，形成汇聚党政军民学各战线各方面各层级的强大合力</span></div><div class="opt"><i>C</i><span>强调做好国家安全工作的系统思维和方法，统筹做好多个领域的安全</span></div><div class="opt"><i>D</i><span>强调维护国家安全要贯穿党和国家工作各方面全过程，统筹好发展和安全</span></div></div>
+  <input type="checkbox" id="ck-q-3-2" class="soltoggle">
+  <div class="qbar">
+    <label class="btn-reveal" for="ck-q-3-2" data-act="reveal" data-sol="q-3-2"><span class="lr-open">查看解析</span><span class="lr-close">收起解析</span></label>
+    <span class="meta">正确率 <b>63.91%</b> · 易错项 <b>C</b> · （2025 四川 6）</span>
+    <label class="mini-check"><input type="checkbox" data-master="q-3-2">已掌握</label>
+  </div>
+  <div class="sol" data-sol="q-3-2">
+    <div class="sol-ans">正确答案<span>B</span></div>
+    <div class="sol-body">
+      <div class="sol-tag">政治理论 · 新时代中国特色社会主义 · 上册 P30</div>
+      <p class="sol-lead">土、经济、金融、文化、社会、科技、网络、粮食、生态、资源、核、海外利益、太空、深海、极地、生物、人工智能、数据等诸多领域，而且将随着社会发展不断动态调整。层级的强大合力，全社会全政府全体系全手段应对重大国家安全风险挑战。故“持久战”说法错误，应为“总体战”。统筹，做到统筹发展和安全、统筹开放和安全、统筹传统安全和非传统安全、统筹自身安全和共同安全、统筹维护国家安全和塑造国家安全，着力解决国家安全工作不平衡不充分的问题。国家安全绝非某一领域、单一部门的职责，必须把安全和发展置于同等重要地位，同步决策部署，同样积极落实。</p><div class="elim"><div class="erow"><span class="elet elet-A">A 项 · 保留</span><span class="etxt">总体国家安全观强调“大安全”理念，涵盖政治、军事、国</span></div><div class="erow"><span class="elet elet-B">B 项 · 排除</span><span class="etxt">总体国家安全观强调打总体战，形成汇聚党政军民学各战线各方面各</span></div><div class="erow"><span class="elet elet-C">C 项 · 保留</span><span class="etxt">总体国家安全观强调做好国家安全工作的系统思维和方法，加强科学</span></div><div class="erow"><span class="elet elet-D">D 项 · 保留</span><span class="etxt">总体国家安全观强调维护国家安全要贯穿党和国家工作各方面全过程，</span></div></div><p class="sol-tail">本题为选非题，故正确答案为B。</p>
+      <p class="sol-note">解析为粉笔原书内容，按「选项排除式」重排：X 项错误＝先排除，X 项正确＝后择优。时政提法背到「名词级别」，错题把正确表述抄成条目。</p>
+    </div>
+  </div>
+</article>
+<article class="q" id="q-3-3" data-no="q-3-3" data-ans="D" data-kd="新时代中国特色社会主义" data-rate="64.71" data-wrong="C">
+  <div class="q-head"><span class="qno">3</span><div class="stem">习近平新时代中国特色社会主义思想是当代中国马克思主义、二十一世纪马克思主义，是中华文化和中国精神的时代精华，实现了马克思主义中国化时代化新的飞跃。下列有关表述正确的有几项？①习近平新时代中国特色社会主义思想，体现了以习近平同志为核心的党中央对共产党执政规律、社会主义建设规律、人类社会发展规律认识的深化、拓展、升华②党的二十大提出的“六个必须坚持”概括阐述了习近平新时代中国特色社会主义思想的世界观、方法论和贯穿其中的立场观点方法③“两个确立”是指“确立习近平同志党中央的核心、全党的核心地位，确立习近平新时代中国特色社会主义思想的指导地位”④坚持和发展中国特色社会主义，总任务是实现社会主义现代化和中华民族伟大复兴</div></div>
+  <div class="opts"><div class="opt"><i>A</i><span>1</span></div><div class="opt"><i>B</i><span>2</span></div><div class="opt"><i>C</i><span>3</span></div><div class="opt"><i>D</i><span>4</span></div></div>
+  <input type="checkbox" id="ck-q-3-3" class="soltoggle">
+  <div class="qbar">
+    <label class="btn-reveal" for="ck-q-3-3" data-act="reveal" data-sol="q-3-3"><span class="lr-open">查看解析</span><span class="lr-close">收起解析</span></label>
+    <span class="meta">正确率 <b>64.71%</b> · 易错项 <b>C</b> · （2025 浙江 1）</span>
+    <label class="mini-check"><input type="checkbox" data-master="q-3-3">已掌握</label>
+  </div>
+  <div class="sol" data-sol="q-3-3">
+    <div class="sol-ans">正确答案<span>D</span></div>
+    <div class="sol-body">
+      <div class="sol-tag">政治理论 · 新时代中国特色社会主义 · 上册 P31</div>
+      <p class="sol-lead">①正确：《人民日报》发表的题为《习近平新时代中国特色社会主义思想的重大意义》的文章指出：“党的十九大报告提出的‘八个明确’和‘十四个坚持’，是习近平新时代中国特色社会主义思想的核心内容，体现了以习近平同志为核心的党中央对共产党执政规律、社会主义建设规律、人类社会发展规律认识的深化、拓展、升华。”其中“八个明确”（丰富发展为“十个明确”）和“十四个坚持”均为习近平新时代中国特色社会主义思想的重要内容。②正确：《习近平新时代中国特色社会主义思想学习纲要》指出：“党的二十大提出的‘六个必须坚持’，是习近平新时代中国特色社会主义思想的世界观、方法论和贯穿其中的立场观点方法的重要体现。”③正确：中国共产党第十九届中央委员会第六次全体会议通过的《中共中央关于党的百年奋斗重大成就和历史经验的决议》指出：“党确立习近平同志党中央的核心、全党的核心地位，确立习近平新时代中国特色社会主义思想的指导地位，反映了全党全军全国各族人民共同心愿，对新时代党和国家事业发展、对推进中华民族伟大复兴历史进程具有决定性意义。”④正确：习近平总书记在党的十九大报告中指出：“新时代中国特色社会主义思想，明确坚持和发展中国特色社会主义，总任务是实现社会主义现代化和中华民族伟大复兴，在全面建成小康社会的基础上，分两步走在本世纪中叶建成富强民主文明和谐美丽的社会主义现代化强国。”综上，①②③④表述正确，共4 项。“六个必须坚持”：必须坚持人民至上、必须坚持自信自立、必须坚持守正创新、必须坚持问题导向、必须坚持系统观念、必须坚持胸怀天下。</p><p class="sol-tail">故正确答案为D。</p>
+      <p class="sol-note">解析为粉笔原书内容，按「选项排除式」重排：X 项错误＝先排除，X 项正确＝后择优。时政提法背到「名词级别」，错题把正确表述抄成条目。</p>
+    </div>
+  </div>
+</article>
+<article class="q" id="q-3-4" data-no="q-3-4" data-ans="D" data-kd="新时代中国特色社会主义" data-rate="65.52" data-wrong="C">
+  <div class="q-head"><span class="qno">4</span><div class="stem">习近平总书记强调，加强党风廉政建设，一体推进不敢腐、不能腐、不想腐，严格落实中央八项规定精神，督促党员、干部特别是领导干部清廉自守、廉洁从政、干净做事。根据《中国共产党纪律处分条例》，下列违纪情况属于违反廉洁纪律的是：</div></div>
+  <div class="opts"><div class="opt"><i>A</i><span>在重大原则问题上不同党中央保持一致且有实际言论、行为或者造成不良后果的</span></div><div class="opt"><i>B</i><span>拒不执行党组织的分配、调动、交流等决定的</span></div><div class="opt"><i>C</i><span>干涉生产经营自主权，致使群众财产遭受较大损失的</span></div><div class="opt"><i>D</i><span>滥用职权或者职务上的影响操办婚丧喜庆事宜，造成不良影响的</span></div></div>
+  <input type="checkbox" id="ck-q-3-4" class="soltoggle">
+  <div class="qbar">
+    <label class="btn-reveal" for="ck-q-3-4" data-act="reveal" data-sol="q-3-4"><span class="lr-open">查看解析</span><span class="lr-close">收起解析</span></label>
+    <span class="meta">正确率 <b>65.52%</b> · 易错项 <b>C</b> · （2025 国考行政执法 18）</span>
+    <label class="mini-check"><input type="checkbox" data-master="q-3-4">已掌握</label>
+  </div>
+  <div class="sol" data-sol="q-3-4">
+    <div class="sol-ans">正确答案<span>D</span></div>
+    <div class="sol-body">
+      <div class="sol-tag">政治理论 · 新时代中国特色社会主义 · 上册 P32</div>
+      <p class="sol-lead">违反政治纪律行为的处分”第四十九条规定：“在重大原则问题上不同党中央保持一致且有实际言论、行为或者造成不良后果的，给予警告或者严重警告处分；情节较重的，给予撤销党内职务或者留党察看处分；情节严重的，给予开除党籍处分。”定：“拒不执行党组织的分配、调动、交流等决定的，给予警告、严重警告或者撤销党内职务处分。”粉笔拓展“干涉生产经营自主权，致使群众财产遭受较大损失的，对直接责任者和领导责任者，给予警告或者严重警告处分；情节严重的，给予撤销党内职务或者留党察看处分。”职权或者职务上的影响操办婚丧喜庆事宜，造成不良影响的，给予警告或者严重警告处分；情节严重的，给予撤销党内职务处分；借机敛财或者有其他侵犯国家、集体和人民利益行为的，从重或者加重处分，直至开除党籍。”</p><div class="elim"><div class="erow"><span class="elet elet-A">A 项 · 排除</span><span class="etxt">《中国共产党纪律处分条例》（以下简称《条例》）“第六章 对</span></div><div class="erow"><span class="elet elet-B">B 项 · 排除</span><span class="etxt">《条例》“第七章 对违反组织纪律行为的处分”第七十九条第一款规</span></div><div class="erow"><span class="elet elet-C">C 项 · 排除</span><span class="etxt">《条例》“第九章 对违反群众纪律行为的处分”第一百二十三条规定：</span></div><div class="erow"><span class="elet elet-D">D 项 · 保留</span><span class="etxt">《条例》“第八章 对违反廉洁纪律行为的处分”第一百条规定：“利用</span></div></div><p class="sol-tail">故正确答案为D。</p>
+      <p class="sol-note">解析为粉笔原书内容，按「选项排除式」重排：X 项错误＝先排除，X 项正确＝后择优。时政提法背到「名词级别」，错题把正确表述抄成条目。</p>
+    </div>
+  </div>
+</article>
+</section>
+<section class="sec" id="s-4" data-idx="4" data-chap="政治理论">
+  <div class="sec-head"><span class="sec-no">第四节</span>
+    <div class="sec-meta"><h3>二十届三中全会与《决定》</h3>
+      <div class="stags"><span class="ptag pt-chap">政治理论</span><span class="ptag pt-n">11 题</span></div>
+    </div></div>
+  <div class="mat-note">题目来源：粉笔《决战行测5000题 · 常识判断（新增题）》上册 · 政治理论 / 二十届三中全会与《决定》（考生回忆版）</div>
+  
+<article class="q" id="q-4-1" data-no="q-4-1" data-ans="C" data-kd="二十届三中全会与《决定》" data-rate="83.95" data-wrong="B">
+  <div class="q-head"><span class="qno">1</span><div class="stem">深化医药卫生体制改革，是进一步全面深化改革的重要任务。关于深化医药卫生体制改革，下列举措不恰当的是：</div></div>
+  <div class="opts"><div class="opt"><i>A</i><span>促进优质医疗资源扩容下沉和区域均衡布局</span></div><div class="opt"><i>B</i><span>加快建设分级诊疗体系，强化基层医疗卫生服务</span></div><div class="opt"><i>C</i><span>完善公立医院薪酬制度，严格限制、缩减编制数量</span></div><div class="opt"><i>D</i><span>促进医疗、医保、医药协同发展和治理</span></div></div>
+  <input type="checkbox" id="ck-q-4-1" class="soltoggle">
+  <div class="qbar">
+    <label class="btn-reveal" for="ck-q-4-1" data-act="reveal" data-sol="q-4-1"><span class="lr-open">查看解析</span><span class="lr-close">收起解析</span></label>
+    <span class="meta">正确率 <b>83.95%</b> · 易错项 <b>B</b> · （2025 国考行政执法 16）</span>
+    <label class="mini-check"><input type="checkbox" data-master="q-4-1">已掌握</label>
+  </div>
+  <div class="sol" data-sol="q-4-1">
+    <div class="sol-ans">正确答案<span>C</span></div>
+    <div class="sol-body">
+      <div class="sol-tag">政治理论 · 二十届三中全会与《决定》 · 上册 P28</div>
+      <p class="sol-lead">2024 年7 月18 日，中国共产党第二十届中央委员会第三次全体会议通过了《中共中央关于进一步全面深化改革、推进中国式现代化的决定》（以下简称《决定》）。A、B、D 三项正确，C 项错误：《决定》在“十一、健全保障和改善民生制度体系”部分指出：“（45）深化医药卫生体制改革。实施健康优先发展战略，健全公共卫生体系，促进社会共治、医防协同、医防融合，强化监测预警、风险评估、流行病学调查、检验检测、应急处置、医疗救治等能力。促进医疗、医保、医药协同发展和治理。促进优质医疗资源扩容下沉和区域均衡布局，加快建设分级诊疗体系，推进紧密型医联体建设，强化基层医疗卫生服务。深化以公益性为导向的公立医院改革，建立以医疗服务为主导的收费机制，完善薪酬制度，建立编制动态调整机制。 引导规范民营医院发展。创新医疗卫生监管手段。健全支持创新药和医疗器械发展机制，完善中医药传承创新发展机制。”故“严格限制、缩减编制数量”说法错误。</p><p class="sol-tail">本题为选非题，故正确答案为C。</p>
+      <p class="sol-note">解析为粉笔原书内容，按「选项排除式」重排：X 项错误＝先排除，X 项正确＝后择优。时政提法背到「名词级别」，错题把正确表述抄成条目。</p>
+    </div>
+  </div>
+</article>
+<article class="q" id="q-4-2" data-no="q-4-2" data-ans="B" data-kd="二十届三中全会与《决定》" data-rate="42.62" data-wrong="C">
+  <div class="q-head"><span class="qno">2</span><div class="stem">党的二十届三中全会提出，健全绿色低碳发展机制，实施支持绿色低碳发展的财税、金融、投资、价格政策和标准体系，发展绿色低碳产业，健全绿色消费激励机制，促进绿色低碳循环发展经济体系建设。关于健全绿色低碳发展机制，下列举措不恰当的是：</div></div>
+  <div class="opts"><div class="opt"><i>A</i><span>优化政府绿色采购政策，完善绿色税制</span></div><div class="opt"><i>B</i><span>建立碳排放双控向能耗双控全面转型新机制</span></div><div class="opt"><i>C</i><span>完善资源总量管理和全面节约制度，健全废弃物循环利用体系</span></div><div class="opt"><i>D</i><span>加快规划建设新型能源体系，完善新能源消纳和调控政策措施</span></div></div>
+  <input type="checkbox" id="ck-q-4-2" class="soltoggle">
+  <div class="qbar">
+    <label class="btn-reveal" for="ck-q-4-2" data-act="reveal" data-sol="q-4-2"><span class="lr-open">查看解析</span><span class="lr-close">收起解析</span></label>
+    <span class="meta">正确率 <b>42.62%</b> · 易错项 <b>C</b> · （2025 国考行政执法 15）</span>
+    <label class="mini-check"><input type="checkbox" data-master="q-4-2">已掌握</label>
+  </div>
+  <div class="sol" data-sol="q-4-2">
+    <div class="sol-ans">正确答案<span>B</span></div>
+    <div class="sol-body">
+      <div class="sol-tag">政治理论 · 二十届三中全会与《决定》 · 上册 P28</div>
+      <p class="sol-lead">A、C、D 三项正确，B 项错误：《中共中央关于进一步全面深化改革、推进中国式现代化的决定》在“十二、深化生态文明体制改革”部分指出：“（49）健全绿色低碳发展机制。实施支持绿色低碳发展的财税、金融、投资、价格政策和标准体系，发展绿色低碳产业，健全绿色消费激励机制，促进绿色低碳循环发展经济体系建设。优化政府绿色采购政策，完善绿色税制。完善资源总量管理和全面节约制度，健全废弃物循环利用体系。健全煤炭清洁高效利用机制。加快规划建设新型能源体系，完善新能源消纳和调控政策措施。完善适应气候变化工作体系。建立能耗双控向碳排放双控全面转型新机制。构建碳排放统计核算体系、产品碳标识认证制度、产品碳足迹管理体系，健全碳市场交易制度、温室气体自愿减排交易制度，积极稳妥推进碳达峰碳中和。”</p><p class="sol-tail">本题为选非题，故正确答案为B。</p>
+      <p class="sol-note">解析为粉笔原书内容，按「选项排除式」重排：X 项错误＝先排除，X 项正确＝后择优。时政提法背到「名词级别」，错题把正确表述抄成条目。</p>
+    </div>
+  </div>
+</article>
+<article class="q" id="q-4-3" data-no="q-4-3" data-ans="D" data-kd="二十届三中全会与《决定》" data-rate="35.4" data-wrong="C">
+  <div class="q-head"><span class="qno">3</span><div class="stem">完善大统战工作格局，是习近平总书记关于做好新时代党的统一战线工作的重要思想的重要内容，是做好新时代统战工作的重要保障，也是进一步全面深化改革、为推进中国式现代化凝心聚力的重要举措。下列各项不属于完善大统战格局措施的是：</div></div>
+  <div class="opts"><div class="opt"><i>A</i><span>更好发挥党外人士作用，健全党外代表人士队伍建设制度</span></div><div class="opt"><i>B</i><span>制定民族团结进步促进法，健全铸牢中华民族共同体意识制度机制</span></div><div class="opt"><i>C</i><span>全面构建亲清政商关系，健全促进非公有制经济健康发展、非公有制经济人士健康成长工作机制</span></div><div class="opt"><i>D</i><span>健全人大议事规则和论证、评估、评议、听证制度</span></div></div>
+  <input type="checkbox" id="ck-q-4-3" class="soltoggle">
+  <div class="qbar">
+    <label class="btn-reveal" for="ck-q-4-3" data-act="reveal" data-sol="q-4-3"><span class="lr-open">查看解析</span><span class="lr-close">收起解析</span></label>
+    <span class="meta">正确率 <b>35.4%</b> · 易错项 <b>C</b> · （2025 国考行政执法 14）</span>
+    <label class="mini-check"><input type="checkbox" data-master="q-4-3">已掌握</label>
+  </div>
+  <div class="sol" data-sol="q-4-3">
+    <div class="sol-ans">正确答案<span>D</span></div>
+    <div class="sol-body">
+      <div class="sol-tag">政治理论 · 二十届三中全会与《决定》 · 上册 P28</div>
+      <p class="sol-lead">2024 年7 月18 日，中国共产党第二十届中央委员会第三次全体会议正式通过《中共中央关于进一步全面深化改革、推进中国式现代化的决定》（以下简称《决定》）。A、B、C 三项正确：《决定》在“八、健全全过程人民民主制度体系”部分指出：“（32）完善大统战工作格局。完善发挥统一战线凝聚人心、汇聚力量政治作用的政策举措。坚持好、发展好、完善好中国新型政党制度。更好发挥党外人士作用，健全党外代表人士队伍建设制度。制定民族团结进步促进法，健全铸牢中华民族共同体意识制度机制，增强中华民族凝聚力。系统推进我国宗教中国化，加强宗教事务治理法治化。完善党外知识分子和新的社会阶层人士政治引领机制。全面构建亲清政商关系，健全促进非公有制经济健康发展、非公有制经济人士健康成长工作机制。完善港澳台和侨务工作机制。”强人民当家作主制度建设……健全人大议事规则和论证、评估、评议、听证制度。丰富人大代表联系人民群众的内容和形式。健全吸纳民意、汇集民智工作机制。发挥工会、共青团、妇联等群团组织联系服务群众的桥梁纽带作用。”</p><div class="elim"><div class="erow"><span class="elet elet-D">D 项 · 排除</span><span class="etxt">《决定》在“八、健全全过程人民民主制度体系”部分指出：“（29）加</span></div></div><p class="sol-tail">本题为选非题，故正确答案为D。</p>
+      <p class="sol-note">解析为粉笔原书内容，按「选项排除式」重排：X 项错误＝先排除，X 项正确＝后择优。时政提法背到「名词级别」，错题把正确表述抄成条目。</p>
+    </div>
+  </div>
+</article>
+<article class="q" id="q-4-4" data-no="q-4-4" data-ans="C" data-kd="二十届三中全会与《决定》" data-rate="37.39" data-wrong="D">
+  <div class="q-head"><span class="qno">4</span><div class="stem">党的二十届三中全会审议通过的《中共中央关于进一步全面深化改革、推进中国式现代化的决定》着眼健全保障和改善民生制度体系的重大任务，提出“健全人口发展支持和服务体系”的改革措施。下列关于这些举措的表述，准确的有几项？①完善生育支持政策体系和激励机制，推动建设生育友好型社会②加强普惠育幼服务体系建设，支持用人单位办托、社区嵌入式托育、家庭托育点等多种模式发展③发展银发经济，创造适合老年人的多样化、个性化就业岗位④按照自主、灵活原则，稳妥有序推进渐进式延迟法定退休年龄改革</div></div>
+  <div class="opts"><div class="opt"><i>A</i><span>1 项</span></div><div class="opt"><i>B</i><span>2 项</span></div><div class="opt"><i>C</i><span>3 项</span></div><div class="opt"><i>D</i><span>4 项</span></div></div>
+  <input type="checkbox" id="ck-q-4-4" class="soltoggle">
+  <div class="qbar">
+    <label class="btn-reveal" for="ck-q-4-4" data-act="reveal" data-sol="q-4-4"><span class="lr-open">查看解析</span><span class="lr-close">收起解析</span></label>
+    <span class="meta">正确率 <b>37.39%</b> · 易错项 <b>D</b> · （2025 四川 2）</span>
+    <label class="mini-check"><input type="checkbox" data-master="q-4-4">已掌握</label>
+  </div>
+  <div class="sol" data-sol="q-4-4">
+    <div class="sol-ans">正确答案<span>C</span></div>
+    <div class="sol-body">
+      <div class="sol-tag">政治理论 · 二十届三中全会与《决定》 · 上册 P29</div>
+      <p class="sol-lead">2024 年7 月18 日，中国共产党第二十届中央委员会第三次全体会议正式通过《中共中央关于进一步全面深化改革、推进中国式现代化的决定》（以下简称《决定》）。① ②正确：《决定》在“十一、健全保障和改善民生制度体系”部分指出：“（46）健全人口发展支持和服务体系。以应对老龄化、少子化为重点完善人口发展战略，健全覆盖全人群、全生命周期的人口服务体系，促进人口高质量发展。完善生育支持政策体系和激励机制，推动建设生育友好型社会。有效降低生育、养育、教育成本，完善生育休假制度，建立生育补贴制度，提高基本生育和儿童医疗公共服务水平，加大个人所得税抵扣力度。加强普惠育幼服务体系建设，支持用人单位办托、社区嵌入式托育、家庭托育点等多种模式发展。把握人口流动客观规律，推动相关公共服务随人走，促进城乡、区域人口合理集聚、有序流动。”③正确、④错误：《决定》在“十一、健全保障和改善民生制度体系”部分指出：“（46）健全人口发展支持和服务体系……积极应对人口老龄化，完善发展养老事业和养老产业政策机制。发展银发经济，创造适合老年人的多样化、个性化就业岗位。按照自愿、弹性原则，稳妥有序推进渐进式延迟法定退休年龄改革……”综上，①②③表述正确，共3 项。</p><p class="sol-tail">故正确答案为C。</p>
+      <p class="sol-note">解析为粉笔原书内容，按「选项排除式」重排：X 项错误＝先排除，X 项正确＝后择优。时政提法背到「名词级别」，错题把正确表述抄成条目。</p>
+    </div>
+  </div>
+</article>
+<article class="q" id="q-4-5" data-no="q-4-5" data-ans="A" data-kd="二十届三中全会与《决定》" data-rate="28.49" data-wrong="D">
+  <div class="q-head"><span class="qno">5</span><div class="stem">党的二十届三中全会提出，要稳步扩大制度型开放。关于稳步扩大制度型开放，下列举措不恰当的是：</div></div>
+  <div class="opts"><div class="opt"><i>A</i><span>独立自主构建不同于国际经贸规则的中国特色经贸规则体系</span></div><div class="opt"><i>B</i><span>有序扩大我国商品市场、服务市场、资本市场、劳务市场等对外开放</span></div><div class="opt"><i>C</i><span>积极参与全球经济治理体系改革，提供更多全球公共产品</span></div><div class="opt"><i>D</i><span>扩大对最不发达国家单边开放</span></div></div>
+  <input type="checkbox" id="ck-q-4-5" class="soltoggle">
+  <div class="qbar">
+    <label class="btn-reveal" for="ck-q-4-5" data-act="reveal" data-sol="q-4-5"><span class="lr-open">查看解析</span><span class="lr-close">收起解析</span></label>
+    <span class="meta">正确率 <b>28.49%</b> · 易错项 <b>D</b> · （2025 国考行政执法 12）</span>
+    <label class="mini-check"><input type="checkbox" data-master="q-4-5">已掌握</label>
+  </div>
+  <div class="sol" data-sol="q-4-5">
+    <div class="sol-ans">正确答案<span>A</span></div>
+    <div class="sol-body">
+      <div class="sol-tag">政治理论 · 二十届三中全会与《决定》 · 上册 P29</div>
+      <p class="sol-lead">A 项错误，B、C、D 三项正确：2024 年7 月18 日，中国共产党第二十届中央委员会第三次全体会议通过的《中共中央关于进一步全面深化改革、推进中国式现代化的决定》在“七、完善高水平对外开放体制机制”部分指出：“（24）稳步扩大制度型开放。主动对接国际高标准经贸规则，在产权保护、产业补贴、环境标准、劳动保护、政府采购、电子商务、金融领域等实现规则、规制、管理、标准相通相容，打造透明稳定可预期的制度环境。扩大自主开放，有序扩大我国商品市场、服务市场、资本市场、劳务市场等对外开放，扩大对最不发达国家单边开放……积极参与全球经济治理体系改革，提供更多全球公共产品……”（一）</p><p class="sol-tail">本题为选非题，故正确答案为A。</p>
+      <p class="sol-note">解析为粉笔原书内容，按「选项排除式」重排：X 项错误＝先排除，X 项正确＝后择优。时政提法背到「名词级别」，错题把正确表述抄成条目。</p>
+    </div>
+  </div>
+</article>
+<article class="q" id="q-4-6" data-no="q-4-6" data-ans="B" data-kd="二十届三中全会与《决定》" data-rate="60.06" data-wrong="C">
+  <div class="q-head"><span class="qno">6</span><div class="stem">党的二十届三中全会于2024 年7 月15 日至18 日在北京举行，全会审议通过了《中共中央关于进一步全面深化改革、推进中国式现代化的决定》。下列关于党的二十届三中全会精神的表述，不准确的是：</div></div>
+  <div class="opts"><div class="opt"><i>A</i><span>进一步全面深化改革，必须紧紧围绕推进中国式现代化这个主题来展开</span></div><div class="opt"><i>B</i><span>坚持以人民为中心，这是我们的最大政治优势，是我国改革开放成功推进的根本保证</span></div><div class="opt"><i>C</i><span>要加强各项改革举措协调配合，增强改革取向的一致性，坚决防止和克服本位主义，不能因部门利益、地方利益影响改革大局</span></div><div class="opt"><i>D</i><span>对新领域新实践遇到的新问题，要充分尊重基层和群众首创精神，鼓励开拓创新，不断创造和积累可复制、可推广的新鲜经验</span></div></div>
+  <input type="checkbox" id="ck-q-4-6" class="soltoggle">
+  <div class="qbar">
+    <label class="btn-reveal" for="ck-q-4-6" data-act="reveal" data-sol="q-4-6"><span class="lr-open">查看解析</span><span class="lr-close">收起解析</span></label>
+    <span class="meta">正确率 <b>60.06%</b> · 易错项 <b>C</b> · （2025 浙江 2）</span>
+    <label class="mini-check"><input type="checkbox" data-master="q-4-6">已掌握</label>
+  </div>
+  <div class="sol" data-sol="q-4-6">
+    <div class="sol-ans">正确答案<span>B</span></div>
+    <div class="sol-body">
+      <div class="sol-tag">政治理论 · 二十届三中全会与《决定》 · 上册 P30</div>
+      <p class="sol-lead">党的二十届三中全会于2024 年7 月15 日至18 日在北京举行，习近平总书记在会议上发表重要讲话。要靠中国式现代化。党的二十大对全面推进中国式现代化作出了战略部署。进一步全面深化改革，必须紧紧围绕推进中国式现代化这个主题来展开。”是我国改革开放成功推进的根本保证，要把党的领导贯穿改革各方面全过程，确保改革始终沿着正确政治方向前进。”一致性，坚决防止和克服本位主义，不能因部门利益、地方利益影响改革大局。”和群众首创精神，鼓励开拓创新，不断创造和积累可复制、可推广的新鲜经验。”</p><div class="elim"><div class="erow"><span class="elet elet-A">A 项 · 保留</span><span class="etxt">习近平总书记指出：“新征程上，我们靠什么来进一步凝心聚力？就是</span></div><div class="erow"><span class="elet elet-B">B 项 · 排除</span><span class="etxt">习近平总书记指出：“坚持党的全面领导，这是我们的最大政治优势，</span></div><div class="erow"><span class="elet elet-C">C 项 · 保留</span><span class="etxt">习近平总书记指出：“要加强各项改革举措协调配合，增强改革取向的</span></div><div class="erow"><span class="elet elet-D">D 项 · 保留</span><span class="etxt">习近平总书记指出：“对新领域新实践遇到的新问题，要充分尊重基层</span></div></div><p class="sol-tail">本题为选非题，故正确答案为B。</p>
+      <p class="sol-note">解析为粉笔原书内容，按「选项排除式」重排：X 项错误＝先排除，X 项正确＝后择优。时政提法背到「名词级别」，错题把正确表述抄成条目。</p>
+    </div>
+  </div>
+</article>
+<article class="q" id="q-4-7" data-no="q-4-7" data-ans="A" data-kd="二十届三中全会与《决定》" data-rate="50.5" data-wrong="C">
+  <div class="q-head"><span class="qno">7</span><div class="stem">根据《中共中央关于进一步全面深化改革、推进中国式现代化的决定》，下列与经济体制改革有关的说法，不准确的是：</div></div>
+  <div class="opts"><div class="opt"><i>A</i><span>健全生产要素由收益评价贡献、按贡献决定报酬的机制</span></div><div class="opt"><i>B</i><span>发展以高技术、高效能、高质量为特征的生产力</span></div><div class="opt"><i>C</i><span>推动国有资本向前瞻性战略性新兴产业集中</span></div><div class="opt"><i>D</i><span>建立保持制造业合理比重投入机制，合理降低制造业综合成本和税费负担</span></div></div>
+  <input type="checkbox" id="ck-q-4-7" class="soltoggle">
+  <div class="qbar">
+    <label class="btn-reveal" for="ck-q-4-7" data-act="reveal" data-sol="q-4-7"><span class="lr-open">查看解析</span><span class="lr-close">收起解析</span></label>
+    <span class="meta">正确率 <b>50.5%</b> · 易错项 <b>C</b> · （2025 天津 46）</span>
+    <label class="mini-check"><input type="checkbox" data-master="q-4-7">已掌握</label>
+  </div>
+  <div class="sol" data-sol="q-4-7">
+    <div class="sol-ans">正确答案<span>A</span></div>
+    <div class="sol-body">
+      <div class="sol-tag">政治理论 · 二十届三中全会与《决定》 · 上册 P30</div>
+      <p class="sol-lead">2024 年7 月15 日至18 日，中国共产党第二十届中央委员会第三次全体会议在北京召开。全会审议通过了《中共中央关于进一步全面深化改革、推进中国式现代化的决定》（以下简称《决定》）。对价格形成的不当干预。健全劳动、资本、土地、知识、技术、管理、数据等生产要素由市场评价贡献、按贡献决定报酬的机制。性突破、生产要素创新性配置、产业深度转型升级，推动劳动者、劳动资料、劳动对象优化组合和更新跃升，催生新产业、新模式、新动能，发展以高技术、高效能、高质量为特征的生产力。管理，明确国有资本重点投资领域和方向。推动国有资本向关系国家安全、国民经济命脉的重要行业和关键领域集中，向关系国计民生的公共服务、应急能力、公益性领域等集中，向前瞻性战略性新兴产业集中。国家战略要求。建立保持制造业合理比重投入机制，合理降低制造业综合成本和税费负担。</p><div class="elim"><div class="erow"><span class="elet elet-A">A 项 · 排除</span><span class="etxt">《决定》指出，完善主要由市场供求关系决定要素价格机制，防止政府</span></div><div class="erow"><span class="elet elet-B">B 项 · 保留</span><span class="etxt">《决定》指出，健全因地制宜发展新质生产力体制机制。推动技术革命</span></div><div class="erow"><span class="elet elet-C">C 项 · 保留</span><span class="etxt">《决定》指出，进一步明晰不同类型国有企业功能定位，完善主责主业</span></div><div class="erow"><span class="elet elet-D">D 项 · 保留</span><span class="etxt">《决定》指出，优化重大产业基金运作和监管机制，确保资金投向符合</span></div></div><p class="sol-tail">本题为选非题，故正确答案为A。</p>
+      <p class="sol-note">解析为粉笔原书内容，按「选项排除式」重排：X 项错误＝先排除，X 项正确＝后择优。时政提法背到「名词级别」，错题把正确表述抄成条目。</p>
+    </div>
+  </div>
+</article>
+<article class="q" id="q-4-8" data-no="q-4-8" data-ans="A" data-kd="二十届三中全会与《决定》" data-rate="44.4" data-wrong="B">
+  <div class="q-head"><span class="qno">8</span><div class="stem">完善市场经济基础制度是构建高水平社会主义市场经济体制的重要内容。下列不属于完善市场经济基础制度内容的是：</div></div>
+  <div class="opts"><div class="opt"><i>A</i><span>完善财政转移支付体系</span></div><div class="opt"><i>B</i><span>完善市场信息披露制度</span></div><div class="opt"><i>C</i><span>完善市场准入制度</span></div><div class="opt"><i>D</i><span>完善产权制度（二）</span></div></div>
+  <input type="checkbox" id="ck-q-4-8" class="soltoggle">
+  <div class="qbar">
+    <label class="btn-reveal" for="ck-q-4-8" data-act="reveal" data-sol="q-4-8"><span class="lr-open">查看解析</span><span class="lr-close">收起解析</span></label>
+    <span class="meta">正确率 <b>44.4%</b> · 易错项 <b>B</b> · （2025 国考行政执法 17）</span>
+    <label class="mini-check"><input type="checkbox" data-master="q-4-8">已掌握</label>
+  </div>
+  <div class="sol" data-sol="q-4-8">
+    <div class="sol-ans">正确答案<span>A</span></div>
+    <div class="sol-body">
+      <div class="sol-tag">政治理论 · 二十届三中全会与《决定》 · 上册 P31</div>
+      <p class="sol-lead">A 项错误，B、C、D 三项正确：2024 年7 月18 日中国共产党第二十届中央委员会第三次全体会议通过《中共中央关于进一步全面深化改革、推进中国式现代化的决定》，其在“二、构建高水平社会主义市场经济体制”部分指出：“（7）完善市场经济基础制度。完善产权制度，依法平等长久保护各种所有制经济产权，建立高效的知识产权综合管理体制。完善市场信息披露制度，构建商业秘密保护制度……完善市场准入制度，优化新业态新领域市场准入环境。深化注册资本认缴登记制度改革，实行依法按期认缴。健全企业破产机制，探索建立个人破产制度，推进企业注销配套改革，完善企业退出制度。健全社会信用体系和监管制度。”而“完善财政转移支付体系”属于“深化财税体制改革”的内容。（二）</p><p class="sol-tail">本题为选非题，故正确答案为A。</p>
+      <p class="sol-note">解析为粉笔原书内容，按「选项排除式」重排：X 项错误＝先排除，X 项正确＝后择优。时政提法背到「名词级别」，错题把正确表述抄成条目。</p>
+    </div>
+  </div>
+</article>
+<article class="q" id="q-4-9" data-no="q-4-9" data-ans="B" data-kd="二十届三中全会与《决定》" data-rate="65.81" data-wrong="A">
+  <div class="q-head"><span class="qno">9</span><div class="stem">习近平总书记指出，要加强科技基础能力建设，深化科技体制改革，打造科创高地。关于深化科技体制改革，下列表述正确的是：</div></div>
+  <div class="opts"><div class="opt"><i>A</i><span>建立以竞争性支持取代稳定支持的基础研究投入机制</span></div><div class="opt"><i>B</i><span>允许科研类事业单位实行比一般事业单位更灵活的管理制度</span></div><div class="opt"><i>C</i><span>限制开展高风险、高投入基础研究</span></div><div class="opt"><i>D</i><span>降低科技人员在科技成果转化收益分配上的自主权</span></div></div>
+  <input type="checkbox" id="ck-q-4-9" class="soltoggle">
+  <div class="qbar">
+    <label class="btn-reveal" for="ck-q-4-9" data-act="reveal" data-sol="q-4-9"><span class="lr-open">查看解析</span><span class="lr-close">收起解析</span></label>
+    <span class="meta">正确率 <b>65.81%</b> · 易错项 <b>A</b> · （2025 国考行政执法 9）</span>
+    <label class="mini-check"><input type="checkbox" data-master="q-4-9">已掌握</label>
+  </div>
+  <div class="sol" data-sol="q-4-9">
+    <div class="sol-ans">正确答案<span>B</span></div>
+    <div class="sol-body">
+      <div class="sol-tag">政治理论 · 二十届三中全会与《决定》 · 上册 P32</div>
+      <p class="sol-lead">2024 年7 月18 日，中国共产党第二十届中央委员会第三次全体会议通过了《中共中央关于进一步全面深化改革、推进中国式现代化的决定》（以下简称《决定》）。A、C 两项错误：《决定》在“四、构建支持全面创新体制机制”部分的“（14）深化科技体制改革”中指出：“改进科技计划管理，强化基础研究领域、交叉前沿领域、重点领域前瞻性、引领性布局。 加强有组织的基础研究，提高科技支出用于基础研究比重，完善竞争性支持和稳定支持相结合的基础研究投入机制，鼓励有条件的地方、企业、社会组织、个人支持基础研究，支持基础研究选题多样化，鼓励开展高风险、高价值基础研究。”技体制改革”中指出：“完善中央财政科技经费分配和管理使用机制，健全中央财政科技计划执行和专业机构管理体制……允许科研类事业单位实行比一般事业单位更灵活的管理制度，探索实行企业化管理。”技体制改革”中指出：“允许科技人员在科技成果转化收益分配上有更大自主权，建立职务科技成果资产单列管理制度，深化职务科技成果赋权改革。深化高校、科研院所收入分配改革。”</p><div class="elim"><div class="erow"><span class="elet elet-B">B 项 · 保留</span><span class="etxt">《决定》在“四、构建支持全面创新体制机制”部分的“（14）深化科</span></div><div class="erow"><span class="elet elet-D">D 项 · 排除</span><span class="etxt">《决定》在“四、构建支持全面创新体制机制”部分的“（14）深化科</span></div></div><p class="sol-tail">故正确答案为B。</p>
+      <p class="sol-note">解析为粉笔原书内容，按「选项排除式」重排：X 项错误＝先排除，X 项正确＝后择优。时政提法背到「名词级别」，错题把正确表述抄成条目。</p>
+    </div>
+  </div>
+</article>
+<article class="q" id="q-4-10" data-no="q-4-10" data-ans="D" data-kd="二十届三中全会与《决定》" data-rate="76.88" data-wrong="C">
+  <div class="q-head"><span class="qno">10</span><div class="stem">党的二十届三中全会，高度评价新时代以来全面深化改革的成功实践和伟大成就，研究了进一步全面深化改革、推进中国式现代化问题，认为当前和今后一个时期是以中国式现代化全面推进强国建设、民族复兴伟业的关键时期。关于中国式现代化与改革的关系，下列说法不正确的是：</div></div>
+  <div class="opts"><div class="opt"><i>A</i><span>中国式现代化是在改革开放中不断推进的，也必将在改革开放中开辟广阔前景</span></div><div class="opt"><i>B</i><span>进一步全面深化改革的总目标是继续完善和发展中国特色社会主义制度，推进国家治理体系和治理能力现代化</span></div><div class="opt"><i>C</i><span>必须自觉把改革摆在更加突出位置，紧紧围绕推进中国式现代化进一步全面深化改革</span></div><div class="opt"><i>D</i><span>改革越是彻底，中国式现代化就越早实现，推进中国式现代化建设的进度取决于改革的力度</span></div></div>
+  <input type="checkbox" id="ck-q-4-10" class="soltoggle">
+  <div class="qbar">
+    <label class="btn-reveal" for="ck-q-4-10" data-act="reveal" data-sol="q-4-10"><span class="lr-open">查看解析</span><span class="lr-close">收起解析</span></label>
+    <span class="meta">正确率 <b>76.88%</b> · 易错项 <b>C</b> · （2024 黑龙江 3）</span>
+    <label class="mini-check"><input type="checkbox" data-master="q-4-10">已掌握</label>
+  </div>
+  <div class="sol" data-sol="q-4-10">
+    <div class="sol-ans">正确答案<span>D</span></div>
+    <div class="sol-body">
+      <div class="sol-tag">政治理论 · 二十届三中全会与《决定》 · 上册 P32</div>
+      <p class="sol-lead">中国共产党第二十届中央委员会第三次全体会议于2024 年7 月15 日至18 日在北京举行。A、C 两项正确：全会高度评价新时代以来全面深化改革的成功实践和伟大成就，研究了进一步全面深化改革、推进中国式现代化问题，认为当前和今后一个时期是以中国式现代化全面推进强国建设、民族复兴伟业的关键时期。中国式现代化是在改革开放中不断推进的，也必将在改革开放中开辟广阔前景。面对纷繁复杂的国际国内形势，面对新一轮科技革命和产业变革，面对人民群众新期待，必须自觉把改革摆在更加突出位置，紧紧围绕推进中国式现代化进一步全面深化改革。社会主义制度，推进国家治理体系和治理能力现代化。到二〇三五年，全面建成高水平社会主义市场经济体制，中国特色社会主义制度更加完善，基本实现国家治理体系和治理能力现代化，基本实现社会主义现代化，为到本世纪中叶全面建成社会主义现代化强国奠定坚实基础。要聚焦构建高水平社会主义市场经济体制，聚焦发展全过程人民民主，聚焦建设社会主义文化强国，聚焦提高人民生活品质，聚焦建设美丽中国，聚焦建设更高水平平安中国，聚焦提高党的领导水平和长期执政能力，继续把改革推向前进。到二〇二九年中华人民共和国成立八十周年时，完成本决定提出的改革任务。思想、邓小平理论、“三个代表”重要思想、科学发展观，全面贯彻习近平新时代中国特色社会主义思想，深入学习贯彻习近平总书记关于全面深化改革的一系列新思想、新观点、新论断，完整准确全面贯彻新发展理念，坚持稳中求进工作总基调，坚持解放思想、实事求是、与时俱进、求真务实，进一步解放和发展社会生产力、激发和增强社会活力，统筹国内国际两个大局，统筹推进“五位一体”总体布局，协调推进“四个全面”战略布局，以经济体制改革为牵引，以促进社会公平正义、增进人民福祉为出发点和落脚点，更加注重系统集成，更加注重突出重点，更加注重改革实效，推动生产关系和生产力、上层建筑和经济基础、国家治理和社会发展更好相适应，为中国式现代化提供强大动力和制度保障。该项中，“改革越是彻底，中国式现代化就越早实现”的观点违背了稳中求进的工作总基调，“推进中国式现代化建设的进度取决于改革的力度”的说法也过于绝对，不符合“更加注重系统集成”的指导思想。</p><div class="elim"><div class="erow"><span class="elet elet-B">B 项 · 保留</span><span class="etxt">全会指出，进一步全面深化改革的总目标是继续完善和发展中国特色</span></div><div class="erow"><span class="elet elet-D">D 项 · 排除</span><span class="etxt">全会强调，进一步全面深化改革，必须坚持马克思列宁主义、毛泽东</span></div></div><p class="sol-tail">本题为选非题，故正确答案为D。</p>
+      <p class="sol-note">解析为粉笔原书内容，按「选项排除式」重排：X 项错误＝先排除，X 项正确＝后择优。时政提法背到「名词级别」，错题把正确表述抄成条目。</p>
+    </div>
+  </div>
+</article>
+<article class="q" id="q-4-11" data-no="q-4-11" data-ans="D" data-kd="二十届三中全会与《决定》" data-rate="41.96" data-wrong="C">
+  <div class="q-head"><span class="qno">11</span><div class="stem">完善收入分配制度，构建初次分配、再分配、第三次分配协调配套的制度体系，是进一步全面深化改革的重要任务。关于完善收入分配制度，下列表述不准确的是：</div></div>
+  <div class="opts"><div class="opt"><i>A</i><span>提高劳动报酬在初次分配中的比重</span></div><div class="opt"><i>B</i><span>完善劳动者工资决定、合理增长、支付保障机制，健全按要素分配政策制度</span></div><div class="opt"><i>C</i><span>规范财富积累机制，多渠道增加城乡居民财产性收入</span></div><div class="opt"><i>D</i><span>完善税收、社会保障、转移支付等第三次分配调节机制</span></div></div>
+  <input type="checkbox" id="ck-q-4-11" class="soltoggle">
+  <div class="qbar">
+    <label class="btn-reveal" for="ck-q-4-11" data-act="reveal" data-sol="q-4-11"><span class="lr-open">查看解析</span><span class="lr-close">收起解析</span></label>
+    <span class="meta">正确率 <b>41.96%</b> · 易错项 <b>C</b> · （2025 国考行政执法 10）</span>
+    <label class="mini-check"><input type="checkbox" data-master="q-4-11">已掌握</label>
+  </div>
+  <div class="sol" data-sol="q-4-11">
+    <div class="sol-ans">正确答案<span>D</span></div>
+    <div class="sol-body">
+      <div class="sol-tag">政治理论 · 二十届三中全会与《决定》 · 上册 P32</div>
+      <p class="sol-lead">2024 年7 月18 日，中国共产党第二十届中央委员会第三次全体会议通过了《中共中央关于进一步全面深化改革、推进中国式现代化的决定》（以下简称《决定》）。A、B 两项正确，D 项错误：《决定》在“十一、健全保障和改善民生制度体系”部分“（42）完善收入分配制度”中指出：“构建初次分配、再分配、第三次分配协调配套的制度体系，提高居民收入在国民收入分配中的比重，提高劳动报酬在初次分配中的比重。 完善劳动者工资决定、合理增长、支付保障机制，健全按要素分配政策制度。完善税收、社会保障、转移支付等再分配调节机制。支持发展公益慈善事业。”收入分配制度”中指出：“规范收入分配秩序，规范财富积累机制，多渠道增加城乡居民财产性收入，形成有效增加低收入群体收入、稳步扩大中等收入群体规模、合理调节过高收入的制度体系。深化国有企业工资决定机制改革，合理确定并严格规范国有企业各级负责人薪酬、津贴补贴等。”党的二十大报告指出：“完善分配制度。分配制度是促进共同富裕的基础性制度。坚持按劳分配为主体、多种分配方式并存，构建初次分配、再分配、第三次分配协调配套的制度体系。努力提高居民收入在国民收入分配中的比重，提高劳动报酬在初次分配中的比重。坚持多劳多得，鼓励勤劳致富，促进机会公平，增加低收入者收入，扩大中等收入群体。完善按要素分配政策制度，探索多种渠道增加中低收入群众要素收入，多渠道增加城乡居民财产性收入。加大税收、社会保障、转移支付等的调节力度。完善个人所得税制度，规范收入分配秩序，规范财富积累机制，保护合法收入，调节过高收入，取缔非法收入。引导、支持有意愿有能力的企业、社会组织和个人积极参与公益慈善事业。”粉笔拓展</p><div class="elim"><div class="erow"><span class="elet elet-C">C 项 · 保留</span><span class="etxt">《决定》在“十一、健全保障和改善民生制度体系”部分“（42）完善</span></div></div><p class="sol-tail">本题为选非题，故正确答案为D。</p>
+      <p class="sol-note">解析为粉笔原书内容，按「选项排除式」重排：X 项错误＝先排除，X 项正确＝后择优。时政提法背到「名词级别」，错题把正确表述抄成条目。</p>
+    </div>
+  </div>
+</article>
+</section>
+  <footer>题目整理自粉笔《决战行测 5000 题 · 常识判断（新增题）》上册第五章「政治常识」（2026 版）；节名按考点重组（原书分节见各题页码溯源）。真题来源为各机构考生回忆版，表述以本页所引为准。<br>解析为粉笔原书内容按「选项排除式」重排，仅供个人备考使用。进度保存在本机浏览器（localStorage）。</footer>
+</main>
+</div>
+<button class="ment" id="ment" type="button">☰ 目录</button>
+<script>
+(function(){
+  var root=document.documentElement;
+  root.classList.add('js');
+  var badge=document.getElementById('jsstat');
+  var V='v1';
+  var errs=[];
+  function ok(m){ if(badge){badge.textContent='\u2713 交互正常 '+V+(m?(' \u00b7 '+m):'');badge.className='jsstat ok';} }
+  function fail(m){ errs.push(m); if(badge){badge.textContent='\u2717 脚本异常\uff1a'+m;badge.className='jsstat bad';} }
+  window.addEventListener('error',function(e){ fail((e&&e.message)||'\u672a\u77e5\u9519\u8bef'); });
+  function step(n,f){ try{ f(); }catch(e){ fail(n+'\uff1a'+((e&&e.message)||e)); } }
+
+  var LSKEY='zz_true_bank_progress';
+  var state={mastered:{}};
+  step('读取进度',function(){
+    try{ var o=JSON.parse(localStorage.getItem(LSKEY)||'{}')||{}; state.mastered=o.mastered||{}; }catch(e){}
+  });
+  function save(){ try{ localStorage.setItem(LSKEY,JSON.stringify(state)); }catch(e){} }
+
+  function $(s){return document.querySelector(s);}
+  function $$(s){return [].slice.call(document.querySelectorAll(s));}
+  var qs=$$('.q');
+  var qById={}; qs.forEach(function(a){ qById[a.id]=a; });
+
+  function syncOne(a,on){
+    if(!a) return;
+    a.classList.toggle('qopen',on);
+    var s=a.querySelector('.sol'); if(s) s.classList.toggle('open',on);
+  }
+  function setXall(on){
+    root.classList.toggle('xall-on',on);
+    qs.forEach(function(a){ syncOne(a,on); });
+  }
+  function toggleOne(id){ var a=qById[id]; if(a) syncOne(a,!a.classList.contains('qopen')); }
+
+  function onAct(ev){
+    var t=ev.target;
+    if(!t||t.nodeType!==1||!t.closest) return;
+    var hit=t.closest('[data-act]');
+    if(!hit) return;
+    var act=hit.getAttribute('data-act');
+    if(act==='xall'){ setXall(!root.classList.contains('xall-on')); }
+    else if(act==='hans'){ root.classList.toggle('hans-on'); }
+    else if(act==='reveal'){ toggleOne(hit.getAttribute('data-sol')); }
+    else return;
+    ev.preventDefault();
+    if(ev.stopImmediatePropagation) ev.stopImmediatePropagation();
+  }
+  window.addEventListener('click',onAct,true);
+  document.addEventListener('click',onAct,true);
+
+  var onlyUn=false, kw='';
+  function applyFilter(){
+    var hit=0;
+    $$('.sec').forEach(function(sec){
+      var secHit=false;
+      [].slice.call(sec.querySelectorAll('.q')).forEach(function(q){
+        var keep=true;
+        if(onlyUn&&state.mastered[q.id]) keep=false;
+        if(keep&&kw){
+          var kd=q.getAttribute('data-kd')||'';
+          var st=q.querySelector('.stem'); var stem=st?st.textContent:'';
+          if(kd.indexOf(kw)<0&&stem.indexOf(kw)<0) keep=false;
+        }
+        q.classList.toggle('hide',!keep);
+        if(keep) secHit=true;
+      });
+      var h3=sec.querySelector('.sec-meta h3');
+      var srcHit=!!h3&&h3.textContent.indexOf(kw)>=0;
+      var show=kw?(secHit||srcHit):secHit;
+      if(show) hit+=sec.querySelectorAll('.q:not(.hide)').length;
+      sec.classList.toggle('hide',!show);
+    });
+    var nh=$('#nohit'); if(nh) nh.style.display=hit?'none':'block';
+  }
+  function updateProgress(){
+    var done=Object.keys(state.mastered).filter(function(k){return state.mastered[k];}).length;
+    var t=$('#pg-txt'), b=$('#pg-bar');
+    if(t) t.textContent=done;
+    if(b) b.style.width=(done/(qs.length||1)*100)+'%';
+    $$('.sec').forEach(function(sec){
+      var idx=sec.dataset.idx;
+      var list=[].slice.call(sec.querySelectorAll('.q'));
+      var d=list.filter(function(q){return state.mastered[q.id];}).length;
+      var bd=document.querySelector('[data-badge="s-'+idx+'"]');
+      if(bd){ bd.textContent=d+'/'+list.length;
+        var nv=bd.closest('.navlink'); if(nv) nv.classList.toggle('done',d===list.length); }
+    });
+  }
+
+  step('绑定交互',function(){
+    document.addEventListener('click',function(ev){
+      var t=ev.target;
+      if(!t||t.nodeType!==1||!t.closest) return;
+      if(t.closest('#btn-unmastered')){
+        onlyUn=!onlyUn; var b=$('#btn-unmastered'); if(b) b.classList.toggle('on',onlyUn);
+        applyFilter(); return;
+      }
+      if(t.closest('#ment')){ var sd=$('#side'); if(sd) sd.classList.toggle('show'); return; }
+      var ch=t.closest('.dchip');
+      if(ch){
+        var isOn=ch.classList.contains('on');
+        $$('.dchip').forEach(function(c){c.classList.remove('on');});
+        var inp=$('#nav-search');
+        if(isOn){ kw=''; if(inp) inp.value=''; }
+        else{ ch.classList.add('on'); kw=ch.getAttribute('data-dian')||''; if(inp) inp.value=kw; }
+        applyFilter(); return;
+      }
+    });
+    document.addEventListener('change',function(ev){
+      var cb=ev.target;
+      if(!cb||cb.nodeType!==1) return;
+      if(cb.hasAttribute('data-master')){
+        state.mastered[cb.getAttribute('data-master')]=cb.checked;
+        var q=cb.closest('.q'); if(q) q.classList.toggle('mastered',cb.checked);
+        save(); updateProgress(); if(onlyUn) applyFilter();
+      }
+    });
+    document.addEventListener('input',function(ev){
+      if(ev.target&&ev.target.id==='nav-search'){
+        kw=(ev.target.value||'').trim();
+        $$('.dchip').forEach(function(c){c.classList.remove('on');});
+        applyFilter();
+      }
+    });
+  });
+
+  step('回填状态',function(){
+    $$('[data-master]').forEach(function(cb){
+      if(state.mastered[cb.getAttribute('data-master')]){
+        cb.checked=true; var q=cb.closest('.q'); if(q) q.classList.add('mastered');
+      }
+    });
+  });
+
+  step('导航',function(){
+    var links=$$('.navlink');
+    window.addEventListener('scroll',function(){
+      var y=window.scrollY+120,cur=null;
+      links.forEach(function(a){
+        var s3=document.getElementById(a.getAttribute('data-target'));
+        if(s3&&s3.offsetTop<=y) cur=s3;
+      });
+      links.forEach(function(a){ a.classList.toggle('on',!!cur&&a.getAttribute('data-target')===cur.id); });
+    },{passive:true});
+    links.forEach(function(a){
+      a.addEventListener('click',function(){
+        var sd=$('#side'); if(sd&&window.innerWidth<=900) sd.classList.remove('show');
+      });
+    });
+  });
+
+  step('进度',updateProgress);
+  step('自检',function(){
+    var n=qs.length;
+    setXall(true);
+    var o=$$('.sol.open').length;
+    setXall(false);
+    var c=$$('.sol.open').length;
+    if(o>=n&&c===0) ok(n+' 题已绑定'); else fail('自检未通过 '+o+'/'+c);
+  });
+  if(errs.length===0){ if(badge&&badge.className.indexOf('ok')<0) ok(qs.length+' 题已绑定'); }
+})();
+
+</script>
+</body>
+</html>

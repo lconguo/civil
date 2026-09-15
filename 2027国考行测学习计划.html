@@ -1,0 +1,1285 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-page-node-id="mJGClg5qG9IE805pwzbBHi">
+<head data-page-node-id="BQHFtoMfyCgKrzXRxe25GZ">
+<meta charset="UTF-8" data-page-node-id="HWTzYIF84ssiGxTGGIqT7m">
+<meta name="viewport" content="width=device-width, initial-scale=1.0" data-page-node-id="9vu7b38F1i5GiVdHqjnelP">
+<title>2027 国考 · 行测学习计划</title>
+<style>
+:root{
+  --bg:#f5f7fb;
+  --panel:#ffffff;
+  --ink:#1c2434;
+  --ink-2:#4a5568;
+  --ink-3:#7b8798;
+  --line:#e3e8f0;
+  --line-2:#eef2f8;
+  --brand:#2f6feb;
+  --brand-soft:#eaf1ff;
+  --r:14px;
+  --politics:#c0392b;
+  --common:#8e44ad;
+  --verbal:#2980b9;
+  --math:#16a085;
+  --logic:#d35400;
+  --data:#27ae60;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:"PingFang SC","Microsoft YaHei","Hiragino Sans GB",-apple-system,"Segoe UI",sans-serif;
+  background:var(--bg);color:var(--ink);
+  font-size:15px;line-height:1.75;-webkit-font-smoothing:antialiased;
+}
+a{color:inherit;text-decoration:none}
+.wrap{display:flex;max-width:1440px;margin:0 auto;gap:28px;padding:0 24px 80px}
+
+/* ---------- 侧边栏 ---------- */
+aside{
+  width:250px;flex:0 0 250px;position:sticky;top:0;align-self:flex-start;
+  height:100vh;overflow-y:auto;padding:26px 0 40px;
+}
+aside::-webkit-scrollbar{width:6px}
+aside::-webkit-scrollbar-thumb{background:#d3dbe8;border-radius:3px}
+.logo{font-size:15px;font-weight:700;letter-spacing:.5px;margin-bottom:4px}
+.logo span{color:var(--brand)}
+.logo-sub{font-size:12px;color:var(--ink-3);margin-bottom:20px}
+.nav-group{font-size:11px;font-weight:700;color:var(--ink-3);letter-spacing:1.5px;margin:20px 0 8px 12px}
+.nav a{
+  display:flex;align-items:center;gap:9px;padding:8px 12px;border-radius:9px;
+  font-size:13.5px;color:var(--ink-2);transition:.15s;margin-bottom:2px;
+}
+.nav a:hover{background:#fff;color:var(--ink)}
+.nav a.on{background:var(--brand);color:#fff;font-weight:600;box-shadow:0 4px 12px rgba(47,111,235,.28)}
+.dot{width:8px;height:8px;border-radius:50%;flex:0 0 8px}
+.nav-badge{margin-left:auto;font-size:10.5px;color:var(--ink-3);font-weight:600}
+.nav a.on .nav-badge{color:rgba(255,255,255,.85)}
+
+/* 总进度 */
+.tp-card{background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px;margin:22px 0 6px}
+.tp-card h5{font-size:12.5px;font-weight:600;color:var(--ink-2);margin-bottom:9px;display:flex;justify-content:space-between}
+.tp-bar{height:7px;background:#eef2f8;border-radius:5px;overflow:hidden}
+.tp-fill{height:100%;width:0;background:linear-gradient(90deg,#2f6feb,#27ae60);border-radius:5px;transition:width .35s}
+.tp-num{font-size:11.5px;color:var(--ink-3);margin-top:7px;text-align:right}
+
+/* ---------- 主内容 ---------- */
+main{flex:1;min-width:0;padding-top:26px}
+.hero{
+  background:linear-gradient(135deg,#1e3a8a 0%,#2f6feb 55%,#3f8ae0 100%);
+  color:#fff;border-radius:20px;padding:38px 40px;margin-bottom:26px;position:relative;overflow:hidden;
+}
+.hero::after{content:"";position:absolute;right:-70px;top:-70px;width:280px;height:280px;border-radius:50%;background:rgba(255,255,255,.08)}
+.hero::before{content:"";position:absolute;right:60px;bottom:-100px;width:200px;height:200px;border-radius:50%;background:rgba(255,255,255,.06)}
+.hero h1{font-size:29px;font-weight:800;letter-spacing:1px;margin-bottom:8px;position:relative}
+.hero p{font-size:14px;opacity:.92;position:relative}
+.hero-meta{display:flex;gap:10px;flex-wrap:wrap;margin-top:20px;position:relative}
+.hero-chip{background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.25);padding:6px 14px;border-radius:20px;font-size:12.5px;backdrop-filter:blur(4px)}
+
+section{scroll-margin-top:20px;margin-bottom:44px}
+.sec-head{display:flex;align-items:center;gap:12px;margin-bottom:18px}
+.sec-head h2{font-size:20px;font-weight:800}
+.sec-head .idx{font-size:12px;font-weight:700;color:#fff;background:var(--brand);padding:3px 10px;border-radius:7px;letter-spacing:.5px}
+.sec-desc{font-size:13.5px;color:var(--ink-3);margin:-8px 0 18px;line-height:1.7}
+
+/* 卡片 */
+.card{background:var(--panel);border:1px solid var(--line);border-radius:var(--r);padding:22px 24px;margin-bottom:16px}
+.card h3{font-size:16px;font-weight:700;margin-bottom:12px;display:flex;align-items:center;gap:8px}
+.card h3::before{content:"";width:4px;height:16px;background:var(--brand);border-radius:2px}
+
+/* 表格 */
+table{width:100%;border-collapse:collapse;font-size:13.5px;margin:6px 0 4px}
+th,td{padding:10px 12px;text-align:left;border-bottom:1px solid var(--line-2)}
+th{background:#f8fafd;font-weight:600;color:var(--ink-2);font-size:12.5px;white-space:nowrap}
+tbody tr:hover{background:#fafcff}
+td b{color:var(--ink)}
+.tot td{font-weight:700;background:var(--brand-soft)}
+.num{font-variant-numeric:tabular-nums;font-weight:600}
+
+/* 时间轴 */
+.tl{position:relative;padding-left:34px}
+.tl::before{content:"";position:absolute;left:11px;top:8px;bottom:8px;width:2px;background:linear-gradient(var(--brand),#27ae60)}
+.tl-item{position:relative;margin-bottom:20px}
+.tl-dot{position:absolute;left:-30px;top:5px;width:14px;height:14px;border-radius:50%;background:#fff;border:3px solid var(--brand)}
+.tl-item:nth-child(2) .tl-dot{border-color:#8e44ad}
+.tl-item:nth-child(3) .tl-dot{border-color:#27ae60}
+.tl-card{background:#fff;border:1px solid var(--line);border-radius:12px;padding:16px 18px}
+.tl-card h4{font-size:15px;font-weight:700;margin-bottom:3px}
+.tl-when{font-size:12px;color:var(--brand);font-weight:600;margin-bottom:9px}
+.tl-card ul{margin:0 0 0 18px;font-size:13.5px;color:var(--ink-2)}
+.tl-card li{margin-bottom:3px}
+.tl-goal{margin-top:10px;font-size:12.5px;background:#f0f7f2;color:#1e7a45;padding:7px 11px;border-radius:8px;border-left:3px solid #27ae60}
+
+/* 模块头 */
+.mod-head{
+  display:flex;align-items:center;gap:14px;padding:18px 22px;border-radius:var(--r);
+  color:#fff;margin:30px 0 14px;position:relative;overflow:hidden;
+}
+.mod-head .mi{font-size:22px;opacity:.5;font-weight:800;font-variant-numeric:tabular-nums}
+.mod-head h3{font-size:18px;font-weight:800;margin:0}
+.mod-head .sub{font-size:12.5px;opacity:.9;margin-top:2px}
+.mod-head .mp{margin-left:auto;text-align:right;font-size:12px;opacity:.95}
+.mod-head .mp b{display:block;font-size:17px;font-weight:800;font-variant-numeric:tabular-nums}
+.politics{background:linear-gradient(120deg,#a93226,#c0392b)}
+.common{background:linear-gradient(120deg,#7d3c98,#8e44ad)}
+.verbal{background:linear-gradient(120deg,#2471a3,#2980b9)}
+.math{background:linear-gradient(120deg,#148f77,#16a085)}
+.logic{background:linear-gradient(120deg,#ba4a00,#d35400)}
+.data{background:linear-gradient(120deg,#1e8449,#27ae60)}
+
+/* 母题卡片 */
+.mt{background:#fff;border:1px solid var(--line);border-left:4px solid #cbd5e3;border-radius:11px;padding:15px 18px;margin-bottom:11px;transition:.15s}
+.mt:hover{box-shadow:0 3px 14px rgba(28,36,52,.06)}
+.mt.done{opacity:.62;border-left-color:#27ae60;background:#fbfefc}
+.mt-head{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.mt-no{font-size:11px;font-weight:700;color:var(--ink-3);background:#f1f5fb;padding:2px 8px;border-radius:6px;letter-spacing:.5px}
+.mt-head h4{font-size:14.5px;font-weight:700;flex:1;min-width:180px}
+.mt-check{display:flex;align-items:center;gap:6px;font-size:11.5px;color:var(--ink-3);cursor:pointer;user-select:none;background:#f8fafd;border:1px solid var(--line);padding:3px 9px;border-radius:7px}
+.mt-check input{accent-color:#27ae60;cursor:pointer;width:13px;height:13px}
+.mt.done .mt-check{background:#eaf7ef;border-color:#bfe6cd;color:#1e7a45}
+.mt-body{margin-top:12px;display:grid;gap:9px}
+.row{display:grid;grid-template-columns:74px 1fr;gap:12px;font-size:13.3px}
+.row>b{color:var(--ink-3);font-weight:600;font-size:12.5px;padding-top:1px}
+.row p,.row div{color:var(--ink-2)}
+.row .hl{color:var(--ink);font-weight:600}
+.fml{font-family:"JetBrains Mono","Consolas",monospace;background:#f4f7fc;border:1px solid #e1e9f5;border-radius:6px;padding:1px 7px;font-size:12.5px;color:#22406e;display:inline-block;margin:2px 3px 2px 0}
+.trap b{color:#c0392b}
+.trap p{color:#8a4a44}
+.steps{margin:0;padding-left:16px}
+.steps li{margin-bottom:2px}
+
+/* 技巧高亮 */
+.tip{background:#fff8ec;border:1px solid #f5e0b8;border-left:4px solid #e8a33d;border-radius:10px;padding:13px 16px;font-size:13.3px;color:#7a5a1e;margin:14px 0}
+.tip b{color:#a06a12}
+.kpi{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:14px 0}
+.kpi div{background:#fff;border:1px solid var(--line);border-radius:11px;padding:14px 16px}
+.kpi b{display:block;font-size:22px;font-weight:800;color:var(--brand);font-variant-numeric:tabular-nums}
+.kpi span{font-size:12px;color:var(--ink-3)}
+.pill{display:inline-block;font-size:11.5px;font-weight:600;padding:2px 9px;border-radius:20px;margin:2px 4px 2px 0}
+.p-hi{background:#fdecea;color:#b03a2e}
+.p-md{background:#fef5e7;color:#a06a12}
+.p-lo{background:#eaf7ef;color:#1e7a45}
+
+/* 打印 */
+@media print{
+  aside{display:none}.wrap{display:block;padding:0}
+  .hero{background:#1e3a8a !important;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+}
+@media(max-width:900px){
+  aside{display:none}.wrap{padding:0 16px 60px}
+  .hero{padding:26px 22px}.hero h1{font-size:22px}
+  .row{grid-template-columns:1fr;gap:2px}
+}
+</style>
+</head>
+<body data-page-node-id="6SbtAGk7BGp7NVjwGoqZmK">
+<style id="resnav-style">
+.resnav{position:fixed;top:0;left:0;right:0;z-index:99999;display:flex;align-items:center;gap:4px;
+  height:44px;padding:0 12px;background:#1f2937;color:#e5e7eb;font-size:13px;line-height:1;
+  font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;overflow-x:auto;
+  box-shadow:0 1px 0 rgba(255,255,255,.06),0 2px 10px rgba(0,0,0,.18);-webkit-overflow-scrolling:touch}
+body::before{content:"";display:block;height:44px}
+.resnav::-webkit-scrollbar{height:0}
+.resnav .rn-brand{flex:0 0 auto;font-weight:700;color:#7ee0c0;margin-right:6px;letter-spacing:.5px}
+.resnav a{flex:0 0 auto;color:#d1d5db;text-decoration:none;padding:6px 10px;border-radius:8px;
+  white-space:nowrap;transition:.15s}
+.resnav a:hover{background:#374151;color:#fff}
+.resnav a.on{background:#22c39a;color:#06251c;font-weight:700}
+.resnav .rn-sep{flex:0 0 auto;width:1px;height:18px;background:#4b5563;margin:0 5px}
+.resnav .rn-end{margin-left:auto}
+@media (max-width:640px){.resnav{font-size:12px;height:40px}body::before{height:40px}}
+</style>
+<nav class="resnav" id="resnav"><span class="rn-brand">行测 2027</span>
+<a href="国考笔试总排期表.html">总排期表</a>
+<a href="2027国考行测学习计划.html" class="on">行测总纲</a>
+<span class="rn-sep"></span>
+<a href="资料分析_9天冲刺计划.html">资料分析</a>
+<a href="判断推理_13天冲刺计划.html">判断推理</a>
+<a href="言语理解_9天冲刺计划.html">言语理解</a>
+<a href="国考笔试总排期表.html#math">数量关系</a>
+<a href="国考笔试总排期表.html#roll">常识政治</a>
+<a href="申论_学习计划.html">申论</a>
+<span class="rn-sep rn-end"></span>
+<a href="题库总览.html">题库总览</a>
+</nav>
+
+<div class="wrap" data-page-node-id="8OktZXgSAkmfaIjCOWUdGm">
+
+<!-- ================= 侧边栏 ================= -->
+<aside data-page-node-id="ZeBjzc79DQ7qW6EEBWtPzX">
+  <div class="logo" data-page-node-id="HrySLrYGPB9dOKqcP0Raik">行测学习计划 <span data-page-node-id="laODEqABRbHMlBGwjO0cl5">2027国考</span></div>
+  <div class="logo-sub" data-page-node-id="zevCLPjgrRPKROY1AzTCZ2">备考周期 · 约 11 周（不绑定日历，从开始那天数起）</div>
+
+  <div class="nav-group" data-page-node-id="vJwCw9WujmRCWtqAkuOz4n">总览</div>
+  <nav class="nav" data-page-node-id="vbsTPWJO9BHXdQZoIAk1YD">
+    <a href="#overview" data-page-node-id="Z2Pr3tVAVqJlWclGfciezB"><span class="dot" style="background:#2f6feb" data-page-node-id="1nNyMYT0OG953mBB6TqXnq"></span>考情总览</a>
+    <a href="#roadmap" data-page-node-id="piwx2FdYYaGwM8RlNoKiex"><span class="dot" style="background:#2f6feb" data-page-node-id="usZlw1eQhpeKE4GoIrK5VB"></span>三阶段路线图</a>
+    <a href="#calendar" data-page-node-id="VDtDhEYzNRr9XMpd7ScW7B"><span class="dot" style="background:#2f6feb" data-page-node-id="CWq8AIsZeJ7xDQEq58skTt"></span>11周备考周历</a>
+  </nav>
+
+  <div class="nav-group" data-page-node-id="DG0RjCv3Mr9e58CynqlJi8">母题逐个分解</div>
+  <nav class="nav" data-page-node-id="gKsE1bVYyQQuGVlotaAYAm">
+    <a href="#m-politics" data-page-node-id="jTo2s0CV3NEmyCImD9Asxa"><span class="dot" style="background:#c0392b" data-page-node-id="VTTL9pxB8CIZpK4P1lREaI"></span>政治理论<span class="nav-badge" data-page-node-id="cJ8nhN6uQ8qjbhOEQ9tHZG">20题</span></a>
+    <a href="#m-common" data-page-node-id="CBJLrICpe6fZVqDgDDQ8YD"><span class="dot" style="background:#8e44ad" data-page-node-id="Bq835TdYjtbxGzBBWN3lvH"></span>常识判断<span class="nav-badge" data-page-node-id="qjbrjexsMCSl1DoenqYhT6">15题</span></a>
+    <a href="#m-verbal" data-page-node-id="0N6BM7AtMOWo14VLOF9c10"><span class="dot" style="background:#2980b9" data-page-node-id="NbjaHGnqilmp7Eh6RR8UmG"></span>言语理解<span class="nav-badge" data-page-node-id="7SQraBkd3EOyr2tUimA6Xq">30题</span></a>
+    <a href="#m-math" data-page-node-id="rScWYsz3ZxEN8dpWMpslZ9"><span class="dot" style="background:#16a085" data-page-node-id="xJ2ixfSSSc9yGdy075aLjW"></span>数量关系<span class="nav-badge" data-page-node-id="uUWMG14IF1OO2mtPvaP7rE">10/15题</span></a>
+    <a href="#m-logic" data-page-node-id="uavVmbzvrBjnxdP6jrCAWZ"><span class="dot" style="background:#d35400" data-page-node-id="qBlLUNp2v4iLxtJA8c4htp"></span>判断推理<span class="nav-badge" data-page-node-id="G2OwpZfTdBPCZsgGbBy97O">35题</span></a>
+    <a href="#m-data" data-page-node-id="7nMFOAN8QzthMFFGRnGuKy"><span class="dot" style="background:#27ae60" data-page-node-id="DfECGQBgcF7JPs9I6vEB8e"></span>资料分析<span class="nav-badge" data-page-node-id="eUl8zxO6P2L5RCLACpWsPA">20题</span></a>
+  </nav>
+
+  <div class="nav-group" data-page-node-id="0BoNLnOqHpxEkc2sTiXM9e">策略</div>
+  <nav class="nav" data-page-node-id="eEnjHzSo0h27ebjNycoKyv">
+    <a href="#strategy" data-page-node-id="CN4ytC2KKiGX2zk5hVn6Ws"><span class="dot" style="background:#2f6feb" data-page-node-id="utJx4lDKo1Ck9xtMXBOXbE"></span>提分策略·时间分配</a>
+    <a href="#resources" data-page-node-id="eOOjRmfUDAXPZz7a6zkDq2"><span class="dot" style="background:#2f6feb" data-page-node-id="Zb9pdq8VYNt7QaVY62PaxU"></span>资料与工具</a>
+  </nav>
+
+  <div class="tp-card" data-page-node-id="e9BRxVuralK41FfRDuZvXb">
+    <h5 data-page-node-id="BKmlaUZNFjopezkmzqAPY4"><span data-page-node-id="fdIUS4D1w5JXhQHo7GmSan">母题掌握进度</span><span id="tp-pct" data-page-node-id="X2wSFysdEySjShP4mzDX1G">0%</span></h5>
+    <div class="tp-bar" data-page-node-id="WLcPE68g3LPsOjoYMsi3ME"><div class="tp-fill" id="tp-fill" data-page-node-id="sDztpTaiv34gDcHdeSC2Y6"></div></div>
+    <div class="tp-num" id="tp-num" data-page-node-id="FUTzihsTZxQM2gAIFMTZIf">0 / 0 个母题已攻克</div>
+  </div>
+</aside>
+
+<!-- ================= 主内容 ================= -->
+<main data-page-node-id="Ene203cKK3u6NpxFvdtBOn">
+
+<!-- Hero -->
+<div class="hero" data-page-node-id="ncstSQ4QiZOw92FEtxF7FY">
+  <h1 data-page-node-id="6Mqf5yRxVfnv3sC3BbaDDW">2027 国家公务员考试 · 行测学习计划</h1>
+  <p data-page-node-id="1I373SxsWDnlny4sSUPc54">覆盖考纲解读 · 六大模块题型 · 50 个核心母题逐个拆解 · 11 周分阶段执行方案</p>
+  <div class="hero-meta" data-page-node-id="TYVCx34jiZg6ueMfqwjGaz">
+    <span class="hero-chip" data-page-node-id="dQScYdO73OYRMWX8NIMUFe">📅 笔试：2026.11.29（周日）上午 9:00–11:00</span>
+    <span class="hero-chip" data-page-node-id="vMroXlVft4yRMEoCCCr0SV">⏳ 备考周期约 79 天 / 11 周</span>
+    <span class="hero-chip" data-page-node-id="5z6iC2AOHsLhf1THxH9yC9">📝 行测 120 分钟 · 满分 100 分</span>
+    <span class="hero-chip" data-page-node-id="DER1QZoj2f0mCkzC9M9CKj">🎯 130–135 题</span>
+    <a class="hero-chip" href="国考笔试总排期表.html" style="text-decoration:none;color:#fff;font-weight:600">🧭 打开总排期表（主攻 + 保温双轨）</a>
+  </div>
+</div>
+
+<!-- ============ 1. 考情总览 ============ -->
+<section id="overview" data-page-node-id="RunLDqgN8I1uENNwJvuqP4">
+  <div class="sec-head" data-page-node-id="oMKcbkSLdpxkDF4Nhc5KuP"><span class="idx" data-page-node-id="ZoJYDkvt0CwWHRcKIrDLY5">01</span><h2 data-page-node-id="RAwSazlLW7CTArhv9MR7EF">考试大纲 · 考试科目类型</h2></div>
+  <p class="sec-desc" data-page-node-id="Hsp3v31qlZqD7LLsxp5O2a">2027 国考公告预计 <b data-page-node-id="IsRVbK4TpXvRhUJZrceHd5">2026 年 10 月 14 日</b>发布（与笔试大纲同步），报名 10 月 15–24 日，公共科目笔试预计 <b data-page-node-id="7ZUKAsRCsDhRDBIY6oY0Kl">11 月 28–29 日</b>。以下依据近三年稳定考情梳理，最终以官方大纲为准。</p>
+
+  <div class="card" data-page-node-id="sGjcZfxC21ROaZSrOjIrek">
+    <h3 data-page-node-id="331rKY3FaLQjcrP80Pnnic">考试科目与时间安排</h3>
+    <table data-page-node-id="QvzjjzJH4AH4nS1Kms8jJ1">
+      <thead data-page-node-id="TdM97LyLYioMT1Bb0eEVny"><tr data-page-node-id="2K8ivyIzVp45E9cDdwHXfW"><th data-page-node-id="kX8iP1wMQlUWixaCoGXGps">科目</th><th data-page-node-id="4T8xk3SfFMleQP9Fz1z5Dv">时间</th><th data-page-node-id="SPXAmxAwXjGEF0z9w2F674">形式</th><th data-page-node-id="kpOfqXqroEeGDlypgGOPrk">说明</th></tr></thead>
+      <tbody data-page-node-id="thcWDdJ6tBcvbTCrv1MXiT">
+        <tr data-page-node-id="YJ7wx8haBWehmu9wnEWgYS"><td data-page-node-id="ro124r98W2vnbFBsZCcrOB"><b data-page-node-id="ByLAl6I4eILjkhCOD43Ibi">行政职业能力测验（行测）</b></td><td data-page-node-id="9dEfoHMBphqgDcBbyRFImv">上午 9:00–11:00（120 分钟）</td><td data-page-node-id="y2TXdhdPZqmPzb8aDXjotn">客观题 · 单选</td><td data-page-node-id="1wpSfgceAleEBIWRDU048e">满分 100 分，本计划核心</td></tr>
+        <tr data-page-node-id="CX3BOzWDNuyV3DDEwd2ney"><td data-page-node-id="iP6obJE3f5XRr8jXHlkI3n"><b data-page-node-id="hAFUNaW3RPv1SrLvLgX70o">申论</b></td><td data-page-node-id="HUcaDxHKHylrkUQbPBkEpH">下午 14:00–17:00（180 分钟）</td><td data-page-node-id="9eHpw7reAy4SepUGVJ6u8P">主观题</td><td data-page-node-id="eyTHzvsnPdrwb2XnnK109Y">5 题，小题 70 分 + 大作文 30 分</td></tr>
+        <tr data-page-node-id="XPZPM1TyedpjWM2xuXQGxf"><td data-page-node-id="kbWQ2shNUJhBRgmvAnDeTF">专业科目</td><td data-page-node-id="GHywlkZiRK5qcs3QACYEn0">11 月 28 日下午</td><td data-page-node-id="OlmmVUwFoCT4Xa4isWCtHs">视岗位而定</td><td data-page-node-id="FvkGKhxTuwcuenn9GzngLs">公安、银保监、证监会、外交部等加试</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="card" data-page-node-id="GLutzXyFubipZ5f6ZepVop">
+    <h3 data-page-node-id="JMwF5nVBFUwIT71sNXyob8">三类试卷差异（选岗决定考哪张卷）</h3>
+    <table data-page-node-id="DViD1zMSIjzDDWFxUnrkmU">
+      <thead data-page-node-id="l02rCESqqjQDT6AYT5WuuF"><tr data-page-node-id="w0RhstXcoYiUKlaQEGapNh"><th data-page-node-id="86tHdSDwcL20cI6dJuiJE8">对比项</th><th data-page-node-id="C64g8cZrZiOtIIS7dvyd8R">副省级</th><th data-page-node-id="pPL7CNi0StcuBoj3TO4Sql">地市级</th><th data-page-node-id="a6iMKONTwiCGEA21rB1SRP">行政执法类</th></tr></thead>
+      <tbody data-page-node-id="QePS5cZUPe7uVGLYW2zYEX">
+        <tr data-page-node-id="UhMLI5NNMKc5tXxfAUvHuR"><td data-page-node-id="XBcvCOxYIOnmV0SoR9zlcG"><b data-page-node-id="QugbdQ68VEUCV5CyYSt2w2">面向岗位</b></td><td data-page-node-id="AdvOdhGfgPA7E8D55CbOy3">中央机关及省级直属综合管理类</td><td data-page-node-id="XH3rYnk6wlchQyQiOjR8jd">市（地）级及以下综合管理类</td><td data-page-node-id="ad6x0zepuyahxpuQw1L8Vw">税务、海关、铁路公安、海事等</td></tr>
+        <tr data-page-node-id="gBTNf81TJmbvaT6t4IQM3w"><td data-page-node-id="Y7U6NVaIa6Qi6UnzkJjJLB"><b data-page-node-id="j88G9Ne9q7idr8lQKt3DqY">行测总题量</b></td><td class="num" data-page-node-id="er2vnnYVOopFBdzF0cDw3H">135 题</td><td class="num" data-page-node-id="BDOpNjb0ZRTjQBpcYnM7Qo">130 题</td><td class="num" data-page-node-id="pnXJIAT3NTpRJhCbeK4n8i">130 题</td></tr>
+        <tr data-page-node-id="NLhpA1E0W9WOiUjbyY3ADs"><td data-page-node-id="BpmnA8CJD8bG08lAfJKYAE"><b data-page-node-id="AC8dpj84OWQMtxdDC8y8kT">核心差异</b></td><td data-page-node-id="pwI0TuA0AAFVoGX7HTGOoS">数量关系多 5 题（15 题）</td><td data-page-node-id="kjk3BMehTI75EABRH4IFMh">数量关系 10 题</td><td data-page-node-id="JAwoJcGG1f0WUeXMGLXyYP">数量关系 10 题，常识偏法律</td></tr>
+        <tr data-page-node-id="wZ87i9GQPNUqKX4CmxxmL3"><td data-page-node-id="Q18bBkQsCfYl7vl7KCEzWe">招录规模</td><td data-page-node-id="aJVGUJbHC7u0JLA4G88Qp2">少</td><td data-page-node-id="nz3B78GTheAtkEXEByfT60">中</td><td data-page-node-id="fLk906758D84oG0sXj2K9o">最多（约占 78%）</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="card" data-page-node-id="mDYAjjntQCPydMPXDTKTol">
+    <h3 data-page-node-id="nb7vJZNatuBv6sn2oP4nt6">行测六大模块 · 题量与分值分布</h3>
+    <p style="font-size:13px;color:var(--ink-3);margin-bottom:8px" data-page-node-id="pySFYXZfVbmsX83lkDM7PC">⚠️ 自 <b data-page-node-id="879NOnwR0G1IVwZyAxRT5U">2025 年起，"政治理论"从常识判断中独立</b>，成为第六大模块——这是最近最重要的考纲变化。</p>
+    <table data-page-node-id="gRALW0Fk9RIvGLlfdnpBEr">
+      <thead data-page-node-id="z9rn7nGDBys1bw1qoCn59X"><tr data-page-node-id="wTvb84ObbVptuvJPdErcyg"><th data-page-node-id="olLL5SNAC5D8DrlsHuyvWU">模块</th><th data-page-node-id="bDXBNX2natlFtpFasCN5nL">副省级</th><th data-page-node-id="FUEr90hiHmTVei3v1iAuTE">地市/执法</th><th data-page-node-id="UoEHTcRVqWTpbGrGIjxzDS">单题分值(约)</th><th data-page-node-id="rqEjwUghW2GGEZ91BbBCJb">总分值(约)</th><th data-page-node-id="4LCwIAenHNOgMTEYsF9hh8">性价比</th></tr></thead>
+      <tbody data-page-node-id="OJouJa1zWCTN74DF213EL6">
+        <tr data-page-node-id="z1T07ohmmhg0IEirshlAfO"><td data-page-node-id="MQngcrwzllH2vRCqP3ERiY">政治理论</td><td class="num" data-page-node-id="CzLTyf4BpcnRWQAvMG4bZF">20</td><td class="num" data-page-node-id="fGDCVKPPsVw8XKI03Ic6fa">20</td><td data-page-node-id="e3PX32ZDbRdcoGPnjD4ZH0">≈0.5</td><td class="num" data-page-node-id="GH4n5iKZ4Wrhy7FGX6QOsQ">10</td><td data-page-node-id="FRex0rKhja5DuhAuuzJuI9"><span class="pill p-md" data-page-node-id="zi1CywqCYry7qkdukGr9sm">中</span></td></tr>
+        <tr data-page-node-id="pCy9TdUMs1u7RZYr1WY5Ml"><td data-page-node-id="T1p5gQKOfr0jc40UEuvgYY">常识判断</td><td class="num" data-page-node-id="JiuRLG4T1PFpTIzovPPcxz">15</td><td class="num" data-page-node-id="cAxA76KnO0eBWafOk6Zbao">15</td><td data-page-node-id="ORkOev6WspXydHZdNesjTq">≈0.5</td><td class="num" data-page-node-id="8uHMhmeWAvvYlo3baednaD">7.5</td><td data-page-node-id="FngyjhbzRUlYrGXMd1pp9Q"><span class="pill p-lo" data-page-node-id="aw1IQXJgufEArngzphjLTS">低</span></td></tr>
+        <tr data-page-node-id="jICfH2EePSy5lEhkhc6uYq"><td data-page-node-id="PNQueoD8QIkwKuBeZKNcUR">言语理解与表达</td><td class="num" data-page-node-id="AbEWU9psXK8W2SJz0TFBWT">30</td><td class="num" data-page-node-id="y1J0x7uzam1EVPvrrvKrJ6">30</td><td data-page-node-id="WtYAVNhONqvRItDFLVONXC">≈0.8</td><td class="num" data-page-node-id="bkCpVG1HTVGF3QvSq8Xj60">24</td><td data-page-node-id="DdEvmyUJEZ328GKYNJhYua"><span class="pill p-hi" data-page-node-id="88mvXWiYMEi76edWBDWwDv">高</span></td></tr>
+        <tr data-page-node-id="p1rgH2gpPFSuVE5RQjJhvp"><td data-page-node-id="cZExStqJA8fCfa9Tz21CAO">数量关系</td><td class="num" data-page-node-id="F1tEK1VmnvpP6WhS6I5qEx">15</td><td class="num" data-page-node-id="7Ft5jQ3GHGyAL96DrX92VD">10</td><td data-page-node-id="RqUMWQ2wmeTKcommgZwIiR">≈0.8–1</td><td class="num" data-page-node-id="6fxfljsLtHzEJ2yCgGEoms">10–12</td><td data-page-node-id="bB0aRpROnBh1cdluocVWWB"><span class="pill p-lo" data-page-node-id="BQaDKA0NhakPpAxXxNvyDE">低</span></td></tr>
+        <tr data-page-node-id="THQgOs2ZDrWYG7vLJynflH"><td data-page-node-id="KdAmI0oLUGNTNHAfbVd7lu">判断推理</td><td class="num" data-page-node-id="DwMtsj60skMTB9Yx9q38sl">35</td><td class="num" data-page-node-id="CQVlpVVPD0ArtETuiQtZWl">35</td><td data-page-node-id="scGVNLaWWuEHcJr7OIJkGA">≈0.6–0.8</td><td class="num" data-page-node-id="S7KD5DBdOWHBOMSXZd3Ry9">26–28</td><td data-page-node-id="qo07yor44Ubrhla6uwogTm"><span class="pill p-hi" data-page-node-id="pTmKy4maMtmAwH1rAucp5q">高</span></td></tr>
+        <tr data-page-node-id="z490xYgHNJ66qMA4DQc8jh"><td data-page-node-id="pj2zbcd3uzlrS5DdB84pQr">资料分析</td><td class="num" data-page-node-id="v0xBYm13rfMmEfoAPAKzul">20</td><td class="num" data-page-node-id="syulMikPSGGYpRCkDpmboz">20</td><td data-page-node-id="upTGappjE7jXSOSVgQ4EDh">≈1</td><td class="num" data-page-node-id="bNcqHtj1Xi1Bj2uNGYd6SH">20</td><td data-page-node-id="5SuJ0uay0bm0dpLeaSKfEB"><span class="pill p-hi" data-page-node-id="NuviGGiQS2PFmfntGVCJOc">最高</span></td></tr>
+        <tr class="tot" data-page-node-id="JOyvcZmCcCQDiSsqkeNwDB"><td data-page-node-id="L1SbGbte3Y85SDdZoDhulW">合计</td><td class="num" data-page-node-id="idhIEmYBExppAdN59GhqgA">135</td><td class="num" data-page-node-id="I3XhrPEXjFAWrGzp8hXIUr">130</td><td data-page-node-id="Hx13rbXt6WRbIDngBtqao9">—</td><td class="num" data-page-node-id="vsb9BdJQqdbIosVrel93ie">100</td><td data-page-node-id="cciFDOx4CkS9OxLuFLHGy3">—</td></tr>
+      </tbody>
+    </table>
+    <div class="tip" data-page-node-id="G0c48ErqQbwKbpAwUoQa3n"><b data-page-node-id="pZrgU4CmEXMo3ifF1DGiRv">命题趋势提醒：</b>① 政治理论从"考记忆"转向"考政策落地与迁移"；② 常识判断科技类占比上升（2026 年约 40%），跨学科融合明显；③ 数量关系难度下降、题干变短，"放弃数量"已不再划算；④ 言语、判断、资料三块合计约 70 分，是绝对主战场。</div>
+  </div>
+</section>
+
+<!-- ============ 2. 路线图 ============ -->
+<section id="roadmap" data-page-node-id="GZbRvV0el7WwZnIhRiLU4P">
+  <div class="sec-head" data-page-node-id="DT8bc6Nk2aekXhh4fZTDJt"><span class="idx" data-page-node-id="yF3aBm0Q9fUIegIFiyr0nN">02</span><h2 data-page-node-id="nnI7dYq2AGNGEMSqMIHaXU">三阶段备考路线图（11 周）</h2></div>
+  <p class="sec-desc" data-page-node-id="dUFXQTXVJ4lxITdXYD9LME">以笔试日为终点倒推。核心逻辑：<b data-page-node-id="9ES0obm9o7G38GepUv6C4W">先建体系 → 再练专项 → 最后成套路</b>。资料分析、判断推理、言语理解三条主线全程贯穿。</p>
+
+  <div class="tl" data-page-node-id="bAloXAcMWs2ebSADwcRwh1">
+    <div class="tl-item" data-page-node-id="qpW0unm5Sr4HExfLN4EQiy">
+      <div class="tl-dot" data-page-node-id="CM5M9OgtdupMO1L25i4eyx"></div>
+      <div class="tl-card" data-page-node-id="sPhqMZFMbKsBCNXn7bHa0g">
+        <h4 data-page-node-id="j5B1HcdDed5xYE2N0X2skA">第一阶段 · 基础夯实</h4>
+        <div class="tl-when" data-page-node-id="LymAHgoTkBzudQ0JDa3olS">第 1 – 38 天　（38 天）· 资料 9 天 → 判断 13 天 → 言语 9 天 → 数量 7 天</div>
+        <ul data-page-node-id="DN9w7miT5n1XueHRoeebNO">
+          <li data-page-node-id="fEEBUltj5kpSwVCCRVwcFA">按"<b>主攻 + 保温</b>"双轨推进：每次只主攻一个模块，其余已学模块每天各留 1 组题保温</li>
+          <li data-page-node-id="4eO6D5UDFu1PvHbv9j14u9">逐个吃透本页 <b data-page-node-id="MDNFNE8R1TUjLsLudQOabE">53 个母题</b>的识别特征与解题方法</li>
+          <li data-page-node-id="vxuGtiXewYUYfJidcQLSmW">政治理论与常识<b>不设冲刺周</b>，改为全程每日 30 分钟滚动积累</li>
+          <li data-page-node-id="lrxsL7SvfPCs1RuWT6ZCnI">建立错题本：按"模块 + 母题 + 错因"三级分类</li>
+        </ul>
+        <div class="tl-goal" data-page-node-id="rLrCoFYKTC1BRUnnBxc2ER">达标标准：能对着题目说出"这是哪个母题、用什么方法"，正确率 ≥ 70%</div>
+      </div>
+    </div>
+    <div class="tl-item" data-page-node-id="ABiAUH4fizbFYIAm16j3Yl">
+      <div class="tl-dot" data-page-node-id="kypbo6WI3AtDDOVWx4FKad"></div>
+      <div class="tl-card" data-page-node-id="phGDjlK6SmEQpjACV4HMCu">
+        <h4 data-page-node-id="nrlpZjezDKois3xFnyEhoo">第二阶段 · 专项强化</h4>
+        <div class="tl-when" data-page-node-id="EGLt8MCPUx4mekwRzROO6W">第 39 – 58 天　（20 天）</div>
+        <ul data-page-node-id="6FmhBwiCEIFguUEQhjlLMF">
+          <li data-page-node-id="FU3LPtiPlsxhbHoeZ9fDY3">分模块限时刷题，主攻"提速 + 提正确率"</li>
+          <li data-page-node-id="pPFDfdauHpWNaXqGI4q52s">言语/判断/资料每天各 1–2 组（每组 15–20 题）限时训练</li>
+          <li data-page-node-id="H9nlYXhBNwUi5leNbrIPd2">数量关系专攻高频母题（工程、行程、利润、排列组合）</li>
+          <li data-page-node-id="kuw0KhVDR9SwuWb5lasDY4">每周复盘错题本，消灭重复犯错</li>
+        </ul>
+        <div class="tl-goal" data-page-node-id="iOyqcqF5LQQtFrsWJ07C7T">达标标准：资料分析 ≥ 90%、判断推理 ≥ 85%、言语 ≥ 80%，整套正确率 ≥ 80%</div>
+      </div>
+    </div>
+    <div class="tl-item" data-page-node-id="k8XorkkLw3nQAeuSSBPtmO">
+      <div class="tl-dot" data-page-node-id="gdJiQSW3j5pzg7zBFZXAmD"></div>
+      <div class="tl-card" data-page-node-id="duDOQHcdQKqlo83KcQkAk0">
+        <h4 data-page-node-id="XaJiM6tCB3qAWSlMwpg2xy">第三阶段 · 冲刺模考</h4>
+        <div class="tl-when" data-page-node-id="frjbG3NkKlqSthLiJpkbkg">第 59 – 79 天　（21 天）</div>
+        <ul data-page-node-id="wkIUobGkIIRGCfQhNb8Hme">
+          <li data-page-node-id="3PXyuAJ7zuz2JV9sAxmpGt">每周 3–4 套完整真题/模拟卷，严格按 120 分钟计时</li>
+          <li data-page-node-id="mlTfED3AMLBwn4EdvpF5cm">固定做题顺序与各模块时间配额，形成肌肉记忆</li>
+          <li data-page-node-id="eA5cIo00DEuHH2lGgYW4iY">只回看错题本与母题清单，不再学新知识</li>
+          <li data-page-node-id="kCu3CdR5HUyh2SxczDUG7R">考前一周调作息，上午 9:00–11:00 做套卷保持状态</li>
+        </ul>
+        <div class="tl-goal" data-page-node-id="Aa5N1V8ywmHZuugKzY5rex">达标标准：整套稳定 70 分以上，做题节奏不崩，预留 5 分钟涂卡</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 3. 母题分解 ============ -->
+<section id="mother" data-page-node-id="OgoybSopsseKVSb903Lj1K">
+  <div class="sec-head" data-page-node-id="xrxpg89nisiOjleoR4JqXr"><span class="idx" data-page-node-id="LIp7zXzp9GcfQtrisbuunP">03</span><h2 data-page-node-id="nNzFNwWyc1WSuAyWqAzXWM">六大模块 · 53 个母题逐个分解</h2></div>
+  <p class="sec-desc" data-page-node-id="EqLpFHArWU5J6z65X9Jkyv">每个母题给出：<b data-page-node-id="s0Jj8DL4HDbzUYTDr3JJ3H">识别特征 → 核心方法/公式 → 解题路径 → 易错陷阱</b>。勾选右侧"掌握"可自动保存进度（本地记录），逐步攻克。</p>
+
+  <!-- ---------- 政治理论 ---------- -->
+  <div class="mod-head politics" id="m-politics" data-page-node-id="WNZEndFu1TxImo7jAHNLiO">
+    <span class="mi" data-page-node-id="7UWLVLCSGvTdNZ1HWSHBvM">01</span>
+    <div data-page-node-id="fTlKiEDx8SzM2It6gSz7QX"><h3 data-page-node-id="1cANr94uKGD8vQNqNOUQj1">政治理论</h3><div class="sub" data-page-node-id="pbodzQtCIuT04zAyPwtgY7">20 题 · 约 10 分 · 2025 年新增独立模块</div></div>
+    <div class="mp" data-page-node-id="tjSdY9polEFgGFhP8HBCLr"><b id="pg-politics" data-page-node-id="FudpJwnNVO6GyDDkDMuoxA">0/6</b>掌握进度</div>
+  </div>
+
+  <div class="mt" data-module="politics" data-page-node-id="7MuWRgSCSPUxyPp7aj1Ajc">
+    <div class="mt-head" data-page-node-id="TMov25BfzvL5BP8ADXr6fM">
+      <label class="mt-check" data-page-node-id="skDFRPsM4KiIrOcYoRUwKe"><input type="checkbox" data-id="p1" data-page-node-id="1SWTWMbNQ1RTEnc9XqMne0"><span data-page-node-id="8IKJon9G3qPUvGSY24QYxz">掌握</span></label>
+      <span class="mt-no" data-page-node-id="L1zOmqU6YEyJhGN0jKHjIO">母题 01</span><h4 data-page-node-id="vlQJrgZ63Y9NWQ0ZjrVykY">马克思主义基本原理</h4>
+    </div>
+    <div class="mt-body" data-page-node-id="lW2zRYHHHSriiL9oDVUVhM">
+      <div class="row" data-page-node-id="SpC4tBxJhjnaBIb5iOHr9W"><b data-page-node-id="zhiKGMVhDy3no71nWn3Oxd">识别特征</b><p data-page-node-id="odn9JKRBpK8QzZ9BlfbxK9">给一段论述、名言或生活现象，问"体现了什么哲学原理"。</p></div>
+      <div class="row" data-page-node-id="5YciNUEGpolJyJxlorPCwD"><b data-page-node-id="bz0RRhDB0tH2waq23jD4tv">核心方法</b><p data-page-node-id="mSdEV2KiA5gm7HQWzE4c2s"><span class="hl" data-page-node-id="s8e2E0EBEhOR3ATg9rTxZ7">四大板块</span>：唯物论（物质与意识）、辩证法（两大特征 + 三大规律）、认识论（实践与认识）、唯物史观（社会存在与社会意识、生产力与生产关系）。<br data-page-node-id="NphllFuCDvJsLhC0hI9njE">三大规律：<span class="fml" data-page-node-id="mgGSRPJ2F7L2oLG9onv8d4">对立统一</span><span class="fml" data-page-node-id="bmplA8gOxCC9DQCrTjQedL">质量互变</span><span class="fml" data-page-node-id="OGjRnFZ4vx8TwuI4YASELc">否定之否定</span></p></div>
+      <div class="row" data-page-node-id="FXxHCQuFdhVyegoiKdyYEl"><b data-page-node-id="albsHvHO4XZwGNscqZJzBp">解题路径</b><ol class="steps" data-page-node-id="qMDM99SN9jiraxcv27Q2h7"><li data-page-node-id="OxAwieUf4BJ2e6nHDqT6uA">抓材料关键词（"矛盾""转化""量变"…）</li><li data-page-node-id="IIIfkSrf2s6XgXaUQ3hbQ5">对应到具体原理</li><li data-page-node-id="kx1rSLeARU1pKOYZcQ1epu">排除表述错误 / 张冠李戴的选项</li></ol></div>
+      <div class="row trap" data-page-node-id="dzk50eQn3GrHxivEmp7tri"><b data-page-node-id="OPoWg6fIsCr3mHUCMvzrRA">易错陷阱</b><p data-page-node-id="QNJ7ja2uOMuICzW9nGZDJI">把"主要矛盾"与"矛盾的主要方面"混淆；把"普遍性"与"特殊性"互换；绝对化表述（"决定一切"）多为错误项。</p></div>
+    </div>
+  </div>
+
+  <div class="mt" data-module="politics" data-page-node-id="6EJGgH8MUFwEhzApjrjI5U">
+    <div class="mt-head" data-page-node-id="juBO2WkEAMtzY0e6FHGlhp">
+      <label class="mt-check" data-page-node-id="WrY1iuN8gddjxO2Dxb8Eqk"><input type="checkbox" data-id="p2" data-page-node-id="TF3h8VinsYUV2pKtcc3uZp"><span data-page-node-id="a8ZoF9Aff8dwpA6uRjLUYc">掌握</span></label>
+      <span class="mt-no" data-page-node-id="WZhARFioUEjU2o6mcfNFgG">母题 02</span><h4 data-page-node-id="9mzsoYUY9snK2i9XGGeNtP">毛泽东思想</h4>
+    </div>
+    <div class="mt-body" data-page-node-id="xDvo5ooEuHASHHNtqB82ko">
+      <div class="row" data-page-node-id="EkUcJWpSvFpiAlA3o9pX6G"><b data-page-node-id="0kYwaA8PYHvGXxKX9Vgkcn">识别特征</b><p data-page-node-id="HXQ3OKcvJNFJuGIziPcsbL">涉及革命年代、革命道路、党的建设的历史论述。</p></div>
+      <div class="row" data-page-node-id="x00J27IGBFOMvF7RsT3kqH"><b data-page-node-id="2gcEbHZuBtWMWrb3ApPwqm">核心方法</b><p data-page-node-id="T10qOEtA6PnnlIGE4NtCCE">四大理论：<span class="hl" data-page-node-id="VhM6Dfd5lurq00TSDazonF">新民主主义革命理论</span>（总路线、三大法宝：统一战线/武装斗争/党的建设）、社会主义改造理论、社会主义建设道路初步探索、活的灵魂（实事求是、群众路线、独立自主）。</p></div>
+      <div class="row" data-page-node-id="3swva8PfrTsKk91GzbFOGB"><b data-page-node-id="XWYM13XuEjBmWWJhT7o79D">解题路径</b><ol class="steps" data-page-node-id="BRieagtpCYMJbKN0DSU0vs"><li data-page-node-id="sBkbrLUEzNrUL5uyPvAPUV">看时代背景锁定历史阶段</li><li data-page-node-id="1uCC0hdOP6NFLA9uKbvLCD">匹配对应理论成果</li><li data-page-node-id="DV8fEVmzjhr7H1vbVl4L0n">关注"首次提出""标志"类细节</li></ol></div>
+      <div class="row trap" data-page-node-id="HXEQxE5Xxh1SE68Hg8FDBu"><b data-page-node-id="K6dHiQH16bvX83N6wCbbaP">易错陷阱</b><p data-page-node-id="IKK6LXB6xv0iW2Nd7iNMGX">"农村包围城市"与"城市中心论"的历史顺序；《新民主主义论》与《论联合政府》的著作对应关系。</p></div>
+    </div>
+  </div>
+
+  <div class="mt" data-module="politics" data-page-node-id="AphK4HHxhWwsvPdNyiqerB">
+    <div class="mt-head" data-page-node-id="AbyuBpzOMeCVd4vydAZsyr">
+      <label class="mt-check" data-page-node-id="YsgJ5hRpC5s2i3S97vb9lM"><input type="checkbox" data-id="p3" data-page-node-id="M0FfG6zYPkcd12acCNpfEd"><span data-page-node-id="l58q8k0vyicjJ3i7RNjIHJ">掌握</span></label>
+      <span class="mt-no" data-page-node-id="TunQdBlCBIv38ETpZwsCZh">母题 03</span><h4 data-page-node-id="ZP2wCNhYECv0zOjcJ0mm25">中国特色社会主义理论体系</h4>
+    </div>
+    <div class="mt-body" data-page-node-id="L4F2zg5wOGZuq4fqJRitFK">
+      <div class="row" data-page-node-id="TjKGdISfnErbiFlyAtjqMc"><b data-page-node-id="vCmSOf1WKnaqpmtkzpOzBN">识别特征</b><p data-page-node-id="IiUKw2uKYmPbMG8wgms5wG">涉及改革开放、社会主义本质、"三个代表"、科学发展观的论述。</p></div>
+      <div class="row" data-page-node-id="frRUltcSBpd7tk6rOTFgGJ"><b data-page-node-id="MSNmlXbTcNIcPhZmRR4BXn">核心方法</b><p data-page-node-id="T6zMESAcTdNBGCoRCIANaK">邓小平理论（<span class="hl" data-page-node-id="bzBZwIbLqlen11B4DfcUKQ">社会主义本质</span>：解放和发展生产力；"三个有利于"）、三个代表重要思想、科学发展观（以人为本、全面协调可持续）。</p></div>
+      <div class="row" data-page-node-id="RMyBB9JBCc6rKuGHOnZKDJ"><b data-page-node-id="HFQFHMrgRSc9lqwcHLyWC7">解题路径</b><ol class="steps" data-page-node-id="MUE6YxETQvCrPkFNsV13dv"><li data-page-node-id="knrYX1X3ygm1Sy5RL9gxpV">按"什么时候提出、解决什么问题"对应</li><li data-page-node-id="FEveFRpYx9i6LauCJOyJ0z">注意各理论的"核心/主题/精髓"关键词</li></ol></div>
+      <div class="row trap" data-page-node-id="d8aAdOZQP8HpC1UTaLRErO"><b data-page-node-id="atlmqT9eyuq5ZcZMnQsNvJ">易错陷阱</b><p data-page-node-id="jbB1gQfPsfhcVXYDJpBb1a">各理论的核心命题互串；"社会主义本质" ≠ "社会主义的根本任务"。</p></div>
+    </div>
+  </div>
+
+  <div class="mt" data-module="politics" data-page-node-id="FsIaa2MYbrmnpCLdMToncI">
+    <div class="mt-head" data-page-node-id="cbJDXhOyOmSIzCnbzUDGzj">
+      <label class="mt-check" data-page-node-id="EhHBSn2pm3u1CRJTGQ0OnE"><input type="checkbox" data-id="p4" data-page-node-id="m8o4WXPFbTPzjAirI5dukK"><span data-page-node-id="32dYVkCemK34A47UfCiTz0">掌握</span></label>
+      <span class="mt-no" data-page-node-id="BAqwmfAp6clCi0JCLkk7ip">母题 04</span><h4 data-page-node-id="0FqkFr6FiQYkKXGAaDSZaD">习近平新时代中国特色社会主义思想 <span class="pill p-hi" data-page-node-id="op8XY2rzO6HjmwsuInsVh9">最高频</span></h4>
+    </div>
+    <div class="mt-body" data-page-node-id="W1bdKnqjyUxfuwpEA2xjTT">
+      <div class="row" data-page-node-id="Jhoy4QTLFgJj9Ftn7G0EVA"><b data-page-node-id="BR2C8csawzF3irzvfUVlLq">识别特征</b><p data-page-node-id="HIuEiCAeVamBkbDf8L19pl">占比最大，涉及时政表述、发展战略、重要论述判断题。</p></div>
+      <div class="row" data-page-node-id="ivbI4D3supaa4VmDv1T44h"><b data-page-node-id="Z6ahpK1oC7tg55jzPpL2wa">核心方法</b><p data-page-node-id="ccta1miT093AKB3bpsjPdM">背框架：<span class="hl" data-page-node-id="BhVF4pXW3B0UmZu67SWsMJ">"十个明确""十四个坚持""十三个方面成就"</span>；重点考点：中国式现代化（五个特征）、新发展理念（创新协调绿色开放共享）、高质量发展、新质生产力、全过程人民民主、第二个百年奋斗目标与"两步走"战略。</p></div>
+      <div class="row" data-page-node-id="eFXvi5zEUXzmI1AD3Su8Nh"><b data-page-node-id="ttuKskiCMBCH4yxHijdHC8">解题路径</b><ol class="steps" data-page-node-id="HGoqwLvAQiFSllnJ0rOV6R"><li data-page-node-id="cYL83osyoluNoqIlEPQaaf">先判断选项表述是否与官方口径一致</li><li data-page-node-id="xsd5yhxhHIyBDYFuhzZK0d">抓住"根本""首要""中心"等限定词</li><li data-page-node-id="GK131imsuO8fc9wUk3H7VH">排除扩大或缩小外延的表述</li></ol></div>
+      <div class="row trap" data-page-node-id="IivS2si6kXdtj5KrboyxBg"><b data-page-node-id="5e6lWNioHD7byGKb543X7C">易错陷阱</b><p data-page-node-id="De0ZTE5MAAriJAlcbvclq8">"新质生产力"内涵（科技创新起主导作用、以高科技高效能高质量为特征）；"中国式现代化"与"西方式现代化"的对比要点。</p></div>
+    </div>
+  </div>
+
+  <div class="mt" data-module="politics" data-page-node-id="gkkN1zR9HHeKd2dnp6HMkQ">
+    <div class="mt-head" data-page-node-id="gJ7yuas7jcYUyzJadaWhFz">
+      <label class="mt-check" data-page-node-id="04YbtipltnA3hv93I1yo9N"><input type="checkbox" data-id="p5" data-page-node-id="9ofnjrkaNCXOGN4EbvJC2K"><span data-page-node-id="TJUuyTFEiBJlYd8Q6S9XAR">掌握</span></label>
+      <span class="mt-no" data-page-node-id="pVqJqOJ1JPcEeGoeMZCUCc">母题 05</span><h4 data-page-node-id="4fIiUZJAyBkN2vHhInbFJo">党史党建</h4>
+    </div>
+    <div class="mt-body" data-page-node-id="24g4Pxd8lFBi9ZbdqBsN3n">
+      <div class="row" data-page-node-id="4nHCKJCRX3c7fIADxwIYYj"><b data-page-node-id="ipi3DubESxpq7EMUsWKUSM">识别特征</b><p data-page-node-id="M3bp2kWe8CDuQ91EFT4qoG">考查重要会议、历史事件、党的自身建设论述。</p></div>
+      <div class="row" data-page-node-id="oZUoIE3fU48FYIWp15zXKw"><b data-page-node-id="tIsKLs43F9FbIRdOOc4UFb">核心方法</b><p data-page-node-id="KB3VoayeevsvjBCYaDsLOE">时间轴记忆法：一大→遵义会议→七大→十一届三中全会→十八大以来。<br data-page-node-id="9j0veyFTYaRXITNYPSRaHb">党建主线：全面从严治党、<span class="hl" data-page-node-id="0BDPadBcmLqDcN7Yhmxzsi">党的自我革命</span>（跳出治乱兴衰历史周期率的"第二个答案"）。</p></div>
+      <div class="row" data-page-node-id="MGofsCUp1Ls8jYDPoawqgc"><b data-page-node-id="i5sLGkCpBf15w2grGzGMr4">解题路径</b><ol class="steps" data-page-node-id="fwsCmhqFVHMhLXeV3FCX33"><li data-page-node-id="PpJiImnR06eAGyu9c2iCIM">会议 + 时间 + 核心贡献"三位一体"记</li><li data-page-node-id="MwJHtwUYCYB0CHFBElCvnU">用排除法排除时间错位项</li></ol></div>
+      <div class="row trap" data-page-node-id="aECngFwQIg70zllDe0IobC"><b data-page-node-id="KsD0CsmI95NRsA7O5edFi6">易错陷阱</b><p data-page-node-id="EXGkqapsCJzM6b32PK6NKL">遵义会议（生死攸关的转折点）与八七会议（确立土地革命和武装斗争方针）；"三个历史决议"的对应会议。</p></div>
+    </div>
+  </div>
+
+  <div class="mt" data-module="politics" data-page-node-id="TMtnCXwuHDFcY9IR6BD4sB">
+    <div class="mt-head" data-page-node-id="Uv6dxLaBNAuOT0FGxMDPpF">
+      <label class="mt-check" data-page-node-id="UByuZ3iP5fF84p1ZxHo0Eu"><input type="checkbox" data-id="p6" data-page-node-id="l9r32VVCOYG4W06vHErMij"><span data-page-node-id="RwtAjH17qY3zmVd78jMK8i">掌握</span></label>
+      <span class="mt-no" data-page-node-id="P3zn42JqPNTotAuwN8aJZL">母题 06</span><h4 data-page-node-id="vLo4s307KeuyUlBeGCoITc">时政热点（近一年）</h4>
+    </div>
+    <div class="mt-body" data-page-node-id="OIUDGsPZGONLIMSlb4hrfz">
+      <div class="row" data-page-node-id="O6V2BwD6e01ntKei3ZqOVr"><b data-page-node-id="L7lK51fmXBsF79xKKkugqH">识别特征</b><p data-page-node-id="ekeH7FGXCFlWzqrcdx5mY0">考考前 12 个月内的重大会议、政策、纪念活动、领导人讲话。</p></div>
+      <div class="row" data-page-node-id="WXjTIE39kHDRDaPiRFmmun"><b data-page-node-id="voHvOafkucwYFzO3NaL0YF">核心方法</b><p data-page-node-id="SnKfAjFVzGPhormz8mdlkH">清单化积累：<span class="hl" data-page-node-id="K4jIy2qFNYe0VJD7bE9uyi">二十届三中全会精神（进一步全面深化改革）</span>、中央经济工作会议、政府工作报告、新质生产力、重大科技与外交成就、重要纪念日（如抗战胜利、建党建军周年）。</p></div>
+      <div class="row" data-page-node-id="8dOPo5QvDF6OBm7fNEAocs"><b data-page-node-id="r9N8V9RfGwYqP3v6Pqz49m">解题路径</b><ol class="steps" data-page-node-id="rqfS8IBFYWaPVYidwUtjTb"><li data-page-node-id="47AL2CHcsC8HPWUa1FiWjD">建立"月度时政清单"，每月滚动更新</li><li data-page-node-id="IsPXmQRz7k86zRCFtis914">重点记"首次""唯一""之最"类考点</li></ol></div>
+      <div class="row trap" data-page-node-id="SWaA94h9xNDREaHxaiFsC5"><b data-page-node-id="FQGz5SscyCrNmI6usI9tpN">易错陷阱</b><p data-page-node-id="Ef8jX98zRR4VY6EHyqjlvq">政策提法更新快，务必用当年度最新表述，不要用旧口径。</p></div>
+    </div>
+  </div>
+
+  <!-- ---------- 常识判断 ---------- -->
+  <div class="mod-head common" id="m-common" data-page-node-id="ZUhMpNVGhTqxjRHs62A6Wi">
+    <span class="mi" data-page-node-id="2wgMC3e0p7lHwAafTnZBGP">02</span>
+    <div data-page-node-id="d9S68ExUkcd5jLMAOph8hb"><h3 data-page-node-id="xR9VpJ5V4Vv1n3LkNCuOFP">常识判断</h3><div class="sub" data-page-node-id="ouxZZxXEEezC1N65ix1BOG">15 题 · 约 7.5 分 · 行政执法类偏重法律</div></div>
+    <div class="mp" data-page-node-id="B7UA1PjA5EoH7olT6nUcg9"><b id="pg-common" data-page-node-id="8NtUgBwRx3guEYbEWORUh8">0/6</b>掌握进度</div>
+  </div>
+
+  <div class="mt" data-module="common" data-page-node-id="OmRqO4fFOYt6EhNFFbUmfY">
+    <div class="mt-head" data-page-node-id="1ptb7ZMOMMXwFGGciDcErb">
+      <label class="mt-check" data-page-node-id="Zo7uJ0CBNEHdqomYdeNr18"><input type="checkbox" data-id="c1" data-page-node-id="BtWQ9Fj2kNaXnaRHckP4Xm"><span data-page-node-id="amXRCFXRMDn7ACL3NvOeIE">掌握</span></label>
+      <span class="mt-no" data-page-node-id="NYrQFAjpSC4qTAt1TuOJQV">母题 01</span><h4 data-page-node-id="VjPrUuTcVsmSXHL6x84is9">法律常识 <span class="pill p-hi" data-page-node-id="FxgTt23bGeuDaKjAu883HN">执法类重点</span></h4>
+    </div>
+    <div class="mt-body" data-page-node-id="6iy27FLBFuSwqjU0DnIlRx">
+      <div class="row" data-page-node-id="D3QHrcTJDG8vJ41wnYkmWW"><b data-page-node-id="GfUmH6a0qqCokkqBHFlA1V">识别特征</b><p data-page-node-id="8al9TVt0AgBZUdDatWckGg">给出法律情境或法条，问定性、效力、权利归属。</p></div>
+      <div class="row" data-page-node-id="0IuGm1vb5Q2iEXA1FJrvBE"><b data-page-node-id="9MWH2ZUGNkWPOcJWQB0DmK">核心方法</b><p data-page-node-id="PEnk11B2I1M664Jaf5MURY">五大板块：<span class="hl" data-page-node-id="LU5ZJKMbVCyTBHoGCOI41Y">宪法</span>（国家机构、公民基本权利）、<span class="hl" data-page-node-id="tlXiT984uTXH26keTmBqH9">民法典</span>（物权、合同、人格权、婚姻继承、侵权责任）、<span class="hl" data-page-node-id="eLn1ZuMTAtzr8kGGzrdFoz">刑法</span>（犯罪构成、正当防卫、常见罪名）、<span class="hl" data-page-node-id="fBLk8pmHTz9uo8xgoTIaKS">行政法</span>（行政处罚/许可/强制、行政复议诉讼）、当年度新修订法律。</p></div>
+      <div class="row" data-page-node-id="GSMDlD3q9Cjszwnq4RXmID"><b data-page-node-id="NDohlmdaye5JZUNQ1BuPyu">解题路径</b><ol class="steps" data-page-node-id="VL2qtHNNjwiUlt9LDavXDH"><li data-page-node-id="ciVhumPyao8kVdG1iibhPr">先判法律部门</li><li data-page-node-id="dMeKmfHBSsZXPiAXYFSBgh">回忆该部门的核心规则</li><li data-page-node-id="PxttDd1gquQRmZ30xDEMzS">用生活常识 + 法理排除明显不合理项</li></ol></div>
+      <div class="row trap" data-page-node-id="6HVJEUJ30f6EHfXbwwMefZ"><b data-page-node-id="DUCID6CRdWDr6CMx8KeAgG">易错陷阱</b><p data-page-node-id="jGBhTuKv5mRctlWjhRTspV">行政复议与行政诉讼的选择顺序；正当防卫与防卫过当、紧急避险的边界；民法典中"居住权""遗产管理人"等新增制度。</p></div>
+    </div>
+  </div>
+
+  <div class="mt" data-module="common" data-page-node-id="XJkPqn4qjSnE4EJJaMxZM8">
+    <div class="mt-head" data-page-node-id="zSlDx4nC2mNn0hqb37qSMR">
+      <label class="mt-check" data-page-node-id="EnTRuYfft8eQVI7PY8krBO"><input type="checkbox" data-id="c2" data-page-node-id="9Ipbh5UpB5VHroPVpN9RSt"><span data-page-node-id="qX8h1VEozGomxGEmbRADHs">掌握</span></label>
+      <span class="mt-no" data-page-node-id="n535x2KKF4b3ONjQ2bSaeR">母题 02</span><h4 data-page-node-id="sMgjN33B8C09KUa5Do9KMN">经济常识</h4>
+    </div>
+    <div class="mt-body" data-page-node-id="2QhpdJ30h4OBuNuvwx17JP">
+      <div class="row" data-page-node-id="j6xuSGFCPKf6kQFr7MoD1Z"><b data-page-node-id="N87zZClWCnCF8tnjSCM6KO">识别特征</b><p data-page-node-id="DDhAzAVQLGTJ71pxVxQXOy">宏观经济指标、货币与财政政策、经济现象解释。</p></div>
+      <div class="row" data-page-node-id="g0ia7r2eCLg1APSquPtl81"><b data-page-node-id="iZlyZ7OtmoBqLCZDGwFovf">核心方法</b><p data-page-node-id="xTwTJ7mwIK3oBIPTMQ9GBJ">核心指标：<span class="fml" data-page-node-id="6reaS7KInN6VKFN0lgY0LP">GDP</span><span class="fml" data-page-node-id="E2x362FnDxEvsGuq6FuPBC">CPI</span><span class="fml" data-page-node-id="xmuWSlkVlg2X0CryZyOQWx">PPI</span><span class="fml" data-page-node-id="NQptRLgl9EzdASkSbAGKtS">PMI</span><span class="fml" data-page-node-id="1Ok2PTiEC4EJ7DRankkxhu">失业率</span>；货币政策工具：存款准备金率、公开市场操作、<span class="hl" data-page-node-id="zHhA9Gqcq6ttErqd5xq3eC">LPR（贷款市场报价利率）</span>、再贴现；财政政策：税收、国债、转移支付。</p></div>
+      <div class="row" data-page-node-id="WznNKfXRK6TEaXeUCbgSr8"><b data-page-node-id="9pIyR4NGueiW7CAa5aVx3v">解题路径</b><ol class="steps" data-page-node-id="VblwCfYYrt7rEHwZEKBdsG"><li data-page-node-id="SbSwNu02B7yMXWTsERiE39">判断是"宽松"还是"紧缩"</li><li data-page-node-id="1eWrvruBV4NGxFO3LSsv2t">判断手段属于货币还是财政</li><li data-page-node-id="xmZg9WBPlOafviNyNnBCeR">推导对经济的影响方向</li></ol></div>
+      <div class="row trap" data-page-node-id="g7NwKP03JpGwSbCVcrs8UQ"><b data-page-node-id="3fXJzffDcOo4g4PY03IMa4">易错陷阱</b><p data-page-node-id="WU7KcBZfdx1GYHTjO2Knmi">利率与债券价格的<b data-page-node-id="goHADH12wH8hPL4dFMsFHZ">反向</b>关系；CPI 上涨 ≠ 通胀一定恶化；"降准"属货币政策而非财政政策。</p></div>
+    </div>
+  </div>
+
+  <div class="mt" data-module="common" data-page-node-id="15TzpQvCBQEQzBBQiTbhC0">
+    <div class="mt-head" data-page-node-id="Un22lBzADygazHkHIPM5n9">
+      <label class="mt-check" data-page-node-id="6HVik0pWmPWKgxiJ7nMfPx"><input type="checkbox" data-id="c3" data-page-node-id="BAmlvJCEdcx4RzpySybuqN"><span data-page-node-id="IXYE9nQA86XVi5DA5wofiL">掌握</span></label>
+      <span class="mt-no" data-page-node-id="vsUCdmPojMNLg2uNbSHtnJ">母题 03</span><h4 data-page-node-id="I7daY33QQV7FO75MbMRaaY">科技常识 <span class="pill p-md" data-page-node-id="IrN3QUEePp3IGC2hdl5oe0">占比上升</span></h4>
+    </div>
+    <div class="mt-body" data-page-node-id="ddzGu4qRKWItM3m6bC2sxA">
+      <div class="row" data-page-node-id="NrRGZacEWYiQZ0uujKy9dA"><b data-page-node-id="lSXqa9XYwI97s6n3IXFrdp">识别特征</b><p data-page-node-id="xBlguERowi9U3BoPeec2or">前沿科技成就 + 生活科技原理，近两年占比可达 40%。</p></div>
+      <div class="row" data-page-node-id="gZv8WF4nayb8R0eSmj86bH"><b data-page-node-id="dSZDr8IpHSALCEB3UmmGmB">核心方法</b><p data-page-node-id="oE5x6Pt1PKrGLfNYFISuRw">前沿：<span class="hl" data-page-node-id="ZcBwCKACeMHoIZty9nd2D2">航天（空间站、探月探火）</span>、人工智能、量子科技、5G/6G、新能源（锂电/光伏/核聚变）、生物医药。<br data-page-node-id="xWbKBEfmfgmYpqfS0BuzBd">生活：物理（光电力热）、化学（酸碱、氧化）、生物（遗传、免疫、营养）。</p></div>
+      <div class="row" data-page-node-id="3lZ9Ref7GKjdwlIvmW9CAB"><b data-page-node-id="pjy20Xjm6vGGzC9Z5W07ar">解题路径</b><ol class="steps" data-page-node-id="bnKxyD9GRYuwve7Ad7Z8tJ"><li data-page-node-id="3Zoq3ccfN25cRBgJbOQ7gA">前沿科技按"成果名 + 时间 + 突破点"记</li><li data-page-node-id="wuDzHFVDTPgflO7l2ukA1L">生活科技回归初高中基础原理</li></ol></div>
+      <div class="row trap" data-page-node-id="zq6wkouQdwCiwqLPXYaQGt"><b data-page-node-id="7ua6Y74rWt3sJvQpG3FJO7">易错陷阱</b><p data-page-node-id="d5s1RV3BXiZQUbPJizkrpY">把"量子计算"与"量子通信"混淆；混淆"天问"（行星探测）与"嫦娥"（探月）系列。</p></div>
+    </div>
+  </div>
+
+  <div class="mt" data-module="common" data-page-node-id="qZBh0kceNe6PeZC9DpI8qv">
+    <div class="mt-head" data-page-node-id="ORHtRQMqbnuIL1M2jcGizi">
+      <label class="mt-check" data-page-node-id="RlyV5qoP0L08KeI5tSAxr6"><input type="checkbox" data-id="c4" data-page-node-id="HYDnagthbuF8lMxrJC8Ew9"><span data-page-node-id="udBoMURi2AMc8VEtXFbUOV">掌握</span></label>
+      <span class="mt-no" data-page-node-id="bub8DpJ1EEzk1oGEOwwlC8">母题 04</span><h4 data-page-node-id="24PWpQmgithIEjUteUYjRr">人文历史</h4>
+    </div>
+    <div class="mt-body" data-page-node-id="yo5jB4FCQioygVpilSQhuf">
+      <div class="row" data-page-node-id="HbdnLdIYwgRAtMgPmv8hQ5"><b data-page-node-id="udr7y4PhGs4NFf3SRpofLx">识别特征</b><p data-page-node-id="fPtYWaTeSVaZC8fB0qDz0x">古代史、近现代史、文史常识、传统文化。</p></div>
+      <div class="row" data-page-node-id="v9RmWJCdpfeB6CtUyHAV5T"><b data-page-node-id="g7EfWDEgAZDiapSGY8PeOs">核心方法</b><p data-page-node-id="Mapn94oRuZTqIh3t5IykVz">三线记忆：<span class="hl" data-page-node-id="38GUViVesd4SJajyZKmVJj">时间线</span>（朝代更替、重大事件）、<span class="hl" data-page-node-id="ylBCy2HfV6E0Z1EVjT7jY9">文学线</span>（作家—朝代—代表作—名句）、<span class="hl" data-page-node-id="pe5EXAZm95hrJNP9NEFMHr">文化线</span>（传统节日、称谓、书画、四大发明）。</p></div>
+      <div class="row" data-page-node-id="WfuQtD4mKNEQBBx2BzStHK"><b data-page-node-id="hBJwm0EUKlAyzpigdK1nBm">解题路径</b><ol class="steps" data-page-node-id="WmEHl2O3SHmk5kjNBJ9w1E"><li data-page-node-id="E661jj7LDewVaFKlixAfoJ">先定位朝代/年代</li><li data-page-node-id="njw7hU4wxzBztF9VhLNbaZ">对应人物与作品</li><li data-page-node-id="kbxpxPERDKRTzHsPH7sQNn">排除"张冠李戴"项</li></ol></div>
+      <div class="row trap" data-page-node-id="RY6OkmN6PBK0y3GgDvnFde"><b data-page-node-id="jWRJgw6frMl07WorBknQx4">易错陷阱</b><p data-page-node-id="SM2FRu5lkXThDexmmyBu8T">作品与作者错配；"唐宋八大家"vs"初唐四杰"；年龄称谓（而立/不惑/知天命）顺序。</p></div>
+    </div>
+  </div>
+
+  <div class="mt" data-module="common" data-page-node-id="P9l3P06iimJbroLJLeAmmm">
+    <div class="mt-head" data-page-node-id="GcgBACIruDenoBdVAPg5Kq">
+      <label class="mt-check" data-page-node-id="K71OIQBAVw4HQ8tTqVQr4F"><input type="checkbox" data-id="c5" data-page-node-id="kKUGlGy3rMCIZYiOpN0vv9"><span data-page-node-id="L57URtdFAwqaNNNCNfQmLZ">掌握</span></label>
+      <span class="mt-no" data-page-node-id="wGQ27jyAC7TezpEeD6Yi4a">母题 05</span><h4 data-page-node-id="9sSlWxODukPMFaf1vJ9Nsk">地理国情</h4>
+    </div>
+    <div class="mt-body" data-page-node-id="I4SQ6ZR0j5ua9Eg468jdJ9">
+      <div class="row" data-page-node-id="YO4iVZKN0N54GkxRhrekmc"><b data-page-node-id="W4hZaJTfj3SjQzlBH1XybC">识别特征</b><p data-page-node-id="OYNKuKggprInXHd7WZlS8w">自然地理现象、中国地理、天文常识。</p></div>
+      <div class="row" data-page-node-id="JA7DNi0WLFCAGzPzSSh7x5"><b data-page-node-id="gY9mn3n3v9N852h6KrEOe5">核心方法</b><p data-page-node-id="xj4SysAHCctYXZjFJefnSo">中国地理：地形三级阶梯、主要山脉河流、气候类型；天文：二十四节气、昼夜成因、月相。<br data-page-node-id="VCWQbNWcPrJJzZvVLmSLqB"><span class="hl" data-page-node-id="HQK6qk6iebziL8x0HJbphR">重要提醒</span>：涉及中国地图、疆域的表述，必须以官方标准地图为准。</p></div>
+      <div class="row" data-page-node-id="lzYjXkVmCQ5s0B8hFFkaim"><b data-page-node-id="BlkWKbfFwcVo5VfPauzmyu">解题路径</b><ol class="steps" data-page-node-id="JnPRmMRGGacT5dmMK1Htw1"><li data-page-node-id="SUCaUPcob5Dmy73Jx8WsP6">判断考查维度（自然/人文/天文）</li><li data-page-node-id="R0KqwNzLb7UpQsV7ADFbC1">调用对应基础知识</li></ol></div>
+      <div class="row trap" data-page-node-id="Bh1qQwnmhHZEnweplJRsys"><b data-page-node-id="Xl7s133pHNTzbgsBcaLcYk">易错陷阱</b><p data-page-node-id="u76QQRfJK1VGczBqqiJwuN">节气与农事/季节对应；内外流区分界线；记住我国领土表述须与国家官方口径一致。</p></div>
+    </div>
+  </div>
+
+  <div class="mt" data-module="common" data-page-node-id="e6TKjoZ4MrelznX3oH5us6">
+    <div class="mt-head" data-page-node-id="Q6RCdE1WRQgHFO7RoHYN1O">
+      <label class="mt-check" data-page-node-id="GUL76jZq2QoBDWxu7ERNTU"><input type="checkbox" data-id="c6" data-page-node-id="t9jEaMWDUBK3XDFeicRFdH"><span data-page-node-id="sJPZ09BPDwTU96wTnT8uWM">掌握</span></label>
+      <span class="mt-no" data-page-node-id="yLrpaz57n93o1sBfVVqRC5">母题 06</span><h4 data-page-node-id="gQRRVE60sA9iDYPbnGKnk3">管理与公文</h4>
+    </div>
+    <div class="mt-body" data-page-node-id="AFWu2Ktwk5sNaarreF2kjF">
+      <div class="row" data-page-node-id="gjNcrEfhBZcHCQ2h2mju8l"><b data-page-node-id="iSZ4rcCvUmSxRTSO0nCvrb">识别特征</b><p data-page-node-id="dEPNXJc9gqOvcc2XtH4CBT">行政管理原理、公文种类与格式、政府职能。</p></div>
+      <div class="row" data-page-node-id="wyeVqHeKN26ZTqaLlxGRJ5"><b data-page-node-id="9VOoix4nRaVCVnHrDe7lgK">核心方法</b><p data-page-node-id="Pb5kGBr3LCocZOKlZEPTVC">公文 15 种法定文种（决议、决定、命令、公报、公告、通告、意见、通知、通报、报告、请示、批复、议案、函、纪要）及其适用情形。</p></div>
+      <div class="row" data-page-node-id="nVdq9xnWJQp73292bpQqL9"><b data-page-node-id="TjyBl7BO3ohb048SGrvG9W">解题路径</b><ol class="steps" data-page-node-id="VQUFc7FUQCbndIkEgKAR7h"><li data-page-node-id="YJe6KM7JsuNPcY5eaQp7Y0">看行文方向（上行/下行/平行）</li><li data-page-node-id="8upHekkbb5LWrjfVQTcCFz">匹配对应文种</li></ol></div>
+      <div class="row trap" data-page-node-id="u1rnORLI8k75BtpFdEBdLp"><b data-page-node-id="k42aVla1UZDXit7quYgtel">易错陷阱</b><p data-page-node-id="aZj7qkGkZ2Kh93hFJ63iJD">"请示"与"报告"混用（请示需回复、报告不需）；"公告"与"通告"适用范围。</p></div>
+    </div>
+  </div>
+
+  <!-- ---------- 言语理解 ---------- -->
+  <div class="mod-head verbal" id="m-verbal" data-page-node-id="koc2bzduK88010EP2iRcV8">
+    <span class="mi" data-page-node-id="Aobwaw0bGfwEWaBNiDSONA">03</span>
+    <div data-page-node-id="uZ13oYTgqtFZ5Gf5FFz152"><h3 data-page-node-id="vxb7aQif2tGbXkwwtEOPeu">言语理解与表达</h3><div class="sub" data-page-node-id="RC8nwu1wf6xqtLGgW5VA7k">30 题 · 约 24 分 · 高分主战场</div></div>
+    <div class="mp" data-page-node-id="ecGvvtQZiBs4Cudo5Qmdmw"><b id="pg-verbal" data-page-node-id="hhPULwDUQAZoFcubgdwqdj">0/11</b>掌握进度</div>
+  </div>
+
+  <div class="mt" data-module="verbal" data-page-node-id="TZMQAEcd9G3lXV4Si2ySnx">
+    <div class="mt-head" data-page-node-id="yCJ8XODEPLhpRJ2l9xN5ht">
+      <label class="mt-check" data-page-node-id="89RGgJwyEMcwzeR998DQDA"><input type="checkbox" data-id="v1" data-page-node-id="jrgDPTcCEnO1I290ABX287"><span data-page-node-id="TFvpxSxMterodnnbJxXJLg">掌握</span></label>
+      <span class="mt-no" data-page-node-id="c9cSIApQY67B4h00UhFhei">母题 01</span><h4 data-page-node-id="i1qYVMFBYWuWZk9Yt4KB4p">逻辑填空 · 语境分析</h4>
+    </div>
+    <div class="mt-body" data-page-node-id="UXaXzM2CYNaZ6FFEacDwlL">
+      <div class="row" data-page-node-id="QRgKqmzMcOhbufPv1ry2bt"><b data-page-node-id="4RWN4ylX67XpQJJfZRuY46">识别特征</b><p data-page-node-id="odYRsmCUA9VuJRsf9zhiOi">题干有空格，选项为近义词语，考查"选哪个词最合适"。</p></div>
+      <div class="row" data-page-node-id="040H0nHASEPU1T0uqYAV6H"><b data-page-node-id="LCG0AycRRyoJlddAgJl8Z8">核心方法</b><p data-page-node-id="UwudoQiCe3qZPFrKi0f6Dc">先语境、后词语。找<span class="hl" data-page-node-id="EThO96PWow55MmVEJmfdsa">呼应点</span>：解释对应（后文解释前文）、并列对应（句式一致）、反义对应（转折词提示）。</p></div>
+      <div class="row" data-page-node-id="2qsUjlh73fIAhaNy6UimpL"><b data-page-node-id="FFjeaeEyy42CeARkDFQd1O">解题路径</b><ol class="steps" data-page-node-id="iyx4H9SNzadRARdwoq56SK"><li data-page-node-id="dYH8RujdwRt4NSHKIho5rp">读题干找提示信息/关联词</li><li data-page-node-id="hQ0QmRWOAirVMDBH6CK1MA">判断空格处应填词的意思方向</li><li data-page-node-id="KOJbbH4btl0XUo50lICXxA">回到选项做词语辨析</li></ol></div>
+      <div class="row trap" data-page-node-id="6SjBWLo40NfEaLB5LteGXu"><b data-page-node-id="RfszYYXaKf2ObHZXqOnCKi">易错陷阱</b><p data-page-node-id="IQdgd27bAT3GANiZG6uMTG">只看词义不看语境；忽略"甚至""反而"等隐含递进/转折的提示词。</p></div>
+    </div>
+  </div>
+
+  <div class="mt" data-module="verbal" data-page-node-id="esUbwptMKXc850f6GHKU7j">
+    <div class="mt-head" data-page-node-id="RXAm5bxtRkS0cNEPbf1EYc">
+      <label class="mt-check" data-page-node-id="Uol95TJPhBGYa3jGCOf7P5"><input type="checkbox" data-id="v2" data-page-node-id="8EvMdKZA7t3E2J8F6SeUzS"><span data-page-node-id="UZxtvEiXpZvXCLaYaqWAHW">掌握</span></label>
+      <span class="mt-no" data-page-node-id="THjPoV3DM0BsDdwfDVFR95">母题 02</span><h4 data-page-node-id="57X6cgNJ7QyFDC04kOnXBe">逻辑填空 · 词语辨析</h4>
+    </div>
+    <div class="mt-body" data-page-node-id="EPRlgWCSz90wRbSAI57Fru">
+      <div class="row" data-page-node-id="Vs3fSm9AMDTwrRmkFl9bR1"><b data-page-node-id="iEkRwWb1PEONl7UyiuPY0K">识别特征</b><p data-page-node-id="Uo5favNB4tnAhy0nWutUoi">两个以上选项词义相近，需精细区分。</p></div>
+      <div class="row" data-page-node-id="NTHdtmPDf5rbYtN5l4K9bA"><b data-page-node-id="nKkHdVi3h1MqqUBBUFJWXl">核心方法</b><p data-page-node-id="L7wA0KbDrqrOEJr1dkwZkd">四维辨析：<span class="hl" data-page-node-id="avE33A0aEnp88tkNCniCkO">含义侧重</span>（"边疆/边境"）、<span class="hl" data-page-node-id="sE7Z5Oh7Ykampe8u3jGa8M">感情色彩</span>（褒/贬/中性）、<span class="hl" data-page-node-id="Vg9LDmELfffTFzGrpAWrN8">搭配范围</span>（固定搭配）、<span class="hl" data-page-node-id="1HxAdZaiVaMSQd04sUDcZ1">语体色彩</span>（书面/口语）。</p></div>
+      <div class="row" data-page-node-id="EEcdklwPT5L8pwnlhxodA0"><b data-page-node-id="8BHOt0IzlaFIB3K5TK9nA1">解题路径</b><ol class="steps" data-page-node-id="xos0HdAch2CerIOD5B3tjw"><li data-page-node-id="JNcwDtbuK4LeEHgAeY9We0">先定语境方向</li><li data-page-node-id="2TDXnM18j6av0ZCnFJDjeg">用四个维度逐一排除</li><li data-page-node-id="EkVncJqwSVdhaEYiCAG7qO">剩余选项中选"最贴切"而非"意思对"</li></ol></div>
+      <div class="row trap" data-page-node-id="G5AgRvR6OcY9zCwEbdrJBP"><b data-page-node-id="eLxBA5LOtA4U0f27JcW95y">易错陷阱</b><p data-page-node-id="nABw4yxc4MGuI1CojyEcnr">成语"望文生义"（如"万人空巷""差强人意"）；只辨词义不辨搭配。</p></div>
+    </div>
+  </div>
+
+  <div class="mt" data-module="verbal" data-page-node-id="JvTWfBBF5BqU3FqXLgtw1U">
+    <div class="mt-head" data-page-node-id="vESUVBxl1qRUSQzRGsd04r">
+      <label class="mt-check" data-page-node-id="RFjwn7HCgN68mLOPf8lnpH"><input type="checkbox" data-id="v3" data-page-node-id="eODSO2NFzj1S61OFNyHvAz"><span data-page-node-id="zxWZhXpWs36viXePvlzgDx">掌握</span></label>
+      <span class="mt-no" data-page-node-id="MgSxgvKFJqNcjdHENw2gak">母题 03</span><h4 data-page-node-id="rIBueGgnpGhBC0yghXojhr">片段阅读 · 主旨概括</h4>
+    </div>
+    <div class="mt-body" data-page-node-id="nOSHEmiSXmE4y4LCrpU1sU">
+      <div class="row" data-page-node-id="vXRd178Y9vAWNbenx9cAiV"><b data-page-node-id="JEczycGScnHxQoobZR64Oe">识别特征</b><p data-page-node-id="2YlSeUEbrmPOfStSb0uiBU">"这段文字主要说明/旨在强调……"</p></div>
+      <div class="row" data-page-node-id="K2loGC8fVjevNwCGnEBXRF"><b data-page-node-id="na9o3kAmvWFL0tukGZOzfh">核心方法</b><p data-page-node-id="70D9wvaQFvrIepZieCHijv">抓<span class="hl" data-page-node-id="cIZCAAq2LUOw0rNghe4tff">行文脉络</span>（总—分、分—总、总—分—总）和<span class="hl" data-page-node-id="rEQaEODhxTC5faFOG0MTbR">关联词</span>（转折后是重点、因果"因此"后是结论、递进"更"后是重心）。</p></div>
+      <div class="row" data-page-node-id="4Byc6n4RERPHOvqeEwPhCF"><b data-page-node-id="GIZQKpDHsd42bH63lfVZFB">解题路径</b><ol class="steps" data-page-node-id="mHcp5LRq0i0HId5k1Sn4z7"><li data-page-node-id="IpfsA1XzP0N7wlBeuLYb9I">找主题词（高频出现）</li><li data-page-node-id="tWVRb9x8yc9fGKYZcxA12F">判断行文结构定重点句</li><li data-page-node-id="StwFkvCTpnFfl7qOWDwyIz">选涵盖全面的选项</li></ol></div>
+      <div class="row trap" data-page-node-id="jD3QEv9WZSgeeVuwLNCnSD"><b data-page-node-id="thEi3FKGWXIaIVSFvZmYUY">易错陷阱</b><p data-page-node-id="k9xDSkIszYbzZqVJb9pB7r">选"片面"的分述内容；选"过度引申"超出文意；主题词范围被偷换。</p></div>
+    </div>
+  </div>
+
+  <div class="mt" data-module="verbal" data-page-node-id="HeQtdLKVup0rzlPCLOu7DW">
+    <div class="mt-head" data-page-node-id="62zNjmHVC6XgkL8CmMpJIy">
+      <label class="mt-check" data-page-node-id="GUyeAEao2w8SXPxDpm3XhQ"><input type="checkbox" data-id="v4" data-page-node-id="BvZVb3BpMLEaSjCjsScuQC"><span data-page-node-id="wvxWsOsrz4qauV3ri4987B">掌握</span></label>
+      <span class="mt-no" data-page-node-id="5h8SPRbE3gEYklEEzIfvVz">母题 04</span><h4 data-page-node-id="54Q4H3hD6c23ilqPG9mdyc">片段阅读 · 意图判断</h4>
+    </div>
+    <div class="mt-body" data-page-node-id="YY0qC6vFUGnCEl6gzXIKak">
+      <div class="row" data-page-node-id="2xOaP79XFBe5jZ9IfXt6Im"><b data-page-node-id="6MDRpJWb7CHG1xSlxqPOAi">识别特征</b><p data-page-node-id="jk83yWH9aCS6PQIFXPajyG">"作者意在说明/想表达……"，常含呼吁、对策意图。</p></div>
+      <div class="row" data-page-node-id="q7P8mIfLSVocrpbcGuHu8t"><b data-page-node-id="n7OyryZ0TVLzSxM9escOMn">核心方法</b><p data-page-node-id="Nv5EExFmddVsxA3h7Y0j8w">先概括主旨，再看是否"言外之意"。<span class="hl" data-page-node-id="1mBq6VrELEgI7lxwfcoLnF">问题 → 对策</span>是高频套路：提出问题往往意在呼吁解决。</p></div>
+      <div class="row" data-page-node-id="wLKV8cm6lwYz1PQhlrU6py"><b data-page-node-id="BrqQsLqYKbLc1JT2vflT7V">解题路径</b><ol class="steps" data-page-node-id="tTAakqCX6J2CYq2bDxWfib"><li data-page-node-id="DhhaRkfdKkRSmWG9ChQbpn">概括文段主旨</li><li data-page-node-id="OgVwk8xCnG8MlAkASTmnID">判断是否需引申（呼吁/对策）</li><li data-page-node-id="F1HF65DiPmrvZFVJT0oZb2">优选"合理引申"，慎选"拔高"</li></ol></div>
+      <div class="row trap" data-page-node-id="resVur1SUI1b1qyLDIbkEE"><b data-page-node-id="7vpp7CG2kLsqISr2PQJtdf">易错陷阱</b><p data-page-node-id="EqH5FEFi4nK5bgfJU0kp7q">把"意图题"当"主旨题"只选现象；引申过度（选了文中未提的对策）。</p></div>
+    </div>
+  </div>
+
+  <div class="mt" data-module="verbal" data-page-node-id="u9OAUBrBeIRE4CDJUInTel">
+    <div class="mt-head" data-page-node-id="sgBBN5KrhXZjM2uWimbHxN">
+      <label class="mt-check" data-page-node-id="ZkJ30zMlWsWt9f54fxzlmN"><input type="checkbox" data-id="v5" data-page-node-id="CK8NBrr1WDOiu23bIpQ2JP"><span data-page-node-id="IvjIL2xDx1pXgFw1SYeTre">掌握</span></label>
+      <span class="mt-no" data-page-node-id="ra4BjYlxABmXVwvvAbfnBA">母题 05</span><h4 data-page-node-id="OlEovJ5J0cFmo8NPoM9S2i">片段阅读 · 细节理解</h4>
+    </div>
+    <div class="mt-body" data-page-node-id="mAwRbdXEVFWxIOTw44wmAg">
+      <div class="row" data-page-node-id="N56jrSs3I53ieYz0mQn3xJ"><b data-page-node-id="LvrYugF8SO3u9rJxZRDMjX">识别特征</b><p data-page-node-id="k7QULEkSwvef0lEv7pasAR">"下列说法（不）正确/符合文意的是……"</p></div>
+      <div class="row" data-page-node-id="VWZ4ERI3r9dy1qYZmaFLdG"><b data-page-node-id="lNZkCHWHEYs1k2CEDWP7mG">核心方法</b><p data-page-node-id="76lbv9CnSSmBsIaQbPX1Z1">选项与原文逐项比对，识别五类错误：<span class="hl" data-page-node-id="V4p9scDVCPfNgBcMXeYUsN">偷换概念</span>、<span class="hl" data-page-node-id="iAwtXMai6ybidPi0qGZMVv">无中生有</span>、<span class="hl" data-page-node-id="1LEMgYA5AzxD22oWN9PinC">以偏概全</span>、<span class="hl" data-page-node-id="LGAksoJwTAS5PwZHCBaECc">时态/程度偷换</span>、<span class="hl" data-page-node-id="58IgYWPWeAFyyXn7lGqewD">逻辑关系错乱</span>。</p></div>
+      <div class="row" data-page-node-id="7NPpsn07XKlAetPIyZ9DK8"><b data-page-node-id="WsMyhhGGS2s1u3fTln4Gzt">解题路径</b><ol class="steps" data-page-node-id="dk44Kz9wiUr6SmLisKjm7S"><li data-page-node-id="9Se9DgJ2UqegR3HtyxcFs7">选项回原文定位</li><li data-page-node-id="JmYm8xsfpHyoRJrLDa60JY">逐字比对关键信息</li><li data-page-node-id="nhL6a8q5hbvN0S06VYFOMW">优先排除明显错项</li></ol></div>
+      <div class="row trap" data-page-node-id="iu3vAeVnPEDlUKuEtfMvwv"><b data-page-node-id="qox2Jcg13fgMYyTUwFCaQ3">易错陷阱</b><p data-page-node-id="0iN4nonEuE51HX8qsueYCQ">"可能"变"必然"、"部分"变"全部"；注意"是/不是"提问方向，别答反。</p></div>
+    </div>
+  </div>
+
+  <div class="mt" data-module="verbal" data-page-node-id="FRqJJhJ6glDPVupOTTiRy6">
+    <div class="mt-head" data-page-node-id="TrC2SMy6MNRT35lNzeo4jA">
+      <label class="mt-check" data-page-node-id="Gy5f2BwSJnJZW9RBflAEZB"><input type="checkbox" data-id="v6" data-page-node-id="WvmHGeTg86HUXLqvjmiReZ"><span data-page-node-id="0k2DSyIMzdjgOyw68pCf9B">掌握</span></label>
+      <span class="mt-no" data-page-node-id="SSZc55bG3aK9F9PTqMs8vJ">母题 06</span><h4 data-page-node-id="OjJORhDhnrQrhv9QC9Cw09">片段阅读 · 标题填入 / 态度观点</h4>
+    </div>
+    <div class="mt-body" data-page-node-id="zK915xAkjlS2FpHjuzeXap">
+      <div class="row" data-page-node-id="0WVazsQqVFAfFG53AcqEkM"><b data-page-node-id="gmlTLd2Uta3EPDPQr0Cyrp">识别特征</b><p data-page-node-id="j9kwCirJERkccLDIvitLpU">"最适合做这段文字标题的是……"；"作者对……的态度是……"</p></div>
+      <div class="row" data-page-node-id="gO5a6miiYkKbKXEv7JTEOR"><b data-page-node-id="FuGH8USG2IZVClHwGc1vPo">核心方法</b><p data-page-node-id="dsxRPvHvvar5Z6TcJi51vZ">标题 = 主旨 + 生动性：先定主旨，再选"简洁又有吸引力"的；态度题抓<span class="hl" data-page-node-id="mngXB9rd58Z8xGi54ZlnrS">倾向性词语</span>（"遗憾的是""值得肯定"）。</p></div>
+      <div class="row" data-page-node-id="GT5AoQMbicpjtJr7cbCasU"><b data-page-node-id="80Kps13EjeFEQIdtOmKOoO">解题路径</b><ol class="steps" data-page-node-id="F7JcUhLE7zlpqRVqUtNgnZ"><li data-page-node-id="Fu4Trm8fgyDP3PmG2WAsjx">标题题：以主旨为核心的选项优先</li><li data-page-node-id="3qdPFY9IM3lfTXBbnUPlun">态度题：中性词与显性评价词对比</li></ol></div>
+      <div class="row trap" data-page-node-id="bAzCVQfKQ2Vh3g4GZzyyD1"><b data-page-node-id="W695i7emBwTXpjfIbggJ1m">易错陷阱</b><p data-page-node-id="qY9EzJe1vP6gDwI9GY14pE">标题只求新颖偏离主旨；态度题误把"客观陈述"当"反对"。</p></div>
+    </div>
+  </div>
+
+  <div class="mt" data-module="verbal" data-page-node-id="PxfRTTHRYHywmlU1AgFqyv">
+    <div class="mt-head" data-page-node-id="VgMeqw97CIK1PHTFgqMUQ2">
+      <label class="mt-check" data-page-node-id="epCmlkZIDxDnqMEqZmOVzD"><input type="checkbox" data-id="v7" data-page-node-id="wJtnGQGQpPjt5rnRwlCF3y"><span data-page-node-id="jjfOEkOUAk5jxiZg4f3kmq">掌握</span></label>
+      <span class="mt-no" data-page-node-id="n4i8787yM74hL0skSaoSp5">母题 07</span><h4 data-page-node-id="riHyLqWcJpurTvrR99gqBJ">片段阅读 · 词句理解</h4>
+    </div>
+    <div class="mt-body" data-page-node-id="9hbODGalt3KOloCyLieshk">
+      <div class="row" data-page-node-id="plJX83aTe2IOhy9hIVlygu"><b data-page-node-id="GBj5IGwqibTjJolbB20pIX">识别特征</b><p data-page-node-id="4pVodYITxCXbz0AE8fSEas">"文中'××'指的是……"</p></div>
+      <div class="row" data-page-node-id="hXfeBzDeGYshbRKFYeoMVj"><b data-page-node-id="5wonX1lH1SWBqphJ1WjLRX">核心方法</b><p data-page-node-id="0Cv819fKebDOCdhGQAlQUH">本句为纲、上下句为辅。<span class="hl" data-page-node-id="ppLoszYC2tf8Rs0VZVJiV2">就近原则</span>：答案往往在代词/词语的前后句。</p></div>
+      <div class="row" data-page-node-id="t4tnbBNRv9K80lyu9Y2JjM"><b data-page-node-id="PxUHbdVJUoKUbVgEwTMrqH">解题路径</b><ol class="steps" data-page-node-id="Enn8WqqZKHXFEjYSqGPboL"><li data-page-node-id="g6WB5tBDdFPnrcndFC1v2v">定位画线词所在句</li><li data-page-node-id="fsGpDRO8nsHEXoeiDi9frK">结合上下文推含义</li><li data-page-node-id="t0irVZcLEdP0gnRAhJjQ1Z">排除"字面义"陷阱项</li></ol></div>
+      <div class="row trap" data-page-node-id="jorCXcH9RLEgDgcyNC0v2B"><b data-page-node-id="qlfszDVSiPZwlxBMmvA3zO">易错陷阱</b><p data-page-node-id="mtT3v9Ed6pP4HBrrT3JcYY">选了字面意思而非语境义；代词指代对象判断错误。</p></div>
+    </div>
+  </div>
+
+  <div class="mt" data-module="verbal" data-page-node-id="Za74noJEDTXcjSebuR18hE">
+    <div class="mt-head" data-page-node-id="KEE4MwKsQCC4bFNUZMp3SD">
+      <label class="mt-check" data-page-node-id="fZFPH8AIGeTnaQcCMUEpnJ"><input type="checkbox" data-id="v8" data-page-node-id="6iHlmvWXBX1oMaIuLrGOJm"><span data-page-node-id="DWbF1tc1w4vBPi7Jnj1vWp">掌握</span></label>
+      <span class="mt-no" data-page-node-id="HI4syhlQvbrCZ9WECRkaNj">母题 08</span><h4 data-page-node-id="MqHWKHLH6E6bYg1kh90p7S">语句表达 · 语句排序</h4>
+    </div>
+    <div class="mt-body" data-page-node-id="NiVWZqrbBycdO6abS7sCIm">
+      <div class="row" data-page-node-id="3msJtgBFLaLRhD52JRbDdg"><b data-page-node-id="93M3AGzg7jclWr3t8Md58Y">识别特征</b><p data-page-node-id="o19ZRMzLqts5eqXBvP1JiD">给定 5–6 个打乱句子，选正确排序。</p></div>
+      <div class="row" data-page-node-id="GovsFXPXfIO0w4rAu3wSmN"><b data-page-node-id="fnkoGrcOaA4fKgXHAFr2Gu">核心方法</b><p data-page-node-id="fCzAHQR0GjglTFsVKbFX42">三招：<span class="hl" data-page-node-id="W6xmKAKTOxPd1tU5H70jNS">看首句</span>（不能是代词、关联词后半、补充说明）、<span class="hl" data-page-node-id="3rkAZet37ErpkOCXrp0ruu">捆绑</span>（代词与指代对象、关联词成对、时间/逻辑顺序）、<span class="hl" data-page-node-id="7YxYlCCqHBpNAkkFvQ7QcP">看尾句</span>（总结性语句作结）。</p></div>
+      <div class="row" data-page-node-id="Za283jaQZr0VsHZAH3T1hw"><b data-page-node-id="kdl7LzoGmc3xBUJmU60rwG">解题路径</b><ol class="steps" data-page-node-id="TvEcfsee9xHAiBLDWsQigK"><li data-page-node-id="jcnL7ewhdXj1WvOQdbYLFC">排除不适合做首句的选项</li><li data-page-node-id="FkZxZQl5bvdfd4mlHbDuJH">找捆绑关系缩范围</li><li data-page-node-id="bT6bP7AO2ZeJSU14Q0dR4W">验证整体逻辑</li></ol></div>
+      <div class="row trap" data-page-node-id="To42U8iYibOKoDLhv934fJ"><b data-page-node-id="IxyUAZKsD2ifRcZn91iN3O">易错陷阱</b><p data-page-node-id="dlf7GH6tpQLSuZPPk8lWtx">忽略"但是""因此"等关联词的位置要求；代词无着落却被放句首。</p></div>
+    </div>
+  </div>
+
+  <div class="mt" data-module="verbal" data-page-node-id="BR81jdLeZR401rLYsBtDTD">
+    <div class="mt-head" data-page-node-id="F21ic3vfLMDaxxfr0FFX9r">
+      <label class="mt-check" data-page-node-id="Cn7HCEEbqNZfu8bBz2QX2G"><input type="checkbox" data-id="v9" data-page-node-id="QkqKQa0mPgkwYkMA6H67RE"><span data-page-node-id="3w3LHmAwuTVzBvr60zG2Zm">掌握</span></label>
+      <span class="mt-no" data-page-node-id="ByXuIM3O3H6E5LwLNgmKIa">母题 09</span><h4 data-page-node-id="RHdFcr7ApXulPlfBKIHCCY">语句表达 · 语句填空</h4>
+    </div>
+    <div class="mt-body" data-page-node-id="iAvKZbvKzPhpODn5tsc5HX">
+      <div class="row" data-page-node-id="YEzviP2jctE3YVK7riFKGy"><b data-page-node-id="i2myZLj1nvanYuZREjdkE3">识别特征</b><p data-page-node-id="R8R9wce0sLUySIyoQzFcbo">文段中留横线，需填一句使前后衔接。</p></div>
+      <div class="row" data-page-node-id="PLMmYx6ofz1D0u7DgNAiWM"><b data-page-node-id="Hjmq1OkfsIkGw7jv8qAj9h">核心方法</b><p data-page-node-id="eCQSTsdRkEFHZNUS6aph4v">看<span class="hl" data-page-node-id="QGUCMuP0pSLZtHznswjFBA">横线位置</span>定功能：句首→总起/引出；句中→承上启下；句尾→总结/结论。再结合话题一致性。</p></div>
+      <div class="row" data-page-node-id="sKJfxa5IvvJ6L4YhavjXWj"><b data-page-node-id="B9ywIUjnad1CvTpHkquHPH">解题路径</b><ol class="steps" data-page-node-id="QaXdg6jCPhmjLRAn7xbWXp"><li data-page-node-id="QR4XTkF88squhWIQzY1lF5">判断横线功能</li><li data-page-node-id="anSGpt5lsMoKD0DkHFhQwB">抓前后文话题与逻辑</li><li data-page-node-id="FftL2JewB8jQ3vttlMVpjT">选衔接最顺畅项</li></ol></div>
+      <div class="row trap" data-page-node-id="ODAfyiXFe1GkM2lgRNZw6Q"><b data-page-node-id="fvxMdHshkmk4RY0QHbHVsm">易错陷阱</b><p data-page-node-id="3AMxweNNrhJRznRcJA7EIh">前后话题脱节；选了与后文重复的表述。</p></div>
+    </div>
+  </div>
+
+  <div class="mt" data-module="verbal" data-page-node-id="dnsop9toSDnoaO2GVV8QDW">
+    <div class="mt-head" data-page-node-id="n8EWRJwnh4iGhl2bTqFHpf">
+      <label class="mt-check" data-page-node-id="gOHEqAkWmfBiVfpQknI0Yn"><input type="checkbox" data-id="v10" data-page-node-id="COQVo5pr8vvHDmqLaxpSMI"><span data-page-node-id="vRwJLMgMA6UQEA9zFP7PmM">掌握</span></label>
+      <span class="mt-no" data-page-node-id="FgJI8pASba55GU7832w5FD">母题 10</span><h4 data-page-node-id="SwCdhnSqGQqWfbn4w3UDZN">语句表达 · 接语选择（下文推断）</h4>
+    </div>
+    <div class="mt-body" data-page-node-id="heHwxzXQIO1GlfuDB59TE1">
+      <div class="row" data-page-node-id="5suptrcw4ZyriiyM2g1xxr"><b data-page-node-id="Ci1XwpPxPnhecEaDd8a3yy">识别特征</b><p data-page-node-id="vgKBk8tl9fDHcelIGNFjl0">"这段文字接下来最可能讲述的是……"</p></div>
+      <div class="row" data-page-node-id="KgroXfFrZsEdKhjEkRgDEp"><b data-page-node-id="ebrxEaFIPWUUOonPWeA4GB">核心方法</b><p data-page-node-id="zBkvf68c2CFQUlh4ShwZt9"><span class="hl" data-page-node-id="XeJNwSHIQIB6oiAhCRNM1d">尾句话题一致原则</span>：下文的开头往往承接尾句的核心话题，切忌"另起炉灶"。</p></div>
+      <div class="row" data-page-node-id="WtznacDAxcY3O1vFreySUU"><b data-page-node-id="bBQvpet9wsPMIQYRCDXzzt">解题路径</b><ol class="steps" data-page-node-id="DVi3M6EJtUlEbzxIWqTvOH"><li data-page-node-id="RbZSTDHXWOaomi8RJFds1E">精读尾句，抓核心话题</li><li data-page-node-id="0E7ihe6mFViaCv7T2HpeZV">排除已在前文讲过的内容（重复）</li><li data-page-node-id="jN7tmYrbjjq9BreFR62kAp">选话题一致的引申</li></ol></div>
+      <div class="row trap" data-page-node-id="lXaiuQdPQjqg45j0U6oX8q"><b data-page-node-id="QpWUyBrFmCDihr8Np4DduF">易错陷阱</b><p data-page-node-id="ucQsEvwLrpzLLqFCGQx8C6">选了"前文已详述"的内容；选项话题跳跃。</p></div>
+    </div>
+  </div>
+
+  <div class="mt" data-module="verbal" data-page-node-id="7vIChUh3v9ENqZgMsw43Ps">
+    <div class="mt-head" data-page-node-id="50i0xHZbWxtqWn8OLypELt">
+      <label class="mt-check" data-page-node-id="hTFb5ehSTqcXdS3DfPwJQx"><input type="checkbox" data-id="v11" data-page-node-id="2QM1bxUqOVXyjdSFlDR73Z"><span data-page-node-id="yuWAZYq3utuG2Pom1iJeTA">掌握</span></label>
+      <span class="mt-no" data-page-node-id="RzCTHHtCVmrRFAtCjjdKg7">母题 11</span><h4 data-page-node-id="QX6crPQmz0qUYEYAHTdBVp">逻辑填空 · 虚词 / 病句（选考）</h4>
+    </div>
+    <div class="mt-body" data-page-node-id="WUCXP0kvrihDhEBTYTraui">
+      <div class="row" data-page-node-id="woER77zoIItSBijWwsZtq9"><b data-page-node-id="2cKMu463ItwLdCOHcU9WgN">识别特征</b><p data-page-node-id="ZBrR4nGEeOUHUGgCmJQGB3">关联词填空、病句辨析（部分年份出现）。</p></div>
+      <div class="row" data-page-node-id="TgR6MsWgACrxFbR7UTVhJv"><b data-page-node-id="zmC2RxH4CXsrGp3RS9Gm2q">核心方法</b><p data-page-node-id="Pukc7X69jtYbqFARDiXuNx">虚词看<span class="hl" data-page-node-id="0QbIbGDjtCmKtdnN7FVzVX">关联关系</span>（并列/转折/因果/条件）；病句六大类型：语序不当、搭配不当、成分残缺/赘余、结构混乱、表意不明、不合逻辑。</p></div>
+      <div class="row" data-page-node-id="mPFDGg09yEhA53LgOoSdv2"><b data-page-node-id="ImXqTaSaPPbNcqDoFQyH2t">解题路径</b><ol class="steps" data-page-node-id="DfiMdIwgv8kDA7LETYKkvr"><li data-page-node-id="YPAWfUXVx3r7tWzYZcc9lV">虚词题：判断前后句逻辑关系</li><li data-page-node-id="4nKM31cPOfuatmRsSlF2rI">病句题：用"缩句法"查主干搭配</li></ol></div>
+      <div class="row trap" data-page-node-id="NBTADPgOan8jWbiytox5yh"><b data-page-node-id="h76KWI3x0ZrSobQGRgVVhE">易错陷阱</b><p data-page-node-id="mqMsgQ5JoJEQdHFXvbqxNo">关联词搭配错误（"不但…而且"配成"不但…却"）；一面与两面搭配不当（"能否"对"成功"）。</p></div>
+    </div>
+  </div>
+
+  <!-- ---------- 数量关系 ---------- -->
+  <div class="mod-head math" id="m-math" data-page-node-id="2ctxGAIeVHhQJ9KrwjgqTN">
+    <span class="mi" data-page-node-id="bdc1cTE7nn4t0HIVN2eQpS">04</span>
+    <div data-page-node-id="ZYv0kZGN8dSHLPWmBOoFfw"><h3 data-page-node-id="mW9bji9kYSCcrWhgkIbC1s">数量关系</h3><div class="sub" data-page-node-id="eUDHTwUd2Z2Dp1hBLWJIHp">副省级 15 题 / 地市·执法 10 题 · 约 10–12 分</div></div>
+    <div class="mp" data-page-node-id="RDaAygU7dwFD5V3C3uNLiF"><b id="pg-math" data-page-node-id="36wop6hL3m8i7KVSrLvSZ7">0/12</b>掌握进度</div>
+  </div>
+  <div class="tip" data-page-node-id="HFA31CdFAlFWAfYwrInK03"><b data-page-node-id="SnPFT7A8Gp8OOoT3e2iihf">策略提示：</b>数量关系近年难度下降、题干变短，"战略性放弃"已不划算。<b data-page-node-id="KqTzYHGBBF6M7xDbzENPDC">目标不是全对，而是用最小时间拿下 6–8 个确定性母题</b>（工程、行程、利润、排列组合、几何、容斥）。考场建议最后做、控制在 10–15 分钟。</div>
+
+  <div class="mt" data-module="math" data-page-node-id="yb6oaO6LG7GIk6ZttGKeQD">
+    <div class="mt-head" data-page-node-id="OKUGIrtnsXeVwa0V1HEHVl">
+      <label class="mt-check" data-page-node-id="0XTdxzIaY0HzuO3AVALewF"><input type="checkbox" data-id="m1" data-page-node-id="WLaqsCS1rNwFXynRYy24KE"><span data-page-node-id="ruUmBC9mBE9914fujfD0Aw">掌握</span></label>
+      <span class="mt-no" data-page-node-id="WWRA0KnGlI1rcUYp7zlL40">母题 01</span><h4 data-page-node-id="f7OK4bF4JK0jDGFFZ7KlCM">工程问题 <span class="pill p-hi" data-page-node-id="I6QGRStbpG4Tmr7kKRk5lL">必考</span></h4>
+    </div>
+    <div class="mt-body" data-page-node-id="5DaBBzPsiF1DYABjmpdkkj">
+      <div class="row" data-page-node-id="szHhbADQtJpxjfjQtvDpcx"><b data-page-node-id="RCMT1z9vlMpjrH1rC6Th2a">识别特征</b><p data-page-node-id="HiDZWItnyufjLf3oKHDOOW">出现"完成一项工作""甲乙合作""效率"等表述。</p></div>
+      <div class="row" data-page-node-id="kLSNtKXDjjzNWsimpNTKVi"><b data-page-node-id="iYt3af6bbCUnifbrqDBrqv">核心方法</b><p data-page-node-id="Av0hAJP04VeAa099tH11RF">关系式：<span class="fml" data-page-node-id="KFVH7l68VP1rw4gv6o2xcS">工作总量 = 效率 × 时间</span>。核心是<span class="hl" data-page-node-id="NIXTaugLrEB87S9oH1uFqJ">赋值法</span>：① 已知时间 → 设总量为时间的<b data-page-node-id="GOqEVAFGIAQet7uzFkN2Ll">最小公倍数</b>；② 已知效率比 → 直接设效率为比例数。</p></div>
+      <div class="row" data-page-node-id="GDK49pCxI8U4vicNLQXkoA"><b data-page-node-id="1rHjTDoryC9zG0SCvIWWBt">解题路径</b><ol class="steps" data-page-node-id="HJPt8i7oJRVnCFoOvfldH3"><li data-page-node-id="FYLOwLSXy09NCm0plGjDcW">设总量（取最小公倍数）</li><li data-page-node-id="o1WCeNUtAZ3ZcV1dgDjHJU">求各主体效率</li><li data-page-node-id="FBJAwBuVAGeQf9UxaPpDaq">按合作/交替/中途加入列式</li></ol></div>
+      <div class="row trap" data-page-node-id="VtoiCImcJ3MPuN6OjP9Sfk"><b data-page-node-id="KAhVfBV5Dd1Dd7AJU9wYen">易错陷阱</b><p data-page-node-id="ldnTTAmSdotYbyCE3dulC5">"交替工作"要注意周期与余量；"中途离开/加入"的时间节点别算错。</p></div>
+    </div>
+  </div>
+
+  <div class="mt" data-module="math" data-page-node-id="1hqeUCRpWXXwOaRo28AhxM">
+    <div class="mt-head" data-page-node-id="jDd6gXgxNHGZ6tlKTNVlqN">
+      <label class="mt-check" data-page-node-id="oa9OwMF7yP3NWi50x4bQrq"><input type="checkbox" data-id="m2" data-page-node-id="KlaOEmJt5ntBtxHmExBd9y"><span data-page-node-id="Y4EEULXBPfyQAdKy3u32BV">掌握</span></label>
+      <span class="mt-no" data-page-node-id="sObt4Fq7iwrdToC2UQ4Z7M">母题 02</span><h4 data-page-node-id="UwQDsvtgl9kk4CL6cWplAm">行程问题 <span class="pill p-hi" data-page-node-id="i3FqGK4rpDeh95rifJA3GN">必考</span></h4>
+    </div>
+    <div class="mt-body" data-page-node-id="Gs2wBKMLSAKNjxZXtSRBdL">
+      <div class="row" data-page-node-id="kQ8Ea7WCyYroehEGnnhXan"><b data-page-node-id="qxumfok4NuvlvPSoubI7cZ">识别特征</b><p data-page-node-id="LvbSuDcttlV8dxBjOUvupl">涉及速度、时间、路程，含相遇追及、流水行船、火车过桥。</p></div>
+      <div class="row" data-page-node-id="X2abKvjs7dbGca61EHUPIZ"><b data-page-node-id="IFx37mjoIzEDLW6OXRVhgD">核心方法</b><p data-page-node-id="JzwiwZKnRpC0R6DM6zMYnI"><span class="fml" data-page-node-id="53sgtzpS9j94dxfuwEBSGx">路程 = 速度 × 时间</span><br data-page-node-id="QGdCuMBEe6Ti1BIcWugt4F">相遇：路程和 = 速度和 × 时间；追及：路程差 = 速度差 × 时间；<br data-page-node-id="vF6PAJM53yIMbG026MdRdN">流水行船：顺水速 = 船速 + 水速，逆水速 = 船速 − 水速；<br data-page-node-id="UaEY7jmyWHXPAF1EXHc4Ub">等距离平均速度 = <span class="fml" data-page-node-id="HSfhw6xTajxxqP4UEgyFJa">2v₁v₂/(v₁+v₂)</span>。</p></div>
+      <div class="row" data-page-node-id="MQLVAS39IRaBkmDxuxBeyA"><b data-page-node-id="4kA3sVL1ep0CgUKW2cxfvx">解题路径</b><ol class="steps" data-page-node-id="Z9oMOJHcni1eZg0IOihlwr"><li data-page-node-id="UyJbEEFPkfiHUqlGhtNyhA">画行程图标注已知量</li><li data-page-node-id="chQbgZcPSkQ6grkdvxZvBO">判断类型（相遇/追及/流水）</li><li data-page-node-id="TZS1bReMYuzQ1Wws6HMGD2">套公式或列方程</li></ol></div>
+      <div class="row trap" data-page-node-id="WkeoLEZkzdu5RTY0Efj3dt"><b data-page-node-id="GHdifcBY9znEefQLVuEqRW">易错陷阱</b><p data-page-node-id="JQjV8v5ST3e3avKJ5CNHyK">火车过桥/过隧道要算车长；环形跑道相遇追及的方向区别；平均速度≠速度平均值。</p></div>
+    </div>
+  </div>
+
+  <div class="mt" data-module="math" data-page-node-id="SZrkDqB1kfMfvWlTCxtPxt">
+    <div class="mt-head" data-page-node-id="PrJiPBod8B0iLDrpyg2BWP">
+      <label class="mt-check" data-page-node-id="mQGVRFnRYmzjK2Ka5IDubI"><input type="checkbox" data-id="m3" data-page-node-id="lBptcAYOA0fGBE0jq8LiQS"><span data-page-node-id="nMgCWP3U6mM6LikgaxREhv">掌握</span></label>
+      <span class="mt-no" data-page-node-id="j02FyAmovzTFaC6mDMbYsn">母题 03</span><h4 data-page-node-id="6ZIotkKAGQbeEbNkwkd4cD">经济利润问题 <span class="pill p-hi" data-page-node-id="UzD63dCyUTWNn7DbpMWb6i">高频</span></h4>
+    </div>
+    <div class="mt-body" data-page-node-id="2AhtqsdH6q3bpZlSY6FZIS">
+      <div class="row" data-page-node-id="VocrRAFisHOCTLihyL9Xug"><b data-page-node-id="9tveyfnnpYlbCyAJnr5dXc">识别特征</b><p data-page-node-id="skz4N1xn4dcQr6IJGQRTtN">进价、售价、利润、折扣、利润率、分段计费。</p></div>
+      <div class="row" data-page-node-id="Nopc5DHBy49oSPXxJZFuiV"><b data-page-node-id="jc9OuWTlz4vzGGam3B4uAD">核心方法</b><p data-page-node-id="sGAOpxkT29kFBPnexaq0RA"><span class="fml" data-page-node-id="pAOzT6mAN6X8jdB8twpfnf">利润 = 售价 − 成本</span>　<span class="fml" data-page-node-id="FGsNrELzc2S4mwvWfQPLTg">利润率 = 利润 ÷ 成本</span>　<span class="fml" data-page-node-id="gMexug3JGv4RRiALAIqlx8">售价 = 成本 ×（1+利润率）</span>　打折：售价 = 原价 × 折扣率。</p></div>
+      <div class="row" data-page-node-id="IxnKNZVLShcI5ifE9SKJtm"><b data-page-node-id="DoOmozdLhttTiD3zGA8sDp">解题路径</b><ol class="steps" data-page-node-id="ZYZKcFWkCY4hONk3FL1sIa"><li data-page-node-id="cLCCrJHNJL7h4E1A1cHqey">设成本为 100（或赋值）</li><li data-page-node-id="FUuPPNmbi2G3AjSIDIwE1x">按售价—成本—利润关系列式</li><li data-page-node-id="QBDp2d2C0rPcRNXsiaF9a8">分段计费用分段函数</li></ol></div>
+      <div class="row trap" data-page-node-id="ysbzoiGbPcDQDCCEN85gPl"><b data-page-node-id="nlpDAd6I0h3809sMFXKU2F">易错陷阱</b><p data-page-node-id="iPbC94oQAoojZ7m6OXpxsp">利润率的分母是<b data-page-node-id="cHK4caB85vqnATzs16ObXQ">成本</b>不是售价；"打八折再打八折"是乘两次 0.8。</p></div>
+    </div>
+  </div>
+
+  <div class="mt" data-module="math" data-page-node-id="VtIDh5EjVKtPPle3LO3x7E">
+    <div class="mt-head" data-page-node-id="x17lQHXDSR2axBq9OsJMNE">
+      <label class="mt-check" data-page-node-id="k2HezELj2QKsmiRj0cgxdX"><input type="checkbox" data-id="m4" data-page-node-id="ZH1TkbvGfTN1L7822MTZLM"><span data-page-node-id="rOVCz4HeqIUvK6kqmrn9az">掌握</span></label>
+      <span class="mt-no" data-page-node-id="J34hyz8HD9X8GUVPqCXy71">母题 04</span><h4 data-page-node-id="W6gIrUUL2LVHtJHWEbFqOS">排列组合与概率</h4>
+    </div>
+    <div class="mt-body" data-page-node-id="Frm2TiqGGEpV7B4TSWGHgu">
+      <div class="row" data-page-node-id="SKj3EiFkXWecdDhhLussoO"><b data-page-node-id="UV1FeQRhYjNXHmzJCHftl7">识别特征</b><p data-page-node-id="0Jxb3lshozrhS4a3oyqwFG">"有多少种方式""任取…的概率"。</p></div>
+      <div class="row" data-page-node-id="ESrbGQXFoSVthSCH0RSZIo"><b data-page-node-id="LqPjmZYCCY2BDKBRc5yqKs">核心方法</b><p data-page-node-id="JfojwhMHsYAxzICnfvLsRA">计数原理：分类用<span class="fml" data-page-node-id="9dKtKmv11pfSypLOJZxKBr">加法</span>、分步用<span class="fml" data-page-node-id="i3tYD9Ujz4AAq86bG0LeA7">乘法</span>。<br data-page-node-id="iY7JSQS7U8UW3FgEtsF1EI">排列 <span class="fml" data-page-node-id="TJH4Rd76iclkkji6ivLzEo">A(n,m)=n!/(n−m)!</span>，组合 <span class="fml" data-page-node-id="0GRSNYDgdnEOisGCeTa6So">C(n,m)=n!/[m!(n−m)!]</span>。</p></div>
+      <div class="row" data-page-node-id="bhXpXWGriAYohIU7DpDzgI"><b data-page-node-id="DG017DwGGGrBA1Y1Pxu9jf">解题路径</b><ol class="steps" data-page-node-id="HkbkhOHJPfvdBztKsIsAk1"><li data-page-node-id="n8YyYTqYTLRbc2bgU8CwPH">捆绑法（相邻）、插空法（不相邻）、隔板法（分相同物品）</li><li data-page-node-id="VpLpOOYlMu77Y13QBsBzUd">概率 = 满足条件数 ÷ 总情况数</li><li data-page-node-id="G9mmMGkbv2RoC07QrHUIKP">复杂情形用"正难则反"（1 − 反面概率）</li></ol></div>
+      <div class="row trap" data-page-node-id="0vflJaoELqlQLweA0PglDU"><b data-page-node-id="y9rCo8vnBc05dThVVsSjp9">易错陷阱</b><p data-page-node-id="GBEKPl8GZSg53XkzKZgEFn">排列用成组合；"至少"类问题不想到用反面；重复计数。</p></div>
+    </div>
+  </div>
+
+  <div class="mt" data-module="math" data-page-node-id="6UHHqU0lDDqPw15UlSSR1D">
+    <div class="mt-head" data-page-node-id="I1FaiYqDsv2IMlO6XJAH9I">
+      <label class="mt-check" data-page-node-id="Q0tNmnP7Vs13S8JGAIvO3b"><input type="checkbox" data-id="m5" data-page-node-id="omj4U2dOxH5aQmuDUydLub"><span data-page-node-id="6mXRv5SMJnDTeVI0YXCEVE">掌握</span></label>
+      <span class="mt-no" data-page-node-id="NbQeJjfKXcNBkd3PCJ5ydD">母题 05</span><h4 data-page-node-id="9QGt9TA9Sg9B4PyLj4B8eP">几何问题</h4>
+    </div>
+    <div class="mt-body" data-page-node-id="VuSggpz9TEJwcG8YwLUyw0">
+      <div class="row" data-page-node-id="DBDygzHIdb7qRABY8AgIiE"><b data-page-node-id="a9L5F4XyBy6E8M3WKELBjB">识别特征</b><p data-page-node-id="2cDaguKRjU3Oqx9FLa8Cku">求面积、体积、周长，或几何最值。</p></div>
+      <div class="row" data-page-node-id="PgQlVqcvdaOEzmjGCXlpC7"><b data-page-node-id="o3hIGUthqC53S5WjY5VBaq">核心方法</b><p data-page-node-id="VHME1NKYddvYmwyO9Nn2gV">常用公式：圆面积 <span class="fml" data-page-node-id="Y6oFMG82Op1EzF1Y5HNHpz">πr²</span>、球体积 <span class="fml" data-page-node-id="HGNfiAY3D743yhOczWCull">4πr³/3</span>、圆柱体积 <span class="fml" data-page-node-id="5GLPcIirORF7vkaZCFrD2t">πr²h</span>；三角形面积 <span class="fml" data-page-node-id="WEUJ5PEICnGpXMDIbZV49B">底×高÷2</span>。<br data-page-node-id="8tqU0J07m0sPorAhdbkiD5">几何最值：周长一定时正方形面积最大；表面积一定时球体积最大。</p></div>
+      <div class="row" data-page-node-id="MvR4StjtpqPFDFaOgpnnKD"><b data-page-node-id="pKmo30XHZQQsgBGAsCPPwC">解题路径</b><ol class="steps" data-page-node-id="MMPYLsLOo6UZaCeNgszv9l"><li data-page-node-id="hXSEaKvgrDpaKa8AThBkgZ">画图标注已知</li><li data-page-node-id="DizYypH0Eyfklw2va81j4l">套公式 / 用相似、勾股定理</li><li data-page-node-id="QTqRz3NurSyy2BTlFusS6z">最值问题找极值条件</li></ol></div>
+      <div class="row trap" data-page-node-id="reOYgCE9eaQ6nLXhQDrJmn"><b data-page-node-id="jG6qeOCof6Rhihi2tb5uGU">易错陷阱</b><p data-page-node-id="m5HKU0OL91cMc1LianVewZ">单位换算（1 米 = 100 厘米，面积单位是平方）；相似比与面积比是平方关系。</p></div>
+    </div>
+  </div>
+
+  <div class="mt" data-module="math" data-page-node-id="2AgZxltLhOG4mGbajZLMLz">
+    <div class="mt-head" data-page-node-id="oMJt3LdbnzrP0sqdLpqdKg">
+      <label class="mt-check" data-page-node-id="FI9Mkuls1p26DJ9yIML0Pp"><input type="checkbox" data-id="m6" data-page-node-id="UKI07njKcCxoGDrqiT4s6V"><span data-page-node-id="3kWp6w12g77aS0kHirRS5k">掌握</span></label>
+      <span class="mt-no" data-page-node-id="LBl6RL4TVsmyqGIOgXFep8">母题 06</span><h4 data-page-node-id="Cfa0dtYrXYjGjgtyP6EFXc">容斥原理</h4>
+    </div>
+    <div class="mt-body" data-page-node-id="AVJJs5POANdpHWYrKMNxzX">
+      <div class="row" data-page-node-id="IX48tKcoCcx0cVMc65GHVE"><b data-page-node-id="6K7wT3iHZmueL78OtNxRt5">识别特征</b><p data-page-node-id="H0IqoOvDvHpic7lGs2yAI9">涉及"既…又…""至少满足一个条件"的计数。</p></div>
+      <div class="row" data-page-node-id="dZJ8TSRqwpkmui9e5Alo8W"><b data-page-node-id="hpWVARxoIaHcwHlO5D7hLo">核心方法</b><p data-page-node-id="GMRq1yarFV5EpCm5h7x1GA">两集合：<span class="fml" data-page-node-id="WnJyYNIBa1E1TqNLGVIoxG">A∪B = A + B − A∩B</span><br data-page-node-id="Y8tULdxOcmfvDNFMRUAY3b">三集合：<span class="fml" data-page-node-id="VzaYAdgEmfyKVConvfGi9C">A∪B∪C = A+B+C − AB − AC − BC + ABC</span>；或"总 − 都不 = 满足至少一个"。</p></div>
+      <div class="row" data-page-node-id="OzAhAthX5MkxwApXvn1mhE"><b data-page-node-id="C20ILCIhPNe2CHVvTmW1eJ">解题路径</b><ol class="steps" data-page-node-id="0EMrTgJtHrWEPv37gPOgpE"><li data-page-node-id="Jqr3q3i8kNVAVjvDoJ4hbT">判断集合数量</li><li data-page-node-id="eUJbp4sqc50HvQcjqI0qAT">画文氏图辅助理解</li><li data-page-node-id="8KRiUgvZsTm51XeBaH8iSV">套公式或列方程</li></ol></div>
+      <div class="row trap" data-page-node-id="c9flqTciS13ZcEIdFbq9TV"><b data-page-node-id="sHE8K6rtSJnvbirkif8TLz">易错陷阱</b><p data-page-node-id="kquOLBRsijcJUICZL8ujzF">三集合"只满足两个"与"满足两个"的区别；忘记减"都不"的部分。</p></div>
+    </div>
+  </div>
+
+  <div class="mt" data-module="math" data-page-node-id="RBAd18DXSk2GFKd908eaKK">
+    <div class="mt-head" data-page-node-id="j32CxNgqPCBUzJjpkJgYNQ">
+      <label class="mt-check" data-page-node-id="scIRYdMxHfvdFv8feiyb5P"><input type="checkbox" data-id="m7" data-page-node-id="pAj2KVvzRAq0cqqTwEyonj"><span data-page-node-id="q9WfnkGbvdj70zJ2zvfXnm">掌握</span></label>
+      <span class="mt-no" data-page-node-id="D1YmWJ7VXYAdbzbbrOCMLR">母题 07</span><h4 data-page-node-id="hYZae1cZERuQH4Go133a4F">最值问题（抽屉原理 / 构造）</h4>
+    </div>
+    <div class="mt-body" data-page-node-id="DPef2uo4RrraOf767B9Qb2">
+      <div class="row" data-page-node-id="HGao3k5mRTyIF60V3HIdin"><b data-page-node-id="H7RbebOtL0f69B1K4lNAfG">识别特征</b><p data-page-node-id="GHFEJIIu4CdaRX0pZh7vZA">"至少…才能保证""最多/最少是多少"。</p></div>
+      <div class="row" data-page-node-id="HuBf9sLJXgkRl5bC1Zhjhf"><b data-page-node-id="qdpB64uR0cCoYBUrFygH5e">核心方法</b><p data-page-node-id="SsCgSLO7A09WUQSB0M2ZDm">最不利构造：<span class="hl" data-page-node-id="GhbGDW6Y1jnxUNL9NXaZVL">答案 = 最坏情况 + 1</span>；构造数列：总和一定时，要求某项最大，其余尽量小。</p></div>
+      <div class="row" data-page-node-id="OiEoOA90ISA4prtsKlnyTY"><b data-page-node-id="fKwQP6OBPVZl4hXqv7hVLh">解题路径</b><ol class="steps" data-page-node-id="zHyyZw1vGvqDvqWxU5mhjC"><li data-page-node-id="KXcRZclyHcavomAkc5EgEC">找"保证"标志词 → 用最不利原则</li><li data-page-node-id="J4DvQN63M3G5pdVsXGPBCC">逐一构造最坏情形</li><li data-page-node-id="tAzOLaw5udgB6ALKKeeCQQ">加 1 得答案</li></ol></div>
+      <div class="row trap" data-page-node-id="4Gw1FXWxDRj8YyjrwJyYId"><b data-page-node-id="tRzlrZ2hqK4EY6BYazdiqC">易错陷阱</b><p data-page-node-id="ejjIzOIlzCKsYW9C0q9axB">把"至少"当"正好"；构造时忽略整数/不重复等约束。</p></div>
+    </div>
+  </div>
+
+  <div class="mt" data-module="math" data-page-node-id="2j3AkHABCll2iLnJJvroqB">
+    <div class="mt-head" data-page-node-id="VHnQTtwPGfm7YvuOGONfCy">
+      <label class="mt-check" data-page-node-id="2vlTwueknwPHOPDa25tiV2"><input type="checkbox" data-id="m8" data-page-node-id="T4uQiI5e2C3Ac0qh9UjBdY"><span data-page-node-id="ON2cJBhGytJ3uhNCemAYn7">掌握</span></label>
+      <span class="mt-no" data-page-node-id="favdNd91WHXwP8jgRFZGqt">母题 08</span><h4 data-page-node-id="KDKEWZPuMBkHaBnAoYfOHE">数字特性（整除 / 奇偶 / 倍数）</h4>
+    </div>
+    <div class="mt-body" data-page-node-id="gUB7FTbqDfaB4ZzccBXliu">
+      <div class="row" data-page-node-id="qx8XHDELWIlg7DDBfDvgFG"><b data-page-node-id="J0hDMEudyrknX68uL9oVRQ">识别特征</b><p data-page-node-id="ddJP5IOFNPGWEwAajdYiGl">题目条件模糊难列式，但结合选项可快速锁定。</p></div>
+      <div class="row" data-page-node-id="BkeGYZtKI9HH3gNaRy8T1g"><b data-page-node-id="wiDfCVKwBW8SYMdxRS02b0">核心方法</b><p data-page-node-id="jvPbl6n6dleUrsRR6gEMUt">整除判定（2/3/4/5/8/9/11 的判定规则）；奇偶特性（和差同奇偶）；倍数特性（比例关系推倍数）；尾数法。</p></div>
+      <div class="row" data-page-node-id="pOdeBCcEp9AfWYjSPEo8Zo"><b data-page-node-id="pLWWwSCMjWhx2CeuEW744r">解题路径</b><ol class="steps" data-page-node-id="5iIBjFv4oHw1vJOO5rAUgx"><li data-page-node-id="V0Us5rm2tJugGiikBAXuqJ">把条件转成比例或倍数</li><li data-page-node-id="TSiaqTkDAq3wSUIWAK2yHW">用整除/倍数筛选项</li><li data-page-node-id="JY0GZHciXxKqN782CS0a5i">必要时代入验证</li></ol></div>
+      <div class="row trap" data-page-node-id="bpvm91lnCtnxXd1lWdz4gL"><b data-page-node-id="QVUAZSlDJX5xtoimTuaHES">易错陷阱</b><p data-page-node-id="Uon87zEFErG2iQ0NjGIxUp">忘记"人数必须是整数"等隐含约束；倍数判断时遗漏公倍数。</p></div>
+    </div>
+  </div>
+
+  <div class="mt" data-module="math" data-page-node-id="h1PrVXGvbVHNB74ZoMe9JN">
+    <div class="mt-head" data-page-node-id="f7B55Wnywnar3MUH9suv9h">
+      <label class="mt-check" data-page-node-id="fDHba1GhsZIpyhRl3nQ7VF"><input type="checkbox" data-id="m9" data-page-node-id="AUYSLu3be1t4YRL3UyHUN5"><span data-page-node-id="V7WS9vdmsnpRdXtb53sdhh">掌握</span></label>
+      <span class="mt-no" data-page-node-id="sB2DPSLKHgizf9DSLOaEMS">母题 09</span><h4 data-page-node-id="b7grnZ1YPi3lMKCH03bxAa">年龄问题</h4>
+    </div>
+    <div class="mt-body" data-page-node-id="kFt8WmRZyGZJe2Ux1RUdp0">
+      <div class="row" data-page-node-id="rhWLei34Q1WuJ44PyXyQxT"><b data-page-node-id="XOMqJ6LVKCjim2V3dC5Row">识别特征</b><p data-page-node-id="SPNu0U1bmFLoSFrg6J7ES2">涉及多人年龄、几年前后年龄关系。</p></div>
+      <div class="row" data-page-node-id="1Knr5HaG6BTh7xxHEhXf0A"><b data-page-node-id="E5vSZ0Bf3K0uT9gMvkD4XD">核心方法</b><p data-page-node-id="DbKp45VOYeAfO0vrEc4Zrj">核心：<span class="hl" data-page-node-id="gkk5rNQlqLLzmH0wddpQev">年龄差不变</span>；每人每年长 1 岁；倍数关系随年龄变化。</p></div>
+      <div class="row" data-page-node-id="KbUw3USqbBABzj4QRLlEDV"><b data-page-node-id="YPFDr3UCU3I0Hzq3pQFiXy">解题路径</b><ol class="steps" data-page-node-id="FqAYh8uy97Ww8azdaycXU9"><li data-page-node-id="DNTHL2sble3LSKgCgcCGJQ">用年龄差列方程</li><li data-page-node-id="OSRICedqu9K2DeDTtibKDK">或列表逐年推算</li></ol></div>
+      <div class="row trap" data-page-node-id="LuyeFGdxjbRqWtLUP9bRSf"><b data-page-node-id="SVDbmo7Vm93bdUf7mxfHfY">易错陷阱</b><p data-page-node-id="mg2yMt2SIJQT8z0qPhvpK5">把"年龄差"当成会变化；跨年计算漏加年份。</p></div>
+    </div>
+  </div>
+
+  <div class="mt" data-module="math" data-page-node-id="t1BJnRJXvWRozLMA5Qxa5v">
+    <div class="mt-head" data-page-node-id="UON7NgFL9Pv7MwUbHZbLcc">
+      <label class="mt-check" data-page-node-id="w62ncbJgd5IbAPNIdY5vuB"><input type="checkbox" data-id="m10" data-page-node-id="3FUiAThRamgWXamwGIVCBN"><span data-page-node-id="Dekaqp86ABEeLd9sq2iNkB">掌握</span></label>
+      <span class="mt-no" data-page-node-id="75PxcQecK9jE1xn4EY2d5u">母题 10</span><h4 data-page-node-id="7xVepW7esA9nUiN677MXsT">浓度问题</h4>
+    </div>
+    <div class="mt-body" data-page-node-id="rVfpw7BZEIOt5RoRy3npoe">
+      <div class="row" data-page-node-id="4HLAG7ezss6ykDE5omC2zw"><b data-page-node-id="nIr2TO5ITxQcGn7CpvAypw">识别特征</b><p data-page-node-id="1WbYKGFRR3Wgj1TsfMWvuj">溶液、溶质、加水、加盐、混合、蒸发。</p></div>
+      <div class="row" data-page-node-id="ZEQUkjrNFmvWv0MQNkF3et"><b data-page-node-id="0wEmlEIqOJzHX192C3WZla">核心方法</b><p data-page-node-id="7fkfpsH7MqWVXwo5Uu3Gr5"><span class="fml" data-page-node-id="VaHlVp92XdQgK6AvtBYzoq">浓度 = 溶质 ÷ 溶液 × 100%</span>。解题核心：<span class="hl" data-page-node-id="PjYlyFDhnvYF2kzVGaReAq">溶质守恒</span>（加水/蒸发时溶质不变）；混合用十字交叉法。</p></div>
+      <div class="row" data-page-node-id="qEgud5Ue2S2i0bmUh6UqwR"><b data-page-node-id="gBTFPOXmvJFlkmPcO8YIuA">解题路径</b><ol class="steps" data-page-node-id="if6KGFzuKYC0DaIOJJrAiZ"><li data-page-node-id="wF3bVfkgHgVMsnECUAuuML">列表标出溶质/溶液/浓度</li><li data-page-node-id="FXK3hBkJFH9UZrEPYQFEaZ">抓住不变量列方程</li><li data-page-node-id="XtEjx2TJcIWQdYSYEzQ2nj">混合题用十字交叉求比例</li></ol></div>
+      <div class="row trap" data-page-node-id="eOBdTkdFHTBCX7gMgYU5RT"><b data-page-node-id="fQcIqkjFXhTiIiAAeMCqcG">易错陷阱</b><p data-page-node-id="upAYKRj0mtJisulVUgObvL">把"溶液"当成"溶剂"；混合后浓度必介于原两浓度之间。</p></div>
+    </div>
+  </div>
+
+  <div class="mt" data-module="math" data-page-node-id="0JDTe2fQCjLOfzArM9tLiL">
+    <div class="mt-head" data-page-node-id="gDYL6E5hNkRG59wJd1phkq">
+      <label class="mt-check" data-page-node-id="xN73Lw7e8HQ8524TP4k24N"><input type="checkbox" data-id="m11" data-page-node-id="HEAbITaEgBLAElN1s1bQG1"><span data-page-node-id="Lf9oIWQeZN3uymx6uAIsQr">掌握</span></label>
+      <span class="mt-no" data-page-node-id="755xfmHzHqpDERguTsqD0v">母题 11</span><h4 data-page-node-id="J7EoKh1RGEv0CxoCJAMDe8">牛吃草问题</h4>
+    </div>
+    <div class="mt-body" data-page-node-id="ZzTqxhiDseNvbfBJ0S4YRM">
+      <div class="row" data-page-node-id="tPt6Su57Vmi94x1nHyvLZs"><b data-page-node-id="6O6lWyYbSQv4kIwMZHpw5x">识别特征</b><p data-page-node-id="8LEaIYdTls9fMGfKnCQ2rP">草（或水池）一边消耗一边增长，问多少头牛吃几天吃完。</p></div>
+      <div class="row" data-page-node-id="YkuVvndmeHMemfpZ1pXoDV"><b data-page-node-id="uKC9L1zjW6qd0eC5xGGgQJ">核心方法</b><p data-page-node-id="gznCmnSyuBdLZAXVzzrbL0">设原有量 <span class="fml" data-page-node-id="1nM8gYvYfTdUgFP5Oq6VoV">Y</span>、日生长量 <span class="fml" data-page-node-id="2STMbzy1jVTJavWRPBAa2S">x</span>、牛数 <span class="fml" data-page-node-id="xDSBvYnKnFBIByAQf3HKfz">n</span>、天数 <span class="fml" data-page-node-id="0rfXnISNHuha5e3321kzOq">T</span>：<span class="fml" data-page-node-id="mhMD5xMisAoxAd22IMyF72">Y = (n − x) × T</span>。两组条件列两个方程求 x 和 Y。</p></div>
+      <div class="row" data-page-node-id="WjsQ1RMO8NRhCmOzIFJH2B"><b data-page-node-id="jMTlXuDpVudbBIGzwHbIyn">解题路径</b><ol class="steps" data-page-node-id="1Bdr4XFlrIL6ERtSkbHHtj"><li data-page-node-id="AiFB9aSGr1ur68BpPjpQHE">识别"消耗 + 生长"结构</li><li data-page-node-id="dREFgFunjhKIAnr9EnO6uj">两组数据列方程解 x、Y</li><li data-page-node-id="VZPhV0vKZew5XRvV7RvLB8">代入第三组求答案</li></ol></div>
+      <div class="row trap" data-page-node-id="DCwtWiE9OsNxHdICittXLP"><b data-page-node-id="J8I2EfyAD8z0l9X2DbtRGE">易错陷阱</b><p data-page-node-id="Ni8mu79mWUp1GSYw7hYiwf">把"生长量"当成"总消耗"；正负号弄反（生长为负则为排水/减少）。</p></div>
+    </div>
+  </div>
+
+  <div class="mt" data-module="math" data-page-node-id="zCvI5FGJdw91YM6qGkezz0">
+    <div class="mt-head" data-page-node-id="0Oz39aBgudqNTkrIrfpbiY">
+      <label class="mt-check" data-page-node-id="lXBF1o8BiuThNOYrsKiIPN"><input type="checkbox" data-id="m12" data-page-node-id="ohsEWKbQd0xXW5GUeN8N60"><span data-page-node-id="uHDSdD1uGPJAQd3MjlMUPA">掌握</span></label>
+      <span class="mt-no" data-page-node-id="Mq37udZlLLbD4Qq6A0tVa1">母题 12</span><h4 data-page-node-id="nngjmD88hhK8Y4ODBuVBVq">计算问题（数列 / 周期 / 不定方程）</h4>
+    </div>
+    <div class="mt-body" data-page-node-id="w6yTKa5l58D1sbW32pfUNu">
+      <div class="row" data-page-node-id="KYfUVaAiI12HmOoGULuc54"><b data-page-node-id="EGDj7p4NE5nOzt9gTYZACl">识别特征</b><p data-page-node-id="xVbGmKySPFQnATeYbAYIdG">等差数列求和、周期性循环、多个未知数少量方程。</p></div>
+      <div class="row" data-page-node-id="jiov9MiP7Kl8IhuLvdD5CR"><b data-page-node-id="9tFyWelD9fDkOLoGODjmsQ">核心方法</b><p data-page-node-id="9i5jLN41IEDr4fUYKkGbBE">等差数列：<span class="fml" data-page-node-id="ADGqteqNrF8eeP26rHnoPY">aₙ = a₁+(n−1)d</span>　<span class="fml" data-page-node-id="JSQFD4GlKzbsJKDdxZF3mD">Sₙ = n(a₁+aₙ)/2</span>；周期问题看"余数"；不定方程用<span class="hl" data-page-node-id="GjsVXBgmxnT7aSmBGYIxz9">奇偶/倍数/尾数</span>缩小范围再代入。</p></div>
+      <div class="row" data-page-node-id="xovQCNXlPmv1oXYgjhhZsd"><b data-page-node-id="yc5LLiHR93HBskTUNGy8Xp">解题路径</b><ol class="steps" data-page-node-id="appUB1d5NIxK6hXQgUsHy4"><li data-page-node-id="zYVBNEFcy2SVTp7OhUWpvd">判断类型</li><li data-page-node-id="jGHpC2GWhFVdJwDFzjjQ8D">套公式或找周期规律</li><li data-page-node-id="nHMYzau7tD5NOwBDalHJOZ">不定方程配合选项代入</li></ol></div>
+      <div class="row trap" data-page-node-id="AQ1VaEDOHa4GFHNodIiJb3"><b data-page-node-id="GTeVa3D3CqJKlNm72Eo95f">易错陷阱</b><p data-page-node-id="T6iMEHaaacv7Th9Zvj9PXy">周期数算错（余 0 时要回到最后一个元素）；不定方程忽视整数约束。</p></div>
+    </div>
+  </div>
+
+  <!-- ---------- 判断推理 ---------- -->
+  <div class="mod-head logic" id="m-logic" data-page-node-id="wXgnREqS1ftk24Nov6QfD8">
+    <span class="mi" data-page-node-id="3RZPcCRVdTM8opkGMVDHNC">05</span>
+    <div data-page-node-id="igDdDuuhHdQMB10PEZgFUL"><h3 data-page-node-id="II7tRclbEo4OhC7JJoqugR">判断推理</h3><div class="sub" data-page-node-id="QnLK26UwM6UTvTzHE2Ag3q">35 题 · 约 26–28 分 · 题量最大模块</div></div>
+    <div class="mp" data-page-node-id="xtJRbmSHDiPrvBJld8M8SZ"><b id="pg-logic" data-page-node-id="qOdIwhhy397QwPG8pNbO39">0/13</b>掌握进度</div>
+  </div>
+
+  <div class="mt" data-module="logic" data-page-node-id="Z8vROAcKjqpbQzl3FUn1j6">
+    <div class="mt-head" data-page-node-id="MSjkXeirVdQe1unxmvpCGr">
+      <label class="mt-check" data-page-node-id="WGSwKdJjICN742yXA2X6ll"><input type="checkbox" data-id="l1" data-page-node-id="Y6bgxMr4QVDOhSSYsaeHqB"><span data-page-node-id="LKuygW23zyCI92xr79KXEW">掌握</span></label>
+      <span class="mt-no" data-page-node-id="wsccIOOA6YWEtxuATqyAAE">母题 01</span><h4 data-page-node-id="EqHWIg3ARYHX21xgsgSrKt">图形推理 · 位置规律</h4>
+    </div>
+    <div class="mt-body" data-page-node-id="BGqDDhjrRUvexAjE7fQFVB">
+      <div class="row" data-page-node-id="pBnjK7YNE0iH0ZZevB5LsX"><b data-page-node-id="woZIyQvZUBwgrDCBb89phZ">识别特征</b><p data-page-node-id="NFU7hkTjPRyXsq7yAJMfLl">图形元素组成相同，只是位置变了。</p></div>
+      <div class="row" data-page-node-id="sspLt8OVcnV1eZqkg78tYE"><b data-page-node-id="rlQFxGa5ZsOuFuV3Mn1Rt9">核心方法</b><p data-page-node-id="PqaawuClBb412ShFuT12MS">平移（方向 + 步数）、旋转（顺/逆时针 + 角度）、翻转（水平/垂直 + 叠加）。</p></div>
+      <div class="row" data-page-node-id="t5BXyrf3nkDKH8W7uCgNMi"><b data-page-node-id="N4QmP5RrrX9qgBmp6BgTtY">解题路径</b><ol class="steps" data-page-node-id="foC73VXA1QVpRq9GPjCF1U"><li data-page-node-id="IxhtEXxrvCbFlAckqRRTh4">确认元素种类数量不变</li><li data-page-node-id="DiqjWji3dIlSt3jTVK7GdB">逐个元素追踪移动规律</li><li data-page-node-id="WaCgb2UZZL6HEdvwLR4EtO">规律要能同时解释所有元素</li></ol></div>
+      <div class="row trap" data-page-node-id="8LFuGoaJe0S4hVXq7ccYG7"><b data-page-node-id="nkxkbUVt5SlSk9AkCU8CGg">易错陷阱</b><p data-page-node-id="LetBoIdR6e39XIW2zZiZg8">旋转与翻转混淆（翻转会改变元素相对方向）；步数规律可能循环或递增。</p></div>
+    </div>
+  </div>
+
+  <div class="mt" data-module="logic" data-page-node-id="D8QAptT78YbHCnSU3BTclZ">
+    <div class="mt-head" data-page-node-id="zBKpBml4uKbZtIZ3AWzFgo">
+      <label class="mt-check" data-page-node-id="ijAB81RDX6laJMa9n6x0rU"><input type="checkbox" data-id="l2" data-page-node-id="gmzcq2CkVSwiEmtE7EDuES"><span data-page-node-id="SesIFlo09yGIdx9PdrDQcc">掌握</span></label>
+      <span class="mt-no" data-page-node-id="aZB9FsMOtyLIf8DmQFRJpc">母题 02</span><h4 data-page-node-id="RCoHLOoEZhaWKb034DTlMy">图形推理 · 样式规律</h4>
+    </div>
+    <div class="mt-body" data-page-node-id="lV9cQk4E6F51Fsoth4p4GX">
+      <div class="row" data-page-node-id="Rc56pKWRcYFxBQer47QtFa"><b data-page-node-id="dCJfadq9OCcA3EnsdDd6GG">识别特征</b><p data-page-node-id="ZcGVBFyiahCzWkijljVnhR">图形元素相似但不完全相同，或存在黑白块。</p></div>
+      <div class="row" data-page-node-id="5WgXEDpGYwHg84Ruj6XshW"><b data-page-node-id="CZBX8GvkFUiDapzxFeBU86">核心方法</b><p data-page-node-id="chgXtBm3e7C2PXsDRTGOdb">遍历（元素缺什么补什么）、加减同异（叠加取舍：求同/求异/去同存异）、黑白运算（黑+白=？按规则表算）。</p></div>
+      <div class="row" data-page-node-id="jDGA9N8GcgM1L28WDobe8t"><b data-page-node-id="kPbP1AOmPIsynAAalEr9Te">解题路径</b><ol class="steps" data-page-node-id="tWO4WA7kz1FIvqoAfnRNDl"><li data-page-node-id="iAF23nCRUnKn4st0c9aTeb">看是否"相似"</li><li data-page-node-id="LizYW8BgD5NAEV4v9ZqWhn">逐行/逐列比对元素</li><li data-page-node-id="RMTXiTbZFDkMNRlfpWlK0Y">黑白运算先在同位置算 2 组验证规则</li></ol></div>
+      <div class="row trap" data-page-node-id="ZOG2ZBKgnvikFqjFKx5v3e"><b data-page-node-id="I9twGlCL0SAjhC4N5qPORt">易错陷阱</b><p data-page-node-id="UzsVc6gSZg0ZiqFFpzcFiK">黑白运算规则题要先推导、不能凭感觉；遍历顺序可能是行/列/整体。</p></div>
+    </div>
+  </div>
+
+  <div class="mt" data-module="logic" data-page-node-id="FAoGtwtLLMhai0SltGDbbO">
+    <div class="mt-head" data-page-node-id="N8XJDerVKS1F0wWuLvvXfZ">
+      <label class="mt-check" data-page-node-id="UZEo4FJBYgmgnhaPDF0Ks6"><input type="checkbox" data-id="l3" data-page-node-id="6SBdxLtAA7fsxwlVN3rsDp"><span data-page-node-id="7QER0X2ntXsxtN8oyh9VvI">掌握</span></label>
+      <span class="mt-no" data-page-node-id="ScKLut3tMFLjkOCMXKJEdP">母题 03</span><h4 data-page-node-id="LMWM8KBwP5PZpX3AVlPiYU">图形推理 · 属性规律</h4>
+    </div>
+    <div class="mt-body" data-page-node-id="7OPQEJSx03KC3GSgi43eNK">
+      <div class="row" data-page-node-id="3cjZSMbFlRb6DxKWWAwr1O"><b data-page-node-id="qyltZYcHbGJneW7Ly5bUpY">识别特征</b><p data-page-node-id="cANcHuYKxFvdXs3t4ecov0">图形组成凌乱，既不同一也不相似。</p></div>
+      <div class="row" data-page-node-id="nc0eNbqvUi5wVq5H4V5MIo"><b data-page-node-id="IbLEOASZfPWr7O3VgFWneY">核心方法</b><p data-page-node-id="UaGgR8R3gRzGR6IvWCOU6h">对称性（轴对称 / 中心对称 / 对称轴数量与方向）、曲直性（全直 / 全曲 / 曲直）、开闭性（开放 / 封闭）。</p></div>
+      <div class="row" data-page-node-id="YvDmx9IZP79VKhc1tT6VdD"><b data-page-node-id="YkqvntWZ18WytAqMSni2xw">解题路径</b><ol class="steps" data-page-node-id="9yXLeqGlGAP84RL4sjOJxD"><li data-page-node-id="x75XqMuPTx4CJ4J9UjoJtK">先看对称（最常见）</li><li data-page-node-id="i3ioMxQKPHrz3MYTnRzpGY">再看曲直、开闭</li><li data-page-node-id="GeiVPN3NqDYaumov0LJOkL">组合规律（如对称轴方向交替）</li></ol></div>
+      <div class="row trap" data-page-node-id="RMcNOTZ05wqj6mHWDyH725"><b data-page-node-id="uxxKZ4UCEdNO4RAS8hx3Db">易错陷阱</b><p data-page-node-id="LH0brHdk4dGAf5rAmMoJBR">轴对称与中心对称同时存在；对称轴方向按"顺时针 45°"变化。</p></div>
+    </div>
+  </div>
+
+  <div class="mt" data-module="logic" data-page-node-id="pnMmyjRjTWCgyEhkMGSFQX">
+    <div class="mt-head" data-page-node-id="mCPggQXMCNbcwU21i3Mvdy">
+      <label class="mt-check" data-page-node-id="jJHLkXT3my4IWlDo4lBX66"><input type="checkbox" data-id="l4" data-page-node-id="IBt9B4BCQNUU1InUjyNSom"><span data-page-node-id="PNKVfHWPDQ9zQJX33HX52u">掌握</span></label>
+      <span class="mt-no" data-page-node-id="Wwjw83s8lIUS9OMLBo84rm">母题 04</span><h4 data-page-node-id="GQEzZXTdBYEszYF9BMyrnM">图形推理 · 数量规律</h4>
+    </div>
+    <div class="mt-body" data-page-node-id="gEjrA7b7Jbn9hv1VbI4iX6">
+      <div class="row" data-page-node-id="U1Nd91XYgCIKvmeHpdMRpE"><b data-page-node-id="LhBQvx593SHmNlViZLJTbU">识别特征</b><p data-page-node-id="GV4hBFjOeEMi73hhJPzsgp">图形差异大，无明显位置/样式/属性规律。</p></div>
+      <div class="row" data-page-node-id="VdoEipqjfkaywbchvE02lN"><b data-page-node-id="dNr3e2KGbmDSkrFG3RBkE7">核心方法</b><p data-page-node-id="KwvdCLTB5Blx5sEYgkkGZH">数五大元素：<span class="hl" data-page-node-id="La9LbMgBxhbJfC5NZ0CAV2">点</span>（交点）、<span class="hl" data-page-node-id="9OYyvAxi7SinAhO6CEW0WI">线</span>（直线/曲线/笔画数）、<span class="hl" data-page-node-id="wfP3A1kFijVxTDpZ9BQT2o">面</span>（封闭区域）、<span class="hl" data-page-node-id="e5FSIuiogjWFLTfS4d7nHC">角</span>（直角/锐角）、<span class="hl" data-page-node-id="MKGCJhAsBZnyPHW3aA8JWw">素</span>（元素种类与个数）。</p></div>
+      <div class="row" data-page-node-id="SFIMa2C354AeQOk9C7oSG3"><b data-page-node-id="2W9nx4ahGgfWv4ksUOTGYA">解题路径</b><ol class="steps" data-page-node-id="34zNyu2UzX8CYGDONxv6YN"><li data-page-node-id="U59mB9hrqBeghJkB6ZpBCq">按"点→线→面→角→素"顺序试数</li><li data-page-node-id="UZSIZfFJm9ToVH3rn9ANUl">找数列规律（等差、递增、交替）</li><li data-page-node-id="IcRmGpBhQxcgwUrHPPaGlp">常见考点：笔画数（奇点个数÷2）</li></ol></div>
+      <div class="row trap" data-page-node-id="wrqiy1CBBJd3j7PQtSVcE5"><b data-page-node-id="x9TBEZVy6KUBOTYxTJrjyD">易错陷阱</b><p data-page-node-id="jyYanJfyNHjsHi7EEU3WpX">一笔画判断（奇点数为 0 或 2 才能一笔画）；面的数法要区分是否含外框。</p></div>
+    </div>
+  </div>
+
+  <div class="mt" data-module="logic" data-page-node-id="wwQF1Vic6Hi5jvCcVtpboZ">
+    <div class="mt-head" data-page-node-id="iuM0OkHXv9TuBdhLzHqjqC">
+      <label class="mt-check" data-page-node-id="4RYU87AXn5LzwpdvspwAf6"><input type="checkbox" data-id="l5" data-page-node-id="tCPTuPSe7q81xvG0ZZ17op"><span data-page-node-id="RdmmqbpCveqKh5mL5DWE9z">掌握</span></label>
+      <span class="mt-no" data-page-node-id="xXai1WDWpxEBsu46lCN43w">母题 05</span><h4 data-page-node-id="g0qpNEcMfBRBCF93J4xKHz">图形推理 · 空间重构</h4>
+    </div>
+    <div class="mt-body" data-page-node-id="atnCIChD9zHlcMnPx2WsXk">
+      <div class="row" data-page-node-id="reKirl9gBEkA1J07UGmggC"><b data-page-node-id="SsruFl8agGjBiw8jtQqpXT">识别特征</b><p data-page-node-id="nypemBkODylWvOOFyS5qAQ">折纸盒、骰子、三视图、截面。</p></div>
+      <div class="row" data-page-node-id="ccPTKislEU2SZcdWn0uzqa"><b data-page-node-id="vmjBzEXfZ87ckXfkHrkvPU">核心方法</b><p data-page-node-id="iEqlco3lSNd1g5bkgEddMo">折纸盒：用<span class="hl" data-page-node-id="xK5b0L1oHTI9HujHGqfc5l">相对面</span>（"Z 字端"法）和<span class="hl" data-page-node-id="zcLRL7iYJfWs2FKCWyVPDc">相邻面</span>（公共边/公共点法）判断；三视图：主视/俯视/左视；截面：熟悉正方体常见截面形。</p></div>
+      <div class="row" data-page-node-id="0QweBn4b8nmHhoQFS1vCAI"><b data-page-node-id="YwFSnfmmwaODRGS941mHcZ">解题路径</b><ol class="steps" data-page-node-id="k43MGodAC4m03SBXnQKeht"><li data-page-node-id="aM8sGOgcdMZeJSjGONo2H8">找相对面（不能同时出现）</li><li data-page-node-id="PQl3zHQqV8mnyNAnBb264F">用相邻面关系排除</li><li data-page-node-id="j2JDfy6MOm5OlFsuso88A4">必要时"折起来"想象验证</li></ol></div>
+      <div class="row trap" data-page-node-id="ST0VRAOyGrOAsBcc3wXBfU"><b data-page-node-id="L0Ghs1GUkyco2luHt7uFiz">易错陷阱</b><p data-page-node-id="AEh1Al8YcV7MLHkoYHLwss">相对面判断错误；忽略图案方向性（旋转后方向要对）。</p></div>
+    </div>
+  </div>
+
+  <div class="mt" data-module="logic" data-page-node-id="DHm8LXyCRTSWn73GeKgVQJ">
+    <div class="mt-head" data-page-node-id="mLLrAdqFzcoZ2OQkR2NqPt">
+      <label class="mt-check" data-page-node-id="bXCBJYwfTBTJTZk6V1LtQP"><input type="checkbox" data-id="l6" data-page-node-id="Y7I9w76OXr7Yq0yBa8SPzp"><span data-page-node-id="XsAZgKFjdUwoRFNThmBY8z">掌握</span></label>
+      <span class="mt-no" data-page-node-id="DRhGMa4kf60Cf43wz74Lix">母题 06</span><h4 data-page-node-id="rcPxHVWWdAji4Jxk4ER4ch">定义判断 · 单定义</h4>
+    </div>
+    <div class="mt-body" data-page-node-id="gzI3xTmmm95hdm3Re0WzpS">
+      <div class="row" data-page-node-id="trPdvCroLGXjrCI6fmmyU3"><b data-page-node-id="s47rDlPLwOnEcl5d1lGmFZ">识别特征</b><p data-page-node-id="paLoSqojEdkp17E7Ekb8gb">给出一个概念定义，问哪个选项符合/不符合。</p></div>
+      <div class="row" data-page-node-id="BVPutXl2luHePmdTf5Vfvb"><b data-page-node-id="5lDWAhHyHutHZc65npCA46">核心方法</b><p data-page-node-id="ZLhcf2XrC5zqa9ymt39Ygp"><span class="hl" data-page-node-id="fhbL1T6loRVTkd6Bg8GDnn">找要件法</span>：把定义拆成 2–4 个关键要件（主体、对象、方式、目的、结果），逐一比对选项。</p></div>
+      <div class="row" data-page-node-id="H59oC28yEu1Esq2ef8HgwZ"><b data-page-node-id="SjB7lAqVarliylD1ojydB7">解题路径</b><ol class="steps" data-page-node-id="d8En9sF1iq1VVAZB1BDcFU"><li data-page-node-id="D2yanpYEtUxiPp4sUbrjyJ">划出定义中的关键要件</li><li data-page-node-id="d5eayKiAl7d0oTkAF7Bhvq">选项逐要件打钩</li><li data-page-node-id="PDdQAYBuibVbZLsSR8uVYS">缺一个要件即不符合</li></ol></div>
+      <div class="row trap" data-page-node-id="zqJWFF5mY4jHhZaebrTIkp"><b data-page-node-id="Y86o1wQLYicv5fPCei7LHi">易错陷阱</b><p data-page-node-id="pK2IRwBtzHPWA8LDjJWGiw">被"看似专业"的选项迷惑；忽略要件中的限定词（"以…为目的""通过…方式"）。</p></div>
+    </div>
+  </div>
+
+  <div class="mt" data-module="logic" data-page-node-id="vaUCfSXEDWIwtmj5Bj3T0N">
+    <div class="mt-head" data-page-node-id="6Wsgl2pmGrM3ehMAsIVVNX">
+      <label class="mt-check" data-page-node-id="D5jLd8FqV7qvj2kBxODEC8"><input type="checkbox" data-id="l7" data-page-node-id="fLPZhhEpIHg3JhnQ3Ul6bJ"><span data-page-node-id="IyOjHXtgJPcyJG6je7YDnq">掌握</span></label>
+      <span class="mt-no" data-page-node-id="XEGYn8TrLNNqYTHfLrxbEA">母题 07</span><h4 data-page-node-id="uc23HGVwSWnTRZLoIsKh0m">定义判断 · 多定义</h4>
+    </div>
+    <div class="mt-body" data-page-node-id="XqekTNusdpS1rdFjQLtUPK">
+      <div class="row" data-page-node-id="ubEH4n5rCitvmmRwdnAaSZ"><b data-page-node-id="FM7trbCYlYwlk4xS8mX0eG">识别特征</b><p data-page-node-id="JBFT4GZSXo7wzfV8eQMZir">题干给出两个及以上相关定义，需辨析后匹配。</p></div>
+      <div class="row" data-page-node-id="aSPusQ119BnC9Xcbe3r3Uj"><b data-page-node-id="nFdzEBkem9niFxCLF1CA9s">核心方法</b><p data-page-node-id="4nOrbo39HJEftrBqbfAPGH">先<span class="hl" data-page-node-id="RXBsze7LMBDhc5HReLTqjH">辨析定义间差异</span>（问什么先看什么），再用要件法定位。</p></div>
+      <div class="row" data-page-node-id="V5leYEIQIoNIgKNP84oZx9"><b data-page-node-id="SnfVcm16gmADKUbZNzNRme">解题路径</b><ol class="steps" data-page-node-id="04KHsLQ43uniWHHqplUIyG"><li data-page-node-id="AMEjSqm5WgfZouCYesobAY">看清问的是哪一个定义</li><li data-page-node-id="EDMqAkEFoJfCCmYQFpVpPa">提取该定义的独特要件</li><li data-page-node-id="32NQO7EqSJO29bnQDOKCcp">与相近定义对比排除</li></ol></div>
+      <div class="row trap" data-page-node-id="J3LqzrOWFSgEYCBRtpzahB"><b data-page-node-id="rTiWQpyrVRlCEDWFodfNGz">易错陷阱</b><p data-page-node-id="pWQZcEVQCezebwMIwIhsUi">答非所问（问 A 定义却用 B 定义判断）；两个定义要件混用。</p></div>
+    </div>
+  </div>
+
+  <div class="mt" data-module="logic" data-page-node-id="uhJlyJv1P6EXldozxderfX">
+    <div class="mt-head" data-page-node-id="QHlmuOMCTSCMwFBc1F8dG9">
+      <label class="mt-check" data-page-node-id="rCWMF8VvU7LgOuw9kTiOrw"><input type="checkbox" data-id="l8" data-page-node-id="tK9KC1IRUlgRWWbUVliyNL"><span data-page-node-id="0tiAvdP3G4oEvr3cqukegi">掌握</span></label>
+      <span class="mt-no" data-page-node-id="pkIh4zNM66REQDI10Lgcfc">母题 08</span><h4 data-page-node-id="LXDDlwXzljdpNr40Ti6oYR">类比推理 · 语义 / 语法关系</h4>
+    </div>
+    <div class="mt-body" data-page-node-id="32wL0FSnSli1xvkkC2bTp7">
+      <div class="row" data-page-node-id="nKVFCJPMAgGY5liznkdrXH"><b data-page-node-id="bKOCLPeYrGT0CQkzjARt7Z">识别特征</b><p data-page-node-id="X6RlNpNJoI144rRTqMygg7">两词或三词之间的关系比对（逻辑关系最常考）。</p></div>
+      <div class="row" data-page-node-id="VALmGVl3UkMAis0GIH8dxJ"><b data-page-node-id="6Y9zkpTaHiK7e7SFVXX96v">核心方法</b><p data-page-node-id="sukvTLoEWHzhHbSFaiLJed">主干关系优先：<span class="hl" data-page-node-id="qwBQrqNUFJNJzlxaZHBXUg">全同、并列（矛盾/反对）、包含（种属/组成）、交叉、对应</span>（因果/目的/条件/必要）；语义（近义/反义/象征）；语法（主谓/动宾/偏正）。</p></div>
+      <div class="row" data-page-node-id="3UTVMUC45N9Ax4AUwe5wFN"><b data-page-node-id="gagKcrbR5pg5ERl6zD4KHN">解题路径</b><ol class="steps" data-page-node-id="JPkm3epUTKI4z7hXP66RWF"><li data-page-node-id="EvPViDMaUc4Olp13wCTfEE">先造句子找关系</li><li data-page-node-id="AukNZckzSipkuMaDiZ8n5t">再看词性是否一致</li><li data-page-node-id="u1NVu0iYc0De3PYblLxTsO">用二级辨析（如程度、必然性）细分</li></ol></div>
+      <div class="row trap" data-page-node-id="vTGnBGTsBkBdmBYe4jnLnI"><b data-page-node-id="VE0OFu1vDS3F6W3xdpFPe6">易错陷阱</b><p data-page-node-id="vmkss93OLTJd71EGK1MZC6">种属与组成混淆；必然与或然关系不分。</p></div>
+    </div>
+  </div>
+
+  <div class="mt" data-module="logic" data-page-node-id="9rq71R9abr3P5xVB8EmBBU">
+    <div class="mt-head" data-page-node-id="Hj3sH8VMwvxKgPrfyPRvty">
+      <label class="mt-check" data-page-node-id="3blW3ZgJTAcOF9SpHZDX9S"><input type="checkbox" data-id="l9" data-page-node-id="qQn4PMqIgoUVeCQk1LkDZ1"><span data-page-node-id="EK8jYMs5g6dGwrMaLxe4oc">掌握</span></label>
+      <span class="mt-no" data-page-node-id="mUvAkSg8BOkZxo8FzhALz9">母题 09</span><h4 data-page-node-id="ERUKP5mQBpvCFwfL8LjeWQ">翻译推理（假言命题） <span class="pill p-hi" data-page-node-id="DRmw4Pfa811ryYwomC647n">必考</span></h4>
+    </div>
+    <div class="mt-body" data-page-node-id="NnTP5ezb1yiLKT3kzn7R3l">
+      <div class="row" data-page-node-id="JlmcF0BzV40VHoVA35UTtu"><b data-page-node-id="2956WtniF3BIDdojC8EE1p">识别特征</b><p data-page-node-id="eObR6KAS9vngwG9KVprSIV">出现"如果…就…""只有…才…""除非…否则…"等关联词。</p></div>
+      <div class="row" data-page-node-id="dV5wXYG2WhNxZ4MBHbGVlp"><b data-page-node-id="gawm7FrzSZ9JC4fVNda7pP">核心方法</b><p data-page-node-id="Xt1Y4kWR7HwV6leFHDBUgJ">口诀：<span class="hl" data-page-node-id="Y0DiBzhss8QGGJTh2lP3PV">充分条件前推后，必要条件后推前</span>。<br data-page-node-id="K7uuzgMJL8TolYF4G1SkXu">"如果 A 就 B" → <span class="fml" data-page-node-id="L8TQFOkwKwe3HvHqFsHU3i">A→B</span>；"只有 A 才 B" → <span class="fml" data-page-node-id="2SLq594pVk1lzymIuR9VYn">B→A</span>；<br data-page-node-id="CBm5ExMGiBHw7MNaqK54uG">逆否等价：<span class="fml" data-page-node-id="k7eDcyugh0zIaMjJ6Vn0xL">A→B 等价于 ¬B→¬A</span>（肯前必肯后、否后必否前；否前肯后不确定）。</p></div>
+      <div class="row" data-page-node-id="ftys428jt9eJriuI5GCIec"><b data-page-node-id="DB08sTNUJKAtHjfxmLpdCn">解题路径</b><ol class="steps" data-page-node-id="lugSR1tAhhB1fyxd3GukQd"><li data-page-node-id="h8AEYB27hB2VAYUc6Wb8yz">把每句话翻译成箭头</li><li data-page-node-id="uKw1UiwJqoJPFPNEBYDOGD">串联条件（A→B→C）</li><li data-page-node-id="6l7XyBr41pqRqBFFLCOPse">用逆否等价判断选项</li></ol></div>
+      <div class="row trap" data-page-node-id="WI0zKt1ZdswJIorItIPBsp"><b data-page-node-id="oGXpOzKy1xTvXTU0Yj5sCQ">易错陷阱</b><p data-page-node-id="FF7KINOZPNF86n9Wbverji">"否前肯后"推出结论（无效）；"除非 A 否则 B"翻译为 <span class="fml" data-page-node-id="YDybMQLndAycfiCyWbQZMC">¬A→B</span> 易错。</p></div>
+    </div>
+  </div>
+
+  <div class="mt" data-module="logic" data-page-node-id="uZu63QmzInlEghifFE977i">
+    <div class="mt-head" data-page-node-id="fzNLeNjkpLESR7qtQ68nCB">
+      <label class="mt-check" data-page-node-id="fXTjwrueP8ilwEjNkqRwk2"><input type="checkbox" data-id="l10" data-page-node-id="TflpvTxUf4cBsuQZ1fAsET"><span data-page-node-id="NA2ea4YbY5DUiR1qPFHUfq">掌握</span></label>
+      <span class="mt-no" data-page-node-id="rM50uAGqTzAPNGPqMIld8e">母题 10</span><h4 data-page-node-id="sajkTUvAYNN6I13yjyXMuR">真假推理</h4>
+    </div>
+    <div class="mt-body" data-page-node-id="gLmXjnFv0aXcxWVCrXhsaH">
+      <div class="row" data-page-node-id="zX7mFX4NHujhkFzEW1oXaK"><b data-page-node-id="2qTCi7hoZasNxMKQEvrZfH">识别特征</b><p data-page-node-id="5Oa5YEE4Hn3LDDZ2G6xeGr">给出几句陈述，告知"只有一句真/假"，求结论。</p></div>
+      <div class="row" data-page-node-id="XEeGKXXOA1aQVIWDEyRoGN"><b data-page-node-id="VTx63sVnMF714n6bacEXqf">核心方法</b><p data-page-node-id="yxjkyRFdEkpR6O8pVskHY3">找<span class="hl" data-page-node-id="wFFEaXGqViCbLuU0RnyEsq">矛盾关系</span>（必有一真一假）："是/不是""所有/有的不""A→B 与 A 且¬B"；<span class="hl" data-page-node-id="EAXd5CrmsVXVGCEmiYpKe7">反对关系</span>（两个"所有"必有一假、两个"有的"必有一真）。</p></div>
+      <div class="row" data-page-node-id="oZyCtC1kJXBK38NdxtlPrs"><b data-page-node-id="EozVjrppAXulpNSWeJMuQo">解题路径</b><ol class="steps" data-page-node-id="T7bG0y6pqAqwiR4K2OMkR6"><li data-page-node-id="itBFb1Ilma1WihYhgFSAjG">找矛盾/反对关系定真假区间</li><li data-page-node-id="E8rrCAJXVGMStnvcGOKYjR">用剩余条件推真假</li><li data-page-node-id="uNsNuHPAVEyJHvW8ZTlmu5">假设验证</li></ol></div>
+      <div class="row trap" data-page-node-id="CdHEfPedqn4CbnlWWTKqAg"><b data-page-node-id="Tx8Kvps3tPfUbgkrDsjfD5">易错陷阱</b><p data-page-node-id="e8rqfllJgamj0e8QGfMxmW">矛盾关系找不全；忘记"只有一真"要回头验证假设。</p></div>
+    </div>
+  </div>
+
+  <div class="mt" data-module="logic" data-page-node-id="ky0K8WHGo3Sut3EZYQj3vL">
+    <div class="mt-head" data-page-node-id="TJxJENg2nmTIncfG8S4hfO">
+      <label class="mt-check" data-page-node-id="SUgn5rSzFcwh5qo6O7LwJA"><input type="checkbox" data-id="l11" data-page-node-id="G8euiBJ5Gox0ZsjtPdVaSx"><span data-page-node-id="YARQxf2lp8IFzDg6harlD2">掌握</span></label>
+      <span class="mt-no" data-page-node-id="Lga3h2VUOUghVHaMb1ehyV">母题 11</span><h4 data-page-node-id="pgGpA5PBnvAdX1IrYWDzBN">分析推理（排序/匹配/组合）</h4>
+    </div>
+    <div class="mt-body" data-page-node-id="kUcVvWV7gtG387wANOSk7A">
+      <div class="row" data-page-node-id="p5zmH2NMo99w3ZGDzSpEeM"><b data-page-node-id="95wHXFbOWbVw5d38c74J4M">识别特征</b><p data-page-node-id="WnHVVGuEgJoHjiyEJDNdvE">多个元素与多个属性的一一对应、排序问题。</p></div>
+      <div class="row" data-page-node-id="rTpLMMg5z4TNPDZCA8y18B"><b data-page-node-id="rmFcGERHUHjEHHDSpJOQCH">核心方法</b><p data-page-node-id="OVNObfxkXIZswjuxSlCZfd">三法：<span class="hl" data-page-node-id="6snAKe0QyhXnFCGoHiTWKw">排除法</span>（选项信息全）、<span class="hl" data-page-node-id="e1DYNrHr9J1vGTRVSZ248u">最大信息法</span>（从出现次数最多的条件入手）、<span class="hl" data-page-node-id="R5cTTMB8EFOVGIszQYaLsV">列表法</span>（二维表格辅助）。</p></div>
+      <div class="row" data-page-node-id="k5RGx6sEhAyXOBmmD0ZvGO"><b data-page-node-id="6i8F5KURDgXegS7R4Pnlrk">解题路径</b><ol class="steps" data-page-node-id="5HM3dVpfgGuIFUHfZfVxh1"><li data-page-node-id="ji7uqb3B1D7mysXgrSlveS">先看能否排除</li><li data-page-node-id="WibeXn5uhda5dLFG0DwkQn">找"确定信息"或"最大信息"突破</li><li data-page-node-id="rAILYODHEAopujLa4fX1qC">列表/连线梳理剩余条件</li></ol></div>
+      <div class="row trap" data-page-node-id="Ir1Xu0gfT6Tj3wX4QuCA0N"><b data-page-node-id="vX9iFhZ9epYn2sGnjSAJ4a">易错陷阱</b><p data-page-node-id="Sz19j5HFO7NCTDA92Pyalp">条件关系读反（"甲不在乙左边"）；忽略"一一对应"约束。</p></div>
+    </div>
+  </div>
+
+  <div class="mt" data-module="logic" data-page-node-id="OYAow8DVTaFKreZsgUl6Js">
+    <div class="mt-head" data-page-node-id="wYdUTz3h7pyXJnhKqNdM7Q">
+      <label class="mt-check" data-page-node-id="WEicrT2d5Ms9QmoJ88hRQ0"><input type="checkbox" data-id="l12" data-page-node-id="ifsooQlNCzje49lEbH1OVQ"><span data-page-node-id="9bDW62k6fEBnQFHExMeyHb">掌握</span></label>
+      <span class="mt-no" data-page-node-id="tGDlzbowYM9DtATvXEegTF">母题 12</span><h4 data-page-node-id="Yejv9azsOPs5u8fQXRqork">加强削弱（论证逻辑） <span class="pill p-hi" data-page-node-id="365i0jAaE8DtuRNtbUZhy9">必考</span></h4>
+    </div>
+    <div class="mt-body" data-page-node-id="57fZT77sAeo0s37lSwPfXo">
+      <div class="row" data-page-node-id="ESULSyHgtoMQKV19eBE2H5"><b data-page-node-id="FUMJruUbjGw3HDyN8Q9mTV">识别特征</b><p data-page-node-id="AouoNl9Ey8VG5xBkNS52rJ">给出论点、论据，问"最能加强/削弱的是"。</p></div>
+      <div class="row" data-page-node-id="0xQj1saLpj0esjGmtigiXt"><b data-page-node-id="tiFZpP6vAxhDK6CKiFCFTf">核心方法</b><p data-page-node-id="GPbKQZfoPpr2Dv7SbXRiBl">找论证结构：论点—论据—（隐含）假设。<br data-page-node-id="J1Kspz1YQ9oGTzCTjcxy9G">加强：<span class="hl" data-page-node-id="zszELC2RJQpEdAcaYWBtRO">搭桥</span>（补论据与论点的联系）、补充论据、排除他因；<br data-page-node-id="TijBWKgp2eG4Kf8PBo1iKV">削弱：<span class="hl" data-page-node-id="x0UKpc57qcQNE1bN2hu0RG">拆桥</span>（切断联系）、举反例、另有他因、因果倒置。</p></div>
+      <div class="row" data-page-node-id="b9B8rIls1N8FmBK5e7Q59o"><b data-page-node-id="z0fupCGM0hXTjEBV4PPcoL">解题路径</b><ol class="steps" data-page-node-id="TldeCw7KhE1aPVCzJoG4bl"><li data-page-node-id="731iiFG0HSB7TqzKPS0SKv">先找论点和论据</li><li data-page-node-id="uMVDwbUVOmxgQXw7ueWXFJ">判断选项作用方向</li><li data-page-node-id="uXFf2XQlv7nwGEA9fYLJfL">比较力度（搭桥/拆桥＞举例）</li></ol></div>
+      <div class="row trap" data-page-node-id="ieEeGmPrgZlA9WgUxrNFTK"><b data-page-node-id="kUFio4edDXVAAWN8vTvZU8">易错陷阱</b><p data-page-node-id="THQ7KmrzOW1FxbvQiCS2A1">把"无关项"当成加强/削弱；忽略"最能"要比较力度；偷换论题。</p></div>
+    </div>
+  </div>
+
+  <div class="mt" data-module="logic" data-page-node-id="GHfHDsKKh0r0wqX3HYCSco">
+    <div class="mt-head" data-page-node-id="1uaKEVsFGGpwCmZxUCsbc7">
+      <label class="mt-check" data-page-node-id="wYrpRgD1oc93pgpSkFCaqk"><input type="checkbox" data-id="l13" data-page-node-id="O4RsDCW7C00tVUGEKgPefR"><span data-page-node-id="hhf1octhycZ9Y7Zaa0TXlh">掌握</span></label>
+      <span class="mt-no" data-page-node-id="dPBoBc8MTqG3JTmIGDYUze">母题 13</span><h4 data-page-node-id="g5sZy2mkUEXmTJd6w4Jb3V">日常结论 · 原因解释 · 材料分析（一拖五）</h4>
+    </div>
+    <div class="mt-body" data-page-node-id="mZi1vx6vEwceqUUPAoMJkp">
+      <div class="row" data-page-node-id="h4j8OY55wAOryaJyxOvgnT"><b data-page-node-id="OfSQbkHlyGAydSL0EytTS5">识别特征</b><p data-page-node-id="1oPhn66eqFTIM5ULT50Bbe">①"由此可以推出"；②"最能解释上述矛盾的是"；③地市级特色：一段材料带五道小题。</p></div>
+      <div class="row" data-page-node-id="Lfj6Umf9daTnqxGD4KpYf6"><b data-page-node-id="qnfSAw10OqiAEWyqZDdd8Z">核心方法</b><p data-page-node-id="v6T686w2DyXiriTptZUTuI">日常结论<b data-page-node-id="DG8reUlnEVFQEUTbaEyfGd">三原则</b>：话题一致、慎选绝对表述、程度适中（可推出≠可联想）；<br data-page-node-id="6EyT2mpBJanUT4ul2WeElM">原因解释：找出矛盾双方，选能"同时解释"的选项；<br data-page-node-id="Xqt8IC27AH8TyCEjACwfmA">材料分析：先通读材料理清条件，再逐题推导，善用排除。</p></div>
+      <div class="row" data-page-node-id="Zp3kWUM1eOP7FaAdQiw9LH"><b data-page-node-id="EboRqEF6R1atHUcEF6s0Sk">解题路径</b><ol class="steps" data-page-node-id="nEoPA7CrVpvyDtyifdvY7g"><li data-page-node-id="pyMGMtXawvYiekmtiTDIX5">结论题：逐项回原文验证</li><li data-page-node-id="87mWuvFLCnCqFGavD16JLD">解释题：锁定矛盾点</li><li data-page-node-id="2pEd8SyQLOJPi8NSu1DCCG">一拖五：先记条件再做题，<b data-page-node-id="P48Fcn5OGxffUgGHBYqL1N">不要跳读</b></li></ol></div>
+      <div class="row trap" data-page-node-id="PB7CUS9L98r9w6SJQeX9yB"><b data-page-node-id="a09lXGPf5B35DNvFudxaGF">易错陷阱</b><p data-page-node-id="0U50Jd3CmAXPGSOU1u1mR0">结论题过度引申；解释题只解释了一方；一拖五漏读条件导致连环错。</p></div>
+    </div>
+  </div>
+
+  <!-- ---------- 资料分析 ---------- -->
+  <div class="mod-head data" id="m-data" data-page-node-id="PwddzvYH07zwbYCurtnVsy">
+    <span class="mi" data-page-node-id="eIHrzouAkjd6E8p1Ejvv0T">06</span>
+    <div data-page-node-id="pYOIunjP1Vt9nvA3EvWWMO"><h3 data-page-node-id="RLThKH0TxcAaLEdIlXhPlD">资料分析</h3><div class="sub" data-page-node-id="894vTQxa660uPAxhPj2jns">20 题 · 约 20 分 · 提分最快模块</div></div>
+    <div class="mp" data-page-node-id="zUPFAahGg6DkSD0EQ5FXER"><b id="pg-data" data-page-node-id="tjkRF7HmJ8FCwDeKN0WjWB">0/5</b>掌握进度</div>
+  </div>
+  <div class="tip" data-page-node-id="OsT5RzjsFI50LK8y3upFrP"><b data-page-node-id="LKn0AIqH095FHNJuLGuZ8M">核心认知：</b>资料分析是行测里<b data-page-node-id="q0UM30RxXM3K6IrBOB0EMZ">最"用功就有回报"</b>的模块，目标正确率 ≥ 90%。真正的难点不是难，而是<b data-page-node-id="w4GLvR40ibHyosS2N74qKM">慢</b>——所以训练重点永远是"计算速度 + 找数速度"，而不是难题。</div>
+
+  <div class="mt" data-module="data" data-page-node-id="UUiG8TIxBGSC50M8EqpH8U">
+    <div class="mt-head" data-page-node-id="eSMuOzwZ8gIAbiqGAHzWGl">
+      <label class="mt-check" data-page-node-id="yTk6yEwl5l5maTOfEKKwnl"><input type="checkbox" data-id="d1" data-page-node-id="hVqk7uc46uQ1vqrcRza4Rl"><span data-page-node-id="b6b1EGRhKH1ynmy8bEcEUj">掌握</span></label>
+      <span class="mt-no" data-page-node-id="5YXbabvWZNCdf85sSwpsDF">母题 01</span><h4 data-page-node-id="3zrcNj5b6tKBcfaVjOdPqR">增长类 <span class="pill p-hi" data-page-node-id="66ZtJAiKaxzelNBDEEkRA9">必考核心</span></h4>
+    </div>
+    <div class="mt-body" data-page-node-id="KZKXyDF1rICdiazekWauXk">
+      <div class="row" data-page-node-id="3LhEg6jPQAPjQPDlXyw5x3"><b data-page-node-id="z9mkIguA7ckyVcJB7zuPKv">识别特征</b><p data-page-node-id="MKr1RhjgaUdOLGpCxtdu0E">同比/环比增长、增长最快/最多、基期值。</p></div>
+      <div class="row" data-page-node-id="KQ8A9CUOIHxOjY1F7x7PI2"><b data-page-node-id="CYEoXWzL5vToVTJe2Gf9eu">核心公式</b><div data-page-node-id="rHRGiPS665D4AzpxraeDbE">
+        <span class="fml" data-page-node-id="Lv8JCJBq2jB9DCFyuAXEpw">增长率 = (现期 − 基期) ÷ 基期 = 增长量 ÷ 基期</span><br data-page-node-id="ydbjnVOOc5GAGdS06NZ42T">
+        <span class="fml" data-page-node-id="IbCbAegFw4XJinczCGIs5x">现期 = 基期 ×（1 + 增长率）</span>　<span class="fml" data-page-node-id="NQxZDkLgcbpndcJo3sOIvJ">基期 = 现期 ÷（1 + 增长率）</span><br data-page-node-id="ufa608hhFzGy6MfzB02XGo">
+        <span class="fml" data-page-node-id="sdXfHEH4p0D1X2Z0Bx451w">增长量 = 现期 − 基期 = 现期 × 增长率 ÷（1 + 增长率）</span><br data-page-node-id="NyWDtUGHFIGaCp24ageOgl">
+        <span class="fml" data-page-node-id="YbipcAYcObldN7Ew0wW5sG">隔年增长率 = r₁ + r₂ + r₁ × r₂</span>
+      </div></div>
+      <div class="row" data-page-node-id="Y7HwGqCJGR4fyNb0h8cRF9"><b data-page-node-id="ph6bzgnQFTLAij7yiwAqB2">解题路径</b><ol class="steps" data-page-node-id="DhtJ8CaNVdH0FDHZRfHHxd"><li data-page-node-id="4aEz2lj9VfkX8vetDdlJi8">先读问题锁定"考什么"</li><li data-page-node-id="jWJCAefBKnrFMvpTpR02AU">回材料定位数据（注意单位、时间）</li><li data-page-node-id="uv7jPqiFKEkYaZd0Yj2dQO">套公式 + 速算</li></ol></div>
+      <div class="row trap" data-page-node-id="eaZbJ52uS1RfSpwksc8M8g"><b data-page-node-id="K61FbGzYOESqdev5U13rH8">易错陷阱</b><p data-page-node-id="zKB8Fck65RNNxRuDpNUzc6">"增长最快"看<b data-page-node-id="FX0KsKCUnn4aoAbS8BIR8L">增长率</b>、"增长最多"看<b data-page-node-id="gEbSSmiApCGuLccllixCeR">增长量</b>；时间区间与同比/环比混淆；单位（万/亿、%/‰）不一致。</p></div>
+    </div>
+  </div>
+
+  <div class="mt" data-module="data" data-page-node-id="8F9WwBkJ5YM0T78lpyomio">
+    <div class="mt-head" data-page-node-id="bJlzKq3GpDmzUOxVy4fViZ">
+      <label class="mt-check" data-page-node-id="qHO7XW0ypHm5gozfCFDx51"><input type="checkbox" data-id="d2" data-page-node-id="UL2s73AWQQfZeWGAhLlByN"><span data-page-node-id="7UJeFjVvFU3dQF6EA5bGlA">掌握</span></label>
+      <span class="mt-no" data-page-node-id="JtSqfOjHPwF9shD2duzeLg">母题 02</span><h4 data-page-node-id="vw1XFfpWEeHEFJ6cwDcEvC">比重类 <span class="pill p-hi" data-page-node-id="RvvpS2d9gFDLClCRA53n8K">必考核心</span></h4>
+    </div>
+    <div class="mt-body" data-page-node-id="2uPHj6vficQCtBgPIuQBSk">
+      <div class="row" data-page-node-id="N70xzHFJVOjj9Xi9XMMg0v"><b data-page-node-id="XFstvdLzstKykJdFC9dQCo">识别特征</b><p data-page-node-id="a5pFAtKUTIXxSbvWO1Zsw7">"占""比重""A 在 B 中的占比"。</p></div>
+      <div class="row" data-page-node-id="6X8sxN6LDusMRK6KwVg4Hx"><b data-page-node-id="9y65wo9cuFEsTzLQJrcRdl">核心公式</b><div data-page-node-id="kWKfeKAEE8JlN3YGiBsmWT">
+        <span class="fml" data-page-node-id="olmD1O6QmNY9dIEcI0nX14">现期比重 = 部分 ÷ 整体</span><br data-page-node-id="quxKG5gnfxIQ5V5ymsouZP">
+        <span class="fml" data-page-node-id="VRsRUQm1B2TAHDFckdYXbO">基期比重 =（部分 ÷ 整体）×（1 + 整体增长率）÷（1 + 部分增长率）</span><br data-page-node-id="Hwjxf5isW5kHIXRNID9zdb">
+        <span class="fml" data-page-node-id="ox44fIaDIXmQ3dvuEblN7z">比重变化值 = 现期比重 − 基期比重</span>
+      </div></div>
+      <div class="row" data-page-node-id="JXFt8G9RbsnD4XRcsBnAWi"><b data-page-node-id="z1OSDw5JMBDkBzkt3mxA1M">解题路径</b><ol class="steps" data-page-node-id="K4dHZblVMfpGpemApNljEq"><li data-page-node-id="aSDNBUUzN6Bpi0YnbpOwgj">先判"部分"与"整体"</li><li data-page-node-id="sIVuJvrcS2HzPwAKffNz9B"><b data-page-node-id="X6QGEpU2HHJ4V78JUzdkVE">判断升降</b>：部分增速 &gt; 整体增速 → 比重上升</li><li data-page-node-id="4klYpidV1IY1muF449mUPm">求具体变化值再用公式</li></ol></div>
+      <div class="row trap" data-page-node-id="sqt0t0T9tNvYBKMtDCmWMZ"><b data-page-node-id="8nDW6Cv1P4HyKr3eqFTv6E">易错陷阱</b><p data-page-node-id="0HvVW2IoCpL4Bt7COwplcO">部分与整体搞反；"比重上升"只需比较两个增长率，不必精确计算。</p></div>
+    </div>
+  </div>
+
+  <div class="mt" data-module="data" data-page-node-id="PaCczLSlaG6M9Md5LMrM6o">
+    <div class="mt-head" data-page-node-id="2YFTJrmBwROTbbWJyb0rcA">
+      <label class="mt-check" data-page-node-id="2y63FMDPtrEo67Rij9Yobw"><input type="checkbox" data-id="d3" data-page-node-id="HDIXNw3CqQ6oUP2PpokAxf"><span data-page-node-id="ZruUOsCvWfEAZsSH8s2rkh">掌握</span></label>
+      <span class="mt-no" data-page-node-id="KoZSozDVG3zZdDm9bS2TE9">母题 03</span><h4 data-page-node-id="5w1jLUUt7qPd7bYoDZyMHV">平均数</h4>
+    </div>
+    <div class="mt-body" data-page-node-id="LJSUGG9K8SXBaQXRKXqzfy">
+      <div class="row" data-page-node-id="w72pWOR4PjJbg6vudDajmF"><b data-page-node-id="EmjMG0aA2Hc7YdhquHD9xG">识别特征</b><p data-page-node-id="Eth4HXPX6ZiEoZLhtNyY8J">"平均""人均""每…"。</p></div>
+      <div class="row" data-page-node-id="ckdwfTHEB9BfzkAidp5DrD"><b data-page-node-id="4mHXBDalSbS6UqwtnVfT0p">核心公式</b><div data-page-node-id="RPoPhJZkPmeKxAekmJH81E">
+        <span class="fml" data-page-node-id="Lmfj1sM5dEbAmZo3P5QWAX">平均数 = 总量 ÷ 份数</span><br data-page-node-id="dyTNZRy9tdEYR8jbkJJz7s">
+        <span class="fml" data-page-node-id="mxgojyY6yAxHTNCKxPjKTl">平均数增长率 =（1 + 总量增长率）÷（1 + 份数增长率）− 1</span>
+      </div></div>
+      <div class="row" data-page-node-id="46dAxIrUvRpKi6zFoY9uAE"><b data-page-node-id="hlMafYJkgsIeZ918vAG1DX">解题路径</b><ol class="steps" data-page-node-id="6oqxqmR5N3N96FJobv0Ka1"><li data-page-node-id="aGs6WpduPyjjulTc9umLjY">确定"总量"和"份数"分别是什么</li><li data-page-node-id="EcYV8SSDDVqEvYDKG5DgRF">求变化率时套公式（不用先算两个平均数）</li></ol></div>
+      <div class="row trap" data-page-node-id="yvnBXwRfSpcd3sB6qaeDBj"><b data-page-node-id="EEt3bfyXiixDw70CFq1HLt">易错陷阱</b><p data-page-node-id="QHYNWjTsdPKQTSoBDaIwZC">把"总量增长"当平均数增长；份数变化时忽略分母影响。</p></div>
+    </div>
+  </div>
+
+  <div class="mt" data-module="data" data-page-node-id="bLqW6tT8hWw8Qe370whBj5">
+    <div class="mt-head" data-page-node-id="lcp9czVMPiMy6HgVMvsxI7">
+      <label class="mt-check" data-page-node-id="HzAqb966ESkz8bWEEaghop"><input type="checkbox" data-id="d4" data-page-node-id="8D0eDUmkJGFfHlQEDqUflC"><span data-page-node-id="q96EF2ghi64nQR5XS3hHrz">掌握</span></label>
+      <span class="mt-no" data-page-node-id="FGpBKFQHXu1E6rDo7gczdY">母题 04</span><h4 data-page-node-id="sfM0cHHP8EWCpRUF0gS3AF">倍数与比值</h4>
+    </div>
+    <div class="mt-body" data-page-node-id="ZsFVwGyaAXlOsPgETx06H4">
+      <div class="row" data-page-node-id="BVFfMJGcgDh3zdV1miqKfn"><b data-page-node-id="GSEBAzYEMDvUOiONQaGRaG">识别特征</b><p data-page-node-id="DyLTlu8lEthE85oPEEliuS">"是…的几倍""多几倍""A 与 B 的比值"。</p></div>
+      <div class="row" data-page-node-id="rejyRJeVJ6Z2wHlaIvb7sj"><b data-page-node-id="SUgDF4dwNb4gyh342ZGz9j">核心方法</b><p data-page-node-id="qxtlDEyV0i83ShHeCNQJtb"><span class="fml" data-page-node-id="XO2AtE2MdL1RzShHPp8onw">A 是 B 的几倍 = A ÷ B</span>；<span class="fml" data-page-node-id="hem1v3Fg3MB5rhM4fTFSwv">A 比 B 多几倍 = A ÷ B − 1</span>（多几倍 = 是几倍 − 1）。</p></div>
+      <div class="row" data-page-node-id="MJez5iiqlQVmuDebJ3DF0D"><b data-page-node-id="0Pyzl3leo5nTpyXkCsdDIE">解题路径</b><ol class="steps" data-page-node-id="6SY5eju8PL779UG0C7PlIl"><li data-page-node-id="YPYhUp46abqqoPV9OdOEag">看清"是几倍"还是"多几倍"</li><li data-page-node-id="VseZ2xWC42bvWVt92Dcj9Z">定位两个比较对象的数据</li></ol></div>
+      <div class="row trap" data-page-node-id="ZTYBAsQcgr0KapN17rxyx3"><b data-page-node-id="PI7qDCkkmIliId6N4mh4WO">易错陷阱</b><p data-page-node-id="xTttwVNQPcxdU1Zu07OvLW">"是"与"多"差 1 倍，是最高频失分点。</p></div>
+    </div>
+  </div>
+
+  <div class="mt" data-module="data" data-page-node-id="m2FUTRnJdDnCtH8fqCpmJa">
+    <div class="mt-head" data-page-node-id="tA86hItbq30M6zNIcYQclW">
+      <label class="mt-check" data-page-node-id="h3RBEud6H63TTlMH2dQDEo"><input type="checkbox" data-id="d5" data-page-node-id="kgF132I4B6VF9WhWiQ0DE5"><span data-page-node-id="wxrA09IjHt0EHOLYUbrLGb">掌握</span></label>
+      <span class="mt-no" data-page-node-id="xq5mNO3PA6dbWoVaGvSKvK">母题 05</span><h4 data-page-node-id="yRP467TDOs3Ud8WAGjQEvw">综合分析题 + 速算技巧</h4>
+    </div>
+    <div class="mt-body" data-page-node-id="6gCBF0E6YkzCUpCctBVYGe">
+      <div class="row" data-page-node-id="SVn1onbMb8xoy4xOnzwKhJ"><b data-page-node-id="o3fiD0Ik1BqIwbJnxy5c7U">识别特征</b><p data-page-node-id="ZLK9PJ5QysQrSf3NLRfZ9E">一篇材料最后 1–2 题，四选项逐一判断。</p></div>
+      <div class="row" data-page-node-id="TDtuNLHyFeGztW1abA7DbB"><b data-page-node-id="86PNVSbNLynXNAM1tZXXuX">核心方法</b><p data-page-node-id="e0dwsJbyWuUZzDGJK0ylpZ">选项验证顺序：<b data-page-node-id="H6SkUgmjunyZsPJKsNtzcL">先简后繁</b>（先看不用算/好算的）；<br data-page-node-id="7TImgQ1oGoKsMRrlcdeflv">速算四法：<span class="hl" data-page-node-id="rHL7UI91LDmBe97UeP1u5D">截位直除</span>（保留 2–3 位）、<span class="hl" data-page-node-id="r77XAH0mxU6Cx5iYvE2VF2">首数法</span>、<span class="hl" data-page-node-id="zXmjlAuSTUzF1HQIRXA9zI">特征数字法</span>（把百分数换成分数如 12.5%→1/8）、<span class="hl" data-page-node-id="dlMgCJqwNXs5CMup4LH71j">放缩法</span>（比较大小）。</p></div>
+      <div class="row" data-page-node-id="3sTRUUB0KWPBZnPjn3jGfz"><b data-page-node-id="wtOJH03jl47JNmPLkEkyEZ">解题路径</b><ol class="steps" data-page-node-id="EqdJPOA9djMryIabl3B10g"><li data-page-node-id="Tfp7yXCLd9UFiRdWAOCoeS">先扫四个选项，判断哪个最好算</li><li data-page-node-id="ep444E1pOQkh7sE76VRo4x">能排除的先排除</li><li data-page-node-id="vuI4hTxGF8InkEsdHOxYn9">不纠结精确值，重在"够用"</li></ol></div>
+      <div class="row trap" data-page-node-id="E8RmBGEc8bPldRoNA6Wd4J"><b data-page-node-id="wHNqapKvyuFCP51deRlDFn">易错陷阱</b><p data-page-node-id="FFwut3fXCpz9QMe0Zeh5VI">按顺序从头算浪费时间；综合题往往"前三个错、最后一个对"或反之，别急着蒙。</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 4. 提分策略 ============ -->
+<section id="strategy" data-page-node-id="iLmnyYFY3aTIOc0CvDjQS8">
+  <div class="sec-head" data-page-node-id="z6zbXW4RvmQwFyVt8T3ud9"><span class="idx" data-page-node-id="00hboAoxaAalWF9brZzPRq">04</span><h2 data-page-node-id="KcCesjgBXvhg4T0CztcgKl">提分策略 · 考场时间分配</h2></div>
+
+  <div class="card">
+    <h3>选择题解题总策略：排除法优先</h3>
+    <p style="font-size:13.6px;color:var(--ink-2)">行测<b>全部是单项选择题</b>，选项本身就是最重要的解题资源。因此本计划中所有题目的解题路径，都<b>不是"从头一步步精算求出唯一答案"</b>，而是：</p>
+    <table style="margin-top:12px">
+      <thead><tr><th>步骤</th><th>做什么</th><th>判断依据</th></tr></thead>
+      <tbody>
+        <tr><td><b>① 先排除</b></td><td>扫一眼四个选项，快速划掉不可能项</td><td>明显错误、方向相反、范围不对、量级不符</td></tr>
+        <tr><td><b>② 再缩小</b></td><td>把注意力集中到剩下的 1–2 个选项</td><td>多数题目到这一步已能直接锁定答案</td></tr>
+        <tr><td><b>③ 后择优</b></td><td>仅在留存项无法区分时，才做精确比较</td><td>必要的速算 / 原文比对 / 规律验证</td></tr>
+      </tbody>
+    </table>
+    <div class="tip" style="margin-top:14px"><b>核心原则：能排除的绝不硬算。</b>只有在剩余项之间无法区分时，才动用完整计算。这与"四个选项平均用力、逐项验算"的做法完全相反，却是行测提分的关键——<b>先排除、再择优</b>。</div>
+  </div>
+
+  <div class="card" data-page-node-id="fKAz8At6tU9XsL6VWYJSLn">
+    <h3 data-page-node-id="SQfBc2muGO33WAuCnYmNTw">模块性价比排序（有限时间的投入优先级）</h3>
+    <div class="kpi" data-page-node-id="ABSnEhOn7MD2HxV7EqbptX">
+      <div data-page-node-id="NrT1qinHyZK7fA1qTOF6s2"><b data-page-node-id="AiXebY3jydL6raDtdFNgAs">① 资料分析</b><span data-page-node-id="pvLKvwuxaAa5Pbt5I9oV9a">回报最高，目标正确率 90%+</span></div>
+      <div data-page-node-id="1bIWT73BzEM6z6uQgA8wIf"><b data-page-node-id="hM08E8iuOYCdGAqoggi5VA">② 判断推理</b><span data-page-node-id="teylSQunccv3JpAmqDdcKJ">题量最大，规律性强</span></div>
+      <div data-page-node-id="2L9PkSFru4EUT9dGtc7GOW"><b data-page-node-id="RvI4ING7zb33E6rr3bZPzJ">③ 言语理解</b><span data-page-node-id="T6GwicZ17AWDlGeDujiJnI">分值最重，需稳语感</span></div>
+      <div data-page-node-id="iFnKyG1w4QEXM4HddRNgF7"><b data-page-node-id="ZBCwy42nSfp46Xq5gNbQ7E">④ 政治理论</b><span data-page-node-id="lvp07AtFbdPsouDZiOZcdF">靠积累+时政，性价比中</span></div>
+    </div>
+    <p style="font-size:13.3px;color:var(--ink-2)" data-page-node-id="52BBlVExnHa9Vy8f3K4y4A">常识判断与数量关系属于"有限投入"模块：常识靠日常滚动积累，数量只做确定性母题。切忌在低性价比模块上耗费大量时间。</p>
+  </div>
+
+  <div class="card" data-page-node-id="iURTTcoMB9uD0f6esEP5TX">
+    <h3 data-page-node-id="M5t9bI3HtVawXUEIA27Hoy">推荐做题顺序（总原则：先易后难、把分先落袋）</h3>
+    <table data-page-node-id="L8M2r41zEcdTXdfj7K8mn6">
+      <thead data-page-node-id="ko5koJ1r68VBWHX1CoS1hX"><tr data-page-node-id="ZOpF3HOCfqhWqrVQjQiMvk"><th data-page-node-id="bjnq83HYQVdRKTpoxApVU6">顺序</th><th data-page-node-id="GkOMbjSbQvYESpXAoON9Tm">模块</th><th data-page-node-id="SI4UbBeuXSEypMjJqQgk9W">建议用时</th><th data-page-node-id="m02OZc3tDVvK3dTcD7KyCf">理由</th></tr></thead>
+      <tbody data-page-node-id="9HF5QCLHojcfQvU4gWuZmI">
+        <tr data-page-node-id="GITk2uvL5GiLhUGn0NKDDS"><td data-page-node-id="LXc9p8Jchmz5JhcxX2BxXR">1</td><td data-page-node-id="CgH2kMHgUIOOqiZcTGVRPi">常识判断 / 政治理论</td><td class="num" data-page-node-id="71DU7o1FBo5rEYVStb2kuV">8–12 分钟</td><td data-page-node-id="guHRzLPyksNT0qTzcuuvtx">不依赖状态，快速过，会就会、不会就蒙</td></tr>
+        <tr data-page-node-id="Yp2ASuixzkWyQrP1a4ZPFJ"><td data-page-node-id="vwox1bMhacnswMDAmMyjTv">2</td><td data-page-node-id="lQNgzVbNotmUpBd1uHLcr8">资料分析</td><td class="num" data-page-node-id="UtrYFNV89FzL7HLxwgI0oI">25–30 分钟</td><td data-page-node-id="N8BLx2i10IZHLylP0AD7Qw">头脑清醒时做，保证正确率</td></tr>
+        <tr data-page-node-id="XLLGWiO2VZcgxzWclPAdh1"><td data-page-node-id="KGCgPJuXmpnf5fCAvtkHej">3</td><td data-page-node-id="dsWqOAJySfCjgRpA5jhoVT">判断推理</td><td class="num" data-page-node-id="hFCI1PK8NSEkGafW3I57RR">30–35 分钟</td><td data-page-node-id="9RYaEIfLuGxmId5HIv3vYH">规律性强，稳定得分</td></tr>
+        <tr data-page-node-id="b6xA8HM98gYFYfub2ThAvz"><td data-page-node-id="wObb5I2e2KZ71lyV8z8XOz">4</td><td data-page-node-id="lYQAvhAQmLlJQDZJKyqXh9">言语理解</td><td class="num" data-page-node-id="Fyu7GquQbsKkvhfHyaCyWV">25–30 分钟</td><td data-page-node-id="YpSBWloW3tbi1UdI9gdknN">题量大，保持节奏</td></tr>
+        <tr data-page-node-id="sPXc5f6XXX7mhh1IFK71st"><td data-page-node-id="tmTKkA6mF7WEFxfUCsGXBG">5</td><td data-page-node-id="N8QD93oft0PhwGyJBv3A8O">数量关系</td><td class="num" data-page-node-id="dTt3TkceSbuelbg4wAjiUo">10–15 分钟</td><td data-page-node-id="Kx3LOFmsJrxK8DKf2l2bC5">放最后，挑会做的，剩余统一蒙</td></tr>
+      </tbody>
+    </table>
+    <div class="tip" data-page-node-id="YJoOXqnnNi6CPmn6fUDwCv"><b data-page-node-id="4bIuvM2WsoAWQbH1u25WxW">关键纪律：</b>① 必须预留 <b data-page-node-id="3pqesTILjo2iu1Z7xTBY9t">5 分钟涂卡</b>；② 单题超过 1.5 分钟立即标记跳过，绝不恋战；③ 顺序可在模考中微调，一旦定下就<b data-page-node-id="2Sy0aJvrFQCGBXQgtms93R">固化</b>，考场上不再改变。</div>
+  </div>
+</section>
+
+<!-- ============ 5. 周历 ============ -->
+<section id="calendar" data-page-node-id="dWZ6VelQigECBo5yuqYHaO">
+  <div class="sec-head" data-page-node-id="MkEkNhG8UUgL3VgYOudUrR"><span class="idx" data-page-node-id="fTHwwhCvgkkCxwIv2k4p1h">05</span><h2 data-page-node-id="kCXapVGGz4HNWMgv9IeTKQ">11 周备考周历</h2></div>
+  <div class="card" data-page-node-id="xU7emOQXuRZ5yl9yp1yRDp">
+    <table data-page-node-id="c9lEzFzbif0EIr7Ex71ofx">
+      <thead data-page-node-id="YJynw17QZfycztOlEcgDTF"><tr data-page-node-id="KiaeNFC4nM8WYLMBP9BGPp"><th data-page-node-id="QteB8kWA4UkFfFQNAOebOz">周次</th><th data-page-node-id="1ejHbBOy0ApAiDvFCoFy79">进度（第 N 天）</th><th data-page-node-id="TwEMD8NOQgZ2A2DTEQbeCQ">阶段</th><th data-page-node-id="W2iFK73H0GkPev8dWV9MJa">本周核心任务</th></tr></thead>
+      <tbody data-page-node-id="3MGwxMKqEyHQAru08zw6wf">
+        <tr data-page-node-id="CD9cI0Gz54Ox6segGMZige"><td data-page-node-id="rjzeMoGO1wHGgzJlAHObx8">W1</td><td data-page-node-id="AyJlnMBwn6aGEhOYGB5ifr">第 1 – 7 天</td><td rowspan="4" style="background:#eaf1ff;font-weight:600;color:#2f6feb" data-page-node-id="FHdDUm69kJ8AP8UT06IyuW">基础攻坚</td><td data-page-node-id="9jE0GbEKin1gqSWDUEzlM5">【主攻】资料分析 D1–D7（公式 + 速算 + 综合分析）；政治 / 常识每日 30 分钟滚动</td></tr>
+        <tr data-page-node-id="WZEefBDdFUQCvbkdSo2SsN"><td data-page-node-id="Dk7WjJDGJdE9wGkmTDzkI6">W2</td><td data-page-node-id="Z760fnxwfglnF2oRg9su6Z">第 8 – 14 天</td><td data-page-node-id="SYqxYYgIn5SM8YennRAaAl">资料分析收尾 D8–D9（限时套题 / 终测 → 90%）；随后【主攻】判断推理 D1–D5</td></tr>
+        <tr data-page-node-id="GC7Tv3oStwFHWyvPQbF7I0"><td data-page-node-id="uqzQX951VD0OfDDHoCZWVh">W3</td><td data-page-node-id="LFEhIl6DghGtVKgUGetIzG">第 15 – 21 天</td><td data-page-node-id="bKGyJYqbyYPKWuz5rabFfF">【主攻】判断推理 D6–D12（逻辑判断 + 图形推理）；资料分析每日保温</td></tr>
+        <tr data-page-node-id="LQ8THmFPik1qsWK7d7rOXF"><td data-page-node-id="tUudgdWloBKt6QGNwrPaWr">W4</td><td data-page-node-id="t1JCAC79gJnE7ekB71CjGC">第 22 – 28 天</td><td data-page-node-id="uRsNI2n1EsnuaWCvQ6aw4D">判断推理收尾 D13（终测 → 85%）；【主攻】言语理解 D1–D6；资料 / 判断保温</td></tr>
+        <tr data-page-node-id="m7RHwa0RgGHSDaDzXWvRe2"><td data-page-node-id="N9Ff3ICS9ur5GHP3bHu7UG">W5</td><td data-page-node-id="ZwaNF93mm7Rm5cZ48aKbrL">第 29 – 35 天</td><td rowspan="4" style="background:#f3ecfb;font-weight:600;color:#8e44ad" data-page-node-id="HbBAun5YHhu2FqZgGbzOhE">强化提分</td><td data-page-node-id="nZdyqQlXsvC0qz9fGWIJkE">言语收尾 D7–D9（终测 → 80%）；【主攻】数量关系 D1–D4；三模块每日保温</td></tr>
+        <tr data-page-node-id="KoHtoJcTjDcEDGS4cJbruv"><td data-page-node-id="Il2FJlObMkYSA67mSJct9p">W6</td><td data-page-node-id="AajJJmwE7gX8yXn2VDWKuu">第 36 – 42 天</td><td data-page-node-id="GZ5P6HptSdLGKTVb5tivoW">数量关系收尾 D5–D7；随后四模块全部转入保温，进入专项强化</td></tr>
+        <tr data-page-node-id="pBQ5DXUECC5wuOPnV1fG49"><td data-page-node-id="UG5TCiVrQAfJHvBmRZwI3f">W7</td><td data-page-node-id="5liCRL9jNwkL3DWBSBPvJN">第 43 – 49 天</td><td data-page-node-id="9Or0wnOOAAHfpt7QNbEmrk">六模块混合限时训练，每周 2 套完整套卷；错题本复盘</td></tr>
+        <tr data-page-node-id="VVA8oRGary3lQHi8gj6FFh"><td data-page-node-id="DNw9IIhpOMfkfPTFqG5avQ">W8</td><td data-page-node-id="2FZv1YhkHNaqKcL1CZDyah">第 50 – 56 天</td><td data-page-node-id="xkLsTb09DkvsogEZGw9GXr">主攻薄弱环节；政治理论专项训练（目标 ≥ 70%）；整套稳定 ≥ 80%</td></tr>
+        <tr data-page-node-id="28IoP7tqjeA8KE1ZzMZwmK"><td data-page-node-id="jzteD4mZBHzRXiQPQihq7Q">W9</td><td data-page-node-id="ACs9rJQP8rJCKkP0H5DxcG">第 57 – 63 天</td><td rowspan="3" style="background:#eafaf0;font-weight:600;color:#1e8449" data-page-node-id="5dwQ7kL1QNpPjM0JethQbo">冲刺模考</td><td data-page-node-id="oSBbvDlfWB1lnomJhmoKum">每周 3 套模考，固化做题顺序与时间配额</td></tr>
+        <tr data-page-node-id="hzNJFn0wGyC02TxMYN7OCk"><td data-page-node-id="VxkbqGySk5IBgOpIMEykCA">W10</td><td data-page-node-id="xhQDAMB7O20WE25fuUnUIo">第 64 – 70 天</td><td data-page-node-id="GoeaaKIyJF35kY5rrHHVDH">模考 + 精析 + 时政冲刺（政治理论时政清单）</td></tr>
+        <tr data-page-node-id="k4iKIAxnmBOwfiWx6rCZta"><td data-page-node-id="6V1foEOLBE4qGquwHzZp54">W11</td><td data-page-node-id="qiX7jPLDwGQbuZIQFz6ji7">第 71 – 79 天</td><td data-page-node-id="IJK3bi1jQhRoIKnJt9FzIA">查漏补缺、调作息、上午 9–11 点模考保持状态，考前 1 天看错题本</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="card" data-page-node-id="xAuDZIA7OEYgqt2oMZPCFo">
+    <h3 data-page-node-id="5E3tCHBnALBHS006yWhYd2">每日时间模板（在职/在校可伸缩）</h3>
+    <table data-page-node-id="CkYRA7bEexMclLWqT8UHX0">
+      <thead data-page-node-id="7TugGwn91OzkPWh6JULdwS"><tr data-page-node-id="P8vCG4WmKcqBr7U3k6OHrR"><th data-page-node-id="x4TZTH7KQyfdwg3jT0zsN1">时段</th><th data-page-node-id="APjuVj9Ryp6P4ibMbGvHun">内容</th><th data-page-node-id="IYMYwGoEpFYmeC8ErjUETi">时长</th></tr></thead>
+      <tbody data-page-node-id="aybZYyxwbPUIU0AsNrjtMu">
+        <tr data-page-node-id="PC0fNoTzHA66kFz5ozOKzp"><td data-page-node-id="raaKPBsls2DwF8nqpR2sOm">早晨</td><td data-page-node-id="5EcGpDeLmUtEeEZJ0FlhXU">时政/常识滚动积累（政治理论清单、记忆卡片）</td><td class="num" data-page-node-id="USa1Vyj0PI4oyxx7HgENH4">20–30 min</td></tr>
+        <tr data-page-node-id="T1AT5PXQYv3rHzamRWyEwv"><td data-page-node-id="3XFGsNV5Fe8qqKcCBw3DpM">上午（黄金时段）</td><td data-page-node-id="IDgjaEIk0BHmZ4tssFg7xl">资料分析 / 判断推理 专项限时训练</td><td class="num" data-page-node-id="sDuot5sdJ1rJPPNDUcx1fQ">60–90 min</td></tr>
+        <tr data-page-node-id="iUxryKJS96k4hWiDVPD7qO"><td data-page-node-id="ilXLXbONYDkza4zMmBtND3">下午</td><td data-page-node-id="DlC3wfgcHOszThtwPEzL5q">言语理解 / 数量关系 母题练习</td><td class="num" data-page-node-id="66sKEXIF6GxeOwjkU5IJ3h">60–90 min</td></tr>
+        <tr data-page-node-id="cqez63z9hq2AlPzJRUbdZM"><td data-page-node-id="SshIA2lPTIE1H1Jebh8P9C">晚间</td><td data-page-node-id="yN3xtEa3QOolXktRDmmLlx">错题复盘 + 母题清单打卡（用本页勾选）</td><td class="num" data-page-node-id="5grjhXCtZSTC7LqhDHk0cp">30–45 min</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- ============ 6. 资料 ============ -->
+<section id="resources" data-page-node-id="fZiKAx8CGZ7D9mXyqbUwDe">
+  <div class="sec-head" data-page-node-id="4FUnDcAEISNobFaW3mhcCG"><span class="idx" data-page-node-id="cJEZ5XCLy08bwANMK6wJdx">06</span><h2 data-page-node-id="vlxLYs4i9gI50CoBHvqON0">资料与工具建议</h2></div>
+  <div class="card" data-page-node-id="C5uRbWvVlXZI6hDFXoazeg">
+    <h3 data-page-node-id="8SLotRtSI7fHQ3wPQzbYBk">核心资料清单</h3>
+    <table data-page-node-id="jLlEs8qDcrVYhhESqZQS4C">
+      <thead data-page-node-id="hXCyf72VaF9HpxRQ6f09Np"><tr data-page-node-id="HFwM203zFKV6POWaJX0XcL"><th data-page-node-id="HX2rggwzVKYnmZ7UoFFBF5">类别</th><th data-page-node-id="3csLINWwAHaDaYjOyDTHFB">推荐</th><th data-page-node-id="jNkoI0mlWg5c5bCfM7SjGB">用途</th></tr></thead>
+      <tbody data-page-node-id="uqlnKmHNAYjB7BctSz6e3X">
+        <tr data-page-node-id="Ez9hFft4Ar3Hkr1yJfQzCG"><td data-page-node-id="jxBqrkweN2lSumipKpe2hf">真题</td><td data-page-node-id="dMB5om65SUDQAArhXSVAjV">近 5 年国考行测真题（副省级/地市级/行政执法按报考卷别）</td><td data-page-node-id="IgXpZORc4eGQSuM3zLRnra">最重要！反复做，研究命题规律</td></tr>
+        <tr data-page-node-id="HuzURhH8mD2hJgkHFZZ1ol"><td data-page-node-id="URNR56Zchi0AdUiH4ls6wg">教材</td><td data-page-node-id="NRBTKgXBJwmU1vBuEFddIh">主流机构模块专项讲义（六大模块各一本）</td><td data-page-node-id="O3lFvNZOSdGzPJx1QDK3od">基础阶段搭框架</td></tr>
+        <tr data-page-node-id="ElssWdw46Fbt11hvY2VrG4"><td data-page-node-id="U62tLFIVmNcNPwtZAwCwJg">题库</td><td data-page-node-id="DBw7E5j90rzCj0ymPDw4sd">专项刷题册 + 在线题库 App</td><td data-page-node-id="CsbMwDB4rs6tbWRPueU3nv">强化阶段限时训练</td></tr>
+        <tr data-page-node-id="jDR0gy0FI4HPDxKPL2vBgU"><td data-page-node-id="SaT4mlBgaMa4b5ZvCJvq4l">时政</td><td data-page-node-id="ehP0ecHjXYh5nCJ3OlobWo">月度时政汇总、政府工作报告、三中全会《决定》</td><td data-page-node-id="SA6TMY3DyNbyiWo3daUBGB">政治理论 + 常识积累</td></tr>
+        <tr data-page-node-id="YCNHRiSKDTNeojNqTpuJIV"><td data-page-node-id="xxzxeV8iIISibdYlDUkfGr">模拟</td><td data-page-node-id="LssmF8jo5MhpAAjlbgbTwc">高质量模拟卷（每套严格 120 分钟）</td><td data-page-node-id="fkNVfCQ0EP01bv2ChIJzso">冲刺阶段培养节奏</td></tr>
+      </tbody>
+    </table>
+    <div class="tip" data-page-node-id="dMPIPCfSekGEyTGUr7r98T"><b data-page-node-id="C37FaAc2Tb8A1DQwtgPxB6">使用方法：</b>真题是"最贵的资源"，建议留 3–5 套到冲刺期做全真模考，其余用于分模块精做。<b data-page-node-id="xJ1MnEFppP2Hbtz0SJbr8c">错题本</b>按"模块 → 母题 → 错因"三级归类，每周复盘一次，重复错 3 次的题重点标记。</div>
+  </div>
+
+  <div class="card" data-page-node-id="DbCnUVIjstLOWuEEIgmB7G">
+    <h3 data-page-node-id="BSj6kVHb9yaRC2RkQAbFKR">三条通用提分原则</h3>
+    <p style="font-size:13.5px;color:var(--ink-2);line-height:2" data-page-node-id="jZhNt3D6IsxIuAW5vz29x4">
+      <b data-page-node-id="9RM1NDwTvR1sltKcypXIsd">① 方法优先于题量。</b>先掌握母题的解题方法，再刷题，避免"用错误的方法刷一千题"。<br data-page-node-id="gszxcioTSfVCPxwWnU40cK">
+      <b data-page-node-id="FnRREVYmGPEJYj1QHtDsGS">② 速度是一切的敌人。</b>行测考的是"在有限时间内的最优解"，练题必须限时，宁可少做也要卡时间。<br data-page-node-id="QgCtuEk6nDrUGMj6Ua6tft">
+      <b data-page-node-id="C0Z7daGNpqCnUwmL3rKjc9">③ 复盘大于多做。</b>每套题精析的时间应 ≥ 做题时间，把"为什么错"想透，比多做十套更有用。
+    </p>
+  </div>
+</section>
+
+<div style="text-align:center;font-size:12px;color:var(--ink-3);padding:20px 0 0" data-page-node-id="RY8GnWx0yiudLGyKTBALFb">
+  本计划依据近三年国考稳定考情整理 · 最终以「中央机关及其直属机构 2027 年度考试录用公务员」官方公告及大纲为准
+</div>
+
+</main>
+</div>
+
+<script>
+(function(){
+  var KEY='xingce2027_progress';
+  var state={};
+  try{ state=JSON.parse(localStorage.getItem(KEY)||'{}'); }catch(e){ state={}; }
+
+  var boxes=document.querySelectorAll('.mt-check input');
+  var total=boxes.length;
+
+  function save(){
+    try{ localStorage.setItem(KEY,JSON.stringify(state)); }catch(e){}
+  }
+  function update(){
+    var done=0;
+    var byMod={};
+    boxes.forEach(function(cb){
+      var id=cb.dataset.id;
+      var card=cb.closest('.mt');
+      var mod=card.dataset.module;
+      if(!byMod[mod]) byMod[mod]={t:0,d:0};
+      byMod[mod].t++;
+      if(state[id]){ byMod[mod].d++; done++; card.classList.add('done'); }
+      else card.classList.remove('done');
+    });
+    Object.keys(byMod).forEach(function(m){
+      var el=document.getElementById('pg-'+m);
+      if(el) el.textContent=byMod[m].d+'/'+byMod[m].t;
+    });
+    var pct= total? Math.round(done/total*100):0;
+    document.getElementById('tp-fill').style.width=pct+'%';
+    document.getElementById('tp-pct').textContent=pct+'%';
+    document.getElementById('tp-num').textContent=done+' / '+total+' 个母题已攻克';
+  }
+
+  boxes.forEach(function(cb){
+    if(state[cb.dataset.id]) cb.checked=true;
+    cb.addEventListener('change',function(){
+      state[cb.dataset.id]=cb.checked;
+      save(); update();
+    });
+  });
+  update();
+
+  // 侧边栏高亮
+  var links=document.querySelectorAll('.nav a[href^="#"]');
+  var sections=[];
+  links.forEach(function(a){
+    var t=document.querySelector(a.getAttribute('href'));
+    if(t) sections.push({el:t,a:a});
+  });
+  function onScroll(){
+    var y=window.scrollY+120,cur=null;
+    sections.forEach(function(s){ if(s.el.offsetTop<=y) cur=s; });
+    links.forEach(function(a){ a.classList.remove('on'); });
+    if(cur) cur.a.classList.add('on');
+  }
+  window.addEventListener('scroll',onScroll,{passive:true});
+  onScroll();
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>政治理论 · 题本与母题解析（5 大母题 · 排除法优先）</title>
+<style>
+:root{--pri:#dc2626;--pri-d:#b91c1c;--soft:#fef2f2;--ink:#20242c;--ink2:#4b5563;--ink3:#8a94a6;--line:#e8ecf3;--bg:#f8fafc;--ok:#158a6e}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif;font-size:15px;line-height:1.85}
+.wrap{display:flex;min-height:100vh}
+aside#side{width:264px;flex:0 0 264px;background:#3d0e12;color:#e6edf7;padding:20px 14px;position:sticky;top:0;height:100vh;overflow-y:auto}
+aside#side .brand h1{margin:0;font-size:18px;color:#fff;letter-spacing:.5px}
+aside#side .brand p{margin:7px 0 14px;font-size:12px;color:#d9a0a0;line-height:1.7}
+.prog-wrap{background:#571a1f;border-radius:11px;padding:12px 13px;margin-bottom:14px}
+.prog-top{display:flex;justify-content:space-between;font-size:12px;color:#d9a0a0;margin-bottom:7px}
+.prog-top b{color:#fff}
+.bar{height:7px;border-radius:99px;background:rgba(0,0,0,.35);overflow:hidden}
+.bar i{display:block;height:100%;width:0;background:linear-gradient(90deg,#dc2626,#f87171);transition:.3s}
+.navgrp{font-size:11.5px;color:#d9a0a0;margin:13px 4px 5px;letter-spacing:1px}
+nav.nav{display:flex;flex-direction:column;gap:1px}
+nav.nav a{color:#d5deeb;text-decoration:none;font-size:13px;padding:6px 9px;border-radius:8px;display:flex;justify-content:space-between;gap:6px}
+nav.nav a:hover{background:rgba(255,255,255,.08)}
+nav.nav a.on{background:var(--pri);color:#fff;font-weight:700}
+nav.nav a .nv-badge{font-size:11px;color:#d9a0a0}
+aside#side .flink{margin-top:16px;border-top:1px solid rgba(255,255,255,.12);padding-top:12px;font-size:12px}
+aside#side .flink a{display:block;color:#d5deeb;text-decoration:none;padding:4px 6px;border-radius:6px}
+aside#side .flink a:hover{background:rgba(255,255,255,.08)}
+main{flex:1;min-width:0;padding:26px 34px 80px;max-width:980px}
+.jsstat{background:#fef2f2;border:1px solid #f87171;color:var(--pri-d);border-radius:10px;padding:8px 14px;font-size:13px;margin-bottom:14px;font-weight:600}
+.hero{background:linear-gradient(135deg,#dc2626,#f87171);border-radius:16px;color:#fff;padding:24px 26px;margin-bottom:22px}
+.hero h1{margin:0 0 8px;font-size:24px}
+.hero p{margin:0 0 12px;font-size:13.5px;opacity:.94;line-height:1.8}
+.hero-meta{display:flex;flex-wrap:wrap;gap:8px}
+.hero-chip{background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.25);padding:6px 14px;border-radius:20px;font-size:12.5px}
+.hero-chip.lk{background:rgba(255,255,255,.34);border-color:rgba(255,255,255,.6);color:#fff;font-weight:700;text-decoration:none}
+.toolbar{display:flex;flex-wrap:wrap;gap:9px;align-items:center;margin-bottom:18px}
+.tbtn{cursor:pointer;user-select:none;font-size:13px;padding:7px 15px;border-radius:9px;border:1px solid var(--line);background:#fff;color:var(--ink2);font-weight:600}
+.tbtn:hover{border-color:var(--pri);color:var(--pri-d)}
+.tbtn.on{background:var(--pri);border-color:var(--pri);color:#fff}
+.tbtn-ghost{background:transparent}
+.tbtn-hint{font-size:12.5px;color:var(--ink3);margin-left:auto}
+section.sec{background:#fff;border:1px solid var(--line);border-radius:16px;padding:22px 24px 18px;margin-bottom:22px}
+.sec-head{display:flex;align-items:center;gap:12px;margin-bottom:12px}
+.sec-head .idx{font-size:12px;font-weight:700;color:#fff;background:var(--pri);padding:3px 10px;border-radius:7px}
+.sec-head h2{font-size:19px;font-weight:800;margin:0}
+.mhero{display:flex;justify-content:space-between;align-items:flex-start;gap:14px;background:var(--soft);border-radius:13px;padding:14px 17px;margin-bottom:14px}
+.mhero h3{margin:0 0 3px;font-size:17.5px;font-weight:800}
+.mhero p{margin:0;font-size:12.8px;color:var(--ink2)}
+.mmeta{text-align:right;font-size:12px;color:var(--ink3);white-space:nowrap}
+.mmeta b{display:block;font-size:14px;color:var(--pri-d)}
+.keys{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px;margin-bottom:16px}
+.key{border:1px solid var(--line);border-left:4px solid var(--pri);border-radius:11px;padding:10px 13px;background:#fcfdff}
+.key h4{margin:0 0 4px;font-size:13px;color:var(--pri-d)}
+.key p{margin:0;font-size:13px;color:var(--ink2);line-height:1.75}
+.card{border:1px solid var(--line);border-radius:13px;padding:15px 17px;margin-bottom:14px;background:#fff}
+.card h3{margin:0 0 10px;font-size:15.5px;font-weight:800;color:var(--pri-d)}
+.mat{background:var(--soft);border-radius:10px;padding:11px 14px;font-size:13.8px;margin-bottom:10px;line-height:1.85}
+.mtitle{display:block;font-weight:700;color:var(--pri-d);font-size:12.5px;margin-bottom:2px}
+.q{border:1px solid var(--line);border-radius:12px;padding:12px 14px;margin-bottom:10px;background:#fff}
+.qtop{display:flex;gap:10px;align-items:flex-start}
+.qno{flex:0 0 auto;width:24px;height:24px;border-radius:50%;background:var(--pri);color:#fff;font-size:12.5px;display:flex;align-items:center;justify-content:center;font-weight:700;margin-top:3px}
+.qstem{flex:1;font-size:14px}
+.qsrc{font-size:11.5px;color:var(--ink3);margin-left:8px;white-space:nowrap}
+.opts{display:grid;grid-template-columns:1fr 1fr;gap:4px 18px;margin:9px 0 4px 34px;font-size:13.6px}
+.opts.one{grid-template-columns:1fr}
+.qfig{margin:8px 0 4px 34px}
+.qfig img{max-width:100%;border:1px solid var(--line);border-radius:9px}
+.btn-reveal{display:inline-block;margin:4px 0 0 34px;font-size:12.5px;font-weight:700;color:var(--pri-d);background:var(--soft);border:1px solid #f87171;border-radius:8px;padding:4px 13px;cursor:pointer;user-select:none}
+.ana{margin-top:10px;border-top:1px dashed var(--line);padding-top:10px}
+.ana-h{font-size:12.5px;font-weight:800;color:var(--pri-d);margin-bottom:7px}
+.as{border-radius:9px;padding:8px 12px;margin-bottom:7px;font-size:13.4px}
+.as i{font-style:normal;font-weight:800;margin-right:7px}
+.as.k1{background:#fdf2f2}.as.k1 i{color:#c0392b}
+.as.k2{background:#fff8ec}.as.k2 i{color:#b07a12}
+.as.k3{background:#effaf3}.as.k3 i{color:#158a6e}
+.as p{margin:0;display:inline}
+.del{color:#c0392b;font-weight:700}
+.ans{background:var(--soft);border-radius:9px;padding:8px 12px;font-size:13.4px;margin-top:8px}
+.mini-check{display:inline-block;margin:8px 0 0 34px;font-size:12.5px;color:var(--ink2);cursor:pointer;user-select:none}
+.mini-check input{accent-color:var(--pri);margin-right:4px}
+.ansline{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:6px;margin-top:10px}
+.ansline div{background:var(--soft);border-radius:8px;padding:5px 10px;font-size:12.5px;color:var(--ink2)}
+.ansline b{color:var(--pri-d);margin:0 5px;font-size:14px}
+.tip{background:#fff8ec;border-left:4px solid #e8b34a;border-radius:9px;padding:9px 13px;font-size:13px;color:#7a5a1e;margin-top:10px}
+table.et{width:100%;border-collapse:collapse;font-size:13px;margin-top:6px}
+table.et th{background:var(--soft);color:var(--pri-d);text-align:left;padding:8px 10px;font-size:12.5px}
+table.et td{border-bottom:1px solid var(--line);padding:8px 10px;vertical-align:top;color:var(--ink2)}
+.rec{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+.rec label{border:1px solid var(--line);border-radius:10px;padding:8px 12px;font-size:13px;cursor:pointer;background:#fff;color:var(--ink2);user-select:none}
+.rec label.done{background:#effaf3;border-color:#bfe6d2;color:var(--ok);font-weight:700}
+.footnote{font-size:12px;color:var(--ink3);margin-top:14px;line-height:1.8}
+/* ---- v4 双引擎：JS 根 class 为主 ---- */
+html.js .ana{display:none}
+html.js .q.qopen .ana{display:block}
+html.js.xall-on .ana{display:block}
+html.js .btn-reveal .t2{display:none}
+html.js .q.qopen .btn-reveal .t1{display:none}
+html.js .q.qopen .btn-reveal .t2{display:inline}
+html.js.xall-on .btn-reveal .t1{display:none}
+html.js.xall-on .btn-reveal .t2{display:inline}
+html.js #xallchip .t2{display:none}
+html.js.xall-on #xallchip .t1{display:none}
+html.js.xall-on #xallchip .t2{display:inline}
+/* ---- :has() 兜底（仅无 JS 时 checkbox 真的会被勾上）---- */
+article.q:has(.soltoggle:checked) .ana{display:block}
+html:has(#xall:checked) .ana{display:block}
+#xallchip .t2{display:none}
+html:not(.js):has(#xall:checked) #xallchip .t1{display:none}
+html:not(.js):has(#xall:checked) #xallchip .t2{display:inline}
+@media (max-width:900px){.wrap{display:block}aside#side{position:static;height:auto;width:auto}}
+</style>
+</head>
+<body>
+<style id="resnav-style">
+.resnav{position:fixed;top:0;left:0;right:0;z-index:99999;display:flex;align-items:center;gap:4px;
+  height:44px;padding:0 12px;background:#1f2937;color:#e5e7eb;font-size:13px;line-height:1;
+  font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;overflow-x:auto;
+  box-shadow:0 1px 0 rgba(255,255,255,.06),0 2px 10px rgba(0,0,0,.18);-webkit-overflow-scrolling:touch}
+body::before{content:"";display:block;height:44px}
+.resnav::-webkit-scrollbar{height:0}
+.resnav .rn-brand{flex:0 0 auto;font-weight:700;color:#7ee0c0;margin-right:6px;letter-spacing:.5px}
+.resnav a{flex:0 0 auto;color:#d1d5db;text-decoration:none;padding:6px 10px;border-radius:8px;
+  white-space:nowrap;transition:.15s}
+.resnav a:hover{background:#374151;color:#fff}
+.resnav a.on{background:#22c39a;color:#06251c;font-weight:700}
+.resnav .rn-sep{flex:0 0 auto;width:1px;height:18px;background:#4b5563;margin:0 5px}
+.resnav .rn-end{margin-left:auto}
+@media (max-width:640px){.resnav{font-size:12px;height:40px}body::before{height:40px}}
+</style>
+<nav class="resnav" id="resnav"><span class="rn-brand">行测 2027</span>
+<a href="国考笔试总排期表.html">总排期表</a>
+<a href="2027国考行测学习计划.html">行测总纲</a>
+<span class="rn-sep"></span>
+<a href="资料分析_9天冲刺计划.html">资料分析</a>
+<a href="判断推理_13天冲刺计划.html">判断推理</a>
+<a href="言语理解_9天冲刺计划.html">言语理解</a>
+<a href="国考笔试总排期表.html#math">数量关系</a>
+<a href="国考笔试总排期表.html#roll">常识政治</a>
+<a href="国考笔试总排期表.html#roll" class="on">政治理论</a>
+<a href="申论_学习计划.html">申论</a>
+<span class="rn-sep rn-end"></span>
+<a href="题库总览.html">题库总览</a>
+</nav>
+
+<div class="wrap">
+<aside id="side">
+  <div class="brand"><h1>政治理论 · 题本</h1><p>24 题真题池 · 5 大母题 · 限时训练</p></div>
+  <div class="prog-wrap">
+    <div class="prog-top"><span>训练题打卡</span><b><span id="pg-txt">0</span> / 17</b></div>
+    <div class="bar"><i id="pg-bar"></i></div>
+  </div>
+  <div class="navgrp">母题通关</div><nav class="nav"><a class="navlink" href="#k1" data-sec="k1">1 马哲原理<span class="nv-badge" data-badge="k1">0/0</span></a><a class="navlink" href="#k2" data-sec="k2">2 组合判断<span class="nv-badge" data-badge="k2">0/0</span></a><a class="navlink" href="#k3" data-sec="k3">3 中特·习思想<span class="nv-badge" data-badge="k3">0/0</span></a><a class="navlink" href="#k4" data-sec="k4">4 决定·民生生态<span class="nv-badge" data-badge="k4">0/0</span></a><a class="navlink" href="#k5" data-sec="k5">5 决定·经济科技<span class="nv-badge" data-badge="k5">0/0</span></a></nav><div class="navgrp">附录</div><nav class="nav"><a href="#err">错因分类表</a><a href="#record">母题自测打卡</a></nav>
+  <div class="flink">
+    <a href="政治理论_真题题库.html">← 返回 政治理论_真题题库</a>
+    <a href="国考笔试总排期表.html#roll">总排期表 · 政治理论滚动 →</a>
+    <a href="题库总览.html">题库总览</a>
+  </div>
+</aside>
+<main>
+<div class="jsstat" id="jsstat">正在检查脚本…（若一直不变＝预览禁用了脚本；解析可用 :has 兜底展开）</div>
+<div class="hero">
+  <h1>政治理论 · 题本与母题解析</h1>
+  <p>政治理论自 2025 年起是<b>独立模块（20 题）</b>，分数全在「提法的名词级准确度」上。本题本把 24 道真题归成 <b>5 大母题</b>：每个母题给三把钥匙 + 一道典型题的排除法三步精讲 + 一组限时训练题。错项的改造手法只有三板斧——<b>换关键词、换主语、方向反转</b>，认出手法，不会背的提法也能排对。</p>
+  <div class="hero-meta">
+    <span class="hero-chip">📚 题源：粉笔《决战行测5000题·常识判断（新增题）》第五章「政治常识」真题（考生回忆版）</span>
+    <span class="hero-chip">🧭 5 大母题 · 17 道训练题</span>
+    <span class="hero-chip">⏱ 每组限时训练</span>
+    <a class="hero-chip lk" href="政治理论_真题题库.html">配套真题题库（全部真题+粉笔解析）→</a>
+  </div>
+</div>
+
+<div class="toolbar" id="xallchip">
+  <label class="tbtn" for="xall" data-act="xall"><span class="t1">展开全部解析</span><span class="t2">收起全部解析</span></label>
+  <span class="tbtn" data-act="clear">清空打卡</span>
+  <input type="checkbox" id="xall" style="display:none">
+  <span class="tbtn-hint">建议：先自己作答，再点「看解析」对照三步思路。</span>
+</div>
+
+<section class="sec" id="how">
+  <div class="sec-head"><span class="idx">00</span><h2>这本题本怎么用</h2></div>
+  <div class="keys"><div class="key"><h4>第一步 · 判题型</h4><p>两大题型：①<b>提法判断</b>（选非为主）——圈出「不恰当 / 不属于 / 不准确」，对每个选项做三查：换关键词？换主语？方向反转？②<b>原理匹配</b>（马哲）——先排“本身说法就错”的选项（如“矛盾的普遍性是有条件的”），再把材料关键词对到原理。</p></div><div class="key"><h4>第二步 · 背准提法</h4><p>政治理论的分差全在「名词级别」的准确度：总体<b>战</b>≠持久战、最大政治优势＝<b>坚持党的全面领导</b>、双碳 2030/2060、能耗双控向<b>碳排放双控</b>转型、延迟退休＝<b>自愿、弹性</b>。每道典型题的心法都点出了被换掉的关键词，错题把正确表述抄成条目，每周回看。</p></div><div class="key"><h4>第三步 · 限时 + 打卡</h4><p>每题 ≤ 50 秒；组合题（“正确的有几项”）先判最有把握的一条定档位，再判次有把握的收窄，剩余凭表述平实度倾向，不逐条死磕。训练题组限时做，答案速查后回母题重读钥匙。</p></div></div>
+  <div class="tip"><b>顺序：</b>先读三把钥匙 → 点开典型题<b>自己先做</b> → 看排除法三步解析对照思路 → 再做训练题组（限时）→ 对答案速查，错题回母题找原因。全部打卡进度保存在本机。</div>
+</section>
+
+<section class="sec" id="k1" data-sec="k1">
+  <div class="mhero"><div><h3>母题 1 · 马克思主义哲学 · 原理匹配</h3><p>材料 / 引言对应哲学原理：联系、矛盾、认识论、真理与价值。先排错项再对材料。</p></div>
+    <div class="mmeta"><b>3 题</b>训练 · 限时 5 分钟</div></div>
+  <div class="keys"><div class="key"><h4>识别特征</h4><p>给出总书记引言、谚语或时政材料，问“蕴含 / 体现的哲理是”；或直接考原理表述的正误。</p></div><div class="key"><h4>核心钥匙</h4><p>①材料提“同舟共济 / 合作 / 相互依存”→<b>普遍联系</b>；提“经验总结 / 观察把握”→<b>意识把握规律</b>；提“追求真理＋人民利益”→<b>真理尺度与价值尺度统一</b>；②死磕表述正误：矛盾的普遍性＝共性＝<b>无条件的、绝对的</b>；客观性<b>不从属</b>主观；③政治经济学：价值量由<b>社会必要劳动时间</b>决定，具体劳动创造使用价值、抽象劳动形成价值。</p></div><div class="key"><h4>选项怎么用</h4><p>两步走：先排<b>本身说法就错</b>的选项（普遍性“有条件”、客观性“从属主观”都是唯心倾向，直接划）；剩下的拿材料关键词逐一比对，材料没提的机制（如“改造世界”“量变积累”）不硬凑。</p></div></div>
+  <div class="card">
+  <h3>典型题｜理想信念引言——题干里两句话，各对应一把尺度</h3>
+  <div class="q">
+    <div class="qtop"><span class="qno">例</span><span class="qstem">习近平总书记指出：“我们坚定，是因为我们追求的是真理。我们坚定，是因为我们遵循的是规律。我们坚定，是因为我们代表的是最广大人民根本利益。”这一论述最直接体现了马克思主义的哪一基本观点？<span class="qsrc">（2025 国考行政执法 4 · 错率 60%）</span></span></div>
+    <div class="opts"><span>A. 真理尺度与价值尺度的辩证统一</span><span>B. 认识世界与改造世界的辩证统一</span><span>C. 量变与质变的辩证统一</span><span>D. 矛盾的特殊性与普遍性的辩证统一</span></div>
+    <input type="checkbox" class="soltoggle" id="ck-typ-1-1" style="display:none">
+    <label class="btn-reveal" for="ck-typ-1-1" data-act="reveal"><span class="t1">看解析</span><span class="t2">收起解析</span></label>
+    <div class="ana">
+      <div class="ana-h">解析 · 排除法优先</div>
+      <div class="as k1"><i>① 先排除</i><p>先在题干里找对应：“建立在科学真理与人类社会发展规律的基础之上”＝<b>真理原则</b>；“为最广大人民谋利益”＝<b>价值原则</b>——题干两把尺度都齐了。</p></div>
+      <div class="as k2"><i>② 再缩小</i><p>排除：B 讲认识世界与改造世界的关系，题干没提“改造世界”；C 无任何量变积累 / 质变飞跃标志词；D 无共性与个性的对照——三个选项在材料里都找不到着落。</p></div>
+      <div class="as k3"><i>③ 后择优</i><p>A 与题干两句话逐字对应（真理＋人民利益），双要素完整。选 <b>A</b>。</p></div>
+      <div class="ans">答案：<b>A</b>　　<b>心法：</b>引言类原理题不背原理清单也能做：把题干拆成两半，看哪个选项能<b>同时接住两半</b>——接不住的全部划掉。</div>
+    </div>
+  </div>
+</div>
+  <div class="card"><h3>训练题组｜限时 5 分钟</h3><div class="q" id="t-1-1" data-master="1-1"><div class="qtop"><span class="qno">1</span><span class="qstem">人类只有一个地球，人类也只有一个共同的未来。无论是应对眼下的危机，还是共创美好的未来，人类都需要同舟共济、团结合作。实践一再证明，任何以邻为壑的做法，任何单打独斗的思路，任何孤芳自赏的傲慢，最终都必然归于失败！让我们携起手来，让多边主义火炬照亮人类前行之路，向着构建人类命运共同体不断迈进！这段文字所蕴含的哲理是：<span class="qsrc">（2025 四川 8）</span></span></div><div class="opts"><span>A. 量变达到一定程度必然引起质变</span><span>B. 事物的发展是前进性与曲折性的统一</span><span>C. 联系是普遍的，任何事物都处在普遍联系之中</span><span>D. 矛盾的普遍性和特殊性在一定条件下可以相互转化</span></div><input type="checkbox" class="soltoggle" style="display:none"><span class="btn-reveal" data-act="reveal"><span class="t1">看解析</span><span class="t2">收起解析</span></span><label class="mini-check"><input type="checkbox" data-master="1-1">做对了</label></div><div class="q" id="t-1-2" data-master="1-2"><div class="qtop"><span class="qno">2</span><span class="qstem">谚语“蜻蜓低飞，天要下雨”，是人类通过观察动物的活动来预报天气所得到的经验总结。这一经验总结所体现的哲理是：<span class="qsrc">（2024 江苏A 9）</span></span></div><div class="opts"><span>A. 人类只有通过自己的实践活动才能把握信息</span><span>B. 人类的意识或思想活动是信息及其运动的中介</span><span>C. 人类通过意识活动把握客观事物运动变化的规律</span><span>D. 人类观察动物活动所获得的信息是一种自然信息</span></div><input type="checkbox" class="soltoggle" style="display:none"><span class="btn-reveal" data-act="reveal"><span class="t1">看解析</span><span class="t2">收起解析</span></span><label class="mini-check"><input type="checkbox" data-master="1-2">做对了</label></div><div class="q" id="t-1-3" data-master="1-3"><div class="qtop"><span class="qno">3</span><span class="qstem">生态文明建设是关乎中华民族永续发展的根本大计，保护生态环境就是保护生产力，改善生态环境就是发展生产力。下列有关说法正确的有几项？①绿色发展是高质量发展的底色，新质生产力本身就是绿色生产力②中国二氧化碳排放力争于2035 年前达到峰值，努力争取2050 年前实现碳中和③富煤贫油少气是我国的国情，推进“双碳”工作必须立足这个实际，不能盲目追求“去煤化”④坚持山水林田湖草沙一体化保护和系统治理，以人工修复为主，自然恢复为辅，整体推进生态修复<span class="qsrc">（2025 浙江 10）</span></span></div><div class="opts"><span>A. 1</span><span>B. 2</span><span>C. 3</span><span>D. 4</span></div><input type="checkbox" class="soltoggle" style="display:none"><span class="btn-reveal" data-act="reveal"><span class="t1">看解析</span><span class="t2">收起解析</span></span><label class="mini-check"><input type="checkbox" data-master="1-3">做对了</label></div><div class="ansline"><div>1<b>C</b>马克思主义哲学 · 错率76.65%</div><div>2<b>C</b>马克思主义哲学 · 错率68.22%</div><div>3<b>B</b>中国特色社会主义 · 错率25.56%</div></div><div class="tip">三道训练题：同舟共济→普遍联系（错率 77% 的马哲题）、蜻蜓低飞→意识把握规律、矛盾普遍性表述判断。先排“本身说法就错”的，再对材料。</div></div>
+</section><section class="sec" id="k2" data-sec="k2">
+  <div class="mhero"><div><h3>母题 2 · 组合判断题 ·「正确的有几项」</h3><p>①②③④选几项。先判最有把握的一条定档位，不逐条死磕。</p></div>
+    <div class="mmeta"><b>3 题</b>训练 · 限时 6 分钟</div></div>
+  <div class="keys"><div class="key"><h4>识别特征</h4><p>题干给 ①②③④ 四条表述，选项是「1 / 2 / 3 / 4 项」。政治理论组最费时的题型，必须有节奏感。</p></div><div class="key"><h4>核心钥匙</h4><p>①<b>档位法</b>：先判最有把握的一条——若它错，答案 ≤3，直接划掉“4 项”档；若它对，答案 ≥1；②再判次有把握的第二条，把档位收到 1–2 个；③剩余两条用<b>表述质感</b>判：《决定》原文的表述平实、动词规范（完善 / 健全 / 支持），改造过的常带绝对化或错位词。</p></div><div class="key"><h4>选项怎么用</h4><p>组合题的选项本身就是档位——判出“几错几对”就出答案，不用四条全判。易错点集中在<b>数字与原则词</b>：年份（2030/2060）、原则（自愿弹性）、方向（鼓励/限制），看到就重点核。</p></div></div>
+  <div class="card">
+  <h3>典型题｜人口改革组合题——一条“原则词”错误定档位</h3>
+  <div class="q">
+    <div class="qtop"><span class="qno">例</span><span class="qstem">党的二十届三中全会《决定》提出“健全人口发展支持和服务体系”。下列举措表述准确的有几项？①完善生育支持政策体系和激励机制，推动建设生育友好型社会 ②加强普惠育幼服务体系建设，支持用人单位办托、社区嵌入式托育、家庭托育点等多种模式发展 ③发展银发经济，创造适合老年人的多样化、个性化就业岗位 ④按照自主、灵活原则，稳妥有序推进渐进式延迟法定退休年龄改革<span class="qsrc">（2025 四川 2 · 错率 63%）</span></span></div>
+    <div class="opts"><span>A. 1 项</span><span>B. 2 项</span><span>C. 3 项</span><span>D. 4 项</span></div>
+    <input type="checkbox" class="soltoggle" id="ck-typ-2-1" style="display:none">
+    <label class="btn-reveal" for="ck-typ-2-1" data-act="reveal"><span class="t1">看解析</span><span class="t2">收起解析</span></label>
+    <div class="ana">
+      <div class="ana-h">解析 · 排除法优先</div>
+      <div class="as k1"><i>① 先排除</i><p>先判最有把握的④：官方表述是“按照<b>自愿、弹性</b>原则，稳妥有序推进渐进式延迟法定退休年龄改革”——“自主、灵活”是被换掉的原则词，④错 → 排除 <span class="del">D（4 项）</span>。</p></div>
+      <div class="as k2"><i>② 再缩小</i><p>再看①②：“生育友好型社会”“用人单位办托、社区嵌入式托育、家庭托育点”均为《决定》原文表述 ✓；③“发展银发经济，创造适合老年人的多样化、个性化就业岗位”也是原文 ✓。</p></div>
+      <div class="as k3"><i>③ 后择优</i><p>①②③对、④错 → 3 项。选 <b>C</b>。</p></div>
+      <div class="ans">答案：<b>C</b>　　<b>心法：</b>组合题的正确率来自「先判一条定档位」：一条定生死，两条定答案。原则词（自愿弹性）和年份（2030/2060）是最常被换的两类词。</div>
+    </div>
+  </div>
+</div>
+  <div class="card"><h3>训练题组｜限时 6 分钟</h3><div class="q" id="t-2-1" data-master="2-1"><div class="qtop"><span class="qno">1</span><span class="qstem">习近平经济思想彰显了马克思主义哲学的坚定立场和科学方法，下列经济思想与其彰显的马克思主义哲学对应正确的是：①努力构建新发展格局——内因与外因关系②推动经济高质量发展——量变和质变关系③坚持以人民为中心的发展思想——人民历史主体地位④处理好政府和市场关系——主要矛盾和次要矛盾关系⑤坚持系统观念解决发展不平衡不充分问题——事物普遍联系<span class="qsrc">（2024 吉林 4）</span></span></div><div class="opts"><span>A. 4 项</span><span>B. 5 项</span><span>C. 2 项</span><span>D. 3 项</span></div><input type="checkbox" class="soltoggle" style="display:none"><span class="btn-reveal" data-act="reveal"><span class="t1">看解析</span><span class="t2">收起解析</span></span><label class="mini-check"><input type="checkbox" data-master="2-1">做对了</label></div><div class="q" id="t-2-2" data-master="2-2"><div class="qtop"><span class="qno">2</span><span class="qstem">深化医药卫生体制改革，是进一步全面深化改革的重要任务。关于深化医药卫生体制改革，下列举措不恰当的是：<span class="qsrc">（2025 国考行政执法 16）</span></span></div><div class="opts"><span>A. 促进优质医疗资源扩容下沉和区域均衡布局</span><span>B. 加快建设分级诊疗体系，强化基层医疗卫生服务</span><span>C. 完善公立医院薪酬制度，严格限制、缩减编制数量</span><span>D. 促进医疗、医保、医药协同发展和治理</span></div><input type="checkbox" class="soltoggle" style="display:none"><span class="btn-reveal" data-act="reveal"><span class="t1">看解析</span><span class="t2">收起解析</span></span><label class="mini-check"><input type="checkbox" data-master="2-2">做对了</label></div><div class="q" id="t-2-3" data-master="2-3"><div class="qtop"><span class="qno">3</span><span class="qstem">党的二十届三中全会提出，要稳步扩大制度型开放。关于稳步扩大制度型开放，下列举措不恰当的是：<span class="qsrc">（2025 国考行政执法 12）</span></span></div><div class="opts one"><span>A. 独立自主构建不同于国际经贸规则的中国特色经贸规则体系</span><span>B. 有序扩大我国商品市场、服务市场、资本市场、劳务市场等对外开放</span><span>C. 积极参与全球经济治理体系改革，提供更多全球公共产品</span><span>D. 扩大对最不发达国家单边开放</span></div><input type="checkbox" class="soltoggle" style="display:none"><span class="btn-reveal" data-act="reveal"><span class="t1">看解析</span><span class="t2">收起解析</span></span><label class="mini-check"><input type="checkbox" data-master="2-3">做对了</label></div><div class="ansline"><div>1<b>B</b>马克思主义哲学 · 错率27.76%</div><div>2<b>C</b>二十届三中全会与《决定》 · 错率83.95%</div><div>3<b>A</b>二十届三中全会与《决定》 · 错率28.49%</div></div><div class="tip">三道训练题：习经济思想↔马哲对应（5 项组合）、生态文明组合（双碳年份藏在里面）、习思想表述组合。每道都先用档位法锁定区间再细判。</div></div>
+</section><section class="sec" id="k3" data-sec="k3">
+  <div class="mhero"><div><h3>母题 3 · 中国特色社会主义 · 新时代思想与党建</h3><p>文化使命、生态文明、共同富裕、国家安全、党纪条例。表述主体要对号。</p></div>
+    <div class="mmeta"><b>3 题</b>训练 · 限时 5 分钟</div></div>
+  <div class="keys"><div class="key"><h4>识别特征</h4><p>①重要讲话 / 会议表述判断（选非为主）；②总体国家安全观、党纪处分条例等「关键词替换」题。</p></div><div class="key"><h4>核心钥匙</h4><p>①文化：中华文明是世界上<b>唯一</b>绵延不断且以国家形态发展至今的伟大文明（不是“四大文明之一”）；②安全观：是“总体<b>战</b>”，不是“持久战”；③党建：<b>坚持党的全面领导</b>＝最大政治优势；纪律处分六类——政治 / 组织 / 廉洁 / 群众 / 工作 / 生活，婚丧喜庆借机敛财＝<b>廉洁纪律</b>；④共同富裕：长期历史过程，不是同时富裕也不是整齐划一的平均主义。</p></div><div class="key"><h4>选项怎么用</h4><p>这类题的错项 = 原文 + 换主语 / 换关键词。三查顺序：<b>先查主体</b>（最大政治优势的归属）、<b>再查名词</b>（总体战 / 持久战）、<b>后查方向</b>（鼓励 / 限制）。三条都过再选。</p></div></div>
+  <div class="card">
+  <h3>典型题｜总体国家安全观——“总体战”不是“持久战”</h3>
+  <div class="q">
+    <div class="qtop"><span class="qno">例</span><span class="qstem">总体国家安全观是新时代国家安全工作的基本遵循。总体国家安全观的关键是“总体”，下列针对“总体”的理解错误的是：<span class="qsrc">（2025 四川 6 · 错率 64%）</span></span></div>
+    <div class="opts one"><span>A. 强调“大安全”理念，涵盖政治、军事、国土、科技、资源等诸多领域</span><span>B. 强调打持久战，形成汇聚党政军民学各战线各方面各层级的强大合力</span><span>C. 强调做好国家安全工作的系统思维和方法，统筹做好多个领域的安全</span><span>D. 强调维护国家安全要贯穿党和国家工作各方面全过程，统筹好发展和安全</span></div>
+    <input type="checkbox" class="soltoggle" id="ck-typ-3-1" style="display:none">
+    <label class="btn-reveal" for="ck-typ-3-1" data-act="reveal"><span class="t1">看解析</span><span class="t2">收起解析</span></label>
+    <div class="ana">
+      <div class="ana-h">解析 · 排除法优先</div>
+      <div class="as k1"><i>① 先排除</i><p>选非题。A “大安全”理念涵盖 20 多个领域 ✓；C 系统思维、科学统筹 ✓；D 贯穿各方面全过程、统筹发展和安全 ✓——三条均为标准表述。</p></div>
+      <div class="as k2"><i>② 再缩小</i><p>B “党政军民学各战线汇聚合力”对应的关键词是“总体<b>战</b>”，不是“持久战”——命题人把核心名词换了。</p></div>
+      <div class="as k3"><i>③ 后择优</i><p>选 <b>B</b>（理解错误的项）。</p></div>
+      <div class="ans">答案：<b>B</b>　　<b>心法：</b>时政选非题的错项 = 标准提法 + 换掉一两个关键词。背提法要背到“名词级别”：总体战、碳排放双控、再分配。</div>
+    </div>
+  </div>
+</div>
+  <div class="card"><h3>训练题组｜限时 5 分钟</h3><div class="q" id="t-3-1" data-master="3-1"><div class="qtop"><span class="qno">1</span><span class="qstem">习近平总书记强调：“我们不能等实现了现代化再来解决共同富裕问题，而是要始终把满足人民对美好生活的新期待作为发展的出发点和落脚点，在实现现代化过程中不断地、逐步地解决好这个问题。”这表明：<span class="qsrc">（2025 四川 5）</span></span></div><div class="opts one"><span>A. 推进共同富裕必须坚持以人民为中心的发展思想，处理好效率和公平的关系</span><span>B. 共同富裕是全体人民共同富裕，是人民群众物质生活和精神生活都富裕，决不允许贫富差距越来越大</span><span>C. 实现共同富裕是一个长期的历史过程，不可能一蹴而就，必须保持历史耐心、进行不断努力</span><span>D. 谱写全面建设社会主义现代化国家新篇章，必须把扎实推动全体人民共同富裕摆在更加重要位置</span></div><input type="checkbox" class="soltoggle" style="display:none"><span class="btn-reveal" data-act="reveal"><span class="t1">看解析</span><span class="t2">收起解析</span></span><label class="mini-check"><input type="checkbox" data-master="3-1">做对了</label></div><div class="q" id="t-3-2" data-master="3-2"><div class="qtop"><span class="qno">2</span><span class="qstem">完善大统战工作格局，是习近平总书记关于做好新时代党的统一战线工作的重要思想的重要内容，是做好新时代统战工作的重要保障，也是进一步全面深化改革、为推进中国式现代化凝心聚力的重要举措。下列各项不属于完善大统战格局措施的是：<span class="qsrc">（2025 国考行政执法 14）</span></span></div><div class="opts one"><span>A. 更好发挥党外人士作用，健全党外代表人士队伍建设制度</span><span>B. 制定民族团结进步促进法，健全铸牢中华民族共同体意识制度机制</span><span>C. 全面构建亲清政商关系，健全促进非公有制经济健康发展、非公有制经济人士健康成长工作机制</span><span>D. 健全人大议事规则和论证、评估、评议、听证制度</span></div><input type="checkbox" class="soltoggle" style="display:none"><span class="btn-reveal" data-act="reveal"><span class="t1">看解析</span><span class="t2">收起解析</span></span><label class="mini-check"><input type="checkbox" data-master="3-2">做对了</label></div><div class="q" id="t-3-3" data-master="3-3"><div class="qtop"><span class="qno">3</span><span class="qstem">习近平总书记指出：“中国共产党人的理想信念，建立在马克思主义科学真理的基础之上，建立在马克思主义揭示的人类社会发展规律的基础之上，建立在为最广大人民谋利益的崇高价值的基础之上。我们坚定，是因为我们追求的是真理。我们坚定，是因为我们遵循的是规律。我们坚定，是因为我们代表的是最广大人民根本利益。”这一论述最直接体现了马克思主义的哪一基本观点？<span class="qsrc">（2025 国考行政执法 4）</span></span></div><div class="opts"><span>A. 真理尺度与价值尺度的辩证统一</span><span>B. 认识世界与改造世界的辩证统一</span><span>C. 量变与质变的辩证统一</span><span>D. 矛盾的特殊性与普遍性的辩证统一</span></div><input type="checkbox" class="soltoggle" style="display:none"><span class="btn-reveal" data-act="reveal"><span class="t1">看解析</span><span class="t2">收起解析</span></span><label class="mini-check"><input type="checkbox" data-master="3-3">做对了</label></div><div class="ansline"><div>1<b>D</b>中国特色社会主义 · 错率32.95%</div><div>2<b>D</b>二十届三中全会与《决定》 · 错率35.4%</div><div>3<b>A</b>马克思主义哲学 · 错率60.34%</div></div><div class="tip">三道训练题：文化使命选非（“四大文明之一”是坑）、社会事业成就选非（教育质量表述有误）、廉洁纪律归类（对应第六章对违反廉洁纪律的处分）。主体与名词逐字核对。</div></div>
+</section><section class="sec" id="k4" data-sec="k4">
+  <div class="mhero"><div><h3>母题 4 · 三中全会《决定》· 民生与生态改革</h3><p>医药、绿色低碳、统战、收入分配、三中全会精神总论。选非题大户。</p></div>
+    <div class="mmeta"><b>4 题</b>训练 · 限时 6 分钟</div></div>
+  <div class="keys"><div class="key"><h4>识别特征</h4><p>“党的二十届三中全会提出 / 根据《决定》…下列举措不恰当的是”——三条原文配一条改造，选非。</p></div><div class="key"><h4>核心钥匙</h4><p>①最大政治优势＝<b>坚持党的全面领导</b>（不是以人民为中心）；②绿色低碳：建立<b>能耗双控向碳排放双控</b>全面转型新机制（方向别记反）；③收入分配：税收 / 社保 / 转移支付＝<b>再分配</b>，第三次分配＝公益慈善；④医药改革：促进优质医疗资源扩容下沉、分级诊疗、三医协同——没有“严格限制缩减编制”这种表述。</p></div><div class="key"><h4>选项怎么用</h4><p>《决定》选非题的错项改造手法三板斧：<b>换关键词</b>（持久战）、<b>换归属</b>（再分配→第三次分配）、<b>方向反转</b>（“取代”稳定支持）。对提法没把握时，语气过满 / 与导向相悖的选项优先怀疑。</p></div></div>
+  <div class="card">
+  <h3>典型题｜三中全会精神总论——换主语型错误一票否决</h3>
+  <div class="q">
+    <div class="qtop"><span class="qno">例</span><span class="qstem">党的二十届三中全会审议通过《中共中央关于进一步全面深化改革、推进中国式现代化的决定》。下列关于全会精神的表述，不准确的是：<span class="qsrc">（2025 浙江 2 · 错率 60%）</span></span></div>
+    <div class="opts one"><span>A. 进一步全面深化改革，必须紧紧围绕推进中国式现代化这个主题来展开</span><span>B. 坚持以人民为中心，这是我们的最大政治优势，是我国改革开放成功推进的根本保证</span><span>C. 要加强各项改革举措协调配合，增强改革取向的一致性，坚决防止和克服本位主义</span><span>D. 对新领域新实践遇到的新问题，要充分尊重基层和群众首创精神，鼓励开拓创新</span></div>
+    <input type="checkbox" class="soltoggle" id="ck-typ-4-1" style="display:none">
+    <label class="btn-reveal" for="ck-typ-4-1" data-act="reveal"><span class="t1">看解析</span><span class="t2">收起解析</span></label>
+    <div class="ana">
+      <div class="ana-h">解析 · 排除法优先</div>
+      <div class="as k1"><i>① 先排除</i><p>选非题。A “紧紧围绕推进中国式现代化这个主题”✓；C 改革取向一致性、防止本位主义 ✓；D 尊重基层和群众首创精神 ✓——三条均为原文。</p></div>
+      <div class="as k2"><i>② 再缩小</i><p>B 换主语：“我们的最大政治优势、改革开放成功推进的根本保证”的官方主语是<b>坚持党的全面领导</b>；“坚持以人民为中心”是发展思想与价值立场，不是这个表述的主语。</p></div>
+      <div class="as k3"><i>③ 后择优</i><p>选 <b>B</b>（不准确的表述）。</p></div>
+      <div class="ans">答案：<b>B</b>　　<b>心法：</b>换主语是《决定》题最隐蔽的改造：句子读起来全对，只有主语被调包。官方“主体+谓语”要整体记，不能只记后半句。</div>
+    </div>
+  </div>
+</div>
+  <div class="card"><h3>训练题组｜限时 6 分钟</h3><div class="q" id="t-4-1" data-master="4-1"><div class="qtop"><span class="qno">1</span><span class="qstem">新时代，我们党各项工作始终坚持以人民为中心，不断改善人民生活、增进人民福祉。从当前我国各项社会事业的发展情况来看，下列说法错误的是：<span class="qsrc">（2025 四川 9）</span></span></div><div class="opts"><span>A. 人才资源在全球范围内规模最宏大、门类最齐全</span><span>B. 织就世界上覆盖人口规模最大的社会保障安全网</span><span>C. 各级教育质量达到或超过中高收入国家平均水平</span><span>D. 居民健康水平总体上优于中高收入国家平均水平</span></div><input type="checkbox" class="soltoggle" style="display:none"><span class="btn-reveal" data-act="reveal"><span class="t1">看解析</span><span class="t2">收起解析</span></span><label class="mini-check"><input type="checkbox" data-master="4-1">做对了</label></div><div class="q" id="t-4-2" data-master="4-2"><div class="qtop"><span class="qno">2</span><span class="qstem">总体国家安全观是新时代国家安全工作的基本遵循。总体国家安全观的关键是“总体”，下列针对“总体”的理解错误的是：<span class="qsrc">（2025 四川 6）</span></span></div><div class="opts one"><span>A. 强调“大安全”理念，涵盖政治、军事、国土、科技、资源等诸多领域</span><span>B. 强调打持久战，形成汇聚党政军民学各战线各方面各层级的强大合力</span><span>C. 强调做好国家安全工作的系统思维和方法，统筹做好多个领域的安全</span><span>D. 强调维护国家安全要贯穿党和国家工作各方面全过程，统筹好发展和安全</span></div><input type="checkbox" class="soltoggle" style="display:none"><span class="btn-reveal" data-act="reveal"><span class="t1">看解析</span><span class="t2">收起解析</span></span><label class="mini-check"><input type="checkbox" data-master="4-2">做对了</label></div><div class="q" id="t-4-3" data-master="4-3"><div class="qtop"><span class="qno">3</span><span class="qstem">党的二十届三中全会于2024 年7 月15 日至18 日在北京举行，全会审议通过了《中共中央关于进一步全面深化改革、推进中国式现代化的决定》。下列关于党的二十届三中全会精神的表述，不准确的是：<span class="qsrc">（2025 浙江 2）</span></span></div><div class="opts one"><span>A. 进一步全面深化改革，必须紧紧围绕推进中国式现代化这个主题来展开</span><span>B. 坚持以人民为中心，这是我们的最大政治优势，是我国改革开放成功推进的根本保证</span><span>C. 要加强各项改革举措协调配合，增强改革取向的一致性，坚决防止和克服本位主义，不能因部门利益、地方利益影响改革大局</span><span>D. 对新领域新实践遇到的新问题，要充分尊重基层和群众首创精神，鼓励开拓创新，不断创造和积累可复制、可推广的新鲜经验</span></div><input type="checkbox" class="soltoggle" style="display:none"><span class="btn-reveal" data-act="reveal"><span class="t1">看解析</span><span class="t2">收起解析</span></span><label class="mini-check"><input type="checkbox" data-master="4-3">做对了</label></div><div class="q" id="t-4-4" data-master="4-4"><div class="qtop"><span class="qno">4</span><span class="qstem">完善收入分配制度，构建初次分配、再分配、第三次分配协调配套的制度体系，是进一步全面深化改革的重要任务。关于完善收入分配制度，下列表述不准确的是：<span class="qsrc">（2025 国考行政执法 10）</span></span></div><div class="opts one"><span>A. 提高劳动报酬在初次分配中的比重</span><span>B. 完善劳动者工资决定、合理增长、支付保障机制，健全按要素分配政策制度</span><span>C. 规范财富积累机制，多渠道增加城乡居民财产性收入</span><span>D. 完善税收、社会保障、转移支付等第三次分配调节机制</span></div><input type="checkbox" class="soltoggle" style="display:none"><span class="btn-reveal" data-act="reveal"><span class="t1">看解析</span><span class="t2">收起解析</span></span><label class="mini-check"><input type="checkbox" data-master="4-4">做对了</label></div><div class="ansline"><div>1<b>C</b>新时代中国特色社会主义 · 错率55.09%</div><div>2<b>B</b>新时代中国特色社会主义 · 错率63.91%</div><div>3<b>B</b>二十届三中全会与《决定》 · 错率60.06%</div><div>4<b>D</b>二十届三中全会与《决定》 · 错率41.96%</div></div><div class="tip">四道训练题：医药改革选非（错率 84%）、绿色低碳选非（双控方向）、统战格局选非（人大议事规则不属于统战）、收入分配选非（第三次分配归属）。逐项做三查。</div></div>
+</section><section class="sec" id="k5" data-sec="k5">
+  <div class="mhero"><div><h3>母题 5 · 三中全会《决定》· 经济与科技改革</h3><p>制度型开放、市场经济基础制度、要素报酬、科技体制、中国式现代化。</p></div>
+    <div class="mmeta"><b>4 题</b>训练 · 限时 6 分钟</div></div>
+  <div class="keys"><div class="key"><h4>识别特征</h4><p>《决定》中经济体制 / 科技体制条款的判断题；选项常出现“构建不同于国际规则的体系”“取代”“降低自主权”等改造词。</p></div><div class="key"><h4>核心钥匙</h4><p>①制度型开放：主动<b>对接</b>国际高标准经贸规则（不是另起炉灶），扩大对最不发达国家单边开放；②市场经济基础制度＝产权 / 市场准入 / 市场信息披露 / 信用监管（<b>财政转移支付</b>属财税体制，不属于基础制度）；③要素报酬：由<b>市场</b>评价贡献、按贡献决定报酬（不是“收益评价”）；④科技：竞争性支持<b>与</b>稳定支持相结合，<b>鼓励</b>高风险高价值基础研究，科研类事业单位<b>更灵活</b>管理。</p></div><div class="key"><h4>选项怎么用</h4><p>先扫方向词：与“开放 / 鼓励 / 扩大 / 灵活”导向相反的（限制、降低、取代、独立自主另搞一套）直接划；再查归属：把 A 领域的制度安到 B 领域（财政转移支付 → 市场经济基础制度）也是常见错法。</p></div></div>
+  <div class="card">
+  <h3>典型题｜科技体制改革——方向词三连排除，正确项自己剩下</h3>
+  <div class="q">
+    <div class="qtop"><span class="qno">例</span><span class="qstem">关于深化科技体制改革，下列表述正确的是：<span class="qsrc">（2025 国考行政执法 9 · 错率 66%）</span></span></div>
+    <div class="opts"><span>A. 建立以竞争性支持取代稳定支持的基础研究投入机制</span><span>B. 允许科研类事业单位实行比一般事业单位更灵活的管理制度</span><span>C. 限制开展高风险、高投入基础研究</span><span>D. 降低科技人员在科技成果转化收益分配上的自主权</span></div>
+    <input type="checkbox" class="soltoggle" id="ck-typ-5-1" style="display:none">
+    <label class="btn-reveal" for="ck-typ-5-1" data-act="reveal"><span class="t1">看解析</span><span class="t2">收起解析</span></label>
+    <div class="ana">
+      <div class="ana-h">解析 · 排除法优先</div>
+      <div class="as k1"><i>① 先排除</i><p>选是题，先扫方向词。C “<b>限制</b>开展高风险、高投入基础研究”——原文是“<b>鼓励</b>开展高风险、高价值基础研究”，方向反转，划；D “<b>降低</b>…自主权”与改革扩权导向相悖，划。</p></div>
+      <div class="as k2"><i>② 再缩小</i><p>A “竞争性支持<b>取代</b>稳定支持”——原文是“竞争性支持和稳定支持<b>相结合</b>”，“取代”把并存改成了二选一，划。</p></div>
+      <div class="as k3"><i>③ 后择优</i><p>只剩 B：《决定》原文“允许科研类事业单位实行比一般事业单位更灵活的管理制度”。选 <b>B</b>。</p></div>
+      <div class="ans">答案：<b>B</b>　　<b>心法：</b>选是题不需要背全《决定》：三个错项各带一个改造词（限制 / 降低 / 取代），方向词一扫，答案自动浮出。</div>
+    </div>
+  </div>
+</div>
+  <div class="card"><h3>训练题组｜限时 6 分钟</h3><div class="q" id="t-5-1" data-master="5-1"><div class="qtop"><span class="qno">1</span><span class="qstem">完善市场经济基础制度是构建高水平社会主义市场经济体制的重要内容。下列不属于完善市场经济基础制度内容的是：<span class="qsrc">（2025 国考行政执法 17）</span></span></div><div class="opts"><span>A. 完善财政转移支付体系</span><span>B. 完善市场信息披露制度</span><span>C. 完善市场准入制度</span><span>D. 完善产权制度（二）</span></div><input type="checkbox" class="soltoggle" style="display:none"><span class="btn-reveal" data-act="reveal"><span class="t1">看解析</span><span class="t2">收起解析</span></span><label class="mini-check"><input type="checkbox" data-master="5-1">做对了</label></div><div class="q" id="t-5-2" data-master="5-2"><div class="qtop"><span class="qno">2</span><span class="qstem">习近平新时代中国特色社会主义思想是当代中国马克思主义、二十一世纪马克思主义，是中华文化和中国精神的时代精华，实现了马克思主义中国化时代化新的飞跃。下列有关表述正确的有几项？①习近平新时代中国特色社会主义思想，体现了以习近平同志为核心的党中央对共产党执政规律、社会主义建设规律、人类社会发展规律认识的深化、拓展、升华②党的二十大提出的“六个必须坚持”概括阐述了习近平新时代中国特色社会主义思想的世界观、方法论和贯穿其中的立场观点方法③“两个确立”是指“确立习近平同志党中央的核心、全党的核心地位，确立习近平新时代中国特色社会主义思想的指导地位”④坚持和发展中国特色社会主义，总任务是实现社会主义现代化和中华民族伟大复兴<span class="qsrc">（2025 浙江 1）</span></span></div><div class="opts"><span>A. 1</span><span>B. 2</span><span>C. 3</span><span>D. 4</span></div><input type="checkbox" class="soltoggle" style="display:none"><span class="btn-reveal" data-act="reveal"><span class="t1">看解析</span><span class="t2">收起解析</span></span><label class="mini-check"><input type="checkbox" data-master="5-2">做对了</label></div><div class="q" id="t-5-3" data-master="5-3"><div class="qtop"><span class="qno">3</span><span class="qstem">习近平总书记强调，加强党风廉政建设，一体推进不敢腐、不能腐、不想腐，严格落实中央八项规定精神，督促党员、干部特别是领导干部清廉自守、廉洁从政、干净做事。根据《中国共产党纪律处分条例》，下列违纪情况属于违反廉洁纪律的是：<span class="qsrc">（2025 国考行政执法 18）</span></span></div><div class="opts one"><span>A. 在重大原则问题上不同党中央保持一致且有实际言论、行为或者造成不良后果的</span><span>B. 拒不执行党组织的分配、调动、交流等决定的</span><span>C. 干涉生产经营自主权，致使群众财产遭受较大损失的</span><span>D. 滥用职权或者职务上的影响操办婚丧喜庆事宜，造成不良影响的</span></div><input type="checkbox" class="soltoggle" style="display:none"><span class="btn-reveal" data-act="reveal"><span class="t1">看解析</span><span class="t2">收起解析</span></span><label class="mini-check"><input type="checkbox" data-master="5-3">做对了</label></div><div class="q" id="t-5-4" data-master="5-4"><div class="qtop"><span class="qno">4</span><span class="qstem">党的二十届三中全会，高度评价新时代以来全面深化改革的成功实践和伟大成就，研究了进一步全面深化改革、推进中国式现代化问题，认为当前和今后一个时期是以中国式现代化全面推进强国建设、民族复兴伟业的关键时期。关于中国式现代化与改革的关系，下列说法不正确的是：<span class="qsrc">（2024 黑龙江 3）</span></span></div><div class="opts one"><span>A. 中国式现代化是在改革开放中不断推进的，也必将在改革开放中开辟广阔前景</span><span>B. 进一步全面深化改革的总目标是继续完善和发展中国特色社会主义制度，推进国家治理体系和治理能力现代化</span><span>C. 必须自觉把改革摆在更加突出位置，紧紧围绕推进中国式现代化进一步全面深化改革</span><span>D. 改革越是彻底，中国式现代化就越早实现，推进中国式现代化建设的进度取决于改革的力度</span></div><input type="checkbox" class="soltoggle" style="display:none"><span class="btn-reveal" data-act="reveal"><span class="t1">看解析</span><span class="t2">收起解析</span></span><label class="mini-check"><input type="checkbox" data-master="5-4">做对了</label></div><div class="ansline"><div>1<b>A</b>二十届三中全会与《决定》 · 错率44.4%</div><div>2<b>D</b>新时代中国特色社会主义 · 错率64.71%</div><div>3<b>D</b>新时代中国特色社会主义 · 错率65.52%</div><div>4<b>D</b>二十届三中全会与《决定》 · 错率76.88%</div></div><div class="tip">四道训练题：制度型开放选非（错率 72%）、要素报酬机制（市场评价≠收益评价）、市场经济基础制度（转移支付归属）、中国式现代化与改革关系（“改革越彻底现代化越早”的说法错在哪）。归属与方向并查。</div></div>
+</section>
+
+<section class="sec" id="err">
+  <div class="sec-head"><span class="idx">ERR</span><h2>错因分类表（错题回查）</h2></div>
+  <table class="et"><tr><th>错因</th><th>典型表现</th><th>对症动作</th></tr><tr><td><b>选非题看反</b></td><td>题干问「不恰当的是」，按正确项选了</td><td>动笔前圈出题干要求；选非题给每个选项标 ✓/✗，最后选 ✗ 的那个</td></tr><tr><td><b>换关键词上当</b></td><td>「总体战」记成「持久战」、「自愿弹性」变「自主灵活」、「相结合」变「取代」</td><td>关键提法背到名词级别；易混词并排默写（总体战/持久战、碳排放双控/能耗双控、竞争性+稳定性）</td></tr><tr><td><b>换主语 / 换归属</b></td><td>最大政治优势安给「以人民为中心」、税收社保转移支付说成「第三次分配」</td><td>官方表述按「主体+谓语」整体记，主体错直接划；分配结构：初次＝劳动与要素报酬、再分配＝税收社保转移支付、第三次＝公益慈善</td></tr><tr><td><b>方向反转</b></td><td>「限制开展高风险基础研究」「降低科研人员收益自主权」与改革导向相反</td><td>与当前导向（鼓励 / 扩大 / 结合）相反的表述优先怀疑，一票否决</td></tr><tr><td><b>组合题全判</b></td><td>四条逐条精判，两分钟不够用</td><td>先判最有把握的一条定档位（如确定某条错 → 排除“4 项”档），再判次有把握的收窄</td></tr></table>
+</section>
+
+<section class="sec" id="record">
+  <div class="sec-head"><span class="idx">OK</span><h2>母题自测打卡</h2></div>
+  <p style="font-size:13.5px;color:var(--ink2);margin:4px 0 0">逐条自检，做得到就打勾。已自测通过 <b id="rec-txt">0</b> / 10 项。</p>
+  <div class="rec"><label><input type="checkbox" data-rec="r0" style="accent-color:var(--pri);margin-right:5px">每题先判选是 / 选非，选非题圈出「不恰当 / 不属于 / 不准确」再作答</label><label><input type="checkbox" data-rec="r1" style="accent-color:var(--pri);margin-right:5px">关键提法背到名词级别：总体战≠持久战、最大政治优势＝坚持党的全面领导</label><label><input type="checkbox" data-rec="r2" style="accent-color:var(--pri);margin-right:5px">双碳目标：2030 前碳达峰、2060 前碳中和；能耗双控向碳排放双控转型</label><label><input type="checkbox" data-rec="r3" style="accent-color:var(--pri);margin-right:5px">分配三层说得清：初次＝劳动与要素报酬，再分配＝税收社保转移支付，第三次＝公益慈善</label><label><input type="checkbox" data-rec="r4" style="accent-color:var(--pri);margin-right:5px">基础研究投入＝竞争性支持与稳定支持相结合；鼓励开展高风险、高价值基础研究</label><label><input type="checkbox" data-rec="r5" style="accent-color:var(--pri);margin-right:5px">延迟退休＝自愿、弹性原则；婚丧喜庆借机敛财＝违反廉洁纪律</label><label><input type="checkbox" data-rec="r6" style="accent-color:var(--pri);margin-right:5px">《决定》选非题按“换关键词 / 换主语 / 方向反转”三查排查错项</label><label><input type="checkbox" data-rec="r7" style="accent-color:var(--pri);margin-right:5px">组合题先判最有把握的一条定档位，两分钟内出答案</label><label><input type="checkbox" data-rec="r8" style="accent-color:var(--pri);margin-right:5px">马哲题先排“本身说法就错”的选项（普遍性无条件、客观性不从属主观），再对照材料</label><label><input type="checkbox" data-rec="r9" style="accent-color:var(--pri);margin-right:5px">训练题组限时完成（每题 ≤ 50 秒），错题把正确表述抄成条目、每周回看</label></div>
+  <div class="toolbar" style="margin-top:16px"><span class="tbtn" data-act="clear">清空本题本打卡</span>
+    <span class="tbtn-hint">打卡仅保存在本机浏览器（localStorage），可随时清空重练。</span></div>
+  <div class="footnote">题源为粉笔《决战行测5000题·常识判断（新增题）》上册第五章「政治常识」（考生回忆版），按考试模块口径独立成册；典型题解析为“排除法优先”三步重写，仅供备考练习。完整真题与粉笔原版解析见《政治理论_真题题库》。</div>
+</section>
+</main>
+</div>
+<script>
+(function(){
+"use strict";
+var V="v1";
+var fail=function(m){var b=document.getElementById('jsstat');if(b){b.textContent='\u2717 \u811a\u672c\u5f02\u5e38\uff1a'+m;b.style.background='#fdeaea';b.style.borderColor='#e39a9a';b.style.color='#a33';}};
+window.addEventListener('error',function(e){fail((e&&e.message)||'\u672a\u77e5\u9519\u8bef');});
+function step(n,f){try{f();}catch(e){fail(n+'\uff1a'+((e&&e.message)||e));}}
+var KEY='zz_tiben_progress';
+var state={mastered:{},rec:{}};
+step('\u8bfb\u53d6\u8fdb\u5ea6',function(){
+  try{var o=JSON.parse(localStorage.getItem(KEY)||'{}')||{};state.mastered=o.mastered||{};state.rec=o.rec||{};}catch(e){}
+});
+function save(){try{localStorage.setItem(KEY,JSON.stringify(state));}catch(e){}}
+var qs=[].slice.call(document.querySelectorAll('.q[data-master]'));
+step('\u6807\u8bb0JS\u5f15\u64ce',function(){document.documentElement.classList.add('js');});
+step('\u7ed1\u5b9a\u5f00\u5173',function(){
+  window.addEventListener('click',function(ev){
+    var t=ev.target;if(!t||t.nodeType!==1||!t.closest)return;
+    var hit=t.closest('[data-act]');if(!hit)return;
+    var act=hit.getAttribute('data-act');
+    if(act==='xall'){document.documentElement.classList.toggle('xall-on');}
+    else if(act==='reveal'){
+      var q=t.closest('.q');if(q){var open=q.classList.toggle('qopen');
+        var cb=q.querySelector('.soltoggle');if(cb)cb.checked=open;}
+    }
+    else if(act==='clear'){
+      state={mastered:{},rec:{}};save();
+      [].slice.call(document.querySelectorAll('input[data-master]')).forEach(function(i){i.checked=false;});
+      [].slice.call(document.querySelectorAll('input[data-rec]')).forEach(function(i){i.checked=false;});
+      [].slice.call(document.querySelectorAll('.rec label')).forEach(function(l){l.classList.remove('done');});
+      update();
+    }
+    else return;
+    ev.preventDefault();
+    if(ev.stopImmediatePropagation)ev.stopImmediatePropagation();
+  },true);
+});
+step('\u7ed1\u5b9a\u6253\u5361',function(){
+  document.addEventListener('change',function(ev){
+    var el=ev.target;if(!el||el.nodeType!==1)return;
+    if(el.hasAttribute('data-master')){state.mastered[el.getAttribute('data-master')]=el.checked;save();update();}
+    if(el.hasAttribute('data-rec')){state.rec[el.getAttribute('data-rec')]=el.checked;
+      var l=el.closest('label');if(l)l.classList.toggle('done',el.checked);save();update();}
+  });
+});
+function update(){
+  var done=qs.filter(function(q){return state.mastered[q.getAttribute('data-master')];}).length;
+  var t=document.getElementById('pg-txt'),b=document.getElementById('pg-bar');
+  if(t)t.textContent=done;
+  if(b)b.style.width=(done/(qs.length||1)*100)+'%';
+  [].slice.call(document.querySelectorAll('.sec[data-sec]')).forEach(function(sec){
+    var sid=sec.getAttribute('data-sec');
+    var list=qs.filter(function(q){return q.closest('section')===sec;});
+    var d=list.filter(function(q){return state.mastered[q.getAttribute('data-master')];}).length;
+    var bd=document.querySelector('[data-badge="'+sid+'"]');
+    if(bd)bd.textContent=d+'/'+list.length;
+  });
+  var rd=Object.keys(state.rec).filter(function(k){return state.rec[k];}).length;
+  var rt=document.getElementById('rec-txt');if(rt)rt.textContent=rd;
+}
+step('\u56de\u586b\u72b6\u6001',function(){
+  [].slice.call(document.querySelectorAll('input[data-master]')).forEach(function(i){
+    if(state.mastered[i.getAttribute('data-master')])i.checked=true;});
+  [].slice.call(document.querySelectorAll('input[data-rec]')).forEach(function(i){
+    if(state.rec[i.getAttribute('data-rec')]){i.checked=true;var l=i.closest('label');if(l)l.classList.add('done');}});
+});
+step('\u542f\u52a8\u5b8c\u6210',function(){
+  update();
+  var b=document.getElementById('jsstat');
+  if(b)b.textContent='\u2713 \u4ea4\u4e92\u6b63\u5e38 '+V+' \u00b7 \u8bad\u7ec3\u9898 '+qs.length+' \u9898\u5df2\u7ed1\u5b9a\uff08\u70b9\u201c\u770b\u89e3\u6790\u201d\u524d\u5148\u81ea\u5df1\u505a\uff09';
+});
+})();
+</script>
+</body>
+</html>

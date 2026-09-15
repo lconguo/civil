@@ -1,0 +1,1164 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-page-node-id="mIUsTP6POH2YK5N6PdHQB2">
+<head data-page-node-id="jZF2jL8QLxw6UlVFJahtak">
+<meta charset="UTF-8" data-page-node-id="4EEHSsL584dgTmFoRBLc3l">
+<meta name="viewport" content="width=device-width, initial-scale=1.0" data-page-node-id="DvHV4C3WrZPxAVgnyjdw8V">
+<title>资料分析 · 题本与母题解析（粉笔 12 分类 · 排除法优先）</title>
+<style>
+:root{
+  --bg:#f5f7fb;--panel:#fff;--ink:#1c2434;--ink-2:#4a5568;--ink-3:#7b8798;
+  --line:#e3e8f0;--line-2:#eef2f8;--brand:#1e8449;--brand2:#27ae60;--brand-soft:#eaf7ef;
+  --warn:#e8a33d;--red:#c0392b;--blue:#2f6feb;--amber:#a06a12;--purple:#7F77DD;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:"PingFang SC","Microsoft YaHei","Hiragino Sans GB",-apple-system,"Segoe UI",sans-serif;
+  background:var(--bg);color:var(--ink);font-size:15px;line-height:1.75;-webkit-font-smoothing:antialiased}
+.wrap{display:flex;max-width:1400px;margin:0 auto;gap:26px;padding:0 24px 80px}
+aside{width:248px;flex:0 0 248px;position:sticky;top:0;align-self:flex-start;height:100vh;overflow-y:auto;padding:26px 0 40px}
+aside::-webkit-scrollbar{width:6px}aside::-webkit-scrollbar-thumb{background:#d3dbe8;border-radius:3px}
+.logo{font-size:15px;font-weight:700}.logo span{color:var(--brand)}
+.logo-sub{font-size:12px;color:var(--ink-3);margin:4px 0 14px}
+.backlink{display:block;font-size:12px;color:var(--blue);text-decoration:none;background:#eef4ff;border:1px solid #d8e6ff;border-radius:8px;padding:7px 11px;margin-bottom:14px}
+.backlink:hover{background:#e4edff}
+.nav-group{font-size:11px;font-weight:700;color:var(--ink-3);letter-spacing:1.5px;margin:16px 0 8px 12px}
+.nav a{display:flex;align-items:center;gap:9px;padding:7px 12px;border-radius:9px;font-size:13px;color:var(--ink-2);transition:.15s;margin-bottom:2px;text-decoration:none}
+.nav a:hover{background:#fff;color:var(--ink)}
+.nav a.on{background:var(--brand);color:#fff;font-weight:600;box-shadow:0 4px 12px rgba(30,132,73,.3)}
+.dot{width:8px;height:8px;border-radius:50%;flex:0 0 8px;background:var(--brand2)}
+.nav-badge{margin-left:auto;font-size:10.5px;color:var(--ink-3);font-weight:600}
+.nav a.on .nav-badge{color:rgba(255,255,255,.85)}
+.tp-card{background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px;margin:20px 0 6px}
+.tp-card h5{font-size:12.5px;font-weight:600;color:var(--ink-2);margin-bottom:9px;display:flex;justify-content:space-between}
+.tp-bar{height:7px;background:#eef2f8;border-radius:5px;overflow:hidden}
+.tp-fill{height:100%;width:0;background:linear-gradient(90deg,#27ae60,#1e8449);border-radius:5px;transition:width .35s}
+.tp-num{font-size:11.5px;color:var(--ink-3);margin-top:7px;text-align:right}
+main{flex:1;min-width:0;padding-top:26px}
+.hero{background:linear-gradient(135deg,#14532d 0%,#1e8449 55%,#27ae60 100%);color:#fff;border-radius:20px;padding:34px 40px;margin-bottom:26px;position:relative;overflow:hidden}
+.hero::after{content:"";position:absolute;right:-70px;top:-70px;width:270px;height:270px;border-radius:50%;background:rgba(255,255,255,.08)}
+.hero h1{font-size:26px;font-weight:800;letter-spacing:.5px;margin-bottom:9px;position:relative}
+.hero p{font-size:14px;opacity:.94;position:relative;max-width:820px}
+.hero-meta{display:flex;gap:9px;flex-wrap:wrap;margin-top:17px;position:relative}
+.hero-chip{background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.25);padding:6px 14px;border-radius:20px;font-size:12.5px}
+section{scroll-margin-top:20px;margin-bottom:40px}
+.sec-head{display:flex;align-items:center;gap:12px;margin-bottom:14px}
+.sec-head h2{font-size:20px;font-weight:800}
+.sec-head .idx{font-size:12px;font-weight:700;color:#fff;background:var(--brand);padding:3px 10px;border-radius:7px}
+.sec-head .idx.p{background:var(--purple)}
+.sec-desc{font-size:13.5px;color:var(--ink-3);margin:-4px 0 15px;line-height:1.7}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:20px 22px;margin-bottom:16px}
+.card h3{font-size:16px;font-weight:700;margin-bottom:11px;display:flex;align-items:center;gap:8px}
+.card h3::before{content:"";width:4px;height:16px;background:var(--brand2);border-radius:2px}
+table{width:100%;border-collapse:collapse;font-size:13.4px;margin:6px 0 4px}
+th,td{padding:9px 11px;text-align:left;border-bottom:1px solid var(--line-2);vertical-align:top}
+th{background:#f8fafd;font-weight:600;color:var(--ink-2);font-size:12.4px;white-space:nowrap}
+tbody tr:hover{background:#fafcff}
+.num{font-variant-numeric:tabular-nums;font-weight:600}
+.ct{font-size:11.5px;font-weight:700;color:#fff;background:var(--purple);padding:2px 8px;border-radius:6px;white-space:nowrap}
+.ct.g{background:var(--brand)}
+.mhero{background:linear-gradient(100deg,#14532d,#1e8449);color:#fff;border-radius:15px;padding:18px 22px;margin-bottom:15px;display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}
+.mhero.p{background:linear-gradient(100deg,#4c3f8f,#7F77DD)}
+.mhero h3{font-size:19px;font-weight:800}
+.mhero p{font-size:12.8px;opacity:.9;margin-top:4px}
+.mhero .mmeta{text-align:right;font-size:12.3px;opacity:.94;line-height:1.7;flex:0 0 auto}
+.mhero .mmeta b{font-size:19px;display:block}
+.keys{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:11px;margin-bottom:14px}
+.key{background:#fff;border:1px solid var(--line);border-left:4px solid var(--brand2);border-radius:11px;padding:12px 15px}
+.key h4{font-size:13.3px;font-weight:700;margin-bottom:6px;color:#1e7a45}
+.key p{font-size:12.9px;color:var(--ink-2);line-height:1.68}
+.key p b{color:var(--ink)}
+.mat{background:#f7fafc;border:1px solid var(--line);border-left:4px solid var(--blue);border-radius:10px;padding:13px 16px;font-size:13.4px;color:var(--ink-2);line-height:1.8;margin:12px 0}
+.mat b{color:var(--ink);font-weight:600}
+.mat .mtitle{font-size:12px;font-weight:700;color:var(--blue);display:block;margin-bottom:5px}
+.mat table{font-size:12.8px;margin:8px 0 2px;background:#fff;border-radius:8px;overflow:hidden}
+.mat table th{background:#eef3fa;padding:6px 9px}
+.mat table td{padding:6px 9px}
+.q{border:1px solid var(--line);border-radius:12px;padding:15px 17px;margin:12px 0;background:#fff}
+.qtop{display:flex;gap:9px;align-items:baseline;margin-bottom:9px}
+.qno{flex:0 0 auto;font-size:11.5px;font-weight:700;color:#fff;background:var(--brand);padding:2px 9px;border-radius:6px}
+.qstem{font-size:13.9px;font-weight:600;color:var(--ink);line-height:1.7}
+.opts{display:grid;grid-template-columns:repeat(auto-fit,minmax(148px,1fr));gap:6px}
+.opts span{font-size:13.2px;color:var(--ink-2);background:#f8fafd;border:1px solid var(--line-2);border-radius:8px;padding:6px 11px;font-variant-numeric:tabular-nums}
+.ana{margin-top:12px;border-top:1px dashed var(--line);padding-top:12px}
+.ana-h{font-size:12px;font-weight:700;color:var(--ink-3);letter-spacing:1px;margin-bottom:9px}
+.as{display:flex;gap:10px;margin-bottom:9px}
+.as i{font-style:normal;flex:0 0 66px;font-size:11px;font-weight:700;text-align:center;padding:4px 0;border-radius:6px;height:fit-content;line-height:1.35}
+.as.k1 i{background:#fdecea;color:#b03a2e}
+.as.k2 i{background:#fef5e7;color:#a06a12}
+.as.k3 i{background:#eaf7ef;color:#1e8449}
+.as p{flex:1;min-width:0;font-size:13.2px;color:var(--ink-2);line-height:1.72}
+.as p b{color:var(--ink)}
+.as p .del{color:#b03a2e;text-decoration:line-through;text-decoration-thickness:1px}
+.ans{background:#eaf7ef;border:1px solid #c8e8d5;border-radius:9px;padding:9px 14px;font-size:13.3px;color:#1e5f38;font-weight:600;margin-top:8px}
+.ans b{color:#1e7a45}
+.ansline{display:grid;grid-template-columns:repeat(auto-fit,minmax(74px,1fr));gap:7px;margin-top:10px}
+.ansline div{background:#f8fbf9;border:1px solid #dcefe4;border-radius:8px;padding:7px 6px;text-align:center;font-size:11.6px;color:var(--ink-3)}
+.ansline b{color:#1e7a45;display:block;font-size:14px;font-variant-numeric:tabular-nums}
+.tip{background:#fff8ec;border:1px solid #f5e0b8;border-left:4px solid var(--warn);border-radius:10px;padding:12px 16px;font-size:13.2px;color:#7a5a1e;margin:13px 0}
+.tip b{color:var(--amber)}
+.danger{background:#fdf3f2;border:1px solid #f5d9d5;border-left:4px solid var(--red);border-radius:10px;padding:12px 16px;font-size:13.2px;color:#8a4a44;margin:13px 0}
+.danger b{color:var(--red)}
+.ok{background:var(--brand-soft);border:1px solid #c8e8d5;border-left:4px solid var(--brand2);border-radius:10px;padding:12px 16px;font-size:13.2px;color:#1e5f38;margin:13px 0}
+.ok b{color:#1e7a45}
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(178px,1fr));gap:10px;margin:8px 0}
+.steps .st{background:#f8fbf9;border:1px solid #dcefe4;border-radius:10px;padding:12px 14px}
+.steps .st i{font-style:normal;font-size:10.5px;font-weight:700;color:#fff;background:var(--brand2);padding:2px 8px;border-radius:6px}
+.steps .st h4{font-size:13.4px;font-weight:700;margin:8px 0 4px}
+.steps .st p{font-size:12.5px;color:var(--ink-2);line-height:1.65}
+.read{border:1px solid var(--line);border-radius:12px;padding:15px 17px;margin:12px 0;background:#fff}
+.read h4{font-size:13.6px;font-weight:700;margin-bottom:9px;color:var(--purple)}
+.rlist{counter-reset:r;list-style:none;margin:0}
+.rlist li{counter-increment:r;position:relative;padding-left:30px;font-size:13.2px;color:var(--ink-2);margin-bottom:7px;line-height:1.7}
+.rlist li::before{content:counter(r);position:absolute;left:0;top:1px;width:19px;height:19px;border-radius:50%;background:#efedfb;color:#5b4fb0;font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center}
+.rlist li b{color:var(--ink)}
+.check-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:10px;margin-top:6px}
+.cg{display:flex;gap:11px;align-items:flex-start;background:#fff;border:1px solid var(--line);border-radius:11px;padding:12px 15px;transition:.15s}
+.cg.on{background:#fbfefc;border-color:#bfe6cd;opacity:.72}
+.cg input{accent-color:#27ae60;cursor:pointer;width:16px;height:16px;margin-top:3px;flex:0 0 16px}
+.cg .cgt{font-size:13.2px;color:var(--ink-2);line-height:1.65}
+.cg .cgt b{color:var(--ink);display:block;font-size:13.6px;margin-bottom:2px}
+@media print{aside{display:none}.wrap{display:block;padding:0}.hero{-webkit-print-color-adjust:exact;print-color-adjust:exact}}
+@media(max-width:900px){aside{display:none}.wrap{padding:0 16px 60px}.hero{padding:26px 22px}.hero h1{font-size:21px}.mhero .mmeta{text-align:left}}
+</style>
+</head>
+<body data-page-node-id="GAcp2JH8kom3sxAls5eNDq">
+<style id="resnav-style">
+.resnav{position:fixed;top:0;left:0;right:0;z-index:99999;display:flex;align-items:center;gap:4px;
+  height:44px;padding:0 12px;background:#1f2937;color:#e5e7eb;font-size:13px;line-height:1;
+  font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;overflow-x:auto;
+  box-shadow:0 1px 0 rgba(255,255,255,.06),0 2px 10px rgba(0,0,0,.18);-webkit-overflow-scrolling:touch}
+body::before{content:"";display:block;height:44px}
+.resnav::-webkit-scrollbar{height:0}
+.resnav .rn-brand{flex:0 0 auto;font-weight:700;color:#7ee0c0;margin-right:6px;letter-spacing:.5px}
+.resnav a{flex:0 0 auto;color:#d1d5db;text-decoration:none;padding:6px 10px;border-radius:8px;
+  white-space:nowrap;transition:.15s}
+.resnav a:hover{background:#374151;color:#fff}
+.resnav a.on{background:#22c39a;color:#06251c;font-weight:700}
+.resnav .rn-sep{flex:0 0 auto;width:1px;height:18px;background:#4b5563;margin:0 5px}
+.resnav .rn-end{margin-left:auto}
+@media (max-width:640px){.resnav{font-size:12px;height:40px}body::before{height:40px}}
+</style>
+<nav class="resnav" id="resnav"><span class="rn-brand">行测 2027</span>
+<a href="国考笔试总排期表.html">总排期表</a>
+<a href="2027国考行测学习计划.html">行测总纲</a>
+<span class="rn-sep"></span>
+<a href="资料分析_9天冲刺计划.html" class="on">资料分析</a>
+<a href="判断推理_13天冲刺计划.html">判断推理</a>
+<a href="言语理解_9天冲刺计划.html">言语理解</a>
+<a href="国考笔试总排期表.html#math">数量关系</a>
+<a href="国考笔试总排期表.html#roll">常识政治</a>
+<a href="申论_学习计划.html">申论</a>
+<span class="rn-sep rn-end"></span>
+<a href="题库总览.html">题库总览</a>
+</nav>
+
+<div class="wrap" data-page-node-id="tG87NnhJ3ieFRCk7pTaVC4">
+
+<aside data-page-node-id="X6g6HgtxDoXkrZqwjQ7NyE">
+  <div class="logo" data-page-node-id="IFTN1qubTujHEgFtcFO3yZ">资料分析 <span data-page-node-id="1jAFZ3tKyxBKQk3BzNFHr3">题本</span></div>
+  <div class="logo-sub" data-page-node-id="zZQ2w4hDIrNl5XodfbYwgG">粉笔 12 分类 · 排除法优先</div>
+  <a class="backlink" href="资料分析_9天冲刺计划.html" data-page-node-id="ht0XMMMT5N28LAMlBotspC">← 返回 9 天冲刺计划</a>
+  <a class="backlink" href="资料分析_真题题库.html" style="color:#0f6b55">→ 真题题库（18 篇 / 90 题）</a>
+
+  <div class="nav-group" data-page-node-id="i2mkXoXDygmUhaGYBZDgfW">使用</div>
+  <nav class="nav" data-page-node-id="NFlQCxLAcFmpcF4V2k7sIq">
+    <a href="#howto" data-page-node-id="BaJ9Qbze50nrgHQA2C0Php"><span class="dot" data-page-node-id="SQUFj4hFa9CebAVNPYQGe7"></span>题本怎么用</a>
+    <a href="#map" data-page-node-id="CsdMLjOS8tikAVdWs4UuyE"><span class="dot" data-page-node-id="PVDjmr4wCMJMDDlrKllqCc"></span>粉笔 12 分类总览</a>
+  </nav>
+  <div class="nav-group" data-page-node-id="oiAi8ttavKILN31k4zZ02r">一 · 材料类型（4）</div>
+  <nav class="nav" data-page-node-id="CAqtOg6fx5HG5GuJRrQE7n">
+    <a href="#t1" data-page-node-id="Bxh5ScAi2hgaCqY0IKL4bO"><span class="dot" data-page-node-id="4Vue5SIjNuTBZWNE7gU29c"></span>1 文字资料</a>
+    <a href="#t2" data-page-node-id="rBatmEKM0aVgfPDrSINmSZ"><span class="dot" data-page-node-id="uTDDbLoHrovxrDz5pSRgnV"></span>2 统计表</a>
+    <a href="#t3" data-page-node-id="0H1KIwIPYNYXZQ0ICD0hAE"><span class="dot" data-page-node-id="f2sS66hhDFYB5Qf6BBwYCU"></span>3 统计图</a>
+    <a href="#t4" data-page-node-id="H2vXm1o10RUF5sUwyhoP1t"><span class="dot" data-page-node-id="Qrp6vregIdj757tOlyBsRg"></span>4 综合资料</a>
+  </nav>
+  <div class="nav-group" data-page-node-id="22gkTo0TrYiWNfvXH9UNiE">二 · 考点（8）</div>
+  <nav class="nav" data-page-node-id="nIkNxNOWka2m9w43Ar6AJb">
+    <a href="#k1" data-page-node-id="iVkwUDCscQhDFNxFNh4cmc"><span class="dot" data-page-node-id="162F2neitoHjJG5Jh5lScp"></span>5 简单计算</a>
+    <a href="#k2" data-page-node-id="19aEGwLsPcBUkdpZ6OWfh8"><span class="dot" data-page-node-id="zltj6whRPOLcjtYxRYBVJg"></span>6 基期与现期</a>
+    <a href="#k3" data-page-node-id="nEd3CQuyNWEDDrNMDhF9Dc"><span class="dot" data-page-node-id="Fj1IeLAi3o4GLMNKXcmErL"></span>7 增长率</a>
+    <a href="#k4" data-page-node-id="4cG97phq0jDCjcxuuFCcM4"><span class="dot" data-page-node-id="Xk3E0T78qDcURRBDCTTGwh"></span>8 增长量</a>
+    <a href="#k5" data-page-node-id="yVVctIq6ICev3qBcDv1HR0"><span class="dot" data-page-node-id="mgD0NwLNn9f43rCTlNHARX"></span>9 比重问题</a>
+    <a href="#k6" data-page-node-id="ph12S7tx5igcokiBUDyGGW"><span class="dot" data-page-node-id="lDvdzIOdx775d9awFJBk2t"></span>10 平均数问题</a>
+    <a href="#k7" data-page-node-id="MKY5hmk1QudcCb7P4hZiMq"><span class="dot" data-page-node-id="kMTzlRFVvk02NP16xCEsoO"></span>11 倍数与比值</a>
+    <a href="#k8" data-page-node-id="AcgmZWS0us1KQP6ZsmIGcb"><span class="dot" data-page-node-id="JZxaQzSxbv4OVa3eTogKhZ"></span>12 综合分析</a>
+  </nav>
+  <div class="nav-group" data-page-node-id="roM4NRL9ylLHnGA4foWVjt">实战</div>
+  <nav class="nav" data-page-node-id="gO3UQN7MSmzLY7gUsOMQjL">
+    <a href="#zhenti" data-page-node-id="zt0000000400"><span class="dot" data-page-node-id="zt0000000401"></span>2026 真题精练</a>
+    <a href="#set" data-page-node-id="k1kY6ECi1mEs8kvpRXmhJI"><span class="dot" data-page-node-id="FezEdaH6gNIothG6XjNBXt"></span>综合限时套题</a>
+    <a href="#err" data-page-node-id="jNFK6NTgONcprynty33J6U"><span class="dot" data-page-node-id="SJLmANrdvktS1kZyGhYMJP"></span>错因四分类表</a>
+    <a href="#record" data-page-node-id="2GBDsL3SRISymC9DKESKBX"><span class="dot" data-page-node-id="PAnszCNfqQrQZSmtveLpo7"></span>12 类自测打卡</a>
+  </nav>
+
+  <div class="tp-card" data-page-node-id="L4sroKrcN9XFHi8LEEP7kR">
+    <h5 data-page-node-id="avc8PYbwBtjm20JvArVuZW"><span data-page-node-id="KrdT3W0c5NUAOIRWBPU5rv">12 类过关进度</span><span id="tp-pct" data-page-node-id="jiFcHREt0hiBSk3inHPO0e">0%</span></h5>
+    <div class="tp-bar" data-page-node-id="9xvEjYelBo92ysqC6y3zgp"><div class="tp-fill" id="tp-fill" data-page-node-id="cKlQf33QAybjTYCmRAmqK3"></div></div>
+    <div class="tp-num" id="tp-num" data-page-node-id="FPaXxBm4O1t4MrHurSbKaM">0 / 13 项已达标</div>
+  </div>
+</aside>
+
+<main data-page-node-id="dhBuLIFe9wBQ1XNGMHBPqD">
+<div class="hero" data-page-node-id="ELG1JaHga5JdUF5xuE6J7H">
+  <h1 data-page-node-id="Ba9BAJ8W67suA5SfokZerv">资料分析 · 题本与母题解析</h1>
+  <p data-page-node-id="7p6IiRhu417hHCcIfmkeWV">按<b data-page-node-id="7UmtvTXa9eAFsNyWNYO1V3">粉笔知识树</b>组织：材料类型 4 类 + 考点 8 类，共 <b data-page-node-id="4omsZcazPGBWsUAEFkld54">12 类</b>。所有解析都走同一个套路：<b data-page-node-id="OH2LGLQHjfACUxknlCNHaU">①先排除 → ②再缩小 → ③后择优</b>，能排除的绝不硬算。</p>
+  <div class="hero-meta" data-page-node-id="Ey9jSjH4nGJlIpNA0XAk4u">
+    <span class="hero-chip" data-page-node-id="czJEQtL99DSGXHiUxF0ia9">🧩 粉笔 12 分类对齐</span>
+    <span class="hero-chip" data-page-node-id="JRTvvUL12AamVaJEgshik2">🧭 每题固定三步排除法</span>
+    <span class="hero-chip" data-page-node-id="vQjcG0egV5ioFlSqZlgQVg">📄 附录 1 套限时模拟</span>
+    <span class="hero-chip" data-page-node-id="HwCRKvHOb3yeodSLbuFDG2">✅ 12 类过关打卡</span>
+  </div>
+</div>
+
+<section id="howto" data-page-node-id="9jJmDVbiHp9W9ONyFSjxPS">
+  <div class="sec-head" data-page-node-id="PGt0NDjqobwRohvcsORFOc"><span class="idx" data-page-node-id="oqdCfDAYM61xznPuF3uM3x">00</span><h2 data-page-node-id="njYTJjQe1bziuQfCZDQFEZ">这本题本怎么用</h2></div>
+  <div class="card" data-page-node-id="6F1Gwp9DA6IWOo0Qc8cWiW">
+    <h3 data-page-node-id="bfH0GeCnGbipMS9uZURGXI">两个维度分开练：先会「读材料」，再会「做题」</h3>
+    <p style="font-size:13.5px;color:var(--ink-2);margin-bottom:10px" data-page-node-id="5rdoYPWHAxJYisddvrWGe9">粉笔把资料分析拆成两个独立维度，练法完全不同——<b data-page-node-id="bLtbI7NDUHlmN6SP2wfM0v">材料类型决定你"找数"的速度，考点决定你"列式"的对错</b>。找数错、列式对，是失分最多的一种组合。</p>
+    <div class="steps" data-page-node-id="XHeUPCsBKDrS8D3phTbCy3">
+      <div class="st" data-page-node-id="SBw8qh8N0BfwYsCiHk2hbk"><i data-page-node-id="zBEsKLqupnlD35iFyoGd5B">维度 A</i><h4 data-page-node-id="btznnPGNiL0eGxHel1SW0h">材料类型（4 类）</h4><p data-page-node-id="M4vtD1xeGX1BTVG4M1ekmC">文字 / 表格 / 图 / 综合。练的是<b data-page-node-id="b5J4lwDBKfQp3PI4ebBQmG">阅读顺序与定位速度</b>：单篇材料读完 ≤ 30 秒，能用一句话说出材料结构。</p></div>
+      <div class="st" data-page-node-id="dGlupGsDj3zg5A2ahOPfRM"><i data-page-node-id="3L6k9KliWxi7GuAcRyUmHz">维度 B</i><h4 data-page-node-id="6tAzgxKpJRoJSO8xteunEf">考点（8 类）</h4><p data-page-node-id="pnN57o9geSkGnGwUU50fo5">简单计算 / 基期现期 / 增长率 / 增长量 / 比重 / 平均数 / 倍数比值 / 综合分析。练的是<b data-page-node-id="0DEJ1kGbY0XDq1jYN5hZEH">识别问法 + 列式 + 排除</b>。</p></div>
+      <div class="st" data-page-node-id="FMkzTHWEmEEFsMWH2STBF8"><i data-page-node-id="kBaf4ku4ZmJzs5uwtc4OK5">练法</i><h4 data-page-node-id="Mb8eNZPTjTyjerTtDgXraL">一天一类，交叉验证</h4><p data-page-node-id="NtDPSIxK56LqNIvCWsp2v0">先按考点练（认问法），再按材料类型练（练定位），最后用综合套题把两者合并。</p></div>
+    </div>
+    <div class="tip" data-page-node-id="109hmaKULZ7D3mY9BHAVJt"><b data-page-node-id="yjKH3okMXH8zeCCvu9e87h">关键提醒：</b>资料分析 90% 的失分不是"不会算"，是三件事——<b data-page-node-id="jjjX5yG4SMhUojMRvzXd6T">把现期当基期</b>（时间坑）、<b data-page-node-id="gtRUozTCgCpeoYlcfTOXPA">单位没换</b>（单位坑）、<b data-page-node-id="UglNqFkKXImb7BNA9YHnGK">把"多几倍"当"是几倍"</b>（表述坑）。所以每道题第一动作永远是：<b data-page-node-id="0Ua3SGZALSQ6NgVzbeOkuE">先圈时间、圈单位、圈问法</b>。</div>
+  </div>
+</section>
+
+<section id="map" data-page-node-id="Md8xwdtTkEeDcZ8wamFhSg">
+  <div class="sec-head" data-page-node-id="DQ7okewiRYJpGnxtoswHNs"><span class="idx" data-page-node-id="KZcmPM88X0w6tsVyFogc3s">01</span><h2 data-page-node-id="HMz3yqNhYx1bEtO5iMRM7x">粉笔 12 分类总览</h2></div>
+  <p class="sec-desc" data-page-node-id="shYnIcCgKQvIk5TGYJcsE3">两个维度、12 个分类，与你的主攻 9 天一一对应。</p>
+  <div class="card" data-page-node-id="0UuCPfDNx0Yz0tw3UpLimB">
+    <h3 data-page-node-id="q45e2z3Uxj3ssjXMfGTbM5">维度 A · 材料类型（决定"找数"速度）</h3>
+    <table data-page-node-id="V1hZkXRM50Pb5pTyQNt0a3">
+      <thead data-page-node-id="16kq5GeU5QcSYAEbEdOgfC"><tr data-page-node-id="7DZbJnauRreyhBDwHQlrai"><th data-page-node-id="EaQTEnWc7B53RCpuqUgfVI">分类</th><th data-page-node-id="QT3KM5ny4JIqBy4P6JlXvM">特征</th><th data-page-node-id="4RSJUgPJ1PLuS2xvFV5Ams">主攻日</th><th data-page-node-id="RAbgnBSw9vgkizGGG4cRKO">阅读目标</th></tr></thead>
+      <tbody data-page-node-id="lfzIUK1bp2FVhOJPsvVUKo">
+        <tr data-page-node-id="pHPelB3MZgk8YXz2xDlx8l"><td data-page-node-id="AdiMhpxAzGWbqIfFuXymDa"><span class="ct" data-page-node-id="dVAx2GcOYJ6y3D4DFBzdfF">1 文字资料</span></td><td data-page-node-id="8qlJpdRN4zS2GEnSg7KSzN">整段文字，数据散在句子里</td><td data-page-node-id="RByKbvROlEJ66Ov2ze0JxG">D1</td><td class="num" data-page-node-id="DdFsk88tSMYi54Fahh6WHW">≤ 30 秒画结构</td></tr>
+        <tr data-page-node-id="0Hl3EqPiCcChbcDv71AuxE"><td data-page-node-id="CDlEJkLtdOpvtIBoWt0cWj"><span class="ct" data-page-node-id="dK5qziMRM7poGtAmWFHJfM">2 统计表</span></td><td data-page-node-id="vuA2EAKBErlZfMVetjFqOq">表头 + 行列数据结构</td><td data-page-node-id="9cEMrQ0mrDCROsdpJURyKY">D1</td><td class="num" data-page-node-id="29O0hYZ7WoJlgEe2wJepc8">先读表头单位</td></tr>
+        <tr data-page-node-id="58HzdzwwehrWSe2JFSz6cY"><td data-page-node-id="NBRlvlQWan9jdTMzg9Pnlf"><span class="ct" data-page-node-id="YOZCXBENpJR2LCAoA9H5jK">3 统计图</span></td><td data-page-node-id="xKtsHSwNxIALaYkezaETS1">柱状 / 折线 / 饼图 / 复合图</td><td data-page-node-id="N5mrOHNd6HdBUdxcjZMWxp">D2</td><td class="num" data-page-node-id="ImcaX5CulehWf7YHF26Bq9">先读图例与坐标轴</td></tr>
+        <tr data-page-node-id="Ox896wXwuYGNmtJgbe9w5N"><td data-page-node-id="H3omDSdo1r5CxUbUXQixPi"><span class="ct" data-page-node-id="MYSIBMd2NEZAftl87krS1u">4 综合资料</span></td><td data-page-node-id="H1Y17oJU0pMr5Pcyp1Iece">文字 + 表 + 图混合</td><td data-page-node-id="VLG1XNYGHnk8UDR71NRwby">D7</td><td class="num" data-page-node-id="kSnJgZvqFkRXkjNjymYdva">先判"哪题去哪找"</td></tr>
+      </tbody>
+    </table>
+    <h3 style="margin-top:18px" data-page-node-id="9DU6OvjBCjkAXjqxYBKHEd">维度 B · 考点（决定"列式"对错）</h3>
+    <table data-page-node-id="IxTh2qVC92gI3HMDDEPtM2">
+      <thead data-page-node-id="Z6nXKOOJ0ZkfPkMMn52zMt"><tr data-page-node-id="83e0DIkuSz4LoFwFn8PhxJ"><th data-page-node-id="a1XKiBjuQ0AtZQJQTXdXW5">分类</th><th data-page-node-id="08bvRIzW87dR3Xu8oZSozv">识别关键词</th><th data-page-node-id="xcGXC6TcOYcTofMFFJK91H">主攻日</th><th data-page-node-id="CRc7XGe3uk8BR0ZjF4MysB">训练题量</th><th data-page-node-id="W8m5BJnVDCebBGzQodoTNb">目标</th></tr></thead>
+      <tbody data-page-node-id="IfyLupZ8EyrFlKC7D5XVlb">
+        <tr data-page-node-id="Vq8M13Jo9kKmomSkjLKOkv"><td data-page-node-id="8qAJEQa1upqKM5a38JAAbG"><span class="ct g" data-page-node-id="QZmTq197nctO6vdL5rpuZm">5 简单计算</span></td><td data-page-node-id="B1bH5IjHE01tW40AbVkDx3">读一读、排序、合计、多少</td><td data-page-node-id="A6pVVVr52pTUP6NyCQCT0D">D1</td><td class="num" data-page-node-id="8ddhJrwLYatl41g0xcFbzJ">20 题</td><td class="num" data-page-node-id="uy2e1nbeuBG9aDJPL18UsP">≥ 95%</td></tr>
+        <tr data-page-node-id="fI4ZMdfDSeR7gJo4b1EpTe"><td data-page-node-id="bZ1JIfgIxNMGpofIB0OGV1"><span class="ct g" data-page-node-id="N6Pn0vWvVLB1fO3BNHUm9J">6 基期与现期</span></td><td data-page-node-id="fhCcz2EaMJ8CHFgYnL3qPq">上年 / 去年 / 今年 / 计划</td><td data-page-node-id="HCCL8tT6pnAv21NBefGTmF">D1 – D2</td><td class="num" data-page-node-id="nN69mNsE4IVQ2h7e4OAQCw">25 题</td><td class="num" data-page-node-id="XubNOcZgyOTIUiRAsCWawp">≥ 90%</td></tr>
+        <tr data-page-node-id="NvmIujW47b6siO2yJM8PEW"><td data-page-node-id="C45yPGV1bJtY4GgTkhYYwb"><span class="ct g" data-page-node-id="ByxhoUsRQxHtpH7rPIQPhR">7 增长率</span></td><td data-page-node-id="5ZECqVmDbcoGwRo0XUt2NN">增长/下降 %、增速、年均增长</td><td data-page-node-id="VxDECmaqTYYCbZx41WBnBQ">D2</td><td class="num" data-page-node-id="vB5WK21R9s7LVW2tro471Y">30 题</td><td class="num" data-page-node-id="fCHMDzIwV5ajYVhqY0E1FV">≥ 85%</td></tr>
+        <tr data-page-node-id="c8SEeiBcPBIHMQtIgB9uMT"><td data-page-node-id="dRaHaToHORw5x3OmAfugsX"><span class="ct g" data-page-node-id="qUaugo6mAMjLdVLH5OrHZG">8 增长量</span></td><td data-page-node-id="SawrvSDBe8bZV7DbFQcI8z">增长/减少多少、增量</td><td data-page-node-id="Jc5sNaD51cmFyhYskHsKAZ">D2</td><td class="num" data-page-node-id="Is7jM9snsFU2uYkXAaGVH1">25 题</td><td class="num" data-page-node-id="oH6cdzPLw6PWDQ6m0Bucfy">≥ 90%</td></tr>
+        <tr data-page-node-id="CGI0yA9nRstgREu5VrGuCl"><td data-page-node-id="PDI83oZlcjpNiYODt2T3py"><span class="ct g" data-page-node-id="gFed4ZXEUMdzroCU8sVqa4">9 比重问题</span></td><td data-page-node-id="aTWxXxs82B4tHBH1PDmEUu">占…比重、占比、比重升降</td><td data-page-node-id="DfKsnpvDfHLF8z7mCiiOUP">D3</td><td class="num" data-page-node-id="q2d5w5lEFKQ58D9jcYFfF9">35 题</td><td class="num" data-page-node-id="kRknB7EZqrKJx818EK12NW">≥ 90%</td></tr>
+        <tr data-page-node-id="oxVC8TurQz7KKoBQ7OR4aZ"><td data-page-node-id="evFMCPeXfRNA6A3FREANWo"><span class="ct g" data-page-node-id="T2qqzu67f5xXDUrKcMEtFX">10 平均数问题</span></td><td data-page-node-id="QT0o2pojbTdkMg0CJEnPuy">人均 / 户均 / 均价 / 单产</td><td data-page-node-id="iEcOsuXZQd2VY9JkdHO9ym">D4</td><td class="num" data-page-node-id="csm8hAo1IidXnBmJGAd0s3">20 题</td><td class="num" data-page-node-id="QeF9B5EmzKA4IaOHNLRsDC">≥ 85%</td></tr>
+        <tr data-page-node-id="DUcPCmObz64733vjR2NG0t"><td data-page-node-id="iDkSVfuBqWduJmgE33MgwV"><span class="ct g" data-page-node-id="F6SvRXTbYgCSGQlCCaIMx0">11 倍数与比值</span></td><td data-page-node-id="i9FDlGZwmDMUndCcHtwvZT">是几倍、多几倍、A 与 B 之比</td><td data-page-node-id="pLzJOl4cDac08eLkCAsBb8">D4</td><td class="num" data-page-node-id="w2sbEhMdma4DVdGb8klOri">15 题</td><td class="num" data-page-node-id="VVFcRpulAcCN6wHvojzH1B">≥ 95%</td></tr>
+        <tr data-page-node-id="FQATYwRXbiSXYwHB5cmSCw"><td data-page-node-id="vaUj28pGSAchtoIvdApSDS"><span class="ct g" data-page-node-id="0OQ03UbdUNu4AYCe02lH2E">12 综合分析</span></td><td data-page-node-id="CdxxLrwrtXdEyrqXwEHv7D">下列说法正确/错误的是</td><td data-page-node-id="4GgALAyPB9tV1u6pERgqsa">D5 – D9</td><td class="num" data-page-node-id="OFG2mK06grNRL1oibwLMr4">30 篇</td><td class="num" data-page-node-id="Lxe2w9tRKUl4m0fv7gzlTQ">≥ 75%</td></tr>
+      </tbody>
+    </table>
+    <div class="ok" data-page-node-id="L2MGEmtnCZvDYLSU0ggltV"><b data-page-node-id="oNISOa0GH8GYcxmlVZlLp4">先练哪个：</b>考点里 <b data-page-node-id="2kWZnpSh1rOkarteI6RjDQ">基期现期 + 增长率 + 增长量 + 比重</b> 合起来约占 60%–70%，是地基；<b data-page-node-id="SCWamLSdxdEEvje5azWhtK">简单计算、倍数与比值</b>是送分项，用来提正确率；<b data-page-node-id="Pu87J5rVCyGql4TUvos86h">综合分析</b>是拉分项，放到后半程。</div>
+  </div>
+</section>
+
+<section id="t1" data-page-node-id="FiuUs7xpVQV94SK8DHE3lf">
+  <div class="sec-head" data-page-node-id="NQiduWH2LUCOuVNfSAaAbF"><span class="idx p" data-page-node-id="9W2NWHdh8QPSqsFOva83Tc">02</span><h2 data-page-node-id="Z07mqDQplEndklCIjFFoqj">材料类型 1 · 文字资料</h2></div>
+  <div class="mhero p" data-page-node-id="hhLMMXW8cEEHpPhgHSI2B8">
+    <div data-page-node-id="nEnqMLhFmBZ5pHxMymgR21"><h3 data-page-node-id="AW4YdAqdNHqfjbSt8QNhgO">文字资料</h3><p data-page-node-id="ErL8CAlzB8AaCAWdFBXvNr">整段文字，数据散落在句子里，需要自己"抠"出来</p></div>
+    <div class="mmeta" data-page-node-id="8zmqJjwZjOL9dEu5AGG04v"><b data-page-node-id="ynNq8ElFDBi7DIO7oUPdM8">D1</b>识别特征：无表格、无图形<br data-page-node-id="D93CXz5Aej4gx85ZuBa4t1">阅读目标 ≤ 30 秒</div>
+  </div>
+  <div class="card" data-page-node-id="UkizgLczzoFxYBKTHuUnzQ">
+    <h3 data-page-node-id="kMsHmrfVNKRABb3j1pWJkw">阅读顺序（照做就行）</h3>
+    <div class="read" data-page-node-id="pxlNGvGGEIIq78J7BLrZHs">
+      <ol class="rlist" data-page-node-id="99SUpasdy6EMz7xrYX6UfB">
+        <li data-page-node-id="0dmmt75ZtC3H6JSy0wpABJ"><b data-page-node-id="IndP0dFcLefmN4P29MBifO">先看时间与主体</b>——第一句通常交代"时间 + 城市/行业 + 总量指标"，这是<b data-page-node-id="38uMsb9g0SeCExEsaXrTCU">整体</b>。</li>
+        <li data-page-node-id="f0h9FP7phcy4LDe6ODSIzY"><b data-page-node-id="bXBeWE3TuT9jeHBdqk3wb0">再抓结构词</b>——看到"其中""分…来看""从…看""一是…二是…"，立刻标记：这是<b data-page-node-id="DjTE9kX3r4rHtoa8eo3nr4">总分关系</b>。</li>
+        <li data-page-node-id="jtsmNA2gbDOc2qWxpzvPYU"><b data-page-node-id="VUUigIh7pc9ly5IjlYJEwY">用"主体词"定位，不通读</b>——做题时拿题干里的主体词（如"第三产业增加值"）去扫句子，找到就停。</li>
+        <li data-page-node-id="IOfR3mVCDxXAUxyn0bixQ8"><b data-page-node-id="9DafxUlVohwXaWM23tEYEL">把长句拆成"主体 + 数值 + 增速"三列</b>，在草稿纸上写竖列，比在脑子里记稳得多。</li>
+      </ol>
+    </div>
+    <div class="tip" data-page-node-id="CqwE0LXtraWs0j6m1qGKBE"><b data-page-node-id="E11ckoEmf2ngDKbXQFKlTw">文字资料唯一的时间成本在"定位"。</b>别从第一句读到最后一句。先读题干，圈出主体词，再回材料里扫——这是 20 秒和 60 秒的差别。</div>
+  </div>
+
+  <div class="card" data-page-node-id="wUDBAcH34ctXnXs89qLdGS">
+    <h3 data-page-node-id="yE4TigpQoJfIHKlRw74GsZ">示范｜把一段材料 30 秒拆成结构</h3>
+    <div class="mat" data-page-node-id="d5eWYKdibtRlDKBujOxlEh"><span class="mtitle" data-page-node-id="X4mEAmbJxCtFSLPnZsNyf2">材料</span>2023 年，某市实现地区生产总值 <b data-page-node-id="9fcGKy4F0JRfYhfGmUUvRC">8000 亿元</b>，同比增长 <b data-page-node-id="alZciSOtW2E50WrMrqMXoQ">5.5%</b>。<b data-page-node-id="pA0TjMEZiNZLNVb2BaT72c">其中</b>，第一产业增加值 160 亿元，增长 2%；第二产业增加值 3200 亿元，增长 4%；第三产业增加值 4640 亿元，增长 6.5%。全年全社会固定资产投资 4000 亿元，同比下降 1.5%。</div>
+    <div class="ok" data-page-node-id="jcdbU6iT3DhEYkhyHAvLYW"><b data-page-node-id="OlDFiwkC9mp7MN7XbBCzjR">拆解结果（草稿纸就写这一行）：</b><br data-page-node-id="tGU7onHdreolz9CADOfhOO">
+      【整体】GDP 8000 亿，+5.5%<br data-page-node-id="K6EFHYGH7ZW9IMXGzFjjho">
+      【其中】一产 160，+2% ｜ 二产 3200，+4% ｜ 三产 4640，+6.5%<br data-page-node-id="ZgBcQM5ifTZpUAdHBMiEon">
+      【另】固投 4000，−1.5%<br data-page-node-id="dTbDFnyzfmaDP4B7J7glE4">
+      → 一句话结构：<b data-page-node-id="r5k52zIncLNMQJBGOicTFT">GDP 由三产构成，固投是另一条独立线</b>。后面无论问"比重""增速"还是"综合分析"，都能 10 秒内定位。</div>
+  </div>
+</section>
+
+<section id="t2" data-page-node-id="wOhTW5O3XGf7BRkD7JQql4">
+  <div class="sec-head" data-page-node-id="BVBHA1kLlykUK3eOAvEyPm"><span class="idx p" data-page-node-id="kEkEwc5a78JL2XVKXui8Kz">03</span><h2 data-page-node-id="vCHsKDdO17bHBBAY4peSn9">材料类型 2 · 统计表</h2></div>
+  <div class="mhero p" data-page-node-id="uVjapnJyQCpeFPf1fTsjCk">
+    <div data-page-node-id="I23RlwvHsOlqAed6AudbmS"><h3 data-page-node-id="Un49YrpvvVb2AlP500MsLq">统计表</h3><p data-page-node-id="o9shqDU2ZgGT7BzQLFplxo">表头 + 行列数据，最"规整"也最容易看错行</p></div>
+    <div class="mmeta" data-page-node-id="Wsfjw6J6v990PTj5zBGElm"><b data-page-node-id="95UmxWxvHuNcCBCbNeMngE">D1</b>识别特征：有行列网格<br data-page-node-id="V2DCXRYVbmoCSrALvJ88yH">阅读目标：先读表头</div>
+  </div>
+  <div class="card" data-page-node-id="SQRKp9l2BA2qsxaJR44ZmS">
+    <h3 data-page-node-id="BPCSxjjWtITLDV91kVtPdD">阅读顺序（照做就行）</h3>
+    <div class="read" data-page-node-id="gXjM7ZY5iYbzvFxk9SiiOQ">
+      <ol class="rlist" data-page-node-id="q5qA0B32YCim1kKaKkZVSX">
+        <li data-page-node-id="D6hmEX0iBovD7FYefS7e8w"><b data-page-node-id="TreEcHsBSye2pH44JUEDHN">先读表名</b>——表名交代"什么时间 / 什么范围 / 什么指标"，是最外层信息。</li>
+        <li data-page-node-id="3qLKySaqFKQtae3XB21x4S"><b data-page-node-id="2lJQ3h8xG8RKNwzxdIU4Fl">再读表头与单位</b>——单位常在表头（如"亿元""万人""%"）或表注里。<b data-page-node-id="oCuidT1QfMjAfMu9wMDuWx">单位看错=全盘皆错</b>。</li>
+        <li data-page-node-id="Ruzs0C4Z8Z6Km8saWQvmJk"><b data-page-node-id="FRVskPcoDYZ6gQ7oLRzVBf">然后看行标题（项目）与列标题（时间）</b>，建立"行列二维坐标"的心智地图。</li>
+        <li data-page-node-id="2yDnpBVHfQvUTFwJUSy26h"><b data-page-node-id="YKwy231ymkcSyIaVnu3IZX">注意表注</b>——"注：""同比""累计""含××"这些改动口径的话，一定在表下方。</li>
+      </ol>
+    </div>
+    <div class="danger" data-page-node-id="Bw5IB3gSoPGh0SYOpcjgsE"><b data-page-node-id="aLWumxNb3bM9keIK72xGqF">统计表最高频的三个坑：</b>① 单位藏在表头（"‰"和"%"只差一个符号）；② 有"其中"行时，别把"合计"和"分项"加起来；③ <b data-page-node-id="GFEDTcdCq54Icaadd59gfq">行列交叉容易看串</b>——用笔尖横竖各划一次再读数。</div>
+  </div>
+
+  <div class="card" data-page-node-id="5ThQhmq62BDAfOjX38fQzd">
+    <h3 data-page-node-id="IveRpz2qbFIa0V1UhU1HJq">示范｜先读表头，再取数</h3>
+    <div class="mat" data-page-node-id="kb8jWI5ki6pk7OpAgy0C5Z"><span class="mtitle" data-page-node-id="DjL6e4GKj3SjfHMyy8jB2o">表｜某市 2021—2023 年主要指标（单位：亿元 / %）</span>
+      <table data-page-node-id="TFl7amWn9Pct4CsFCcah4a">
+        <thead data-page-node-id="wWnqWBW4YZhxJGJ0DEXbwD"><tr data-page-node-id="voiOaf2UcVuQkqdCAZb5uw"><th data-page-node-id="VIDtzR4vU8xHBvP3ui6i6E">年份</th><th data-page-node-id="Br383X3mz8Kwq0G7Bz50Xk">GDP</th><th data-page-node-id="LxTN2vVeRH0jlKLYUpybpT">增速</th><th data-page-node-id="r4LfOtZp94fgp0TX0hF7xE">其中：工业增加值</th><th data-page-node-id="ZbEc68yZ76dCp6FZeGE3hl">工业增速</th></tr></thead>
+        <tbody data-page-node-id="u4u8dB895lTlIchCXlCnxi">
+          <tr data-page-node-id="RJPDYGwS4zFW8X53HPGz7g"><td data-page-node-id="JTWxTlgJZ4MvlYtYywFKMz">2021</td><td data-page-node-id="alRU9ojaO880cXzQNeq1Hg">6800</td><td data-page-node-id="Ab1kRu4kz9QMv7Da8X5tin">6.2</td><td data-page-node-id="qhQ7OF3sBG5vBuHHrdGHh9">2100</td><td data-page-node-id="qCcNISaBgB3cXzGy6HPl93">5.0</td></tr>
+          <tr data-page-node-id="zjq5ojDMkDhNTmSejl9h5V"><td data-page-node-id="t3WFNULAvWhuxXyFodKmqa">2022</td><td data-page-node-id="JScL4wkln8XIBXo7wm3MG9">6100</td><td data-page-node-id="8XkIl7D2egkkxQapMGXNqb">−3.1</td><td data-page-node-id="7l9yVctvGE811y8DoBRdgt">1850</td><td data-page-node-id="PvwNBSSDxPEU8Lc7MbR2LR">−6.0</td></tr>
+          <tr data-page-node-id="BGBsT13ChdqsFy1PY5Hwc1"><td data-page-node-id="geB7IRR62kU9GrL3vfIHPm">2023</td><td data-page-node-id="055iprTaWGChoS4uEvAO8m">8000</td><td data-page-node-id="7gCN0MZCCMOmA6FqXAAP3l">5.5</td><td data-page-node-id="bp6Vj1vlDpuPsfKAnPpxpY">3200</td><td data-page-node-id="7atWgt006d379Wqu8C7eOf">4.0</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="ok" data-page-node-id="SnCd41feOft9zhYPt90mYs"><b data-page-node-id="JiB609kbifMu7OFg0XR76Q">读表动作：</b>① 表名 → 时间 2021–2023、指标 GDP/工业、单位亿元与 %。② 列标题 → 时间在行、指标在列。③ 立刻注意 <b data-page-node-id="AtW81rLuakLgUZnbc1RF7r">2022 年是负增长（−3.1%）</b>——负号是表格里最爱被漏掉的符号。<br data-page-node-id="LIimrMDpySls8R3d9cYhEA">→ 若题目问"2023 年工业增加值占 GDP 比重"，坐标直接锁定 <b data-page-node-id="x7uu6p3vFNXk5faSx7dL1M">第 3 行 × 第 4 列 / 第 2 列</b>，不必再读其他数。</div>
+    <div class="tip" data-page-node-id="a50KOdcHF5wNOziatID4SX"><b data-page-node-id="TfEgGBqA7nWEHTvm276FrO">训练动作：</b>每拿到一张表，先用 10 秒把"最小数/负数/最大值"各圈一个。负号和"其中"行是最容易出坑的地方。</div>
+  </div>
+</section>
+
+<section id="t3" data-page-node-id="nNeFWCgiMlzCOo55fRDIsc">
+  <div class="sec-head" data-page-node-id="Yqvq0Twch1SGPjyK4qxqCA"><span class="idx p" data-page-node-id="EXQNXpwTsYybxGGXyXnw1e">04</span><h2 data-page-node-id="JUVLnnpGigd74kItx2LDR2">材料类型 3 · 统计图</h2></div>
+  <div class="mhero p" data-page-node-id="ANzhTIz1CyBkyquZiKQSIj">
+    <div data-page-node-id="wvqN1EFoDxFdRsJ4cdvPay"><h3 data-page-node-id="3Ah3foKFTlGpblRJYaC1bw">统计图</h3><p data-page-node-id="JYwsaWGKBqY3eXtQL5r5VW">柱状 / 折线 / 饼图 / 复合图，靠"看"而不是"读"</p></div>
+    <div class="mmeta" data-page-node-id="zEDg5XwdE8hkISe0EUyqcb"><b data-page-node-id="jX7Go2izUYQygiZA439qyf">D2</b>识别特征：有图形与图例<br data-page-node-id="ZtZPMH8dsau00wytHtxPdA">阅读目标：先读图例与轴</div>
+  </div>
+  <div class="card" data-page-node-id="BSmYOHoXA8NwX3A2kE4DtE">
+    <h3 data-page-node-id="iZdeyHkqNPYibndMsnqqEl">阅读顺序（照做就行）</h3>
+    <div class="read" data-page-node-id="pyrFP3tCZcwLeiSHA0Jgw5">
+      <ol class="rlist" data-page-node-id="P5nvEKPzQ2bJ2DhkzLipqT">
+        <li data-page-node-id="0lza1LiVfo3UsqZCmZjbr8"><b data-page-node-id="3BA4qQVoXNMcjmxtTHliAa">先读图例</b>——哪个颜色/线型对应哪个指标，图例看错后面全错。</li>
+        <li data-page-node-id="a5oBaBBaXe0CpoX5XZ7cOP"><b data-page-node-id="ytgcI4Ga0qCKMBckRNmLBX">再读坐标轴，尤其是纵轴起点</b>——纵轴不从 0 开始会<b data-page-node-id="EiZE9p4VGROhbN1B0GhvE3">夸大差异</b>，这是图形题第一大坑。</li>
+        <li data-page-node-id="XZEhHRLq0P19Hwy3mKgqmB"><b data-page-node-id="D8X7bDAf1Wds7MWYiWs1Dg">柱状图看高度差（比较大小），折线图看斜率（比较快慢）</b>——折线的斜率就是增速的直接体现。</li>
+        <li data-page-node-id="CVNDvHPKoNeM9e2CZ2YzdI"><b data-page-node-id="Z1GnLeCcStmsAEn7iE1uB0">双轴图要分清"哪个指标看哪根轴"</b>，别把左轴的数用右轴的刻度读。</li>
+        <li data-page-node-id="EcAgNCyOIkVZM8vbfe8l6Y"><b data-page-node-id="oUoOFtK0CnRU2A9KceRQOZ">饼图看扇形占比，注意"合计"是否为 100%</b>（有时只画了部分）。</li>
+      </ol>
+    </div>
+    <div class="tip" data-page-node-id="K72iJYqvUBCo0BlzWEFN6Y"><b data-page-node-id="s9MzlhhdTOU02IF1qZCoad">图形题的核心心法：</b>柱状比大小、折线比快慢。判断"哪年增速最高"，看折线的<b data-page-node-id="cHAk7Hbg1k1dg3yKZw9Nbk">坡度</b>比算数值快得多；判断"哪年总量最大"，看柱子的<b data-page-node-id="ThLI8JdB8PlRfKz62RhBpD">高度</b>即可。</div>
+  </div>
+
+  <div class="card" data-page-node-id="v2BoB1r6FXgrFWdMVo2BbQ">
+    <h3 data-page-node-id="7dNwQrTGsRoJ8gY3kYKSYa">示范｜折线看坡度（增速）</h3>
+    <div class="mat" data-page-node-id="beGZTH5uJJG3Ok9dgmE585"><span class="mtitle" data-page-node-id="vFvyVZQQzgNftz7jp0wIqw">图｜某市 2019—2023 年 GDP 增速（%）折线</span>
+      2019 → <b data-page-node-id="6IKcVvM2NZCbGBwerx7eHl">6.1</b>　　2020 → <b data-page-node-id="Uz3cXWEThFm4x7cvAYDSxg">2.3</b>　　2021 → <b data-page-node-id="XEIlIPVZyED1Hf24De2aqQ">8.1</b>　　2022 → <b data-page-node-id="IKCWow7HGM7KnpbaNsklEM">3.0</b>　　2023 → <b data-page-node-id="GxEBLrVXKOtTMYIAKbgS3J">5.2</b>
+      <br data-page-node-id="RMkeMF8goMqTLyTSPkeWuL"><span style="color:#7b8798;font-size:12px" data-page-node-id="BFHcrIkAaroht9AdGFgrdi">（折线形态：先降 → 陡升 → 回落 → 回升）</span>
+    </div>
+    <div class="ok" data-page-node-id="8Kmi1xEYjV7GsKQexxrO1H"><b data-page-node-id="8n6SBshDGA3SRQBltLjCz3">读图动作：</b>① 图例 → 只有一条线，指标是"GDP 增速（%）"。② 纵轴 → 是增速本身，不是 GDP 绝对值。③ <b data-page-node-id="ntDTHv6NTvzCEAhTf1JTzq">折线的顶点</b>（2021 年，8.1%）就是增速最高年；<b data-page-node-id="tySQCZto7LRWFH9obRdCr0">谷底</b>（2020 年，2.3%）是最低年。<br data-page-node-id="vnR4xcv27CTYAC9LHm1gMl">→ 若题目问"2019—2023 年 GDP 增速最高的年份"，直接选 <b data-page-node-id="5cMgEc08tsXipONMdhBEsZ">2021 年</b>，<b data-page-node-id="J5iQ6kLI3e7cKw3UQPJboe">不需要任何计算</b>。</div>
+    <div class="danger" data-page-node-id="pd510tih3GQ5UwhiPwycyB"><b data-page-node-id="Myj0B6Kf4TyO0lX1TcMINN">反向坑：</b>折线画的是"增速"，所以<b data-page-node-id="7wZ7dyHr6j0vf9G3jaSmON">折线在下降不代表总量在下降</b>——只要增速还是正数，总量仍在增长。这个坑每年都有人踩。</div>
+  </div>
+</section>
+
+<section id="t4" data-page-node-id="r1Lg17FFEFkfw5MZflboRR">
+  <div class="sec-head" data-page-node-id="5yGAqqXFAkXvfilsZ7NbbI"><span class="idx p" data-page-node-id="lUPQVCUbHSziNlgcgVZ9or">05</span><h2 data-page-node-id="BUgR3THOHtdaiuLiCofvX8">材料类型 4 · 综合资料</h2></div>
+  <div class="mhero p" data-page-node-id="ciRAcEb2pKZNyTCTLRsTjl">
+    <div data-page-node-id="JNJ1JTbUnQlya0kGRleq9H"><h3 data-page-node-id="1kvuhkMxOnhZuMsR30gbHI">综合资料</h3><p data-page-node-id="fmQyMimh9gAX3fZ6fhAuXZ">文字 + 表格 + 图形混合，信息量最大</p></div>
+    <div class="mmeta" data-page-node-id="Bpr6fJ3myzWg2iiyJnEPH5"><b data-page-node-id="lr0WK1cjRS6S53DecHNSNc">D7</b>识别特征：不止一种载体<br data-page-node-id="ALZkL4Txc3N9YPvReiiRvj">阅读目标：先判"哪题去哪找"</div>
+  </div>
+  <div class="card" data-page-node-id="mdd55zd55chdLpmR55jlar">
+    <h3 data-page-node-id="sfGdV4yoJjwkjduTueskec">阅读顺序（照做就行）</h3>
+    <div class="read" data-page-node-id="22iP3z07eRZ8FZljlUEmLH">
+      <ol class="rlist" data-page-node-id="h52Y8I9GMpsqxEEw4vtnRT">
+        <li data-page-node-id="PlsbCZtPIxSqM4g2m1CJ4G"><b data-page-node-id="tXurQ4JYy1JARKceuXgUET">先扫一眼有几种载体</b>——比如"一段文字 + 一张表 + 一张图"，心里先记下各块大致放什么。</li>
+        <li data-page-node-id="pn5WDk2BuZ0pb429YZteHA"><b data-page-node-id="WnRgmfg5sx7f517E444Zwo">不要通读</b>，直接<b data-page-node-id="9jN7jaGrg0AKssoLRqQASa">按题干倒推</b>：题干问什么主体，就回哪一块找。</li>
+        <li data-page-node-id="Jg4a6ys4bet4m2gDsiEqSq"><b data-page-node-id="5LaEBAXubgOYI7iDhhJKfw">注意题号顺序通常对应材料顺序</b>——前几题多来自第一块材料，用这个规律缩小搜索范围。</li>
+        <li data-page-node-id="FELSFwrXiPKn1zs4F6gcGg"><b data-page-node-id="UZNi7DIvikRpnG0ncaaMHa">同一指标在不同材料里口径可能不同</b>——比如文字里是"全部"，表里可能是"规模以上"，务必看清限定词。</li>
+      </ol>
+    </div>
+    <div class="danger" data-page-node-id="g0DKBF6iJ1KribjGroriGa"><b data-page-node-id="e6xvUNoVVPMoOLhjVEGW7O">综合资料第一大坑：同指标不同口径。</b>"规上工业增加值"和"工业增加值"不是一个数，"城镇"和"全体居民"不是一个口径。核对时务必看清题干和材料的<b data-page-node-id="SJQ69FHxNA4OmMQlhGFN6R">限定词是否完全一致</b>。</div>
+  </div>
+
+  <div class="card" data-page-node-id="NhCC7v7qJeND7DzWeZENzM">
+    <h3 data-page-node-id="vWsIUrBo3fGHyQ7BcEGXYf">示范｜一段文字 + 一张表，怎么分工</h3>
+    <div class="mat" data-page-node-id="7rWqvebHqbpkmxNrm8CY6a"><span class="mtitle" data-page-node-id="2Z0z786GFQnIQQNz6UntwI">材料一（文字）</span>2023 年某市完成地区生产总值 8600 亿元，同比增长 6.0%。其中第三产业增加值 4816 亿元，增长 7.2%。全年社会消费品零售总额 4100 亿元，增长 8.0%。</div>
+    <div class="mat" data-page-node-id="wHzchxnYd37GxJcofvkBCY"><span class="mtitle" data-page-node-id="WNrVChpF19sNlDnIebJmlD">材料二（表格，单位：亿元）</span>
+      <table data-page-node-id="6Utq2LGeYkeCT6XEvs3rBl"><thead data-page-node-id="F5bVHVe9GW7fha40pA4YjV"><tr data-page-node-id="TWNPD6F6TBHwV6EonXXRNv"><th data-page-node-id="cq1FCBQmMaJE5yynbIShmz">产业</th><th data-page-node-id="dVnaEqnQulDEebnzNbPjtV">2023 年增加值</th><th data-page-node-id="YVtOAPtw5QL7YmJODa9ljK">增速</th></tr></thead>
+      <tbody data-page-node-id="mViWoD2WgxBxxTfQM9O70Y"><tr data-page-node-id="TY9tHxYpHhQr9PdZ2UbS0w"><td data-page-node-id="o1HyDlN5m2uWwJTKCiJjNh">第一产业</td><td data-page-node-id="iIxdlYoNtxi5AKFrGjNSUc">172</td><td data-page-node-id="Qz5jKTedVw6I9i30J3FaOp">3.0%</td></tr><tr data-page-node-id="oA9e7S9GRTRxqQRsaKwBpC"><td data-page-node-id="elf24qtpKPKVUVhpaVxBgy">第二产业</td><td data-page-node-id="TM6jMQ3G8XP64MGzCqdBzS">3612</td><td data-page-node-id="ZjgFt0H7BSuLqWEJvjdF4F">4.5%</td></tr></tbody></table>
+    </div>
+    <div class="ok" data-page-node-id="J8kFvc3AGcJiBTnGSQYAP5"><b data-page-node-id="o5YdUNZ9LjehErzZHOapYP">读法：</b>文字块给"总量 + 第三产业 + 消费"，表格块给"第一、第二产业"。<br data-page-node-id="a8NiRCCpzKjrir4hjnlo7T">→ 问"第三产业占比"→ 去文字块（4816 与 8600 都在文字里，一次搞定）。<br data-page-node-id="WRflD4y6XCx1wLGPDbH02H">→ 问"第二产业占比"→ 去表格块取 3612，再回文字块取 8600，<b data-page-node-id="xsETjxgVsJVcd2Hi6yyCSE">跨块取数</b>。<br data-page-node-id="NapCyycQGUFEJkDLiCvjbt"><b data-page-node-id="MMJcQtFL5ajptaPJlExAng">关键：跨块取数时，"整体"（8600）只取一次，别在表格里瞎找。</b></div>
+  </div>
+</section>
+
+<section id="k1" data-page-node-id="pUt8HBb9F6ZqEzykEkkrqV">
+  <div class="mhero" data-page-node-id="wWrTlu2pOxW4aqTllUCtOz">
+    <div data-page-node-id="GCVtn1JIKY3fVAATb5FL2H"><h3 data-page-node-id="kK0wbZ6xK0XpKrpo5W844L">考点 5 · 简单计算</h3><p data-page-node-id="mNBMWoH0DtckgHN9YZ5klB">直接读数 / 加减 / 排序 / 直接比较</p></div>
+    <div class="mmeta" data-page-node-id="wrI53wy9ZaFczmyBHdnN5U"><b data-page-node-id="NF6oSz8evGuSKCnuVzTcd2">20 题</b>D1 · 送分项</div>
+  </div>
+  <div class="keys" data-page-node-id="9uIpcO8I2FIBWdbDkwyHi9">
+    <div class="key" data-page-node-id="9uhfE2CaoKWg8HNsbyeMPD"><h4 data-page-node-id="zqVDErzhm3mQfT7ctivAsA">识别特征</h4><p data-page-node-id="2yc3WyNTtUleYFHin6dpuh">"合计多少""排在第几""下面哪个最大/最小""是多少"——不需要公式，只需要读数。</p></div>
+    <div class="key" data-page-node-id="hEVFLxt4s1fWbanNcBL4nS"><h4 data-page-node-id="5QFNjQ7HLbpxM0uwZG9WqV">核心钥匙</h4><p data-page-node-id="tlcQ5AVQ0eDWvOADBZcBLH"><b data-page-node-id="dCbD9u8DBGjd3kap9qCrq8">这类题是用来提正确率的，绝不能错。</b>动作只有两个：找准数、算对加减。选项差距通常很大。</p></div>
+    <div class="key" data-page-node-id="XUD2wPGSXcglBayAFAtl76"><h4 data-page-node-id="lrzAtos79SrzaR9LEVPlQf">唯一要注意的</h4><p data-page-node-id="IBGWVAGjhm2luDhQOLh7nC">"其中/合计"别搞混；排序题要<b data-page-node-id="nKpnUuCdUndnyllBvfMLcT">排完再选</b>，别看到第一个合适就选（最大 / 第二大是两回事）。</p></div>
+  </div>
+
+  <div class="card" data-page-node-id="CTKJnk04o6qJOfPJwnOGd4">
+    <h3 data-page-node-id="enBPQOTNPBfxbaBghozo0W">典型题｜"最多的两个"——最容易看错名次</h3>
+    <div class="mat" data-page-node-id="PJDnnBesYkpyD4aPfQBERK"><span class="mtitle" data-page-node-id="vRrQecGoisk1tIZSsOgAA7">材料</span>2023 年某市各区常住人口（万人）：甲区 <b data-page-node-id="DsJG42gTc1xwmbjy8xrsNw">128.6</b>、乙区 <b data-page-node-id="SZVRNDlF9LJUmuOAKqsXK9">96.3</b>、丙区 <b data-page-node-id="N17HIpINPNU3i6p3ai8W1l">84.7</b>、丁区 72.1、戊区 65.9。</div>
+    <div class="q" data-page-node-id="kGmTTRpLzbgyW8cOCAK44X">
+      <div class="qtop" data-page-node-id="KNbfqiWBtIaqItjpVboNdg"><span class="qno" data-page-node-id="A6lfcn0CNVrBWCAEVfrPrN">例</span><span class="qstem" data-page-node-id="ThE9VbTridcbC5eggjWqf4">2023 年该市常住人口最多的两个区，人口合计约为：</span></div>
+      <div class="opts" data-page-node-id="DSGiAZ8JIHGEQsFEbOV7iE"><span data-page-node-id="oKTMHBpNhaQJsPP6rOFPGG">A. 213 万</span><span data-page-node-id="TQBoND3HmQco8lgt93XuqC">B. 225 万</span><span data-page-node-id="fj7yhLNurs6JpasqPbsFog">C. 240 万</span><span data-page-node-id="GlIqnO7K47QIyeuMSOmIBv">D. 252 万</span></div>
+      <div class="ana" data-page-node-id="PhqZHr2BWUrWO153qVbiny">
+        <div class="ana-h" data-page-node-id="H62MF1eUtFHSY5pqNXDVHc">解析 · 排除法优先</div>
+        <div class="as k1" data-page-node-id="tXq4aT3OlUDlTQ4lXDnn2b"><i data-page-node-id="28zIEb72NO9VBfZJsZkuUX">① 先排除</i><p data-page-node-id="p2B0XX4CZ4Ot3EbtMgot16">最多的两个是 <b data-page-node-id="UH66MJIIRmLEIGw5X2PNbW">甲（128.6）+ 乙（96.3）</b>，不是甲 + 丙。<br data-page-node-id="Ou8dETAGd5GZfBB0lSERLY">· A（213）→ 恰好 = 128.6 + 84.7，这是把<b data-page-node-id="FmrSeC3UERmGikAeAiQvl1">第三大的丙</b>误当成第二大 → <span class="del" data-page-node-id="GDUujEhcEyNpALsqF6Eesl">A 排除（典型"看错名次"陷阱）</span>。<br data-page-node-id="EmguTaBDfFFFnHsUnFXtiy">· C（240）→ 128.6 + 96.3 = 224.9 &lt; 240，凑不出 → <span class="del" data-page-node-id="WvBJir4O9AEjZvFj05ahML">C 排除</span>。<br data-page-node-id="hNnSIeNqCVzRETUFGbAZy9">· D（252）→ 更大，更不可能 → <span class="del" data-page-node-id="Nktpx9Bo5CntbQjlWHWzED">D 排除</span>。</p></div>
+        <div class="as k2" data-page-node-id="DjQK0ytbDKCeel1NJXXfJy"><i data-page-node-id="hSM7bQi28TLo2RYmmEhC1a">② 再缩小</i><p data-page-node-id="3a6tfMisoVQn26GCENAWId">只剩 <b data-page-node-id="dWCztGazDHdN3W20LGzP1l">B</b>。</p></div>
+        <div class="as k3" data-page-node-id="WJClq0bHFYvubhxhSDotQL"><i data-page-node-id="Sl3e8wjFqoQ33REragIgK8">③ 后择优</i><p data-page-node-id="ioz2MJ6L3tKnbQnlFLYoW9">128.6 + 96.3 = <b data-page-node-id="r1YspKgWy6X8L8GrvvBVR2">224.9</b> ≈ 225 ✓。选 <b data-page-node-id="2xKuN9pClsYusCvezCDOLu">B</b>。</p></div>
+        <div class="ans" data-page-node-id="Nlpsp3FTZTDcKnYN33wjzS">答案：<b data-page-node-id="ylDwg33LMLyActNzeQ5QRu">B（225 万）</b>　　<b data-page-node-id="Je2A80tXGNeHD7Vi7sHUUX">心法：</b>简单计算题错，几乎都错在"名次"和"合计/其中"这两处，不是错在算。</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card" data-page-node-id="PXF0RAe9yQS97uIpAv0pL8">
+    <h3 data-page-node-id="HHc8G3BIcUSdCCXz5mvuaU">训练题组｜限时 3 分钟</h3>
+    <div class="q" data-page-node-id="9BgToLrh4LyVkv6hg2Yxzt"><div class="qtop" data-page-node-id="tVaJJFsg4677YLQ4S2ieKh"><span class="qno" data-page-node-id="mE1D4OvAd7llEMoVSHGgDf">1</span><span class="qstem" data-page-node-id="G9YQlDPwe4Z5V3RL76mgeT">接上材料。五个区中人口最多与最少相差约：</span></div>
+      <div class="opts" data-page-node-id="YBRI3sDtoCXxirBYbgxcAn"><span data-page-node-id="u182Fq4NlQBFEL0t4KeFhC">A. 52.7 万</span><span data-page-node-id="M3b6EIIQdBkWQ85zUdgMRd">B. 62.7 万</span><span data-page-node-id="OJt5lo9lnLbXxdxiuhGPpy">C. 72.1 万</span><span data-page-node-id="tRqq8CTWxAUdNBl5ECS6nt">D. 128.6 万</span></div></div>
+    <div class="q" data-page-node-id="9epHPDFaSkhtdJVSy0vJzg"><div class="qtop" data-page-node-id="yXpO7Gl7mqOWHcJwFM3BrX"><span class="qno" data-page-node-id="nCpEinKaHJNwyOqQIbrh25">2</span><span class="qstem" data-page-node-id="nh1wOROakmlXiiF49Ovux6">某年某省三产增加值（亿元）：一产 380、二产 600、三产 1520。三产增加值是一产的约几倍？</span></div>
+      <div class="opts" data-page-node-id="eD14dRyCmhC8D5KrEwAJkR"><span data-page-node-id="gEZaGRVwLASRoIkdk4Qak4">A. 2 倍</span><span data-page-node-id="v9URIE3YTYA2CGD0rzyPGn">B. 3 倍</span><span data-page-node-id="IfkKX0deNxFt9prDiGAklN">C. 4 倍</span><span data-page-node-id="UegV49aFS0M2fWioIBEBpb">D. 5 倍</span></div></div>
+    <div class="q" data-page-node-id="ZKUM3hn02rwr8aNVxsRA1c"><div class="qtop" data-page-node-id="NDShafnrvWEqNRd8sdSj33"><span class="qno" data-page-node-id="3GUAOZjwIMyKxzHCICl5As">3</span><span class="qstem" data-page-node-id="PjTe60GwPM9AmYH2XXhxGO">接上题。三大产业增加值合计（亿元）：</span></div>
+      <div class="opts" data-page-node-id="pC5PEEJq17jid1GwuKVRTm"><span data-page-node-id="RNjLkuSFB6NvDhq5kEMSjO">A. 2200</span><span data-page-node-id="4f5qhVaX7BZblJyrKZ6PqH">B. 2400</span><span data-page-node-id="31dfqUmcsuTf2nEZieKj9q">C. 2500</span><span data-page-node-id="1VBInwBZ2BfiAYGrR84jPL">D. 2600</span></div></div>
+    <div class="ansline" data-page-node-id="2APNujH8tgqYEYCp6J603c"><div data-page-node-id="P7MQpFGsAkc5IClwWExiTE">1<b data-page-node-id="NGd5anVQDA9Fn9ZNfXtBWA">B</b>128.6−65.9</div><div data-page-node-id="PcawjlgH6LDyaHYv2BAA6k">2<b data-page-node-id="NK84mLKyC1RNjYvpAFYgSR">C</b>1520/380</div><div data-page-node-id="4WoRIVDEMHE2BZgrbLkT3Y">3<b data-page-node-id="DELU9TEujSNQnFBRmRWfjp">C</b>380+600+1520</div></div>
+    <div class="tip" data-page-node-id="RxplcxfwyzrfItfZR6w7K7"><b data-page-node-id="jqVOiLxVHUoidfwLPKNjP7">第 3 题：</b>三个数相加，注意别漏项、别把"其中"项重复计入。这类题是纯送分，练到 100% 正确为止。</div>
+  </div>
+</section>
+
+<section id="k2" data-page-node-id="tJjGCE8AEMeqoFzPXW3J0h">
+  <div class="mhero" data-page-node-id="JxiaxCy4IDPTyD06rPMoAQ">
+    <div data-page-node-id="eWEm3L5CgxcqFi80r8CBgW"><h3 data-page-node-id="kqSRJYx32vi32cs2DJQPZF">考点 6 · 基期与现期</h3><p data-page-node-id="Am4Mo7wXxIl13xlatDoM6g">现期量 / 基期量 / 已知基期求现期</p></div>
+    <div class="mmeta" data-page-node-id="fHuxx90veIRR0VmTaAzJ0h"><b data-page-node-id="yevoaIKLuupnQ2FCUCXK3A">25 题</b>D1 – D2 · 地基</div>
+  </div>
+  <div class="keys" data-page-node-id="CBwLv2TbDq34PX0AwMRp8B">
+    <div class="key" data-page-node-id="oZuQ2hTytX43TQxI8W5ABA"><h4 data-page-node-id="Bq3d4f671HPAE2RIVNGeFk">识别特征</h4><p data-page-node-id="5Cx4anje9HW0Bu0MYB0Exj">题干出现"上年""去年""前年"→ 求<b data-page-node-id="Cz2CSrLHHTplCUlIk7GrEK">基期</b>；出现"今年""预计明年"→ 求<b data-page-node-id="UYZNXqoERn8jHLaWf2nu07">现期</b>。</p></div>
+    <div class="key" data-page-node-id="7oCsRHmgwhPJoetP09G0ev"><h4 data-page-node-id="NZJWToNyb6luSGTA6uzZp2">核心钥匙</h4><p data-page-node-id="rG0CJWf1ZV3lfK0yCFRsAB">现期 = 基期 ×（1 + r）；<b data-page-node-id="xjahbtPzHnuayAZthn2bIB">基期 = 现期 ÷（1 + r）</b>。看到"去年"就是<b data-page-node-id="3FN9kVhUDxEDnDVT9dsf18">除法</b>，这是最容易搞反的地方。</p></div>
+    <div class="key" data-page-node-id="wYO2DZwSnH3rsvVTUapjSi"><h4 data-page-node-id="9HL6w0d7Ntf4I1uRiiBpqN">选项怎么用</h4><p data-page-node-id="TgcHTExDk5MnYvrBgwvcO0">求基期时，答案<b data-page-node-id="7QZdG0sC3TkgFWeruAM8EO">必然小于现期</b>。凡 ≥ 现期的选项，一律先划掉——一步砍掉一半。</p></div>
+  </div>
+
+  <div class="card" data-page-node-id="uYx0PMNhPIdqovm93xw23P">
+    <h3 data-page-node-id="KRoGugpelv7bsHNjqfqBTH">典型题 1｜求基期（时间坑，失分最多）</h3>
+    <div class="mat" data-page-node-id="dxqHKYHLTEytY6bJXfe7Ry"><span class="mtitle" data-page-node-id="S0IaNYH31KynvMF1uBo9Cf">材料</span>2024 年，某市快递业务量 <b data-page-node-id="shGZqoWFP6GY7RKv0owqfc">38.5 亿件</b>，同比增长 <b data-page-node-id="HSQ4sPQD8ddg9MMcK8pRMb">10%</b>。</div>
+    <div class="q" data-page-node-id="KxEM8ySvJW7nUnJRPIIEwY">
+      <div class="qtop" data-page-node-id="yX9TIlicxVaPCD61khzkSD"><span class="qno" data-page-node-id="jubnuLBxpVNkc47CgUc7C6">例 1</span><span class="qstem" data-page-node-id="tDWLsOErxvq5TiOXCLu3ED">2023 年该市快递业务量约为多少亿件？</span></div>
+      <div class="opts" data-page-node-id="n8BEKJs5OsRNbkP1zUPrXB"><span data-page-node-id="tlkyLGs7EHbxnGp0hfnKYU">A. 32.5</span><span data-page-node-id="ybCBB8iG8hBm6ySvceCXnS">B. 35.0</span><span data-page-node-id="ZkAsuuMhcpBISUOEzBuQxC">C. 38.5</span><span data-page-node-id="0VyaJRhwsLpFUTcfB4o9sw">D. 42.4</span></div>
+      <div class="ana" data-page-node-id="F1oTF11mMuFWINA6Az2L2V">
+        <div class="ana-h" data-page-node-id="MSKgDY2yIF8H3zrN5GBYUe">解析 · 排除法优先</div>
+        <div class="as k1" data-page-node-id="4jSWDIbFVi4QxLuqU4KNj7"><i data-page-node-id="qMVIrOcn80zHBHt67RItQu">① 先排除</i><p data-page-node-id="lg4M0zYMweqRDDJXHoLvxj">问 2023 年（基期），材料给 2024 年（现期）。增长了 10%，则 2023 <b data-page-node-id="Wc3yQ9vvRj8E5f5mHcQpOU">必然小于 38.5</b>。<br data-page-node-id="ncgJn0W3YCy0sO5Ez9AQH9">· C（38.5）= 现期本身 → <span class="del" data-page-node-id="eTYCrx5SOt6Wy604Iakbef">C 排除</span>。<br data-page-node-id="fBtnfzUG2lHBFc1FcicTG3">· D（42.4）比现期还大，方向反了 → <span class="del" data-page-node-id="p8NKea8z6NCR9KaoPQfrxD">D 排除</span>。<br data-page-node-id="HtpsiLWY8s8g2VDx10EVRp">· A（32.5）反推增速 ≈ 18.5%，与 10% 不符 → <span class="del" data-page-node-id="dhatHLq8XpyoGvW7JivNGd">A 排除</span>。</p></div>
+        <div class="as k2" data-page-node-id="qR6LneCmomm1GqLFJifl8J"><i data-page-node-id="OmDKjKYTKnjuA3rMPGEIbw">② 再缩小</i><p data-page-node-id="snPeWpydGE8fG7BjKlJTZa">只剩 <b data-page-node-id="Yjq5lp5x8Nu6M728uDC536">B</b>。</p></div>
+        <div class="as k3" data-page-node-id="V0hQHe26yhJuemS67xxMRw"><i data-page-node-id="P6V4q40tOGiNyniUe7uZqp">③ 后择优</i><p data-page-node-id="0SZAzmOx6rAYuAhEmDPFO3">38.5 ÷ 1.1 = <b data-page-node-id="G1Sw8M485v8HP9VtNGDDj1">35.0</b> ✓。选 <b data-page-node-id="MFcqOHWKhmcHT6bV5q2Xav">B</b>。</p></div>
+        <div class="ans" data-page-node-id="5lMxLscyNVv9YPdeEb0bym">答案：<b data-page-node-id="Tbbnx4j2aEwf4JQNozBY9A">B（35.0 亿件）</b></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card" data-page-node-id="z8jvGPRKIwz3AfEt4tlYVl">
+    <h3 data-page-node-id="WHBWGY1h83BqYElTBAydrW">典型题 2｜求现期（正向乘）</h3>
+    <div class="mat" data-page-node-id="nSxXnTwIZlHKjFqOvC1Pe7"><span class="mtitle" data-page-node-id="VtwXNBXnzkFTlX3BFkNRxi">材料</span>某市 2022 年 GDP <b data-page-node-id="iGpR5STnJ2HNY6L5wpgjGf">1.2 万亿元</b>；2023 年同比增长 <b data-page-node-id="T6swUpA6VnNBLz75T32cOd">5.5%</b>。</div>
+    <div class="q" data-page-node-id="ZJzCzFihWw2dz7zIglNyGV">
+      <div class="qtop" data-page-node-id="QjYHtgeRTiCT2A9x6YtzRE"><span class="qno" data-page-node-id="KkEFQXznnHXlauv0QGARP6">例 2</span><span class="qstem" data-page-node-id="Idim6e64YGrZEYHk0sSNsw">2023 年该市 GDP 约为多少万亿元？</span></div>
+      <div class="opts" data-page-node-id="VzsHxzkzkKWze2mESoah7B"><span data-page-node-id="3QqwA4KUObeHRvOb4UmcO1">A. 1.24</span><span data-page-node-id="ZZuoL25qz3AutTVHb1FgFZ">B. 1.27</span><span data-page-node-id="BTcZQEvmZZqRA3iP1ONDbr">C. 1.32</span><span data-page-node-id="KcHq4HnFP1r6DbLXZuubCu">D. 1.38</span></div>
+      <div class="ana" data-page-node-id="gjuPg3r6TF2dPRPnUxiXGi">
+        <div class="ana-h" data-page-node-id="sFKP53JPCHln5HWLYierX8">解析 · 排除法优先</div>
+        <div class="as k1" data-page-node-id="l6Dm5oX5SvHdx23WSHFgCX"><i data-page-node-id="gUQ33MjloQSUkgnc3oB9iz">① 先排除</i><p data-page-node-id="AtWhrdkBeTCurbKIi8eiws">现期 = 1.2 ×（1 + 5.5%）= 1.2 × 1.055。用选项反推增速：<br data-page-node-id="wclbDwgpQ5WYhiUlazMKp7">· D（1.38）→ 增速 = 1.38 ÷ 1.2 − 1 = 15%，远超 5.5% → <span class="del" data-page-node-id="ieAxhf0VsIgPIqYwoPnrDj">D 排除</span>。<br data-page-node-id="bwzPzlhiNW7GJEMJ0YPf5J">· C（1.32）→ 增速 10%，不符 → <span class="del" data-page-node-id="zNx5DazsrdNBRvHAqJV3K2">C 排除</span>。<br data-page-node-id="hyGY2IZLFB2PLxWAxHw97M">· A（1.24）→ 增速 3.3%，偏低 → <span class="del" data-page-node-id="4EadDeypJricJhgZNfoLP9">A 排除</span>。</p></div>
+        <div class="as k2" data-page-node-id="i6me9I2licpqVX4mCaB5xX"><i data-page-node-id="3Ly7U6gnpvJbbBaNkT2xAy">② 再缩小</i><p data-page-node-id="6EOvkBEISKAc1hqUgJBvSz">只剩 <b data-page-node-id="mjorClMk7qbV1xdBV1NyAt">B</b>。</p></div>
+        <div class="as k3" data-page-node-id="IxVtyBUXx6a0HzrIE56YuJ"><i data-page-node-id="bCPtyshESV5eRxnG5vSlis">③ 后择优</i><p data-page-node-id="D9shfz94BLNShF8b0Hu9vn">1.2 × 1.055 = 1.2 + 1.2 × 0.055 = 1.2 + 0.066 = <b data-page-node-id="WfUKpcqYDNQwwnojYJ42VV">1.266</b> ≈ 1.27 ✓。选 <b data-page-node-id="RaJzGTaDhFWhdGW1DPk4tp">B</b>。</p></div>
+        <div class="ans" data-page-node-id="3fK9DV0jvHSPBtWZrouZYH">答案：<b data-page-node-id="QFJDeKF3VdTwtgPsjSERyt">B（1.27 万亿元）</b>　　<b data-page-node-id="PHE0Gbd0NBXLEe2S6SzlEM">速算：</b>×1.055 = 原数 + 原数的 5.5%。</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card" data-page-node-id="vK0pQvFFOsq1agXVt3vBV8">
+    <h3 data-page-node-id="ZG4FEezs4Flzi6KuXu0Cih">训练题组｜限时 5 分钟</h3>
+    <div class="q" data-page-node-id="E5kFeFJBeOPE0x6mRhfwwD"><div class="qtop" data-page-node-id="UedpRbkPEVBZXDibQ44MfJ"><span class="qno" data-page-node-id="BdtmApH3woV8JR62yzsBrH">1</span><span class="qstem" data-page-node-id="Y1xyXJYTaQOiQ16vnqUCBX">2022 年某市常住人口 1200 万人，比上年增长 2%。2021 年常住人口约：</span></div>
+      <div class="opts" data-page-node-id="XSmDjqFMaRrD9IjMC6aX4T"><span data-page-node-id="2LiRxAjWFU4ukXoLgKOdtY">A. 1140 万</span><span data-page-node-id="k7DbuP5IcgEH8vEiWHKc20">B. 1176 万</span><span data-page-node-id="pdK4liDsicCDkjZLhcgjVy">C. 1200 万</span><span data-page-node-id="0J7HAOxMkJNFyGVfVIy1oi">D. 1224 万</span></div></div>
+    <div class="q" data-page-node-id="0kgeBm6VuQ6IJcnXiuEtrS"><div class="qtop" data-page-node-id="x6eNuaxov4venAD8cNVXXF"><span class="qno" data-page-node-id="TmI2t6egthEcIVY2TPR0hE">2</span><span class="qstem" data-page-node-id="REPLdZNw6lHByE9pxccN7B">2025 年全国社会消费品零售总额 47.2 万亿元，同比增长 5.8%。2024 年约为：</span></div>
+      <div class="opts" data-page-node-id="oo66zEJv0FaNaaRcynCf0Z"><span data-page-node-id="bXXj35C2XS6NzcNc1DH2nq">A. 44.6 万亿</span><span data-page-node-id="sCpkCXaIv1NfD2rC5gEu1S">B. 45.2 万亿</span><span data-page-node-id="MpmZ3DYo297nmk87wPGxF6">C. 46.8 万亿</span><span data-page-node-id="bQY5fvRUDNzn0pJEdPub0i">D. 47.1 万亿</span></div></div>
+    <div class="q" data-page-node-id="qrKyaamAyHFeRX2h0VoQHq"><div class="qtop" data-page-node-id="bfqqZ5yZ32cNHEXWLzRATD"><span class="qno" data-page-node-id="dJhsATksjBbw56nHo6fBsI">3</span><span class="qstem" data-page-node-id="4Z2BzSldiXCOFU3z4f1JJO">某市 2023 年 GDP 8000 亿元，比上年减少 3%。2022 年 GDP 约：</span></div>
+      <div class="opts" data-page-node-id="V5d6WTJV1NGiepbKSBHWhp"><span data-page-node-id="03S1T1qZXMCM6A5VPV8nhW">A. 7760 亿</span><span data-page-node-id="SNtk6e5l4IFXmWqA9TvmZ9">B. 8247 亿</span><span data-page-node-id="BGBKz1awFepQBRyzkZGald">C. 8000 亿</span><span data-page-node-id="bBhnhqreXZdNibwEa1d3x3">D. 8500 亿</span></div></div>
+    <div class="ansline" data-page-node-id="eYPBUilAg9tfieE3oOWFZc"><div data-page-node-id="5Q0anjMPeUSh0Lo7UhhUSz">1<b data-page-node-id="a9b424aAtmjPcBD8lqrQFZ">B</b>1200/1.02</div><div data-page-node-id="6uB6C1GDxotoau1SHlaKZL">2<b data-page-node-id="QS187ainSTPSsdVO9hooHY">A</b>47.2/1.058</div><div data-page-node-id="Rtd3DCQ1tY63FaDkaPnAUM">3<b data-page-node-id="tuOMnjWueZvcOLL2U3URmE">B</b>8000/0.97</div></div>
+    <div class="tip" data-page-node-id="dF5gxAr2PGJVBVqyF7dYvF"><b data-page-node-id="GKWdISQec6zmXtLIEVcBkB">第 3 题是重点：</b>下降时基期 = 现期 ÷（1 − 降幅）= 8000 ÷ 0.97 ≈ 8247，<b data-page-node-id="e7cxB1jpDvxRa1rl2oeBwz">比现期大</b>。A（7760 = 8000 × 0.97）是"用现期乘"的经典错误。方向反了要立刻意识到。</div>
+  </div>
+</section>
+
+<section id="k3" data-page-node-id="qkwD9KKTFej8ZeI0w6EVsv">
+  <div class="mhero" data-page-node-id="iucREdJd4gFnT2DkeMNGhP">
+    <div data-page-node-id="bi0tFim2NT7jUwZBjGSMpR"><h3 data-page-node-id="o8WljjhQbbSZjxA6Sl1IKN">考点 7 · 增长率</h3><p data-page-node-id="OEW60iBn2YC7xj2Nb77uqG">增长率计算 / 比较 / 间隔（隔年）增长率 / 年均增长率</p></div>
+    <div class="mmeta" data-page-node-id="0AgBOxbBSVTo7WX4Yzniop"><b data-page-node-id="zIq2kJzWGonHccSC8CyL62">30 题</b>D2 · 难点集中</div>
+  </div>
+  <div class="keys" data-page-node-id="EDv9d49qmSWmxoDgFakdI9">
+    <div class="key" data-page-node-id="4XUP0kzvrM1tGAEy3G49p7"><h4 data-page-node-id="x2B0qKXsZiHPo2GZgmKVLD">识别特征</h4><p data-page-node-id="6KuzoI8DhYbUHAJzuBLTRu">"增长/下降百分之几""增速""年均增长""比…年增长"。</p></div>
+    <div class="key" data-page-node-id="RegNYpxvML0qFu3di6TZmB"><h4 data-page-node-id="fV6H3fbMCUzp6QW8xhLcyu">核心钥匙</h4><p data-page-node-id="Lmcf0Qoj9hK0s3TTF5lwAH">r = 增长量 ÷ 基期量 = 现期 ÷ 基期 − 1。<b data-page-node-id="E33oWfckGRVlAac3U5F2Ms">比较增速时永远用"增长量 ÷ 基期"</b>，不能只看增长量。</p></div>
+    <div class="key" data-page-node-id="tAxzsNpfnMnMimJPZMNGED"><h4 data-page-node-id="X8BqJhmTJMPiUTZrh6dNX7">识别"最高级"陷阱</h4><p data-page-node-id="Vur7JcTqdGy4JJqrrDeVBl">"增长最快"= 增长率最大；"增长最多"= 增长量最大。<b data-page-node-id="MMC24pEf7jG4wrGrT4VOND">两个问法答案常常不同</b>，这是最高频的表述坑。</p></div>
+  </div>
+
+  <div class="card" data-page-node-id="SpWaITUwPmF6hVJfnu5Ayu">
+    <h3 data-page-node-id="cA4OrOXWkLCAF5wy27rlTw">典型题 1｜增速最快（考比较，莫用增长量排序）</h3>
+    <div class="mat" data-page-node-id="mRpB5gkXQHaLHRk92cnfxL"><span class="mtitle" data-page-node-id="Cv7yfBBoNfYLTEyFbDCXBU">材料</span>2019—2023 年，某市新能源汽车产量分别为 <b data-page-node-id="B5uCbr9dhCxgguSzwszAln">20.0、26.0、31.2、40.0、46.0</b> 万辆。</div>
+    <div class="q" data-page-node-id="IJZPbCllIFCy9H6J7DUxPD">
+      <div class="qtop" data-page-node-id="6MybO5c5qjbaekM33rK9ar"><span class="qno" data-page-node-id="mZbHNoQefpS8BiL3JRuhsA">例 1</span><span class="qstem" data-page-node-id="AMT9h7v4W4dnLnOKe6LJC5">2019—2023 年，该市新能源汽车产量同比增速最快的年份是：</span></div>
+      <div class="opts" data-page-node-id="D7ZDCGFi095yak3QXA6btO"><span data-page-node-id="Idjv1wQTi6aRV7QKk56KvK">A. 2020 年</span><span data-page-node-id="IJ6REcHHdYBwdqBLq9xBKN">B. 2021 年</span><span data-page-node-id="xp7EuZK8bINkWDXk2q3kKJ">C. 2022 年</span><span data-page-node-id="XFuWrzpH3oK7zReGU3svD8">D. 2023 年</span></div>
+      <div class="ana" data-page-node-id="cH1dUbEnRdB0ZYP8vBTxwv">
+        <div class="ana-h" data-page-node-id="YHqVx3T2FBU26ASF9CKdbV">解析 · 排除法优先</div>
+        <div class="as k1" data-page-node-id="hzjHPv2109yOEUVzksCFvq"><i data-page-node-id="vLzhN8Yjupe6eRbtGX7DlK">① 先排除</i><p data-page-node-id="2EGUcaJqTejO30KORt2yVi">问"增速最快"，看的是<b data-page-node-id="XGX6lOSF6UJ740N6dGjIpv">增长量 ÷ 基期</b>，不是增长量大小。<br data-page-node-id="mT4NiIyvGojbsuHiOsY2NR">· 2023 年增 6.0，基期已到 40.0，分子小分母大 → 约 15%，最小 → <span class="del" data-page-node-id="CYA2eIIs81wTIESBhj5qS6">D 排除</span>。<br data-page-node-id="G3IAjArHS6VsBd9i2DCiR3">· 2021 年增 5.2，只有 2022 年（8.8）的六成，基期还更小 → 约 20%，明显偏低 → <span class="del" data-page-node-id="YTtp1eYfQdK9m27Jb5OfgA">B 排除</span>。</p></div>
+        <div class="as k2" data-page-node-id="EKwl9cLsCKC5HbO2rCIC89"><i data-page-node-id="n0udcdf1acfksOFqp2bwT8">② 再缩小</i><p data-page-node-id="cDC7caTf4v3iqS1bVNGJSo">只剩 <b data-page-node-id="A6gnO9E85Vo3k6kA3AtRNO">2020（增 6.0／基 20.0）</b> 与 <b data-page-node-id="5boirWTDTkNyr9R2yqcWMi">2022（增 8.8／基 31.2）</b>。2022 增长量虽大，但基期是 2020 的 1.56 倍，不能凭"谁增得多"下结论。</p></div>
+        <div class="as k3" data-page-node-id="wtduOBbxBBXhG1njJOpHK4"><i data-page-node-id="cylAKZTSOo2OwskADGRRMr">③ 后择优</i><p data-page-node-id="w3tPNLvz31sA2AmYW4OT46">2020 → 6.0 ÷ 20.0 = <b data-page-node-id="9zwEa2sGjS6RMdIVLJZYBX">30%</b>；2022 → 8.8 ÷ 31.2 ≈ <b data-page-node-id="7Tsp4gqJ4fGQl7smCLq4We">28.2%</b>。30% &gt; 28.2% → 选 <b data-page-node-id="HH4KWK4WDSpqxH3ms3O5qP">A</b>。</p></div>
+        <div class="ans" data-page-node-id="sxUhDH2hjqLLbkDFrWBXfS">答案：<b data-page-node-id="rA759AQUg08uohWEMN06rz">A（2020 年）</b></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card" data-page-node-id="8nJewFk7mZYHtNgzTj1Vm0">
+    <h3 data-page-node-id="4n5iWM0Ax8tnLoeoQdqq7m">典型题 2｜间隔（隔年）增长率</h3>
+    <div class="mat" data-page-node-id="HKJ33wEEW2aF73A35DF4oi"><span class="mtitle" data-page-node-id="sEqVkitulpl0xxZUSueXzr">材料</span>某地高新技术企业数量：2022 年同比增长 <b data-page-node-id="i2mIywUyOBVOF9Q2uqpbV3">12%</b>，2023 年同比增长 <b data-page-node-id="W4zFWkk4bqsXAJWZK4iy8Z">15%</b>。</div>
+    <div class="q" data-page-node-id="wJ76GAmwytyAwANjyUuoXi">
+      <div class="qtop" data-page-node-id="fjGgfQIm2QHrXOItdg3uOe"><span class="qno" data-page-node-id="Rc7PT4FIDOdshM8cHUUHs8">例 2</span><span class="qstem" data-page-node-id="PlWu0tRtkmAUAC8qRGZJtj">2023 年该地高新技术企业数量比 2021 年约增长：</span></div>
+      <div class="opts" data-page-node-id="mcKCtiHCqm5zFLgsMBLkwz"><span data-page-node-id="unDS37E5mt6SXcTZh1Zseo">A. 27%</span><span data-page-node-id="5kTvm5fmiZ46Aixb00bF2i">B. 28.8%</span><span data-page-node-id="3KIkIbiDdUFYqfw56yuF7R">C. 30%</span><span data-page-node-id="VPjZsHYL5PIZHbJteSlcjr">D. 135%</span></div>
+      <div class="ana" data-page-node-id="3gO9IeW7liJvrW6GzA7Gbh">
+        <div class="ana-h" data-page-node-id="WeBJxkkFZOwQj4lG0Bquak">解析 · 排除法优先</div>
+        <div class="as k1" data-page-node-id="on1mdmYBmmoIFNsCGTOGk5"><i data-page-node-id="Px4VKpu0Es0CQ6IxO8pQoy">① 先排除</i><p data-page-node-id="1j0xHGjVz7noOrzvDEm4lo">间隔增长率 = r₁ + r₂ + r₁×r₂ = 27% + 1.8% = <b data-page-node-id="ZTHXmKo3rEPM2KEdLN6GwE">28.8%</b>。<br data-page-node-id="1rveCMdyjZ34VkxfFxSMZM">· D（135%）量级荒谬 → <span class="del" data-page-node-id="HNg4eTAhs4msSnmkuwYxEd">D 排除</span>。<br data-page-node-id="sb1dsvxhpwAJPF96ZyQfvO">· C（30%）超过 27% + 1.8% 的<b data-page-node-id="RADavA67SxygtU4MzaN3TW">上限</b>（乘积项最多 1.8%）→ <span class="del" data-page-node-id="QsZLSIFr9OHdi7vm3cnb2L">C 排除</span>。<br data-page-node-id="lHLMj7qVBCDzkK7IzWt761">· A（27%）是"两率直接相加"，漏掉乘积项——本题陷阱 → <span class="del" data-page-node-id="Uq1VZnt40cBAJWlrRI4C07">A 排除</span>。</p></div>
+        <div class="as k2" data-page-node-id="gwh6Q6sCBUi8F3UVum5azr"><i data-page-node-id="d7cnH32UHKQ1qXt5qv7LO6">② 再缩小</i><p data-page-node-id="HnCWH6fMqYmHs5VA8MsDUm">只剩 <b data-page-node-id="cRjOZB5qAEmYWZ7evPgsG4">B</b>。</p></div>
+        <div class="as k3" data-page-node-id="ipzGBo8Jemf4ma3zCfJ5Pg"><i data-page-node-id="xEUjydXBwlVtdRBNcc1iZl">③ 后择优 / 校验</i><p data-page-node-id="UjFnCxxH97tVgC6urTwnCh">1.12 × 1.15 = 1.288 → 增长 <b data-page-node-id="TEy7E2hWaqai6CgmpPL9SN">28.8%</b> ✓。选 <b data-page-node-id="yj0gfFFCeht69cIxSgyrrT">B</b>。</p></div>
+        <div class="ans" data-page-node-id="Fa1jSYmXoYAscb3l1Qj0cO">答案：<b data-page-node-id="yN0KgFXhFxtaF9XYMCV9f5">B（28.8%）</b>　　<b data-page-node-id="M1ctf1C6exopc2No3by6FL">记忆：</b>间隔增长率 = 两率相加 + 两率相乘；"直接相加"的选项就是陷阱项。</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card" data-page-node-id="Ibv013vyd0bxFsEspKUhbC">
+    <h3 data-page-node-id="wmc9KX8eeBKCCPZ4EoGJAF">典型题 3｜年均增长率（进阶，用"上界"排除）</h3>
+    <div class="mat" data-page-node-id="sOLjzxNO9kkWS2PmvXOoS9"><span class="mtitle" data-page-node-id="XvmMKBn1BRAdepC60N25vp">材料</span>某市 GDP 由 2019 年的 <b data-page-node-id="F2LfvDkETPxFJ29FDwwSmL">1.2 万亿元</b>增至 2024 年的 <b data-page-node-id="piyKjr8WGDDstsNPP6HLeX">1.7 万亿元</b>。</div>
+    <div class="q" data-page-node-id="f4GCl0Fel9V4g3y4cF9W6R">
+      <div class="qtop" data-page-node-id="UtSKqgwuQmVtBZGu2nGWrW"><span class="qno" data-page-node-id="GXVm1L1QdCBn2rBLeHU9ME">例 3</span><span class="qstem" data-page-node-id="bxxgbHIIRvHT7wfUBnp5PZ">2019—2024 年，该市 GDP 的年均增长率约为：</span></div>
+      <div class="opts" data-page-node-id="wPiYHRToAEyAfkyEKkiH4w"><span data-page-node-id="GkaoNDd4afaiw0v3DexpoZ">A. 6.2%</span><span data-page-node-id="6KeHIhAH9IcUHC5Hk2xmpP">B. 7.2%</span><span data-page-node-id="GrOoYCK8wEr8aZ7vdOMIBR">C. 8.2%</span><span data-page-node-id="DZoWY1bk0TfIeRw48BGA8A">D. 9.2%</span></div>
+      <div class="ana" data-page-node-id="EuBS0V9shCGwt6OnezTD9F">
+        <div class="ana-h" data-page-node-id="HxW7LHzhhAcfrxqAIes3ma">解析 · 排除法优先</div>
+        <div class="as k1" data-page-node-id="VV8Ti1eIjt9B3gVK38CSv8"><i data-page-node-id="8iFUBb05v0MlzXeuBCC3Ba">① 先排除</i><p data-page-node-id="kMBbcSHhXYYi9DqkOeT88V">总增幅 = 1.7 ÷ 1.2 − 1 ≈ <b data-page-node-id="Hqe0iWhcAXCkTXDqDm82zY">41.7%</b>，5 年。若简单除以 5 ≈ <b data-page-node-id="t9QO04NPBtqfN5mMj8E07x">8.3%</b>——这是<b data-page-node-id="5URpbZMJCMgfJhhCwEsudS">上界</b>（算术平均必然偏大），真实年均增长率一定<b data-page-node-id="Q3e8F72XdCw2nFER6mLUrJ">小于</b> 8.3%。<br data-page-node-id="zZDkkIeG6tMkNe27KIwozt">· D（9.2%）&gt; 8.3% → <span class="del" data-page-node-id="kn6o1HJfe5EmP9t9NZUa6b">D 排除</span>。<br data-page-node-id="RUIlzFlkF790stEXK2RVZF">· C（8.2%）紧贴上界，仍偏大 → <span class="del" data-page-node-id="XKHEWj9PURisOqC1FnYZiR">C 排除</span>。</p></div>
+        <div class="as k2" data-page-node-id="DF75YY8HStHkLZvXwsnOeu"><i data-page-node-id="zqugwfz5lJdYAKnc8GAy0N">② 再缩小</i><p data-page-node-id="1R7oiBjzrzUKiCgQtLtTuq">只剩 <b data-page-node-id="rapkJ5a9l4D43BTJYFdRlz">A（6.2%）</b> 与 <b data-page-node-id="d3wkwPMAbhJFzlVWjbFkw8">B（7.2%）</b>。</p></div>
+        <div class="as k3" data-page-node-id="5m7ABPT68MgbB1UZ8BsCYf"><i data-page-node-id="Gzb171JFCaUdjxqYbQwgnp">③ 后择优</i><p data-page-node-id="u0yMiLKKLwVqByhDG9aA1X">代入验证：1.07⁵ ≈ 1.403；1.072⁵ ≈ <b data-page-node-id="pAMHeZj2Q32kuS388nY9Ov">1.416</b> ≈ 1.7 ÷ 1.2 = 1.4167 → 选 <b data-page-node-id="hoW2JMY6AagUAhNKTR8PWJ">B</b>。</p></div>
+        <div class="ans" data-page-node-id="AomY1ksEveLqG7rY6hNprK">答案：<b data-page-node-id="xC8QJYdEfE1qSZocLXcIRy">B（7.2%）</b>　　<b data-page-node-id="gPZ5SouoKBr1oX9rsO1NnP">心法：</b>年均增长率<b data-page-node-id="ccIlIUJHMuZ2LGrgCBHNiT">必小于"总增幅 ÷ 年数"</b>，用这个上界先砍掉偏大的选项。</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card" data-page-node-id="iCc2kzF3bVdKoxgbNzWKKB">
+    <h3 data-page-node-id="dvbnPoJm2HADfB4bAucRJu">训练题组｜限时 6 分钟</h3>
+    <div class="q" data-page-node-id="EZ5CT6vEFJkQ1qHBYBrunC"><div class="qtop" data-page-node-id="AYPTMR9BdhzTABzZMNjPDE"><span class="qno" data-page-node-id="hlCiQLQPKZoxuJYZ19haZD">1</span><span class="qstem" data-page-node-id="DAV3N93SVCXPzDvC1cGpBE">2018—2023 年某市地铁客运量（亿人次）依次为 6.8、8.2、7.5、9.9、11.6、13.0。2020 年同比下降约：</span></div>
+      <div class="opts" data-page-node-id="PiidTDTXpt5bpKHF3gOtpo"><span data-page-node-id="AvTDfJ2FhnpH9rsS29UdAf">A. 8.5%</span><span data-page-node-id="PFTrDj0OvzwGobAsRUJOLa">B. 9.5%</span><span data-page-node-id="rndXq2EliqTAMxxeqe11tJ">C. 10.5%</span><span data-page-node-id="IeLdiAPseY7GeTUIcx3zQj">D. 18.5%</span></div></div>
+    <div class="q" data-page-node-id="Cv62oSyeqxD0DpekEMIS22"><div class="qtop" data-page-node-id="881anIwORAs7m1einWbmAX"><span class="qno" data-page-node-id="zM5XdFHCdfwAul8Kfl9nVZ">2</span><span class="qstem" data-page-node-id="9a6yHZ6wJNrkF9BwBSXy44">某地 2023 年 GDP 比 2022 年增长 6%，2022 年比 2021 年增长 5%。2023 年比 2021 年增长约：</span></div>
+      <div class="opts" data-page-node-id="fwAZ9pSOciK22bFIhRnm1v"><span data-page-node-id="G5dw6pMFSjUJsHTEYDRFfz">A. 11%</span><span data-page-node-id="MPo8XhhYFAJCAvYH580Q3V">B. 11.3%</span><span data-page-node-id="SjziInDnIePcjNMcS5tvUJ">C. 11.6%</span><span data-page-node-id="JFGOLFcp6XDqvNwkXRv1LF">D. 30%</span></div></div>
+    <div class="q" data-page-node-id="j3iDETiNuWBHhRCwTAwQgs"><div class="qtop" data-page-node-id="oW8bDzLUelqP9tJqo6ChPB"><span class="qno" data-page-node-id="wpcbhM8LKru4u5cjGblAzZ">3</span><span class="qstem" data-page-node-id="rk5MyUUZxZ733gxHF6SY1T">某市 PM2.5 年均浓度 2023 年 32 微克/立方米，2022 年 40。2023 年比 2022 年下降约：</span></div>
+      <div class="opts" data-page-node-id="8TQRjfkeFY1UBAmjbrpP5n"><span data-page-node-id="5Gn75PIqMD4yFxOFX6JTKX">A. 20%</span><span data-page-node-id="wBgRJGq4Pd1Dmhc83dsXrZ">B. 25%</span><span data-page-node-id="4R8IgLHwJtXWRbPqE5L2Un">C. 80%</span><span data-page-node-id="MRFRGMUg87J0N5rbMX1gIX">D. 8%</span></div></div>
+    <div class="q" data-page-node-id="jdLbBh2s8Lg91UkDW3UsBx"><div class="qtop" data-page-node-id="HpKihqIxLsEo87O0YikXwa"><span class="qno" data-page-node-id="F6wGA299uOPLPoEfN8tIpk">4</span><span class="qstem" data-page-node-id="a6S9t6EHFCkuWSBhBubjb8">某省 2020—2024 年数字经济规模占 GDP 比重依次为 13.2%、18.9%、27.6%、35.2%、42.8%。四年间年均提升约几个百分点：</span></div>
+      <div class="opts" data-page-node-id="AzFXvgrFHwcWJhm3EOBYw4"><span data-page-node-id="G4BNuhdySdZYoju8tabxcF">A. 7.4</span><span data-page-node-id="BpxHNHbmiP2YubUZw9Nz30">B. 8.2</span><span data-page-node-id="cuBS0aegSY7rMcaBFLoeQk">C. 9.1</span><span data-page-node-id="HM9ApSZkRQls9dqlqww59f">D. 10.5</span></div></div>
+    <div class="ansline" data-page-node-id="4uMEKdpOXqpHHcPuBHKs6Q"><div data-page-node-id="I5OgUGn4y1Xhezh2iaOry3">1<b data-page-node-id="LkPlaAEY2Mo4U4GQznpXQG">A</b>0.7/8.2</div><div data-page-node-id="SBKoO5JC49b4KLZkejPlul">2<b data-page-node-id="RCSd17X9oHAsI7kPWlsUL0">B</b>6+5+0.3</div><div data-page-node-id="Cc2KgJwypF8yV3S9R4QYur">3<b data-page-node-id="VJDZeTNrqAnAPXuJNlinNP">A</b>8/40</div><div data-page-node-id="9ioDunSncojVW0ALtHqIWC">4<b data-page-node-id="FBCHv1kX1wWehizDEx5F8n">A</b>29.6/4</div></div>
+    <div class="tip" data-page-node-id="5AkLLKWythMdF5tkYE1BhV"><b data-page-node-id="FzyOZF98xCGVuCdZOGXYHg">注意第 3、4 题的区别：</b>第 3 题问的是<b data-page-node-id="6DtQdI6ISy3T1v20g0hZW7">变化率</b>（÷ 基期 40）；第 4 题问的是一串"比重"的<b data-page-node-id="k3HCTDQjS4X61hsef23UXM">平均每年变化量</b>（直接 ÷ 年数，单位是百分点）。"百分点"和"%"别混。</div>
+  </div>
+</section>
+
+<section id="k4" data-page-node-id="AOOD0gmi9YB8QkBcdMJnta">
+  <div class="mhero" data-page-node-id="x46yzqJr5fWwJRD5F47mFN">
+    <div data-page-node-id="thPKtYtlcnS2nBnCLiymfm"><h3 data-page-node-id="1mvDVhEunpKmDVMfpyuh8I">考点 8 · 增长量</h3><p data-page-node-id="Yq1yhbjNpZimI3EKnErbTN">增长量计算 / 增长量比较</p></div>
+    <div class="mmeta" data-page-node-id="eD2t5JZk8uCMDq322IM27V"><b data-page-node-id="KGsk3Ytsqjgm0PbAGhlpCE">25 题</b>D2 · 高频陷阱</div>
+  </div>
+  <div class="keys" data-page-node-id="r70Brk8D6B8ZIazTkNAb9C">
+    <div class="key" data-page-node-id="XDUSa3mHhu4VAlflJKihgq"><h4 data-page-node-id="zERdMhK7qxhruragCuEez4">识别特征</h4><p data-page-node-id="bYtWd1LVs27QBJwbPp5Uwt">"增长了多少""增加了多少""减少多少"——问的是<b data-page-node-id="NeuuhpZTGjeI9uFk7Gn6Pu">绝对量</b>，不是比率。</p></div>
+    <div class="key" data-page-node-id="AZ9Ky3Q5uppgVtGBDgoOlZ"><h4 data-page-node-id="D2R2QaeTD5w1C6beCBdAUf">核心钥匙</h4><p data-page-node-id="kFEiNgMRLxigdeEC2jXUED">增长量 = 现期 − 基期 = <b data-page-node-id="MOvG4eVbmG0Slcox6ahAu4">现期 × r ÷（1 + r）</b>。下降时用 ÷（1 − 降幅）。</p></div>
+    <div class="key" data-page-node-id="VCBYNEng1H4k74Yf9Ma8N4"><h4 data-page-node-id="AQLalHwDFIdIFjiHiXBcmv">选项怎么用（重点）</h4><p data-page-node-id="YDnzbX2aCU4q6kATAxYcoP">先心算 <b data-page-node-id="kIxHoRLcaz7DjngKf5I3P8">现期 × r</b>，这是<b data-page-node-id="1sDzoyFPKp5GyQ2YxVPfMe">偏大值</b>。凡 ≥ 它的选项一律排除，一步砍掉一两个，甚至不必真做除法。</p></div>
+  </div>
+
+  <div class="card" data-page-node-id="BqMStnOBkLY2KNEWdULl4j">
+    <h3 data-page-node-id="uNkQNUDK1taeA0H8fe7woc">典型题 1｜增长量计算（用"偏大值"排雷）</h3>
+    <div class="mat" data-page-node-id="Pmk9gEnlVSJOMVlFHOTpye"><span class="mtitle" data-page-node-id="06Dg78P1iMTpHkNiQAkMwk">材料</span>2023 年，某省一般公共预算收入 <b data-page-node-id="NNsCnUMlGYVsw2lRfBaiQb">4520 亿元</b>，同比增长 <b data-page-node-id="UuMIWKDsfx3sBE1jwVVCJF">6.8%</b>。</div>
+    <div class="q" data-page-node-id="k686dNXlKtIaw3ZPe1GQL2">
+      <div class="qtop" data-page-node-id="PA6p2YrEYvUUPtEzeV1C9y"><span class="qno" data-page-node-id="H3z2xoWc1VVdwtONvWBgab">例 1</span><span class="qstem" data-page-node-id="giFDK0d1bSLyrFj1wFC94L">2023 年该省一般公共预算收入比上年约增长多少亿元？</span></div>
+      <div class="opts" data-page-node-id="IGg6p1DXe7pIvWQXmJpMbD"><span data-page-node-id="0ROrEyPbFWAEAMAzDFJm4R">A. 213</span><span data-page-node-id="txuCI3Je73hQ2fxXTd7027">B. 288</span><span data-page-node-id="2NHgWNPEK9CWBebfa35hDU">C. 307</span><span data-page-node-id="GL3PCpSpQJnvrD3w9HYmUb">D. 452</span></div>
+      <div class="ana" data-page-node-id="v6NE0idbNZXZGzpUUyw3Yf">
+        <div class="ana-h" data-page-node-id="OZ69IzZsaIDVILEvv5OSAN">解析 · 排除法优先</div>
+        <div class="as k1" data-page-node-id="RTkkEuMG24AfUc2aw45uU2"><i data-page-node-id="b061znvk0NyvUdOU1TkA5g">① 先排除</i><p data-page-node-id="vgdlysiL3syin4W3vUIkp2">增长量 = 现期 × r ÷（1 + r）。先算 <b data-page-node-id="P0aiSm5gwykPTT5aEExmj6">4520 × 6.8% ≈ 307</b>，这是"把现期当基期"的<b data-page-node-id="DkHglzZszg5DXalCPgw9qF">偏大值</b>，真值必<b data-page-node-id="Iy6JTFzbFzbAmrRzjF74Vi">小于</b>它。<br data-page-node-id="jeWYBoUjfUmOvrVZt31byw">· D（452）比 307 还大 → <span class="del" data-page-node-id="fDodi36nmLreEVXXn6JUJF">D 排除</span>。<br data-page-node-id="cxq9eOgx1sUsz7MUxms1fD">· C（307）恰好等于该偏大值，经典陷阱 → <span class="del" data-page-node-id="J3PCvs3HGKwsEnA03PQgTh">C 排除</span>。<br data-page-node-id="xVAGCfnDnYfSAfu7KZ2M7v">· A（213）对应增速 4.7%，远低于 6.8% → <span class="del" data-page-node-id="TEK7GO0TI9zxJGQDJ3z3EO">A 排除</span>。</p></div>
+        <div class="as k2" data-page-node-id="neTQnjywPlwNDaXhssxrLp"><i data-page-node-id="FSFuRnnrKMZLeyY6mDyERX">② 再缩小</i><p data-page-node-id="pauLi0RsKGTUuxEhgTVOmj">三个错项一次划掉，只剩 <b data-page-node-id="xARmyeYcivhyW3ud4e0xFJ">B</b>，本题甚至不必做除法。</p></div>
+        <div class="as k3" data-page-node-id="ZeRDjrNkCvT2J2ANMBCZBB"><i data-page-node-id="WDdB8Ttc958dsdjr95lGqJ">③ 后择优 / 校验</i><p data-page-node-id="kiedCKcvP7gdcnuol1oYYb">288 ÷（4520 − 288）= 288 ÷ 4232 ≈ <b data-page-node-id="UtsbfPRvkTOQCnyRsrkNCo">6.8%</b> ✓。选 <b data-page-node-id="CAKP7zGRdIsIA5EHL6UjBM">B</b>。</p></div>
+        <div class="ans" data-page-node-id="P0kVPFqMeciHDyBHp0Np5s">答案：<b data-page-node-id="9aig7hX1FJQomW33Aj6wMG">B（288 亿元）</b>　　<b data-page-node-id="jDUaVqlCh3PNWbKSYNIbhc">心法：</b>先用"现期×r"卡出上界，超界的一律划掉。</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card" data-page-node-id="Yva2kD6gMVCvTk2NkAwjt7">
+    <h3 data-page-node-id="zGmZ06xpZYtPbfguzPtdZi">典型题 2｜增长量比较（各产业比大小）</h3>
+    <div class="mat" data-page-node-id="DZ6NZ5od2DjpcEIsexh7iC"><span class="mtitle" data-page-node-id="jAfPqhlQKUKizOtMwsN6x9">材料</span>2023 年某市各产业增加值及增速：第一产业 120 亿元（+3%）、第二产业 1500 亿元（+6%）、第三产业 2100 亿元（+9%）。</div>
+    <div class="q" data-page-node-id="VZHJBV90CpP5Ckg4zkMO6e">
+      <div class="qtop" data-page-node-id="zTT0w9daETe3NTeA9fgDDZ"><span class="qno" data-page-node-id="O9YURd6mtgRPovfmrRvfeo">例 2</span><span class="qstem" data-page-node-id="DcVxA43sDcM6Rp4snG4CtZ">2023 年该市三大产业中，增加值同比增量最大的是：</span></div>
+      <div class="opts" data-page-node-id="z7JTOUXFmUOBHSw1V7ZUFn"><span data-page-node-id="MiEoVEUFcvu1SDzk94AEnP">A. 第一产业</span><span data-page-node-id="dDwqGVKr1a5n4JV1Q9YAUP">B. 第二产业</span><span data-page-node-id="M953MDElImz89IKDPC1xAg">C. 第三产业</span><span data-page-node-id="kqlSWMFszIgv91UKYYLtFo">D. 无法比较</span></div>
+      <div class="ana" data-page-node-id="O9FITZACIV1GU6SV8RBiD5">
+        <div class="ana-h" data-page-node-id="oJHKiZXHPDflrh1FNZIAwM">解析 · 排除法优先</div>
+        <div class="as k1" data-page-node-id="7fKU7rqokPkmhLE4B7EnYz"><i data-page-node-id="dAMSJmmRcq5W52JSISPQym">① 先排除</i><p data-page-node-id="JJfZKVithyANrfZ4RE5Gc5">增长量 ≈ 现期 × r（粗估够用）：一产 120×3% ≈ 3.6；二产 1500×6% ≈ 90；三产 2100×9% ≈ 189。<br data-page-node-id="ib0GxmByxK71ffVdPQTx3a">· A（第一产业）3.6 最小 → <span class="del" data-page-node-id="iwiGBV2p4Lo2htXj8KGKDy">A 排除</span>。<br data-page-node-id="8TSg61FB7RwtUraazvN4rA">· B（第二产业）90 &lt; 189 → <span class="del" data-page-node-id="uEDhXQGKSun1BFNQsKkvLI">B 排除</span>。<br data-page-node-id="M5Ig59VSiogaOcv4bjBMnG">· D（无法比较）三项数据齐全，可直接比 → <span class="del" data-page-node-id="o0m5c2pEUBYLj64FuDPfun">D 排除</span>。</p></div>
+        <div class="as k2" data-page-node-id="5S71FsgV14JlhSkAKEa8aJ"><i data-page-node-id="LRZK6tegAa0BRMy0xrtGuf">② 再缩小</i><p data-page-node-id="TBsVIC8wubym9izpdpmCMl">只剩 <b data-page-node-id="nbijVsKRxE5xAPyRCp9YVC">C</b>。</p></div>
+        <div class="as k3" data-page-node-id="8K2EaPZ3DsTjofhHc4TzXw"><i data-page-node-id="eoP5uYfV7FChfQc78wYcYy">③ 后择优</i><p data-page-node-id="RPqWUXErj0hndEo4T38h7u">精确校验：三产 2100×9÷109 ≈ <b data-page-node-id="CfH2OU1X26J7cRXjvxYMgk">173.4</b>；二产 1500×6÷106 ≈ 84.9。第三产业最大 ✓。选 <b data-page-node-id="bbvW9D4ibOfdSq2CPVAZpE">C</b>。</p></div>
+        <div class="ans" data-page-node-id="g1GJwlUA9lnWNANlSXddEQ">答案：<b data-page-node-id="jRCiQGjLVeRpy37oPrsMWq">C（第三产业）</b>　　<b data-page-node-id="UDuDbEA2d6rp6X4rAI93i2">心法：</b>增量比较题用"现期 × r"粗估排序即可，只有前两名接近时才需要精算。</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card" data-page-node-id="5yr18T7O1gHuCoIVbofFLd">
+    <h3 data-page-node-id="NEwOBbrnFdjaRLPa3q7J8y">训练题组｜限时 6 分钟</h3>
+    <div class="q" data-page-node-id="Km4j92Iq2H6elz6zveC4Yt"><div class="qtop" data-page-node-id="nxMrZCYhTIE3ZeNeufPj3c"><span class="qno" data-page-node-id="usxaCgPO3JgS8AK4oHeTsa">1</span><span class="qstem" data-page-node-id="nuZk7fMdKPkBHUPTUAahUW">2023 年某省粮食产量 3800 万吨，同比增长 1.5%。比上年约增产多少万吨？</span></div>
+      <div class="opts" data-page-node-id="kf3DP69hntbs5JnjnBnRPA"><span data-page-node-id="5PtaMEGzxchtsmsmRja3U9">A. 57</span><span data-page-node-id="klAzL3iNoEa6jYbIQLX3Ao">B. 50</span><span data-page-node-id="w441zRuB1C9uGkswfNRPe3">C. 56</span><span data-page-node-id="NdHjxshb3ZzixKEaHao87A">D. 380</span></div></div>
+    <div class="q" data-page-node-id="CvrgRZGBZzITLOlFaqMNgS"><div class="qtop" data-page-node-id="bIbSJWDQSFmDggEtg4DU7n"><span class="qno" data-page-node-id="lQMB3dn4xAuKl9jYCbqKPO">2</span><span class="qstem" data-page-node-id="d2knGEpTYO2pRwNJ6i9CPP">2023 年某市规模以上工业利润 1200 亿元，同比下降 4%。比上年约减少多少亿元？</span></div>
+      <div class="opts" data-page-node-id="2qCoKttYyvmwPkmFHMsNAg"><span data-page-node-id="EhuftE9BzYbBIl3YE8JKGU">A. 48</span><span data-page-node-id="Q6bxpCEzTYM5HMvJqUeScp">B. 50</span><span data-page-node-id="mP8fW5ar8xDADzBV7LlVVB">C. 52</span><span data-page-node-id="Hs7MGOfphh2JWZCBjRS3ga">D. 120</span></div></div>
+    <div class="q" data-page-node-id="szW7mfgXms5HFtk8auUdxQ"><div class="qtop" data-page-node-id="iU070eTLU2EywYnAy9gKKo"><span class="qno" data-page-node-id="yyApR00lbpal5BWZCKFs4r">3</span><span class="qstem" data-page-node-id="SpaFrHvEv2a8SEFtY48lQo">2025 年 1—12 月，全国规模以上工业企业利润总额 88780 亿元，同比增长 2.3%。比上年增加约：</span></div>
+      <div class="opts" data-page-node-id="GrUXSHJlREXNgDS00ffHd2"><span data-page-node-id="1EZCGBaRFjfBE0je1gFd1h">A. 1990 亿</span><span data-page-node-id="rf6yxRPDCaqr3rFiIrWYra">B. 2010 亿</span><span data-page-node-id="YzgYkBi97oanRzCTG16mxg">C. 2030 亿</span><span data-page-node-id="KjGFD0YEQBbrvYnJRj6Uei">D. 2050 亿</span></div></div>
+    <div class="q" data-page-node-id="1DJ9I4eoEQngPyx0UULjny"><div class="qtop" data-page-node-id="O4OxQ8sSmcG596cJ4RzbM7"><span class="qno" data-page-node-id="ZpHgzVLcB4HG9QAnwI7y5I">4</span><span class="qstem" data-page-node-id="TRUEGGMyfLHeYjvbGRw1e5">2024 年某市新能源汽车销量 328 万辆，同比增长 28.5%。比上年增加约：</span></div>
+      <div class="opts" data-page-node-id="h5f6TdzCBFP153CN0r2Ahh"><span data-page-node-id="LoTs4uIhw6ov6pSZVIXcbv">A. 62 万</span><span data-page-node-id="FEtocjAjDif1Qbft56sQNI">B. 73 万</span><span data-page-node-id="1aZ8nzYY1YPHCNAIFvJFGI">C. 93 万</span><span data-page-node-id="wG4ZhPjJlrRBnROThKLNlI">D. 120 万</span></div></div>
+    <div class="ansline" data-page-node-id="5jBeKZgoM5tqjmHVMKRis0"><div data-page-node-id="fI8Vy7C6RTno6aWtSirAwE">1<b data-page-node-id="I4wpRB6OGk6kdClgSHcaCc">C</b>3800×1.5/101.5</div><div data-page-node-id="7tc1Asdk5OUwo2hM1EdKHF">2<b data-page-node-id="YXgla4eBZ7K2mgmQ0yUCWj">B</b>1200×4/96</div><div data-page-node-id="r34asYdOcorBvVBqeTsdhj">3<b data-page-node-id="MOZ2b7PlicUDEswxhQaGcT">A</b>88780×2.3/102.3</div><div data-page-node-id="cgiIxRcP4cWkFCgrMbi4av">4<b data-page-node-id="YsywOwnqRAGIWPDTDIJTFV">B</b>328×28.5/128.5</div></div>
+    <div class="tip" data-page-node-id="KZOO9MOWDH18AK57AQ4wIY"><b data-page-node-id="XajAeWrFHuPLfTOQfkHa7X">四道题的共同点：</b>A 选项都是"现期 × r"（偏大值），正确答案都在它<b data-page-node-id="BMExGozGw1BbKvoA2VgAcN">旁边略小</b>的一侧。第 2、4 题还能顺手验证方向——问"减少"的答案必须小于"现期×降幅"。</div>
+  </div>
+</section>
+
+<section id="k5" data-page-node-id="yvpCwWLKEi0Uhgd4fj8dsN">
+  <div class="mhero" data-page-node-id="EhAhjAqR536B4X4SzNGTWi">
+    <div data-page-node-id="flX9JR5RChu8AmyEBEhFaQ"><h3 data-page-node-id="mrzaNlGO8oZg4PSoSWasoQ">考点 9 · 比重问题</h3><p data-page-node-id="ygGCnslCWbUmGKL2zoQxCn">现期比重 / 基期比重 / 比重升降 / 百分点</p></div>
+    <div class="mmeta" data-page-node-id="163NeE9aZAtlpFDzyyzoo1"><b data-page-node-id="Pa333VgqsGWGWJe7beiY2M">35 题</b>D3 · 秒杀点最多</div>
+  </div>
+  <div class="keys" data-page-node-id="rpO1OyWDX7WQEsqXzx3qtg">
+    <div class="key" data-page-node-id="h6ZGR1rhjug6etQVCy126T"><h4 data-page-node-id="XUCxWpF0YlEjWxq9NO3Tkr">识别特征</h4><p data-page-node-id="kyYPSDddEOjy3xFZAtp624">"占…的比重""占比""比重上升/下降""提高了几个百分点"。</p></div>
+    <div class="key" data-page-node-id="HFjBr5VO0cQVjnyxD9Qm56"><h4 data-page-node-id="CWd4yNRnSqYd6bqAAf71wK">核心钥匙</h4><p data-page-node-id="gWuJ7SipoW67npuhEoDAEO">比重 = <b data-page-node-id="4ShKCxrFlOgCsHvolqSKDj">部分 ÷ 整体</b>。先确认谁是部分、谁是整体；升降判断只看两个增速，不算数。</p></div>
+    <div class="key" data-page-node-id="QtkW2L1jVPDeRwzk4rB9LN"><h4 data-page-node-id="eL5RjLxBPQYwIIfQrzLgPT">秒杀点（必背）</h4><p data-page-node-id="ckhIIGNG7xV49f6miVJ4aM"><b data-page-node-id="BPhIAxv77WlBD22eZmOc9h">部分增速 &gt; 整体增速 → 比重上升</b>；反之下降。此判断<b data-page-node-id="lKHS3T5f20QLQIhKRC1CzZ">无需任何计算</b>，见题即秒。</p></div>
+  </div>
+
+  <div class="card" data-page-node-id="4Dk0pJCXxH03wXd2ycldth">
+    <h3 data-page-node-id="Y1kMrKqiSfM9DuA9ANOj9X">典型题 1｜比重升降（3 秒秒杀）</h3>
+    <div class="mat" data-page-node-id="6zgywLkVsf6sikoMFIePRS"><span class="mtitle" data-page-node-id="Utzxy1EBiLsKISpzK7B5AE">材料</span>2023 年某国 GDP <b data-page-node-id="Qs5Gus8iRbKCeuc9XzgwS3">126 万亿元</b>，同比增长 <b data-page-node-id="6YBHXe3ptnGiADHAC7mPEn">5.2%</b>；其中第三产业增加值 <b data-page-node-id="18LQ5Rpn0HFjmEXWNM5AXF">69 万亿元</b>，同比增长 <b data-page-node-id="zA5rUfFhQdkU2okplkXKBj">6.5%</b>。</div>
+    <div class="q" data-page-node-id="nsSQwDodG9joNWHRVKlvdj">
+      <div class="qtop" data-page-node-id="FQxAZkOEIUpUhydpnhe1sh"><span class="qno" data-page-node-id="V0x1hnjuzDT6SQgS9GBuBK">例 1</span><span class="qstem" data-page-node-id="V9t0CW0j3FuAzPrmIoeAi5">与 2022 年相比，2023 年第三产业增加值占 GDP 的比重：</span></div>
+      <div class="opts" data-page-node-id="H5rWEb7l0VdZYqbd3UqSlX"><span data-page-node-id="WfJqxpPTE8GJbNHpv64MTX">A. 上升</span><span data-page-node-id="ht8a6huaXUzHp9hFqug8Tm">B. 下降</span><span data-page-node-id="94yQndhaLHKXDujWzCjI7R">C. 不变</span><span data-page-node-id="dYqq6nOM6U72XPYQaB1CYm">D. 无法判断</span></div>
+      <div class="ana" data-page-node-id="OE7GZrTkeMoJEhoVTHTb2a">
+        <div class="ana-h" data-page-node-id="AEaGYYmvsiej8YLp9CQG4S">解析 · 排除法优先</div>
+        <div class="as k1" data-page-node-id="IjEZTQDGP23COLb1v3uP5q"><i data-page-node-id="naFXEIXexvGWianSYLUPhh">① 先排除</i><p data-page-node-id="xlc9ZILVlUxmM5jP4j9Cxt">部分（第三产业）增速 <b data-page-node-id="YFlirY2eKXEGMCdlOB4BUT">6.5%</b> &gt; 整体（GDP）增速 <b data-page-node-id="ClFwpykT7C8g8EpwplszPr">5.2%</b> → 比重<b data-page-node-id="2DE1oOxLgtN9ZCXMgCbMO9">上升</b>。<br data-page-node-id="UfIZV0eZSzCsTNcmcuFCIs">→ 直接划掉 <span class="del" data-page-node-id="HBBhzo80HktSvqG4YBZbvX">B（下降）</span>、<span class="del" data-page-node-id="okCFnMYQxLtgxmLslxbiYO">C（不变）</span>、<span class="del" data-page-node-id="O4leXygfuwY82uTCegeVzO">D（无法判断）</span>。</p></div>
+        <div class="as k2" data-page-node-id="rJshJILoEcsf3GzXPFIYK9"><i data-page-node-id="HtmzC6s9cMw6I307QLdaDq">② 再缩小</i><p data-page-node-id="b9aZxrQ3KxeZU7zUpUvzE5">只剩 A。本题<b data-page-node-id="pppVUJXSuwNIlLGL08QSg9">不需要任何计算</b>。</p></div>
+        <div class="as k3" data-page-node-id="oGNbcfxx7NMu65GyIzVEZT"><i data-page-node-id="yNcrjpS4aKtk8RZWXcUfBq">③ 后择优</i><p data-page-node-id="xfAWWvxPVuEowxPkqQ27G9">无需精确比较。选 <b data-page-node-id="k2PZ8lXWYAT9z9m2MqjcOp">A</b>。</p></div>
+        <div class="ans" data-page-node-id="b4TZG8uu5ANXarYw7yV58V">答案：<b data-page-node-id="XnK0EFVTsalCk6gZvufLUS">A（上升）</b>　　<b data-page-node-id="JGY93A520IytkwF9cwEhc7">心法：</b>比重升降是性价比最高的一分，先比增速，别列式。</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card" data-page-node-id="jc4jk2j76UwYy7yNF5W1ss">
+    <h3 data-page-node-id="EmWb6vD4Dxp34AG4vTmSvH">典型题 2｜现期比重（乘法反推排除）</h3>
+    <div class="mat" data-page-node-id="Nh9YfoD3rC8PWKALg5rQUT"><span class="mtitle" data-page-node-id="z8CAguB4hgexO8BgaceACU">材料</span>2023 年某省规模以上工业增加值 <b data-page-node-id="B2QoQSSY8V0g7LSBFmEsmL">2.4 万亿元</b>，其中高技术制造业增加值 <b data-page-node-id="XBqOVp0HZt9IubNfJ06DWj">0.42 万亿元</b>。</div>
+    <div class="q" data-page-node-id="4IbPX4hpZpua3Fh3MDh6xZ">
+      <div class="qtop" data-page-node-id="tpiGCKkRdUU7qdZU30Gc44"><span class="qno" data-page-node-id="lEQ5wMcUPXnAGIEyAs0wMl">例 2</span><span class="qstem" data-page-node-id="WAVtcufnTRiQTWrmZlpOy5">2023 年高技术制造业增加值占规模以上工业增加值的比重约为：</span></div>
+      <div class="opts" data-page-node-id="OXntZK9SHHqZyA2wjxElog"><span data-page-node-id="IJiWXQPgI28QwywX5kodGO">A. 11%</span><span data-page-node-id="uK71ourFhzcVfQVS8tC5UX">B. 15%</span><span data-page-node-id="hsjtnR97TZtE0IRg2KMRsy">C. 17.5%</span><span data-page-node-id="TggRBH4rpscLL941AM7BK3">D. 21%</span></div>
+      <div class="ana" data-page-node-id="APx9uArXqrG1xFZ6P6qwr0">
+        <div class="ana-h" data-page-node-id="9100pa6AbnjnExHRbzGZ1W">解析 · 排除法优先</div>
+        <div class="as k1" data-page-node-id="zBCKB8byropE5FNBnaUOEW"><i data-page-node-id="0VtJDgdGRHliY05lTnMjQB">① 先排除</i><p data-page-node-id="VH0XxxyAtRd8d3wLnP2PWg">用"整体 × 选项"反推，看是否等于 0.42：<br data-page-node-id="iD2vs8QMSOKZaQGLuEp6Im">· A（11%）→ 2.4 × 11% = 0.264 &lt; 0.42 → <span class="del" data-page-node-id="maiVFMh1Jj9KRqb754SHBl">A 排除</span>。<br data-page-node-id="Y1KQztFVrJnep0DUPz3qmJ">· D（21%）→ 2.4 × 21% = 0.504 &gt; 0.42 → <span class="del" data-page-node-id="GF43mipz7kwIjglJDbyjpt">D 排除</span>。</p></div>
+        <div class="as k2" data-page-node-id="b6EboaqtlfOKse3jsSPfij"><i data-page-node-id="RGjV8uuzoAAFOwk4OuHtne">② 再缩小</i><p data-page-node-id="aGEjVLyu57vZ1PMzwNONEG">只剩 <b data-page-node-id="B1lKaEJ3g1M6IZIEzBldLu">B（15%）</b> 与 <b data-page-node-id="VrSa438ussC81KKTSeHADH">C（17.5%）</b>。</p></div>
+        <div class="as k3" data-page-node-id="Wl7m0p3PBewNHzfCyeI27H"><i data-page-node-id="8iZyKqSXGt4wn3OR6vi5ws">③ 后择优</i><p data-page-node-id="q8fSwAxVwt27NH447hVwae">0.42 ÷ 2.4 = 42 ÷ 240 = <b data-page-node-id="TwFH0YGdn4qlpK77z5ddh7">7 ÷ 40</b> = <b data-page-node-id="FXfP5ZlbNlj2ooh9CZvMnu">17.5%</b> → 选 <b data-page-node-id="hyx2NiWgQ5L69juqQ2uAv4">C</b>。（能约分就不除。）</p></div>
+        <div class="ans" data-page-node-id="T2CIJqkqaqAFBTFn6JCuhL">答案：<b data-page-node-id="0SEIEipATf0AXEHfhToZeO">C（17.5%）</b></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card" data-page-node-id="ekVIgnCrKVvR0EDEQpPVRD">
+    <h3 data-page-node-id="396Tr63fJKfmshJ8zj0HuZ">典型题 3｜基期比重（先判方向，再算一步）</h3>
+    <div class="mat" data-page-node-id="ZT5iXKvFJ0sb2D588n75d0"><span class="mtitle" data-page-node-id="sLuQDz7ylkzYyIHjHzx7uY">材料</span>2023 年某市 A 产业产值 <b data-page-node-id="YLUKgHdM3wadjDxkuUMg51">300 亿元</b>，同比增长 <b data-page-node-id="RQiRtGWtz1QHT74QQ5o5fV">8%</b>；全市总产值 <b data-page-node-id="FdwHuaVW8sbBCHuDjsg9i0">1200 亿元</b>，同比增长 <b data-page-node-id="yHpoiRD1XOTvkRNL78LGoU">5%</b>。</div>
+    <div class="q" data-page-node-id="PyLIODypEwEC06kDIhS7rY">
+      <div class="qtop" data-page-node-id="DlmU6uNQ3TS389BmxHVqiu"><span class="qno" data-page-node-id="nXoFXOvhmBw8DCtB7C5NhL">例 3</span><span class="qstem" data-page-node-id="ggn20ctm7ulCAJ79bTQcGt">2022 年 A 产业产值占全市总产值的比重约为：</span></div>
+      <div class="opts" data-page-node-id="LNnnDJ8WNu6URMVSlY6Vsq"><span data-page-node-id="kO0RCdzlAk4ncyuvEMhqOy">A. 23.3%</span><span data-page-node-id="ZhSVqBdxBBPdqZYGFNCRcn">B. 24.3%</span><span data-page-node-id="YMGl4ar9kK0PtnpQfcmevN">C. 25.0%</span><span data-page-node-id="dwCYVzXG4KxHHPwHmyVj2p">D. 26.0%</span></div>
+      <div class="ana" data-page-node-id="g0PHXu3ooLdH28g8XtXk82">
+        <div class="ana-h" data-page-node-id="D4aVGyAElluAYyowWEMkCg">解析 · 排除法优先</div>
+        <div class="as k1" data-page-node-id="edSjOOQu1DBNKU2wBC4kb3"><i data-page-node-id="44835V88yZLE2JoXbwJ6Lh">① 先排除</i><p data-page-node-id="rHndsXc9RGUmdMkX5jDJGx">2023 现期比重 = 300 ÷ 1200 = <b data-page-node-id="HtmCXOl6Jg0M30hYzFtbzL">25%</b>。部分增速（8%）&gt; 整体增速（5%）→ 比重上升，说明<b data-page-node-id="8wG71inO4uYxkvEikSG9wc">基期比重必然小于 25%</b>。<br data-page-node-id="DC0X6AGEtOzoSuZ6PsFB7X">· C（25%）是现期比重，不是基期 → <span class="del" data-page-node-id="hDCa1WJJ8CKz8UaXYJXous">C 排除</span>。<br data-page-node-id="jABjJx9osAJBB7a0T0B5Jz">· D（26%）大于 25%，方向反了 → <span class="del" data-page-node-id="bZGm0Zps4S4e0Db6rIg99C">D 排除</span>。</p></div>
+        <div class="as k2" data-page-node-id="H2n971sXknIDEkTKl3xbtX"><i data-page-node-id="lVSXKgEbVh5gy7FwC1iGLh">② 再缩小</i><p data-page-node-id="QWgngLw1LZfAYywxmoA5vv">只剩 <b data-page-node-id="FZaTH1IC1sky1hs3lYpTiD">A（23.3%）</b> 与 <b data-page-node-id="3apQFNWpittDPqioPrhgS5">B（24.3%）</b>，都小于 25%，方向正确。</p></div>
+        <div class="as k3" data-page-node-id="REdbka0M2gvuGzGu1DimgN"><i data-page-node-id="bXQLRpQy68mbkCZHbzEeUK">③ 后择优</i><p data-page-node-id="PoIBhOx3uWr0OWaXITrNI1">基期比重 = 25% ×（1 + 5%）÷（1 + 8%）= 25% × 105 ÷ 108 ≈ 25% × 0.972 ≈ <b data-page-node-id="9yknLrDFxPNB3H8PjOswZs">24.3%</b> → 选 <b data-page-node-id="Hk9E4Z5ZarclfxTQPzWhVb">B</b>。</p></div>
+        <div class="ans" data-page-node-id="FiesPWttfXhjlhrFaZuMYC">答案：<b data-page-node-id="Z3xQnq1CKWFS4elL4wXiCA">B（24.3%）</b>　　<b data-page-node-id="tQwWO3n3GIO9Pvz9TvrcHh">公式：</b>基期比重 = 现期比重 ×（1 + 整体 r）÷（1 + 部分 r）。先用升降方向砍掉一半选项。</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card" data-page-node-id="C9a8BKxvit48LDStBXYhrV">
+    <h3 data-page-node-id="oMomAXP5uip3Y0A226laIZ">典型题 4｜百分点（单位陷阱）</h3>
+    <div class="mat" data-page-node-id="qbw9Gz9LRn63jHvSMHyxkg"><span class="mtitle" data-page-node-id="SxoMGeyL0quBqfuEFGXP3b">材料</span>某省网上零售额占社会消费品零售总额的比重由上年 <b data-page-node-id="HbUBCm3qCzRs18UFEjQ3I5">26.8%</b> 提高到 <b data-page-node-id="zXBo0R6vQYov5ujmz7nlbQ">29.5%</b>。</div>
+    <div class="q" data-page-node-id="5hkeD5eCquehAj9ES8yHQi">
+      <div class="qtop" data-page-node-id="BI278HPcI0Le67hYPDl4b9"><span class="qno" data-page-node-id="WAhRdIWh9pe6xd1l5mSpyO">例 4</span><span class="qstem" data-page-node-id="fGsfxhq6zL7O5kI08xyADB">该比重比上年提高了：</span></div>
+      <div class="opts" data-page-node-id="P05Spg00J6Ev1pHZeRLQd8"><span data-page-node-id="3KOy8uKNHMOtGfHd5vILqo">A. 2.7 个百分点</span><span data-page-node-id="pacvEh9pm18xRjicnQw8tR">B. 10.1%</span><span data-page-node-id="x91QK9IJ7tG60905Dcgm1w">C. 27.8%</span><span data-page-node-id="jLHxniNmSqdpRYIQFgcpSD">D. 2.7%</span></div>
+      <div class="ana" data-page-node-id="IIjzwP7PgFMaiyxvYQDmAH">
+        <div class="ana-h" data-page-node-id="r9Vtl3bjpUpWmHdWunY83F">解析 · 排除法优先</div>
+        <div class="as k1" data-page-node-id="9G4sAROXxYoU9K4lqVqg2D"><i data-page-node-id="IntHvjhw0bSawVnf0ZPPFE">① 先排除</i><p data-page-node-id="eZQvwvL6dlMh3lzgkhZEEF">比重本身的<b data-page-node-id="5mvtzFvSebK7FQLhdLap0P">变化量用"百分点"</b>，不是百分数。<br data-page-node-id="EOd1hCw2BhV3v3EQj4Juqp">· B（10.1%）是"相对增幅"= 2.7 ÷ 26.8 ≈ 10.1%，问的不是这个 → <span class="del" data-page-node-id="ttF14cezEei05qUTeSXGi4">B 排除</span>。<br data-page-node-id="QHEKO5ElzaiFwGu1RbOxE6">· C（27.8%）数值接近 26.8%，是干扰项 → <span class="del" data-page-node-id="r1uhDt0t5jhEZzibpNTiXQ">C 排除</span>。<br data-page-node-id="iJtX1ak9gZGvMcnT5VFQX5">· D（2.7%）数值对，但单位是"%"（相对数），表述错误 → <span class="del" data-page-node-id="N78j38wV0wtFwlOvlMXmRM">D 排除</span>。</p></div>
+        <div class="as k2" data-page-node-id="c4BPPGazFalAIXsLQLJRY3"><i data-page-node-id="HEKNIQ5ooApC6CIPDLIjqc">② 再缩小</i><p data-page-node-id="9y1VCO4WuGaunTJnhCHfui">只剩 <b data-page-node-id="6d2QHcJ1gJAMoHyzcezyCL">A</b>。</p></div>
+        <div class="as k3" data-page-node-id="wWwtcjAyho4m8QEEVNmlun"><i data-page-node-id="YY8Ka8ZNotntOzebnkB7hI">③ 后择优</i><p data-page-node-id="KYKqa1hqTCt50eX64GYYeY">29.5 − 26.8 = <b data-page-node-id="eTyccZWPRVq0mjw9V74O2P">2.7</b>，单位"个百分点" → 选 <b data-page-node-id="RzCMeHGOOz6zFFLp2R4Qx9">A</b>。</p></div>
+        <div class="ans" data-page-node-id="yGSykdGosTAaXOWnpWHfeR">答案：<b data-page-node-id="UZ3AHOBVXshiGPo13eyWoP">A（2.7 个百分点）</b>　　<b data-page-node-id="pFi4i39rDYLh6fl0dt2JDG">坑点：</b>比重的变化说"百分点"；只有增长率才用"%"。</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card" data-page-node-id="iAwDNj8rYZinZXRmP47YbY">
+    <h3 data-page-node-id="EXb7EM2GZbiknRVFR6wwUm">训练题组｜限时 6 分钟</h3>
+    <div class="q" data-page-node-id="uBH3ADRe17jLrHZOXc51BQ"><div class="qtop" data-page-node-id="668Px2wvIsEmeXyTMuTbEq"><span class="qno" data-page-node-id="6Hug2MWQqkIrEju01OagOq">1</span><span class="qstem" data-page-node-id="9VOczwRzWDNOjw4nROacJ4">2023 年某省服务业增加值占 GDP 比重 52%，GDP 同比增长 5%，服务业增长 7%。比重比上年：</span></div>
+      <div class="opts" data-page-node-id="1nkppZ28Dfsx5do0mGjkE4"><span data-page-node-id="0OdtKPXKb1HLmGZQPFVLZm">A. 上升</span><span data-page-node-id="lLE10q5AWcwBrgjbu2cShF">B. 下降</span><span data-page-node-id="lmU8RGEBoCMcEP1pv5PPuO">C. 不变</span><span data-page-node-id="GsxYt9T0kuaOwXCAJju0IE">D. 无法判断</span></div></div>
+    <div class="q" data-page-node-id="WMBGFY6xODSIwhgtVVyJp4"><div class="qtop" data-page-node-id="ZmHnEPyYm9mi6AMSsq5Vgc"><span class="qno" data-page-node-id="8Y3VpXtK2SIhcadDHRhkRD">2</span><span class="qstem" data-page-node-id="MQ4LInnVfeXFbnFKo3E1cM">某市 2023 年高新技术产业产值 2400 亿元，占规上工业总产值 30%。规上工业总产值约：</span></div>
+      <div class="opts" data-page-node-id="E3eJxAzZXY1Zcsy4qHqs4l"><span data-page-node-id="LpnT8rlJ7LQjbkA6sr9X0G">A. 7200 亿</span><span data-page-node-id="5GYwHcl4zdfUH9yrdb6mpH">B. 8000 亿</span><span data-page-node-id="hQHA1QJIM0bxHvdraRgL9u">C. 24000 亿</span><span data-page-node-id="9P4oGpoWHk5GWEvpg28K1W">D. 3200 亿</span></div></div>
+    <div class="q" data-page-node-id="oDz7SqBzvctuCg6Ia1bvHY"><div class="qtop" data-page-node-id="1XCBVaGdEGXMjBWh1ymH2U"><span class="qno" data-page-node-id="fYTJ8G04GVOGmY1XkSjWZb">3</span><span class="qstem" data-page-node-id="1gt2Hwu8OXBWhiu6SHqhCs">某省 2023 年出口 2.4 万亿元、进口 1.6 万亿元。出口占进出口总额比重约：</span></div>
+      <div class="opts" data-page-node-id="d7GlDA26NVmHjjRCQZXXDf"><span data-page-node-id="jiQZqqiIpsYTBKiARgYLmg">A. 60%</span><span data-page-node-id="SYMB5HjHVhJh6mj3bw4rES">B. 40%</span><span data-page-node-id="5ZlQwoeApQxvqosDbjh431">C. 67%</span><span data-page-node-id="FOgRJolcEoGrjismtjtVBp">D. 150%</span></div></div>
+    <div class="q" data-page-node-id="n0sUWGPaNCLKxvlsnGrojH"><div class="qtop" data-page-node-id="LEte4jFWXHIkC5UM5ie7pe"><span class="qno" data-page-node-id="5JNu1HUOFhPlpzo84l8iDc">4</span><span class="qstem" data-page-node-id="uUktkjEPKn0AOSPCOi4Lvy">某地 A 产品产量占全国比重 12%，全国产量同比增长 4%，本地 A 产品增长 10%。上年本地占全国比重约：</span></div>
+      <div class="opts" data-page-node-id="HTIbQzyLOe0Xb339Y2lEk7"><span data-page-node-id="BXJLh69MwQEe6147eCqbnp">A. 11.3%</span><span data-page-node-id="wDUv5zwuq3qgIB9URzp8Ld">B. 12.0%</span><span data-page-node-id="Kziw2Rafyj5q6iM5rM3bS6">C. 12.8%</span><span data-page-node-id="O8Ll9EyPTAc5xjXFNSBEoA">D. 13.0%</span></div></div>
+    <div class="q" data-page-node-id="B7AtG7idgFzJlVbS0fP4tp"><div class="qtop" data-page-node-id="QQVQeDKuO1or0ipJwpJHSy"><span class="qno" data-page-node-id="EPIR6dJCAGaHNKcHo7vwAw">5</span><span class="qstem" data-page-node-id="RgUPzSPY65QGpcAzDMHMqz">某省教育支出占比由 18.2% 升至 19.5%。该占比提高了：</span></div>
+      <div class="opts" data-page-node-id="yC5PKTPzdptSPO1cR6xpQc"><span data-page-node-id="CLzE58wc2OZmrNGbSyauLG">A. 1.3 个百分点</span><span data-page-node-id="56M5G01kiOXxPiA2NEHKxf">B. 1.3%</span><span data-page-node-id="sAlFxWmiSLEZW32CKXWfgU">C. 7.1%</span><span data-page-node-id="igioQshqc83Vmd59HrVCZA">D. 18.5%</span></div></div>
+    <div class="ansline" data-page-node-id="BaKVckIAqk1pRavSS1U4VB"><div data-page-node-id="OJf2GJoWIrxEpgeKRRQdsa">1<b data-page-node-id="1ToLkUCOP6hLQGbJvP4UVO">A</b>7%&gt;5%</div><div data-page-node-id="bkR6gFyl2y1BzoC1Qg8hrc">2<b data-page-node-id="ooc8jaDHHfDhXuU0SQISpB">B</b>2400/0.3</div><div data-page-node-id="8Y0QCDepDxFMfrhI0lDhIB">3<b data-page-node-id="0c3n7yJx9ecr7e6MCizLrJ">A</b>2.4/4.0</div><div data-page-node-id="MtxqtNCWyXd1O2FHMk3xtK">4<b data-page-node-id="W8SLf9w6sfFic4WgDg41UV">A</b>12%×1.04/1.10</div><div data-page-node-id="SAqVnBMoRI1D8uDA93Dajd">5<b data-page-node-id="XbQMGXxpWqhLMyn2HqFB4U">A</b>19.5−18.2</div></div>
+    <div class="tip" data-page-node-id="a4yfFksNe9fyIEOdmFeOwC"><b data-page-node-id="RDTAjKaUfFwMgZKccQADEW">第 4 题提醒：</b>问"上年比重"就是基期比重，方向必与现期相反（现期比重 12% 已上升）→ 答案必小于 12%，只有 A 符合，连算都不用。</div>
+  </div>
+</section>
+
+<section id="k6" data-page-node-id="kXhXxOtIi9gHfWcZq2xJsD">
+  <div class="mhero" data-page-node-id="wMveEoDasC7ZtzdtozEKom">
+    <div data-page-node-id="EHc2mhYN8e9qJsnLs54Enl"><h3 data-page-node-id="UaJgOM6AD7aTF7rn1B4Y6l">考点 10 · 平均数问题</h3><p data-page-node-id="FEHjXVjZ1pD0Wx8geq1Qga">现期平均数 / 平均数增长率</p></div>
+    <div class="mmeta" data-page-node-id="wKb80ULts6uKWw6d9AgFoD"><b data-page-node-id="SSUm9uEZVq1WxcA1NlkI3Z">20 题</b>D4 · 送分为主</div>
+  </div>
+  <div class="keys" data-page-node-id="NfZfTwOMhnqm6iqpS63HYX">
+    <div class="key" data-page-node-id="bfFVe5mpnHegMEgcqYIo5A"><h4 data-page-node-id="4zQSwo9I4Zs6kcoEwK3Bn6">识别特征</h4><p data-page-node-id="YIdOj7ta8wy5L75DJmEGU2">"人均""户均""平均每个""单价""单位面积产量"——见到"每/均"就是平均数。</p></div>
+    <div class="key" data-page-node-id="GDPrlcXGPJMsxi0jn3bNuS"><h4 data-page-node-id="r4efqvfCrrhjTjBVoFME0P">核心钥匙</h4><p data-page-node-id="ac2klXtadOPpEEpSYzyXmD">平均数 = <b data-page-node-id="HmMt1nHTwLvR0J0x88ZqtO">总量 ÷ 份数</b>。动手前写清：谁是总量、谁是份数。</p></div>
+    <div class="key" data-page-node-id="nCxsxG5ABMTqG5mahHawod"><h4 data-page-node-id="oJqxzCMxsdShHWR88vT8nv">平均数增长率</h4><p data-page-node-id="lYlPafJp64Tv7xKDewbOu6">=（1 + 总量 r）÷（1 + 份数 r）− 1。<b data-page-node-id="c9Q0YeHZRTKulYUhypzoYo">分子增速 &gt; 分母增速 → 平均数上升</b>；"两率相减"只是近似上界。</p></div>
+  </div>
+
+  <div class="card" data-page-node-id="Kx4V0ycnNq4DnxnP4kQagr">
+    <h3 data-page-node-id="mFOd2h6Xu4FCYf3gsRWFcp">典型题 1｜现期平均数（先比量级）</h3>
+    <div class="mat" data-page-node-id="Qwu7CdALY4AyhZCXLp4vMr"><span class="mtitle" data-page-node-id="JmrRLuDxesJkAnLiKBVSkT">材料</span>2023 年某市接待游客 <b data-page-node-id="tvOPe5nZbrG0mbRcMe7DDj">1.25 亿人次</b>，实现旅游收入 <b data-page-node-id="4U47exJ0PKs0bEGczA0PQO">980 亿元</b>。</div>
+    <div class="q" data-page-node-id="xAYqIw6W1Fhh48r79aU02r">
+      <div class="qtop" data-page-node-id="jw65UT9ODi6FwqzAcSc0my"><span class="qno" data-page-node-id="MWxdsOuAjGLyZGVzTwdyhB">例 1</span><span class="qstem" data-page-node-id="5N0iRRaLCXDLBLGsCC9yNY">2023 年该市人均旅游花费约为多少元？</span></div>
+      <div class="opts" data-page-node-id="Yd8xGDTXthzEbj4ZD5d70g"><span data-page-node-id="zFgtkSz4lfnWDcBYVQFxJ9">A. 484</span><span data-page-node-id="p8DCEvXwevE2FuHCJtfNi0">B. 784</span><span data-page-node-id="G1MwKoq1hytO7l9TTmDFis">C. 1084</span><span data-page-node-id="gwGXrMaP9BmVqrGWOkZ5eo">D. 1584</span></div>
+      <div class="ana" data-page-node-id="Kh3GK5qkJDhmflWZDXl6qF">
+        <div class="ana-h" data-page-node-id="FFN5uSB6E4JlmjcJIxyYvW">解析 · 排除法优先</div>
+        <div class="as k1" data-page-node-id="gNMaEeOHQvqoRtZuyKMzhI"><i data-page-node-id="6LE1B4BPi0ZTpK9YKYI1HX">① 先排除</i><p data-page-node-id="mXpHjMExyRz78yn0Twzf7O">人均花费 = 980 亿 ÷ 1.25 亿。用选项反推：<br data-page-node-id="z8GGcGPoZLanA1jHIsMu58">· A（484）→ 1.25 × 484 ≈ 605 亿 &lt; 980 → <span class="del" data-page-node-id="OxzFrHM8n73ScCLvXqrhCt">A 排除</span>。<br data-page-node-id="o34LdmG7tcVP9fGfgnSsE2">· C（1084）→ 1.25 × 1084 ≈ 1355 亿 &gt; 980 → <span class="del" data-page-node-id="0g3BUQgwONfytn5G4tYwHJ">C 排除</span>。<br data-page-node-id="3AAhMygDtOMhmZBurHmezt">· D（1584）更大 → <span class="del" data-page-node-id="BL8crxg6LfwurSxX55y640">D 排除</span>。</p></div>
+        <div class="as k2" data-page-node-id="H4xEGrENTlTEEw5Tzbm325"><i data-page-node-id="ZOhzZ4yYVCElpUWwwkHOH4">② 再缩小</i><p data-page-node-id="aQ88XZyeUq7EgufwiPiBq6">只剩 <b data-page-node-id="RbjmT5pFkfACQjWzo81C3V">B</b>。</p></div>
+        <div class="as k3" data-page-node-id="HlX2F98SX0fZKcWvsHT9C8"><i data-page-node-id="Xdr5Q2T3acvNVsMsS58x1G">③ 后择优</i><p data-page-node-id="Vy9Kd03BqmvdE25KOB13qm">980 ÷ 1.25 = 980 × 0.8 = <b data-page-node-id="B8BBl9y5g3OtAkh9af2EKM">784</b> ✓。选 <b data-page-node-id="th5f2UAQhDMmzKNE1aCRtP">B</b>。</p></div>
+        <div class="ans" data-page-node-id="5CsGSPMED4WxfktFJVrTvk">答案：<b data-page-node-id="2bG5AowcwgKRMJzG1UjSuJ">B（784 元）</b>　　<b data-page-node-id="JGu1F3Lx2bFtgZVSxESUgz">速算：</b>除以 1.25 等于乘 0.8。</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card" data-page-node-id="HFE7hnZF8xQ3yrAW5aTbjq">
+    <h3 data-page-node-id="L00IWUCjuHQyhYy7Pscx0f">典型题 2｜平均数增长率（相减是陷阱）</h3>
+    <div class="mat" data-page-node-id="ueDjABYv7Y2gDJ5oxVPMMb"><span class="mtitle" data-page-node-id="AEg3KEocssMpb2QevlRf2F">材料</span>2023 年某省规模以上工业企业实现利润总额同比增长 <b data-page-node-id="wMdFf8RWUdARCsZBHRXiEE">12%</b>，企业单位数同比增长 <b data-page-node-id="ggcrR7NJmGuTlJCJCxq7Cc">4%</b>。</div>
+    <div class="q" data-page-node-id="TAjYxSNIztGKKPqTLIyGxP">
+      <div class="qtop" data-page-node-id="PUHk0iVHtGsRACdiuGcCTE"><span class="qno" data-page-node-id="smaNAAQr2cqp2v7NFm3g00">例 2</span><span class="qstem" data-page-node-id="aPad4DfZ2mhd9LhksCCeFG">2023 年该省规模以上工业企业户均利润同比增长约：</span></div>
+      <div class="opts" data-page-node-id="FDrS3UBJGW5aA29n8v5Tct"><span data-page-node-id="K3mt5Djild5CCcepeFswsj">A. 8%</span><span data-page-node-id="ONUEX3xrpA8WPQyJPR7pdT">B. 7.7%</span><span data-page-node-id="qNHLVBDqFmfRZVWYrOvPTs">C. 12%</span><span data-page-node-id="1zOsZFTrFdv0LSdZgZLCgF">D. 16%</span></div>
+      <div class="ana" data-page-node-id="4bFZFjdpaKpZEVTmW3dtit">
+        <div class="ana-h" data-page-node-id="mGCXNSpm8jnN05PrjuRkDr">解析 · 排除法优先</div>
+        <div class="as k1" data-page-node-id="Q4ElFA7EfjTFf7vkcux0Kh"><i data-page-node-id="WEtjvkXQDwQE7LDOOCkEms">① 先排除</i><p data-page-node-id="H2SJAxscCfElrHkIcekLjR">户均利润 = 利润总额 ÷ 企业数。分子增速 12%，分母增速 4%（分母在变大）。<br data-page-node-id="gL9HHcPXijvSdsCmAwC5fJ">· C（12%）等于分子增速，但户均还受企业数变化影响，不可能相等 → <span class="del" data-page-node-id="8OGY6BpfKhP0iJrUtfRgno">C 排除</span>。<br data-page-node-id="JEmjFROKxDnYUrNDtcsNBt">· D（16%）= 12% + 4%，分母增长只会<b data-page-node-id="dSQYKQ8wQVH0S9Oh1MwsXF">拉低</b>户均增速，不可能更高 → <span class="del" data-page-node-id="If6gw6VAPCds9j9vAn6USE">D 排除</span>。</p></div>
+        <div class="as k2" data-page-node-id="fy4AjC9eweDoMTfVGVnqhX"><i data-page-node-id="LdIYuvn5ydgX3yqhDj2Vsp">② 再缩小</i><p data-page-node-id="RSxbt8hKJKamvBqFMRza43">只剩 <b data-page-node-id="eMqCxMdeKq2cU12oARWemw">A（8%）</b> 与 <b data-page-node-id="DNAz4Nlp7MVic8elchKw2J">B（7.7%）</b>。A 恰好是"12% − 4%"，是本题最像的陷阱。</p></div>
+        <div class="as k3" data-page-node-id="GNfMD8CkKoZN6Rd8oTUWkl"><i data-page-node-id="pu8DyAcjOFejRmKUcubM3h">③ 后择优</i><p data-page-node-id="oByj60erUvrVUBJ8OTxZus">（1 + 12%）÷（1 + 4%）− 1 = 1.12 ÷ 1.04 − 1 ≈ <b data-page-node-id="4ayMktuFk5EcswU4Cjm1Mi">7.69%</b> ≈ 7.7%。分母在增长，真值<b data-page-node-id="ZevsXpxDswSzUDXtKQARwu">略小于</b>两率相减的 8% → 选 <b data-page-node-id="AgmxcqPOQARKsD1FQx77qK">B</b>。</p></div>
+        <div class="ans" data-page-node-id="p0WWwQZUUytTfxnAyZmIeu">答案：<b data-page-node-id="3Kdh5amMnTHDhlPVfioQpM">B（7.7%）</b>　　<b data-page-node-id="0iaYj7CsIEOkhdcIBKmIdy">坑点：</b>平均数增长率 ≠ 两率相减；正确答案通常在相减值<b data-page-node-id="2KM0Ka1WJTJ0teojlQfuDy">略小</b>的一侧。</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card" data-page-node-id="1HkCx3bMEUbqboo0neQVcV">
+    <h3 data-page-node-id="uWvG4Dpmgby1dj1DHThmBn">训练题组｜限时 5 分钟</h3>
+    <div class="q" data-page-node-id="msoSOvtUKeXfbbjDB6DEz9"><div class="qtop" data-page-node-id="7GrMMJS3UgbFsfDa6fCAR4"><span class="qno" data-page-node-id="0LL8sU47gGaVMdp5cIcKWm">1</span><span class="qstem" data-page-node-id="ehILkXycABqY7gbT1w7Tly">2023 年某市社会消费品零售总额 5600 亿元，常住人口 1400 万人。人均零售额约：</span></div>
+      <div class="opts" data-page-node-id="d67JSMc5KkoRpBY97kxpFL"><span data-page-node-id="sqHlsppCX6YQmZioHYAJkd">A. 1500 元</span><span data-page-node-id="Bd1pURlPrhdUFeDbmbeJnY">B. 4000 元</span><span data-page-node-id="6IH6xtEFTIn90Ce0AVspzo">C. 40000 元</span><span data-page-node-id="7lJHgoKQvFXUSYknY1nMmJ">D. 400000 元</span></div></div>
+    <div class="q" data-page-node-id="o6oSJsbavLhOTOFn33oXgh"><div class="qtop" data-page-node-id="OKPIfGA7Xexo8vmiBu6of7"><span class="qno" data-page-node-id="d6AxeG2aJiuDH58oeeqSmF">2</span><span class="qstem" data-page-node-id="IaWKofAEhiayeJKrWzUOxO">某省出口额同比增长 8%，出口企业数同比增长 10%。户均出口额同比：</span></div>
+      <div class="opts" data-page-node-id="NAYJo3vVc2tcrj26rviwda"><span data-page-node-id="3zcA6lSRtjOETFlVCEA20d">A. 上升</span><span data-page-node-id="RZciA5rOS3SrUMIGhfNCr3">B. 下降</span><span data-page-node-id="HbR9Mf2sMajmJlrdEPpYAe">C. 不变</span><span data-page-node-id="IxQb5EMfB5xCYo1Umn3qQm">D. 无法判断</span></div></div>
+    <div class="q" data-page-node-id="IpPVC7XfuWtaXJ8VLj6ZBf"><div class="qtop" data-page-node-id="Izq5X11q3CzADvuro6gRBd"><span class="qno" data-page-node-id="dMRzmOosRpE8LVBNMcGDMv">3</span><span class="qstem" data-page-node-id="D4mmKWptdxGgsVzYIAmyUx">某企业 2023 年营业收入同比增长 25%，员工人数同比增长 25%。人均营业收入同比：</span></div>
+      <div class="opts" data-page-node-id="qL5KnBr8uDnPX5tUcNKx65"><span data-page-node-id="n7o99580tAiBKyAuJqqEaX">A. 上升 25%</span><span data-page-node-id="BI0DIQzxprukzFf2ltEGTJ">B. 下降</span><span data-page-node-id="VkccrVmB6ALg1vaACPoF4j">C. 基本不变</span><span data-page-node-id="kHx7ew6alJFc7VW9GilUcx">D. 无法判断</span></div></div>
+    <div class="q" data-page-node-id="O2B7eLhxqxYsRfmmr8mF55"><div class="qtop" data-page-node-id="dxFwKdBwtw9q9diV9NwpWF"><span class="qno" data-page-node-id="HSKsfzGT1NbnqDpEp6TiJE">4</span><span class="qstem" data-page-node-id="IecXICoVFwapXlqBM4yHc1">2023 年某市商品房均价同比增长 3%，销售面积同比增长 6%。销售额同比增长约：</span></div>
+      <div class="opts" data-page-node-id="QbzqvxcFF2YasTojoD7NaS"><span data-page-node-id="dXdUFAE0Gp3mYcsvgKHj1A">A. 3%</span><span data-page-node-id="tJHVA5HaGTAv0ezXa7EPdC">B. 6%</span><span data-page-node-id="eiAry2n8KZ6Cq0FcfviGPD">C. 9%</span><span data-page-node-id="yJ1oPPyalLum11QZITdt0T">D. 9.2%</span></div></div>
+    <div class="ansline" data-page-node-id="Gz5eqTomIZLUawtohElxY8"><div data-page-node-id="Smd5neGUgude53FFrps7bE">1<b data-page-node-id="0cNph3UrUtG8npZbjyOLnM">C</b>5600亿/1400万</div><div data-page-node-id="M3sDu6VyMECrww6HEkk1ff">2<b data-page-node-id="pA6vdBR2su0v65KW39iFYA">B</b>8%&lt;10%</div><div data-page-node-id="Gv3xTjUwnreqHCLcyhrtuX">3<b data-page-node-id="S6dwXwXsuLNJRILJgtlsgf">C</b>同速相抵</div><div data-page-node-id="d5JDgGF4bBGb1tRFGtE7nd">4<b data-page-node-id="s5GBcFfTzx77EOIHM2WqgW">D</b>1.03×1.06</div></div>
+    <div class="tip" data-page-node-id="fynLX16T3cBa2bURUDM2Qu"><b data-page-node-id="nOU74YFYmL9TpkRnqTitNg">第 4 题：</b>均价 × 面积 = 销售额，属"连乘"，用 1.03 × 1.06 − 1 ≈ 9.2%，不是简单 3 + 6 = 9（C 是陷阱）。</div>
+  </div>
+</section>
+
+<section id="k7" data-page-node-id="46rrLGqPSebr4VkNs1J6w5">
+  <div class="mhero" data-page-node-id="enyCiLlG38Cswsd8GmAP3m">
+    <div data-page-node-id="BqkZ3trMuj0FZoPPiYdV6X"><h3 data-page-node-id="RdkoaAhf4QBXw4em2N0SCk">考点 11 · 倍数与比值相关</h3><p data-page-node-id="BddAufD5Je3pzHvL9DuXBs">是几倍 / 多几倍 / A 与 B 之比</p></div>
+    <div class="mmeta" data-page-node-id="rCRF5TggA4tZ2CYNg0OPFv"><b data-page-node-id="iF3W1qyHyvj1SYItVQmll7">15 题</b>D4 · 送分点</div>
+  </div>
+  <div class="keys" data-page-node-id="Li2A58K0I0167ASZY9CXs5">
+    <div class="key" data-page-node-id="V1pxtOxztBsJ2zUtHOE21x"><h4 data-page-node-id="KBahNBigMig02Wenv2DPw9">识别特征</h4><p data-page-node-id="hxPQKUVvenC8wLTh6WHNLd">"A 是 B 的几倍""A 比 B 多几倍""A 与 B 之比""收入比"。</p></div>
+    <div class="key" data-page-node-id="DMxTO8C2x8VolVQxPNcZCi"><h4 data-page-node-id="UevGRDFA0Kice20X8E0kQs">核心钥匙（唯一考点）</h4><p data-page-node-id="yPuxL7UJE0v2QCQ2zHhnf1">A 是 B 的几倍 = A ÷ B；<b data-page-node-id="SwDC3uibgzWf3LfWZZN9KS">A 比 B 多几倍 = A ÷ B − 1</b>。两者<b data-page-node-id="t3ER3xu2p3MEsZ964sgdny">只差 1</b>。</p></div>
+    <div class="key" data-page-node-id="dKiuxKURjuPaSRF8rKOdjA"><h4 data-page-node-id="DBVOQio8l8I8AgBFSlUvih">排雷口诀</h4><p data-page-node-id="M6vGWNDXVEjJk0PhfPr5FR">看到"多几倍"，答案<b data-page-node-id="yMTOXJOtzlPdDXI5sXStvM">一定比"是几倍"小 1</b>。凡与"A ÷ B"相等的选项，先怀疑。</p></div>
+  </div>
+
+  <div class="card" data-page-node-id="odoYTvT3sxvKOo9GqRndKs">
+    <h3 data-page-node-id="GvtEF6oVwQRBFFs0jhpICz">典型题 1｜多几倍（"是几倍"必为陷阱项）</h3>
+    <div class="mat" data-page-node-id="c2KNpwiN5eUCXJF2oylsNt"><span class="mtitle" data-page-node-id="dz5JfEqM4NLGarpQndFjBX">材料</span>2023 年 A 市 GDP <b data-page-node-id="6pKs8AagCiTHjaFZyvofUR">3.2 万亿元</b>，B 市 <b data-page-node-id="LZuGrHinX40g3YnVWj4zx1">0.8 万亿元</b>。</div>
+    <div class="q" data-page-node-id="RxGTO349tTgDBzTpFMqGRX">
+      <div class="qtop" data-page-node-id="ZGqXjl52grICMbosEy9ASB"><span class="qno" data-page-node-id="evbNEl1RbV3yCBN7zcYmkb">例 1</span><span class="qstem" data-page-node-id="ZGTnCpRiFzkGS8u4plcfkj">2023 年 A 市 GDP 比 B 市多几倍？</span></div>
+      <div class="opts" data-page-node-id="VOlAN30FFMQYnqB6wlvlYH"><span data-page-node-id="tO1cUGH3BBxiWkQpixLgJW">A. 3</span><span data-page-node-id="MC2BKVbKuIqT3W1e0ieH0e">B. 4</span><span data-page-node-id="emtDcSsOvYkqngX8pejwyR">C. 5</span><span data-page-node-id="V5wbJBwKEqmVs3lUEFFloR">D. 8</span></div>
+      <div class="ana" data-page-node-id="P75qDgi63W1aZsrsorOxgM">
+        <div class="ana-h" data-page-node-id="V6VUswPDIphlss4oFGxNBB">解析 · 排除法优先</div>
+        <div class="as k1" data-page-node-id="Sx2tOIVU876aISPuDl31dM"><i data-page-node-id="waPSQswEQRTQZSajJWKLnQ">① 先排除</i><p data-page-node-id="GXTnYW5VilLFvckCDvmTzC">3.2 ÷ 0.8 = <b data-page-node-id="cpuOfherTLzBHAZmyB4gRf">4</b>，即"A 是 B 的 4 倍"。<br data-page-node-id="g9Eh30pfVN8cGneaWbYFl0">· B（4）是"是几倍"，题干问"多几倍"，差 1 —— 全卷最高频的表述陷阱 → <span class="del" data-page-node-id="phFlBmWCu3N5closBLOWKd">B 排除</span>。<br data-page-node-id="wageStPbBVwzwHLTM92WMb">· C（5）、D（8）远大于 3，量级不符 → <span class="del" data-page-node-id="B8ZJYplXVS0pXSjujAUcKC">C、D 排除</span>。</p></div>
+        <div class="as k2" data-page-node-id="BHutLXCCf4YyY5DlN4MTTY"><i data-page-node-id="V1DsKYDtB9qfKUDhBIAqUm">② 再缩小</i><p data-page-node-id="ONdqSs35i3vRwmFIvtRmIh">只剩 <b data-page-node-id="PFGsoADbmj7GHb8hdySGJc">A</b>。</p></div>
+        <div class="as k3" data-page-node-id="W8FOJ4fuBXvO9DA1LLY3D2"><i data-page-node-id="Jr2UdcmGiNvRrFNJxpFMLL">③ 后择优</i><p data-page-node-id="bMSxwJLvxcKfaJxj7Aiha0">多几倍 = 4 − 1 = <b data-page-node-id="BGKrRdfADMZD3ilp7VmClE">3</b> ✓。选 <b data-page-node-id="a3Jc9Cc7n1Q3uaO6F63jzC">A</b>。</p></div>
+        <div class="ans" data-page-node-id="UUEvgHpgknVqh0Uvm24a1M">答案：<b data-page-node-id="1PysfjdRnIcgjiGYTWioHF">A（3 倍）</b>　　<b data-page-node-id="0C67xlFuB6HTnL4SSacnMi">心法：</b>先算 A ÷ B，再读问法——"多几倍"减 1，"是几倍"不减。</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card" data-page-node-id="XxZiHgPbs48ZR9srMKGrY0">
+    <h3 data-page-node-id="0PHTOT0R5GS41KhGQfey4d">典型题 2｜比值（两端卡位）</h3>
+    <div class="mat" data-page-node-id="OlTo9OI1Fg14Im30L6cKhc"><span class="mtitle" data-page-node-id="ZbM7MwVuXe9TyNeHrhiWtT">材料</span>某年某省城镇居民人均可支配收入 <b data-page-node-id="JB45lDAY6QaTkM5IBTHp1O">45000 元</b>，农村居民 <b data-page-node-id="Pr2K5AgQBcJ5Iyl4siGODV">18000 元</b>。</div>
+    <div class="q" data-page-node-id="CePpt8ShcxAUx1w40i9sVN">
+      <div class="qtop" data-page-node-id="1s8ciRTwL5DCA8ETv3tEKj"><span class="qno" data-page-node-id="Tid8yJvpUVHYlDObXAuBB1">例 2</span><span class="qstem" data-page-node-id="ELl7iurs7fvlZPeafd9a42">城乡居民收入比约为：</span></div>
+      <div class="opts" data-page-node-id="yWncQGATrF0g2iKQRNHXp6"><span data-page-node-id="I1Wlm7eHhvJQirm00Mtavn">A. 1.5</span><span data-page-node-id="LBu5Yt6zY8vz4BCKIgzQWR">B. 2.0</span><span data-page-node-id="UA4ZJSKSbNGddHXIuHsLFs">C. 2.5</span><span data-page-node-id="zk1my9BGKyhXhAEhA3j5z3">D. 3.0</span></div>
+      <div class="ana" data-page-node-id="248qsH4YCW70y2siXvDcNC">
+        <div class="ana-h" data-page-node-id="FBkqlgFg4E4YetcVoZsbck">解析 · 排除法优先</div>
+        <div class="as k1" data-page-node-id="ClArPwfb7tTbQOTbarRimz"><i data-page-node-id="LMy5JzaBNua9Acnr0ZY2HA">① 先排除</i><p data-page-node-id="LZ5poSUVFnGVdPB631D31x">比值 = 45000 ÷ 18000，用两端夹逼：<br data-page-node-id="77R9nRTMBX86bhRCDDuPtr">· D（3.0）→ 18000 × 3 = 54000 &gt; 45000 → <span class="del" data-page-node-id="c0JVlOVyqHsfu6gb7Wc1pQ">D 排除</span>。<br data-page-node-id="pMa9gIzFZkfTobMB6rMw0e">· A（1.5）→ 18000 × 1.5 = 27000 &lt; 45000 → <span class="del" data-page-node-id="xqxoTATAP4ZMzxNpeVC8Fu">A 排除</span>。</p></div>
+        <div class="as k2" data-page-node-id="7IMjEHzQ49jQPQdaH4aW08"><i data-page-node-id="q5SMIRQdeLN0at5KXyDspq">② 再缩小</i><p data-page-node-id="8t4bNZBShw1FqlY1D7r8mU">只剩 <b data-page-node-id="1QhMK0AKf8CHhdCAxkgf37">B（2.0）</b> 与 <b data-page-node-id="7kP4V8C6nBewGRHIVaspxS">C（2.5）</b>。</p></div>
+        <div class="as k3" data-page-node-id="ivUCT6k9DSV6KolDkRqvbR"><i data-page-node-id="zBeUo7tfuaJ0VB2fEEOROL">③ 后择优</i><p data-page-node-id="GU1qkdMvdNFD9LCKrkswaS">18000 × 2.5 = <b data-page-node-id="9fcklEcgfHF1u7klSIs7VQ">45000</b> ✓ 正好吻合 → 选 <b data-page-node-id="PBHOfAVOowYwI31urk4HEA">C</b>。</p></div>
+        <div class="ans" data-page-node-id="Knkwg1vBvsyWGImm3O1i0N">答案：<b data-page-node-id="EnCmrXuHAzKEYpqYsZjsvc">C（2.5）</b>　　<b data-page-node-id="lkmCavXTEwzvZheIkZZxvS">心法：</b>比值题用"分母 × 选项"两端夹逼，比直接除法更快。</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card" data-page-node-id="I4n6oFm1Fv6P3e856le9tY">
+    <h3 data-page-node-id="ybIN1DPIT8TFxkgyDUbyRO">训练题组｜限时 4 分钟</h3>
+    <div class="q" data-page-node-id="qCsgPg7Any0neCXED4DoUD"><div class="qtop" data-page-node-id="TNFgx8YZEByB9h6rSGc6zR"><span class="qno" data-page-node-id="O4GgYl85oC2YiJ98p0ZnQk">1</span><span class="qstem" data-page-node-id="YBCRif0FzTH4DsIMdRO8r3">2023 年 A 省 GDP 5.4 万亿元，B 省 1.8 万亿元。A 是 B 的几倍？</span></div>
+      <div class="opts" data-page-node-id="ouaNZszTzohKMKvMpSWErQ"><span data-page-node-id="2HsSTQK5ETLHwVbgY5hIRK">A. 2</span><span data-page-node-id="z2dcFWMFJkBkjvQI7zjbC2">B. 3</span><span data-page-node-id="sBJgBUxkWb7xjCFIykFtVV">C. 4</span><span data-page-node-id="gu7lCC1u0cO7xMQ9lkUOKK">D. 5</span></div></div>
+    <div class="q" data-page-node-id="aH2gtRrGzgvDKO0T9e6NWZ"><div class="qtop" data-page-node-id="N7lv9iUeprHWiJSKNTAygF"><span class="qno" data-page-node-id="RvhXNhjfdf4O8fYEP3TlFq">2</span><span class="qstem" data-page-node-id="zLZUWjPOikMrICXFcSnSYG">某年城镇居民人均收入 45000 元，农村 18000 元。城镇比农村多几倍？</span></div>
+      <div class="opts" data-page-node-id="x3czIkIWK26lQcDSA8dGbR"><span data-page-node-id="YLDpiFyKxevf9xof9iPaEO">A. 1.5 倍</span><span data-page-node-id="YcWE2aZsQRKBfJ2Zxj2jCQ">B. 2.5 倍</span><span data-page-node-id="t29EcGuwcjNcHfmXPIpnrp">C. 3.5 倍</span><span data-page-node-id="9H7frRHN28AuuxKiDbCtvE">D. 4 倍</span></div></div>
+    <div class="q" data-page-node-id="wnuN8pUgYOwJp68HulAHHk"><div class="qtop" data-page-node-id="SkpedtFmGjm6mseQ819aKK"><span class="qno" data-page-node-id="AyLzZLyGEJptBbTKOR7E0c">3</span><span class="qstem" data-page-node-id="QxONOIkG421tEEtVfhIuCL">某年某省研发经费投入 2000 亿元，GDP 为 50000 亿元。研发投入强度（占比）约：</span></div>
+      <div class="opts" data-page-node-id="bwMsNAprJtfAEPiU3Qn1oc"><span data-page-node-id="XyUrACOwdLA1TSj4pclUTo">A. 4%</span><span data-page-node-id="HCcU6M9cAa131BEDj9Galg">B. 25%</span><span data-page-node-id="MjYisV1FYcufj7lic4Pyts">C. 0.4%</span><span data-page-node-id="htLYGPOvNtzmRtOhiQaCuL">D. 2.5%</span></div></div>
+    <div class="q" data-page-node-id="xW2KVresWjbqMglK0DA5AM"><div class="qtop" data-page-node-id="M9lAMlgLXi3786VesH79iE"><span class="qno" data-page-node-id="PlCisHzw6RUNdMQuXMFxrL">4</span><span class="qstem" data-page-node-id="CS25y1fiOJnw7pX1Nc5vBb">2023 年某市 GDP 8000 亿元，全省 GDP 40000 亿元。该市占全省比重约：</span></div>
+      <div class="opts" data-page-node-id="FTVBsxIGKTE9AoBplFlv1O"><span data-page-node-id="vHij5WlCcrvZWg5edi9Dch">A. 5%</span><span data-page-node-id="ywAY828IKWHxvJ981CG2wF">B. 20%</span><span data-page-node-id="hFRTHyqYg6fxGMKBwHd19P">C. 25%</span><span data-page-node-id="Y9GQguOZU3BHgNRQS4QDa3">D. 50%</span></div></div>
+    <div class="ansline" data-page-node-id="2LRUWlaL8oOih7DyPHXV4R"><div data-page-node-id="XEAbsXOgMPzEcclSClHt1T">1<b data-page-node-id="jwszHJUQBnUrv4Ru7dS6uZ">B</b>5.4/1.8</div><div data-page-node-id="9tT7XVa6VQcU8VCUQxWjie">2<b data-page-node-id="8ABNM4Qpl10FmFwCpapqEu">A</b>2.5−1</div><div data-page-node-id="cRWzPNbKfQokzCG454HS4L">3<b data-page-node-id="y7AxwWXsyFg3BA0YvocbIY">A</b>2000/50000</div><div data-page-node-id="ChAFwFoFJjZKSHUXgMLQB5">4<b data-page-node-id="AFdW2Dm8scDq1LvshXeCO5">B</b>8000/40000</div></div>
+    <div class="tip" data-page-node-id="bHr4lRySOpxZYSuCsCB1km"><b data-page-node-id="E61D1S4DTHQc3KgvFoMarO">第 2 题：</b>45000 ÷ 18000 = 2.5（是几倍），问"多几倍"→ 2.5 − 1 = 1.5 倍。这类题答错几乎都栽在忘了减 1。</div>
+  </div>
+</section>
+
+<section id="k8" data-page-node-id="o5ToKmgxCxu1YoXFp4Vwxw">
+  <div class="mhero" data-page-node-id="52eSm9ciHAamaZV8N1aAGM">
+    <div data-page-node-id="ZCbsHgvaSpH0nf6yKjWGex"><h3 data-page-node-id="SeZwjIeTm1GiGxPGoDib9f">考点 12 · 综合分析</h3><p data-page-node-id="OD1FuW0CS9jTETVBLp1Y4S">每篇材料最后一题：下列说法正确 / 错误的是</p></div>
+    <div class="mmeta" data-page-node-id="9dMSNQTE6sgoMBuK5Gjv6d"><b data-page-node-id="OhuAtMF6GarayDg2KP6IR8">30 篇</b>D5 – D9 · 拉分项</div>
+  </div>
+  <div class="keys" data-page-node-id="LJl9o4slh43AeDtX9hz95e">
+    <div class="key" data-page-node-id="quS1ANCenheqmpUGidmxqU"><h4 data-page-node-id="LxRi1N9xhoglO4Fe0sOWhU">识别特征</h4><p data-page-node-id="jQU9Uzoc4HsRjYZSgzBHFS">选项是四句"结论"，题干问"说法正确/错误""能推出/不能推出"。每篇的最后一题。</p></div>
+    <div class="key" data-page-node-id="4jCIUgSgxrADsiBUjWVjbw"><h4 data-page-node-id="WpDy6QihU2FeCbaaU5G1p3">核心策略</h4><p data-page-node-id="HGpslGn0vUtNhvBlgJRzcY"><b data-page-node-id="KS5unHN1VaymLHjjyRdYJj">先扫一遍选项，按"好算程度"排序</b>：先算加减和简单乘除，先排除简单项，往往验到 2–3 项就能锁定。</p></div>
+    <div class="key" data-page-node-id="JoSwgMx4Cyweek2Ud3IBlt"><h4 data-page-node-id="ECKm4lruA0zzqp9dB4y730">两种问法</h4><p data-page-node-id="DVvAytsdvvpFXsHQOmcrZX">问"<b data-page-node-id="1JZDnx7I3mw5ntd7iStzIW">正确</b>"→ 找到 1 个对的即止；问"<b data-page-node-id="n0jyb8QI8D3rHmJ6zjhPCr">错误</b>"→ 找到 1 个错的即止。不用把 4 项都算完。</p></div>
+  </div>
+
+  <div class="card" data-page-node-id="6DfHeqEg1wqoiDd3Jxb7Te">
+    <h3 data-page-node-id="FibcQuQGJqs5CCZdK1QdyE">典型题｜先排除，验到 3 项即锁定</h3>
+    <div class="mat" data-page-node-id="sPDIsRPIIs7Hz04LsXX0lw"><span class="mtitle" data-page-node-id="8YKxqRKGSKCGi996HIzC3H">材料</span>2023 年某市完成地区生产总值 <b data-page-node-id="aO1p6wsypRVABFqLxun6DG">8000 亿元</b>，同比增长 <b data-page-node-id="tFWqY7dHTOQU3Osx1xE8IK">5.5%</b>；其中第一产业 <b data-page-node-id="KVuKpKbfgF6l5Wkor5KgbU">160 亿元</b>，增长 2%；第二产业 <b data-page-node-id="llpzAvkaPtYyBPN3VQlMJb">3200 亿元</b>，增长 4%；第三产业 <b data-page-node-id="DrE8fcUxyRsAVcgqIEehv2">4640 亿元</b>，增长 6.5%。全年全社会固定资产投资 <b data-page-node-id="pjOkfaahVX9TYq416dy1FL">4000 亿元</b>，同比下降 1.5%。</div>
+    <div class="q" data-page-node-id="NO2sEyRnXd6HnUv3jUguER">
+      <div class="qtop" data-page-node-id="piLC2B8lUNTwfNZz9o5d0N"><span class="qno" data-page-node-id="fkDcCldNebLPvA21c5pScP">例</span><span class="qstem" data-page-node-id="itGjOwY6RM4A5fvScxUIHo">关于 2023 年该市经济数据，下列说法正确的是：</span></div>
+      <div class="opts" style="grid-template-columns:1fr" data-page-node-id="wdyOzR1wlqu7BFFIc3n5kg">
+        <span data-page-node-id="TsqO0Jdln0plA1G9dU6dwz">A. 第三产业增加值超过第二产业的 1.5 倍</span>
+        <span data-page-node-id="qIHhr3rqnwrRPCIhjvuoKk">B. 第一产业增加值占地区生产总值的比重超过 3%</span>
+        <span data-page-node-id="KEsvM1BiBNRD6Sw5D3gRaW">C. 固定资产投资比上年减少不到 100 亿元</span>
+        <span data-page-node-id="6Mygb8Wu4WKGvD1HdjIUkA">D. 第三产业增加值比上年增加超过 300 亿元</span>
+      </div>
+      <div class="ana" data-page-node-id="kqJ958FFrXMRekgaDpARMg">
+        <div class="ana-h" data-page-node-id="s1f2B0ZOrV6UmVU8I4F468">解析 · 排除法优先（按"好算程度"逐个划掉）</div>
+        <div class="as k1" data-page-node-id="NDpzvRDWctUEB2fDM557Fr"><i data-page-node-id="hdobfRoeBH1eRChGUTdoxv">① 先排除</i><p data-page-node-id="TkH0e9clBdmHYvbajlXOeT">挑最好算的下手，不必算完 4 项：<br data-page-node-id="sTDFFcKcw9ArLEKZA1jT8k">· <b data-page-node-id="pPkQgO4VGnGNvtWwSsnvdF">B 最好算：</b>160 ÷ 8000 = 2% &lt; 3% → <span class="del" data-page-node-id="5E5QhbUPq8vCExmtzJYPqH">B 错，排除</span>。<br data-page-node-id="1Ch5hZZqeZN4AR2aqR1PHy">· <b data-page-node-id="rMniTvF7jQHEQiVp0Kn9mr">A：</b>3200 × 1.5 = 4800 &gt; 4640 → <span class="del" data-page-node-id="TZ0Qj2eVvhEdtcWQHSESV0">A 错，排除</span>。<br data-page-node-id="SQntjm6er45kx7rnytxT3V">· <b data-page-node-id="BAUuDhFYESuGIK8fmqVQFT">D：</b>第三产业增长量 ≈ 4640 × 6.5% ÷ 1.065 ≈ 283 亿 &lt; 300（4640 × 6.5% = 301.6 是偏大值，真值必小于它）→ <span class="del" data-page-node-id="2xxdyULkRuxJS61pqH6aRx">D 错，排除</span>。</p></div>
+        <div class="as k2" data-page-node-id="m7AKjtkk7tFwnQzewuZBmo"><i data-page-node-id="DW1ua8tij4aftE5TUvVAz8">② 再缩小</i><p data-page-node-id="LiEH8HKW5JJDFAvIjHQK37">三项已划掉，只剩 <b data-page-node-id="UkHEaaR0C9nxVx70zhbElD">C</b>，即可锁定。</p></div>
+        <div class="as k3" data-page-node-id="6BhohL21Boe4kw5IYRdYTU"><i data-page-node-id="eG3PVTsAGuPDcI0SxsT0TL">③ 后择优 / 校验</i><p data-page-node-id="CDWZ3Q5ley1aaQVeCP6G8F">校验 C：4000 × 1.5% = <b data-page-node-id="qzc70om1HzAaLAPm7Mlbdo">60 亿</b> &lt; 100 亿 ✓。故选 <b data-page-node-id="BkNEQHYt1WoLvWCXdFrj4b">C</b>。</p></div>
+        <div class="ans" data-page-node-id="9W2neUnEyAF2jlNcUeKI38">答案：<b data-page-node-id="rJiICHhwibgIG0adE5uOND">C</b>　　<b data-page-node-id="6NPSODNuxycvynGZSMz05X">心法：</b>综合分析题<b data-page-node-id="G6x9Gd2uImtgpo8jRZa9r1">不要从 A 死磕到 D</b>。先挑好算的，排除 3 项后答案自然浮出。</div>
+      </div>
+    </div>
+    <div class="tip" data-page-node-id="kRBTgTOkN1lZAVA2OeHgzV"><b data-page-node-id="Yw0HZsBh7pCehFFd7Tc7Qb">时间分配：</b>一篇材料的综合分析题最多给 <b data-page-node-id="PvpVNNGk9PCoTfflekppkA">90 秒</b>。超时就标记跳过，先把后面的简单题做完再回头——这是"能排除就排除"的时间版。</div>
+  </div>
+</section>
+
+<!-- ============ 2026 真题精练 ============ -->
+<section id="zhenti" data-page-node-id="zt0000000001">
+  <div class="sec-head" data-page-node-id="zt0000000002"><span class="idx" data-page-node-id="zt0000000003">13</span><h2 data-page-node-id="zt0000000004">2026 真题精练（国考 · 考生回忆版）</h2></div>
+  <p class="sec-desc" data-page-node-id="zt0000000005">外网核实来源：<b>华图教育官网</b>（多分站互证）。原则：<b>只收录能查到原文、且多源一致的题目</b>；查不到的一律不放，绝不拿文档站的拼凑内容充数。</p>
+
+  <div class="card" data-page-node-id="zt0000000006">
+    <h3 data-page-node-id="zt0000000007">先看考情：2026 国考行政执法类资料分析考点分布</h3>
+    <p style="font-size:13.4px;color:var(--ink-2);margin-bottom:10px" data-page-node-id="zt0000000008">数据来源：华图教育《2026国考行政执法类行测命题变化解读-数资》（2025-11-30 发布），全卷资料分析共 20 题。</p>
+    <table data-page-node-id="zt0000000009">
+      <thead data-page-node-id="zt0000000010"><tr data-page-node-id="zt0000000011"><th data-page-node-id="zt0000000012">考点</th><th data-page-node-id="zt0000000013">2026 题量</th><th data-page-node-id="zt0000000014">2025 题量</th><th data-page-node-id="zt0000000015">变化</th><th data-page-node-id="zt0000000016">复习优先级</th></tr></thead>
+      <tbody data-page-node-id="zt0000000017">
+        <tr data-page-node-id="zt0000000018"><td data-page-node-id="zt0000000019">比重、利润率、比值</td><td class="num" data-page-node-id="zt0000000020">7</td><td class="num" data-page-node-id="zt0000000021">7</td><td data-page-node-id="zt0000000022">持平</td><td data-page-node-id="zt0000000023"><b data-page-node-id="zt0000000024">最高</b>（占 35%）</td></tr>
+        <tr data-page-node-id="zt0000000025"><td data-page-node-id="zt0000000026">增长率</td><td class="num" data-page-node-id="zt0000000027">4</td><td class="num" data-page-node-id="zt0000000028">3</td><td data-page-node-id="zt0000000029">+1</td><td data-page-node-id="zt0000000030"><b data-page-node-id="zt0000000031">高</b></td></tr>
+        <tr data-page-node-id="zt0000000032"><td data-page-node-id="zt0000000033">增长量</td><td class="num" data-page-node-id="zt0000000034">2</td><td class="num" data-page-node-id="zt0000000035">2</td><td data-page-node-id="zt0000000036">持平</td><td data-page-node-id="zt0000000037">高</td></tr>
+        <tr data-page-node-id="zt0000000038"><td data-page-node-id="zt0000000039">倍数</td><td class="num" data-page-node-id="zt0000000040">2</td><td class="num" data-page-node-id="zt0000000041">2</td><td data-page-node-id="zt0000000042">持平</td><td data-page-node-id="zt0000000043">中（送分）</td></tr>
+        <tr data-page-node-id="zt0000000044"><td data-page-node-id="zt0000000045">综合分析</td><td class="num" data-page-node-id="zt0000000046">2</td><td class="num" data-page-node-id="zt0000000047">1</td><td data-page-node-id="zt0000000048">+1</td><td data-page-node-id="zt0000000049">中（耗时长）</td></tr>
+        <tr data-page-node-id="zt0000000050"><td data-page-node-id="zt0000000051">简单计算与比较</td><td class="num" data-page-node-id="zt0000000052">1</td><td class="num" data-page-node-id="zt0000000053">0</td><td data-page-node-id="zt0000000054">+1</td><td data-page-node-id="zt0000000055">中（送分）</td></tr>
+        <tr data-page-node-id="zt0000000056"><td data-page-node-id="zt0000000057">现期量</td><td class="num" data-page-node-id="zt0000000058">1</td><td class="num" data-page-node-id="zt0000000059">1</td><td data-page-node-id="zt0000000060">持平</td><td data-page-node-id="zt0000000061">中</td></tr>
+        <tr data-page-node-id="zt0000000062"><td data-page-node-id="zt0000000063">平均数</td><td class="num" data-page-node-id="zt0000000064">1</td><td class="num" data-page-node-id="zt0000000065">3</td><td data-page-node-id="zt0000000066">−2</td><td data-page-node-id="zt0000000067">低（但平均数增长率仍考）</td></tr>
+        <tr data-page-node-id="zt0000000068"><td data-page-node-id="zt0000000069">基期量</td><td class="num" data-page-node-id="zt0000000070">0</td><td class="num" data-page-node-id="zt0000000071">1</td><td data-page-node-id="zt0000000072">−1</td><td data-page-node-id="zt0000000073">低</td></tr>
+        <tr data-page-node-id="zt0000000074"><td data-page-node-id="zt0000000075">其他类</td><td class="num" data-page-node-id="zt0000000076">0</td><td class="num" data-page-node-id="zt0000000077">0</td><td data-page-node-id="zt0000000078">—</td><td data-page-node-id="zt0000000079">—</td></tr>
+        <tr data-page-node-id="zt0000000080"><td data-page-node-id="zt0000000081"><b data-page-node-id="zt0000000082">合计</b></td><td class="num" data-page-node-id="zt0000000083"><b data-page-node-id="zt0000000084">20</b></td><td class="num" data-page-node-id="zt0000000085"><b data-page-node-id="zt0000000086">20</b></td><td data-page-node-id="zt0000000087">—</td><td data-page-node-id="zt0000000088">—</td></tr>
+      </tbody>
+    </table>
+    <div class="ok" data-page-node-id="zt0000000089"><b data-page-node-id="zt0000000090">三个结论：</b>① <b>比重类独占 7 题（35%）</b>，是你最该练到条件反射的；② <b>增长率 + 增长量共 6 题</b>，稳居第二梯队；③ <b>基期量、平均数在减少</b>，但"平均数增长率"照考（见下面第 5 题）。<br>华图另点名两个易错点：<b>"累计"陷阱</b>与<b>单位陷阱</b>——正好对应你题本里「材料类型」那一节的读表动作。</div>
+  </div>
+
+  <div class="card" data-page-node-id="zt0000000091">
+    <h3 data-page-node-id="zt0000000092">2026 国考·副省级 资料分析（完整材料 + 5 题）</h3>
+    <div class="tip" data-page-node-id="zt0000000093"><b data-page-node-id="zt0000000094">来源标注：</b>华图教育官网（安徽、陕西、新疆分站及主站多页互证），原文标注为<b>考生回忆版</b>，检索页另注"副省级·第 118 题"。<b>不同转载版本的选项顺序略有出入</b>，本页按答案内容为准，第 5 题已特别注明。</div>
+
+    <div class="mat" data-page-node-id="zt0000000095"><span class="mtitle" data-page-node-id="zt0000000096">表 1｜2025 年一季度全国期货市场成交量（单位：百万手，同比增速 %）</span>
+      <table data-page-node-id="zt0000000097">
+        <thead data-page-node-id="zt0000000098"><tr data-page-node-id="zt0000000099"><th data-page-node-id="zt0000000100">期货交易所</th><th data-page-node-id="zt0000000101">一季度</th><th data-page-node-id="zt0000000102">3 月</th><th data-page-node-id="zt0000000103">一季度增速</th><th data-page-node-id="zt0000000104">3 月增速</th></tr></thead>
+        <tbody data-page-node-id="zt0000000105">
+          <tr data-page-node-id="zt0000000106"><td data-page-node-id="zt0000000107">上海期货交易所</td><td data-page-node-id="zt0000000108">493.5</td><td data-page-node-id="zt0000000109">193.3</td><td data-page-node-id="zt0000000110">27.8</td><td data-page-node-id="zt0000000111">12.9</td></tr>
+          <tr data-page-node-id="zt0000000112"><td data-page-node-id="zt0000000113">上海国际能源交易中心</td><td data-page-node-id="zt0000000114">39.0</td><td data-page-node-id="zt0000000115">15.0</td><td data-page-node-id="zt0000000116">16.0</td><td data-page-node-id="zt0000000117">31.3</td></tr>
+          <tr data-page-node-id="zt0000000118"><td data-page-node-id="zt0000000119">郑州商品交易所</td><td data-page-node-id="zt0000000120">633.2</td><td data-page-node-id="zt0000000121">253.4</td><td data-page-node-id="zt0000000122">28.9</td><td data-page-node-id="zt0000000123">28.7</td></tr>
+          <tr data-page-node-id="zt0000000124"><td data-page-node-id="zt0000000125">中国金融期货交易所</td><td data-page-node-id="zt0000000126">72.7</td><td data-page-node-id="zt0000000127">26.2</td><td data-page-node-id="zt0000000128">17.7</td><td data-page-node-id="zt0000000129">33.2</td></tr>
+          <tr data-page-node-id="zt0000000130"><td data-page-node-id="zt0000000131">大连商品交易所</td><td data-page-node-id="zt0000000132">573.1</td><td data-page-node-id="zt0000000133">234.7</td><td data-page-node-id="zt0000000134">12.7</td><td data-page-node-id="zt0000000135">11.0</td></tr>
+          <tr data-page-node-id="zt0000000136"><td data-page-node-id="zt0000000137">广州期货交易所</td><td data-page-node-id="zt0000000138">38.2</td><td data-page-node-id="zt0000000139">11.9</td><td data-page-node-id="zt0000000140">33.6</td><td data-page-node-id="zt0000000141">−24.5</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="mat" data-page-node-id="zt0000000142"><span class="mtitle" data-page-node-id="zt0000000143">表 2｜2025 年一季度全国期货市场成交额（单位：万亿元，同比增速 %）</span>
+      <table data-page-node-id="zt0000000144">
+        <thead data-page-node-id="zt0000000145"><tr data-page-node-id="zt0000000146"><th data-page-node-id="zt0000000147">期货交易所</th><th data-page-node-id="zt0000000148">一季度</th><th data-page-node-id="zt0000000149">3 月</th><th data-page-node-id="zt0000000150">一季度增速</th><th data-page-node-id="zt0000000151">3 月增速</th></tr></thead>
+        <tbody data-page-node-id="zt0000000152">
+          <tr data-page-node-id="zt0000000153"><td data-page-node-id="zt0000000154">上海期货交易所</td><td data-page-node-id="zt0000000155">48.2</td><td data-page-node-id="zt0000000156">19.4</td><td data-page-node-id="zt0000000157">54.4</td><td data-page-node-id="zt0000000158">31.9</td></tr>
+          <tr data-page-node-id="zt0000000159"><td data-page-node-id="zt0000000160">上海国际能源交易中心</td><td data-page-node-id="zt0000000161">7.7</td><td data-page-node-id="zt0000000162">2.8</td><td data-page-node-id="zt0000000163">−10.6</td><td data-page-node-id="zt0000000164">−5.0</td></tr>
+          <tr data-page-node-id="zt0000000165"><td data-page-node-id="zt0000000166">郑州商品交易所</td><td data-page-node-id="zt0000000167">21.1</td><td data-page-node-id="zt0000000168">7.8</td><td data-page-node-id="zt0000000169">28.5</td><td data-page-node-id="zt0000000170">20.1</td></tr>
+          <tr data-page-node-id="zt0000000171"><td data-page-node-id="zt0000000172">中国金融期货交易所</td><td data-page-node-id="zt0000000173">60.6</td><td data-page-node-id="zt0000000174">21.9</td><td data-page-node-id="zt0000000175">39.1</td><td data-page-node-id="zt0000000176">44.7</td></tr>
+          <tr data-page-node-id="zt0000000177"><td data-page-node-id="zt0000000178">大连商品交易所</td><td data-page-node-id="zt0000000179">22.6</td><td data-page-node-id="zt0000000180">9.3</td><td data-page-node-id="zt0000000181">1.9</td><td data-page-node-id="zt0000000182">0.4</td></tr>
+          <tr data-page-node-id="zt0000000183"><td data-page-node-id="zt0000000184">广州期货交易所</td><td data-page-node-id="zt0000000185">1.8</td><td data-page-node-id="zt0000000186">0.5</td><td data-page-node-id="zt0000000187">−15.7</td><td data-page-node-id="zt0000000188">−58.8</td></tr>
+        </tbody>
+      </table>
+      <div style="font-size:12px;color:#7b8798;margin-top:6px" data-page-node-id="zt0000000189">注：表中所列 6 个期货交易所为截至 2025 年 3 月末全国所有的期货交易所。</div>
+    </div>
+
+    <div class="q" data-page-node-id="zt0000000190">
+      <div class="qtop" data-page-node-id="zt0000000191"><span class="qno" data-page-node-id="zt0000000192">真题 1</span><span class="qstem" data-page-node-id="zt0000000193">2025 年一季度全国期货市场成交额约为多少万亿元？</span></div>
+      <div class="opts" data-page-node-id="zt0000000194"><span data-page-node-id="zt0000000195">A. 153</span><span data-page-node-id="zt0000000196">B. 162</span><span data-page-node-id="zt0000000197">C. 175</span><span data-page-node-id="zt0000000198">D. 184</span></div>
+      <div class="ana" data-page-node-id="zt0000000199">
+        <div class="ana-h" data-page-node-id="zt0000000200">解析 · 排除法优先</div>
+        <div class="as k1" data-page-node-id="zt0000000201"><i data-page-node-id="zt0000000202">① 先排除</i><p data-page-node-id="zt0000000203"><b>先看单位：</b>问"成交额"，就取<b>表 2</b>的"一季度"那一列（万亿元）；若错取表 1 的成交量（百万手），会算出 1849.7，方向全错。<br>六个数：48.2、7.7、21.1、60.6、22.6、1.8。<br>· 前两个大项已 48.2 + 60.6 = 108.8，加上 21.1 + 22.6 = 152.5，再加 7.7 + 1.8 = 162。<br>· A（153）→ 比 162 少 9，等于把 7.7 或 9.3 整个漏掉 → <span class="del">A 排除</span>。<br>· C（175）比 162 高 13、D（184）高 22 —— 六个正数里最大的单笔才 60.6，凑不出这个差额 → <span class="del">C、D 排除</span>。</p></div>
+        <div class="as k2" data-page-node-id="zt0000000204"><i data-page-node-id="zt0000000205">② 再缩小</i><p data-page-node-id="zt0000000206">只剩 <b>B</b>。</p></div>
+        <div class="as k3" data-page-node-id="zt0000000207"><i data-page-node-id="zt0000000208">③ 后择优</i><p data-page-node-id="zt0000000209">精确相加：48.2 + 7.7 = 55.9 → +21.1 = 77.0 → +60.6 = 137.6 → +22.6 = 160.2 → +1.8 = <b>162.0</b> ✓。选 <b>B</b>。</p></div>
+        <div class="ans" data-page-node-id="zt0000000210">答案：<b data-page-node-id="zt0000000211">B（162 万亿元）</b>　　<b data-page-node-id="zt0000000212">心法：</b>简单计算题的失分几乎全在"看错列"——成交额与成交量两列单位不同，先圈单位再取数。</div>
+      </div>
+    </div>
+
+    <div class="q" data-page-node-id="zt0000000213">
+      <div class="qtop" data-page-node-id="zt0000000214"><span class="qno" data-page-node-id="zt0000000215">真题 2</span><span class="qstem" data-page-node-id="zt0000000216">2025 年 1—2 月，上海期货交易所成交额同比增速在以下哪个范围内？</span></div>
+      <div class="opts" data-page-node-id="zt0000000217"><span data-page-node-id="zt0000000218">A. 不到 45%</span><span data-page-node-id="zt0000000219">B. 超过 85%</span><span data-page-node-id="zt0000000220">C. 45%~65% 之间</span><span data-page-node-id="zt0000000221">D. 65%~85% 之间</span></div>
+      <div class="ana" data-page-node-id="zt0000000222">
+        <div class="ana-h" data-page-node-id="zt0000000223">解析 · 排除法优先（混合增长率，前两步不计算）</div>
+        <div class="as k1" data-page-node-id="zt0000000224"><i data-page-node-id="zt0000000225">① 先排除</i><p data-page-node-id="zt0000000226">上海期货：一季度成交额 48.2 万亿（增速 54.4%），3 月 19.4 万亿（增速 31.9%）。则 <b>1—2 月 = 48.2 − 19.4 = 28.8 万亿</b>，是这条线的<b>主体</b>。<br>混合增长率必落在两个部分增速之间，且<b>靠近量大的那部分</b>：<br>· 1—2 月量（28.8）＞ 3 月量（19.4）→ 季度增速 54.4% 必然靠近 1—2 月 → <b>1—2 月增速 &gt; 54.4%</b> → <span class="del">A（不到 45%）排除</span>。<br>· 又因 54.4% 必须落在两者之间，1—2 月增速最多比 54.4% 高出（54.4% − 31.9%）= 22.5 个百分点，即<b>上界约 76.9%</b>，达不到 85% → <span class="del">B（超过 85%）排除</span>。</p></div>
+        <div class="as k2" data-page-node-id="zt0000000227"><i data-page-node-id="zt0000000228">② 再缩小</i><p data-page-node-id="zt0000000229">只剩 <b>C（45%~65%）</b> 与 <b>D（65%~85%）</b>。</p></div>
+        <div class="as k3" data-page-node-id="zt0000000230"><i data-page-node-id="zt0000000231">③ 后择优</i><p data-page-node-id="zt0000000232">用"增速差与量成反比"算一步：|1—2月 r − 54.4%| ÷ |54.4% − 31.9%| = 19.4 ÷ 28.8 ≈ 0.67，故 1—2 月增速 ≈ 54.4% + 22.5% × 0.67 ≈ <b>69.5%</b>，落在 D 区间。选 <b>D</b>。</p></div>
+        <div class="ans" data-page-node-id="zt0000000233">答案：<b data-page-node-id="zt0000000234">D（65%~85%）</b>　　<b>心法：</b>混合增长率题，先把"整体增速必在两部分之间、且靠近量大的一方"用足——本题<b>前两步一个数都不用算就排掉一半</b>。</div>
+      </div>
+    </div>
+
+    <div class="q" data-page-node-id="zt0000000235">
+      <div class="qtop" data-page-node-id="zt0000000236"><span class="qno" data-page-node-id="zt0000000237">真题 3</span><span class="qstem" data-page-node-id="zt0000000238">全国 2025 年 3 月成交量超过一季度月均成交量的期货交易所有几个？</span></div>
+      <div class="opts" data-page-node-id="zt0000000239"><span data-page-node-id="zt0000000240">A. 5</span><span data-page-node-id="zt0000000241">B. 4</span><span data-page-node-id="zt0000000242">C. 3</span><span data-page-node-id="zt0000000243">D. 2</span></div>
+      <div class="ana" data-page-node-id="zt0000000244">
+        <div class="ana-h" data-page-node-id="zt0000000245">解析 · 排除法优先</div>
+        <div class="as k1" data-page-node-id="zt0000000246"><i data-page-node-id="zt0000000247">① 先排除</i><p data-page-node-id="zt0000000248"><b>把除法换成乘法：</b>"3 月 &gt; 一季度 ÷ 3" ⇔ "<b>3 月 × 3 &gt; 一季度</b>"，一下就能比。注意一季度 = 1—3 月，共 <b>3 个月</b>（不是 4 个）。<br>逐家比（取表 1）：<br>· 上海期货 193.3×3 ≈ 580 &gt; 493.5 ✓<br>· 上海能源 15.0×3 = 45 &gt; 39.0 ✓<br>· 郑州 253.4×3 ≈ 760 &gt; 633.2 ✓<br>· 中金所 26.2×3 ≈ 78.6 &gt; 72.7 ✓<br>· 大连 234.7×3 ≈ 704 &gt; 573.1 ✓<br>· 广州 11.9×3 = 35.7 &lt; 38.2 ✗<br>→ 只有<b>广州</b>不满足，其余 5 家全部满足。</p></div>
+        <div class="as k2" data-page-node-id="zt0000000249"><i data-page-node-id="zt0000000250">② 再缩小</i><p data-page-node-id="zt0000000251">只有 1 家不达标 → 答案是 <b>5 个</b>。B(4)、C(3)、D(2) 都小于 5，直接排除。</p></div>
+        <div class="as k3" data-page-node-id="zt0000000252"><i data-page-node-id="zt0000000253">③ 后择优</i><p data-page-node-id="zt0000000254">甚至不必精算：5 家的"3 月×3"都<b>明显大于</b>一季度，广州则明显小于，判定毫无悬念。选 <b>A</b>。</p></div>
+        <div class="ans" data-page-node-id="zt0000000255">答案：<b data-page-node-id="zt0000000256">A（5 个）</b>　　<b>心法：</b>比较"某月 vs 月均"一律转为"某月 × 月数 vs 总量"，把除法变乘法，又快又不出错。</div>
+      </div>
+    </div>
+
+    <div class="q" data-page-node-id="zt0000000257">
+      <div class="qtop" data-page-node-id="zt0000000258"><span class="qno" data-page-node-id="zt0000000259">真题 4</span><span class="qstem" data-page-node-id="zt0000000260">2024 年一季度，郑州商品交易所成交量比大连商品交易所：</span></div>
+      <div class="opts" data-page-node-id="zt0000000261"><span data-page-node-id="zt0000000262">A. 多不到 0.5 亿手</span><span data-page-node-id="zt0000000263">B. 少不到 0.5 亿手</span><span data-page-node-id="zt0000000264">C. 多 0.5 亿手以上</span><span data-page-node-id="zt0000000265">D. 少 0.5 亿手以上</span></div>
+      <div class="ana" data-page-node-id="zt0000000266">
+        <div class="ana-h" data-page-node-id="zt0000000267">解析 · 排除法优先</div>
+        <div class="as k1" data-page-node-id="zt0000000268"><i data-page-node-id="zt0000000269">① 先排除</i><p data-page-node-id="zt0000000270">问的是 <b>2024 年</b>（基期），要先把现期"还原"：郑州 633.2 ÷ 1.289 ≈ 491 百万手；大连 573.1 ÷ 1.127 ≈ 508 百万手。<br>· 0.5 亿手 = <b>50 百万手</b>，而两者基期量都在 490~510 之间，差距只有 17 百万手左右，远小于 50 → <span class="del">C、D（"0.5 亿手以上"）排除</span>。</p></div>
+        <div class="as k2" data-page-node-id="zt0000000271"><i data-page-node-id="zt0000000272">② 再缩小</i><p data-page-node-id="zt0000000273">只剩 A（多不到 0.5 亿手）与 B（少不到 0.5 亿手），只需定<b>方向</b>。</p></div>
+        <div class="as k3" data-page-node-id="zt0000000274"><i data-page-node-id="zt0000000275">③ 后择优</i><p data-page-node-id="zt0000000276">郑州基期 491 &lt; 大连基期 508，即郑州<b>比大连少</b>约 17 百万手 ≈ 0.17 亿手 → 选 <b>B</b>。（郑州增速更高（28.9% vs 12.7%），虽然现期比大连高 60 百万手，但基期反而是低的——这正是本题的坑。）</p></div>
+        <div class="ans" data-page-node-id="zt0000000277">答案：<b data-page-node-id="zt0000000278">B（少不到 0.5 亿手）</b>　　<b>心法：</b>比"基期的大小关系"时，<b>不能照搬现期的大小关系</b>——增速差足够大时，现期谁大，基期可能谁小。</div>
+      </div>
+    </div>
+
+    <div class="q" data-page-node-id="zt0000000279">
+      <div class="qtop" data-page-node-id="zt0000000280"><span class="qno" data-page-node-id="zt0000000281">真题 5</span><span class="qstem" data-page-node-id="zt0000000282">全国期货交易所中，2025 年 3 月平均每手成交额同比增幅和同比降幅最大的分别是：</span></div>
+      <div class="opts" style="grid-template-columns:1fr" data-page-node-id="zt0000000283">
+        <span data-page-node-id="zt0000000284">A. 上海期货交易所，广州期货交易所</span>
+        <span data-page-node-id="zt0000000285">B. 上海期货交易所，上海国际能源交易中心</span>
+        <span data-page-node-id="zt0000000286">C. 中国金融期货交易所，广州期货交易所</span>
+        <span data-page-node-id="zt0000000287">D. 中国金融期货交易所，上海国际能源交易中心</span>
+      </div>
+      <div class="ana" data-page-node-id="zt0000000288">
+        <div class="ana-h" data-page-node-id="zt0000000289">解析 · 排除法优先（平均数增长率）</div>
+        <div class="as k1" data-page-node-id="zt0000000290"><i data-page-node-id="zt0000000291">① 先排除</i><p data-page-node-id="zt0000000292">平均每手成交额 = 成交额 ÷ 成交量，其增长率 = (a − b) ÷ (1 + b)，a = 成交额增速、b = 成交量增速（<b>都取 3 月那一列</b>）。<br>先比"增幅最大"，只需看 3 月成交额增速为正的上海期货与中金所：<br>· 上海期货：(31.9% − 12.9%) ÷ 1.129 = 19 ÷ 1.129 ≈ <b>16.8%</b><br>· 中金所：(44.7% − 33.2%) ÷ 1.332 = 11.5 ÷ 1.332 ≈ <b>8.6%</b><br>→ 上海期货增幅更大 → <span class="del">C、D（含"中金所"）排除</span>。</p></div>
+        <div class="as k2" data-page-node-id="zt0000000293"><i data-page-node-id="zt0000000294">② 再缩小</i><p data-page-node-id="zt0000000295">只剩 A、B，区别只在"降幅最大"是<b>广州</b>还是<b>上海能源</b>。这里有个陷阱：只比分子的话，上海能源 −36.3 看着比广州 −34.3 更大——<b>但分母不一样</b>，不能只看分子。</p></div>
+        <div class="as k3" data-page-node-id="zt0000000296"><i data-page-node-id="zt0000000297">③ 后择优</i><p data-page-node-id="zt0000000298">带上分母各算一步：<br>· 广州：(−58.8% + 24.5%) ÷ 0.755 = −34.3 ÷ 0.755 ≈ <b>−45%</b><br>· 上海能源：(−5.0% − 31.3%) ÷ 1.313 = −36.3 ÷ 1.313 ≈ <b>−27.6%</b><br>取绝对值比降幅：45% &gt; 27.6%，<b>广州降幅更大</b> → 排除 B。选 <b>A</b>。</p></div>
+        <div class="ans" data-page-node-id="zt0000000299">答案：<b data-page-node-id="zt0000000300">A（上海期货交易所，广州期货交易所）</b>　　<b>提示：</b>此题各转载版本的<b>选项顺序不同</b>（另有版本把"中金所"排在 A、答案标为 C），但答案内容一致——<b>增幅最大的上海期货交易所、降幅最大的广州期货交易所</b>。</div>
+      </div>
+    </div>
+
+    <div class="ansline" style="grid-template-columns:repeat(5,1fr)" data-page-node-id="zt0000000301">
+      <div data-page-node-id="zt0000000302">1<b data-page-node-id="zt0000000303">B</b>简单计算</div><div data-page-node-id="zt0000000304">2<b data-page-node-id="zt0000000305">D</b>混合增长率</div><div data-page-node-id="zt0000000306">3<b data-page-node-id="zt0000000307">A</b>现期平均数</div><div data-page-node-id="zt0000000308">4<b data-page-node-id="zt0000000309">B</b>基期量和差</div><div data-page-node-id="zt0000000310">5<b data-page-node-id="zt0000000311">A</b>平均数增长率</div>
+    </div>
+    <div class="ok" data-page-node-id="zt0000000312"><b data-page-node-id="zt0000000313">这套题暴露了你的四个薄弱点，对号入座：</b>① 第 1 题错 → 回「材料 2 统计表」练圈单位；② 第 2 题错 → 补「考点 7 增长率」里的混合增长率（你题本里目前只有间隔增长率，这是缺口）；③ 第 4 题错 → 回「考点 6 基期与现期」，重点练"基期大小 ≠ 现期大小"；④ 第 5 题错 → 回「考点 10 平均数问题」，记牢 (a−b)÷(1+b) 和"分母不能丢"。</div>
+  </div>
+
+  <div class="card" data-page-node-id="zt0000000314">
+    <h3 data-page-node-id="zt0000000315">说明：2026 福建省考为什么没放进来</h3>
+    <div class="danger" data-page-node-id="zt0000000316"><b data-page-node-id="zt0000000317">查不到可信来源。</b>华图官网对福建只发布<b>面试</b>真题及解析（2025 年），没有行测笔试真题；能搜到的"2026 福建省考行测"全部来自人人文库、百度文库等文档站，且<b>自相矛盾</b>——例如同一篇里写"第三产业比第二产业多 150 亿元……最接近 C 项 180 亿元"，还有"城镇登记失业人数 = 3% ×（10 + 5）= 0.45 万人"这类算不通的式子。这类内容一律不采信。</div>
+    <div class="tip" data-page-node-id="zt0000000318"><b data-page-node-id="zt0000000319">两条可选路径：</b>① 你有 2026 福建省考行测的纸质卷/PDF/截图，发我，我按同样的"三步排除法"重写解析并补进本节；② 先不管福建——<b>省考资料分析的考点与国考高度重合</b>，把这篇国考真题练透，再按上面的考情表补齐"混合增长率"这一缺口，比刷来路不明的题有效得多。</div>
+  </div>
+</section>
+
+<section id="set" data-page-node-id="ZdzCMdZAQZ22tRCkf0GZSd">
+  <div class="sec-head" data-page-node-id="eFr612LJIkptLkdRf24AV2"><span class="idx" data-page-node-id="HwrRrQji2MYqnxSURhfKRM">14</span><h2 data-page-node-id="oeyOXUMTrIeqrPHNU32WMi">综合限时套题｜1 篇材料 5 题（限时 7 分钟）</h2></div>
+  <p class="sec-desc" data-page-node-id="3mvIIFIyAaGvSFYJ8clBYi">覆盖材料类型与全部考点。请先盖住解析与答案，严格计时 7 分钟，再逐题对照。</p>
+  <div class="card" data-page-node-id="bzxodS5J9cD26zxINjN1sK">
+    <div class="mat" data-page-node-id="3FWZmvcWakbyxPxsgVz9e9"><span class="mtitle" data-page-node-id="JJo5CHzvywlYKtUXMdgLpw">材料｜2023 年某市国民经济主要指标</span>
+      2023 年，某市实现地区生产总值 <b data-page-node-id="pFcUZF2ut0YQ31NpufSkVP">8600 亿元</b>，比上年增长 <b data-page-node-id="jpmT9a1xc0FHEEBUdMkp9m">6.0%</b>。其中，第一产业增加值 <b data-page-node-id="ic4rjjdrIy9zDMxEznYLi4">172 亿元</b>，增长 3.0%；第二产业增加值 <b data-page-node-id="7t5JBHJs9nizfNrPvEmN8k">3612 亿元</b>，增长 4.5%；第三产业增加值 <b data-page-node-id="IKjD20Tw2JlfZs6r5a5hC6">4816 亿元</b>，增长 7.2%。<br data-page-node-id="HABHkGqfe6WWOyTIcJPjRS">
+      全年规模以上工业增加值 2900 亿元，增长 5.5%；规模以上工业企业实现利润总额 480 亿元，增长 9.0%。<br data-page-node-id="2DEDTEIsbwSX2W1KxLDcx7">
+      全年全社会固定资产投资 3200 亿元，增长 4.0%，其中房地产开发投资 <b data-page-node-id="3lAcI2BVMFNdFyMGrg4YDu">1120 亿元</b>，下降 <b data-page-node-id="8bZIfU2q66RqNw0cPGMNl2">2.5%</b>。<br data-page-node-id="h001BBXHNXCbFKc5dJca6A">
+      全年社会消费品零售总额 <b data-page-node-id="HwWN6rRvHqvmA95UWvR2bB">4100 亿元</b>，增长 8.0%。年末常住人口 <b data-page-node-id="Wh6uLOEzrq8eHSFBe2BQXe">860 万人</b>，比上年末增加 6 万人。
+    </div>
+
+    <div class="q" data-page-node-id="qbJIxxqxsArXQleNcd9bBq">
+      <div class="qtop" data-page-node-id="fTeUc5D4c3s6oxTbjiMDC3"><span class="qno" data-page-node-id="nJ0bX1ZeEHm0kJ2YMbg0wx">1</span><span class="qstem" data-page-node-id="cPXeLpKExjxFAR9kRlz2tg">2023 年该市第三产业增加值比第二产业约多多少亿元？</span></div>
+      <div class="opts" data-page-node-id="CwicKpsQeyXfajLeqBTIQe"><span data-page-node-id="3uhOuoSgLA6phRSICLd8nS">A. 980</span><span data-page-node-id="YgqBkKdlJu546jakpq2c9j">B. 1204</span><span data-page-node-id="508tetCGGgmdN2SjHbJWsc">C. 1444</span><span data-page-node-id="WtYouuFEOAhqdmgGdFW3I0">D. 4816</span></div>
+      <div class="ana" data-page-node-id="28P8gHg6nTWPmYrExuNrOq">
+        <div class="ana-h" data-page-node-id="aXfM9LdTSeaOl9q4tVnPsv">解析 · 排除法优先</div>
+        <div class="as k1" data-page-node-id="jityiWcA0ztL5FEGPo0UeC"><i data-page-node-id="TNs4GBQRMNn5oAFTcskOmi">① 先排除</i><p data-page-node-id="soNuDtuzjjdoxCjqanf9sL">· D（4816）= 第三产业本身，问的是"多多少" → <span class="del" data-page-node-id="8mxgGd1fANu39sX2DMKKU0">D 排除</span>。<br data-page-node-id="yL4mCUWexm9i6nf1W5bobP">· A（980）→ 4816 − 980 = 3836 ≠ 3612 → <span class="del" data-page-node-id="XXpVfAqTHHghAZBxa7Xxep">A 排除</span>。<br data-page-node-id="tgFuLOvdKTvGp8tj8lDHTZ">· C（1444）→ 4816 − 1444 = 3372 ≠ 3612 → <span class="del" data-page-node-id="7IA9rsKFyeelqHE1IS1HLB">C 排除</span>。</p></div>
+        <div class="as k2" data-page-node-id="pS4Sm3SzuDx91mM5ckyXSa"><i data-page-node-id="mQrfwF0y1htPxD1T2njyxf">② 再缩小</i><p data-page-node-id="Ma8P30WOXUE4PmC8ZTKtIJ">只剩 <b data-page-node-id="bOHPs8GwzQc4GTSbqh0ATj">B</b>。</p></div>
+        <div class="as k3" data-page-node-id="kiVytkjPVthNHRNNhvNJPI"><i data-page-node-id="21LNDJFdgKY3YQvFGRtIYy">③ 后择优</i><p data-page-node-id="BwIzhJDW4t2zTvcGJPGB8J">4816 − 3612 = <b data-page-node-id="CS3mxAG6ifhEG6BAQIjEZB">1204</b> ✓（4800 − 3600 = 1200，余 16 − 12 = 4）。选 <b data-page-node-id="xilnXa4pj6cz4f0kYLS4v3">B</b>。</p></div>
+        <div class="ans" data-page-node-id="7enp7OhxwwdBQEWdGykOxX">答案：<b data-page-node-id="wgW5YoA9AeiN9Wjr6Z1VHo">B（1204 亿元）</b></div>
+      </div>
+    </div>
+
+    <div class="q" data-page-node-id="HNTQ2oEdFrephiRu0JHaeP">
+      <div class="qtop" data-page-node-id="qDpmsSYHVq9A2awiYMSYdB"><span class="qno" data-page-node-id="CExwWzkUCaHjm8XGCXrI13">2</span><span class="qstem" data-page-node-id="YwtE65WgaJrAy6JznDSCFO">2023 年该市第一产业增加值占地区生产总值的比重约为：</span></div>
+      <div class="opts" data-page-node-id="LRAo6P8v3uY14uOe8fMjFn"><span data-page-node-id="RU8wYlFdJsKUWCOTbMqYag">A. 1.5%</span><span data-page-node-id="nYXbR3PNIPDv9zqbGi5MzZ">B. 2.0%</span><span data-page-node-id="KI4tHa1HknHRXbXSslUkv4">C. 2.5%</span><span data-page-node-id="R9MkjCIeDDT2QARGHTGYC8">D. 3.0%</span></div>
+      <div class="ana" data-page-node-id="0CCeGCTHDaplAHIPWZ05hT">
+        <div class="ana-h" data-page-node-id="22z4SENSJEN45tgqAZlw5F">解析 · 排除法优先</div>
+        <div class="as k1" data-page-node-id="mAkYJ4USf8BNk3OydXUQU6"><i data-page-node-id="bpOtEp97dBLOTc61mfBt79">① 先排除</i><p data-page-node-id="CUGwe4sUhT3V62zQF6dHOd">用"整体 × 选项"反推（整体 8600）：<br data-page-node-id="GSVsj4L9SVKC4NARFJTcyG">· D（3.0%）→ 8600 × 3% = 258 &gt; 172 → <span class="del" data-page-node-id="NocUUy0bAxupP1casaROr7">D 排除</span>。<br data-page-node-id="bpAANgDHYYXm7HPdjGrrFE">· C（2.5%）→ 8600 × 2.5% = 215 &gt; 172 → <span class="del" data-page-node-id="8pER4LuGp0D61LRQUP4utS">C 排除</span>。<br data-page-node-id="npAKyOJCMMNNqilNpKngns">· A（1.5%）→ 8600 × 1.5% = 129 &lt; 172 → <span class="del" data-page-node-id="MiGuuq7Blt0TRe1thvRgrj">A 排除</span>。</p></div>
+        <div class="as k2" data-page-node-id="XVJIzlK2Ie9GV4SLdIH4By"><i data-page-node-id="9CwAVtK1KPEdA7iFGbyGJ1">② 再缩小</i><p data-page-node-id="pDEXSfBiQqoxiGRWIamxPw">只剩 <b data-page-node-id="xmhEDPefBXyScyZFb80DAv">B</b>。</p></div>
+        <div class="as k3" data-page-node-id="qKY1cLND8hHB1apqtxPIZm"><i data-page-node-id="Cg40FOjvd9TTIrmcnN8rt5">③ 后择优</i><p data-page-node-id="jWVxiGrFjq5xZGHDaH9krn">172 ÷ 8600 = <b data-page-node-id="ntTya7QVxhyMLkBNF4FCCr">2.0%</b> ✓。选 <b data-page-node-id="FURtGDY428nPSIT6LRECJe">B</b>。</p></div>
+        <div class="ans" data-page-node-id="UaMh0Ysw9UGuoC2eK9dmGd">答案：<b data-page-node-id="HG5feTkU3I0w9ObhJHCPqh">B（2.0%）</b></div>
+      </div>
+    </div>
+
+    <div class="q" data-page-node-id="6zuDbyS8VNc4OpM9GoxmHt">
+      <div class="qtop" data-page-node-id="MdOmsMYHyODsJf5SA6Dyki"><span class="qno" data-page-node-id="7NVrSoFWr40fFI4cTcPRwr">3</span><span class="qstem" data-page-node-id="R65kpBwuVCuESt2eLVHcBm">2023 年该市房地产开发投资比上年约减少多少亿元？</span></div>
+      <div class="opts" data-page-node-id="BRcXzOEDMj49QuAHj5Zgmu"><span data-page-node-id="aNo0eG8FmLqRqEarZtzmXf">A. 28</span><span data-page-node-id="sBjDdPq9Ky6MNjOZYYdzhG">B. 29</span><span data-page-node-id="2OYXvPzF9VOtg0gOUc189f">C. 40</span><span data-page-node-id="5Cz6pOBWfshFfiDyY0Bd93">D. 112</span></div>
+      <div class="ana" data-page-node-id="PH8swCB2CEg9pKvRr0LRGn">
+        <div class="ana-h" data-page-node-id="89NbHz6hjelBjtDV5bxoDQ">解析 · 排除法优先（含"偏大值"排雷）</div>
+        <div class="as k1" data-page-node-id="yFxOKXYOa7ZmKFNielK6xF"><i data-page-node-id="3X1mSgC9zeN51zGaqbHq6Q">① 先排除</i><p data-page-node-id="yKRopQQKK9aRvZ3sJMpH5Z">减少量 = 现期 × 降幅 ÷（1 − 降幅）。<br data-page-node-id="Zl5uMA5vj04pNqFYyiHBHA">· D（112）= 1120 × 10%，降幅被夸大到 10%（实际仅 2.5%）→ <span class="del" data-page-node-id="kFzFfjdG1ha5RmAbVdJ36N">D 排除</span>。<br data-page-node-id="uRK5BkGDnFqnRKfyroAdh0">· C（40）→ 对应降幅约 3.6% &gt; 2.5% → <span class="del" data-page-node-id="CgtdqXxOWDQixr98mZOlYT">C 排除</span>。<br data-page-node-id="56VOy1PGSDd5Xq6IvGHgHe">· A（28）恰好 = 1120 × 2.5%，是"用现期×降幅"的<b data-page-node-id="v6dhL3jERw0TLSibWBAgcp">偏大值</b>，真值应<b data-page-node-id="z3o688I1cFTLnMndEyVMsB">略小</b> → <span class="del" data-page-node-id="gAdsz2tZEZX5QJg2NaP0Mp">A 排除</span>。</p></div>
+        <div class="as k2" data-page-node-id="iSWFCAZO7QWaHfsXjnDLke"><i data-page-node-id="smDBTEGVv8jn0aMILBI2lD">② 再缩小</i><p data-page-node-id="l4hqQPgLX7JDlugNACZ7EG">只剩 <b data-page-node-id="VhPlH1xYCGhV3vFaZvCPni">B</b>。</p></div>
+        <div class="as k3" data-page-node-id="k74HO9ER6MiJtDBhdDSdkr"><i data-page-node-id="mAeqiWgUdDuaKYTPXrhaag">③ 后择优</i><p data-page-node-id="CLp5fQgG49nL8rkAVudT0f">1120 × 2.5 ÷ 97.5 ≈ <b data-page-node-id="f9C6dWHuAGgG9DPbGOC6to">28.7</b> ≈ 29 ✓。选 <b data-page-node-id="eH65AQ3pFOCp7vvCBJw3Ft">B</b>。</p></div>
+        <div class="ans" data-page-node-id="RjwML3qxd3qdXdGoNJ85yj">答案：<b data-page-node-id="lWKLa6NI0XCZSJvYZDiXPv">B（29 亿元）</b>　　<b data-page-node-id="e6hGeLJkVji9DYeNqN30pG">坑点：</b>下降题的分母是<b data-page-node-id="iZVF1dwHOLbCtk8LAClZFO">基期</b>（1 − 降幅），不是现期。</div>
+      </div>
+    </div>
+
+    <div class="q" data-page-node-id="MjV9IBCZrOCIp0mrcSDzqE">
+      <div class="qtop" data-page-node-id="O1X3B2ECZqLO1K0N0e1pLp"><span class="qno" data-page-node-id="V3uNjxnIEuEbqfLuByrmSr">4</span><span class="qstem" data-page-node-id="NE33z5KPxTpLhTAocVBtKN">2023 年该市第三产业增加值同比增长约多少亿元？</span></div>
+      <div class="opts" data-page-node-id="lYU4ys8ZFCittwfw6r5Orz"><span data-page-node-id="SdtybbSrx7E5FTLqdritWX">A. 324</span><span data-page-node-id="ezRAHcBscSb2girW5XvqCK">B. 347</span><span data-page-node-id="Hx4EcZKCoMVtgDKEAibG5c">C. 481</span><span data-page-node-id="M3ejTBrzweOclzwEKzKCvn">D. 560</span></div>
+      <div class="ana" data-page-node-id="VrzDP6d1iKqqAF98wkma4e">
+        <div class="ana-h" data-page-node-id="1mBYraBmMLNG5HNxJ2KT3e">解析 · 排除法优先</div>
+        <div class="as k1" data-page-node-id="N0267CbepufgAKkKvXtDX9"><i data-page-node-id="Kz55uBTnorY60Cs6Aq9jPT">① 先排除</i><p data-page-node-id="38SmBTQUV2QSVPinMtEjH1">增长量 = 4816 × 7.2 ÷ 107.2。先算偏大值 4816 × 7.2% ≈ 347。<br data-page-node-id="RA9q3ANDDTnFYgEwpq1ZZL">· B（347）就是这个偏大值 → <span class="del" data-page-node-id="c5qtjt0cc9ombSMiLlelZ5">B 排除</span>。<br data-page-node-id="hcCdFdvB0FtR3UAZ91Bgdj">· C（481）≈ 4816 的 10%、D（560）更大，量级不符 → <span class="del" data-page-node-id="qHkhpghnZCsTE4vfGoITEp">C、D 排除</span>。</p></div>
+        <div class="as k2" data-page-node-id="XurF7Ovw0vub3U4YcMIOSS"><i data-page-node-id="masjYqlo4jGQB7IHgyPMHB">② 再缩小</i><p data-page-node-id="1Gy0y8UuKHtqC1vlft1uOi">只剩 <b data-page-node-id="QF1KcwOfDPDhG7tz1P3S3z">A</b>。</p></div>
+        <div class="as k3" data-page-node-id="wQ9OXpE6F3Hx2ZeengQxNu"><i data-page-node-id="eHJ7ksmcE0WoQE9CCPZz0D">③ 后择优</i><p data-page-node-id="wxjwRb4lyyH4DKmD3OrAuk">4816 × 7.2 ÷ 107.2 ≈ <b data-page-node-id="BDBIenjXxwFiInzYTWDEkO">323.5</b> ≈ 324 ✓。选 <b data-page-node-id="CihmV6c21wutvKZLEU5cJl">A</b>。</p></div>
+        <div class="ans" data-page-node-id="B4rzJPLTnS991EuzXPXmFq">答案：<b data-page-node-id="JCc3WX4YLJ6Qu2XqNlUlcI">A（324 亿元）</b></div>
+      </div>
+    </div>
+
+    <div class="q" data-page-node-id="BCv6f70jdpvEANmdIXHdr9">
+      <div class="qtop" data-page-node-id="XjwAOfBc0ua5nCykNWYCi6"><span class="qno" data-page-node-id="PQRDgaHsJmSkxQ8TV33y4F">5</span><span class="qstem" data-page-node-id="83BfIUqCe8mclhApIj2kFv">下列关于 2023 年该市经济数据的说法，正确的一项是：</span></div>
+      <div class="opts" style="grid-template-columns:1fr" data-page-node-id="ntJRyH0WRrMx7XchYBNLrB">
+        <span data-page-node-id="2KfiCLlx4PvMCBW7LEfjpW">A. 常住人口比上年末增长超过 1%</span>
+        <span data-page-node-id="8wXZV8xRNIlnGTFymUzhaa">B. 第三产业增加值增速高于第二产业</span>
+        <span data-page-node-id="A3UBPYTSlgKfQXzWTSZBr4">C. 规模以上工业企业利润总额增速低于其增加值增速</span>
+        <span data-page-node-id="hfoF7Y8BWmgvXV5Fkadg4Y">D. 社会消费品零售总额占地区生产总值比重超过 50%</span>
+      </div>
+      <div class="ana" data-page-node-id="Lj0tNpeE8MUu5DOGmC8VHk">
+        <div class="ana-h" data-page-node-id="CEuCNGuvFnXYmoUdjt3j0B">解析 · 排除法优先</div>
+        <div class="as k1" data-page-node-id="AORcVyBjzrMIbPXp2etcDE"><i data-page-node-id="C3LApcGQHajPfZpngXxfRs">① 先排除</i><p data-page-node-id="rdUpiyCuOH2mNvuRqqkq9A">· A：6 ÷ 860 ≈ 0.7% &lt; 1% → <span class="del" data-page-node-id="wPjDtfkmPKtC0g74XTQHiL">A 排除</span>。<br data-page-node-id="ngntUoO8KrilENOC0uzxlL">· C：利润增速 9.0% &gt; 增加值增速 5.5%，题干说"低于"，方向反了 → <span class="del" data-page-node-id="yDH029YuNDJADdRf6DXAcT">C 排除</span>。<br data-page-node-id="YbfEsnoLef2MoozGRgO1Hr">· D：4100 ÷ 8600 ≈ 47.7% &lt; 50% → <span class="del" data-page-node-id="ix5HoBlM8F582ut9QQ2Afd">D 排除</span>。</p></div>
+        <div class="as k2" data-page-node-id="OfeBNNtwr9TH5s4mAB00Zm"><i data-page-node-id="KKyzlZOSgOqbNL6YCKEXQV">② 再缩小</i><p data-page-node-id="AbneFtpfzJ0lA8YMXfp6oP">只剩 <b data-page-node-id="Tqe4nJNAHivL0zg56pwJ7o">B</b>。</p></div>
+        <div class="as k3" data-page-node-id="Dkj52cTBliIC4JhD7DqPGX"><i data-page-node-id="CzHNAeL2RoiqMEJv8H8ENn">③ 后择优</i><p data-page-node-id="TMD9MQYEmAaypF4ZkSWG1T">第三产业 7.2% &gt; 第二产业 4.5% ✓。选 <b data-page-node-id="smEn8TFaEHyMiN7HxoqtQp">B</b>。</p></div>
+        <div class="ans" data-page-node-id="cyVdiMUtG3PIeFzGNsiu6Q">答案：<b data-page-node-id="Eecbb2wiTzlFEmM6z8L4a1">B</b></div>
+      </div>
+    </div>
+
+    <div class="ansline" style="grid-template-columns:repeat(5,1fr)" data-page-node-id="OKcDaEztoDVrysq220caaz">
+      <div data-page-node-id="uGsvQSw4ZhQ7G8z1XChdsx">1<b data-page-node-id="Hbqm5oVNiVLoDsVs5PrbyV">B</b></div><div data-page-node-id="zRrwEGxuFK22sYZL4CtDkr">2<b data-page-node-id="9Ae5FagLCATgcFuLUj9EDX">B</b></div><div data-page-node-id="sTElSg4XhS2hXiX3h8pJ6a">3<b data-page-node-id="mjFxDKn0jAk6LyABMoEAJ8">B</b></div><div data-page-node-id="aGbA53RdYEywaYiBqnTpeQ">4<b data-page-node-id="GF4e9w1laIiQmX2MEk4qaK">A</b></div><div data-page-node-id="EEXzE08pJ8kzusMMMnF5ai">5<b data-page-node-id="wm6Ci4TgwiGKvKUDYdF4cw">B</b></div>
+    </div>
+    <div class="ok" data-page-node-id="WicjKFBtdUKmELuAKKPdY2"><b data-page-node-id="ktgbXou8PbbvgBrLn6rZov">本套 7 分钟达标线：</b>全对，且第 5 题 ≤ 90 秒。若第 3 题选了 A、第 4 题选了 B，说明"现期 × r 是偏大值"这个心法还没形成条件反射，回考点 8 重做典型题 1。</div>
+  </div>
+</section>
+
+<section id="err" data-page-node-id="I8zv1HHWknFdzmaLgwVcFq">
+  <div class="sec-head" data-page-node-id="aUobYYQyWmQpLNk32ulpDP"><span class="idx" data-page-node-id="FJmkpLQDGsjyOfOqirdEI9">15</span><h2 data-page-node-id="j6mySVriRA7Prxnfj6E5ua">错因四分类表（每道错题都要归一次类）</h2></div>
+  <div class="card" data-page-node-id="risy7EUg0C2U0rb07yljy9">
+    <p style="font-size:13.5px;color:var(--ink-2);margin-bottom:10px" data-page-node-id="KXuSbX7hW9YmcRyMOVDX9H">复盘时不要只写"错了"，要写清<b data-page-node-id="QbbV8OGHG03JrxAFeVmsxG">错在哪一类</b>。四类错因的补救动作完全不同：</p>
+    <table data-page-node-id="1VOZXWgwJFUIGXrPHmYz15">
+      <thead data-page-node-id="HM1bHjHu0KqWDt8wGK7mn7"><tr data-page-node-id="yu11Y2iAByT8APXUG2qbtH"><th data-page-node-id="WmwAHJpwdTTVzOB5822i6q">错因</th><th data-page-node-id="Qp4nnBtzZFe0L8jzbSoGMp">典型表现</th><th data-page-node-id="1FzGJr73gocAdHj6H34T5Y">补救动作</th></tr></thead>
+      <tbody data-page-node-id="fsOzIGpjKbYEhApl5J7zB6">
+        <tr data-page-node-id="Ga0jNb04X1L9XXBXGOGgF5"><td data-page-node-id="H4MXZi0kOSCDQXhyJvtNcL"><b data-page-node-id="vI4lSdRWbda9rM1uizNMO7">① 找数错</b></td><td data-page-node-id="6BcfJuNXyAd2zq6rWRm7aW">数据看错行/列，或取了"合计"行；跨材料取错</td><td data-page-node-id="wfjt7V6OpQSlHvHv7ZDRFN">回练「材料类型」4 类，练定位速度</td></tr>
+        <tr data-page-node-id="WiRKnogyNC6XeOlBrUksyY"><td data-page-node-id="p1nexCdi4IKRFusUbUqo0K"><b data-page-node-id="0CSYIknuO2dEIV10UBGlur">② 列式错</b></td><td data-page-node-id="GOBHQDyrmcDMQaAVZ9cz9D">该用 ÷ 却用 ×、该减 1 没减、部分当整体</td><td data-page-node-id="aDfESdTsMxiYaEdUuTCztA">回对应考点，重默公式；每天默写一遍速查卡</td></tr>
+        <tr data-page-node-id="Vmf8DMDHxOIhd5BCXPdbaA"><td data-page-node-id="HkR8S9A1tybanmdLPfdGyM"><b data-page-node-id="IGfCEE9TmkmiGG6wv1EuWz">③ 算错</b></td><td data-page-node-id="3f5wXutxpbS55aFCCBj0jA">截位过度、正负号错、约分错</td><td data-page-node-id="uOTa7umSeb7Ku6GDFfdViZ">练速算：截位直除 + 特征数字表</td></tr>
+        <tr data-page-node-id="iDKBiNMha9RTUCmClRpaWQ"><td data-page-node-id="3dmycwjudCR8He2qBcvqt6"><b data-page-node-id="UxYUIHHDWzZOrrPLnFz5n1">④ 看题错</b></td><td data-page-node-id="QfWRCe3vzH9ksuNESWrcvH">把"去年"看成"今年"、把"‰"当"%"，"多几倍"当"是几倍"</td><td data-page-node-id="agWoGGhO71jQtCQYggWBPh">做题第一动作：圈时间、圈单位、圈问法</td></tr>
+      </tbody>
+    </table>
+    <div class="danger" data-page-node-id="CfFpVXZkEy8bhotXtTyUMt"><b data-page-node-id="N88T5lQe2eSV8plBQynGUz">统计规律：</b>0 基础起步阶段，<b data-page-node-id="W7roA7MOxvGhWZMg3HUSko">60% 以上的错题属于 ①找数错 + ④看题错</b>，而不是"不会算"。所以前 4 天别急着追速度，先把"圈时间 / 圈单位 / 圈问法"变成下意识动作。</div>
+  </div>
+</section>
+
+<section id="record" data-page-node-id="ZBASsEcnLOQswUWeGcLHoe">
+  <div class="sec-head" data-page-node-id="2QrBENYO67MtyCbykyp0ni"><span class="idx" data-page-node-id="EbZJDnCuxR2fdruFlB8Acl">16</span><h2 data-page-node-id="u75r7sotGUE3NCC0xHc9Zn">粉笔 12 类自测打卡（过关就打勾）</h2></div>
+  <div class="card" data-page-node-id="awByfKV8XSW5DpBfXUdtQt">
+    <p style="font-size:13.5px;color:var(--ink-2);margin-bottom:12px" data-page-node-id="GJMkNQ94bwtvCb3WA64CTN">每完成一个分类的训练且达标，就打一个勾。<b data-page-node-id="zU5JZBRTH5bNyqFOKywYnH">材料类型 4 类 + 考点 8 类 + 综合套题 = 13 项全部打勾</b>，资料分析在方法层面彻底过关。</p>
+    <div class="check-grid" id="cg" data-page-node-id="xGkhnpC4bX08Boff7CziSv">
+      <label class="cg" data-page-node-id="FRx6vIBHYGhfkXkU0TqdmQ"><input type="checkbox" data-id="mt1" data-page-node-id="PVFGFBSnRCFp1CPaDvmDND"><span class="cgt" data-page-node-id="MnZTjj5BZuBFjIhVyb2mu4"><b data-page-node-id="HFKJPacLl8aLDI9r3Fmmzm">材料 1 文字资料</b>能 30 秒画出结构</span></label>
+      <label class="cg" data-page-node-id="z7ULvbnZgdEEBgt0yxi3NG"><input type="checkbox" data-id="mt2" data-page-node-id="KLhnKgQcjrVwMf8TcfUmCK"><span class="cgt" data-page-node-id="wabP0V7sVxK5Nt2sP2wZSD"><b data-page-node-id="fUlhHuBDZKq0Sjj9qe8vEv">材料 2 统计表</b>先读表头单位，看错行 0 次</span></label>
+      <label class="cg" data-page-node-id="ykYdLoA4T27YTfAj5BKZT3"><input type="checkbox" data-id="mt3" data-page-node-id="tYKGqgf4KaXF7QmTvoMXJa"><span class="cgt" data-page-node-id="IFrGQ1lNVP7iAZM8oIx73m"><b data-page-node-id="971lAQ7EXHb56KFgsQRbVm">材料 3 统计图</b>先读图例与轴，象限不看错</span></label>
+      <label class="cg" data-page-node-id="kUegN5gkaCpHoH3JCcw0DW"><input type="checkbox" data-id="mt4" data-page-node-id="HOsVbK27B9cyuu6Y77W83I"><span class="cgt" data-page-node-id="AVihVdyYRa8i3xD1UhOErI"><b data-page-node-id="2SdSQUHYTc57jlA4IcbYQs">材料 4 综合资料</b>能判"哪题去哪找"</span></label>
+      <label class="cg" data-page-node-id="2K806Tr0z1cvv37stDzSql"><input type="checkbox" data-id="kp1" data-page-node-id="r8FRHeBTR19TBtHxFyA4SU"><span class="cgt" data-page-node-id="l30HhaHHMlos4990EjL4Sl"><b data-page-node-id="HnjTcTm70diomWRfCXinVx">考点 5 简单计算</b>20 题，正确率 ≥ 95%</span></label>
+      <label class="cg" data-page-node-id="jBxfNC5XLQ2xHvPEE4GfqC"><input type="checkbox" data-id="kp2" data-page-node-id="R2wUWkw2Hf8gdJGhM1pQBX"><span class="cgt" data-page-node-id="a3D9OVRlWXp0743X1DeS84"><b data-page-node-id="b2Gd00Ui8UkM9PJVEuUxHa">考点 6 基期与现期</b>25 题，正确率 ≥ 90%</span></label>
+      <label class="cg" data-page-node-id="0oPBhAsvRCtzPEcxepfalm"><input type="checkbox" data-id="kp3" data-page-node-id="VdD3txMEwJyCFRQ2eWU569"><span class="cgt" data-page-node-id="RxTtFrKFgAct08ft47Fa0T"><b data-page-node-id="qoHz9cczp3dqxSIJIQOajx">考点 7 增长率</b>30 题，正确率 ≥ 85%</span></label>
+      <label class="cg" data-page-node-id="SeIph1pr5rgUmeDMAXmUfX"><input type="checkbox" data-id="kp4" data-page-node-id="mhc55zKlljtBv3JvLJSB1c"><span class="cgt" data-page-node-id="vqTcgxd2dx2Hc7PlTDVbQI"><b data-page-node-id="FrDXM3GSO3kblSARWn8osZ">考点 8 增长量</b>25 题，正确率 ≥ 90%</span></label>
+      <label class="cg" data-page-node-id="pyHCVDLCOGryIA1bBFWVL6"><input type="checkbox" data-id="kp5" data-page-node-id="cVYLsqZN6dNBnAx4VgqUKa"><span class="cgt" data-page-node-id="oue6u2CkpwgyysIaARC3ju"><b data-page-node-id="H82A29VKjQKwvYZjvk1R6N">考点 9 比重问题</b>35 题，正确率 ≥ 90%</span></label>
+      <label class="cg" data-page-node-id="nKefQG5uV3tNPEocMPDbBh"><input type="checkbox" data-id="kp6" data-page-node-id="9k1QG9u14RIKgCrqSQKBwt"><span class="cgt" data-page-node-id="qXVQ7hhwcxNOcZbcb4dgTD"><b data-page-node-id="83CBBEnnG5QubJUf3VAzdD">考点 10 平均数问题</b>20 题，正确率 ≥ 85%</span></label>
+      <label class="cg" data-page-node-id="JRZiGuMm3X3fwY2buRdl3c"><input type="checkbox" data-id="kp7" data-page-node-id="dxgkSbuMZ5vJeWh2XJIfkW"><span class="cgt" data-page-node-id="tsy5bRtuN7UqmRjL86PqyK"><b data-page-node-id="X6simCpCTp0EWQBOeFHYPS">考点 11 倍数与比值</b>15 题，正确率 ≥ 95%</span></label>
+      <label class="cg" data-page-node-id="YrElde5An2BvGiVtIrXOiH"><input type="checkbox" data-id="kp8" data-page-node-id="ajIWJiYbm5hG0uhLLd58mT"><span class="cgt" data-page-node-id="ZR1DwUKwt4Exz6zngQMQEU"><b data-page-node-id="ULc327nST5COsPOWvlYAm5">考点 12 综合分析</b>30 篇，正确率 ≥ 75%</span></label>
+      <label class="cg" data-page-node-id="O8qbqaEVGcg6MsYUgnKHnH"><input type="checkbox" data-id="s1" data-page-node-id="f8heKwz8UoBgPgFbwxCnRj"><span class="cgt" data-page-node-id="DX2l1UPSiEDKBPWLlEHu4M"><b data-page-node-id="pfVwVnJImju429EldNbUxk">综合限时套题</b>7 分钟内全对</span></label>
+    </div>
+  </div>
+</section>
+
+<div style="text-align:center;font-size:12px;color:var(--ink-3);padding:16px 0 0" data-page-node-id="40qTpqiY9sryt05ofmuHXx">
+  按粉笔知识树组织 · 材料类型 4 类 + 考点 8 类 · 排除法优先
+</div>
+
+</main>
+</div>
+
+<script>
+(function(){
+  var KEY='zlfx_tiben_progress';
+  var state={};
+  try{ state=JSON.parse(localStorage.getItem(KEY)||'{}'); }catch(e){ state={}; }
+  var boxes=document.querySelectorAll('.cg input');
+  var total=boxes.length;
+  function update(){
+    var done=0;
+    boxes.forEach(function(cb){
+      var card=cb.closest('.cg');
+      if(state[cb.dataset.id]){ done++; card.classList.add('on'); }
+      else card.classList.remove('on');
+    });
+    var pct= total? Math.round(done/total*100):0;
+    document.getElementById('tp-fill').style.width=pct+'%';
+    document.getElementById('tp-pct').textContent=pct+'%';
+    document.getElementById('tp-num').textContent=done+' / '+total+' 项已达标';
+  }
+  boxes.forEach(function(cb){
+    if(state[cb.dataset.id]) cb.checked=true;
+    cb.addEventListener('change',function(){
+      state[cb.dataset.id]=cb.checked;
+      try{ localStorage.setItem(KEY,JSON.stringify(state)); }catch(e){}
+      update();
+    });
+  });
+  update();
+  var links=document.querySelectorAll('.nav a[href^="#"]');
+  var sections=[];
+  links.forEach(function(a){var t=document.querySelector(a.getAttribute('href'));if(t)sections.push({el:t,a:a});});
+  function onScroll(){
+    var y=window.scrollY+120,cur=null;
+    sections.forEach(function(s){ if(s.el.offsetTop<=y) cur=s; });
+    links.forEach(function(a){ a.classList.remove('on'); });
+    if(cur) cur.a.classList.add('on');
+  }
+  window.addEventListener('scroll',onScroll,{passive:true});
+  onScroll();
+})();
+</script>
+</body>
+</html>

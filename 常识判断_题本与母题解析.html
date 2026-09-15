@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>常识判断 · 题本与母题解析（10 大母题 · 排除法优先）</title>
+<style>
+:root{--pri:#7c3aed;--pri-d:#6d28d9;--soft:#f5f3ff;--ink:#20242c;--ink2:#4b5563;--ink3:#8a94a6;--line:#e8ecf3;--bg:#f8fafc;--ok:#158a6e}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif;font-size:15px;line-height:1.85}
+.wrap{display:flex;min-height:100vh}
+aside#side{width:264px;flex:0 0 264px;background:#241740;color:#e6edf7;padding:20px 14px;position:sticky;top:0;height:100vh;overflow-y:auto}
+aside#side .brand h1{margin:0;font-size:18px;color:#fff;letter-spacing:.5px}
+aside#side .brand p{margin:7px 0 14px;font-size:12px;color:#b3a4d9;line-height:1.7}
+.prog-wrap{background:#35245c;border-radius:11px;padding:12px 13px;margin-bottom:14px}
+.prog-top{display:flex;justify-content:space-between;font-size:12px;color:#b3a4d9;margin-bottom:7px}
+.prog-top b{color:#fff}
+.bar{height:7px;border-radius:99px;background:rgba(0,0,0,.35);overflow:hidden}
+.bar i{display:block;height:100%;width:0;background:linear-gradient(90deg,#7c3aed,#a78bfa);transition:.3s}
+.navgrp{font-size:11.5px;color:#b3a4d9;margin:13px 4px 5px;letter-spacing:1px}
+nav.nav{display:flex;flex-direction:column;gap:1px}
+nav.nav a{color:#d5deeb;text-decoration:none;font-size:13px;padding:6px 9px;border-radius:8px;display:flex;justify-content:space-between;gap:6px}
+nav.nav a:hover{background:rgba(255,255,255,.08)}
+nav.nav a.on{background:var(--pri);color:#fff;font-weight:700}
+nav.nav a .nv-badge{font-size:11px;color:#b3a4d9}
+aside#side .flink{margin-top:16px;border-top:1px solid rgba(255,255,255,.12);padding-top:12px;font-size:12px}
+aside#side .flink a{display:block;color:#d5deeb;text-decoration:none;padding:4px 6px;border-radius:6px}
+aside#side .flink a:hover{background:rgba(255,255,255,.08)}
+main{flex:1;min-width:0;padding:26px 34px 80px;max-width:980px}
+.jsstat{background:#f5f3ff;border:1px solid #a78bfa;color:var(--pri-d);border-radius:10px;padding:8px 14px;font-size:13px;margin-bottom:14px;font-weight:600}
+.hero{background:linear-gradient(135deg,#7c3aed,#a78bfa);border-radius:16px;color:#fff;padding:24px 26px;margin-bottom:22px}
+.hero h1{margin:0 0 8px;font-size:24px}
+.hero p{margin:0 0 12px;font-size:13.5px;opacity:.94;line-height:1.8}
+.hero-meta{display:flex;flex-wrap:wrap;gap:8px}
+.hero-chip{background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.25);padding:6px 14px;border-radius:20px;font-size:12.5px}
+.hero-chip.lk{background:rgba(255,255,255,.34);border-color:rgba(255,255,255,.6);color:#fff;font-weight:700;text-decoration:none}
+.toolbar{display:flex;flex-wrap:wrap;gap:9px;align-items:center;margin-bottom:18px}
+.tbtn{cursor:pointer;user-select:none;font-size:13px;padding:7px 15px;border-radius:9px;border:1px solid var(--line);background:#fff;color:var(--ink2);font-weight:600}
+.tbtn:hover{border-color:var(--pri);color:var(--pri-d)}
+.tbtn.on{background:var(--pri);border-color:var(--pri);color:#fff}
+.tbtn-ghost{background:transparent}
+.tbtn-hint{font-size:12.5px;color:var(--ink3);margin-left:auto}
+section.sec{background:#fff;border:1px solid var(--line);border-radius:16px;padding:22px 24px 18px;margin-bottom:22px}
+.sec-head{display:flex;align-items:center;gap:12px;margin-bottom:12px}
+.sec-head .idx{font-size:12px;font-weight:700;color:#fff;background:var(--pri);padding:3px 10px;border-radius:7px}
+.sec-head h2{font-size:19px;font-weight:800;margin:0}
+.mhero{display:flex;justify-content:space-between;align-items:flex-start;gap:14px;background:var(--soft);border-radius:13px;padding:14px 17px;margin-bottom:14px}
+.mhero h3{margin:0 0 3px;font-size:17.5px;font-weight:800}
+.mhero p{margin:0;font-size:12.8px;color:var(--ink2)}
+.mmeta{text-align:right;font-size:12px;color:var(--ink3);white-space:nowrap}
+.mmeta b{display:block;font-size:14px;color:var(--pri-d)}
+.keys{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px;margin-bottom:16px}
+.key{border:1px solid var(--line);border-left:4px solid var(--pri);border-radius:11px;padding:10px 13px;background:#fcfdff}
+.key h4{margin:0 0 4px;font-size:13px;color:var(--pri-d)}
+.key p{margin:0;font-size:13px;color:var(--ink2);line-height:1.75}
+.card{border:1px solid var(--line);border-radius:13px;padding:15px 17px;margin-bottom:14px;background:#fff}
+.card h3{margin:0 0 10px;font-size:15.5px;font-weight:800;color:var(--pri-d)}
+.mat{background:var(--soft);border-radius:10px;padding:11px 14px;font-size:13.8px;margin-bottom:10px;line-height:1.85}
+.mtitle{display:block;font-weight:700;color:var(--pri-d);font-size:12.5px;margin-bottom:2px}
+.q{border:1px solid var(--line);border-radius:12px;padding:12px 14px;margin-bottom:10px;background:#fff}
+.qtop{display:flex;gap:10px;align-items:flex-start}
+.qno{flex:0 0 auto;width:24px;height:24px;border-radius:50%;background:var(--pri);color:#fff;font-size:12.5px;display:flex;align-items:center;justify-content:center;font-weight:700;margin-top:3px}
+.qstem{flex:1;font-size:14px}
+.qsrc{font-size:11.5px;color:var(--ink3);margin-left:8px;white-space:nowrap}
+.opts{display:grid;grid-template-columns:1fr 1fr;gap:4px 18px;margin:9px 0 4px 34px;font-size:13.6px}
+.opts.one{grid-template-columns:1fr}
+.qfig{margin:8px 0 4px 34px}
+.qfig img{max-width:100%;border:1px solid var(--line);border-radius:9px}
+.btn-reveal{display:inline-block;margin:4px 0 0 34px;font-size:12.5px;font-weight:700;color:var(--pri-d);background:var(--soft);border:1px solid #a78bfa;border-radius:8px;padding:4px 13px;cursor:pointer;user-select:none}
+.ana{margin-top:10px;border-top:1px dashed var(--line);padding-top:10px}
+.ana-h{font-size:12.5px;font-weight:800;color:var(--pri-d);margin-bottom:7px}
+.as{border-radius:9px;padding:8px 12px;margin-bottom:7px;font-size:13.4px}
+.as i{font-style:normal;font-weight:800;margin-right:7px}
+.as.k1{background:#fdf2f2}.as.k1 i{color:#c0392b}
+.as.k2{background:#fff8ec}.as.k2 i{color:#b07a12}
+.as.k3{background:#effaf3}.as.k3 i{color:#158a6e}
+.as p{margin:0;display:inline}
+.del{color:#c0392b;font-weight:700}
+.ans{background:var(--soft);border-radius:9px;padding:8px 12px;font-size:13.4px;margin-top:8px}
+.mini-check{display:inline-block;margin:8px 0 0 34px;font-size:12.5px;color:var(--ink2);cursor:pointer;user-select:none}
+.mini-check input{accent-color:var(--pri);margin-right:4px}
+.ansline{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:6px;margin-top:10px}
+.ansline div{background:var(--soft);border-radius:8px;padding:5px 10px;font-size:12.5px;color:var(--ink2)}
+.ansline b{color:var(--pri-d);margin:0 5px;font-size:14px}
+.tip{background:#fff8ec;border-left:4px solid #e8b34a;border-radius:9px;padding:9px 13px;font-size:13px;color:#7a5a1e;margin-top:10px}
+table.et{width:100%;border-collapse:collapse;font-size:13px;margin-top:6px}
+table.et th{background:var(--soft);color:var(--pri-d);text-align:left;padding:8px 10px;font-size:12.5px}
+table.et td{border-bottom:1px solid var(--line);padding:8px 10px;vertical-align:top;color:var(--ink2)}
+.rec{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+.rec label{border:1px solid var(--line);border-radius:10px;padding:8px 12px;font-size:13px;cursor:pointer;background:#fff;color:var(--ink2);user-select:none}
+.rec label.done{background:#effaf3;border-color:#bfe6d2;color:var(--ok);font-weight:700}
+.footnote{font-size:12px;color:var(--ink3);margin-top:14px;line-height:1.8}
+/* ---- v4 双引擎：JS 根 class 为主 ---- */
+html.js .ana{display:none}
+html.js .q.qopen .ana{display:block}
+html.js.xall-on .ana{display:block}
+html.js .btn-reveal .t2{display:none}
+html.js .q.qopen .btn-reveal .t1{display:none}
+html.js .q.qopen .btn-reveal .t2{display:inline}
+html.js.xall-on .btn-reveal .t1{display:none}
+html.js.xall-on .btn-reveal .t2{display:inline}
+html.js #xallchip .t2{display:none}
+html.js.xall-on #xallchip .t1{display:none}
+html.js.xall-on #xallchip .t2{display:inline}
+/* ---- :has() 兜底（仅无 JS 时 checkbox 真的会被勾上）---- */
+article.q:has(.soltoggle:checked) .ana{display:block}
+html:has(#xall:checked) .ana{display:block}
+#xallchip .t2{display:none}
+html:not(.js):has(#xall:checked) #xallchip .t1{display:none}
+html:not(.js):has(#xall:checked) #xallchip .t2{display:inline}
+@media (max-width:900px){.wrap{display:block}aside#side{position:static;height:auto;width:auto}}
+</style>
+</head>
+<body>
+<style id="resnav-style">
+.resnav{position:fixed;top:0;left:0;right:0;z-index:99999;display:flex;align-items:center;gap:4px;
+  height:44px;padding:0 12px;background:#1f2937;color:#e5e7eb;font-size:13px;line-height:1;
+  font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;overflow-x:auto;
+  box-shadow:0 1px 0 rgba(255,255,255,.06),0 2px 10px rgba(0,0,0,.18);-webkit-overflow-scrolling:touch}
+body::before{content:"";display:block;height:44px}
+.resnav::-webkit-scrollbar{height:0}
+.resnav .rn-brand{flex:0 0 auto;font-weight:700;color:#7ee0c0;margin-right:6px;letter-spacing:.5px}
+.resnav a{flex:0 0 auto;color:#d1d5db;text-decoration:none;padding:6px 10px;border-radius:8px;
+  white-space:nowrap;transition:.15s}
+.resnav a:hover{background:#374151;color:#fff}
+.resnav a.on{background:#22c39a;color:#06251c;font-weight:700}
+.resnav .rn-sep{flex:0 0 auto;width:1px;height:18px;background:#4b5563;margin:0 5px}
+.resnav .rn-end{margin-left:auto}
+@media (max-width:640px){.resnav{font-size:12px;height:40px}body::before{height:40px}}
+</style>
+<nav class="resnav" id="resnav"><span class="rn-brand">行测 2027</span>
+<a href="国考笔试总排期表.html">总排期表</a>
+<a href="2027国考行测学习计划.html">行测总纲</a>
+<span class="rn-sep"></span>
+<a href="资料分析_9天冲刺计划.html">资料分析</a>
+<a href="判断推理_13天冲刺计划.html">判断推理</a>
+<a href="言语理解_9天冲刺计划.html">言语理解</a>
+<a href="国考笔试总排期表.html#math">数量关系</a>
+<a href="国考笔试总排期表.html#roll" class="on">常识政治</a>
+<a href="国考笔试总排期表.html#roll">政治理论</a>
+<a href="申论_学习计划.html">申论</a>
+<span class="rn-sep rn-end"></span>
+<a href="题库总览.html">题库总览</a>
+</nav>
+
+<div class="wrap">
+<aside id="side">
+  <div class="brand"><h1>常识判断 · 题本</h1><p>55 题真题池 · 10 大母题 · 限时训练</p></div>
+  <div class="prog-wrap">
+    <div class="prog-top"><span>训练题打卡</span><b><span id="pg-txt">0</span> / 30</b></div>
+    <div class="bar"><i id="pg-bar"></i></div>
+  </div>
+  <div class="navgrp">母题通关</div><nav class="nav"><a class="navlink" href="#k1" data-sec="k1">1 人文·文化<span class="nv-badge" data-badge="k1">0/0</span></a><a class="navlink" href="#k2" data-sec="k2">2 人文·文史<span class="nv-badge" data-badge="k2">0/0</span></a><a class="navlink" href="#k3" data-sec="k3">3 科技·物理<span class="nv-badge" data-badge="k3">0/0</span></a><a class="navlink" href="#k4" data-sec="k4">4 科技·化材<span class="nv-badge" data-badge="k4">0/0</span></a><a class="navlink" href="#k5" data-sec="k5">5 科技·生医<span class="nv-badge" data-badge="k5">0/0</span></a><a class="navlink" href="#k6" data-sec="k6">6 科技·生活<span class="nv-badge" data-badge="k6">0/0</span></a><a class="navlink" href="#k7" data-sec="k7">7 法律·公法<span class="nv-badge" data-badge="k7">0/0</span></a><a class="navlink" href="#k8" data-sec="k8">8 法律·民商<span class="nv-badge" data-badge="k8">0/0</span></a><a class="navlink" href="#k9" data-sec="k9">9 地理·国情<span class="nv-badge" data-badge="k9">0/0</span></a><a class="navlink" href="#k10" data-sec="k10">10 经济·政策<span class="nv-badge" data-badge="k10">0/0</span></a></nav><div class="navgrp">附录</div><nav class="nav"><a href="#err">错因分类表</a><a href="#record">母题自测打卡</a></nav>
+  <div class="flink">
+    <a href="常识判断_真题题库.html">← 返回 常识判断_真题题库</a>
+    <a href="国考笔试总排期表.html#roll">总排期表 · 常识全程滚动 →</a>
+    <a href="题库总览.html">题库总览</a>
+  </div>
+</aside>
+<main>
+<div class="jsstat" id="jsstat">正在检查脚本…（若一直不变＝预览禁用了脚本；解析可用 :has 兜底展开）</div>
+<div class="hero">
+  <h1>常识判断 · 题本与母题解析</h1>
+  <p>常识的目标不是“全知道”，而是<b>用排除法把不会的题也做对一半</b>。本题本把 55 道真题归成 <b>10 大母题</b>：每个母题给三把钥匙 + 一道典型题的排除法三步精讲 + 一组限时训练题。常识题的选项里藏着大量“时间锚点、张冠李戴、绝对化表述”三种破绽——<b>能排除的绝不硬背</b>，划掉两三个错误项，剩下的就是答案。（政治理论已按考试模块单独成册，见《政治理论_题本与母题解析》。）</p>
+  <div class="hero-meta">
+    <span class="hero-chip">📚 题源：粉笔《决战行测5000题·常识判断（新增题）》真题（考生回忆版）</span>
+    <span class="hero-chip">🧭 10 大母题 · 30 道训练题</span>
+    <span class="hero-chip">⏱ 每组限时训练</span>
+    <a class="hero-chip lk" href="常识判断_真题题库.html">配套真题题库（全部真题+粉笔解析）→</a>
+  </div>
+</div>
+
+<div class="toolbar" id="xallchip">
+  <label class="tbtn" for="xall" data-act="xall"><span class="t1">展开全部解析</span><span class="t2">收起全部解析</span></label>
+  <span class="tbtn" data-act="clear">清空打卡</span>
+  <input type="checkbox" id="xall" style="display:none">
+  <span class="tbtn-hint">建议：先自己作答，再点「看解析」对照三步思路。</span>
+</div>
+
+<section class="sec" id="how">
+  <div class="sec-head"><span class="idx">00</span><h2>这本题本怎么用</h2></div>
+  <div class="keys"><div class="key"><h4>第一步 · 判题型再动笔</h4><p>常识 80% 的分数来自“排除 + 匹配”：选非题先圈出「不正确 / 错误 / 不属于」，防止看反；对应关系题先核对<b>主体</b>（谁提出的、哪座山、哪个节日）；时间题先比<b>先后</b>。不追求当场背出来，先把明显错的划掉。</p></div><div class="key"><h4>第二步 · 破绽三连排</h4><p>①<b>时间锚点</b>：人物生卒、朝代、事件年代，错位直接排除；②<b>张冠李戴</b>：成果安错人、楹联安错地、节日安错诗；③<b>绝对化表述</b>：「只能」「绝不」「所有」「不会」出现先慢下来，逐字回法条或原文核对。</p></div><div class="key"><h4>第三步 · 限时 + 知识卡</h4><p>每题 ≤ 45 秒，常识不恋战。训练题组限时做、答案速查，错题回错因表归类，并把对应知识点当天抄成“知识卡”（人物—成果、年份—事件、主体—表述），每周回看一遍。地理天文题先做「古称→今名」翻译（岁星＝木星、启明＝金星），翻译完再判正误。</p></div></div>
+  <div class="tip"><b>顺序：</b>先读三把钥匙 → 点开典型题<b>自己先做</b> → 看排除法三步解析对照思路 → 再做训练题组（限时）→ 对答案速查，错题回母题找原因。全部打卡进度保存在本机。</div>
+</section>
+
+<section class="sec" id="k1" data-sec="k1">
+  <div class="mhero"><div><h3>母题 1 · 人文常识 · 文化常识</h3><p>节日诗词、遗址考古、楹联对应、十二时辰。抓标志词 + 核对主体，四选三排。</p></div>
+    <div class="mmeta"><b>3 题</b>训练 · 限时 5 分钟</div></div>
+  <div class="keys"><div class="key"><h4>识别特征</h4><p>诗句 / 楹联 / 文物 / 遗址与传统节日、地点、时辰的对应关系题；近年爱考考古遗址（良渚、河姆渡、殷墟、三星堆）。</p></div><div class="key"><h4>核心钥匙</h4><p>①诗词抓<b>标志物</b>：茱萸菊花＝重阳、龙舟红旗＝端午、圆月灯火＝中秋元宵；②遗址记<b>年代与出土物</b>：良渚玉器＋稻作、殷墟甲骨卜辞、三星堆青铜神树与纵目面具（蚕丛鱼凫属古蜀）；③楹联先看<b>地望</b>再看人物。</p></div><div class="key"><h4>选项怎么用</h4><p>每个选项先提练出“节日 / 地点 / 人物”关键词，与题干要求的主体一比——主体不符的直接划；四项里通常三个能凭标志物划掉，剩下一个就是答案。</p></div></div>
+  <div class="card">
+  <h3>典型题｜诗句对节日——标志物一刀一个，三步排除锁定</h3>
+  <div class="q">
+    <div class="qtop"><span class="qno">例</span><span class="qstem">下列诗句与“千门开锁万灯明，正月中旬动帝京”涉及的传统节日相同的是：<span class="qsrc">（2025 浙江A 19 · 错率 62%）</span></span></div>
+    <div class="opts"><span>A. 插萸登鹫岭，把菊坐蜂台</span><span>B. 一轮秋影转金波，飞镜又重磨</span><span>C. 鼓声三下红旗开，两龙跃出浮水来</span><span>D. 灯火钱塘三五夜，明月如霜，照见人如画</span></div>
+    <input type="checkbox" class="soltoggle" id="ck-typ-1-1" style="display:none">
+    <label class="btn-reveal" for="ck-typ-1-1" data-act="reveal"><span class="t1">看解析</span><span class="t2">收起解析</span></label>
+    <div class="ana">
+      <div class="ana-h">解析 · 排除法优先</div>
+      <div class="as k1"><i>① 先排除</i><p>题干“正月中旬”＋“万灯明”→ 元宵节（正月十五）。四个选项各自提练标志物即可，不需要背全诗出处。</p></div>
+      <div class="as k2"><i>② 再缩小</i><p>A「插萸」「把菊」＝茱萸＋菊花 → <b>重阳节</b>，划；B「秋影」「飞镜」＝秋夜明月 → <b>中秋节</b>，划；C「鼓声」「两龙跃出浮水」＝龙舟竞渡 → <b>端午节</b>，划。</p></div>
+      <div class="as k3"><i>③ 后择优</i><p>只剩 D：「灯火」「三五夜」（每月三五之望日，即十五）＋明月 → 正是<b>元宵</b>景象，选 <b>D</b>。</p></div>
+      <div class="ans">答案：<b>D</b>　　<b>心法：</b>诗词对节日不背全诗，抓两个标志物就够：植物（茱萸菊＝重阳）、活动（龙舟＝端午、灯火赏月＋时间词＝元宵中秋）。</div>
+    </div>
+  </div>
+</div>
+  <div class="card"><h3>训练题组｜限时 5 分钟</h3><div class="q" id="t-1-1" data-master="1-1"><div class="qtop"><span class="qno">1</span><span class="qstem">2024 年10 月10 日，故宫博物院成立99 周年。下列与故宫有关的说法，不正确的是：<span class="qsrc">（2025 浙江A 13）</span></span></div><div class="opts one"><span>A. 故宫的前身是明清皇宫紫禁城，由明太祖朱元璋决定开建</span><span>B. 2024 年，北京中轴线被列入《世界遗产名录》，故宫就位于该中轴线上</span><span>C. 故宫博物院馆藏文物丰富，是中华文明源远流长的见证，其中有《清明上河图》《平复帖》等</span><span>D. 近年来，故宫博物院用文创“唤醒”文物，研发万余种文创产品，如雍正御批折扇、《千里江山图》装饰面、《五牛图》铜牛等</span></div><input type="checkbox" class="soltoggle" style="display:none"><span class="btn-reveal" data-act="reveal"><span class="t1">看解析</span><span class="t2">收起解析</span></span><label class="mini-check"><input type="checkbox" data-master="1-1">做对了</label></div><div class="q" id="t-1-2" data-master="1-2"><div class="qtop"><span class="qno">2</span><span class="qstem">良渚遗址、河姆渡遗址都是浙江境内重要的新石器时代文化遗址。下列与它们有关的表述，不正确的是：<span class="qsrc">（2025 浙江A 18）</span></span></div><div class="opts one"><span>A. 良渚遗址的发现时间早于河姆渡遗址</span><span>B. 杭州第19 届亚运会火种在河姆渡遗址公园采集</span><span>C. 良渚文化的发现，打破了华夏文明的黄河起源一元论</span><span>D. 河姆渡文化的社会经济以稻作农业为主，兼营畜牧、采集和渔猎</span></div><input type="checkbox" class="soltoggle" style="display:none"><span class="btn-reveal" data-act="reveal"><span class="t1">看解析</span><span class="t2">收起解析</span></span><label class="mini-check"><input type="checkbox" data-master="1-2">做对了</label></div><div class="q" id="t-1-3" data-master="1-3"><div class="qtop"><span class="qno">3</span><span class="qstem">下列名胜古迹与楹联对应正确的是：<span class="qsrc">（2025 四川 14）</span></span></div><div class="opts one"><span>A. 四川成都杜甫草堂——两表酬三顾，一对足千秋</span><span>B. 浙江杭州岳飞墓——四面荷花三面柳，一城山色半城湖</span><span>C. 山东济南大明湖——湖光潋滟疑花雨，山籁空灵度梵音</span><span>D. 安徽合肥包公祠——理冤狱关节不通自是阎罗气象，赈灾黎慈悲无量依然菩萨心肠</span></div><input type="checkbox" class="soltoggle" style="display:none"><span class="btn-reveal" data-act="reveal"><span class="t1">看解析</span><span class="t2">收起解析</span></span><label class="mini-check"><input type="checkbox" data-master="1-3">做对了</label></div><div class="ansline"><div>1<b>A</b>文化常识 · 错率44.6%</div><div>2<b>B</b>文化常识 · 错率32.88%</div><div>3<b>D</b>文化常识 · 错率42.24%</div></div><div class="tip">三道训练题分别考：故宫史实（朱棣不是朱元璋）、良渚 vs 河姆渡（亚运火种采自良渚）、名胜楹联对应。都是“主体核对”型，逐项比对再选。</div></div>
+</section><section class="sec" id="k2" data-sec="k2">
+  <div class="mhero"><div><h3>母题 2 · 人文常识 · 文学与历史</h3><p>回目排序、情境可能性、文史常识。用时间锚点一票否决。</p></div>
+    <div class="mmeta"><b>3 题</b>训练 · 限时 5 分钟</div></div>
+  <div class="keys"><div class="key"><h4>识别特征</h4><p>①名著回目 / 事件“按先后排序”；②“最可能发生 / 不可能同一年”的历史情境题。</p></div><div class="key"><h4>核心钥匙</h4><p>①排序题先定<b>最熟的两头</b>（如《三国》连环计在赤壁之前、托孤在最后），再用中间项校验；②情境题给每个人物默<b>生卒 / 朝代</b>，两个时间点比先后；③“同一年”题把每项的<b>年份</b>写出来再比。</p></div><div class="key"><h4>选项怎么用</h4><p>排序题四个选项往往只动两个元素的相对位置——定死一头就能砍掉一半选项；情境题里“后人用前人的东西”或“前人见后人”的选项最常见，看到直接划。</p></div></div>
+  <div class="card">
+  <h3>典型题｜历史情境可能性——时间锚点一票否决三个选项</h3>
+  <div class="q">
+    <div class="qtop"><span class="qno">例</span><span class="qstem">下列情形在历史中最可能发生的是：<span class="qsrc">（2025 天津 61 · 错率 80%）</span></span></div>
+    <div class="opts"><span>A. 明朝末期一个商贾邀请了昆曲班子献唱贺寿</span><span>B. 名将白起曾参考淝水之战的战术来指挥军队</span><span>C. 瓷商借助唐朝通商政策将粉彩瓷器销往海外</span><span>D. 王阳明和黄宗羲曾通过书信以探讨学术问题</span></div>
+    <input type="checkbox" class="soltoggle" id="ck-typ-2-1" style="display:none">
+    <label class="btn-reveal" for="ck-typ-2-1" data-act="reveal"><span class="t1">看解析</span><span class="t2">收起解析</span></label>
+    <div class="ana">
+      <div class="ana-h">解析 · 排除法优先</div>
+      <div class="as k1"><i>① 先排除</i><p>四个选项都是“人物 × 事件”，逐项对时间：A 昆曲——元末明初起源，<b>明中叶起占据剧坛中心</b>，明末请班子贺寿 ✓；B 白起——战国名将（卒于前 257 年），淝水之战是<b>公元 383 年</b>东晋与前秦之战 → 前人打不了后人的仗，划。</p></div>
+      <div class="as k2"><i>② 再缩小</i><p>C 粉彩瓷器——<b>清康熙年间才出现</b>，唐朝根本没有 → 划；D 王阳明（1472–1529）与黄宗羲（1610–1695）<b>生卒完全不重叠</b>，王阳明去世 81 年后黄宗羲才出生 → 无法通信，划。</p></div>
+      <div class="as k3"><i>③ 后择优</i><p>只剩 A 自洽（人物、事件、年代三者匹配）。选 <b>A</b>。</p></div>
+      <div class="ans">答案：<b>A</b>　　<b>心法：</b>历史情境题的本质是时间轴：每个人名先默生卒或朝代，“后人参考前人”可成立、“前人参考后人”必是陷阱。</div>
+    </div>
+  </div>
+</div>
+  <div class="card"><h3>训练题组｜限时 5 分钟</h3><div class="q" id="t-2-1" data-master="2-1"><div class="qtop"><span class="qno">1</span><span class="qstem">下列《三国演义》中的回目，按照先后顺序排列正确的是：①宴长江曹操赋诗，锁战船北军用武②战官渡本初败绩，劫乌巢孟德烧粮③刘先主遗诏托孤儿，诸葛亮安居平五路④王司徒巧使连环计，董太师大闹凤仪亭<span class="qsrc">（2025 国考地市 34）</span></span></div><div class="opts"><span>A. ①③④②</span><span>B. ③②④①</span><span>C. ②①④③</span><span>D. ④②①③</span></div><input type="checkbox" class="soltoggle" style="display:none"><span class="btn-reveal" data-act="reveal"><span class="t1">看解析</span><span class="t2">收起解析</span></span><label class="mini-check"><input type="checkbox" data-master="2-1">做对了</label></div><div class="q" id="t-2-2" data-master="2-2"><div class="qtop"><span class="qno">2</span><span class="qstem">纪录片《何以中国》讲述了多元一体中华民族的形成和中华文明创生的故事。下列哪句解说词不可能出现在《秦汉》一集中？<span class="qsrc">（2025 国考副省 28）</span></span></div><div class="opts one"><span>A. 他登峄山，攀泰山，上琅琊，经之罘，过东观，临碣石，至会稽，巡行之处皆刊石勒铭</span><span>B. 武丁左手扶住卜骨，右手持炭棒，灼烧着钻槽，通红的棒头神秘地闪烁，不久后，裂缝在钻槽边绽开，发出脆响</span><span>C. 从长安出发时，车马辚辚百余人，回程路上，只有两人，一十三年间，有利益相诱，有武力相胁，温柔乡、囹圄境，却从未丢失身为汉使的旌节，从未磨灭此行的初心</span><span>D. 龙首原上，长乐、未央两宫东西并峙，于高处制掣全城。桂宫、北宫、明光宫横列两宫之北</span></div><input type="checkbox" class="soltoggle" style="display:none"><span class="btn-reveal" data-act="reveal"><span class="t1">看解析</span><span class="t2">收起解析</span></span><label class="mini-check"><input type="checkbox" data-master="2-2">做对了</label></div><div class="q" id="t-2-3" data-master="2-3"><div class="qtop"><span class="qno">3</span><span class="qstem">下列场景中，与其他三项不可能发生在同一年的是：<span class="qsrc">（2025 四川 13）</span></span></div><div class="opts one"><span>A. 杭州市民通过电视转播台观看洛杉矶奥运会中国女排夺冠比赛</span><span>B. 北京市民在报纸上看到神舟一号发射成功的新闻</span><span>C. 香港居民看到《中英联合声明》草签的号外</span><span>D. 上海市民购买飞乐音响公司的股票</span></div><input type="checkbox" class="soltoggle" style="display:none"><span class="btn-reveal" data-act="reveal"><span class="t1">看解析</span><span class="t2">收起解析</span></span><label class="mini-check"><input type="checkbox" data-master="2-3">做对了</label></div><div class="ansline"><div>1<b>D</b>文学常识 · 错率44.42%</div><div>2<b>B</b>历史常识 · 错率38.93%</div><div>3<b>B</b>历史常识 · 错率27.32%</div></div><div class="tip">三道训练题：《三国》回目排序（④②①③）、纪录片《秦汉》选非（武丁占卜属商朝）、1984 年同一年排除（神舟一号是 1999 年）。都先写年份再动笔。</div></div>
+</section><section class="sec" id="k3" data-sec="k3">
+  <div class="mhero"><div><h3>母题 3 · 科技常识 · 物理常识</h3><p>物理学家对应、生活现象、生产应用。公式与“谁提出的”都要对号。</p></div>
+    <div class="mmeta"><b>3 题</b>训练 · 限时 5 分钟</div></div>
+  <div class="keys"><div class="key"><h4>识别特征</h4><p>①物理学家与观点 / 成果对应；②生活与生产中的物理现象判断（动能势能、毛细现象、伯努利原理、欧姆定律）。</p></div><div class="key"><h4>核心钥匙</h4><p>①对应题记<b>人—成果</b>清单：普朗克＝量子、安培＝分子电流假说、麦克斯韦＝电磁波与方程组、伽利略＝运动不需力维持、牛顿＝万有引力；②现象题回到<b>原理</b>：喷嘴加速→压力减小（伯努利）、毛细管→水自动上升、升华→钨丝变细电阻变大。</p></div><div class="key"><h4>选项怎么用</h4><p>①正误混合题先做最有把握的两项，用它们定“选是 / 选非”再扫其余；②“成正比”类题检查<b>条件是否恒定</b>（浮力看 V排 而非 V物，加速度与速度不成正比）；③方向反了的表述（势能→动能说反、压力增大说反）直接划。</p></div></div>
+  <div class="card">
+  <h3>典型题｜物理学家对应——教科书级对应排完，答案自己浮出来</h3>
+  <div class="q">
+    <div class="qtop"><span class="qno">例</span><span class="qstem">下列物理学家与其提出的著名观点对应错误的是：<span class="qsrc">（2025 国考副省 27 · 错率 65%）</span></span></div>
+    <div class="opts one"><span>A. 麦克斯韦：能量的交换不是连续的，而是以最小的不可分割的单元进行，这些单元被称为“量子”</span><span>B. 安培：在原子、分子等物质微粒的内部，存在着一种环形电流——分子电流，使每个微粒成为微小的磁体</span><span>C. 牛顿：任何两个物体之间都存在引力，这种力的大小与它们质量的乘积成正比，与它们之间的距离的平方成反比</span><span>D. 伽利略：物体的运动并不需要力来维持，运动的物体之所以会停下来，是因为受到了阻力</span></div>
+    <input type="checkbox" class="soltoggle" id="ck-typ-3-1" style="display:none">
+    <label class="btn-reveal" for="ck-typ-3-1" data-act="reveal"><span class="t1">看解析</span><span class="t2">收起解析</span></label>
+    <div class="ana">
+      <div class="ana-h">解析 · 排除法优先</div>
+      <div class="as k1"><i>① 先排除</i><p>选非题。B 安培＝分子电流假说 ✓、C 牛顿＝万有引力定律 ✓、D 伽利略＝惯性思想（运动不需力维持）✓——三个都是教科书级正确对应，无法排除。</p></div>
+      <div class="as k2"><i>② 再缩小</i><p>看 A：“量子”概念是<b>普朗克 1900 年</b>研究黑体辐射时提出的；麦克斯韦的贡献是<b>预言电磁波、建立方程组</b>。张冠李戴成立。</p></div>
+      <div class="as k3"><i>③ 后择优</i><p>选 <b>A</b>（对应错误的那个）。</p></div>
+      <div class="ans">答案：<b>A</b>　　<b>心法：</b>对应题先把三个有把握的快速判定 ✓，剩下的那个无论会不会都指向答案——这是“选非题”特有的排除红利。</div>
+    </div>
+  </div>
+</div>
+  <div class="card"><h3>训练题组｜限时 5 分钟</h3><div class="q" id="t-3-1" data-master="3-1"><div class="qtop"><span class="qno">1</span><span class="qstem">关于生活中的物理现象，下列说法正确的是：<span class="qsrc">（2025 天津 58）</span></span></div><div class="opts"><span>A. 桥梁桥拱的形状经极致优化可显著增加桥梁对桥墩的拉力</span><span>B. 白炽灯中的钨丝在长期使用过程中会逐渐变细，电阻变大</span><span>C. 风筝在飞上天空的过程中，动能转化为势能，机械能不变</span><span>D. 修建高塔时，塔基底座的面积越大，塔对地面的压力越小</span></div><input type="checkbox" class="soltoggle" style="display:none"><span class="btn-reveal" data-act="reveal"><span class="t1">看解析</span><span class="t2">收起解析</span></span><label class="mini-check"><input type="checkbox" data-master="3-1">做对了</label></div><div class="q" id="t-3-2" data-master="3-2"><div class="qtop"><span class="qno">2</span><span class="qstem">关于农业生产中的科学知识，下列说法错误的是：<span class="qsrc">（2025 天津 56）</span></span></div><div class="opts"><span>A. 化肥在水中溶解后可形成作物能够吸收的离子形态</span><span>B. 作物茎内导管可利用毛细现象将土壤中的水分吸上来</span><span>C. 土壤中加入石灰可中和土壤的酸性以提高土壤pH</span><span>D. 水通过喷灌系统的喷嘴时速度会突然减小，压力增大</span></div><input type="checkbox" class="soltoggle" style="display:none"><span class="btn-reveal" data-act="reveal"><span class="t1">看解析</span><span class="t2">收起解析</span></span><label class="mini-check"><input type="checkbox" data-master="3-2">做对了</label></div><div class="q" id="t-3-3" data-master="3-3"><div class="qtop"><span class="qno">3</span><span class="qstem">下列情境中的两个物理量成正比的是：①通过某一电阻器的电流与其两端的电压②物体所受浮力与其体积③弹性限度内弹簧的伸长量与其所受拉力④汽车行驶时的加速度与速度<span class="qsrc">（2025 国考行政执法 30）</span></span></div><div class="opts"><span>A. ①②</span><span>B. ②④</span><span>C. ③④</span><span>D. ①③</span></div><input type="checkbox" class="soltoggle" style="display:none"><span class="btn-reveal" data-act="reveal"><span class="t1">看解析</span><span class="t2">收起解析</span></span><label class="mini-check"><input type="checkbox" data-master="3-3">做对了</label></div><div class="ansline"><div>1<b>B</b>物理常识 · 错率32.53%</div><div>2<b>D</b>物理常识 · 错率46.94%</div><div>3<b>D</b>物理常识 · 错率31.75%</div></div><div class="tip">三道训练题：白炽灯钨丝升华变细（B）、农业喷嘴伯努利原理（D）、“成正比”组合题（①③）。现象题都先回原理再看表述方向。</div></div>
+</section><section class="sec" id="k4" data-sec="k4">
+  <div class="mhero"><div><h3>母题 4 · 科技常识 · 化学与材料</h3><p>石油加工、矿物制品、新材料。成分、类别、用途三头核对。</p></div>
+    <div class="mmeta"><b>3 题</b>训练 · 限时 5 分钟</div></div>
+  <div class="keys"><div class="key"><h4>识别特征</h4><p>物质 / 材料的类别判断与用途匹配：稀土、石棉、孔雀石、花岗岩、石墨烯、熔喷布、碳纤维。</p></div><div class="key"><h4>核心钥匙</h4><p>①<b>类别</b>是命门：稀土＝17 种金属元素合称（不是一种元素）、花岗岩＝<b>岩浆岩</b>（不是变质岩）、聚丙烯＝口罩熔喷布原料（氯乙烯是 PVC 原料且有毒）；②<b>变化类型</b>：催化裂化＝化学变化、蒸馏分馏＝物理变化；③新材料用途对号：石墨烯＝电池、碳纤维＝强度高且导电。</p></div><div class="key"><h4>选项怎么用</h4><p>选非题逐项核对“类别—用途”两要素：类别错的必错（花岗岩）；用途说法与常见常识相反的直接划（“没有导电性”）；拿不准的留到最后，用剩余选项互证。</p></div></div>
+  <div class="card">
+  <h3>典型题｜矿物类别判断——花岗岩是岩浆岩，不是变质岩</h3>
+  <div class="q">
+    <div class="qtop"><span class="qno">例</span><span class="qstem">关于矿物及其制品，下列说法错误的是：<span class="qsrc">（2025 天津 57 · 错率 44%）</span></span></div>
+    <div class="opts"><span>A. 稀土并不是一种元素，而是一组金属元素的集合</span><span>B. 矿石中可以提取颜料，孔雀石即可提取绿色颜料</span><span>C. 石棉具有较高的燃点和耐热性，可用来隔热保温</span><span>D. 花岗岩是一种变质岩，硬度低，常用于地面装饰</span></div>
+    <input type="checkbox" class="soltoggle" id="ck-typ-4-1" style="display:none">
+    <label class="btn-reveal" for="ck-typ-4-1" data-act="reveal"><span class="t1">看解析</span><span class="t2">收起解析</span></label>
+    <div class="ana">
+      <div class="ana-h">解析 · 排除法优先</div>
+      <div class="as k1"><i>① 先排除</i><p>选非题。A 稀土＝17 种金属元素的合称 ✓；B 孔雀石（碱式碳酸铜）＝古代绿色颜料 ✓；C 石棉耐火隔热 ✓——三项都符合常识。</p></div>
+      <div class="as k2"><i>② 再缩小</i><p>D 两处硬伤：花岗岩是<b>岩浆岩（火成岩）</b>，不是变质岩；且花岗岩<b>硬度高</b>、耐磨，才被广泛用于地面装饰——“硬度低”与用途自相矛盾。</p></div>
+      <div class="as k3"><i>③ 后择优</i><p>类别错 + 用途矛盾双重锁定，选 <b>D</b>。</p></div>
+      <div class="ans">答案：<b>D</b>　　<b>心法：</b>材料题先验类别再验用途；当用途描述和类别描述在同一个选项里互相打架时，这个选项基本就是命题人埋的错。</div>
+    </div>
+  </div>
+</div>
+  <div class="card"><h3>训练题组｜限时 5 分钟</h3><div class="q" id="t-4-1" data-master="4-1"><div class="qtop"><span class="qno">1</span><span class="qstem">关于石油加工，下列说法错误的是：<span class="qsrc">（2025 天津 55）</span></span></div><div class="opts"><span>A. 润滑剂、沥青、石蜡均可以通过石油加工获得</span><span>B. 汽油是通过催化裂化从原油中获得，不涉及物理变化</span><span>C. 加工时使用氢气可以去除石油中的杂质，提高产品质量</span><span>D. 刚开采出来的石油一般都含水，加工时要进行脱水处理</span></div><input type="checkbox" class="soltoggle" style="display:none"><span class="btn-reveal" data-act="reveal"><span class="t1">看解析</span><span class="t2">收起解析</span></span><label class="mini-check"><input type="checkbox" data-master="4-1">做对了</label></div><div class="q" id="t-4-2" data-master="4-2"><div class="qtop"><span class="qno">2</span><span class="qstem">化学与生产、生活紧密相关。下列相关说法错误的是：<span class="qsrc">（2025 四川 19）</span></span></div><div class="opts"><span>A. 石墨烯是生产新能源电池的重要材料</span><span>B. 氢氧化镁具有碱性，可作为胃酸中和剂</span><span>C. 医用口罩和防护服的主要原材料是氯乙烯</span><span>D. 丁达尔效应是区分胶体与溶液的常用方法</span></div><input type="checkbox" class="soltoggle" style="display:none"><span class="btn-reveal" data-act="reveal"><span class="t1">看解析</span><span class="t2">收起解析</span></span><label class="mini-check"><input type="checkbox" data-master="4-2">做对了</label></div><div class="q" id="t-4-3" data-master="4-3"><div class="qtop"><span class="qno">3</span><span class="qstem">下列与纤维材料有关的说法错误的是：<span class="qsrc">（2025 国考行政执法 31）</span></span></div><div class="opts"><span>A. 玻璃纤维性脆，耐磨性较差</span><span>B. 碳纤维抗张强度好且没有导电性</span><span>C. 竹炭纤维能吸湿和清除异味</span><span>D. 大豆蛋白纤维细腻，适用于内衣制造</span></div><input type="checkbox" class="soltoggle" style="display:none"><span class="btn-reveal" data-act="reveal"><span class="t1">看解析</span><span class="t2">收起解析</span></span><label class="mini-check"><input type="checkbox" data-master="4-3">做对了</label></div><div class="ansline"><div>1<b>B</b>化学常识 · 错率72.86%</div><div>2<b>C</b>化学常识 · 错率41.08%</div><div>3<b>B</b>生活常识 · 错率39.47%</div></div><div class="tip">三道训练题：石油加工（催化裂化是化学变化）、化学与生活（口罩原料是聚丙烯不是氯乙烯）、纤维材料（碳纤维有导电性）。都是“成分—用途”核对。</div></div>
+</section><section class="sec" id="k5" data-sec="k5">
+  <div class="mhero"><div><h3>母题 5 · 科技常识 · 生物与医药</h3><p>植物器官、真菌微生物、药物与人体。部位与功能要对号。</p></div>
+    <div class="mmeta"><b>3 题</b>训练 · 限时 5 分钟</div></div>
+  <div class="keys"><div class="key"><h4>识别特征</h4><p>①植物 / 微生物的器官与功能归属；②常见药物、体检、人体结构判断。</p></div><div class="key"><h4>核心钥匙</h4><p>①<b>食用部位</b>清单：土豆＝块茎、萝卜红薯＝根、板栗松子南瓜子＝种子、黄连＝根茎、金银花＝花蕾；②微生物分工：<b>酵母菌</b>酿酒发面、<b>乳酸菌</b>产酸奶泡菜（不产酒精）、青霉菌→青霉素（第一种抗生素）；③用药常识：他汀类<b>晚间</b>服（胆固醇夜间合成）、碘伏 1% 可涂皮肤（眼睛除外）。</p></div><div class="key"><h4>选项怎么用</h4><p>组合判断题（“都是种子 / 都是根”）只要一个成员错位整项就划——土豆是茎，带土豆的选项全排；选非题里“第一 / 之最”的表述优先核对，正确率极高。</p></div></div>
+  <div class="card">
+  <h3>典型题｜真菌科普选非——酿酒的是酵母菌，不是乳酸菌</h3>
+  <div class="q">
+    <div class="qtop"><span class="qno">例</span><span class="qstem">在关于真菌的科普文章中，下列表述存在错误的是：<span class="qsrc">（2025 国考副省 32 · 错率 71%）</span></span></div>
+    <div class="opts one"><span>A. 古人很早就利用真菌发酵食物，比如利用乳酸菌酿造果酒</span><span>B. 人类历史上发现的第一种抗生素来自微型真菌</span><span>C. 羊肚菌、松茸等食用真菌味道鲜美，含有丰富的优质蛋白质</span><span>D. 植物的根能和真菌形成共生关系，菌丝吸收水分、无机盐等供给植物</span></div>
+    <input type="checkbox" class="soltoggle" id="ck-typ-5-1" style="display:none">
+    <label class="btn-reveal" for="ck-typ-5-1" data-act="reveal"><span class="t1">看解析</span><span class="t2">收起解析</span></label>
+    <div class="ana">
+      <div class="ana-h">解析 · 排除法优先</div>
+      <div class="as k1"><i>① 先排除</i><p>选非题。B 第一种抗生素＝青霉素，来自青霉菌（微型真菌）✓；C 食用菌高蛋白 ✓；D 菌根共生 ✓——三项正确。</p></div>
+      <div class="as k2"><i>② 再缩小</i><p>A 前半句“利用真菌发酵食物”没错，但酿酒的微生物是<b>酵母菌</b>；乳酸菌代谢产出<b>乳酸</b>，用于酸奶、泡菜，不产酒精——“乳酸菌酿造果酒”主体错位。</p></div>
+      <div class="as k3"><i>③ 后择优</i><p>选 <b>A</b>（存在错误的表述）。</p></div>
+      <div class="ans">答案：<b>A</b>　　<b>心法：</b>微生物分工是高频考点：酵母菌＝酒精发酵，乳酸菌＝乳酸发酵。命题人最爱把两者互换。</div>
+    </div>
+  </div>
+</div>
+  <div class="card"><h3>训练题组｜限时 5 分钟</h3><div class="q" id="t-5-1" data-master="5-1"><div class="qtop"><span class="qno">1</span><span class="qstem">下列与植物有关的说法正确的是：<span class="qsrc">（2025 四川 20）</span></span></div><div class="opts"><span>A. 中成药中的黄连、金银花都是植物的花</span><span>B. 板栗、红松子、南瓜子都是植物的种子</span><span>C. 土豆片、萝卜干、红薯粉都是用植物的根加工的</span><span>D. 龙井、碧螺春是根据不同加工方法制作的茶叶品种</span></div><input type="checkbox" class="soltoggle" style="display:none"><span class="btn-reveal" data-act="reveal"><span class="t1">看解析</span><span class="t2">收起解析</span></span><label class="mini-check"><input type="checkbox" data-master="5-1">做对了</label></div><div class="q" id="t-5-2" data-master="5-2"><div class="qtop"><span class="qno">2</span><span class="qstem">关于常见药物，下列说法错误的是：<span class="qsrc">（2025 天津 64）</span></span></div><div class="opts one"><span>A. 双黄连适用于风热感冒引起的发热、咳嗽</span><span>B. 维生素E 过量使用会导致食欲不振、视力模糊等症状</span><span>C. 医用碘伏常见浓度是1%，可直接涂擦除眼睛外的皮肤表面</span><span>D. 降胆固醇的他汀类药物一般清晨服用，因为胆固醇主要在日间合成</span></div><input type="checkbox" class="soltoggle" style="display:none"><span class="btn-reveal" data-act="reveal"><span class="t1">看解析</span><span class="t2">收起解析</span></span><label class="mini-check"><input type="checkbox" data-master="5-2">做对了</label></div><div class="q" id="t-5-3" data-master="5-3"><div class="qtop"><span class="qno">3</span><span class="qstem">关于温室栽培，下列说法错误的是：<span class="qsrc">（2025 国考行政执法 35）</span></span></div><div class="opts"><span>A. 夜间降低温室内的温度，可以减少农作物营养物质的消耗</span><span>B. 相比普通塑料温室大棚，玻璃温室可以让阳光更容易进入</span><span>C. 紫外线灯是一种大棚中经常使用且效果较好的植物补光灯</span><span>D. 在作物栽培过程中通入适量的二氧化碳可以提高作物产量</span></div><input type="checkbox" class="soltoggle" style="display:none"><span class="btn-reveal" data-act="reveal"><span class="t1">看解析</span><span class="t2">收起解析</span></span><label class="mini-check"><input type="checkbox" data-master="5-3">做对了</label></div><div class="ansline"><div>1<b>B</b>生物常识 · 错率43.08%</div><div>2<b>D</b>生物常识 · 错率28.35%</div><div>3<b>C</b>生物常识 · 错率44.91%</div></div><div class="tip">三道训练题：植物食用部位（土豆是茎）、他汀类药物晚间服用、温室补光灯（紫外线灯用于杀菌不是补光）。都是“部位 / 功能对号”。</div></div>
+</section><section class="sec" id="k6" data-sec="k6">
+  <div class="mhero"><div><h3>母题 6 · 科技常识 · 生活与体育常识</h3><p>急救安全、运动科学、赛事规则、科技成就。生活经验 + 规则细节。</p></div>
+    <div class="mmeta"><b>3 题</b>训练 · 限时 5 分钟</div></div>
+  <div class="keys"><div class="key"><h4>识别特征</h4><p>日常场景判断（蚊虫叮咬、煤气泄漏、高血压运动）＋体育规则（跳水代码、篮球罚球、举重裁判）＋年度科技成就（神舟、LPR 等时事载体）。</p></div><div class="key"><h4>核心钥匙</h4><p>①急救题记<b>“冷 vs 热”</b>：蚊虫叮咬、扭伤红肿→冷敷；②燃气泄漏→<b>维持电器现状</b>，严禁开关任何电器（电火花引爆）；③运动：有氧＝可持续 5 分钟尚有余力、无氧＝短时高强度；④科技时事：神十九乘组“70/80/90 后”齐聚、电池为锂离子（不是镉镍）。</p></div><div class="key"><h4>选项怎么用</h4><p>生活题四个选项通常三错一对：把每项拆成“做法 + 理由”两半，<b>理由错的做法也错</b>（塔基越大压力不变只减压强）；赛事规则题中“禁止 / 允许”的绝对化表述优先回规则核对。</p></div></div>
+  <div class="card">
+  <h3>典型题｜生活常识选是——辣椒素脂溶性，酒精解辣</h3>
+  <div class="q">
+    <div class="qtop"><span class="qno">例</span><span class="qstem">下列与日常生活有关的说法，正确的是：<span class="qsrc">（2025 浙江A 20 · 错率 33%）</span></span></div>
+    <div class="opts one"><span>A. 被蚊虫叮咬后，热敷肿胀部位有利于快速消肿止痒</span><span>B. 酒精能溶解辣椒素，切菜“辣”到手时，可以用酒精擦拭来解“辣”</span><span>C. 煤气泄漏时，应切断所有电器开关，如果房间里开着灯，应第一时间关掉</span><span>D. 运动会加速血液循环，血管收缩扩张的幅度加大，血管壁压力增大，因此高血压的人应该少运动</span></div>
+    <input type="checkbox" class="soltoggle" id="ck-typ-6-1" style="display:none">
+    <label class="btn-reveal" for="ck-typ-6-1" data-act="reveal"><span class="t1">看解析</span><span class="t2">收起解析</span></label>
+    <div class="ana">
+      <div class="ana-h">解析 · 排除法优先</div>
+      <div class="as k1"><i>① 先排除</i><p>选是题，四选三错。A 蚊虫叮咬的红肿是变态反应，应<b>冷敷</b>收缩毛细血管，热敷反而加重 → 划；C 燃气泄漏时<b>严禁操作任何电器</b>——开关灯产生的电火花会引爆燃气，应维持现状、开门窗通风 → 划。</p></div>
+      <div class="as k2"><i>② 再缩小</i><p>D 理由错：高血压患者恰恰<b>需要适度运动</b>（如快走、太极）帮助控压，“应该少运动”结论错误 → 划。</p></div>
+      <div class="as k3"><i>③ 后择优</i><p>B 正确：辣椒素<b>脂溶性</b>强、不溶于水，酒精（乙醇）可溶解辣椒素，擦拭可缓解灼痛。选 <b>B</b>。</p></div>
+      <div class="ans">答案：<b>B</b>　　<b>心法：</b>生活常识题的选项是“做法 + 理由”结构：理由部分（冷热敷、电火花、血管原理）才是判分点，做法跟着理由走。</div>
+    </div>
+  </div>
+</div>
+  <div class="card"><h3>训练题组｜限时 5 分钟</h3><div class="q" id="t-6-1" data-master="6-1"><div class="qtop"><span class="qno">1</span><span class="qstem">下列与体育运动有关的说法正确的是：<span class="qsrc">（2025 四川 16）</span></span></div><div class="opts"><span>A. 持续5 分钟尚有余力的运动称为无氧运动</span><span>B. 坐姿半转身、手臂拉伸能改善柔韧性与身体形态</span><span>C. 耐力是指人体短时间有节奏进行肌肉活动的能力</span><span>D. 做俯卧撑和举哑铃均属于克服外部阻力的训练方法</span></div><input type="checkbox" class="soltoggle" style="display:none"><span class="btn-reveal" data-act="reveal"><span class="t1">看解析</span><span class="t2">收起解析</span></span><label class="mini-check"><input type="checkbox" data-master="6-1">做对了</label></div><div class="q" id="t-6-2" data-master="6-2"><div class="qtop"><span class="qno">2</span><span class="qstem">下列与体育比赛有关的说法错误的是：<span class="qsrc">（2025 国考行政执法 33）</span></span></div><div class="opts"><span>A. 跳水运动的难度系数涉及动作姿势和翻腾转体周数等方面</span><span>B. 篮球比赛中罚球时允许球员双脚离地</span><span>C. 足球比赛的常规时间长度为90 分钟</span><span>D. 举重运动中判定试举成功需要三名裁判均亮白灯</span></div><input type="checkbox" class="soltoggle" style="display:none"><span class="btn-reveal" data-act="reveal"><span class="t1">看解析</span><span class="t2">收起解析</span></span><label class="mini-check"><input type="checkbox" data-master="6-2">做对了</label></div><div class="q" id="t-6-3" data-master="6-3"><div class="qtop"><span class="qno">3</span><span class="qstem">关于医学检查方法，下列说法错误的是：<span class="qsrc">（2025 国考副省 29）</span></span></div><div class="opts"><span>A. 做心脏超声检查，无需患者做憋尿、空腹等特殊准备</span><span>B. 造影利用了造影剂与人体组织密度的区别</span><span>C. 磁共振检查没有放射性，适用于孕妇、婴幼儿等人群</span><span>D. 血清检查是判断幽门螺旋杆菌感染的最佳方法</span></div><input type="checkbox" class="soltoggle" style="display:none"><span class="btn-reveal" data-act="reveal"><span class="t1">看解析</span><span class="t2">收起解析</span></span><label class="mini-check"><input type="checkbox" data-master="6-3">做对了</label></div><div class="ansline"><div>1<b>B</b>生活常识 · 错率75.75%</div><div>2<b>D</b>生活常识 · 错率31.03%</div><div>3<b>D</b>生活常识 · 错率27.89%</div></div><div class="tip">三道训练题：运动科学（坐姿半转身改善柔韧）、体育规则（举重三名裁判白灯、篮球罚球可离地）、医学检查（幽门螺旋杆菌最佳方法是呼气试验）。规则细节逐字核对。</div></div>
+</section><section class="sec" id="k7" data-sec="k7">
+  <div class="mhero"><div><h3>母题 7 · 法律常识 · 宪法与行政法</h3><p>民族区域自治、立法权限、行政复议与诉讼、刑法罪名。法定表述逐字比对。</p></div>
+    <div class="mmeta"><b>4 题</b>训练 · 限时 6 分钟</div></div>
+  <div class="keys"><div class="key"><h4>识别特征</h4><p>法条原文判断：宪法（自治机关、自治权）、行政法（复议范围 / 复议机关 / 复议前置）、刑法（妨害作证罪、伪证罪、虚假诉讼罪）。</p></div><div class="key"><h4>核心钥匙</h4><p>①自治机关＝自治区 / 州 / 县的<b>人大 + 人民政府</b>；自治区主席 / 州长 / 县长由<b>实行区域自治的民族的公民</b>担任；②行政复议范围不含<b>内部人事处理</b>（公务员降职、奖惩走申诉）；③当场作出的行政处罚 → <b>复议前置</b>，不能直接起诉；复议机关＝本级人民政府（县公安局的复议机关是县政府）。</p></div><div class="key"><h4>选项怎么用</h4><p>法条题四个选项常是“三条对一条错”：先排除与法条原文明显不符的（绝对化、主体错、方向反）；罪名题分清<b>行为方式</b>——指使他人作伪证＝妨害作证罪，自己虚假陈述＝看主体与场合定虚假诉讼罪 / 伪证罪。</p></div></div>
+  <div class="card">
+  <h3>典型题｜行政复议范围——内部人事处理不能复议</h3>
+  <div class="q">
+    <div class="qtop"><span class="qno">例</span><span class="qstem">下列情形不在申请行政复议范围之内的是：<span class="qsrc">（2025 国考副省 23 · 错率 39%）</span></span></div>
+    <div class="opts one"><span>A. 餐馆甲因食品卫生不达标，被吊销餐饮服务许可证，甲不服</span><span>B. 建设单位乙在申请建筑工程施工许可证时，因申请材料不全被拒绝，乙不服</span><span>C. 公务员丙不能胜任工作，其所属行政机关作出降职处理决定，丙不服</span><span>D. 工人丁提出工伤认定申请，当地人力资源和社会保障局作出不予受理决定，丁不服</span></div>
+    <input type="checkbox" class="soltoggle" id="ck-typ-7-1" style="display:none">
+    <label class="btn-reveal" for="ck-typ-7-1" data-act="reveal"><span class="t1">看解析</span><span class="t2">收起解析</span></label>
+    <div class="ana">
+      <div class="ana-h">解析 · 排除法优先</div>
+      <div class="as k1"><i>① 先排除</i><p>选非题。A 吊销许可证＝<b>行政处罚</b>，可复议；B 拒绝颁发许可证＝<b>行政许可</b>行为，可复议；D 不予受理工伤认定＝侵犯合法权益的具体行政行为，可复议——三项都落在《行政复议法》第十一条规定情形内。</p></div>
+      <div class="as k2"><i>② 再缩小</i><p>C 机关对公务员作出的<b>降职等人事处理</b>，属于行政机关内部管理行为；公务员不服走<b>复核、申诉</b>程序，不属于行政复议范围。</p></div>
+      <div class="as k3"><i>③ 后择优</i><p>选 <b>C</b>（不在复议范围之内）。</p></div>
+      <div class="ans">答案：<b>C</b>　　<b>心法：</b>“对外部相对人”的行为才可复议；机关对自家公务员的人事处理（奖惩、任免、降职）一律走内部申诉，这是行政复议的边界线。</div>
+    </div>
+  </div>
+</div>
+  <div class="card"><h3>训练题组｜限时 6 分钟</h3><div class="q" id="t-7-1" data-master="7-1"><div class="qtop"><span class="qno">1</span><span class="qstem">中华人民共和国是全国各族人民共同缔造的统一的多民族国家。下列有关表述不正确的是：<span class="qsrc">（2025 浙江A 15）</span></span></div><div class="opts one"><span>A. “多元一体”是中华民族的显著特征</span><span>B. 民族自治地方的自治机关是自治区、自治州、自治县的人民代表大会和人民政府</span><span>C. 民族自治地方的少数民族干部具有优先任用权，自治区主席、自治州州长、自治县县长除外</span><span>D. 加强对青少年的历史文化教育，全面推广普及国家通用语言文字，全面推行使用国家统编教材，把中华民族共同体意识从小就植入孩子们的心灵</span></div><input type="checkbox" class="soltoggle" style="display:none"><span class="btn-reveal" data-act="reveal"><span class="t1">看解析</span><span class="t2">收起解析</span></span><label class="mini-check"><input type="checkbox" data-master="7-1">做对了</label></div><div class="q" id="t-7-2" data-master="7-2"><div class="qtop"><span class="qno">2</span><span class="qstem">下列与我国的立法权相关的说法正确的是：<span class="qsrc">（2025 国考行政执法 21）</span></span></div><div class="opts one"><span>A. 强制隔离戒毒、冻结存款的行政强制措施只能由法律予以设定</span><span>B. 全国人民代表大会可授权国务院根据实际需要制定法律</span><span>C. 法律解释权属于全国人大常委会、最高人民法院及最高人民检察院</span><span>D. 行政法规由国务院及其组成部门、直属机构、办事机构予以制定发布</span></div><input type="checkbox" class="soltoggle" style="display:none"><span class="btn-reveal" data-act="reveal"><span class="t1">看解析</span><span class="t2">收起解析</span></span><label class="mini-check"><input type="checkbox" data-master="7-2">做对了</label></div><div class="q" id="t-7-3" data-master="7-3"><div class="qtop"><span class="qno">3</span><span class="qstem">2024 年5 月，甲驾驶重型半挂车行驶至某县辖区内被交警临检。该县公安局交警大队认定甲存在驾驶故意污损机动车号牌的机动车在道路行驶的行为，遂当场作出罚款200 元、记9 分的处罚决定。甲认为其不存在故意污损号牌的行为，对处罚决定不服。下列说法正确的是：<span class="qsrc">（2025 国考行政执法 23）</span></span></div><div class="opts"><span>A. 甲可以不经行政复议，直接向人民法院提起行政诉讼</span><span>B. 甲若申请行政复议，复议机关为该县公安局</span><span>C. 甲若申请行政复议，不适用简易程序审理</span><span>D. 甲若申请行政复议，该案可适用调解</span></div><input type="checkbox" class="soltoggle" style="display:none"><span class="btn-reveal" data-act="reveal"><span class="t1">看解析</span><span class="t2">收起解析</span></span><label class="mini-check"><input type="checkbox" data-master="7-3">做对了</label></div><div class="q" id="t-7-4" data-master="7-4"><div class="qtop"><span class="qno">4</span><span class="qstem">虚假诉讼、作伪证是我国重点打击的破坏司法秩序的行为。下列说法错误的是：<span class="qsrc">（2025 国考行政执法 24）</span></span></div><div class="opts one"><span>A. 甲伪造合同向法院起诉，意图获得非法利益，甲可能被罚款、拘留或被追究刑事责任</span><span>B. 甲指使乙在一民事案件中作伪证，甲的行为构成妨害作证罪</span><span>C. 甲欠乙2 万元，因欠条遗失，乙补写欠条并模仿甲的签名后向法院起诉，乙的行为构成虚假诉讼罪</span><span>D. 甲为鉴定人，在某刑事案件中故意作虚假鉴定，意图陷害他人，甲的行为构成伪证罪</span></div><input type="checkbox" class="soltoggle" style="display:none"><span class="btn-reveal" data-act="reveal"><span class="t1">看解析</span><span class="t2">收起解析</span></span><label class="mini-check"><input type="checkbox" data-master="7-4">做对了</label></div><div class="ansline"><div>1<b>C</b>宪法 · 错率65.14%</div><div>2<b>A</b>宪法 · 错率21.34%</div><div>3<b>D</b>行政法 · 错率22.47%</div><div>4<b>C</b>刑法与刑事诉讼法 · 错率48.58%</div></div><div class="tip">四道训练题：民族区域自治（自治区主席由自治民族公民担任）、立法权限（行政强制措施只能由法律设定）、行政复议前置与复议机关、罪名辨析（补写欠条冒签起诉＝不构成虚假诉讼罪）。法条表述逐字回原文。</div></div>
+</section><section class="sec" id="k8" data-sec="k8">
+  <div class="mhero"><div><h3>母题 8 · 法律常识 · 民商经与专门法</h3><p>民法典、公司法、商标权、食品安全、文物保护、消保条例。新法高频。</p></div>
+    <div class="mmeta"><b>3 题</b>训练 · 限时 6 分钟</div></div>
+  <div class="keys"><div class="key"><h4>识别特征</h4><p>民法典（诉讼时效、意定监护、胎儿继承、优先承租权）、公司法（公示事项）、商标法（可撤销情形）、食品安全法、文物保护法、消保条例。</p></div><div class="key"><h4>核心钥匙</h4><p>①诉讼时效＝<b>法定</b>，当事人不得约定排除；②意定监护须<b>书面</b>形式；③涉及遗产继承、接受赠与，<b>胎儿视为具有民事权利能力</b>；④优先承租权归<b>原承租人</b>；⑤注册商标连续三年不使用可被<b>撤销</b>；⑥国有资产：境内地下 / 内水 / 领海遗存文物归<b>国家所有</b>；⑦消保：自动续费须在<b>服务前和续费日期前</b>两次显著提示，免费服务也要保障安全。</p></div><div class="key"><h4>选项怎么用</h4><p>选是题用“要件核对”：每个选项拆出形式要件（书面？公示？备案？）和主体要件（谁有权？），缺一个要件就划；拿不准时选表述最平实、不给绝对化承诺的那项。</p></div></div>
+  <div class="card">
+  <h3>典型题｜民法典选是——胎儿继承利益受保护</h3>
+  <div class="q">
+    <div class="qtop"><span class="qno">例</span><span class="qstem">下列符合《中华人民共和国民法典》的是：<span class="qsrc">（2025 浙江A 14 · 错率 55%）</span></span></div>
+    <div class="opts one"><span>A. 甲向乙借款十万元，并约定该借款合同不受诉讼时效限制</span><span>B. 甲与三个儿子口头协商一致，约定甲丧失民事行为能力时，由其二儿子履行监护职责</span><span>C. 甲和怀孕的妻子乙在游玩途中发生交通事故，甲不幸离世，乙腹中的胎儿可以继承甲的遗产</span><span>D. 甲租赁乙的房屋进行经营，租赁期限届满，甲与乙的远房亲戚丙均想租赁该房屋，甲有优先承租该房屋的权利</span></div>
+    <input type="checkbox" class="soltoggle" id="ck-typ-8-1" style="display:none">
+    <label class="btn-reveal" for="ck-typ-8-1" data-act="reveal"><span class="t1">看解析</span><span class="t2">收起解析</span></label>
+    <div class="ana">
+      <div class="ana-h">解析 · 排除法优先</div>
+      <div class="as k1"><i>① 先排除</i><p>选是题。A 诉讼时效是<b>法定</b>制度，借款合同请求权不属法定排除情形，当事人<b>不能约定排除</b> → 划；B 意定监护要求以<b>书面形式</b>确定，“口头协商”形式要件缺失 → 划。</p></div>
+      <div class="as k2"><i>② 再缩小</i><p>D 优先承租权的主体是<b>原承租人甲</b>（房屋承租期满，同等条件下甲有优先承租权），远房亲戚丙无此权利——选项把主体装反了 → 划。</p></div>
+      <div class="as k3"><i>③ 后择优</i><p>C 正确：《民法典》第十六条规定，涉及<b>遗产继承</b>、接受赠与等胎儿利益保护时，胎儿视为具有民事权利能力，可以继承父亲遗产。选 <b>C</b>。</p></div>
+      <div class="ans">答案：<b>C</b>　　<b>心法：</b>民商法选是题用“要件清单”扫：形式（书面 / 登记 / 公示）＋主体（谁的权利）＋内容（法条是否允许约定），缺一样就划。</div>
+    </div>
+  </div>
+</div>
+  <div class="card"><h3>训练题组｜限时 6 分钟</h3><div class="q" id="t-8-1" data-master="8-1"><div class="qtop"><span class="qno">1</span><span class="qstem">关于商标权，下列说法正确的是：<span class="qsrc">（2025 天津 54）</span></span></div><div class="opts"><span>A. 商标注册之后即使不在实际中使用，也不会被撤销</span><span>B. 商标权保护的标志包括声音、字母甚至颜色组合等</span><span>C. 商标权可以变更注册人、许可他人使用，但不能转让</span><span>D. 过了商标权的保护期限，商标就可以被公开随意取用</span></div><input type="checkbox" class="soltoggle" style="display:none"><span class="btn-reveal" data-act="reveal"><span class="t1">看解析</span><span class="t2">收起解析</span></span><label class="mini-check"><input type="checkbox" data-master="8-1">做对了</label></div><div class="q" id="t-8-2" data-master="8-2"><div class="qtop"><span class="qno">2</span><span class="qstem">根据《中华人民共和国文物保护法》，下列说法错误的是：<span class="qsrc">（2025 天津 53）</span></span></div><div class="opts one"><span>A. 南海海域内发现的沉船及其中文物属于国家所有</span><span>B. 国有文物收藏单位不得将馆藏文物赠与其他单位</span><span>C. 文物工作的方针是“保护为主、抢救第一、合理利用、加强管理”</span><span>D. 经营文物拍卖的拍卖企业能够同时从事文物的购销经营活动</span></div><input type="checkbox" class="soltoggle" style="display:none"><span class="btn-reveal" data-act="reveal"><span class="t1">看解析</span><span class="t2">收起解析</span></span><label class="mini-check"><input type="checkbox" data-master="8-2">做对了</label></div><div class="q" id="t-8-3" data-master="8-3"><div class="qtop"><span class="qno">3</span><span class="qstem">根据《中华人民共和国食品安全法》，下列情形符合法律规定的是：<span class="qsrc">（2025 国考行政执法 22）</span></span></div><div class="opts one"><span>A. 某食品生产企业自行检验产品后，不再委托专业机构进行检验</span><span>B. 某乳制品生产企业以分装方式生产婴幼儿配方乳粉</span><span>C. 某食品安全监督管理部门向食品生产经营者收取检验费</span><span>D. 某个体工商户仅销售预包装食品，未报食品安全监督管理部门备案</span></div><input type="checkbox" class="soltoggle" style="display:none"><span class="btn-reveal" data-act="reveal"><span class="t1">看解析</span><span class="t2">收起解析</span></span><label class="mini-check"><input type="checkbox" data-master="8-3">做对了</label></div><div class="ansline"><div>1<b>B</b>其他法律法规 · 错率52.37%</div><div>2<b>D</b>其他法律法规 · 错率67.69%</div><div>3<b>A</b>其他法律法规 · 错率7.78%</div></div><div class="tip">三道训练题：商标权（三年不使用可撤销、声音颜色组合可注册）、文物保护法（拍卖企业不得从事文物购销）、食品安全法（不得以分装方式生产婴幼儿配方乳粉）。都是“法定表述逐字比对”。</div></div>
+</section><section class="sec" id="k9" data-sec="k9">
+  <div class="mhero"><div><h3>母题 9 · 地理常识 · 自然环境与国情社情</h3><p>天体天文、地貌地质、江河气候、人文地望。图解题看昼长与月相。</p></div>
+    <div class="mmeta"><b>3 题</b>训练 · 限时 5 分钟</div></div>
+  <div class="keys"><div class="key"><h4>识别特征</h4><p>①诗句中的天体与天文常识；②地貌类型对应（丹霞、岩溶、盆地）；③长江洪涝成因、日月升落图、地质年代。</p></div><div class="key"><h4>核心钥匙</h4><p>①天体：牵牛织女＝太阳系外恒星、北斗七星不含北极星（北极星＝勾陈一）、启明星＝<b>金星</b>（轨道在地球内侧）、岁星＝木星（气态巨行星）；②昼长比较纬度：夏季<b>纬度越高昼越长</b>；位置越东日出越早；残月（下娥眉月）≈农历二十七；③长江洪涝：亚热带季风气候（不是温带）；④地望：卢舍那大佛＝洛阳龙门、丹霞青年期＝贵州赤水、三江并流＝云南。</p></div><div class="key"><h4>选项怎么用</h4><p>诗句天文题先翻译“古称 → 今名”（岁星＝木星、启明＝金星、苍山＝泰山），翻译完对照关系直接判；图解题先算<b>昼长 = 日落 − 日出</b>，一步出纬度关系，其余选项围绕月相与方位验证。</p></div></div>
+  <div class="card">
+  <h3>典型题｜诗句天体选非——启明星是金星，轨道在地球内侧</h3>
+  <div class="q">
+    <div class="qtop"><span class="qno">例</span><span class="qstem">下列诗句都涉及天体，其中说法错误的是：<span class="qsrc">（2025 国考行政执法 34 · 错率 66%）</span></span></div>
+    <div class="opts"><span>A. “卧看牵牛织女星”所涉及的天体不属于太阳系</span><span>B. “每依北斗望京华”中的天体不包括北极星</span><span>C. “启明星在树梢头”中的行星公转轨道半径较地球更大</span><span>D. “岁星渐高辰星光”中的“岁星”属于气态巨行星</span></div>
+    <input type="checkbox" class="soltoggle" id="ck-typ-9-1" style="display:none">
+    <label class="btn-reveal" for="ck-typ-9-1" data-act="reveal"><span class="t1">看解析</span><span class="t2">收起解析</span></label>
+    <div class="ana">
+      <div class="ana-h">解析 · 排除法优先</div>
+      <div class="as k1"><i>① 先排除</i><p>选非题。A 牛郎星（天鹰座α）、织女星（天琴座α）都是<b>恒星</b>，距地球十几光年，不属于太阳系 ✓；B 北斗七星是大熊座的七颗星，北极星指勾陈一（小熊座α），互不包含 ✓。</p></div>
+      <div class="as k2"><i>② 再缩小</i><p>D 岁星＝<b>木星</b>，太阳系最大的气态巨行星 ✓。先古称翻译成今名，答案就只剩 C 待验。</p></div>
+      <div class="as k3"><i>③ 后择优</i><p>C 启明星＝<b>金星</b>，其公转轨道在<b>地球轨道内侧</b>，半径比地球<b>更小</b>——“更大”方向说反。选 <b>C</b>（错误的说法）。</p></div>
+      <div class="ans">答案：<b>C</b>　　<b>心法：</b>天文题第一步永远是“古称→今名”翻译：岁星＝木星、启明／长庚＝金星、荧惑＝火星。翻译对了，正误一目了然。</div>
+    </div>
+  </div>
+</div>
+  <div class="card"><h3>训练题组｜限时 5 分钟</h3><div class="q" id="t-9-1" data-master="9-1"><div class="qtop"><span class="qno">1</span><span class="qstem">关于盆地地形，下列说法错误的是：<span class="qsrc">（2025 国考地市 30）</span></span></div><div class="opts"><span>A. 相比平原，盆地更容易富集油气资源</span><span>B. 塔里木盆地是大型封闭性山间盆地</span><span>C. 盆地地形在山地、高原、海洋里都有分布</span><span>D. 华北渤海湾多分布着岩溶盆地</span></div><input type="checkbox" class="soltoggle" style="display:none"><span class="btn-reveal" data-act="reveal"><span class="t1">看解析</span><span class="t2">收起解析</span></span><label class="mini-check"><input type="checkbox" data-master="9-1">做对了</label></div><div class="q" id="t-9-2" data-master="9-2"><div class="qtop"><span class="qno">2</span><span class="qstem">一直以来，长江中下游洪涝灾害严重，给当地人民生产生活带来了很多不利影响。下列关于导致长江流域洪涝灾害原因的分析错误的是：<span class="qsrc">（2025 四川 15）</span></span></div><div class="opts"><span>A. 中游湖泊面积缩小，分洪蓄洪能力减弱</span><span>B. 长江流域内多为温带季风气候，降水充沛集中</span><span>C. 中下游段河道弯曲，水流缓慢，泥沙沉积抬高河床</span><span>D. 上游植被遭到破坏，水土流失严重，河流含沙量增大</span></div><input type="checkbox" class="soltoggle" style="display:none"><span class="btn-reveal" data-act="reveal"><span class="t1">看解析</span><span class="t2">收起解析</span></span><label class="mini-check"><input type="checkbox" data-master="9-2">做对了</label></div><div class="q" id="t-9-3" data-master="9-3"><div class="qtop"><span class="qno">3</span><span class="qstem">下列论文选题与其考察地点对应正确的是：<span class="qsrc">（2025 天津 59）</span></span></div><div class="opts"><span>A. 《卢舍那大佛造像艺术研究》——山西大同</span><span>B. 《丹霞地貌景观特征及发育演化研究》——贵州赤水</span><span>C. 《三江并流区地表覆盖类型变化成因探析》——四川宜宾</span><span>D. 《乡村振兴背景下河姆渡遗址的保护与开发》——浙江湖州</span></div><input type="checkbox" class="soltoggle" style="display:none"><span class="btn-reveal" data-act="reveal"><span class="t1">看解析</span><span class="t2">收起解析</span></span><label class="mini-check"><input type="checkbox" data-master="9-3">做对了</label></div><div class="ansline"><div>1<b>D</b>自然环境 · 错率32.99%</div><div>2<b>B</b>国情社情 · 错率42.16%</div><div>3<b>B</b>国情社情 · 错率30.17%</div></div><div class="tip">三道训练题：盆地地形（渤海湾不是岩溶盆地）、长江洪涝成因（亚热带季风气候）、论文选题对应地望（卢舍那＝洛阳龙门）。先定主体再核细节。</div></div>
+</section><section class="sec" id="k10" data-sec="k10">
+  <div class="mhero"><div><h3>母题 10 · 经济常识 · 宏观政策与金融常识</h3><p>扩大内需、LPR 利率、货币层次、GDP 与税制。抓传导方向。</p></div>
+    <div class="mmeta"><b>2 题</b>训练 · 限时 5 分钟</div></div>
+  <div class="keys"><div class="key"><h4>识别特征</h4><p>政策措施的效果判断（扩大内需组合）、LPR / 汇率 / 存款准备金率的方向题、M0/M1/M2 层次、增值税 vs 营业税。</p></div><div class="key"><h4>核心钥匙</h4><p>①LPR 下调→贷款利率降→房贷压力减轻、企业融资成本降；银行会<b>同步下调存款利率</b>，居民储蓄收益减少；②货币层次：M0＝流通现金，M1＝M0＋单位活期，M2＝M1＋定期＋个人存款（居民定期储蓄在 M2）；③GDP＝属地原则（外资在华产值计入中国 GDP）；④增值税<strong>避免重复征税</strong>（营业税不能）；⑤扩大内需＝投资＋消费（专项债、消费促进政策），出口信贷属于外需。</p></div><div class="key"><h4>选项怎么用</h4><p>方向题只问“降了之后谁受益、谁受损”，一条链推到底；组合题（①②③④选两项）先判最熟的一条，排除含它的错误组合，往往一步锁定；表述与常识方向相反（储蓄收益增加）直接划。</p></div></div>
+  <div class="card">
+  <h3>典型题｜LPR 下调——一条传导链推出“储蓄收益减少”</h3>
+  <div class="q">
+    <div class="qtop"><span class="qno">例</span><span class="qstem">2024 年 10 月 21 日，1 年期 LPR 为 3.10%，5 年期以上 LPR 为 3.60%，均比上月下调 25 个基点。下列有关说法不正确的是：<span class="qsrc">（2025 浙江 16 · 错率 32%）</span></span></div>
+    <div class="opts one"><span>A. LPR 下调有助于增加居民的储蓄收益，提高居民收入水平</span><span>B. LPR 下调有助于减轻居民的房贷压力，增强居民购房意愿</span><span>C. LPR 下调有助于降低企业的融资成本，鼓励创新创业活动</span><span>D. LPR 下调有助于扩大企业的投资规模，创造更多就业机会</span></div>
+    <input type="checkbox" class="soltoggle" id="ck-typ-10-1" style="display:none">
+    <label class="btn-reveal" for="ck-typ-10-1" data-act="reveal"><span class="t1">看解析</span><span class="t2">收起解析</span></label>
+    <div class="ana">
+      <div class="ana-h">解析 · 排除法优先</div>
+      <div class="as k1"><i>① 先排除</i><p>选非题。B 房贷利率锚定 5 年期 LPR，下调 → 房贷压力减轻 ✓；C 企业贷款成本降 → 融资成本降 ✓；D 融资便宜 → 投资扩大、就业增加 ✓——三条都是降息的标准传导方向。</p></div>
+      <div class="as k2"><i>② 再缩小</i><p>A 方向反了：LPR 下调后，银行为维持利差会<b>相应下调存款利率</b>，居民储蓄收益随之<b>减少</b>而非增加。</p></div>
+      <div class="as k3"><i>③ 后择优</i><p>选 <b>A</b>（不正确的说法）。</p></div>
+      <div class="ans">答案：<b>A</b>　　<b>心法：</b>利率题只推一条链：政策利率↓ → 贷款利率↓ → 借款方受益、储户受损。四个选项全在这条链上比方向。</div>
+    </div>
+  </div>
+</div>
+  <div class="card"><h3>训练题组｜限时 5 分钟</h3><div class="q" id="t-10-1" data-master="10-1"><div class="qtop"><span class="qno">1</span><span class="qstem">2024 年政府工作报告提出，着力扩大国内需求，推动经济实现良性循环。下列措施有利于扩大内需的是：①完善粮食生产收储加工体系②加大出口信贷和出口信保支持③合理扩大地方政府专项债券投向领域④实施数字消费、绿色消费、健康消费促进政策<span class="qsrc">（2025 国考副省 21）</span></span></div><div class="opts"><span>A. ①②</span><span>B. ②③</span><span>C. ①④</span><span>D. ③④</span></div><input type="checkbox" class="soltoggle" style="display:none"><span class="btn-reveal" data-act="reveal"><span class="t1">看解析</span><span class="t2">收起解析</span></span><label class="mini-check"><input type="checkbox" data-master="10-1">做对了</label></div><div class="q" id="t-10-2" data-master="10-2"><div class="qtop"><span class="qno">2</span><span class="qstem">下列人物所说的话与经济有关，其中说法正确的是：<span class="qsrc">（2025 国考行政执法 28）</span></span></div><div class="opts one"><span>A. 社区居民：我的定期储蓄存款被统计在货币供应量M 1 中</span><span>B. 外资企业CEO：我公司的产值持续增长，为中国GDP 提升做出了贡献</span><span>C. 留美学生：人民币汇率降低，我的学费也降低了</span><span>D. 纳税商户：相比于增值税，营业税的好处是避免重复征税</span></div><input type="checkbox" class="soltoggle" style="display:none"><span class="btn-reveal" data-act="reveal"><span class="t1">看解析</span><span class="t2">收起解析</span></span><label class="mini-check"><input type="checkbox" data-master="10-2">做对了</label></div><div class="ansline"><div>1<b>D</b>经济常识 · 错率58.19%</div><div>2<b>B</b>经济常识 · 错率34.69%</div></div><div class="tip">两道训练题：扩大内需组合题（③④，专项债与消费促进属于内需）、经济人物语录（M1/M2 层次、GDP 属地原则、汇率方向、增值税避免重复征税）。组合题先判最熟一条再排组合。</div></div>
+</section>
+
+<section class="sec" id="err">
+  <div class="sec-head"><span class="idx">ERR</span><h2>错因分类表（错题回查）</h2></div>
+  <table class="et"><tr><th>错因</th><th>典型表现</th><th>对症动作</th></tr><tr><td><b>选非题看反</b></td><td>题干问「不正确的是」，按正确项选了，四个选项明明都会</td><td>动笔前把题干要求圈出来；选非题给每个选项标 ✓/✗，最后选 ✗ 的那个</td></tr><tr><td><b>时间线错位</b></td><td>“白起参考淝水之战战术”——拿三百年后的事安到前人头上</td><td>人名出现先默生卒/朝代；两个时间点比先后，错位直接排除</td></tr><tr><td><b>张冠李戴</b></td><td>量子安给麦克斯韦、粉彩瓷器安给唐朝、楹联安错景点</td><td>对应关系题逐项核对主体与成果，主体错的一票否决</td></tr><tr><td><b>绝对化表述上当</b></td><td>「只能由法律设定」「不会被撤销」这类全称判断没细想就划掉或选中</td><td>绝对化词出现先慢下来：法条里的「只能」往往真有限定，逐字回法条核对，别迷信“绝对化必错”</td></tr></table>
+</section>
+
+<section class="sec" id="record">
+  <div class="sec-head"><span class="idx">OK</span><h2>母题自测打卡</h2></div>
+  <p style="font-size:13.5px;color:var(--ink2);margin:4px 0 0">逐条自检，做得到就打勾。已自测通过 <b id="rec-txt">0</b> / 9 项。</p>
+  <div class="rec"><label><input type="checkbox" data-rec="r0" style="accent-color:var(--pri);margin-right:5px">每道题先判「选是」还是「选非」——选非题圈出“不正确 / 错误 / 不属于”再作答</label><label><input type="checkbox" data-rec="r1" style="accent-color:var(--pri);margin-right:5px">人文题用时间锚点排除：人物生卒、朝代、事件年代先对一遍先后</label><label><input type="checkbox" data-rec="r2" style="accent-color:var(--pri);margin-right:5px">诗句对应节日 / 器物 / 天体的题，抓标志词（茱萸菊花＝重阳、龙舟＝端午、启明星＝金星）</label><label><input type="checkbox" data-rec="r3" style="accent-color:var(--pri);margin-right:5px">科技题认准「第一 / 之最」：第一种抗生素＝青霉素（青霉菌）、世界上覆盖人口规模最大的社会保障网</label><label><input type="checkbox" data-rec="r4" style="accent-color:var(--pri);margin-right:5px">法律题背准法定表述：当场处罚行政复议前置、意定监护须书面、胎儿遗产继承利益受保护</label><label><input type="checkbox" data-rec="r5" style="accent-color:var(--pri);margin-right:5px">经济题抓传导方向：LPR 下调→贷款利率降→存款利率大概率同步下调，储蓄收益减少</label><label><input type="checkbox" data-rec="r6" style="accent-color:var(--pri);margin-right:5px">绝对化表述（只能 / 绝不 / 所有 / 不会）优先逐字核对法条与原文，再决定排除</label><label><input type="checkbox" data-rec="r7" style="accent-color:var(--pri);margin-right:5px">训练题组限时完成（每题 ≤ 45 秒），常识不恋战、不空题</label><label><input type="checkbox" data-rec="r8" style="accent-color:var(--pri);margin-right:5px">错题全部归入错因表，对应知识点当天抄成知识卡，每周回看一次</label></div>
+  <div class="toolbar" style="margin-top:16px"><span class="tbtn" data-act="clear">清空本题本打卡</span>
+    <span class="tbtn-hint">打卡仅保存在本机浏览器（localStorage），可随时清空重练。</span></div>
+  <div class="footnote">题源为粉笔《决战行测5000题·常识判断（新增题）》（考生回忆版），典型题解析为“排除法优先”三步重写，仅供备考练习。完整真题与粉笔原版解析见《常识判断_真题题库》。</div>
+</section>
+</main>
+</div>
+<script>
+(function(){
+"use strict";
+var V="v1";
+var fail=function(m){var b=document.getElementById('jsstat');if(b){b.textContent='\u2717 \u811a\u672c\u5f02\u5e38\uff1a'+m;b.style.background='#fdeaea';b.style.borderColor='#e39a9a';b.style.color='#a33';}};
+window.addEventListener('error',function(e){fail((e&&e.message)||'\u672a\u77e5\u9519\u8bef');});
+function step(n,f){try{f();}catch(e){fail(n+'\uff1a'+((e&&e.message)||e));}}
+var KEY='cs_tiben_progress';
+var state={mastered:{},rec:{}};
+step('\u8bfb\u53d6\u8fdb\u5ea6',function(){
+  try{var o=JSON.parse(localStorage.getItem(KEY)||'{}')||{};state.mastered=o.mastered||{};state.rec=o.rec||{};}catch(e){}
+});
+function save(){try{localStorage.setItem(KEY,JSON.stringify(state));}catch(e){}}
+var qs=[].slice.call(document.querySelectorAll('.q[data-master]'));
+step('\u6807\u8bb0JS\u5f15\u64ce',function(){document.documentElement.classList.add('js');});
+step('\u7ed1\u5b9a\u5f00\u5173',function(){
+  window.addEventListener('click',function(ev){
+    var t=ev.target;if(!t||t.nodeType!==1||!t.closest)return;
+    var hit=t.closest('[data-act]');if(!hit)return;
+    var act=hit.getAttribute('data-act');
+    if(act==='xall'){document.documentElement.classList.toggle('xall-on');}
+    else if(act==='reveal'){
+      var q=t.closest('.q');if(q){var open=q.classList.toggle('qopen');
+        var cb=q.querySelector('.soltoggle');if(cb)cb.checked=open;}
+    }
+    else if(act==='clear'){
+      state={mastered:{},rec:{}};save();
+      [].slice.call(document.querySelectorAll('input[data-master]')).forEach(function(i){i.checked=false;});
+      [].slice.call(document.querySelectorAll('input[data-rec]')).forEach(function(i){i.checked=false;});
+      [].slice.call(document.querySelectorAll('.rec label')).forEach(function(l){l.classList.remove('done');});
+      update();
+    }
+    else return;
+    ev.preventDefault();
+    if(ev.stopImmediatePropagation)ev.stopImmediatePropagation();
+  },true);
+});
+step('\u7ed1\u5b9a\u6253\u5361',function(){
+  document.addEventListener('change',function(ev){
+    var el=ev.target;if(!el||el.nodeType!==1)return;
+    if(el.hasAttribute('data-master')){state.mastered[el.getAttribute('data-master')]=el.checked;save();update();}
+    if(el.hasAttribute('data-rec')){state.rec[el.getAttribute('data-rec')]=el.checked;
+      var l=el.closest('label');if(l)l.classList.toggle('done',el.checked);save();update();}
+  });
+});
+function update(){
+  var done=qs.filter(function(q){return state.mastered[q.getAttribute('data-master')];}).length;
+  var t=document.getElementById('pg-txt'),b=document.getElementById('pg-bar');
+  if(t)t.textContent=done;
+  if(b)b.style.width=(done/(qs.length||1)*100)+'%';
+  [].slice.call(document.querySelectorAll('.sec[data-sec]')).forEach(function(sec){
+    var sid=sec.getAttribute('data-sec');
+    var list=qs.filter(function(q){return q.closest('section')===sec;});
+    var d=list.filter(function(q){return state.mastered[q.getAttribute('data-master')];}).length;
+    var bd=document.querySelector('[data-badge="'+sid+'"]');
+    if(bd)bd.textContent=d+'/'+list.length;
+  });
+  var rd=Object.keys(state.rec).filter(function(k){return state.rec[k];}).length;
+  var rt=document.getElementById('rec-txt');if(rt)rt.textContent=rd;
+}
+step('\u56de\u586b\u72b6\u6001',function(){
+  [].slice.call(document.querySelectorAll('input[data-master]')).forEach(function(i){
+    if(state.mastered[i.getAttribute('data-master')])i.checked=true;});
+  [].slice.call(document.querySelectorAll('input[data-rec]')).forEach(function(i){
+    if(state.rec[i.getAttribute('data-rec')]){i.checked=true;var l=i.closest('label');if(l)l.classList.add('done');}});
+});
+step('\u542f\u52a8\u5b8c\u6210',function(){
+  update();
+  var b=document.getElementById('jsstat');
+  if(b)b.textContent='\u2713 \u4ea4\u4e92\u6b63\u5e38 '+V+' \u00b7 \u8bad\u7ec3\u9898 '+qs.length+' \u9898\u5df2\u7ed1\u5b9a\uff08\u70b9\u201c\u770b\u89e3\u6790\u201d\u524d\u5148\u81ea\u5df1\u505a\uff09';
+});
+})();
+</script>
+</body>
+</html>
