@@ -2594,6 +2594,20 @@ body::before{content:"";display:block;height:44px}
     else fail('\u81ea\u68c0\u672a\u901a\u8fc7 '+okOpen+'/'+okClosed);
   });
   if(errs.length===0) { if(badge&&badge.className.indexOf('ok')<0) ok(qs.length+' \u9898\u5df2\u7ed1\u5b9a'); }
+  /* 深链筛选：#kw=文字资料 / #dian=增长率 / #mat=表格资料 */
+  try{
+    var _h=(location.hash||'').replace(/^#/,'');
+    if(_h){
+      var _g=function(k){ var m=_h.match(new RegExp('(?:^|&)'+k+'=([^&]+)')); return m?decodeURIComponent(m[1]):''; };
+      var _dv=_g('dian'), _v=_g('kw')||_g('mat')||_dv;
+      if(_v){
+        var _inp=$('#nav-search'); if(_inp) _inp.value=_v;
+        kw=_v;
+        if(_dv){ $$('.dchip').forEach(function(c){ c.classList.toggle('on',(c.getAttribute('data-dian')||'')===_dv); }); }
+        applyFilter();
+      }
+    }
+  }catch(e){}
 })();
 </script>
 </body>

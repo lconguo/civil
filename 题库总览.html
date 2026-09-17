@@ -81,7 +81,7 @@ body::before{content:"";display:block;height:44px}
 
   <div class="hero" data-page-node-id="8VsF73ROvzjaBVE0Zx0swS">
     <h1 data-page-node-id="TOcGAskHtDY0nYKCDySo44">题库总览 · 行测 + 申论</h1>
-    <p data-page-node-id="SRGnPBFh0ABmlCphwRkJvv">各模块「计划页 ↔ 题本页 ↔ 题库页」三件套入口 · 进度一屏看全。行测素材来自粉笔《决战行测 5000 题 · 新增题部分》上册（题目）与下册（答案/正确率/易错项）；<b>申论</b>为第三轨道（与行测全程并行），题库已上线：粉笔《决战申论 100 题》2026 版全三册（单一题 / 综合题 / 公文题 / 文章写作题）。</p>
+    <p data-page-node-id="SRGnPBFh0ABmlCphwRkJvv">各模块「计划页 ↔ 题本页 ↔ 题库页」三件套入口 · 进度一屏看全。行测素材来自粉笔《决战行测 5000 题》上册（题目）与下册（答案/正确率/易错项），既有「新增题部分」抽练，也已上线<b>模块 2026 版全本</b>（资料分析 1004 题，表格/图形资料附原页题图）；<b>申论</b>为第三轨道（与行测全程并行），题库已上线：粉笔《决战申论 100 题》2026 版全三册（单一题 / 综合题 / 公文题 / 文章写作题）。</p>
     <div class="hstats" data-page-node-id="4LuXyRA0QhkkowUpIQcgJT">
       <div class="hstat" data-page-node-id="iTxTpqaIH6ic6BYIvhzx2L"><b id="s-mod" data-page-node-id="eWXfgL0wYnLWFeoSBxZJFB">0</b><span data-page-node-id="0vzBKScc8akCcaG7X2HWUs">题库模块</span></div>
       <div class="hstat" data-page-node-id="wr65hEInsk2ZHCJkcGRMQB"><b id="s-q" data-page-node-id="jQsaXDdu6Rqb9JBHemgMfR">0</b><span data-page-node-id="xHc4EzxDe7r8oxYhZlbKFm">题库总题量</span></div>
@@ -138,7 +138,7 @@ body::before{content:"";display:block;height:44px}
 
   <footer data-page-node-id="WKep9xrgQGpkngrDeuNApC">
     行测题库总览 · 2027 国考备考 · 笔试预计 2026.11.28–29<br data-page-node-id="BmNxmbnzVGUCoWg9dHyFJC">
-    模块：资料分析 90 · 判断推理 115 · 言语理解 120 · 数量关系 63 · 常识判断 55 · 政治理论 24 · 申论 102<br data-page-node-id="BmNxmbnzVGUCoWg9dHyFJG">
+    模块：资料分析 90 · <b>资料分析 2026 全本 1004</b> · 判断推理 115 · <b>判断推理 2026 全本 952</b> · 言语理解 120 · <b>言语理解 2026 全本 963</b> · 数量关系 63 · 常识判断 55 · 政治理论 24 · 申论 102<br data-page-node-id="BmNxmbnzVGUCoWg9dHyFJG">
     申论（第三轨道 · 全程并行）：<a href="申论_真题题库.html">申论_真题题库</a> · 102 题 ｜ <a href="申论_学习计划.html">申论_学习计划</a> · 8 项里程碑
   </footer>
 </div>
@@ -150,22 +150,31 @@ body::before{content:"";display:block;height:44px}
 
   /* 模块登记表：题库页 hash 一旦上线，把 on 置 true 并填 file */
   var MODS = [
-    {key:'zlfx', name:'资料分析', plan:'资料分析_9天冲刺计划.html', tiben:'资料分析_题本与母题解析.html',
+    {key:'zlfx', name:'资料分析（新增题）', plan:'资料分析_9天冲刺计划.html', tiben:'资料分析_题本与母题解析.html',
      bank:'资料分析_真题题库.html', ls:'zlfx_true_bank_progress', n:90, goal:'≥ 90%', on:true},
+    {key:'zlfx26', name:'资料分析 · 2026 全本', plan:'资料分析_9天冲刺计划.html', tiben:'资料分析_题本与母题解析.html',
+     bank:'资料分析_真题题库_2026全本.html', ls:'zlfx26_bank_progress', n:1004, goal:'≥ 90%', on:true,
+     note:'51 作业题 × 20 题 · 四类材料'},
     {key:'pdcl', name:'判断推理', plan:'判断推理_13天冲刺计划.html', tiben:'判断推理_题本与母题解析.html',
      bank:'判断推理_真题题库.html', ls:'pdcl_true_bank_progress', n:115, goal:'≥ 85%', on:true},
+    {key:'pdcl26', name:'判断推理 · 2026 全本', plan:'判断推理_13天冲刺计划.html', tiben:'判断推理_题本与母题解析.html',
+     bank:'判断推理_真题题库_2026全本.html', ls:'pdcl26_bank_progress', n:952, goal:'≥ 85%', on:true,
+     note:'89 题组 × 4 大题型 · 图形题附原书题面图'},
     {key:'yy', name:'言语理解', plan:'言语理解_9天冲刺计划.html', tiben:'言语理解_题本与母题解析.html',
      bank:'言语理解_真题题库.html', ls:'yy_true_bank_progress', n:120, goal:'≥ 80%', on:true},
+    {key:'yy26', name:'言语理解 · 2026 全本', plan:'言语理解_9天冲刺计划.html', tiben:'言语理解_题本与母题解析.html',
+     bank:'言语理解_真题题库_2026全本.html', ls:'yy26_bank_progress', n:963, goal:'≥ 80%', on:true,
+     note:'55 题组 × 4 大题型 · 全文本化'},
     {key:'sl', name:'数量关系', plan:'国考笔试总排期表.html#math', tiben:'数量关系_题本与母题解析.html',
      bank:'数量关系_真题题库.html', ls:'sl_true_bank_progress', n:63, goal:'拿下 6–8 题', on:true},
     {key:'cs', name:'常识判断', plan:'国考笔试总排期表.html#roll', tiben:'常识判断_题本与母题解析.html',
      bank:'常识判断_真题题库.html', ls:'cs_true_bank_progress', n:55, goal:'≥ 60%', on:true},
     {key:'zl', name:'政治理论', plan:'国考笔试总排期表.html#roll', tiben:'政治理论_题本与母题解析.html',
-     bank:'政治理论_真题题库.html', ls:'zz_true_bank_progress', n:24, goal:'≥ 70%', on:true, note:'按考试模块独立成册（题源：常识上册·政治常识章）'},
+     bank:'政治理论_真题题库.html', ls:'zz_true_bank_progress', n:24, goal:'≥ 70%', on:true, note:'独立成册 · 题源：常识上册·政治常识章'},
     {key:'shenlun', name:'申论', plan:'申论_学习计划.html', tiben:'',
      bank:'申论_真题题库.html', ls:'sl_bank_progress', n:102, goal:'≥ 65 分', on:true,
      msKey:'shenlun_progress', msN:8,
-     note:'第三轨道 · 与行测全程并行；题库按「单一题/综合题/公文题/文章写作题」四篇组织，另设 8 项学习里程碑（进度见申论_学习计划）'}
+     note:'第三轨道 · 全程并行 · 另设 8 项里程碑'}
   ];
 
   function readProgress(key){
@@ -228,8 +237,11 @@ body::before{content:"";display:block;height:44px}
     var bar = '<div class="bar" title="'+(barTxt||'')+'"><i style="width:'+pct+'%"></i></div>'
             + '<div style="font-size:11.5px;color:#6b7280;margin-top:3px">'+barTxt+'</div>';
 
+    var cellName = '<b>'+m.name+'</b>'
+      + (m.note ? '<br><span style="font-size:11.5px;color:#6b7280">'+m.note+'</span>' : '');
+
     tb.insertAdjacentHTML('beforeend',
-      '<tr><td><b>'+m.name+'</b></td><td>'+cellPlan+'</td><td>'+cellTiben+'</td><td>'+cellBank+'</td>'
+      '<tr><td>'+cellName+'</td><td>'+cellPlan+'</td><td>'+cellTiben+'</td><td>'+cellBank+'</td>'
       + '<td class="num">'+cellN+'</td><td>'+m.goal+'</td>'
       + '<td><span class="pill '+stCls+'">'+st+'</span></td><td>'+bar+'</td></tr>');
   });

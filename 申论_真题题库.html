@@ -6386,19 +6386,19 @@ HY的气体服务赞不绝口，“从民营钢企的角度看，更希望专业
   function applyFilter(){
     var hit=0;
     $$('.sec').forEach(function(sec){
+      var h3=sec.querySelector('.sec-meta h3');
+      var srcHit=!!(kw&&h3&&h3.textContent.indexOf(kw)>=0);
       var secHit=false;
       [].slice.call(sec.querySelectorAll('.q')).forEach(function(q){
         var keep=true;
         if(onlyUn&&state.mastered[q.id]) keep=false;
-        if(keep&&kw){
+        if(keep&&kw&&!srcHit){
           var kd=q.getAttribute('data-kd')||'';
           if(kd.indexOf(kw)<0) keep=false;
         }
         q.classList.toggle('hide',!keep);
         if(keep) secHit=true;
       });
-      var h3=sec.querySelector('.sec-meta h3');
-      var srcHit=!!h3&&kw&&h3.textContent.indexOf(kw)>=0;
       var show=kw?(secHit||srcHit):secHit;
       if(show) hit+=sec.querySelectorAll('.q:not(.hide)').length;
       sec.classList.toggle('hide',!show);
@@ -6452,6 +6452,20 @@ HY的气体服务赞不绝口，“从民营钢企的角度看，更希望专业
     updateProgress();
   });
   ok(qs.length+' \u9898\u5df2\u7ed1\u5b9a'+(errs.length?('\uff08'+errs.length+'\u5904\u5f02\u5e38\uff09'):''));
+  /* 深链筛选：#kw=文字资料 / #dian=增长率 / #mat=表格资料 */
+  try{
+    var _h=(location.hash||'').replace(/^#/,'');
+    if(_h){
+      var _g=function(k){ var m=_h.match(new RegExp('(?:^|&)'+k+'=([^&]+)')); return m?decodeURIComponent(m[1]):''; };
+      var _dv=_g('dian'), _v=_g('kw')||_g('mat')||_dv;
+      if(_v){
+        var _inp=$('#nav-search'); if(_inp) _inp.value=_v;
+        kw=_v;
+        if(_dv){ $$('.dchip').forEach(function(c){ c.classList.toggle('on',(c.getAttribute('data-dian')||'')===_dv); }); }
+        applyFilter();
+      }
+    }
+  }catch(e){}
 })();
 </script>
 </body>

@@ -2529,11 +2529,13 @@ body::before{content:"";display:block;height:44px}
   function applyFilter(){
     var hit=0;
     $$('.sec').forEach(function(sec){
+      var h3=sec.querySelector('.sec-meta h3');
+      var srcHit=!!(kw&&h3&&h3.textContent.indexOf(kw)>=0);
       var secHit=false;
       [].slice.call(sec.querySelectorAll('.q')).forEach(function(q){
         var keep=true;
         if(onlyUn&&state.mastered[q.id]) keep=false;
-        if(keep&&kw){
+        if(keep&&kw&&!srcHit){
           var kd=q.getAttribute('data-kd')||'';
           var st=q.querySelector('.stem'); var stem=st?st.textContent:'';
           if(kd.indexOf(kw)<0&&stem.indexOf(kw)<0) keep=false;
@@ -2541,8 +2543,6 @@ body::before{content:"";display:block;height:44px}
         q.classList.toggle('hide',!keep);
         if(keep) secHit=true;
       });
-      var h3=sec.querySelector('.sec-meta h3');
-      var srcHit=!!h3&&h3.textContent.indexOf(kw)>=0;
       var show=kw?(secHit||srcHit):secHit;
       if(show) hit+=sec.querySelectorAll('.q:not(.hide)').length;
       sec.classList.toggle('hide',!show);
@@ -2607,6 +2607,19 @@ body::before{content:"";display:block;height:44px}
         cb.checked=true; var q=cb.closest('.q'); if(q) q.classList.add('mastered');
       }
     });
+  });
+
+  step('哈希筛选',function(){
+    var h=(location.hash||'').replace(/^#/,'');
+    if(!h) return;
+    function g(k){ var m=h.match(new RegExp('(?:^|&)'+k+'=([^&]+)')); return m?decodeURIComponent(m[1]):''; }
+    var dv=g('dian'), v=g('kw')||g('mat')||dv;
+    if(!v) return;
+    var inp=$('#nav-search');
+    if(inp) inp.value=v;
+    kw=v;
+    if(dv){ $$('.dchip').forEach(function(c){ c.classList.toggle('on',(c.getAttribute('data-dian')||'')===dv); }); }
+    applyFilter();
   });
 
   step('导航',function(){
